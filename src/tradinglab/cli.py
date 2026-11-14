@@ -6,7 +6,8 @@
   lab intradia sesion       Sesión en vivo durante la ventana de trading
   lab intradia cerrar-todo  Botón del pánico: cierra todo en la cuenta demo
   lab diario                Escribe el diario del día en diario/
-  lab medio cribado         Busca small caps con potencial según analistas
+  lab medio oportunidades   Buscador: puntúa todas las small caps (8 factores) y guarda el ranking
+  lab medio cribado         Cribado sencillo antiguo (solo potencial según analistas)
   lab medio ficha TICKER    Datos de una empresa (los usa la skill de análisis)
   lab medio alertas         Revisa la lista de vigilancia y avisa
   lab panel                 Abre el panel web
@@ -68,6 +69,19 @@ def _medio(args):
             print(f"{f['ticker']:6} {str(f.get('sector'))[:22]:22} {f['precio']:>8.2f} $  potencial {f['potencial_pct']:>6.1f}%  "
                   f"({f.get('analistas')} analistas)")
         print(f"\n{len(filas)} candidatos guardados en {path}")
+    elif args.accion == "oportunidades":
+        from .medio_plazo import oportunidades
+        res = oportunidades.ejecutar(cfg, maximo=args.max)
+        pj, pm = oportunidades.guardar(res, top=cfg["oportunidades"].get("top_guardado", 150))
+        for f in res["filas"][:25]:
+            s = f["factores"]
+            print(f"{f['puesto']:>3} {f['ticker']:6} nota {f['nota']:5.1f}  {str(f.get('sector'))[:20]:20} {f['carril'][:28]:28} "
+                  + " ".join(f"{k[:4]}={'—' if v is None else round(v)}" for k, v in s.items())
+                  + (f"  ⚠ {'; '.join(f['banderas'])}" if f['banderas'] else ""))
+        print(f"\nUniverso {res['universo']} · analizadas {res['analizadas']} · guardado en {pj} y {pm}")
+    elif args.accion == "probar":
+        from .medio_plazo import metricas
+        print(json.dumps(metricas.empresa(args.ticker.upper()), indent=1, ensure_ascii=False, default=str))
     elif args.accion == "ficha":
         from .medio_plazo import datos
         print(json.dumps(datos.ficha(args.ticker), indent=2, ensure_ascii=False, default=str))
@@ -94,8 +108,9 @@ def main(argv=None):
     pi.add_argument("accion", choices=["demo", "comprobar", "backtest", "sesion", "cerrar-todo"])
     pi.add_argument("--dias", type=int, default=30)
     pm = sub.add_parser("medio", help="Agente B: inversión a 12 meses")
-    pm.add_argument("accion", choices=["cribado", "ficha", "alertas"])
+    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas"])
     pm.add_argument("ticker", nargs="?")
+    pm.add_argument("--max", type=int, default=None, help="máximo de empresas a analizar (para pruebas)")
     sub.add_parser("diario", help="Escribe el diario del día")
     sub.add_parser("panel", help="Abre el panel web")
     args = p.parse_args(argv)
@@ -103,7 +118,7 @@ def main(argv=None):
     if args.grupo == "intradia":
         _intradia(args)
     elif args.grupo == "medio":
-        if args.accion == "ficha" and not args.ticker:
+        if args.accion in ("ficha", "probar") and not args.ticker:
             p.error("indica el ticker, por ejemplo: lab medio ficha ABCD")
         _medio(args)
     elif args.grupo == "diario":

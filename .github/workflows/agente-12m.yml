@@ -1,6 +1,7 @@
 # Agente B (12 meses) en la nube de GitHub, gratis y sin tu PC.
-#  - Cada día laborable, tras el cierre de Wall Street: precios de la lista de vigilancia + alertas.
-#  - Cada domingo: cribado de small caps (candidatos.csv).
+#  - Cada día laborable, tras el cierre de Wall Street: buscador de oportunidades (ranking de todas las
+#    small caps con 8 factores), precios de la lista de vigilancia y alertas.
+#  - Cada domingo: además, el cribado sencillo antiguo (candidatos.csv).
 #  - Si hay un aviso importante, abre un "issue" en GitHub -> te llega una notificación al móvil.
 # También se puede lanzar a mano: pestaña Actions -> "Agente 12 meses" -> Run workflow.
 # Solo LEE datos públicos gratuitos (Yahoo/Stooq). No compra ni vende nada.
@@ -20,6 +21,7 @@ on:
     paths:
       - ".github/workflows/agente-12m.yml"
       - "src/tradinglab/medio_plazo/**"
+      - "tests/test_oportunidades.py"
 
 permissions:
   contents: write
@@ -32,7 +34,7 @@ concurrency:
 jobs:
   vigilar:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 120
     env:
       PYTHONPATH: src
       PYTHONUTF8: "1"
@@ -45,13 +47,22 @@ jobs:
         run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" tzdata pytest
 
       - name: Pruebas
-        run: python -m pytest -q tests/test_medio_plazo.py
+        run: python -m pytest -q tests/test_medio_plazo.py tests/test_oportunidades.py
 
       - name: Alertas de la lista de vigilancia
         run: python -m tradinglab.cli medio alertas
 
+      - name: Prueba de datos de una empresa (solo en pruebas)
+        if: github.event_name == 'pull_request'
+        run: python -m tradinglab.cli medio probar AMSC | head -c 6000
+
+      - name: Buscador de oportunidades (ranking multifactor)
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then MAX="--max 120"; else MAX=""; fi
+          python -m tradinglab.cli medio oportunidades $MAX
+
       - name: Cribado de small caps (domingos o a mano)
-        if: github.event_name == 'pull_request' || github.event.schedule == '0 9 * * 0' || inputs.cribado
+        if: github.event.schedule == '0 9 * * 0' || inputs.cribado
         run: python -m tradinglab.cli medio cribado
 
       - name: Enseñar resultado (prueba en seco)
@@ -59,15 +70,17 @@ jobs:
         run: |
           cat investigacion/alertas.md
           cat investigacion/estado.json
-          head -15 investigacion/candidatos.csv || true
+          cat investigacion/ranking.md
 
       - name: Guardar resultados en el repo
         if: github.event_name != 'pull_request'
         run: |
           git config user.name "agente-12m"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add investigacion/alertas.md investigacion/estado.json investigacion/candidatos.csv 2>/dev/null || true
+          git add investigacion/alertas.md investigacion/estado.json investigacion/ranking.json investigacion/ranking.md 2>/dev/null || true
+          git add investigacion/candidatos.csv 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Agente 12m: alertas y precios $(date -u +%F)"
+          git pull --rebase --autostash -q || true
           git push
 
       - name: Avisar al móvil si hay algo importante

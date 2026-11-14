@@ -22,6 +22,28 @@ cribado:
   # esperan los analistas que vayan bien a 12 meses. Vacío = todos los sectores por igual.
   sectores_prioritarios: [Technology, Industrials, Energy, Financial Services]   # ver investigacion/sectores-2026-11-14.md
 
+# Buscador de oportunidades (embudo + puntuación de 8 factores). Lo ejecuta GitHub Actions cada día.
+oportunidades:
+  capitalizacion_min_usd: 300000000
+  capitalizacion_max_usd: 2000000000
+  precio_min_usd: 3
+  volumen_medio_min: 100000            # acciones al día
+  volumen_dolares_min: 1000000         # y al menos 1 millón de $ negociado al día (para poder entrar y salir)
+  max_empresas: 2000                   # cuántas se analizan a fondo (todas las que pasan el filtro)
+  hilos: 4
+  top_guardado: 150                    # cuántas se guardan en el ranking del panel
+  # Peso de cada factor en la nota final (suman 100). Las revisiones de analistas pesan más porque
+  # en small caps son de las señales que mejor funcionan para los 12 meses siguientes.
+  pesos:
+    calidad: 15
+    crecimiento: 15
+    valoracion: 15
+    revisiones: 20
+    insiders: 5
+    momentum: 10
+    catalizadores: 5
+    solidez: 15
+
 alertas:
   dias_aviso_catalizador: 10    # avisa si un catalizador (resultados, FDA, contrato...) está a menos de X días
   revisar_tesis_cada_dias: 30   # avisa si un análisis tiene más de X días y conviene repasarlo
