@@ -1,3 +1,6 @@
 ticker,empresa,sector,fecha_analisis,veredicto,conviccion,precio_analisis,zona_entrada_max,precio_objetivo_12m,stop_tesis,proximo_catalizador,fecha_catalizador,informe
 AMSC,American Superconductor,Industrials,2026-11-14,comprar_en_zona,3,24.13,22,32,17,Resultados oct-dic 2026 (fecha aprox.; guía: ventas > 80 M$),2027-02-04,investigacion/analisis/AMSC-2026-11-14.md
 AEHR,Aehr Test Systems,Technology,2026-11-14,vigilar,2,56.98,47,65,38,Resultados 2.º trimestre fiscal (oct-dic) y validación FOX-XP de nuevo cliente de IA,2027-02-05,investigacion/analisis/AEHR-2026-11-14.md
+REPX,Riley Exploration Permian,Energy,2026-11-14,comprar_en_zona,3,44.40,46,58,36,Guía de producción e inversión 2027 (resultados 4.º trimestre),2027-03-04,investigacion/analisis/REPX-2026-11-14.md
+PGY,Pagaya Technologies,Technology,2026-11-14,comprar_en_zona,3,16.87,17.5,25,12.5,Resultados 4.º trimestre y guía 2027,2027-01-28,investigacion/analisis/PGY-2026-11-14.md
+DCTH,Delcath Systems,Healthcare,2026-11-14,vigilar,3,20.55,17,27,13,Resultados 4.º trimestre y guía de ventas 2027,2027-03-04,investigacion/analisis/DCTH-2026-11-14.md
