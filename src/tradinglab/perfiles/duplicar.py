@@ -171,37 +171,54 @@ def evaluar(f: dict, c: dict, usd_por_eur: float) -> dict:
     return f
 
 
-def ejecutar(cfg: dict) -> dict:
+def ejecutar(cfg: dict, desde_universo: bool = False) -> dict:
     c, lc = cfg["criterios"], cfg["lista_corta"]
     usd_por_eur = cambio_eur_usd()
     pmin, pmax = c["precio_eur_min"] * usd_por_eur, c["precio_eur_max"] * usd_por_eur
     m = lc["margen_precio"]
     print(f"Cambio: 1 € = {usd_por_eur:.4f} $ → rango {pmin:.2f}-{pmax:.2f} $", flush=True)
 
-    base = oportunidades.universo(cfg)          # mismo universo que el agente B, con el tamaño del perfil
-    base = [b for b in base if b.get("precio") and pmin * (1 - m) <= b["precio"] <= pmax * (1 + m)]
-    print(f"Universo con precio cerca de 5-25 €: {len(base)}", flush=True)
-
-    rapidas, fallos = [], 0
-    with ThreadPoolExecutor(max_workers=cfg["oportunidades"].get("hilos", 4)) as ex:
-        futs = [ex.submit(objetivo_analistas, b["ticker"]) for b in base]
-        for k, fu in enumerate(as_completed(futs), 1):
-            try:
-                rapidas.append(fu.result())
-            except Exception:  # noqa: BLE001
-                fallos += 1
-            if k % 200 == 0:
-                print(f"  ... {k}/{len(base)} (fallos {fallos})", flush=True)
+    previo = ruta("investigacion", "duplicar", "universo.csv")
+    if desde_universo and previo.exists():
+        # Reutiliza la pasada rápida anterior (así Yahoo no nos corta por pedir demasiado).
+        import csv
+        rapidas = []
+        for r in csv.DictReader(open(previo, encoding="utf-8")):
+            rapidas.append(dict(ticker=r["ticker"], empresa=r["empresa"], sector=r["sector"] or None,
+                                precio=_n(r["precio_usd"]), analistas=_n(r["analistas"]),
+                                objetivo_medio=_n(r["objetivo_medio"]), potencial_analistas_pct=_n(r["potencial_pct"])))
+        base, fallos = rapidas, 0
+        print(f"Pasada rápida reutilizada: {len(rapidas)} empresas", flush=True)
+    else:
+        base = oportunidades.universo(cfg)          # mismo universo que el agente B, con el tamaño del perfil
+        base = [b for b in base if b.get("precio") and pmin * (1 - m) <= b["precio"] <= pmax * (1 + m)]
+        print(f"Universo con precio cerca de 5-25 €: {len(base)}", flush=True)
+        rapidas, fallos = [], 0
+        with ThreadPoolExecutor(max_workers=2) as ex:
+            futs = [ex.submit(objetivo_analistas, b["ticker"]) for b in base]
+            for k, fu in enumerate(as_completed(futs), 1):
+                try:
+                    rapidas.append(fu.result())
+                except Exception:  # noqa: BLE001
+                    fallos += 1
+                time.sleep(0.25)  # sin prisa: si se va rápido, Yahoo bloquea el resto
+                if k % 200 == 0:
+                    print(f"  ... {k}/{len(base)} (fallos {fallos})", flush=True)
     corta = [r for r in rapidas if (r["analistas"] or 0) >= lc["analistas_min"]
-             and (r["potencial_analistas_pct"] or 0) >= lc["potencial_min_pct"]]
+             and (r["potencial_analistas_pct"] or 0) >= lc["potencial_min_pct"]
+             and r["precio"] and pmin * (1 - m) <= r["precio"] <= pmax * (1 + m)]
     print(f"Lista corta (≥{lc['potencial_min_pct']} % con ≥{lc['analistas_min']} analistas): {len(corta)}", flush=True)
+    rapida_de = {r["ticker"]: r for r in corta}
 
     # Análisis completo con las métricas, la nota y las fuentes extra del agente B.
-    filas = oportunidades.enriquecer([r["ticker"] for r in corta], hilos=cfg["oportunidades"].get("hilos", 4))
-    filas = [f for f in filas if f.get("sector")]
+    filas = oportunidades.enriquecer([r["ticker"] for r in corta], hilos=1, pausa=1.0)
     for f in filas:
+        # Si Yahoo falló en algún bloque, se completa con la pasada rápida (nunca se descarta en silencio).
+        for k, v in rapida_de.get(f["ticker"], {}).items():
+            if f.get(k) is None:
+                f[k] = v
         f["duplicar"] = trimestres_y_fondos(f["ticker"])
-        time.sleep(0.3)
+        time.sleep(1.0)
     if filas:
         oportunidades.puntuar(filas, cfg["oportunidades"].get("pesos"), min_sector=5)
     for f in filas:
@@ -232,7 +249,7 @@ def guardar(res: dict) -> str:
     cab = {k: v for k, v in res.items() if k not in ("filas", "universo_filas")}
     with open(carpeta / "resultado.json", "w", encoding="utf-8") as fh:
         json.dump(cab | {"filas": [_limpio(f) for f in res["filas"]]}, fh, ensure_ascii=False, indent=0, default=str)
-    with open(carpeta / "universo.csv", "w", encoding="utf-8") as fh:
+    with open(carpeta / "universo.csv", "w", encoding="utf-8") as fh:  # noqa: SIM115
         fh.write("ticker,empresa,sector,precio_usd,analistas,objetivo_medio,potencial_pct\n")
         for r in res["universo_filas"]:
             fh.write(",".join("" if r.get(k) is None else (f"{r[k]:.2f}" if isinstance(r[k], float) else
@@ -255,8 +272,9 @@ def guardar(res: dict) -> str:
 
 
 def main():
+    import sys
     cfg = cargar("perfil_duplicar")
-    res = ejecutar(cfg)
+    res = ejecutar(cfg, desde_universo="--desde-universo" in sys.argv)
     print("Guardado en", guardar(res))
     for f in res["filas"][:25]:
         print(f"  {f['ticker']:6} {f['precio_eur']}€ {f['criterios_cumplidos']}/4 "

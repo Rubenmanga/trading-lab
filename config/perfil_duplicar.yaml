@@ -33,6 +33,6 @@ criterios:
 
 # Lista corta para el análisis detallado (incluye las que se quedan "cerca" para el informe de casi-candidatas).
 lista_corta:
-  potencial_min_pct: 60
-  analistas_min: 5
-  margen_precio: 0.25             # también mira acciones hasta un 25 % fuera del rango de precio
+  potencial_min_pct: 80           # las que pasan (>100 %) y las que se quedan cerca (80-100 %)
+  analistas_min: 10
+  margen_precio: 0.10             # también mira acciones hasta un 10 % fuera del rango de precio

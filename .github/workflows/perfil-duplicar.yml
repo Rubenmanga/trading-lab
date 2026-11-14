@@ -39,7 +39,7 @@ jobs:
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-        run: python -m tradinglab.perfiles.duplicar
+        run: python -m tradinglab.perfiles.duplicar ${{ hashFiles('investigacion/duplicar/universo.csv') != '' && '--desde-universo' || '' }}
       - name: Guardar resultados en la rama
         run: |
           git config user.name "perfil-duplicar"
