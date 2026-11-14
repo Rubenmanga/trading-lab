@@ -10,6 +10,7 @@ name: Agente 12 meses
 on:
   schedule:
     - cron: "30 22 * * 1-5"   # 23:30 de Madrid (invierno), con la bolsa de EE. UU. ya cerrada
+    - cron: "40 23 * * 1-5"   # segunda pasada: completa lo que la primera no pudo bajar (si ya está todo, tarda 2 min)
     - cron: "0 9 * * 0"       # domingo por la mañana: cribado semanal
   workflow_dispatch:
     inputs:
@@ -32,9 +33,63 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  vigilar:
+  # 1) Descarga repartida en 4 máquinas a la vez (Yahoo limita por máquina, así va unas 4 veces más rápido).
+  #    Cada empresa se guarda según se baja; si se corta, la siguiente ejecución del mismo día sigue donde iba.
+  descargar:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        parte: [1, 2, 3, 4]
+    env:
+      PYTHONPATH: src
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" tzdata
+      - name: Fecha
+        id: fecha
+        run: echo "hoy=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+      - name: Recuperar lo ya descargado hoy (para continuar donde se quedó)
+        uses: actions/cache/restore@v4
+        with:
+          path: partes
+          key: oport-${{ steps.fecha.outputs.hoy }}-${{ matrix.parte }}-${{ github.run_id }}
+          restore-keys: oport-${{ steps.fecha.outputs.hoy }}-${{ matrix.parte }}-
+      - name: Descargar mi parte del universo
+        run: |
+          mkdir -p partes
+          python -m tradinglab.cli medio oportunidades --parte ${{ matrix.parte }} --de 4 \
+            --salida partes/parte-${{ matrix.parte }}.jsonl --minutos 45 \
+            ${{ github.event_name == 'pull_request' && '--max 120' || '' }}
+      - name: Guardar lo descargado (aunque se haya cortado)
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: partes
+          key: oport-${{ steps.fecha.outputs.hoy }}-${{ matrix.parte }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: parte-${{ matrix.parte }}
+          path: partes/
+          if-no-files-found: ignore
+          retention-days: 3
+
+  # 2) Junta las partes que haya (aunque falte alguna: entonces el ranking sale marcado como provisional),
+  #    puntúa, añade Finnhub/Alpaca, alertas y lo guarda en el repo -> panel.
+  vigilar:
+    needs: descargar
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
     env:
       PYTHONPATH: src
       PYTHONUTF8: "1"
@@ -58,12 +113,19 @@ jobs:
         if: github.event_name == 'pull_request'
         run: python -m tradinglab.cli medio probar AMSC | head -c 6000
 
-      - name: Buscador de oportunidades (ranking multifactor)
+      - name: Traer las partes descargadas
+        uses: actions/download-artifact@v4
+        with:
+          pattern: parte-*
+          path: partes
+          merge-multiple: true
+
+      - name: Buscador de oportunidades (juntar y puntuar)
         env:   # claves gratuitas opcionales (Settings → Secrets → Actions). Si no existen, se ignoran.
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
-        run: python -m tradinglab.cli medio oportunidades
+        run: python -m tradinglab.cli medio oportunidades --entrada partes
 
       - name: Cribado de small caps (domingos o a mano)
         if: github.event.schedule == '0 9 * * 0' || inputs.cribado
@@ -89,6 +151,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Guardar resultados en el repo
+        if: github.event_name != 'pull_request'   # en pruebas no se toca el ranking bueno
         run: |
           git config user.name "agente-12m"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -99,7 +162,7 @@ jobs:
           git push
 
       - name: Avisar al móvil si hay algo importante
-        if: github.event_name != 'pull_request'
+        if: github.event_name != 'pull_request' && github.event.schedule != '40 23 * * 1-5'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

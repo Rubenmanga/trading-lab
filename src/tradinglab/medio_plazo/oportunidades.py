@@ -239,7 +239,10 @@ def universo(cfg: dict) -> list[dict]:
     return out
 
 
-def enriquecer(tickers: list[str], hilos: int = 4, pausa: float = 0.15) -> list[dict]:
+def enriquecer(tickers: list[str], hilos: int = 4, pausa: float = 0.15, limite_seg: float | None = None,
+               al_bajar=None) -> list[dict]:
+    """Descarga los datos de cada empresa. `limite_seg`: deja de pedir empresas nuevas al llegar a ese tiempo
+    (lo que falte se queda para la próxima vez). `al_bajar(m)`: se llama con cada empresa descargada."""
     import yfinance as yf
 
     from .metricas import empresa
@@ -250,8 +253,11 @@ def enriquecer(tickers: list[str], hilos: int = 4, pausa: float = 0.15) -> list[
     out = []
 
     estado = {"pausa": pausa}
+    inicio = time.monotonic()
 
     def uno(t):
+        if limite_seg and time.monotonic() - inicio > limite_seg:
+            return None  # sin tiempo: se queda pendiente
         m = {"ticker": t, "errores": ["todo"]}
         for intento in range(4):
             try:
@@ -271,7 +277,12 @@ def enriquecer(tickers: list[str], hilos: int = 4, pausa: float = 0.15) -> list[
     with ThreadPoolExecutor(max_workers=hilos) as ex:
         futs = {ex.submit(uno, t): t for t in tickers}
         for k, fu in enumerate(as_completed(futs), 1):
-            out.append(fu.result())
+            m = fu.result()
+            if m is None:
+                continue
+            out.append(m)
+            if al_bajar:
+                al_bajar(m)
             if k % 100 == 0:
                 print(f"  ... {k}/{len(tickers)} empresas descargadas (pausa {estado['pausa']:.2f}s)", flush=True)
     from collections import Counter
@@ -280,14 +291,74 @@ def enriquecer(tickers: list[str], hilos: int = 4, pausa: float = 0.15) -> list[
     return out
 
 
-def ejecutar(cfg: dict, maximo: int | None = None) -> dict:
+def _parte(lista: list, parte: int, de: int) -> list:
+    """Reparte la lista en `de` trozos parecidos (por orden alfabético, para que sea estable)."""
+    return sorted(lista, key=lambda b: b["ticker"])[parte::de]
+
+
+def descargar_parte(cfg: dict, parte: int = 0, de: int = 1, salida: str | None = None, minutos: float | None = None,
+                    maximo: int | None = None) -> dict:
+    """Paso 3 en un trozo del universo. Guarda cada empresa en `salida` (una línea JSON por empresa) según se
+    descarga: si el trabajo se corta, lo bajado no se pierde y la próxima vez se continúa por donde iba."""
+    import os
+
     c = cfg["oportunidades"]
     base = universo(cfg)
-    print(f"Universo tras filtro rápido: {len(base)} small caps")
     maximo = maximo or c.get("max_empresas", 2000)
-    elegidas = base[:maximo]
-    filas = enriquecer([b["ticker"] for b in elegidas], hilos=c.get("hilos", 4))
-    # Fuera fondos cerrados y similares: una empresa operativa tiene sector y ventas.
+    mias = _parte(base[:maximo], parte, de)
+    hechas: dict[str, dict] = {}
+    if salida and os.path.exists(salida):
+        for linea in open(salida, encoding="utf-8"):
+            try:
+                m = json.loads(linea)
+            except ValueError:
+                continue
+            if not any(e.startswith(("info", "todo")) for e in m.get("errores", [])):
+                hechas[m["ticker"]] = m
+    pendientes = [b["ticker"] for b in mias if b["ticker"] not in hechas]
+    print(f"Parte {parte + 1}/{de}: {len(mias)} empresas · ya bajadas hoy {len(hechas)} · pendientes {len(pendientes)}",
+          flush=True)
+    fh = open(salida, "a", encoding="utf-8") if salida else None
+
+    cap = {b["ticker"]: b.get("capitalizacion") for b in mias}
+
+    def al_bajar(m):
+        m["capitalizacion"] = m.get("capitalizacion") or cap.get(m["ticker"])
+        if fh:
+            fh.write(json.dumps({k: _limpio(v) for k, v in m.items()}, ensure_ascii=False, default=str) + "\n")
+            fh.flush()
+    nuevas = enriquecer(pendientes, hilos=c.get("hilos", 4), limite_seg=minutos * 60 if minutos else None,
+                        al_bajar=al_bajar)
+    if fh:
+        fh.close()
+        with open(salida + ".meta.json", "w", encoding="utf-8") as fm:
+            json.dump({"universo": len(base), "parte": len(mias)}, fm)
+    filas = list(hechas.values()) + nuevas
+    faltan = len(mias) - len({f["ticker"] for f in filas})
+    print(f"Parte {parte + 1}/{de}: {len(filas)} descargadas, {faltan} sin tiempo (quedan para la próxima)", flush=True)
+    return dict(universo=len(base), parte=len(mias), filas=filas, base=base)
+
+
+def leer_partes(rutas: list[str]) -> list[dict]:
+    vistas: dict[str, dict] = {}
+    for r in rutas:
+        for linea in open(r, encoding="utf-8"):
+            try:
+                m = json.loads(linea)
+            except ValueError:
+                continue
+            previo = vistas.get(m["ticker"])
+            # si hay dos versiones, quedarse con la que tenga menos errores
+            if previo is None or len(m.get("errores", [])) < len(previo.get("errores", [])):
+                vistas[m["ticker"]] = m
+    return list(vistas.values())
+
+
+def combinar(cfg: dict, filas: list[dict], universo_n: int, base: list[dict] | None = None) -> dict:
+    """Pasos 4-6: filtra, puntúa y añade datos extra. Sirve también con un universo a medias (ranking provisional)."""
+    c = cfg["oportunidades"]
+    elegidas = base or []
+    descargadas = len(filas)
     cap_base = {b["ticker"]: b.get("capitalizacion") for b in elegidas}
     motivos = {"no_es_accion": 0, "sin_sector": 0, "sin_capitalizacion": 0}
     buenas = []
@@ -321,8 +392,18 @@ def ejecutar(cfg: dict, maximo: int | None = None) -> dict:
     if fuentes_extra.hay_finnhub() or fuentes_extra.hay_alpaca():
         extra |= fuentes_extra.completar(filas, top=c.get("extra_top", 60), calendario=False)
     print("Fuentes extra:", extra or "ninguna (sin claves)")
-    return dict(actualizado=ahora(), universo=len(base), analizadas=len(filas), pesos=c.get("pesos") or PESOS_DEFECTO,
-                fuentes_extra=extra, filas=filas)
+    completo = descargadas >= universo_n * 0.97
+    return dict(actualizado=ahora(), universo=universo_n, descargadas=descargadas, analizadas=len(filas),
+                provisional=not completo, pesos=c.get("pesos") or PESOS_DEFECTO, fuentes_extra=extra, filas=filas)
+
+
+def ejecutar(cfg: dict, maximo: int | None = None) -> dict:
+    """Todo de una vez (uso en el PC)."""
+    d = descargar_parte(cfg, maximo=maximo)
+    return combinar(cfg, d["filas"], d["parte"], d["base"])
+
+
+
 
 
 COLUMNAS_PANEL = [
@@ -338,6 +419,15 @@ def _limpio(v):
     if isinstance(v, float):
         return round(v, 4)
     return v
+
+
+def ranking_actual() -> dict | None:
+    try:
+        with open(ruta("investigacion", "ranking.json"), encoding="utf-8") as fh:
+            d = json.load(fh)
+        return {k: v for k, v in d.items() if k != "filas"}
+    except (OSError, ValueError):
+        return None
 
 
 def guardar(res: dict, top: int = 150) -> tuple[str, str]:
