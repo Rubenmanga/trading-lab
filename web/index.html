@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Trading Lab</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--txt:#16181d;--sub:#5d6573;--line:#e3e6eb;--acc:#2456d6;--ok:#137a3b;--warn:#a86200;--bad:#b42318;--chip:#eef1f6}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1115;--card:#171a20;--txt:#e8eaee;--sub:#9aa3b2;--line:#2a2f38;--acc:#7aa2ff;--ok:#4cc57a;--warn:#f0a841;--bad:#ff6b5e;--chip:#222731}}
+:root[data-theme=dark]{--bg:#0f1115;--card:#171a20;--txt:#e8eaee;--sub:#9aa3b2;--line:#2a2f38;--acc:#7aa2ff;--ok:#4cc57a;--warn:#f0a841;--bad:#ff6b5e;--chip:#222731}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:2}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+h1{font-size:1.15rem;margin:0;padding:14px 0 6px}
+.demo{font-size:.75rem;color:var(--sub)}
+nav{display:flex;gap:4px;overflow-x:auto;padding:6px 0 10px}
+nav a{white-space:nowrap;padding:6px 12px;border-radius:999px;color:var(--sub);text-decoration:none;font-size:.9rem;background:var(--chip)}
+nav a.on{background:var(--acc);color:#fff}
+main{padding:16px 0 48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 12px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.tk{font-weight:700;font-size:1.1rem}
+.sub{color:var(--sub);font-size:.88rem}
+.chip{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.78rem;font-weight:600;background:var(--chip)}
+.v-comprar_en_zona{color:var(--ok)} .v-vigilar{color:var(--warn)} .v-descartar{color:var(--bad)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:10px}
+.k{font-size:.75rem;color:var(--sub)} .n{font-variant-numeric:tabular-nums;font-weight:600}
+.al{border-left:4px solid var(--warn)} .al.ZONA{border-left-color:var(--ok)} .al.TESIS{border-left-color:var(--bad)}
+a{color:var(--acc)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+.scroll{overflow-x:auto}
+.md{overflow-wrap:anywhere} .md table{display:block;overflow-x:auto} .md h1{font-size:1.35rem} .md h2{font-size:1.1rem;margin-top:1.6em}
+.md blockquote{margin:0;padding:4px 12px;border-left:3px solid var(--line);color:var(--sub)}
+.md pre{overflow-x:auto;background:var(--chip);padding:10px;border-radius:8px}
+.empty{color:var(--sub);text-align:center;padding:28px 8px}
+footer{color:var(--sub);font-size:.78rem;text-align:center;padding:0 16px 32px}
+.nota{font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.bars{display:grid;grid-template-columns:auto 1fr auto;gap:3px 8px;align-items:center;margin-top:10px;font-size:.8rem}
+.bar{height:8px;border-radius:4px;background:var(--chip);overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--acc);border-radius:4px}
+.bar>i.lo{background:var(--bad)} .bar>i.mid{background:var(--warn)} .bar>i.hi{background:var(--ok)}
+.flag{color:var(--bad);font-size:.82rem} .sig{color:var(--ok);font-size:.82rem}
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+select{font:inherit;font-size:.88rem;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--txt);max-width:100%}
+.puesto{color:var(--sub);font-weight:600;margin-right:6px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Trading Lab · Buscador 12 meses</h1>
+  <div class="demo">Solo lectura · nada de esto es una recomendación de compra · el agente no opera solo</div>
+  <nav id="nav">
+    <a href="#/">Oportunidades</a><a href="#/vigilancia">Mi lista</a><a href="#/informes">Informes</a><a href="#/candidatos">Cribado simple</a><a href="#/ayuda">Cómo se usa</a>
+  </nav>
+</div></header>
+<main class="wrap" id="app"><div class="empty">Cargando…</div></main>
+<footer id="pie"></footer>
+<script src="vendor/marked.min.js"></script>
+<script src="vendor/purify.min.js"></script>
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const num = (x, d = 2) => (x === null || x === undefined || x === "" || isNaN(+x)) ? "—" : (+x).toLocaleString("es-ES", {maximumFractionDigits: d, minimumFractionDigits: d});
+const pct = (x) => (x === null || x === undefined || isNaN(+x)) ? "—" : `${+x > 0 ? "+" : ""}${num(x, 1)} %`;
+const fecha = (iso) => { try { return new Date(iso).toLocaleString("es-ES", {dateStyle: "medium", timeStyle: "short", timeZone: "Europe/Madrid"}); } catch { return iso; } };
+const VEREDICTO = {comprar_en_zona: "Comprar en zona", vigilar: "Vigilar", descartar: "Descartado"};
+let D = null;
+
+function resumen() {  // "Mi lista": avisos y lista de vigilancia
+  const precios = Object.fromEntries((D.estado?.precios || []).map((p) => [p.ticker, p]));
+  const alertas = D.estado?.alertas || [];
+  let h = `<h2 style="font-size:1rem">Avisos</h2>`;
+  h += alertas.length ? alertas.map((a) => `<div class="card al ${esc(a.tipo.split(" ")[0])}"><b>${esc(a.tipo)}</b><div>${esc(a.mensaje)}</div></div>`).join("")
+    : `<div class="card sub">${D.estado ? "Sin avisos hoy." : "Aún no se han calculado avisos. Se calculan solos cada día laborable a las 23:30."}</div>`;
+  h += `<h2 style="font-size:1rem;margin-top:24px">Lista de vigilancia (${D.watchlist.length})</h2>`;
+  if (!D.watchlist.length) h += `<div class="card empty">Todavía no hay empresas analizadas.</div>`;
+  for (const w of D.watchlist) {
+    const p = precios[w.ticker] || {};
+    const inf = D.informes.find((i) => w.informe && i.id.endsWith(w.informe.split("/").pop()));
+    h += `<div class="card">
+      <div class="row"><span><span class="tk">${esc(w.ticker)}</span> <span class="sub">${esc(w.empresa)}</span></span>
+        <span class="chip v-${esc(w.veredicto)}">${esc(VEREDICTO[w.veredicto] || w.veredicto)} · convicción ${esc(w.conviccion)}/5</span></div>
+      <div class="sub">${esc(w.sector)} · analizada el ${esc(w.fecha_analisis)}</div>
+      <div class="grid">
+        <div><div class="k">Precio ahora</div><div class="n">${num(p.precio)} $</div></div>
+        <div><div class="k">Zona de entrada ≤</div><div class="n">${num(w.zona_entrada_max)} $</div><div class="k">${p.distancia_zona_pct != null ? (p.distancia_zona_pct <= 0 ? "✅ dentro" : `a ${pct(p.distancia_zona_pct)}`) : ""}</div></div>
+        <div><div class="k">Objetivo 12 meses</div><div class="n">${num(w.precio_objetivo_12m)} $</div><div class="k">${p.potencial_pct != null ? `potencial ${pct(p.potencial_pct)}` : ""}</div></div>
+        <div><div class="k">Stop de tesis</div><div class="n">${num(w.stop_tesis)} $</div></div>
+      </div>
+      ${w.proximo_catalizador ? `<div class="sub" style="margin-top:8px">📅 ${esc(w.proximo_catalizador)}${w.fecha_catalizador ? ` · ${esc(w.fecha_catalizador)}` : ""}</div>` : ""}
+      ${inf ? `<div style="margin-top:8px"><a href="#/informe/${encodeURIComponent(inf.id)}">Leer el análisis →</a></div>` : ""}
+    </div>`;
+  }
+  return h;
+}
+
+const FAC = [["calidad","Calidad"],["crecimiento","Crecimiento"],["valoracion","Valoración"],["revisiones","Revisiones analistas"],["insiders","Directivos"],["momentum","Momentum"],["catalizadores","Catalizadores"],["solidez","Solidez"]];
+const clase = (v) => v == null ? "" : v >= 65 ? "hi" : v >= 40 ? "mid" : "lo";
+const barras = (f) => `<div class="bars">${FAC.map(([k, n]) => { const v = f.factores?.[k]; return `<span class="sub">${n}</span><span class="bar"><i class="${clase(v)}" style="width:${v ?? 0}%"></i></span><span class="n">${v == null ? "—" : Math.round(v)}</span>`; }).join("")}</div>`;
+let filtroSector = "", filtroCarril = "";
+try { filtroSector = localStorage.getItem("fs") || ""; filtroCarril = localStorage.getItem("fc") || ""; } catch {}
+
+function oportunidades() {
+  const R = D.ranking;
+  if (!R) return `<div class="card empty">El primer ranking se calcula esta noche (23:30) en cuanto el sistema esté activado.</div>`;
+  const sectores = [...new Set(R.filas.map((f) => f.sector).filter(Boolean))].sort();
+  const carriles = [...new Set(R.filas.map((f) => f.carril).filter(Boolean))].sort();
+  const filas = R.filas.filter((f) => (!filtroSector || f.sector === filtroSector) && (!filtroCarril || f.carril === filtroCarril)).slice(0, 60);
+  const enLista = new Set(D.watchlist.map((w) => w.ticker));
+  let h = `<p class="sub">De <b>${R.universo}</b> small caps de EE. UU. se han puntuado <b>${R.analizadas}</b> en 8 factores (0-100, 50 = en la media). Las banderas rojas restan puntos. <b>Es un filtro, no una recomendación</b>: las primeras son las que merecen un análisis a fondo.</p>
+  <div class="filtros"><select id="fs"><option value="">Todos los sectores</option>${sectores.map((x) => `<option ${x === filtroSector ? "selected" : ""}>${esc(x)}</option>`).join("")}</select>
+  <select id="fc"><option value="">Todos los tipos</option>${carriles.map((x) => `<option ${x === filtroCarril ? "selected" : ""}>${esc(x)}</option>`).join("")}</select></div>`;
+  h += filas.map((f) => `<a class="card" style="display:block;text-decoration:none;color:inherit" href="#/empresa/${encodeURIComponent(f.ticker)}">
+    <div class="row"><span><span class="puesto">#${f.puesto}</span><span class="tk">${esc(f.ticker)}</span> <span class="sub">${esc(f.empresa || "")}</span>${enLista.has(f.ticker) ? ' <span class="chip">en mi lista</span>' : ""}</span><span class="nota">${Math.round(f.nota)}</span></div>
+    <div class="sub">${esc(f.sector || "")} · ${esc(f.carril)}</div>
+    ${barras(f)}
+    ${(f.senales || []).map((x) => `<div class="sig">▲ ${esc(x)}</div>`).join("")}
+    ${(f.banderas || []).map((x) => `<div class="flag">⚠ ${esc(x)}</div>`).join("")}
+  </a>`).join("") || `<div class="card empty">Ninguna con ese filtro.</div>`;
+  return h;
+}
+
+function empresaFicha(t) {
+  const f = D.ranking?.filas.find((x) => x.ticker === t);
+  if (!f) return `<div class="card empty">No está en el ranking.</div>`;
+  const informe = D.informes.filter((i) => i.archivo.startsWith(t + "-"))[0];
+  const m = (k, n, fmt) => `<div><div class="k">${n}</div><div class="n">${f[k] == null ? "—" : fmt(f[k])}</div></div>`;
+  const P = (x) => pct(x), Pf = (x) => pct(x * 100), N = (x) => num(x, 1), D0 = (x) => num(x, 0);
+  return `<a href="#/">← Oportunidades</a>
+  <div class="card"><div class="row"><span><span class="puesto">#${f.puesto}</span><span class="tk">${esc(f.ticker)}</span> <span class="sub">${esc(f.empresa || "")}</span></span><span class="nota">${Math.round(f.nota)}</span></div>
+  <div class="sub">${esc(f.sector || "")} · ${esc(f.industria || "")}</div>
+  <div class="sub">Tipo: <b>${esc(f.carril)}</b> · nota sin penalizar ${num(f.nota_base, 1)} · datos disponibles ${Math.round((f.cobertura_total || 0) * 100)} %</div>
+  ${barras(f)}
+  ${(f.senales || []).map((x) => `<div class="sig" style="margin-top:6px">▲ ${esc(x)}</div>`).join("")}
+  ${(f.banderas || []).map((x) => `<div class="flag" style="margin-top:6px">⚠ ${esc(x)}</div>`).join("")}
+  ${informe ? `<div style="margin-top:10px"><a href="#/informe/${encodeURIComponent(informe.id)}">Leer el análisis profundo →</a></div>` : `<div class="sub" style="margin-top:10px">Sin análisis profundo todavía. Pide en el chat: <i>"Analiza ${esc(f.ticker)} a 12 meses"</i>.</div>`}
+  </div>
+  <div class="card"><b>Datos clave</b><div class="grid">
+    ${m("precio", "Precio", (x) => num(x) + " $")}${m("capitalizacion", "Capitalización", (x) => num(x / 1e6, 0) + " M$")}
+    ${m("analistas", "Nº analistas", D0)}${m("recomendacion", "Consenso", (x) => esc(x))}
+    ${m("objetivo_medio", "Objetivo analistas", (x) => num(x) + " $")}${m("potencial_analistas_pct", "Potencial (analistas)", P)}
+    ${m("potencial_objetivo_bajo_pct", "Hasta el objetivo más bajo", P)}${m("per_futuro", "PER futuro", N)}
+    ${m("ev_ventas", "Valor empresa / ventas", N)}${m("rent_fcf_pct", "Rentab. flujo de caja", P)}
+    ${m("crec_ventas", "Crec. ventas (último año)", Pf)}${m("crec_ventas_sig_anio", "Crec. ventas previsto", Pf)}
+    ${m("crec_bpa_sig_anio", "Crec. beneficio previsto", Pf)}${m("rev_bpa_90d_anio", "Cambio previsión BPA 90 d", P)}
+    ${m("revisiones_neto", "Revisiones netas 30 d", D0)}${m("mejoras_neto_90d", "Mejoras netas recomend. 90 d", D0)}
+    ${m("insiders_neto_pct", "Compras netas directivos 6 m", P)}${m("ret_6m", "Rentab. 6 meses", P)}
+    ${m("dist_max52_pct", "Distancia a máximo anual", P)}${m("dilucion_1a_pct", "Nuevas acciones 1 año", P)}
+    ${m("meses_de_caja", "Meses de caja", D0)}${m("cortos_flotante", "Posiciones cortas", Pf)}
+    ${m("proximos_resultados", "Próximos resultados", (x) => esc(x))}
+  </div></div>${extraFicha(f.extra)}`;
+}
+
+// Datos de Finnhub y noticias de Alpaca (solo si hay claves en los secretos de GitHub).
+function extraFicha(x) {
+  if (!x) return "";
+  const url = (u) => (/^https?:\/\//.test(u || "") ? esc(u) : "#");
+  const lista = (ns) => (ns || []).map((n) => `<li><span class="sub">${esc(n.fecha)} · ${esc(n.fuente || "")}</span><br><a href="${url(n.url)}" target="_blank" rel="noopener">${esc(n.titulo)}</a></li>`).join("");
+  const sorp = (x.sorpresas_finnhub || []).map((s) => `<li>${esc(s.periodo)}: real ${num(s.real, 2)} vs previsto ${num(s.estimado, 2)} (${s.sorpresa_pct == null ? "—" : pct(s.sorpresa_pct)})</li>`).join("");
+  const noticias = [...(x.noticias_alpaca || []), ...(x.noticias || [])].slice(0, 8);
+  return `<div class="card"><b>Más datos (Finnhub y Alpaca)</b><div class="grid">
+    <div><div class="k">Analistas que dicen comprar</div><div class="n">${x.recs_pct_compra == null ? "—" : pct(x.recs_pct_compra)}</div></div>
+    <div><div class="k">Cambio en 3 meses</div><div class="n">${x.recs_cambio_3m == null ? "—" : (x.recs_cambio_3m > 0 ? "+" : "") + num(x.recs_cambio_3m, 1) + " pts"}</div></div>
+    <div><div class="k">Sentimiento directivos (MSPR, de −100 a 100)</div><div class="n">${x.insiders_mspr_3m == null ? "—" : num(x.insiders_mspr_3m, 1)}</div></div>
+    <div><div class="k">Noticias en 30 días</div><div class="n">${x.noticias_30d_n ?? "—"}</div></div>
+  </div>
+  ${sorp ? `<div class="sub" style="margin-top:8px">Últimos resultados (beneficio por acción):</div><ul>${sorp}</ul>` : ""}
+  ${noticias.length ? `<div class="sub" style="margin-top:8px">Últimas noticias:</div><ul>${lista(noticias)}</ul>` : ""}
+  </div>`;
+}
+
+function informes() {
+  if (!D.informes.length) return `<div class="card empty">Aún no hay informes.</div>`;
+  return D.informes.map((i) => `<a class="card" style="display:block;text-decoration:none;color:inherit" href="#/informe/${encodeURIComponent(i.id)}">
+    <div class="row"><b>${esc(i.titulo)}</b><span class="chip">${esc(i.clase)}</span></div><div class="sub">${esc(i.fecha)}</div></a>`).join("");
+}
+
+function informe(id) {
+  const i = D.informes.find((x) => x.id === id);
+  if (!i) return `<div class="card empty">No encuentro ese informe.</div>`;
+  return `<a href="#/informes">← Informes</a><article class="card md">${DOMPurify.sanitize(marked.parse(i.texto))}</article>`;
+}
+
+function candidatos() {
+  if (!D.candidatos.length) return `<div class="card empty">Aún no hay candidatos. El cribado se hace solo cada domingo.</div>`;
+  const cols = [["ticker","Ticker"],["empresa","Empresa"],["sector","Sector"],["precio","Precio"],["objetivo_medio","Objetivo analistas"],["potencial_pct","Potencial %"],["analistas","Nº analistas"],["capitalizacion_musd","Capitalización (M$)"]];
+  return `<p class="sub">Primera criba automática: small caps de EE. UU. de todos los sectores con un precio objetivo medio de los analistas bastante por encima del precio. <b>No es una lista de compra</b>: son ideas para analizar.</p>
+  <div class="card scroll"><table><thead><tr>${cols.map(([, t]) => `<th>${t}</th>`).join("")}</tr></thead><tbody>
+  ${D.candidatos.map((c) => `<tr>${cols.map(([k]) => `<td>${esc(c[k])}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+}
+
+function ayuda() {
+  return `<div class="card md">
+  <h2>Cómo se usa (todo desde el móvil)</h2>
+  <ol>
+    <li><b>Oportunidades:</b> cada día laborable a las 23:30 el sistema puntúa todas las small caps de EE. UU. en 8 factores y ordena el ranking. Toca una empresa para ver su ficha.</li>
+    <li><b>Análisis profundo:</b> en el chat del proyecto escribe <i>"Busca oportunidades"</i> (Claude elige las mejores del ranking y las analiza a fondo) o <i>"Analiza ABCD a 12 meses"</i>. El informe aparece aquí solo.</li>
+    <li><b>Avisos:</b> cada día laborable a las 23:30 se revisan los precios. Si una empresa entra en su zona de entrada, se acerca un catalizador o cae bajo el stop de tesis, te llega una notificación de GitHub.</li>
+    <li><b>Repaso:</b> una vez por semana pide <i>"Revisa mi lista"</i>.</li>
+  </ol>
+  <h2>Los 8 factores</h2>
+  <ul>
+    <li><b>Calidad:</b> márgenes, rentabilidad y flujo de caja (comparada con su sector).</li>
+    <li><b>Crecimiento:</b> ventas y beneficios, pasados y previstos.</li>
+    <li><b>Valoración:</b> lo barata que está (PER futuro, valor/ventas, flujo de caja), frente a su sector.</li>
+    <li><b>Revisiones analistas:</b> si los analistas suben o bajan sus previsiones y recomendaciones.</li>
+    <li><b>Directivos:</b> si los directivos compran o venden acciones de su empresa.</li>
+    <li><b>Momentum:</b> cómo se ha movido el precio frente al resto.</li>
+    <li><b>Catalizadores:</b> resultados cerca, sorpresas positivas recientes.</li>
+    <li><b>Solidez:</b> caja, deuda, nuevas acciones emitidas (dilución), posiciones cortas.</li>
+  </ul>
+  <h2>Palabras</h2>
+  <ul>
+    <li><b>Zona de entrada:</b> precio por debajo del cual el agente cree que compensa comprar.</li>
+    <li><b>Objetivo 12 meses:</b> precio al que cree que puede llegar en un año (estimación propia, no promesa).</li>
+    <li><b>Stop de tesis:</b> precio (o hecho) que indicaría que la idea era errónea.</li>
+    <li><b>Catalizador:</b> evento con fecha que puede mover mucho la acción (resultados, aprobación, contrato…).</li>
+  </ul>
+  <p class="sub">El agente no compra ni vende nada. Las small caps se mueven mucho: ninguna posición debería ser grande.</p></div>`;
+}
+
+function pintar(mantener) {
+  const r = location.hash.replace(/^#/, "") || "/";
+  const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/" : r;
+  document.querySelectorAll("#nav a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + pest));
+  const app = $("#app");
+  if (!D) return;
+  app.innerHTML = r.startsWith("/informe/") ? informe(decodeURIComponent(r.slice(9)))
+    : r.startsWith("/empresa/") ? empresaFicha(decodeURIComponent(r.slice(9)))
+    : r === "/informes" ? informes() : r === "/candidatos" ? candidatos() : r === "/ayuda" ? ayuda()
+    : r === "/vigilancia" ? resumen() : oportunidades();
+  const fs = $("#fs"), fc = $("#fc");
+  if (fs) fs.onchange = () => { filtroSector = fs.value; try { localStorage.setItem("fs", filtroSector); } catch {} pintar(true); };
+  if (fc) fc.onchange = () => { filtroCarril = fc.value; try { localStorage.setItem("fc", filtroCarril); } catch {} pintar(true); };
+  if (!mantener) window.scrollTo(0, 0);
+}
+
+fetch("datos.json", {cache: "no-store"}).then((r) => r.json()).then((d) => {
+  D = d;
+  $("#pie").textContent = `Precios: ${D.estado ? fecha(D.estado.actualizado) : "aún sin calcular"} · Panel generado: ${fecha(D.construido)}`;
+  pintar();
+}).catch(() => { $("#app").innerHTML = `<div class="card empty">No se han podido cargar los datos.</div>`; });
+addEventListener("hashchange", () => pintar());
+</script>
+</body>
+</html>

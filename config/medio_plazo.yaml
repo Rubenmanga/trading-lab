@@ -1,0 +1,50 @@
+# ============================================================
+#  AGENTE B: INVERSIÓN A MEDIO PLAZO (12 meses)
+# ============================================================
+# Este agente NO compra ni vende solo. Analiza, guarda una lista de vigilancia
+# y avisa cuando una empresa llega a su zona de entrada.
+
+modo_cuenta: demo
+
+# Filtro inicial ("cribado") de empresas pequeñas de EE. UU., de TODOS los sectores.
+cribado:
+  capitalizacion_min_usd: 300000000      # 300 millones $  (por debajo: "micro caps", demasiado riesgo)
+  capitalizacion_max_usd: 2000000000     # 2.000 millones $ (definición habitual de small cap)
+  volumen_medio_min: 200000              # acciones al día; si se negocia poco, cuesta entrar y salir
+  precio_min_usd: 5                      # por debajo de 5 $ suelen ser acciones muy castigadas o especulativas
+  analistas_min: 3                       # mínimo de analistas que la siguen
+  potencial_min_pct: 30                  # subida mínima hasta el precio objetivo medio de los analistas
+  potencial_max_pct: 150                 # una "subida" enorme suele indicar una acción hundida por un problema serio
+  recomendaciones: [buy, strong_buy]     # consenso de los analistas que aceptamos
+  max_por_sector: 12                     # para que no salga todo de un solo sector (p. ej. biotech)
+  max_resultados: 60
+  # Sectores a priorizar. Lo rellena la skill "buscar-small-caps" tras investigar qué sectores
+  # esperan los analistas que vayan bien a 12 meses. Vacío = todos los sectores por igual.
+  sectores_prioritarios: [Technology, Industrials, Energy, Financial Services]   # ver investigacion/sectores-2026-11-14.md
+
+# Buscador de oportunidades (embudo + puntuación de 8 factores). Lo ejecuta GitHub Actions cada día.
+oportunidades:
+  capitalizacion_min_usd: 300000000
+  capitalizacion_max_usd: 2000000000
+  precio_min_usd: 3
+  volumen_medio_min: 100000            # acciones al día
+  volumen_dolares_min: 1000000         # y al menos 1 millón de $ negociado al día (para poder entrar y salir)
+  max_empresas: 2000                   # cuántas se analizan a fondo (todas las que pasan el filtro)
+  hilos: 4
+  top_guardado: 150                    # cuántas se guardan en el ranking del panel
+  extra_top: 60                        # a cuántas de las mejores se añaden noticias/recomendaciones de Finnhub y Alpaca
+  # Peso de cada factor en la nota final (suman 100). Las revisiones de analistas pesan más porque
+  # en small caps son de las señales que mejor funcionan para los 12 meses siguientes.
+  pesos:
+    calidad: 15
+    crecimiento: 15
+    valoracion: 15
+    revisiones: 20
+    insiders: 5
+    momentum: 10
+    catalizadores: 5
+    solidez: 15
+
+alertas:
+  dias_aviso_catalizador: 10    # avisa si un catalizador (resultados, FDA, contrato...) está a menos de X días
+  revisar_tesis_cada_dias: 30   # avisa si un análisis tiene más de X días y conviene repasarlo

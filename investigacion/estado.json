@@ -1,0 +1,13 @@
+{
+ "actualizado": "2026-11-14T19:25:03+00:00",
+ "alertas": [],
+ "precios": [
+  {
+   "ticker": "AMSC",
+   "precio": 24.1299991607666,
+   "distancia_zona_pct": 9.7,
+   "potencial_pct": 32.6,
+   "distancia_stop_pct": 41.9
+  }
+ ]
+}

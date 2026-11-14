@@ -1,0 +1,119 @@
+# Agente B (12 meses) en la nube de GitHub, gratis y sin tu PC.
+#  - Cada día laborable, tras el cierre de Wall Street: buscador de oportunidades (ranking de todas las
+#    small caps con 8 factores), precios de la lista de vigilancia y alertas.
+#  - Cada domingo: además, el cribado sencillo antiguo (candidatos.csv).
+#  - Si hay un aviso importante, abre un "issue" en GitHub -> te llega una notificación al móvil.
+# También se puede lanzar a mano: pestaña Actions -> "Agente 12 meses" -> Run workflow.
+# Solo LEE datos públicos gratuitos (Yahoo/Stooq). No compra ni vende nada.
+name: Agente 12 meses
+
+on:
+  schedule:
+    - cron: "30 22 * * 1-5"   # 23:30 de Madrid (invierno), con la bolsa de EE. UU. ya cerrada
+    - cron: "0 9 * * 0"       # domingo por la mañana: cribado semanal
+  workflow_dispatch:
+    inputs:
+      cribado:
+        description: "¿Hacer también el cribado de small caps?"
+        type: boolean
+        default: false
+  pull_request:               # prueba en seco cuando se cambia este archivo o el código del agente B
+    paths:
+      - ".github/workflows/agente-12m.yml"
+      - "src/tradinglab/medio_plazo/**"
+      - "tests/test_oportunidades.py"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: agente-12m
+  cancel-in-progress: false
+
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      PYTHONPATH: src
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}   # en un PR, la rama del PR (para poder guardar el ranking de prueba)
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" tzdata pytest
+
+      - name: Pruebas
+        run: python -m pytest -q tests/test_medio_plazo.py tests/test_oportunidades.py
+
+      - name: Alertas de la lista de vigilancia
+        run: python -m tradinglab.cli medio alertas
+
+      - name: Prueba de datos de una empresa (solo en pruebas)
+        if: github.event_name == 'pull_request'
+        run: python -m tradinglab.cli medio probar AMSC | head -c 6000
+
+      - name: Buscador de oportunidades (ranking multifactor)
+        env:   # claves gratuitas opcionales (Settings → Secrets → Actions). Si no existen, se ignoran.
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python -m tradinglab.cli medio oportunidades
+
+      - name: Cribado de small caps (domingos o a mano)
+        if: github.event.schedule == '0 9 * * 0' || inputs.cribado
+        run: python -m tradinglab.cli medio cribado
+
+      - name: Enseñar resultado (prueba en seco)
+        if: github.event_name == 'pull_request'
+        run: |
+          cat investigacion/alertas.md
+          cat investigacion/estado.json
+          cat investigacion/ranking.md
+
+      - name: Subir el ranking como archivo descargable
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ranking
+          path: |
+            investigacion/ranking.json
+            investigacion/ranking.md
+            investigacion/ranking_detalle.json
+            investigacion/estado.json
+          if-no-files-found: ignore
+
+      - name: Guardar resultados en el repo
+        run: |
+          git config user.name "agente-12m"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add investigacion/alertas.md investigacion/estado.json investigacion/ranking.json investigacion/ranking.md investigacion/ranking_detalle.json 2>/dev/null || true
+          git add investigacion/candidatos.csv 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Agente 12m: ranking, alertas y precios $(date -u +%F)"
+          git pull --rebase --autostash -q || true
+          git push
+
+      - name: Avisar al móvil si hay algo importante
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY' > aviso.md
+          import json
+          d = json.load(open("investigacion/estado.json", encoding="utf-8"))
+          imp = [a for a in d["alertas"] if a["tipo"] in ("ZONA DE ENTRADA", "TESIS EN PELIGRO", "OBJETIVO ALCANZADO", "CATALIZADOR CERCA")]
+          for a in imp:
+              print(f"- **{a['tipo']}** · {a['mensaje']}")
+          PY
+          if [ -s aviso.md ]; then
+            echo "" >> aviso.md
+            echo "Recuerda: el agente no compra nada. Antes de decidir, pide a Claude que revise la tesis (\"revisa mi lista\")." >> aviso.md
+            gh label create alerta-12m --color FBCA04 --force >/dev/null 2>&1 || true
+            for n in $(gh issue list --label alerta-12m --state open --json number -q '.[].number'); do gh issue close "$n" --comment "Sustituido por el aviso de hoy."; done
+            gh issue create --title "🔔 Agente 12 meses: avisos del $(date -u +%d/%m)" --body-file aviso.md --label alerta-12m --assignee "${{ github.repository_owner }}" || gh issue create --title "🔔 Agente 12 meses: avisos del $(date -u +%d/%m)" --body-file aviso.md --label alerta-12m
+          fi
