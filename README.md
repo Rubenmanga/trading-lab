@@ -82,7 +82,7 @@ Los informes se guardan en `investigacion/` como texto, así los puedes **leer d
 
 ---
 
-## Empezar (Windows) · paso a paso
+## Empezar en el PC (Windows) · solo para el agente A o si quieres trabajar en local
 
 ### 1. Instala lo necesario (una vez)
 - **Python 3.11 o superior**: https://www.python.org/downloads/ (marca *"Add Python to PATH"* al instalar).
@@ -141,14 +141,29 @@ O en la terminal: `lab medio cribado`, `lab medio ficha ABCD`, `lab medio alerta
 
 ---
 
-## Desde el móvil
-- **Leer**: todo lo que generan los agentes (informes en `investigacion/`, diarios en `diario/`) está en
-  GitHub; ábrelo desde la app de GitHub o el navegador.
-- **Trabajar**: en claude.ai/code (o la app de Claude) puedes abrir una sesión sobre este repo y pedir
-  análisis del agente B. Ojo: desde la nube, Yahoo Finance a veces está bloqueado, así que `lab medio ficha`
-  puede fallar; Claude completará con búsquedas web.
-- El **agente A** necesita tu PC encendido (no hay servidor por ahora). Para no olvidar subir los
-  resultados, al terminar la sesión haz *commit* y *push* desde GitHub Desktop.
+## Agente B sin PC (desde el móvil) 📱
+El agente de 12 meses **no necesita tu PC**. Funciona con tres piezas gratuitas:
+
+| Pieza | Qué hace | Dónde |
+|---|---|---|
+| **Claude en la nube** (tu suscripción) | Investiga sectores, analiza empresas (equipo de analistas + debate + gestor de riesgo) y escribe los informes | Chat del proyecto de Claude |
+| **GitHub Actions** (gratis) | Cada día laborable a las 23:30 mira los precios y calcula avisos; cada domingo hace el cribado de small caps | Pestaña *Actions* del repo |
+| **Panel en Vercel** (plan gratis) | Te enseña la lista de vigilancia, avisos, informes y candidatos | https://trading-lab-kappa.vercel.app |
+
+Cómo se usa:
+1. En el chat del proyecto escribe *"Analiza ABCD a 12 meses"*, *"Busca nuevas small caps"* o *"Revisa mi lista"*.
+2. Claude escribe el informe en `investigacion/` y abre un pull request que **solo** toca esa carpeta:
+   se publica solo y sale en el panel en un minuto.
+3. Si una empresa entra en su zona de entrada, cae bajo su stop de tesis o se acerca un catalizador,
+   GitHub abre un *issue* y te llega una **notificación** (activa las notificaciones de la app de GitHub).
+
+**Ojo:** el panel es una web pública (aunque con una dirección difícil de adivinar). Solo enseña tu
+investigación, nunca claves. Si prefieres que pida inicio de sesión, se activa en Vercel → proyecto
+*trading-lab* → Settings → Deployment Protection.
+
+El **agente A** (intradía) sigue necesitando un ordenador encendido durante la sesión. Opción futura sin PC:
+GitHub Actions puede correr hasta 6 horas por trabajo, así que podría ejecutar la sesión de 15:30 a 18:30
+con las claves de Alpaca demo guardadas como *secrets*. Lo probaremos cuando abra el mercado.
 
 ## Comandos (`lab ...`)
 | Comando | Qué hace |
@@ -173,7 +188,9 @@ src/tradinglab/
   medio_plazo/     datos (yfinance), cribado, lista de vigilancia, alertas
   diario.py · cli.py
 .claude/skills/    skills de Claude (propias y de tradermonty)
-dashboard/app.py   panel web (Streamlit)
+dashboard/app.py   panel web local (Streamlit, en el PC)
+web/               panel web en Vercel (solo lectura, agente B) · vercel.json
+.github/workflows/ agente-12m.yml (avisos y cribado diarios) · publicar-investigacion.yml
 investigacion/     watchlist.csv · candidatos.csv · alertas.md · analisis/ · estrategias/
 diario/            diario de cada sesión intradía
 scripts/           .bat para Windows (doble clic)
@@ -182,6 +199,7 @@ docs/historico/    planes anteriores
 ```
 
 ## Lo que tienes que hacer tú
+0. Para el agente B: **nada más que fusionar el pull request** y abrir el panel. Lo de abajo es solo para el agente A o si algún día usas el PC.
 1. Instalar Python, GitHub Desktop y Claude Code, y clonar el repo (pasos 1-3).
 2. Crear la cuenta **paper** de Alpaca y poner las claves en `.env` (paso 5). Nunca compartas ese archivo.
 3. Decidir **mercado/valores** para el agente A, para lanzar la investigación de estrategias.

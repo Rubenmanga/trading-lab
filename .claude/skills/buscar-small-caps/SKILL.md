@@ -24,7 +24,10 @@ Guarda el resumen en `investigacion/sectores-AAAA-MM-DD.md` y pon los 3-5 sector
 Basic Materials, Communication Services, Utilities, Real Estate).
 
 ## Paso 2 · Cribado con datos
-Ejecuta `lab medio cribado`. Genera `investigacion/candidatos.csv` con small caps que tienen al menos
+En el PC: ejecuta `lab medio cribado`. **Desde la nube** no hace falta: GitHub Actions lo hace solo cada
+domingo (flujo "Agente 12 meses") y deja el resultado en `investigacion/candidatos.csv`; léelo de ahí (mira
+la fecha del último commit de ese archivo). Si está vacío o es viejo, completa con WebSearch.
+`lab medio cribado` Genera `investigacion/candidatos.csv` con small caps que tienen al menos
 N analistas y un precio objetivo medio bastante por encima del precio actual. Los sectores prioritarios
 salen primero, pero **no descartes** buenos candidatos de otros sectores.
 

@@ -31,3 +31,12 @@ Algunas de tradermonty mencionan APIs de pago (FMP, FINVIZ Elite): no las uses; 
 ## Al trabajar desde el móvil
 Los informes en `investigacion/` y `diario/` son Markdown pensado para leerse en GitHub desde el móvil:
 empieza siempre con un resumen de 5 líneas.
+
+## Agente B sin PC (sesiones de Claude en la nube)
+Ruben suele pedir el agente B desde el móvil, en una sesión en la nube. Allí:
+- La terminal no llega a webs de bolsa (Yahoo, SEC, Finviz bloqueados). Usa **WebSearch y WebFetch**:
+  `stockanalysis.com/stocks/TICKER/forecast/`, `/statistics/`, `/financials/`, `data.sec.gov`, webs de la empresa.
+- Precios diarios, alertas y cribado los calcula **GitHub Actions** (`.github/workflows/agente-12m.yml`) y los deja en
+  `investigacion/` (`estado.json`, `alertas.md`, `candidatos.csv`). Si hay algo importante abre un issue (aviso al móvil).
+- Al terminar un análisis, el pull request debe tocar **solo** `investigacion/`: así se publica solo
+  (`publicar-investigacion.yml`) y aparece en el panel web de Vercel (`web/`, se construye con `node web/build.mjs`).

@@ -5,7 +5,8 @@ description: Repaso periódico (semanal) de la lista de vigilancia del agente B 
 
 # Repaso de la lista de vigilancia (agente B)
 
-1. Ejecuta `lab medio alertas` (actualiza `investigacion/alertas.md`).
+1. En el PC: `lab medio alertas`. Desde la nube no hace falta: GitHub Actions lo hace cada día laborable y
+   deja `investigacion/alertas.md` y `investigacion/estado.json` (precios de hoy). Léelos.
 2. Para cada alerta:
    - **ZONA DE ENTRADA**: comprueba en la web que no haya salido una noticia que rompa la tesis antes
      de decir "está en zona". Recuerda que no compramos automáticamente.

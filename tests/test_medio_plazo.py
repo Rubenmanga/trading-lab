@@ -41,6 +41,24 @@ def test_cribado_filtra_y_prioriza(monkeypatch):
     assert [f["ticker"] for f in r] == ["BBB", "AAA"]
 
 
+def test_cribado_descarta_extremos_y_limita_sector(monkeypatch):
+    import yfinance
+
+    from tradinglab.medio_plazo import cribado
+
+    quotes = [dict(symbol=s, shortName=s, regularMarketPrice=10, marketCap=5e8) for s in ["H1", "H2", "H3", "X", "V"]]
+    monkeypatch.setattr(yfinance, "screen", lambda *a, **k: {"quotes": quotes})
+    detalle = {"H1": dict(sector="Healthcare", analistas=5, objetivo_medio=20, recomendacion="buy"),
+               "H2": dict(sector="Healthcare", analistas=5, objetivo_medio=19, recomendacion="strong_buy"),
+               "H3": dict(sector="Healthcare", analistas=5, objetivo_medio=18, recomendacion="buy"),
+               "X": dict(sector="Technology", analistas=5, objetivo_medio=60, recomendacion="buy"),   # +500%: sospechoso
+               "V": dict(sector="Energy", analistas=5, objetivo_medio=16, recomendacion="hold")}      # consenso "mantener"
+    cfg = yaml.safe_load(open(ruta("config", "medio_plazo.yaml"), encoding="utf-8"))
+    cfg["cribado"]["max_por_sector"] = 2
+    r = cribado.cribar(cfg, descargar=lambda t: dict(detalle[t]))
+    assert [f["ticker"] for f in r] == ["H1", "H2"]
+
+
 def test_estado_calcula_distancias():
     filas = [dict(ticker="AAA", zona_entrada_max="10", precio_objetivo_12m="15", stop_tesis="8"),
              dict(ticker="ZZZ", zona_entrada_max="10")]

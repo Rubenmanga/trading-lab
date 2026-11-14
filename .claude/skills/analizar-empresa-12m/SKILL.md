@@ -14,6 +14,15 @@ Ruben lo pide) en la misma sesión de Claude; no se usa ninguna API de pago.
   próximos resultados, cambios de recomendación y titulares. Si algún dato falta o parece raro,
   contrástalo en la web (informe trimestral 10-Q/10-K en SEC EDGAR, nota de prensa de resultados,
   presentación a inversores).
+- **Desde la nube (sesión de Claude sin PC)** `lab medio ficha` no funciona (la red del contenedor bloquea
+  Yahoo). Usa la herramienta WebFetch, que sí funciona, con estas páginas gratuitas:
+  - `https://stockanalysis.com/stocks/TICKER/forecast/` → analistas, precio objetivo medio/alto/bajo, previsiones.
+  - `https://stockanalysis.com/stocks/TICKER/statistics/` → capitalización, valoración, cortos, caja/deuda.
+  - `https://stockanalysis.com/stocks/TICKER/financials/?p=quarterly` → ventas y beneficios por trimestre.
+  - `https://data.sec.gov/submissions/CIK##########.json` → últimos informes oficiales (10-Q, 10-K, 8-K, Form 4 de directivos).
+  - Notas de prensa y presentación a inversores de la propia empresa; WebSearch para noticias.
+  Finviz no deja leerse (robots) y `curl` desde la terminal está bloqueado: no pierdas tiempo con ellos.
+  Si un dato no se puede comprobar, dilo en el informe ("no verificado").
 - Si ya existe un informe previo en `investigacion/analisis/`, léelo y di qué ha cambiado.
 
 ## 1 · Equipo de analistas (cada uno escribe su sección, con datos y fuentes)
@@ -54,7 +63,10 @@ Decide y justifica en lenguaje sencillo:
 2. Añade o actualiza la fila de `investigacion/watchlist.csv` (columnas: ticker, empresa, sector,
    fecha_analisis, veredicto, conviccion, precio_analisis, zona_entrada_max, precio_objetivo_12m,
    stop_tesis, proximo_catalizador, fecha_catalizador [AAAA-MM-DD], informe).
-3. Opcional: registra la tesis con la skill `trader-memory-core` para seguir su ciclo de vida.
+3. Desde la nube: sube **solo** archivos de `investigacion/` en tu rama y abre un pull request. El flujo
+   "Publicar investigación" lo fusiona solo y el panel web se actualiza en un minuto. Si tocas código o
+   configuración, no se fusiona solo (Ruben lo revisa).
+4. Opcional: registra la tesis con la skill `trader-memory-core` para seguir su ciclo de vida.
 
 ## Reglas
 - Este agente **no compra**. Solo analiza y avisa. Si Ruben quiere probar una compra, que sea en la

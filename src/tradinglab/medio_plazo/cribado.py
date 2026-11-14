@@ -51,12 +51,22 @@ def cribar(cfg: dict, descargar=None) -> list[dict]:
         if (f.get("analistas") or 0) < c["analistas_min"] or not f.get("objetivo_medio"):
             continue
         f["potencial_pct"] = round((f["objetivo_medio"] / f["precio"] - 1) * 100, 1)
-        if f["potencial_pct"] < c["potencial_min_pct"]:
+        if f["potencial_pct"] < c["potencial_min_pct"] or f["potencial_pct"] > c.get("potencial_max_pct", 1e9):
+            continue
+        recs = c.get("recomendaciones")
+        if recs and f.get("recomendacion") and f["recomendacion"] not in recs:
             continue
         f["prioritario"] = "sí" if (f.get("sector") or "").lower() in prioritarios else ""
         resultado.append(f)
     resultado.sort(key=lambda f: (f["prioritario"] != "sí", -f["potencial_pct"]))
-    return resultado[: c["max_resultados"]]
+    por_sector, final = {}, []
+    for f in resultado:
+        s = f.get("sector") or "?"
+        if por_sector.get(s, 0) >= c.get("max_por_sector", 10**6):
+            continue
+        por_sector[s] = por_sector.get(s, 0) + 1
+        final.append(f)
+    return final[: c["max_resultados"]]
 
 
 def _detalle(ticker: str) -> dict:
