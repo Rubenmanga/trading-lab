@@ -249,22 +249,34 @@ def enriquecer(tickers: list[str], hilos: int = 4, pausa: float = 0.15) -> list[
         ref = None
     out = []
 
+    estado = {"pausa": pausa}
+
     def uno(t):
-        for intento in range(3):
+        m = {"ticker": t, "errores": ["todo"]}
+        for intento in range(4):
             try:
                 m = empresa(t, ref)
-                time.sleep(pausa)
-                return m
-            except Exception:  # noqa: BLE001
-                time.sleep(2 * (intento + 1))
-        return {"ticker": t, "errores": ["todo"]}
+            except Exception as e:  # noqa: BLE001
+                m = {"ticker": t, "errores": [f"todo: {type(e).__name__}"]}
+            fallo_info = any(x.startswith(("info", "todo")) for x in m["errores"])
+            if not fallo_info:
+                estado["pausa"] = max(pausa, estado["pausa"] * 0.9)
+                break
+            # Yahoo limita si se le pide demasiado rápido: esperar cada vez más y ir más despacio.
+            estado["pausa"] = min(3.0, estado["pausa"] * 1.5 + 0.2)
+            time.sleep(5 * (intento + 1))
+        time.sleep(estado["pausa"])
+        return m
 
     with ThreadPoolExecutor(max_workers=hilos) as ex:
         futs = {ex.submit(uno, t): t for t in tickers}
         for k, fu in enumerate(as_completed(futs), 1):
             out.append(fu.result())
-            if k % 50 == 0:
-                print(f"  ... {k}/{len(tickers)} empresas descargadas", flush=True)
+            if k % 100 == 0:
+                print(f"  ... {k}/{len(tickers)} empresas descargadas (pausa {estado['pausa']:.2f}s)", flush=True)
+    from collections import Counter
+    errores = Counter(e.split(":")[0] + ":" + e.split(":")[-1].strip() for m in out for e in m.get("errores", []))
+    print("Errores de descarga por bloque:", dict(errores.most_common(12)) or "ninguno", flush=True)
     return out
 
 
@@ -276,8 +288,21 @@ def ejecutar(cfg: dict, maximo: int | None = None) -> dict:
     elegidas = base[:maximo]
     filas = enriquecer([b["ticker"] for b in elegidas], hilos=c.get("hilos", 4))
     # Fuera fondos cerrados y similares: una empresa operativa tiene sector y ventas.
-    filas = [f for f in filas if f.get("tipo", "EQUITY") in (None, "EQUITY") and f.get("capitalizacion")
-             and f.get("sector") and f.get("ventas")]
+    cap_base = {b["ticker"]: b.get("capitalizacion") for b in elegidas}
+    motivos = {"no_es_accion": 0, "sin_sector": 0, "sin_capitalizacion": 0}
+    buenas = []
+    for f in filas:
+        f["capitalizacion"] = f.get("capitalizacion") or cap_base.get(f["ticker"])
+        if f.get("tipo") not in (None, "EQUITY"):
+            motivos["no_es_accion"] += 1
+        elif not f.get("sector"):   # fondos cerrados y similares no tienen sector
+            motivos["sin_sector"] += 1
+        elif not f.get("capitalizacion"):
+            motivos["sin_capitalizacion"] += 1
+        else:
+            buenas.append(f)
+    print(f"Descartadas antes de puntuar: {motivos}", flush=True)
+    filas = buenas
     # Datos extra con claves gratuitas (si existen). El calendario de resultados de Finnhub se aplica a todas
     # ANTES de puntuar; noticias, recomendaciones e insiders de Finnhub/Alpaca se añaden a las mejores DESPUÉS
     # (para el panel y el análisis profundo), sin cambiar la nota, para que la comparación sea justa.
