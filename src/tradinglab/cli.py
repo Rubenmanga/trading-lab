@@ -72,9 +72,14 @@ def _medio(args):
         from .medio_plazo import datos
         print(json.dumps(datos.ficha(args.ticker), indent=2, ensure_ascii=False, default=str))
     elif args.accion == "alertas":
-        from .medio_plazo import alertas
-        lista = alertas.revisar(cfg)
+        from functools import lru_cache
+
+        from .medio_plazo import alertas, datos, watchlist
+        precio_de = lru_cache(maxsize=None)(datos.precio)  # cada precio se pide una sola vez
+        filas = watchlist.leer()
+        lista = alertas.revisar(cfg, filas, precio_de)
         path = alertas.guardar(lista)
+        alertas.guardar_json(lista, alertas.estado(filas, precio_de))
         for a in lista:
             print(f"[{a['tipo']}] {a['mensaje']}")
         print(f"{len(lista)} alertas. Guardadas en {path}")

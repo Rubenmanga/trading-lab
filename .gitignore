@@ -13,3 +13,5 @@ data/cache/
 # Sistema
 .DS_Store
 Thumbs.db
+# Panel web generado
+web/dist/

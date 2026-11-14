@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Trading Lab</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--txt:#16181d;--sub:#5d6573;--line:#e3e6eb;--acc:#2456d6;--ok:#137a3b;--warn:#a86200;--bad:#b42318;--chip:#eef1f6}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1115;--card:#171a20;--txt:#e8eaee;--sub:#9aa3b2;--line:#2a2f38;--acc:#7aa2ff;--ok:#4cc57a;--warn:#f0a841;--bad:#ff6b5e;--chip:#222731}}
+:root[data-theme=dark]{--bg:#0f1115;--card:#171a20;--txt:#e8eaee;--sub:#9aa3b2;--line:#2a2f38;--acc:#7aa2ff;--ok:#4cc57a;--warn:#f0a841;--bad:#ff6b5e;--chip:#222731}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:2}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+h1{font-size:1.15rem;margin:0;padding:14px 0 6px}
+.demo{font-size:.75rem;color:var(--sub)}
+nav{display:flex;gap:4px;overflow-x:auto;padding:6px 0 10px}
+nav a{white-space:nowrap;padding:6px 12px;border-radius:999px;color:var(--sub);text-decoration:none;font-size:.9rem;background:var(--chip)}
+nav a.on{background:var(--acc);color:#fff}
+main{padding:16px 0 48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 12px}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.tk{font-weight:700;font-size:1.1rem}
+.sub{color:var(--sub);font-size:.88rem}
+.chip{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.78rem;font-weight:600;background:var(--chip)}
+.v-comprar_en_zona{color:var(--ok)} .v-vigilar{color:var(--warn)} .v-descartar{color:var(--bad)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:10px}
+.k{font-size:.75rem;color:var(--sub)} .n{font-variant-numeric:tabular-nums;font-weight:600}
+.al{border-left:4px solid var(--warn)} .al.ZONA{border-left-color:var(--ok)} .al.TESIS{border-left-color:var(--bad)}
+a{color:var(--acc)}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+.scroll{overflow-x:auto}
+.md{overflow-wrap:anywhere} .md table{display:block;overflow-x:auto} .md h1{font-size:1.35rem} .md h2{font-size:1.1rem;margin-top:1.6em}
+.md blockquote{margin:0;padding:4px 12px;border-left:3px solid var(--line);color:var(--sub)}
+.md pre{overflow-x:auto;background:var(--chip);padding:10px;border-radius:8px}
+.empty{color:var(--sub);text-align:center;padding:28px 8px}
+footer{color:var(--sub);font-size:.78rem;text-align:center;padding:0 16px 32px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Trading Lab · Agente 12 meses</h1>
+  <div class="demo">Solo lectura · nada de esto es una recomendación de compra · el agente no opera solo</div>
+  <nav id="nav">
+    <a href="#/">Resumen</a><a href="#/informes">Informes</a><a href="#/candidatos">Candidatos</a><a href="#/ayuda">Cómo se usa</a>
+  </nav>
+</div></header>
+<main class="wrap" id="app"><div class="empty">Cargando…</div></main>
+<footer id="pie"></footer>
+<script src="vendor/marked.min.js"></script>
+<script src="vendor/purify.min.js"></script>
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const num = (x, d = 2) => (x === null || x === undefined || x === "" || isNaN(+x)) ? "—" : (+x).toLocaleString("es-ES", {maximumFractionDigits: d, minimumFractionDigits: d});
+const pct = (x) => (x === null || x === undefined || isNaN(+x)) ? "—" : `${+x > 0 ? "+" : ""}${num(x, 1)} %`;
+const fecha = (iso) => { try { return new Date(iso).toLocaleString("es-ES", {dateStyle: "medium", timeStyle: "short", timeZone: "Europe/Madrid"}); } catch { return iso; } };
+const VEREDICTO = {comprar_en_zona: "Comprar en zona", vigilar: "Vigilar", descartar: "Descartado"};
+let D = null;
+
+function resumen() {
+  const precios = Object.fromEntries((D.estado?.precios || []).map((p) => [p.ticker, p]));
+  const alertas = D.estado?.alertas || [];
+  let h = `<h2 style="font-size:1rem">Avisos</h2>`;
+  h += alertas.length ? alertas.map((a) => `<div class="card al ${esc(a.tipo.split(" ")[0])}"><b>${esc(a.tipo)}</b><div>${esc(a.mensaje)}</div></div>`).join("")
+    : `<div class="card sub">${D.estado ? "Sin avisos hoy." : "Aún no se han calculado avisos. Se calculan solos cada día laborable a las 23:30."}</div>`;
+  h += `<h2 style="font-size:1rem;margin-top:24px">Lista de vigilancia (${D.watchlist.length})</h2>`;
+  if (!D.watchlist.length) h += `<div class="card empty">Todavía no hay empresas analizadas.</div>`;
+  for (const w of D.watchlist) {
+    const p = precios[w.ticker] || {};
+    const inf = D.informes.find((i) => w.informe && i.id.endsWith(w.informe.split("/").pop()));
+    h += `<div class="card">
+      <div class="row"><span><span class="tk">${esc(w.ticker)}</span> <span class="sub">${esc(w.empresa)}</span></span>
+        <span class="chip v-${esc(w.veredicto)}">${esc(VEREDICTO[w.veredicto] || w.veredicto)} · convicción ${esc(w.conviccion)}/5</span></div>
+      <div class="sub">${esc(w.sector)} · analizada el ${esc(w.fecha_analisis)}</div>
+      <div class="grid">
+        <div><div class="k">Precio ahora</div><div class="n">${num(p.precio)} $</div></div>
+        <div><div class="k">Zona de entrada ≤</div><div class="n">${num(w.zona_entrada_max)} $</div><div class="k">${p.distancia_zona_pct != null ? (p.distancia_zona_pct <= 0 ? "✅ dentro" : `a ${pct(p.distancia_zona_pct)}`) : ""}</div></div>
+        <div><div class="k">Objetivo 12 meses</div><div class="n">${num(w.precio_objetivo_12m)} $</div><div class="k">${p.potencial_pct != null ? `potencial ${pct(p.potencial_pct)}` : ""}</div></div>
+        <div><div class="k">Stop de tesis</div><div class="n">${num(w.stop_tesis)} $</div></div>
+      </div>
+      ${w.proximo_catalizador ? `<div class="sub" style="margin-top:8px">📅 ${esc(w.proximo_catalizador)}${w.fecha_catalizador ? ` · ${esc(w.fecha_catalizador)}` : ""}</div>` : ""}
+      ${inf ? `<div style="margin-top:8px"><a href="#/informe/${encodeURIComponent(inf.id)}">Leer el análisis →</a></div>` : ""}
+    </div>`;
+  }
+  return h;
+}
+
+function informes() {
+  if (!D.informes.length) return `<div class="card empty">Aún no hay informes.</div>`;
+  return D.informes.map((i) => `<a class="card" style="display:block;text-decoration:none;color:inherit" href="#/informe/${encodeURIComponent(i.id)}">
+    <div class="row"><b>${esc(i.titulo)}</b><span class="chip">${esc(i.clase)}</span></div><div class="sub">${esc(i.fecha)}</div></a>`).join("");
+}
+
+function informe(id) {
+  const i = D.informes.find((x) => x.id === id);
+  if (!i) return `<div class="card empty">No encuentro ese informe.</div>`;
+  return `<a href="#/informes">← Informes</a><article class="card md">${DOMPurify.sanitize(marked.parse(i.texto))}</article>`;
+}
+
+function candidatos() {
+  if (!D.candidatos.length) return `<div class="card empty">Aún no hay candidatos. El cribado se hace solo cada domingo.</div>`;
+  const cols = [["ticker","Ticker"],["empresa","Empresa"],["sector","Sector"],["precio","Precio"],["objetivo_medio","Objetivo analistas"],["potencial_pct","Potencial %"],["analistas","Nº analistas"],["capitalizacion_musd","Capitalización (M$)"]];
+  return `<p class="sub">Primera criba automática: small caps de EE. UU. de todos los sectores con un precio objetivo medio de los analistas bastante por encima del precio. <b>No es una lista de compra</b>: son ideas para analizar.</p>
+  <div class="card scroll"><table><thead><tr>${cols.map(([, t]) => `<th>${t}</th>`).join("")}</tr></thead><tbody>
+  ${D.candidatos.map((c) => `<tr>${cols.map(([k]) => `<td>${esc(c[k])}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+}
+
+function ayuda() {
+  return `<div class="card md">
+  <h2>Cómo se usa (todo desde el móvil)</h2>
+  <ol>
+    <li><b>Pedir un análisis:</b> en el chat del proyecto de Claude escribe, por ejemplo, <i>"Analiza la empresa ABCD a 12 meses"</i> o <i>"Busca nuevas small caps"</i>. Claude investiga en la web, escribe el informe y lo publica aquí solo.</li>
+    <li><b>Avisos:</b> cada día laborable a las 23:30 se revisan los precios. Si una empresa entra en su zona de entrada, se acerca un catalizador o cae bajo el stop de tesis, te llega una notificación de GitHub.</li>
+    <li><b>Repaso:</b> una vez por semana pide <i>"Revisa mi lista"</i>.</li>
+  </ol>
+  <h2>Palabras</h2>
+  <ul>
+    <li><b>Zona de entrada:</b> precio por debajo del cual el agente cree que compensa comprar.</li>
+    <li><b>Objetivo 12 meses:</b> precio al que cree que puede llegar en un año (estimación propia, no promesa).</li>
+    <li><b>Stop de tesis:</b> precio (o hecho) que indicaría que la idea era errónea.</li>
+    <li><b>Catalizador:</b> evento con fecha que puede mover mucho la acción (resultados, aprobación, contrato…).</li>
+  </ul>
+  <p class="sub">El agente no compra ni vende nada. Las small caps se mueven mucho: ninguna posición debería ser grande.</p></div>`;
+}
+
+function pintar() {
+  const r = location.hash.replace(/^#/, "") || "/";
+  document.querySelectorAll("#nav a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + (r.startsWith("/informe/") ? "/informes" : r)));
+  const app = $("#app");
+  if (!D) return;
+  app.innerHTML = r.startsWith("/informe/") ? informe(decodeURIComponent(r.slice(9)))
+    : r === "/informes" ? informes() : r === "/candidatos" ? candidatos() : r === "/ayuda" ? ayuda() : resumen();
+  window.scrollTo(0, 0);
+}
+
+fetch("datos.json", {cache: "no-store"}).then((r) => r.json()).then((d) => {
+  D = d;
+  $("#pie").textContent = `Precios: ${D.estado ? fecha(D.estado.actualizado) : "aún sin calcular"} · Panel generado: ${fecha(D.construido)}`;
+  pintar();
+}).catch(() => { $("#app").innerHTML = `<div class="card empty">No se han podido cargar los datos.</div>`; });
+addEventListener("hashchange", pintar);
+</script>
+</body>
+</html>

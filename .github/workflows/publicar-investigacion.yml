@@ -1,0 +1,32 @@
+# Publica sola la investigación del agente B.
+# Si una propuesta de cambio (pull request) SOLO toca archivos de investigacion/ (informes y lista de
+# vigilancia), se fusiona sola, y el panel web se actualiza en un minuto. Así no tienes que hacer nada
+# desde el móvil cuando Claude termina un análisis.
+# Cualquier cambio de código o configuración NO se fusiona solo: ese lo revisas tú.
+name: Publicar investigación
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  publicar:
+    if: github.event.pull_request.draft == false && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      PR: ${{ github.event.pull_request.number }}
+    steps:
+      - name: ¿Solo toca investigacion/?
+        id: mira
+        run: |
+          gh pr view "$PR" -R "$GITHUB_REPOSITORY" --json files -q '.files[].path' > archivos.txt
+          cat archivos.txt
+          if [ -s archivos.txt ] && ! grep -qv '^investigacion/' archivos.txt; then echo "solo=si" >> "$GITHUB_OUTPUT"; fi
+      - name: Fusionar
+        if: steps.mira.outputs.solo == 'si'
+        run: gh pr merge "$PR" -R "$GITHUB_REPOSITORY" --squash --delete-branch

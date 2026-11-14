@@ -18,9 +18,26 @@ def _num(x):
 
 
 def precio(ticker: str) -> float | None:
-    import yfinance as yf
+    """Último precio. Prueba Yahoo (yfinance) y, si falla, Stooq (también gratis)."""
     try:
-        return _num(yf.Ticker(ticker).fast_info["last_price"])
+        import yfinance as yf
+        p = _num(yf.Ticker(ticker).fast_info["last_price"])
+        if p:
+            return p
+    except Exception:  # noqa: BLE001
+        pass
+    return precio_stooq(ticker)
+
+
+def precio_stooq(ticker: str) -> float | None:
+    import csv
+    import io
+    import urllib.request
+    url = f"https://stooq.com/q/l/?s={ticker.lower()}.us&f=sd2t2ohlcv&h&e=csv"
+    try:
+        with urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=20) as r:
+            fila = next(csv.DictReader(io.StringIO(r.read().decode("utf-8"))))
+        return _num(fila.get("Close"))
     except Exception:  # noqa: BLE001
         return None
 

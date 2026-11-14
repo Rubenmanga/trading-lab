@@ -39,3 +39,11 @@ def test_cribado_filtra_y_prioriza(monkeypatch):
     cfg["cribado"]["sectores_prioritarios"] = ["Industrials"]
     r = cribado.cribar(cfg, descargar=lambda t: dict(detalle[t]))
     assert [f["ticker"] for f in r] == ["BBB", "AAA"]
+
+
+def test_estado_calcula_distancias():
+    filas = [dict(ticker="AAA", zona_entrada_max="10", precio_objetivo_12m="15", stop_tesis="8"),
+             dict(ticker="ZZZ", zona_entrada_max="10")]
+    e = alertas.estado(filas, {"AAA": 12.0}.get)
+    assert e[0]["distancia_zona_pct"] == 20.0 and e[0]["potencial_pct"] == 25.0 and e[0]["distancia_stop_pct"] == 50.0
+    assert e[1]["precio"] is None and e[1]["potencial_pct"] is None
