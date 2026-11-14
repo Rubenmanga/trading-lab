@@ -101,7 +101,7 @@ y los mismos datos extra de Finnhub y Alpaca. Solo cambian los parámetros (`con
 | NRIX (Nurix) | 14,01 | 14 | +116 % | Solo 1 trimestre mejorando |
 | CLYM (Climb Bio) | 9,38 | 15 | +174 % | Ningún trimestre mejorando |
 | ORIC | 7,11 | 14 | +176 % | 1 trimestre mejorando |
-| FTH (Faeth) | 9,08 | 13 | +460 % | 1 trimestre mejorando |
+| FTH (Faeth) | 9,08 | 13 | +460 % | 1 trimestre mejorando; además sus acciones se multiplicaron por 20 en 2026 por una fusión (ver [FTH-datos](https://github.com/Rubenmanga/trading-lab/blob/main/investigacion/duplicar/FTH-datos-2026-11-14.md)). Cayó un 42 % el 9-nov tras sus datos de Fase 2 |
 | QBTS (D-Wave) / RGTI (Rigetti) | 8,65 / 8,71 | 17 / 12 | +148 % / +123 % | 1 trimestre mejorando |
 | GLXY (Galaxy Digital) | 13,01 | 16 | +138 % | Deuda casi el doble que la caja |
 | PL (Planet Labs), ALM (Almonty), PHAT | 12,5 / 7,4 / 5,5 | 10-12 | +119 a +231 % | Más de 10 % de acciones nuevas |
