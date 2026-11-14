@@ -1,0 +1,32 @@
+{
+"actualizado": "2026-11-14T21:24:01+00:00",
+"usd_por_eur": 1.105,
+"rango_usd": [
+5.53,
+27.63
+],
+"universo": 1516,
+"con_objetivo": 1474,
+"fallos": 42,
+"lista_corta": 0,
+"criterios": {
+"precio_eur_min": 5,
+"precio_eur_max": 25,
+"potencial_min_pct": 100,
+"analistas_min": 10,
+"trimestres_mejorando_min": 2,
+"dilucion": {
+"meses_caja_min": 24,
+"acciones_nuevas_12m_max_pct": 10,
+"deuda_sobre_caja_max": 1.0
+}
+},
+"fuentes_extra": {
+"finnhub": true,
+"alpaca": true,
+"calendario_resultados": 1468,
+"finnhub_empresas": 0,
+"alpaca_empresas_con_noticias": 0
+},
+"filas": []
+}

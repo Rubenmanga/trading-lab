@@ -1,0 +1,1475 @@
+ticker,empresa,sector,precio_usd,analistas,objetivo_medio,potencial_pct
+"CDNL","Cardinal Infrastructure Group Inc.","Industrials",6.46,3.00,53.00,720.43
+"BRUN","Boost Run, Inc.","Technology",5.53,4.00,42.75,673.06
+"KYTX","Kyverna Therapeutics, Inc.","Healthcare",5.05,5.00,30.40,501.98
+"GMTL","Guardian Metal Resources PLC","Basic Materials",4.25,2.00,25.50,500.00
+"AGMB","AgomAb Therapeutics NV","Healthcare",6.36,6.00,37.67,492.24
+"FTH","Faeth Therapeutics, Inc.","Healthcare",10.03,13.00,56.15,459.86
+"CUE","Cue Biopharma, Inc.","Healthcare",16.12,3.00,88.00,445.91
+"ALMS","Alumis Inc.","Healthcare",5.60,7.00,30.00,435.71
+"GPCR","Structure Therapeutics Inc.","Healthcare",20.00,14.00,104.86,424.29
+"BIOA","BioAge Labs, Inc.","Healthcare",5.55,9.00,28.89,420.52
+"VELO","Velo3D, Inc.","Technology",4.15,4.00,19.50,369.88
+"OLMA","Olema Oncology, Inc.","Healthcare",7.56,10.00,35.50,369.58
+"OCS","Oculis Holding AG","Healthcare",7.64,10.00,35.60,365.94
+"SHAZ","SharonAI Holdings Inc.","Technology",22.56,6.00,105.00,365.43
+"DRUG","Bright Minds Biosciences Inc.","Healthcare",23.11,7.00,107.10,363.43
+"HELP","Helus Pharma Inc","Healthcare",8.87,10.00,40.63,358.02
+"QTTB","Q32 Bio Inc.","Healthcare",8.71,6.00,39.67,355.42
+"STRO","Sutro Biopharma, Inc.","Healthcare",9.82,13.00,44.62,354.33
+"AVTX","Avalo Therapeutics, Inc.","Healthcare",7.76,10.00,34.80,348.45
+"GRRR","Gorilla Technology Group Inc.","Technology",7.41,6.00,32.83,343.09
+"MOVE","Corvex, Inc.","Technology",4.47,1.00,18.75,319.46
+"PONY","Pony AI Inc.","Technology",4.46,17.00,18.69,319.02
+"OCUL","Ocular Therapeutix, Inc.","Healthcare",6.21,11.00,25.73,314.29
+"AZ","A2Z Cust2Mate Solutions Corp.","Technology",5.44,2.00,22.50,313.60
+"SLS","SELLAS Life Sciences Group, Inc.","Healthcare",7.86,2.00,32.50,313.49
+"KURA","Kura Oncology, Inc.","Healthcare",7.77,13.00,32.00,311.84
+"RUM","RUM Group Inc.","Communication Services",5.77,2.00,23.50,307.28
+"EIKN","Eikon Therapeutics, Inc.","Healthcare",5.98,6.00,24.33,306.91
+"AGEN","Agenus Inc.","Healthcare",6.73,3.00,27.00,301.19
+"DTIL","Precision BioSciences, Inc.","Healthcare",7.57,5.00,29.40,288.63
+"NN","NextNav Inc.","Technology",8.73,3.00,33.67,285.64
+"RMIX","Suncrete, Inc.","Basic Materials",5.08,6.00,19.50,283.86
+"GLSI","Greenwich LifeSciences, Inc.","Healthcare",14.94,2.00,57.00,281.53
+"DUOT","Duos Technologies Group, Inc.","Technology",5.03,3.00,19.17,281.43
+"DBVT","DBV Technologies S.A.","Healthcare",11.02,6.00,41.96,280.93
+"ETRA","Electra Therapeutics, Inc.","Healthcare",8.84,5.00,33.20,275.57
+"APLD","Applied Digital Corporation","Technology",15.97,16.00,59.94,275.31
+"SNDX","Syndax Pharmaceuticals, Inc.","Healthcare",9.45,11.00,35.45,275.18
+"TRDA","Entrada Therapeutics, Inc.","Healthcare",5.09,4.00,18.75,268.37
+"MPLT","MapLight Therapeutics, Inc.","Healthcare",7.25,13.00,26.54,266.05
+"BTDR","Bitdeer Technologies Group","Technology",5.60,13.00,20.38,264.01
+"USAR","USA Rare Earth, Inc.","Basic Materials",8.16,8.00,29.50,261.52
+"BW","Babcock & Wilcox Enterprises, Inc.","Industrials",4.56,4.00,16.25,256.36
+"SCTX","Scribe Therapeutics Inc.","Healthcare",16.36,4.00,57.00,248.41
+"WYFI","WhiteFiber, Inc.","Technology",9.43,11.00,32.55,245.13
+"OSS","One Stop Systems, Inc.","Technology",4.51,3.00,15.33,239.99
+"SWMR","Swarmer, Inc","Technology",8.84,1.00,30.00,239.37
+"CGEM","Cullinan Therapeutics, Inc.","Healthcare",10.28,10.00,34.70,237.55
+"ONDS","Ondas Inc.","Technology",5.16,10.00,17.38,236.72
+"TECX","Tectonic Therapeutic, Inc.","Healthcare",21.14,9.00,71.00,235.86
+"CIFR","Cipher Digital Inc.","Technology",6.86,22.00,22.86,233.29
+"STTK","Shattuck Labs, Inc.","Healthcare",4.65,10.00,15.40,231.18
+"ELVA","Electrovaya Inc.","Industrials",4.41,5.00,14.60,231.07
+"PHAT","Phathom Pharmaceuticals, Inc.","Healthcare",6.06,10.00,20.05,230.86
+"VOGX","Vogenx, Inc.","Healthcare",16.67,1.00,55.00,229.93
+"AIRO","AIRO Group Holdings, Inc.","Industrials",4.79,3.00,15.67,227.41
+"LU","Lufax Holding Ltd","Financial Services",7.21,4.00,23.59,227.20
+"VKTX","Viking Therapeutics, Inc.","Healthcare",29.22,19.00,95.32,226.20
+"BDSX","Biodesix, Inc.","Healthcare",9.88,6.00,32.17,225.57
+"NGNE","Neurogene Inc.","Healthcare",23.93,8.00,77.62,224.38
+"KLRA","Kailera Therapeutics, Inc.","Healthcare",13.27,5.00,43.00,224.04
+"QUBT","Quantum Computing Inc.","Technology",5.56,6.00,18.00,223.74
+"BCAX","Bicara Therapeutics Inc.","Healthcare",10.02,12.00,32.17,221.02
+"CRMD","CorMedix Inc.","Healthcare",4.66,6.00,14.83,218.31
+"YARW","Yarrow Bioscience, Inc.","Healthcare",18.03,3.00,57.33,217.99
+"PEPG","PepGen Inc.","Healthcare",4.36,8.00,13.75,215.37
+"CLSK","CleanSpark, Inc.","Financial Services",6.65,15.00,20.87,213.78
+"NNE","NANO Nuclear Energy Inc.","Industrials",11.11,8.00,34.75,212.78
+"IREN","IREN Limited","Financial Services",18.17,19.00,56.69,211.98
+"ABTC","American Bitcoin Corp","Financial Services",5.07,4.00,15.75,210.65
+"OBX","Obsidian Therapeutics, Inc.","Healthcare",12.56,3.00,39.00,210.51
+"CADL","Candel Therapeutics, Inc.","Healthcare",6.20,9.00,19.11,208.24
+"JBIO","Jade Biosciences, Inc.","Healthcare",16.14,8.00,49.38,205.92
+"IE","Ivanhoe Electric Inc.","Basic Materials",6.75,6.00,20.58,204.94
+"IMMX","Immix Biopharma, Inc.","Healthcare",7.84,8.00,23.80,203.57
+"MGTX","MeiraGTx Holdings plc","Healthcare",9.18,8.00,27.75,202.29
+"TOYO","TOYO Co., Ltd.","Technology",4.64,2.00,14.00,201.72
+"PGEN","Precigen, Inc.","Healthcare",4.54,3.00,13.67,201.03
+"ALOY","REalloys Inc.","Basic Materials",5.71,2.00,17.00,197.72
+"KARD","Kardigan, Inc.","Healthcare",13.82,8.00,41.12,197.58
+"APMD","Apnimed, Inc.","Healthcare",16.92,3.00,50.33,197.48
+"CRVS","Corvus Pharmaceuticals, Inc.","Healthcare",10.64,6.00,31.50,196.05
+"RNA","Atrium Therapeutics, Inc.","Healthcare",7.51,5.00,22.00,192.94
+"JANX","Janux Therapeutics, Inc.","Healthcare",11.37,14.00,33.14,191.49
+"IPX","IperionX Limited","Basic Materials",13.96,5.00,40.20,187.97
+"POET","POET Technologies Inc.","Technology",5.13,1.00,14.75,187.52
+"SBET","Sharplink, Inc.","Financial Services",5.61,8.00,16.12,187.43
+"EVMN","Evommune, Inc.","Healthcare",7.63,9.00,21.89,186.88
+"CHRN","ChronoScale Holdings Corporation","Technology",9.95,2.00,28.50,186.43
+"UUUU","Energy Fuels Inc.","Energy",6.59,4.00,18.88,186.42
+"CAPR","Capricor Therapeutics, Inc.","Healthcare",9.53,6.00,27.25,185.94
+"ATTO","Attovia Therapeutics, Inc.","Healthcare",15.13,5.00,43.20,185.53
+"ARCT","Arcturus Therapeutics Holdings Inc.","Healthcare",8.36,10.00,23.80,184.69
+"MLYS","Mineralys Therapeutics, Inc.","Healthcare",15.33,9.00,43.56,184.12
+"RGNX","REGENXBIO Inc.","Healthcare",7.64,10.00,21.40,180.10
+"MESO","Mesoblast Limited","Healthcare",13.27,2.00,37.00,178.82
+"ANL","Adlai Nortye Group Ltd.","Healthcare",10.61,6.00,29.50,178.04
+"BLZE","Backblaze, Inc.","Technology",7.74,6.00,21.50,177.78
+"ORIC","ORIC Pharmaceuticals, Inc.","Healthcare",7.86,14.00,21.71,176.26
+"AESI","Atlas Energy Solutions Inc.","Energy",5.57,13.00,15.38,176.21
+"ALMU","Aeluma, Inc.","Technology",6.55,3.00,18.00,174.81
+"AUR","Aurora Innovation, Inc.","Consumer Cyclical",4.21,12.00,11.55,174.33
+"HIMX","Himax Technologies, Inc.","Technology",8.64,2.00,23.70,174.31
+"ALM","Almonty Industries Inc.","Basic Materials",8.22,12.00,22.53,174.15
+"CLYM","Climb Bio, Inc.","Healthcare",10.36,15.00,28.40,174.13
+"SLDB","Solid Biosciences Inc.","Healthcare",6.84,14.00,18.71,173.60
+"GLUE","Monte Rosa Therapeutics, Inc.","Healthcare",9.37,8.00,25.38,170.81
+"SLSR","Solaris Resources Inc.","Basic Materials",6.68,1.00,18.00,169.46
+"QFIN","Qfin Holdings, Inc.","Financial Services",5.31,12.00,14.30,169.40
+"KC","Kingsoft Cloud Holdings Limited","Technology",7.55,13.00,20.31,169.00
+"BCRX","BioCryst Pharmaceuticals, Inc.","Healthcare",7.61,11.00,20.45,168.79
+"TTRX","Turn Therapeutics Inc.","Healthcare",9.35,2.00,25.00,167.52
+"UMAC","Unusual Machines, Inc.","Technology",11.28,9.00,30.11,166.94
+"EDN","Empresa Distribuidora y Comercializadora Norte Sociedad Anónima","Utilities",14.05,2.00,37.50,166.90
+"SGMT","Sagimet Biosciences Inc.","Healthcare",10.22,11.00,27.27,166.86
+"PRTA","Prothena Corporation plc","Healthcare",8.16,5.00,21.40,162.25
+"HNRG","Hallador Energy Company","Utilities",10.69,3.00,28.00,161.93
+"ZVRA","Zevra Therapeutics, Inc.","Healthcare",9.08,8.00,23.75,161.56
+"CMPS","COMPASS Pathways plc","Healthcare",9.01,16.00,23.31,158.74
+"PURR","Hyperliquid Strategies Inc.","Financial Services",8.70,4.00,22.50,158.62
+"BNTC","Benitec Biopharma Inc.","Healthcare",9.04,7.00,23.29,157.59
+"IMTX","Immatics N.V.","Healthcare",6.39,7.00,16.40,156.65
+"QBTS","D-Wave Quantum Inc.","Technology",9.56,16.00,24.52,156.51
+"FRVO","Fervo Energy Company","Utilities",11.51,15.00,29.47,156.01
+"RLMD","Relmada Therapeutics, Inc.","Healthcare",4.21,4.00,10.75,155.34
+"VERA","Vera Therapeutics, Inc.","Healthcare",28.10,14.00,71.36,153.94
+"AVR","Anteris Technologies Global Corp.","Healthcare",5.42,4.00,13.75,153.69
+"CTGO","Contango Silver & Gold Inc.","Basic Materials",11.83,6.00,30.00,153.59
+"CLPT","ClearPoint Neuro, Inc.","Healthcare",8.48,2.00,21.50,153.54
+"BLSM","BlossomHill Therapeutics, Inc.","Healthcare",14.02,5.00,35.40,152.50
+"CEPU","Central Puerto S.A.","Utilities",10.86,5.00,27.38,152.08
+"ARIS","Aris Mining Corporation","Basic Materials",14.76,1.00,37.00,150.68
+"NAMS","NewAmsterdam Pharma Company N.V.","Healthcare",20.14,14.00,50.35,149.98
+"QURE","uniQure N.V.","Healthcare",23.81,11.00,59.44,149.65
+"AMPX","Amprius Technologies, Inc.","Industrials",7.93,9.00,19.78,149.40
+"USAU","U.S. Gold Corp.","Basic Materials",10.63,3.00,26.50,149.29
+"OXLC","Oxford Lane Capital Corp.","Financial Services",5.04,1.00,12.50,148.02
+"RYAM","Rayonier Advanced Materials Inc.","Basic Materials",5.65,2.00,14.00,147.79
+"RAPP","Rapport Therapeutics, Inc.","Healthcare",26.15,14.00,64.21,145.56
+"CRML","Critical Metals Corp.","Basic Materials",4.88,2.00,11.95,144.88
+"LEGN","Legend Biotech Corporation","Healthcare",17.50,13.00,42.54,143.08
+"GDS","GDS Holdings Limited","Technology",19.81,16.00,48.05,142.56
+"LTRX","Lantronix, Inc.","Technology",4.33,6.00,10.50,142.49
+"ASMB","Assembly Biosciences, Inc.","Healthcare",21.12,5.00,51.20,142.42
+"MLTX","MoonLake Immunotherapeutics","Healthcare",12.50,14.00,30.29,142.29
+"IDR","Idaho Strategic Resources, Inc.","Basic Materials",18.61,1.00,45.00,141.81
+"ADRX","ADARx Pharmaceuticals, Inc.","Healthcare",14.20,4.00,34.25,141.20
+"TSSI","TSS, Inc.","Technology",6.03,2.00,14.50,140.46
+"ELA","Envela Corporation","Consumer Cyclical",10.42,2.00,25.00,139.92
+"AMRO","Amaero Inc.","Industrials",5.50,3.00,13.18,139.58
+"FWDI","Forward Industries, Inc.","Financial Services",4.94,3.00,11.83,139.54
+"MUX","McEwen Inc.","Basic Materials",11.90,5.00,28.40,138.66
+"GLXY","Galaxy Digital","Financial Services",14.38,16.00,34.28,138.40
+"SVRA","Savara Inc.","Healthcare",4.64,9.00,11.06,138.27
+"UEC","Uranium Energy Corp.","Energy",6.66,11.00,15.85,137.92
+"EROC","ERock, Inc.","Industrials",8.41,8.00,20.00,137.81
+"ASM","Avino Silver & Gold Mines Ltd.","Basic Materials",4.29,4.00,10.20,137.76
+"SA","Seabridge Gold Inc.","Basic Materials",24.87,4.00,59.05,137.45
+"TYRA","Tyra Biosciences, Inc.","Healthcare",20.02,11.00,47.45,136.98
+"IBRX","ImmunityBio, Inc.","Healthcare",6.02,4.00,14.25,136.71
+"NSLR","Neostellar Capital Corp.","Financial Services",5.98,5.00,14.15,136.62
+"ADEA","Adeia Inc.","Technology",16.22,4.00,38.25,135.82
+"IONS","Ionis Pharmaceuticals, Inc.","Healthcare",29.06,23.00,68.48,135.64
+"RCUS","Arcus Biosciences, Inc.","Healthcare",17.43,12.00,41.00,135.23
+"NTLA","Intellia Therapeutics, Inc.","Healthcare",9.70,18.00,22.78,134.82
+"VIR","Vir Biotechnology, Inc.","Healthcare",9.96,8.00,23.38,134.69
+"AEVA","Aeva Technologies, Inc.","Technology",10.58,5.00,24.80,134.40
+"AURA","Aura Biosciences, Inc.","Healthcare",7.11,5.00,16.60,133.47
+"NG","NovaGold Resources Inc.","Basic Materials",5.63,3.00,13.12,132.99
+"PRE","Prenetics Global Limited","Consumer Defensive",16.51,9.00,38.44,132.86
+"OKLO","Oklo Inc.","Utilities",23.92,21.00,55.57,132.32
+"URGN","UroGen Pharma Ltd.","Healthcare",26.18,7.00,60.71,131.91
+"BRVE","Braveheart Bio, Inc.","Healthcare",19.62,4.00,45.50,131.91
+"XE","X-Energy, Inc.","Industrials",11.08,9.00,25.61,131.15
+"INFQ","Infleqtion, Inc.","Technology",8.48,7.00,19.57,130.80
+"QUIT","Achieve Life Sciences, Inc.","Healthcare",6.32,12.00,14.58,130.75
+"DC","Dakota Gold Corp.","Basic Materials",5.33,6.00,12.26,129.99
+"MDWD","MediWound Ltd.","Healthcare",12.90,6.00,29.67,129.97
+"FDMT","4D Molecular Therapeutics, Inc.","Healthcare",12.23,11.00,28.09,129.69
+"MARA","MARA Holdings, Inc.","Financial Services",6.99,13.00,15.99,128.81
+"CBIO","Crescent Biopharma, Inc.","Healthcare",14.15,6.00,32.33,128.50
+"DFTX","Definium Therapeutics, Inc.","Healthcare",32.08,18.00,72.78,126.86
+"AADX","Applied Aerospace & Defense, Inc.","Industrials",8.38,8.00,19.00,126.73
+"PICS","PicS N.V.","Technology",7.42,9.00,16.76,125.83
+"GHRS","GH Research PLC","Healthcare",19.10,9.00,42.89,124.55
+"GENB","Generate Biomedicines, Inc.","Healthcare",12.07,5.00,27.00,123.70
+"APPS","Digital Turbine, Inc.","Technology",7.61,5.00,17.00,123.39
+"RGTI","Rigetti Computing, Inc.","Technology",9.62,12.00,21.44,122.89
+"CLDX","Celldex Therapeutics, Inc.","Healthcare",28.83,14.00,64.00,121.99
+"REAX","Real REMAX Group Inc.","Real Estate",10.70,4.00,23.69,121.38
+"FUBO","FuboTV Inc.","Communication Services",7.57,8.00,16.75,121.27
+"EOLS","Evolus, Inc.","Healthcare",6.96,5.00,15.40,121.26
+"NVCR","NovoCure Limited","Healthcare",11.83,7.00,26.14,120.99
+"CYD","China Yuchai International Limited","Consumer Cyclical",21.74,3.00,47.96,120.60
+"KTOS","Kratos Defense & Security Solutions, Inc.","Industrials",33.91,25.00,74.68,120.23
+"SCZM","Santacruz Silver Mining Ltd.","Basic Materials",6.83,1.00,15.00,119.62
+"PRAA","PRA Group, Inc.","Financial Services",11.84,1.00,26.00,119.59
+"HOS","Hornbeck Offshore Services, Inc","Industrials",5.93,2.00,13.00,119.22
+"PL","Planet Labs PBC","Industrials",13.81,11.00,30.27,119.21
+"OSG","Octave Specialty Group, Inc.","Financial Services",5.34,3.00,11.67,118.48
+"BEAM","Beam Therapeutics Inc.","Healthcare",22.83,13.00,49.85,118.34
+"FCEL","FuelCell Energy, Inc.","Industrials",9.68,10.00,21.10,117.98
+"GILT","Gilat Satellite Networks Ltd.","Technology",5.59,2.00,12.15,117.35
+"CTNM","Contineum Therapeutics, Inc.","Healthcare",9.86,7.00,21.43,117.33
+"ACOG","Alpha Cognition Inc. Common Stock","Healthcare",8.30,5.00,18.00,116.87
+"BBAR","Banco BBVA Argentina S.A.","Financial Services",10.61,4.00,23.00,116.78
+"DMRA","Damora Therapeutics, Inc.","Healthcare",21.60,9.00,46.78,116.56
+"NRIX","Nurix Therapeutics, Inc.","Healthcare",15.48,14.00,33.50,116.41
+"MFA","MFA Financial, Inc.","Real Estate",5.82,6.00,12.58,116.21
+"AKTS","Aktis Oncology, Inc.","Healthcare",16.62,8.00,35.88,115.85
+"RAIL","FreightCar America, Inc.","Industrials",4.95,3.00,10.67,115.49
+"JMIA","Jumia Technologies AG","Consumer Cyclical",5.33,5.00,11.47,115.22
+"ACHV","Achieve Life Sciences, Inc.","Healthcare",6.78,12.00,14.58,115.09
+"TLX","Telix Pharmaceuticals Limited","Healthcare",9.23,4.00,19.80,114.48
+"TRXB","TRex Bio, Inc.","Healthcare",13.67,4.00,29.25,113.97
+"ADAM","Adamas Trust, Inc.","Real Estate",5.25,6.00,11.17,112.70
+"BULL","Webull Corporation","Technology",5.18,3.00,11.00,112.36
+"VSTM","Verastem, Inc.","Healthcare",8.18,9.00,17.22,110.54
+"TH","Target Hospitality Corp.","Industrials",11.59,5.00,24.40,110.53
+"AMSC","American Superconductor Corporation","Industrials",24.13,4.00,50.75,110.32
+"EPRX","Eupraxia Pharmaceuticals Inc.","Healthcare",8.15,11.00,17.14,110.26
+"LPTH","LightPath Technologies, Inc.","Technology",6.84,4.00,14.38,110.16
+"LE","Lands' End, Inc.","Consumer Cyclical",9.05,3.00,19.00,109.94
+"MRAM","Everspin Technologies, Inc.","Technology",12.25,4.00,25.50,108.16
+"SILC","Silicom Ltd.","Technology",28.84,1.00,60.00,108.04
+"IAM","Iambic Therapeutics, Inc.","Healthcare",13.10,4.00,27.25,108.02
+"PPTA","Perpetua Resources Corp.","Basic Materials",17.78,5.00,36.90,107.54
+"ELE","Elemental Royalty Corporation","Basic Materials",14.05,3.00,29.08,107.00
+"HROW","Harrow, Inc.","Healthcare",30.12,8.00,62.25,106.67
+"TRVI","Trevi Therapeutics, Inc.","Healthcare",13.65,11.00,28.18,106.46
+"IMPP","Imperial Petroleum Inc.","Energy",4.36,1.00,9.00,106.42
+"CTY","City Therapeutics, Inc.","Healthcare",18.10,3.00,37.33,106.26
+"DSGN","Design Therapeutics, Inc.","Healthcare",10.47,7.00,21.57,106.03
+"INTR","Inter & Co, Inc.","Financial Services",4.15,11.00,8.55,105.96
+"ARVN","Arvinas, Inc.","Healthcare",6.82,13.00,14.00,105.28
+"LBRT","Liberty Energy Inc.","Energy",13.06,14.00,26.79,105.10
+"WULF","TeraWulf Inc.","Financial Services",12.62,24.00,25.85,104.87
+"LZM","Lifezone Metals Limited","Basic Materials",4.22,3.00,8.63,104.42
+"GRPN","Groupon, Inc.","Communication Services",12.41,3.00,25.33,104.14
+"AVLN","Avalyn Pharma Inc.","Healthcare",30.28,5.00,61.80,104.10
+"NOA","North American Construction Group Ltd.","Energy",9.32,2.00,18.99,103.71
+"LUNR","Intuitive Machines, Inc.","Industrials",13.00,10.00,26.40,103.08
+"AVBP","ArriVent BioPharma, Inc.","Healthcare",13.01,10.00,26.40,102.92
+"EFXT","Enerflex Ltd.","Energy",20.21,3.00,41.00,102.87
+"CXDO","Crexendo, Inc.","Communication Services",4.92,6.00,9.96,102.41
+"SPIR","Spire Global, Inc.","Industrials",9.21,4.00,18.62,102.23
+"GGAL","Grupo Financiero Galicia S.A.","Financial Services",29.75,10.00,60.00,101.68
+"AORT","Artivion, Inc.","Healthcare",19.10,9.00,38.47,101.40
+"NPCE","NeuroPace, Inc.","Healthcare",7.56,9.00,15.22,101.35
+"FPS","Forgent Power Solutions, Inc.","Industrials",22.12,13.00,44.54,101.35
+"CNL","Collective Mining Ltd.","Basic Materials",12.42,1.00,25.00,101.29
+"EXK","Endeavour Silver Corp.","Basic Materials",7.66,3.00,15.42,101.26
+"SRZN","Surrozen, Inc.","Healthcare",31.61,4.00,63.50,100.89
+"VOR","Vor Biopharma Inc.","Healthcare",19.42,8.00,39.00,100.82
+"CMCL","Caledonia Mining Corporation Plc","Basic Materials",20.97,2.00,42.06,100.60
+"METC","Ramaco Resources, Inc.","Basic Materials",6.85,8.00,13.72,100.36
+"TBN","Tamboran Resources Corporation","Energy",29.25,7.00,58.57,100.24
+"DYN","Dyne Therapeutics, Inc.","Healthcare",17.16,15.00,34.33,100.08
+"ITG","ITG, Inc.","Industrials",5.68,9.00,11.33,99.53
+"ENTA","Enanta Pharmaceuticals, Inc.","Healthcare",10.99,6.00,21.83,98.67
+"IMCR","Immunocore Holdings plc","Healthcare",29.94,10.00,59.40,98.40
+"NXE","NexGen Energy Ltd.","Energy",7.76,2.00,15.39,98.38
+"PUMP","ProPetro Holding Corp.","Energy",7.51,13.00,14.88,98.20
+"ANTX","AN2 Therapeutics, Inc.","Healthcare",4.55,2.00,9.00,97.80
+"ADTN","ADTRAN Holdings, Inc.","Technology",4.83,7.00,9.54,97.43
+"MEC","Mayville Engineering Company, Inc.","Industrials",12.82,4.00,25.25,96.96
+"SVCO","Silvaco Group, Inc.","Technology",7.13,6.00,14.00,96.35
+"MITT","TPG Mortgage Investment Trust, Inc.","Real Estate",4.25,6.00,8.33,96.08
+"RSI","Rush Street Interactive, Inc.","Consumer Cyclical",11.86,14.00,23.21,95.74
+"SECZ","Securitize Corp.","Technology",8.08,7.00,15.80,95.54
+"COGT","Cogent Biosciences, Inc.","Healthcare",28.56,11.00,55.82,95.44
+"IMMR","Immersion Corporation","Technology",6.94,1.00,13.50,94.52
+"ORN","Orion Group Holdings, Inc.","Industrials",7.57,6.00,14.65,93.53
+"DNLI","Denali Therapeutics Inc.","Healthcare",18.74,16.00,36.19,93.10
+"KROS","Keros Therapeutics, Inc.","Healthcare",10.30,6.00,19.83,92.56
+"XPEV","XPeng Inc.","Consumer Cyclical",9.37,25.00,17.99,91.98
+"MNTN","MNTN, Inc.","Technology",5.04,9.00,9.67,91.80
+"LMNR","Limoneira Company","Consumer Defensive",10.25,4.00,19.62,91.46
+"QMCO","Quantum Corporation","Technology",15.34,3.00,29.33,91.22
+"AZUL","Azul S.A.","Industrials",4.50,2.00,8.59,90.85
+"BWAY","BrainsWay Ltd.","Healthcare",10.11,3.00,19.27,90.57
+"ASST","Strive, Inc.","Financial Services",21.36,5.00,40.60,90.07
+"BILI","Bilibili Inc.","Communication Services",13.25,30.00,25.10,89.44
+"FIGR","Figure Technology Solutions, Inc.","Financial Services",25.22,10.00,47.70,89.14
+"INGN","Inogen, Inc.","Healthcare",5.69,2.00,10.75,88.93
+"MNRO","Monro, Inc.","Consumer Cyclical",10.48,4.00,19.75,88.45
+"AVNW","Aviat Networks, Inc.","Technology",17.35,8.00,32.62,88.04
+"OMDA","Omada Health, Inc.","Healthcare",14.33,12.00,26.92,87.83
+"XPER","Xperi Inc.","Technology",6.07,5.00,11.40,87.81
+"SGML","Sigma Lithium Corporation","Basic Materials",5.15,3.00,9.67,87.70
+"CORZ","Core Scientific, Inc.","Technology",14.52,21.00,27.24,87.59
+"IMNM","Immunome, Inc.","Healthcare",18.77,15.00,35.13,87.18
+"IOVA","Iovance Biotherapeutics, Inc.","Healthcare",7.76,10.00,14.50,86.86
+"WNC","Wabash National Corporation","Industrials",11.55,2.00,21.50,86.15
+"EQPT","EquipmentShare.com Inc.","Industrials",15.42,10.00,28.70,86.12
+"MEI","Methode Electronics, Inc.","Technology",11.83,4.00,22.00,85.97
+"SPTX","Seaport Therapeutics, Inc.","Healthcare",19.98,8.00,37.12,85.81
+"HMH","HMH Holding Inc.","Energy",12.32,7.00,22.86,85.53
+"QUIK","QuickLogic Corporation","Technology",9.36,3.00,17.33,85.19
+"SMR","NuScale Power Corporation","Industrials",4.66,16.00,8.59,84.42
+"TNGX","Tango Therapeutics, Inc.","Healthcare",25.50,11.00,47.00,84.31
+"RIOT","Riot Platforms, Inc.","Financial Services",17.52,22.00,32.24,84.04
+"BFLY","Butterfly Network, Inc.","Healthcare",6.08,6.00,11.17,83.66
+"SSYS","Stratasys Ltd.","Technology",5.81,3.00,10.67,83.59
+"VCYT","Veracyte, Inc.","Healthcare",24.33,10.00,44.60,83.31
+"INVA","Innoviva, Inc.","Healthcare",19.03,5.00,34.80,82.87
+"ATEC","Alphatec Holdings, Inc.","Healthcare",7.07,14.00,12.93,82.87
+"VIAV","Viavi Solutions Inc.","Technology",30.72,7.00,56.00,82.29
+"ASYS","Amtech Systems, Inc.","Technology",12.07,2.00,22.00,82.27
+"SUPN","Supernus, Inc.","Healthcare",29.72,7.00,54.14,82.18
+"ROCK","Gibraltar Industries, Inc.","Industrials",30.35,4.00,55.25,82.04
+"MAZE","Maze Therapeutics, Inc.","Healthcare",34.33,13.00,62.46,81.94
+"TGS","Transportadora de Gas del Sur S.A.","Energy",21.53,8.00,39.12,81.72
+"TWI","Titan International, Inc.","Industrials",5.10,4.00,9.25,81.37
+"CTEV","Claritev Corporation","Healthcare",26.82,5.00,48.60,81.21
+"ODTX","Odyssey Therapeutics, Inc.","Healthcare",19.14,6.00,34.67,81.12
+"LYTS","LSI Industries Inc.","Industrials",15.46,3.00,28.00,81.11
+"NPKI","NPK International Inc.","Industrials",9.03,3.00,16.33,80.88
+"NGS","Natural Gas Services Group, Inc.","Energy",29.70,3.00,53.67,80.70
+"MNR","Mach Natural Resources LP","Energy",9.03,7.00,16.29,80.35
+"CALX","Calix, Inc.","Technology",32.17,6.00,57.67,79.26
+"KRUS","Kura Sushi USA, Inc.","Consumer Cyclical",26.02,8.00,46.62,79.22
+"ALVO","Alvotech","Healthcare",4.19,6.00,7.50,79.00
+"ANGX","Angel Studios, Inc.","Communication Services",4.59,5.00,8.20,78.65
+"MATV","Mativ Holdings, Inc.","Basic Materials",11.79,1.00,21.00,78.12
+"BLSH","Bullish","Technology",22.49,13.00,39.92,77.51
+"OPFI","OppFi Inc.","Financial Services",5.94,4.00,10.53,77.23
+"NESR","National Energy Services Reunited Corp.","Energy",21.19,9.00,37.44,76.71
+"DMAC","DiaMedica Therapeutics Inc.","Healthcare",8.79,4.00,15.50,76.34
+"BKD","Brookdale Senior Living Inc.","Healthcare",9.17,6.00,16.17,76.30
+"SUJA","Suja Life, Inc.","Consumer Defensive",7.04,5.00,12.40,76.14
+"KE","Kimball Electronics, Inc.","Industrials",19.74,3.00,34.67,75.62
+"NVCT","Nuvectis Pharma, Inc.","Healthcare",20.24,5.00,35.40,74.90
+"DAKT","Daktronics, Inc.","Technology",19.26,3.00,33.67,74.80
+"NBTX","Nanobiotix S.A.","Healthcare",30.66,3.00,53.57,74.75
+"PESI","Perma-Fix Environmental Services, Inc.","Industrials",14.88,1.00,26.00,74.73
+"SRTA","Strata Critical Medical, Inc.","Healthcare",5.51,4.00,9.62,74.68
+"PKE","Park Aerospace Corp.","Industrials",24.33,2.00,42.50,74.68
+"PGY","Pagaya Technologies Ltd.","Technology",16.87,11.00,29.45,74.60
+"PHVS","Pharvaris N.V.","Healthcare",33.36,14.00,58.19,74.42
+"IRS","IRSA Inversiones y Representaciones Sociedad Anónima","Real Estate",12.54,3.00,21.87,74.38
+"SAR","Saratoga Investment Corp.","Financial Services",11.47,5.00,20.00,74.37
+"UTI","Universal Technical Institute, Inc.","Consumer Defensive",21.99,6.00,38.33,74.32
+"ABSI","Absci Corporation","Healthcare",8.45,11.00,14.73,74.29
+"JOBY","Joby Aviation, Inc.","Industrials",5.08,9.00,8.84,74.06
+"MOMO","Hello Group Inc.","Communication Services",4.42,7.00,7.69,74.04
+"AG","First Majestic Silver Corp.","Basic Materials",13.65,2.00,23.75,73.99
+"STOK","Stoke Therapeutics, Inc.","Healthcare",26.68,13.00,46.38,73.86
+"COLL","Collegium Pharmaceutical, Inc.","Healthcare",25.32,8.00,44.00,73.78
+"STUB","StubHub Holdings, Inc.","Communication Services",5.31,12.00,9.21,73.41
+"GASS","StealthGas Inc.","Industrials",8.08,1.00,14.00,73.27
+"NEWP","New Pacific Metals Corp.","Basic Materials",5.06,1.00,8.76,73.03
+"FRNM","Freenome, Inc.","Healthcare",10.41,5.00,18.00,72.91
+"LINC","Lincoln Educational Services Corporation","Consumer Defensive",22.81,5.00,39.40,72.73
+"EBS","Emergent BioSolutions Inc.","Healthcare",5.79,2.00,10.00,72.71
+"REFI","Chicago Atlantic Real Estate Finance, Inc.","Real Estate",8.61,3.00,14.83,72.28
+"CIM","Chimera Investment Corporation","Real Estate",6.58,3.00,11.33,72.24
+"KODK","Eastman Kodak Company","Industrials",8.13,1.00,14.00,72.20
+"EGY","VAALCO Energy, Inc.","Energy",5.49,2.00,9.45,72.13
+"ALTG","Alta Equipment Group Inc.","Industrials",5.32,5.00,9.15,72.07
+"BHVN","Biohaven Ltd.","Healthcare",13.82,15.00,23.73,71.73
+"ARLO","Arlo Technologies, Inc.","Industrials",11.86,6.00,20.33,71.44
+"CSIQ","Canadian Solar Inc.","Technology",9.88,12.00,16.93,71.35
+"KOP","Koppers Holdings Inc.","Basic Materials",31.16,3.00,53.33,71.16
+"ZBIO","Zenas BioPharma, Inc.","Healthcare",28.01,8.00,47.88,70.92
+"HY","Hyster-Yale, Inc.","Industrials",27.22,2.00,46.50,70.83
+"AIP","Arteris, Inc.","Technology",19.34,7.00,33.00,70.63
+"HPP","Hudson Pacific Properties, Inc.","Real Estate",8.86,11.00,15.09,70.33
+"TTI","TETRA Technologies, Inc.","Energy",6.39,4.00,10.88,70.19
+"KMDA","Kamada Ltd.","Healthcare",8.09,4.00,13.75,69.96
+"FLNC","Fluence Energy, Inc.","Industrials",4.68,20.00,7.95,69.87
+"BRCC","BRC Inc.","Consumer Defensive",8.44,3.00,14.33,69.83
+"OABI","OmniAb, Inc.","Healthcare",4.91,6.00,8.33,69.72
+"SVC","Service Properties Trust","Real Estate",5.70,3.00,9.67,69.59
+"MAMA","Mama's Creations, Inc.","Consumer Defensive",13.00,8.00,21.88,68.27
+"TRLV","Trulieve Cannabis Corp.","Healthcare",10.90,7.00,18.32,68.09
+"VOXR","Vox Royalty Corp.","Basic Materials",4.58,5.00,7.67,67.47
+"MBLY","Mobileye Global Inc.","Consumer Cyclical",5.56,23.00,9.29,67.15
+"CWH","Camping World Holdings, Inc.","Consumer Cyclical",4.34,14.00,7.25,67.05
+"MATW","Matthews International Corporation","Industrials",18.80,3.00,31.33,66.67
+"AGBK","Agi Inc.","Financial Services",6.26,11.00,10.43,66.63
+"ANGO","AngioDynamics, Inc.","Healthcare",11.87,4.00,19.75,66.39
+"OPRA","Opera Limited","Communication Services",15.80,7.00,26.29,66.37
+"DHX","DHI Group, Inc.","Technology",4.41,3.00,7.33,66.29
+"BKV","BKV Corporation","Energy",19.25,11.00,32.00,66.23
+"USNA","USANA Health Sciences, Inc.","Consumer Defensive",13.24,1.00,22.00,66.16
+"JKS","Jinko Holdings Limited","Technology",9.40,6.00,15.60,65.98
+"NVAX","Novavax, Inc.","Healthcare",8.53,9.00,14.11,65.53
+"CSQR","Csquare, Inc.","Technology",16.87,10.00,27.90,65.38
+"INR","Infinity Natural Resources, Inc.","Energy",12.94,9.00,21.33,64.86
+"PAYP","PayPay Corporation","Technology",14.35,13.00,23.66,64.86
+"ZYME","Zymeworks Inc.","Healthcare",26.24,13.00,43.23,64.75
+"HL","Hecla Mining Company","Basic Materials",13.10,10.00,21.57,64.69
+"CLB","Core Laboratories Inc.","Energy",9.11,3.00,15.00,64.65
+"SVM","Silvercorp Metals Inc.","Basic Materials",8.66,2.00,14.25,64.55
+"PRME","Prime Medicine, Inc.","Healthcare",4.27,10.00,7.03,64.52
+"DQ","Daqo New Energy Corp.","Technology",10.91,7.00,17.92,64.29
+"LIME","Neutron Holdings, Inc.","Industrials",20.19,7.00,33.14,64.15
+"QUAD","Quad/Graphics, Inc.","Industrials",7.62,3.00,12.50,64.04
+"CENX","Century Aluminum Company","Basic Materials",34.03,5.00,55.80,63.97
+"PPHC","Public Policy Holding Company, Inc.","Industrials",10.39,2.00,17.00,63.62
+"GENI","Genius Sports Limited","Communication Services",6.26,21.00,10.24,63.55
+"NMAX","Newsmax, Inc.","Communication Services",9.58,3.00,15.67,63.54
+"SHIP","Seanergy Maritime Holdings Corp","Industrials",15.91,4.00,26.00,63.42
+"UNIT","Uniti Group Inc.","Real Estate",4.88,8.00,7.97,63.29
+"MTRX","Matrix Service Company","Industrials",9.19,2.00,15.00,63.22
+"ASTH","Astrana Health, Inc.","Healthcare",31.80,9.00,51.89,63.17
+"CRESY","Cresud Sociedad Anónima, Comercial, Inmobiliaria, Financiera y Agropecuaria","Industrials",9.74,2.00,15.86,62.83
+"CLMT","Calumet, Inc.","Basic Materials",34.30,5.00,55.80,62.68
+"ETOR","eToro Group Ltd.","Financial Services",22.50,15.00,36.60,62.67
+"THRM","Gentherm Incorporated","Consumer Cyclical",29.08,7.00,47.29,62.61
+"MBUU","Malibu Boats, Inc.","Consumer Cyclical",19.76,8.00,32.12,62.58
+"NTGR","NETGEAR, Inc.","Technology",19.51,3.00,31.67,62.31
+"OPRX","OptimizeRx Corporation","Healthcare",7.34,5.00,11.90,62.13
+"PLAY","Dave & Buster's Entertainment, Inc.","Communication Services",8.02,6.00,13.00,62.09
+"DSP","Viant Technology Inc.","Technology",11.92,11.00,19.32,62.07
+"GTX","Garrett Motion Inc.","Consumer Cyclical",20.88,6.00,33.83,62.04
+"ALLT","Allot Ltd.","Technology",7.95,5.00,12.88,62.01
+"TEO","Telecom Argentina S.A.","Communication Services",10.57,6.00,17.12,61.94
+"HBM","Hudbay Minerals Inc.","Basic Materials",21.38,6.00,34.60,61.83
+"BZ","Kanzhun Limited","Communication Services",12.96,21.00,20.97,61.78
+"PHI","PLDT Inc.","Communication Services",16.40,1.00,26.53,61.77
+"PAX","Patria Investments Limited","Financial Services",9.17,6.00,14.83,61.76
+"ACAD","Acadia Pharmaceuticals Inc.","Healthcare",18.75,19.00,30.32,61.68
+"DMRC","Digimarc Corporation","Technology",7.12,2.00,11.50,61.52
+"DCH","Dauch Corporation","Consumer Cyclical",4.69,12.00,7.58,61.51
+"RPAY","Repay Holdings Corporation","Technology",4.18,5.00,6.75,61.48
+"HSAI","Hesai Group","Consumer Cyclical",14.42,18.00,23.21,60.93
+"LCUT","Lifetime Brands, Inc.","Consumer Cyclical",7.77,2.00,12.50,60.88
+"CWCO","Consolidated Water Co. Ltd.","Utilities",24.90,1.00,40.00,60.64
+"FSM","Fortuna Mining Corp.","Basic Materials",9.03,1.00,14.50,60.58
+"ADIG","ADI Global Distribution Inc.","Technology",10.09,5.00,16.20,60.56
+"LIFE","Ethos Technologies Inc.","Financial Services",33.26,8.00,53.38,60.48
+"ALGM","Allegro MicroSystems, Inc.","Technology",30.13,14.00,48.21,60.02
+"LOMA","Loma Negra Compañía Industrial Argentina Sociedad Anónima","Basic Materials",8.69,5.00,13.90,59.95
+"STDN","Standard Nuclear, Inc.","Basic Materials",10.55,8.00,16.88,59.95
+"TRIP","Tripadvisor, Inc.","Consumer Cyclical",7.24,14.00,11.57,59.83
+"RDW","Redwire Corporation","Industrials",7.73,9.00,12.33,59.55
+"UPST","Upstart Holdings, Inc.","Financial Services",19.56,16.00,31.19,59.45
+"NATR","Nature's Sunshine Products, Inc.","Consumer Defensive",10.36,2.00,16.50,59.27
+"IDYA","IDEAYA Biosciences, Inc.","Healthcare",31.83,13.00,50.69,59.26
+"ILPT","Industrial Logistics Properties Trust","Real Estate",6.07,3.00,9.67,59.25
+"GMRS","GMR Solutions Inc.","Healthcare",11.54,8.00,18.38,59.23
+"CASK","Sempreon, Inc.","Consumer Defensive",16.97,5.00,27.00,59.10
+"AMSF","AMERISAFE, Inc.","Financial Services",19.50,3.00,31.00,58.97
+"PWP","Perella Weinberg Partners","Financial Services",13.26,4.00,21.00,58.37
+"AERO","Grupo Aeromexico, S.A.B. de C.V","Industrials",16.55,9.00,26.16,58.04
+"NOAH","Noah Holdings Limited","Financial Services",6.52,4.00,10.30,58.03
+"KRRO","Korro Bio, Inc.","Healthcare",13.61,10.00,21.50,57.97
+"XZO","Exzeo Group, Inc.","Financial Services",16.00,2.00,25.25,57.81
+"IA","Innovative Aerosystems, Inc.","Industrials",21.07,4.00,33.25,57.81
+"RARE","Ultragenyx Pharmaceutical Inc.","Healthcare",16.08,20.00,25.35,57.65
+"STNE","StoneCo Ltd.","Technology",7.92,17.00,12.48,57.62
+"CV","CapsoVision, Inc.","Healthcare",6.03,2.00,9.50,57.55
+"HAWK","HawkEye 360, Inc.","Industrials",18.16,10.00,28.60,57.49
+"RUN","Sunrun Inc.","Technology",8.63,17.00,13.59,57.45
+"OMER","Omeros Corporation","Healthcare",17.49,2.00,27.50,57.23
+"FBRT","Franklin BSP Realty Trust, Inc.","Real Estate",6.15,3.00,9.67,57.18
+"ADNT","Adient plc","Consumer Cyclical",16.00,11.00,25.09,56.82
+"CTVA","Corteva, Inc.","Basic Materials",9.43,16.00,14.78,56.75
+"ABCL","AbCellera Biologics Inc.","Healthcare",11.49,12.00,18.00,56.66
+"RLAY","Relay Therapeutics, Inc.","Healthcare",18.09,12.00,28.25,56.16
+"HQ","Horizon Quantum Holdings Ltd.","Technology",11.86,2.00,18.50,55.99
+"BVS","Bioventus Inc.","Healthcare",10.66,5.00,16.60,55.72
+"INSE","Inspired Entertainment, Inc.","Consumer Cyclical",4.40,5.00,6.85,55.68
+"FTK","Flotek Industries, Inc.","Energy",25.33,6.00,39.42,55.61
+"PAYS","Paysign, Inc.","Technology",9.52,4.00,14.81,55.59
+"SIND","Sinda Ltd.","Basic Materials",11.84,6.00,18.40,55.41
+"AROC","Archrock, Inc.","Energy",27.39,8.00,42.38,54.71
+"AEBI","Aebi Schmidt Holding AG","Industrials",10.36,2.00,16.00,54.44
+"HYMC","Hycroft Mining Holding Corporation","Basic Materials",15.90,2.00,24.50,54.09
+"ERAS","Erasca, Inc.","Healthcare",15.66,9.00,24.11,53.97
+"DRTS","Alpha Tau Medical Ltd.","Healthcare",13.38,5.00,20.60,53.96
+"HAPN","Happen, Inc.","Financial Services",15.53,8.00,23.88,53.73
+"BETR","Better Home & Finance Holding Company","Financial Services",15.44,7.00,23.71,53.59
+"AMRC","Ameresco, Inc.","Industrials",25.46,10.00,39.10,53.57
+"CRGY","Crescent Energy Company","Energy",12.12,16.00,18.56,53.16
+"TKC","Turkcell Iletisim Hizmetleri A.S.","Communication Services",4.81,2.00,7.36,53.12
+"BBW","Build-A-Bear Workshop, Inc.","Consumer Cyclical",29.40,3.00,45.00,53.06
+"BVN","Compañía de Minas Buenaventura S.A.A.","Basic Materials",24.83,6.00,38.00,53.04
+"LOVE","The Lovesac Company","Consumer Cyclical",15.14,6.00,23.17,53.02
+"DRD","DRDGOLD Limited","Basic Materials",22.89,1.00,35.00,52.91
+"ENPH","Enphase Energy, Inc.","Technology",26.07,25.00,39.86,52.88
+"BBNX","Beta Bionics, Inc.","Healthcare",16.42,14.00,25.10,52.86
+"BKSY","BlackSky Technology Inc.","Industrials",23.80,8.00,36.38,52.85
+"STWD","Starwood Property Trust, Inc.","Real Estate",11.34,8.00,17.31,52.67
+"TRC","Tejon Ranch Co.","Industrials",17.20,1.00,26.25,52.62
+"FOR","Forestar Group Inc.","Real Estate",22.30,2.00,34.00,52.47
+"KYIV","Kyivstar Group Ltd.","Communication Services",12.47,9.00,19.01,52.41
+"FWRD","Forward Air Corporation","Industrials",17.39,2.00,26.50,52.39
+"DPC","DPC Holdings PLC","Industrials",34.26,5.00,52.20,52.36
+"OFRM","Once Upon A Farm, PBC","Consumer Defensive",9.65,8.00,14.69,52.20
+"IVR","Invesco Mortgage Capital Inc.","Real Estate",5.04,3.00,7.67,52.12
+"RNGR","Ranger Energy Services, Inc.","Energy",12.51,3.00,19.00,51.88
+"OUST","Ouster, Inc.","Technology",33.48,6.00,50.83,51.83
+"CVLG","Covenant Logistics Group, Inc.","Industrials",32.61,4.00,49.50,51.79
+"PRDO","Perdoceo Education Corporation","Consumer Defensive",28.99,1.00,44.00,51.78
+"SGHC","Super Group (SGHC) Limited","Consumer Cyclical",11.64,9.00,17.67,51.78
+"BTU","Peabody Energy Corporation","Energy",17.41,6.00,26.42,51.73
+"MTLS","Materialise NV","Technology",6.49,3.00,9.84,51.55
+"SMC","Summit Midstream Corporation","Energy",30.69,2.00,46.50,51.52
+"WTTR","Select Water Solutions, Inc.","Energy",16.43,7.00,24.86,51.29
+"FOSL","Fossil Group, Inc.","Consumer Cyclical",8.43,4.00,12.75,51.25
+"TGB","Trekor Metals Limited","Basic Materials",6.81,1.00,10.30,51.20
+"HUBG","Hub Group, Inc.","Industrials",24.60,12.00,37.17,51.08
+"SAFE","Safehold Inc.","Real Estate",9.86,9.00,14.89,51.00
+"ACCO","Acco Brands Corporation","Industrials",5.31,3.00,8.00,50.66
+"ELPC","Companhia Paranaense de Energia","Utilities",10.91,3.00,16.43,50.63
+"PROF","Profound Medical Corp.","Healthcare",7.42,5.00,11.14,50.13
+"MTUS","Metallus Inc.","Basic Materials",16.94,3.00,25.42,50.06
+"PLAB","Photronics, Inc.","Technology",27.55,3.00,41.33,50.03
+"CGNT","Cognyte Software Ltd.","Technology",8.24,3.00,12.33,49.68
+"MOV","Movado Group, Inc.","Consumer Cyclical",31.78,2.00,47.50,49.47
+"AGLT","Agility Robotics, Inc.","Technology",7.36,1.00,11.00,49.46
+"MH","McGraw Hill, Inc.","Consumer Defensive",11.60,12.00,17.33,49.43
+"CMRE","Costamare Inc.","Industrials",13.39,2.00,20.00,49.37
+"VOYG","Voyager Technologies, Inc.","Industrials",27.04,11.00,40.36,49.27
+"ACCV","Accelevation Holdings Corp.","Industrials",12.92,7.00,19.29,49.27
+"ANIK","Anika Therapeutics, Inc.","Healthcare",13.40,2.00,20.00,49.25
+"DAN","Dana Incorporated","Consumer Cyclical",23.90,6.00,35.67,49.23
+"EYE","National Vision Holdings, Inc.","Consumer Cyclical",18.30,10.00,27.30,49.22
+"HLIT","Harmonic Inc.","Technology",10.34,7.00,15.43,49.21
+"DMC","Del Monte Corporation","Consumer Defensive",27.22,2.00,40.60,49.16
+"MLKN","MillerKnoll, Inc.","Consumer Cyclical",21.13,2.00,31.50,49.08
+"BRSL","Brightstar Lottery PLC","Consumer Cyclical",9.81,8.00,14.61,48.96
+"DEC","Diversified Energy Company","Energy",13.84,8.00,20.61,48.90
+"KRNT","Kornit Digital Ltd.","Industrials",16.79,4.00,25.00,48.90
+"LWAY","Lifeway Foods, Inc.","Consumer Defensive",21.72,3.00,32.33,48.86
+"OBE","Obsidian Energy Ltd.","Energy",9.89,1.00,14.72,48.81
+"ARCO","Arcos Dorados Holdings Inc.","Consumer Cyclical",7.21,9.00,10.73,48.79
+"FSLY","Fastly, Inc.","Technology",16.62,11.00,24.73,48.78
+"PXED","Phoenix Education Partners, Inc.","Consumer Defensive",19.11,7.00,28.43,48.76
+"CAI","Caris Life Sciences, Inc.","Healthcare",23.04,13.00,34.23,48.57
+"OOMA","Ooma, Inc.","Technology",18.06,5.00,26.80,48.39
+"NMRK","Newmark Group, Inc.","Real Estate",10.62,6.00,15.75,48.31
+"SBSW","Sibanye Stillwater Limited","Basic Materials",8.77,5.00,13.01,48.30
+"SSRM","SSR Mining Inc.","Basic Materials",27.15,4.00,40.25,48.25
+"CSTM","Constellium SE","Basic Materials",22.36,6.00,33.14,48.20
+"EZPW","EZCORP, Inc.","Financial Services",27.55,5.00,40.80,48.09
+"BFS","Saul Centers, Inc.","Real Estate",28.37,2.00,42.00,48.04
+"FENC","Fennec Pharmaceuticals Inc.","Healthcare",11.62,5.00,17.20,48.02
+"TXO","TXO Partners, L.P.","Energy",13.36,4.00,19.75,47.83
+"TAL","TAL Education Group","Consumer Defensive",10.28,19.00,15.18,47.66
+"AGRO","Adecoagro S.A.","Consumer Defensive",9.11,8.00,13.44,47.50
+"RVLV","Revolve Group, Inc.","Consumer Cyclical",18.86,13.00,27.77,47.24
+"HMY","Harmony Gold Mining Company Limited","Basic Materials",15.09,3.00,22.19,47.03
+"NGVC","Natural Grocers by Vitamin Cottage, Inc.","Consumer Defensive",28.75,4.00,42.25,46.96
+"LYNX","Lyntris Inc.","Industrials",13.50,6.00,19.83,46.91
+"SSMR","Sunshine Silver Mining & Refining Company","Basic Materials",12.99,6.00,19.08,46.91
+"WEST","Westrock Coffee Company","Consumer Defensive",8.34,4.00,12.25,46.88
+"FMC","FMC Corporation","Basic Materials",5.21,15.00,7.65,46.77
+"NSSC","Napco Security Technologies, Inc.","Industrials",30.22,6.00,44.33,46.70
+"ALHC","Alignment Healthcare, Inc.","Healthcare",7.36,12.00,10.79,46.63
+"TDS","Telephone and Data Systems, Inc.","Communication Services",31.40,2.00,46.00,46.50
+"NVTS","Navitas Semiconductor Corporation","Technology",8.95,7.00,13.10,46.37
+"ELMT","The Elmet Group Co.","Industrials",19.83,4.00,29.00,46.24
+"TRTX","TPG RE Finance Trust, Inc.","Real Estate",6.47,6.00,9.46,46.19
+"NEO","NeoGenomics, Inc.","Healthcare",16.02,10.00,23.40,46.07
+"XP","XP Inc.","Financial Services",15.49,13.00,22.62,46.02
+"AGIO","Agios Pharmaceuticals, Inc.","Healthcare",31.59,9.00,46.11,45.97
+"ERO","Ero Copper Corp.","Basic Materials",29.06,3.00,42.40,45.91
+"KELYA","Kelly Services, Inc.","Industrials",13.71,3.00,20.00,45.88
+"CSV","Carriage Services, Inc.","Consumer Cyclical",28.25,5.00,41.20,45.84
+"MWH","SOLV Energy, Inc.","Utilities",27.81,11.00,40.55,45.79
+"INTT","InTest Corporation","Technology",13.73,3.00,20.00,45.67
+"APC","ARKO Petroleum Corp.","Energy",14.62,4.00,21.25,45.35
+"FLY","Firefly Aerospace Inc.","Industrials",25.21,11.00,36.64,45.32
+"VSH","Vishay Intertechnology, Inc.","Technology",26.62,6.00,38.67,45.25
+"AFYA","Afya Limited","Consumer Defensive",10.32,8.00,14.97,45.10
+"CEVA","CEVA, Inc.","Technology",25.59,9.00,37.11,45.02
+"AD","Array Digital Infrastructure, Inc.","Communication Services",27.84,3.00,40.33,44.88
+"NAVI","Navient Holdings, Inc.","Financial Services",6.23,6.00,9.00,44.46
+"PBLS","Parabilis Medicines, Inc.","Healthcare",28.43,6.00,41.00,44.21
+"YMM","Full Truck Alliance Co. Ltd.","Technology",8.69,15.00,12.53,44.17
+"BGC","BGC Group, Inc.","Financial Services",11.10,2.00,16.00,44.14
+"SLM","SLM Corporation","Financial Services",17.20,9.00,24.78,44.06
+"HLMN","Hillman Solutions Corp.","Industrials",7.87,8.00,11.31,43.74
+"MASS","908 Devices Inc.","Healthcare",9.74,4.00,14.00,43.74
+"PFLT","PennantPark Floating Rate Capital Ltd.","Financial Services",6.66,7.00,9.57,43.72
+"CION","CION Investment Corporation","Financial Services",6.09,2.00,8.75,43.68
+"ARRY","Array Technologies, Inc.","Technology",4.84,19.00,6.95,43.65
+"HIMS","Hims & Hers Health, Inc.","Healthcare",19.73,13.00,28.31,43.48
+"FWRG","First Watch Restaurant Group, Inc.","Consumer Cyclical",13.18,10.00,18.90,43.40
+"NEWT","NewtekOne, Inc.","Financial Services",10.62,5.00,15.20,43.13
+"ESI","Element Solutions Inc","Basic Materials",33.08,12.00,47.33,43.09
+"ARQT","Arcutis Biotherapeutics, Inc.","Healthcare",28.26,8.00,40.38,42.87
+"RITM","Rithm Capital Corp.","Real Estate",8.97,10.00,12.80,42.70
+"CSTL","Castle Biosciences, Inc.","Healthcare",33.79,10.00,48.20,42.65
+"SENS","Senseonics Holdings, Inc.","Healthcare",10.58,6.00,15.08,42.56
+"HRMY","Harmony Biosciences Holdings, Inc.","Healthcare",33.76,12.00,48.08,42.43
+"EGO","Eldorado Gold Corporation","Basic Materials",31.58,6.00,44.83,41.97
+"AMLX","Amylyx Pharmaceuticals, Inc.","Healthcare",30.29,11.00,43.00,41.96
+"TILE","Interface, Inc.","Consumer Cyclical",31.00,4.00,44.00,41.94
+"SGP","SpyGlass Pharma, Inc.","Healthcare",32.88,6.00,46.67,41.93
+"RELY","Remitly Global, Inc.","Technology",22.55,9.00,32.00,41.91
+"IMVT","Immunovant, Inc.","Healthcare",34.18,16.00,48.50,41.90
+"ANGI","Angi Inc.","Communication Services",6.48,6.00,9.17,41.46
+"OIG","Orion180 Insurance Group Inc.","Financial Services",10.67,5.00,15.08,41.33
+"SNDA","Sonida Senior Living, Inc.","Healthcare",33.00,6.00,46.50,40.91
+"MMED","MiniMed Group, Inc.","Healthcare",17.99,15.00,25.33,40.82
+"OTF","Blue Owl Technology Finance Corp.","Financial Services",9.52,9.00,13.39,40.64
+"RELL","Richardson Electronics, Ltd.","Technology",18.15,2.00,25.50,40.50
+"GPRE","Green Plains Inc.","Basic Materials",13.32,6.00,18.67,40.14
+"CDRE","Cadre Holdings, Inc.","Industrials",33.42,6.00,46.83,40.14
+"BXDC","Blackstone Digital Infrastructure Trust Inc.","Real Estate",16.69,11.00,23.36,39.99
+"FLOC","Flowco Holdings Inc.","Energy",21.28,9.00,29.78,39.93
+"NEXN","Nexxen International Ltd.","Communication Services",10.32,10.00,14.44,39.92
+"SKYH","Sky Harbour Group Corporation","Real Estate",11.31,8.00,15.81,39.81
+"DKNG","DraftKings Inc.","Consumer Cyclical",18.89,36.00,26.40,39.73
+"QDEL","QuidelOrtho Corporation","Healthcare",10.74,3.00,15.00,39.66
+"OFIX","Orthofix Medical Inc.","Healthcare",7.17,4.00,10.00,39.47
+"VTS","Vitesse Energy, Inc.","Energy",15.42,4.00,21.50,39.43
+"KLAR","Klarna Group plc","Financial Services",13.80,22.00,19.24,39.43
+"XIFR","XPLR Infrastructure, LP","Utilities",7.60,11.00,10.59,39.35
+"DCTH","Delcath Systems, Inc.","Healthcare",20.55,5.00,28.60,39.17
+"MRP","Millrose Properties, Inc.","Real Estate",25.87,5.00,36.00,39.16
+"ASPN","Aspen Aerogels, Inc.","Basic Materials",5.58,5.00,7.75,38.89
+"ZLAB","Zai Lab Limited","Healthcare",24.60,12.00,34.12,38.72
+"GNL","Global Net Lease, Inc.","Real Estate",6.58,8.00,9.12,38.68
+"FLO","Flowers Foods, Inc.","Consumer Defensive",5.53,3.00,7.67,38.64
+"REZI","Resideo Technologies, Inc.","Industrials",21.32,6.00,29.50,38.37
+"LOCO","El Pollo Loco Holdings, Inc.","Consumer Cyclical",15.01,6.00,20.75,38.24
+"SSL","Sasol Limited","Basic Materials",14.30,1.00,19.75,38.11
+"AVO","Mission Produce, Inc.","Consumer Defensive",11.83,5.00,16.32,37.95
+"PRM","Perimeter Group Inc.","Basic Materials",29.36,4.00,40.50,37.94
+"AUDC","AudioCodes Ltd.","Technology",9.07,1.00,12.50,37.82
+"GEL","Genesis Energy, L.P.","Energy",12.82,3.00,17.67,37.81
+"SM","SM Energy Company","Energy",32.73,18.00,45.06,37.66
+"GRND","Grindr Inc.","Technology",14.84,5.00,20.40,37.47
+"SHLS","Shoals Technologies Group, Inc.","Technology",8.29,14.00,11.39,37.43
+"CLW","Clearwater Paper Corporation","Basic Materials",14.56,4.00,20.00,37.36
+"EIC","Eagle Point Income Company","Financial Services",9.29,2.00,12.75,37.24
+"PTRN","Pattern Group Inc.","Consumer Cyclical",20.38,8.00,27.88,36.78
+"ECVT","Ecovyst Inc.","Basic Materials",10.97,6.00,15.00,36.74
+"ENOV","Enovis Corporation","Healthcare",27.68,12.00,37.83,36.68
+"DHC","Diversified Healthcare Trust","Real Estate",7.22,4.00,9.88,36.68
+"MOBI","Mobia Medical, Inc.","Healthcare",13.17,4.00,18.00,36.67
+"VRDN","Viridian Therapeutics, Inc.","Healthcare",30.87,16.00,42.19,36.66
+"GRNT","Granite Ridge Resources, Inc.","Energy",6.30,5.00,8.60,36.51
+"RPC","Ridgepost Capital, Inc","Financial Services",9.53,4.00,13.00,36.41
+"PTON","Peloton Interactive, Inc.","Consumer Cyclical",5.70,15.00,7.76,36.14
+"LADR","Ladder Capital Corp","Real Estate",8.50,7.00,11.57,36.13
+"SVV","Savers Value Village, Inc.","Consumer Cyclical",10.46,11.00,14.23,36.02
+"SRAD","Sportradar Group AG","Technology",12.81,22.00,17.42,35.96
+"SMWB","Similarweb Ltd.","Technology",7.97,6.00,10.83,35.93
+"BXMT","Blackstone Mortgage Trust, Inc.","Real Estate",10.69,7.00,14.50,35.64
+"TCMD","Tactile Systems Technology, Inc.","Healthcare",26.81,3.00,36.33,35.52
+"SRPT","Sarepta Therapeutics, Inc.","Healthcare",16.07,22.00,21.77,35.49
+"STRZ","Starz Entertainment Corp.","Communication Services",25.88,10.00,35.00,35.24
+"DLO","DLocal Limited","Technology",13.69,10.00,18.50,35.14
+"JCAP","Jefferson Capital, Inc.","Financial Services",20.88,5.00,28.20,35.06
+"INVX","Innovex International, Inc.","Energy",25.30,6.00,34.17,35.05
+"CXW","CoreCivic, Inc.","Industrials",31.27,5.00,42.20,34.95
+"IIIV","i3 Verticals, Inc.","Technology",18.91,4.00,25.50,34.85
+"BNED","Barnes & Noble Education, Inc.","Consumer Cyclical",12.80,2.00,17.25,34.77
+"KRT","Karat Packaging Inc.","Consumer Cyclical",33.45,2.00,45.00,34.53
+"PMTS","CPI Card Group Inc.","Financial Services",24.93,4.00,33.50,34.38
+"RMR","The RMR Group Inc.","Real Estate",16.75,3.00,22.50,34.33
+"LBTYA","Liberty Global Ltd.","Communication Services",10.77,12.00,14.47,34.32
+"PTEN","Patterson-UTI Energy, Inc.","Energy",10.97,15.00,14.73,34.31
+"BETA","BETA Technologies, Inc.","Industrials",23.33,9.00,31.33,34.30
+"LZ","LegalZoom.com, Inc.","Industrials",4.99,5.00,6.70,34.27
+"PENN","PENN Entertainment, Inc.","Consumer Cyclical",17.50,19.00,23.47,34.14
+"TNDM","Tandem Diabetes Care, Inc.","Healthcare",20.07,21.00,26.90,34.05
+"CLFD","Clearfield, Inc.","Technology",29.67,4.00,39.75,33.97
+"JACK","Jack in the Box Inc.","Consumer Cyclical",14.75,12.00,19.75,33.90
+"NEXT","NextDecade Corporation","Energy",6.50,5.00,8.70,33.85
+"WBI","WaterBridge Infrastructure LLC","Energy",27.46,8.00,36.75,33.83
+"MGY","Magnolia Oil & Gas Corporation","Energy",24.54,17.00,32.82,33.76
+"JMKE","Jersey Mike's Subs Inc.","Consumer Cyclical",19.44,23.00,26.00,33.72
+"BV","BrightView Holdings, Inc.","Industrials",9.85,10.00,13.17,33.71
+"SEVN","Seven Hills Realty Trust","Real Estate",6.51,5.00,8.70,33.64
+"CPS","Cooper-Standard Holdings Inc.","Consumer Cyclical",18.72,3.00,25.00,33.55
+"VITL","Vital Farms, Inc.","Consumer Defensive",9.07,9.00,12.11,33.53
+"KN","Knowles Corporation","Technology",33.00,4.00,44.00,33.33
+"TTAM","Titan America SA","Basic Materials",11.25,7.00,15.00,33.33
+"AMTM","Amentum Holdings, Inc.","Industrials",21.95,12.00,29.25,33.26
+"FSSL","FS Specialty Lending Fund","Financial Services",11.85,1.00,15.75,32.91
+"IIIN","Insteel Industries Inc.","Industrials",27.90,1.00,37.00,32.62
+"QNST","QuinStreet, Inc.","Communication Services",18.98,6.00,25.17,32.60
+"SNAP","Snap Inc.","Communication Services",5.26,35.00,6.96,32.30
+"NTCT","NetScout Systems, Inc.","Technology",32.13,2.00,42.50,32.28
+"RDWR","Radware Ltd.","Technology",31.38,2.00,41.50,32.25
+"YALA","Yalla Group Limited","Technology",5.51,3.00,7.28,32.12
+"CLBT","Cellebrite DI Ltd.","Technology",11.53,7.00,15.21,31.95
+"MYE","Myers Industries, Inc.","Consumer Cyclical",28.07,1.00,37.00,31.81
+"FRSH","Freshworks Inc.","Technology",12.67,13.00,16.69,31.75
+"CTOS","Custom Truck One Source, Inc.","Industrials",10.00,6.00,13.17,31.67
+"GNTX","Gentex Corporation","Consumer Cyclical",19.20,9.00,25.28,31.66
+"ZG","Zillow Group, Inc.","Communication Services",30.11,21.00,39.62,31.58
+"ADMA","ADMA Biologics, Inc.","Healthcare",13.68,4.00,18.00,31.58
+"SMHI","SEACOR Marine Holdings Inc.","Industrials",8.37,1.00,11.00,31.42
+"BBUC","Brookfield Business Corporation","Industrials",28.68,8.00,37.69,31.41
+"AVAH","Aveanna Healthcare Holdings Inc.","Healthcare",11.50,10.00,15.10,31.30
+"OIS","Oil States International, Inc.","Energy",8.57,4.00,11.25,31.27
+"IAG","IAMGOLD Corporation","Basic Materials",17.32,7.00,22.73,31.23
+"TALO","Talos Energy Inc.","Energy",16.26,9.00,21.33,31.20
+"ALH","Alliance Laundry Holdings Inc.","Consumer Cyclical",23.63,8.00,31.00,31.19
+"OI","O-I Glass, Inc.","Consumer Cyclical",4.96,8.00,6.50,31.05
+"MRTN","Marten Transport, Ltd.","Industrials",12.02,2.00,15.75,31.03
+"CMP","Compass Minerals International, Inc.","Basic Materials",22.53,4.00,29.50,30.94
+"ANRO","Alto Neuroscience, Inc.","Healthcare",29.54,9.00,38.67,30.90
+"PMT","PennyMac Mortgage Investment Trust","Real Estate",7.45,6.00,9.75,30.87
+"DRVN","Driven Brands Holdings Inc.","Consumer Cyclical",11.33,11.00,14.83,30.87
+"LAND","Gladstone Land Corporation","Real Estate",6.88,3.00,9.00,30.81
+"NVRI","Enviri Corporation","Industrials",25.23,3.00,33.00,30.80
+"WERN","Werner Enterprises, Inc.","Industrials",28.04,15.00,36.67,30.77
+"HDSN","Hudson Technologies, Inc.","Basic Materials",4.40,4.00,5.75,30.68
+"MIR","Mirion Technologies, Inc.","Industrials",17.74,11.00,23.18,30.68
+"SI","Shoulder Innovations, Inc.",,20.69,4.00,27.00,30.50
+"MLCO","Melco Resorts & Entertainment Limited","Consumer Cyclical",4.28,13.00,5.58,30.48
+"ARR","ARMOUR Residential REIT, Inc.","Real Estate",11.93,4.00,15.56,30.45
+"VEL","Velocity Financial, Inc.","Financial Services",15.98,3.00,20.83,30.37
+"TLYS","Tilly's, Inc.","Consumer Cyclical",4.22,1.00,5.50,30.33
+"HCKT","The Hackett Group, Inc.","Technology",13.32,3.00,17.33,30.13
+"NHP","National Healthcare Properties, Inc.","Real Estate",15.04,7.00,19.57,30.13
+"TFPM","Triple Flag Precious Metals Corp.","Basic Materials",30.38,4.00,39.50,30.02
+"FIVN","Five9, Inc.","Technology",27.32,20.00,35.50,29.94
+"EFC","Ellington Financial Inc.","Real Estate",11.11,7.00,14.43,29.87
+"CAAP","Corporación América Airports S.A.","Industrials",24.99,6.00,32.40,29.65
+"OWL","Blue Owl Capital Inc.","Financial Services",9.75,18.00,12.64,29.63
+"RMNI","Rimini Street, Inc.","Technology",5.53,3.00,7.17,29.60
+"CMCO","Columbus McKinnon Corporation","Industrials",20.70,4.00,26.75,29.23
+"FA","First Advantage Corporation","Industrials",21.48,8.00,27.75,29.19
+"BBSI","Barrett Business Services, Inc.","Industrials",30.77,4.00,39.75,29.18
+"KREF","KKR Real Estate Finance Trust Inc.","Real Estate",5.42,4.00,7.00,29.15
+"GOOD","Gladstone Commercial Corporation","Real Estate",9.97,4.00,12.88,29.14
+"SHC","Sotera Health Company","Healthcare",16.61,9.00,21.44,29.11
+"IQMX","IQM Quantum Computers Oyj","Technology",6.74,1.00,8.69,28.98
+"VYX","NCR Voyix Corporation","Technology",10.48,6.00,13.50,28.82
+"CAL","Caleres, Inc.","Consumer Cyclical",13.20,2.00,17.00,28.79
+"HSTM","HealthStream, Inc.","Healthcare",27.97,3.00,36.00,28.71
+"AEYE","AudioEye, Inc.","Technology",13.47,3.00,17.33,28.68
+"WB","Weibo Corporation","Communication Services",6.16,16.00,7.93,28.67
+"CELH","Celsius Holdings, Inc.","Consumer Defensive",32.42,21.00,41.71,28.67
+"GGB","Gerdau S.A.","Basic Materials",4.40,4.00,5.66,28.67
+"RRGB","Red Robin Gourmet Burgers, Inc.","Consumer Cyclical",8.81,3.00,11.33,28.64
+"CARL","Carlsmed, Inc.","Healthcare",17.12,5.00,22.00,28.50
+"GTES","Gates Industrial Corporation Ltd.","Industrials",25.40,12.00,32.61,28.37
+"ASUR","Asure Software, Inc.","Technology",10.39,9.00,13.33,28.33
+"BTG","B2Gold Corp.","Basic Materials",4.91,5.00,6.30,28.31
+"MBI","MBIA Inc.","Financial Services",4.68,2.00,6.00,28.21
+"WSC","WillScot Holdings Corporation","Industrials",19.66,10.00,25.20,28.18
+"RCEL","AVITA Medical, Inc.","Healthcare",15.63,3.00,20.03,28.15
+"TDAY","USA TODAY Co., Inc.","Communication Services",7.09,6.00,9.07,28.00
+"ARLP","Alliance Resource Partners, L.P.","Energy",25.27,3.00,32.33,27.95
+"MRVI","Maravai LifeSciences Holdings, Inc.","Healthcare",7.54,7.00,9.64,27.89
+"IRWD","Ironwood Pharmaceuticals, Inc.","Healthcare",4.83,4.00,6.17,27.85
+"BNL","Broadstone Net Lease, Inc.","Real Estate",17.60,10.00,22.50,27.84
+"BOOM","DMC Global Inc.","Industrials",7.83,1.00,10.00,27.71
+"PRVA","Privia Health Group, Inc.","Healthcare",24.55,17.00,31.35,27.71
+"DNOW","DNOW Inc.","Industrials",13.90,4.00,17.75,27.70
+"CTRI","Centuri Holdings, Inc.","Utilities",21.82,7.00,27.86,27.67
+"SEDG","SolarEdge Technologies, Inc.","Technology",23.85,18.00,30.44,27.65
+"NRDS","NerdWallet, Inc.","Communication Services",7.46,3.00,9.50,27.35
+"UAA","Under Armour, Inc.","Consumer Cyclical",4.91,18.00,6.24,27.18
+"CHWY","Chewy, Inc.","Consumer Cyclical",22.52,22.00,28.64,27.16
+"UMH","UMH Properties, Inc.","Real Estate",14.55,8.00,18.50,27.15
+"DLX","Deluxe Corporation","Industrials",26.78,4.00,34.00,26.96
+"CLBK","Columbia Financial, Inc.","Financial Services",11.16,3.00,14.17,26.94
+"ICL","ICL Group Ltd","Basic Materials",4.52,4.00,5.74,26.94
+"MNSO","MINISO Group Holding Limited","Consumer Cyclical",11.21,16.00,14.22,26.88
+"INNV","InnovAge Holding Corp.","Healthcare",9.47,2.00,12.00,26.72
+"PBI","Pitney Bowes Inc.","Industrials",15.59,5.00,19.72,26.49
+"NAT","Nordic American Tankers Limited","Energy",6.72,2.00,8.50,26.49
+"PEGA","Pegasystems Inc.","Technology",32.43,7.00,41.00,26.43
+"BRBR","BellRing Brands, Inc.","Consumer Defensive",10.56,13.00,13.35,26.38
+"HRTG","Heritage Insurance Holdings, Inc.","Financial Services",33.68,2.00,42.50,26.19
+"GNW","Genworth Financial, Inc.","Financial Services",8.33,1.00,10.50,26.05
+"SBC","SBC Medical Group Holdings Incorporated","Industrials",7.35,4.00,9.25,25.85
+"GEO","The GEO Group, Inc.","Industrials",32.53,4.00,40.94,25.85
+"FLG","Flagstar Bank, National Association","Financial Services",10.48,17.00,13.18,25.73
+"LZB","La-Z-Boy Incorporated","Consumer Cyclical",32.61,2.00,41.00,25.73
+"ETD","Ethan Allen Interiors Inc.","Consumer Cyclical",17.50,1.00,22.00,25.71
+"EXTR","Extreme Networks, Inc.","Technology",26.75,8.00,33.62,25.70
+"INFU","InfuSystem Holdings, Inc.","Healthcare",14.72,3.00,18.50,25.68
+"DX","Dynex Capital, Inc.","Real Estate",10.07,5.00,12.60,25.12
+"CWK","Cushman & Wakefield Limited","Real Estate",13.30,11.00,16.64,25.09
+"MITK","Mitek Systems, Inc.","Technology",18.14,4.00,22.62,24.72
+"NEOG","Neogen Corporation","Healthcare",11.23,3.00,14.00,24.67
+"GAP","The Gap, Inc.","Consumer Cyclical",21.07,18.00,26.26,24.64
+"WHK","WhiteHawk Minerals Corp.","Energy",26.00,5.00,32.40,24.62
+"WAY","Waystar Holding Corp.","Healthcare",27.99,22.00,34.82,24.40
+"CXM","Sprinklr, Inc.","Technology",6.80,8.00,8.44,24.08
+"FRBT","Forbright, Inc.","Financial Services",18.74,6.00,23.25,24.07
+"HVT","Haverty Furniture Companies, Inc.","Consumer Cyclical",25.40,2.00,31.50,24.02
+"IRT","Independence Realty Trust, Inc.","Real Estate",14.96,13.00,18.54,23.92
+"SLRC","SLR Investment Corp.","Financial Services",11.61,8.00,14.38,23.82
+"KRP","Kimbell Royalty Partners, LP","Energy",15.52,5.00,19.20,23.71
+"BL","BlackLine, Inc.","Technology",29.53,10.00,36.50,23.60
+"CBAN","Colony Bankcorp, Inc.","Financial Services",20.34,2.00,25.12,23.53
+"MBC","MasterBrand, Inc.","Consumer Cyclical",6.37,3.00,7.87,23.50
+"UGP","Ultrapar Participações S.A.","Energy",5.82,8.00,7.18,23.32
+"DEI","Douglas Emmett, Inc.","Real Estate",9.90,10.00,12.20,23.23
+"SARO","StandardAero, Inc.","Industrials",27.73,14.00,34.17,23.23
+"FUN","Six Flags Entertainment Corporation","Consumer Cyclical",11.55,13.00,14.23,23.21
+"STVN","Stevanato Group S.p.A.","Healthcare",15.80,12.00,19.46,23.15
+"NABL","N-able, Inc.","Technology",4.87,5.00,5.99,23.00
+"NOV","NOV Inc.","Energy",18.09,20.00,22.25,23.00
+"TWFG","TWFG, Inc.","Financial Services",25.79,7.00,31.71,22.97
+"ASC","Ardmore Shipping Corporation","Industrials",19.52,2.00,24.00,22.95
+"SBLK","Star Bulk Carriers Corp.","Industrials",28.02,5.00,34.44,22.91
+"HTGC","Hercules Capital, Inc.","Financial Services",15.87,9.00,19.50,22.87
+"CALY","Callaway Golf Company","Consumer Cyclical",17.10,10.00,21.00,22.81
+"AMPL","Amplitude, Inc.","Technology",17.34,11.00,21.27,22.68
+"DOLE","Dole plc","Consumer Defensive",14.32,5.00,17.55,22.56
+"LKQ","LKQ Corporation","Consumer Cyclical",19.47,7.00,23.86,22.53
+"OXM","Oxford Industries, Inc.","Consumer Cyclical",28.05,3.00,34.33,22.40
+"NVGS","Navigator Holdings Ltd.","Energy",21.32,6.00,26.08,22.34
+"III","Information Services Group, Inc.","Technology",6.17,4.00,7.55,22.33
+"WHR","Whirlpool Corporation","Consumer Cyclical",29.06,11.00,35.55,22.32
+"PFS","Provident Financial Services, Inc.","Financial Services",22.77,6.00,27.83,22.24
+"REAL","The RealReal, Inc.","Consumer Cyclical",14.53,8.00,17.75,22.16
+"COMP","Compass, Inc.","Real Estate",10.21,12.00,12.46,22.02
+"NEXA","Nexa Resources S.A.","Basic Materials",11.18,5.00,13.64,22.00
+"BANC","Banc of California, Inc.","Financial Services",17.83,12.00,21.75,21.99
+"KVYO","Klaviyo, Inc.","Technology",22.13,21.00,26.98,21.90
+"BEPC","Brookfield Renewable Corporation","Utilities",30.71,7.00,37.43,21.88
+"LFTO","Liftoff Mobile, Inc.","Communication Services",24.44,16.00,29.75,21.73
+"HPK","HighPeak Energy, Inc.","Energy",8.22,1.00,10.00,21.65
+"LAW","CS Disco, Inc.","Technology",6.58,3.00,8.00,21.58
+"FRST","Primis Financial Corp.","Financial Services",14.60,4.00,17.75,21.58
+"PAGS","PagSeguro Digital Ltd.","Technology",7.98,15.00,9.69,21.42
+"RLGT","Radiant Logistics, Inc.","Industrials",9.34,3.00,11.33,21.34
+"NMFC","New Mountain Finance Corporation","Financial Services",6.70,6.00,8.12,21.27
+"NAVN","Navan, Inc.","Technology",25.42,15.00,30.80,21.16
+"RWAY","Runway Growth Finance Corp.","Financial Services",6.70,7.00,8.11,21.00
+"AVBC","Avidia Bancorp, Inc.","Financial Services",22.53,2.00,27.25,20.95
+"NP","Neptune Insurance Holdings Inc.","Financial Services",28.34,13.00,34.27,20.92
+"TIMB","TIM S.A.","Communication Services",19.08,7.00,23.06,20.87
+"NOG","Northern Oil and Gas, Inc.","Energy",25.11,9.00,30.33,20.80
+"PRCH","Porch Group, Inc.","Financial Services",21.05,7.00,25.43,20.80
+"LMRI","Lumexa Imaging Holdings, Inc.","Healthcare",14.81,9.00,17.89,20.79
+"CBLL","CeriBell, Inc.","Healthcare",26.14,7.00,31.57,20.78
+"EVH","Evolent Health, Inc.","Healthcare",4.90,12.00,5.92,20.75
+"MCS","The Marcus Corporation","Communication Services",26.95,4.00,32.50,20.59
+"CWEN","Clearway Energy, Inc.","Utilities",33.42,14.00,40.29,20.54
+"XRAY","DENTSPLY SIRONA Inc.","Healthcare",9.16,15.00,11.03,20.45
+"CC","The Chemours Company","Basic Materials",13.29,10.00,16.00,20.39
+"DHT","DHT Holdings, Inc.","Energy",22.25,6.00,26.73,20.15
+"ALMR","Alamar Biosciences, Inc.","Healthcare",30.81,5.00,37.00,20.09
+"EPRT","Essential Properties Realty Trust, Inc.","Real Estate",27.78,19.00,33.34,20.02
+"HAFN","Hafnia Limited","Industrials",9.59,2.00,11.50,19.92
+"VIPS","Vipshop Holdings Limited","Consumer Cyclical",13.26,20.00,15.88,19.79
+"TKNO","Alpha Teknova, Inc.","Healthcare",8.21,6.00,9.83,19.77
+"PAY","Paymentus Holdings, Inc.","Technology",34.41,6.00,41.17,19.64
+"PANL","Pangaea Logistics Solutions Ltd.","Industrials",9.28,3.00,11.10,19.61
+"LFST","LifeStance Health Group, Inc.","Healthcare",14.08,10.00,16.80,19.32
+"MAT","Mattel, Inc.","Consumer Cyclical",15.12,13.00,18.04,19.30
+"SNDR","Schneider National, Inc.","Industrials",29.34,14.00,35.00,19.29
+"GRFS","Grifols, S.A.","Healthcare",8.69,2.00,10.37,19.28
+"YSWY","Yesway, Inc.","Consumer Defensive",24.84,8.00,29.62,19.26
+"ATEN","A10 Networks, Inc.","Technology",28.66,6.00,34.17,19.21
+"BBCP","Concrete Pumping Holdings, Inc.","Industrials",10.07,1.00,12.00,19.17
+"OSCR","Oscar Health, Inc.","Healthcare",31.05,10.00,37.00,19.16
+"Z","Zillow Group, Inc.","Communication Services",29.80,6.00,35.50,19.13
+"KMT","Kennametal Inc.","Industrials",23.99,7.00,28.57,19.10
+"TIC","TIC Solutions, Inc.","Industrials",10.62,7.00,12.64,19.05
+"WT","WisdomTree, Inc.","Financial Services",21.64,7.00,25.71,18.83
+"VLY","Valley National Bancorp","Financial Services",14.34,14.00,17.04,18.80
+"PRMB","Primo Brands Corporation","Consumer Defensive",23.88,11.00,28.36,18.78
+"SOPH","SOPHiA GENETICS SA","Healthcare",8.21,4.00,9.75,18.76
+"OCFC","OceanFirst Financial Corp.","Financial Services",18.00,6.00,21.38,18.75
+"SFD","Smithfield Foods, Inc.","Consumer Defensive",19.19,7.00,22.79,18.74
+"MDU","MDU Resources Group, Inc.","Utilities",19.59,8.00,23.25,18.68
+"OBDC","Blue Owl Capital Corporation","Financial Services",10.97,13.00,13.02,18.68
+"MAGN","Magnera Corporation","Consumer Defensive",12.64,1.00,15.00,18.67
+"SFL","SFL Corporation Ltd.","Industrials",11.21,3.00,13.30,18.64
+"PAR","PAR Technology Corporation","Technology",22.48,8.00,26.62,18.44
+"CWBC","Community West Bancshares","Financial Services",25.43,5.00,30.10,18.36
+"NRIM","Northrim BanCorp, Inc.","Financial Services",23.94,3.00,28.33,18.35
+"SB","Safe Bulkers, Inc.","Industrials",8.29,2.00,9.80,18.21
+"GTY","Getty Realty Corp.","Real Estate",28.66,7.00,33.86,18.13
+"NVST","Envista Holdings Corporation","Healthcare",24.49,13.00,28.92,18.10
+"CDP","COPT Defense Properties","Real Estate",33.13,8.00,39.12,18.10
+"PZZA","Papa John's International, Inc.","Consumer Cyclical",19.92,8.00,23.50,17.97
+"NXRT","NexPoint Residential Trust, Inc.","Real Estate",15.49,4.00,18.25,17.82
+"RIG","Transocean Ltd.","Energy",5.54,12.00,6.52,17.70
+"AHRT","AH REALTY TRUST INC","Real Estate",6.38,4.00,7.50,17.55
+"WRBY","Warby Parker Inc.","Healthcare",27.44,12.00,32.25,17.53
+"ALKT","Alkami Technology, Inc.","Technology",13.98,5.00,16.40,17.31
+"PINE","Alpine Income Property Trust, Inc.","Real Estate",16.80,10.00,19.70,17.26
+"NPB","Northpointe Bancshares, Inc.","Financial Services",15.43,3.00,18.08,17.20
+"FVRR","Fiverr International Ltd.","Communication Services",8.05,6.00,9.42,16.98
+"FTRE","Fortrea Holdings Inc.","Healthcare",20.20,12.00,23.62,16.96
+"FBP","First BanCorp.","Financial Services",26.16,7.00,30.57,16.86
+"TBI","TrueBlue, Inc.","Industrials",12.41,2.00,14.50,16.84
+"CMBT","Cmb.Tech NV","Energy",17.51,4.00,20.45,16.79
+"TLS","Telos Corporation","Technology",7.35,6.00,8.58,16.78
+"GOOS","Canada Goose Holdings Inc.","Consumer Cyclical",8.46,7.00,9.88,16.75
+"AAL","American Airlines Group Inc.","Industrials",13.17,23.00,15.35,16.57
+"BBWI","Bath & Body Works, Inc.","Consumer Cyclical",21.39,15.00,24.93,16.57
+"CVBF","CVB Financial Corp.","Financial Services",22.52,6.00,26.25,16.56
+"SBGI","Sinclair, Inc.","Communication Services",15.14,7.00,17.64,16.53
+"FHB","First Hawaiian, Inc.","Financial Services",24.80,9.00,28.89,16.49
+"JMSB","John Marshall Bancorp, Inc.","Financial Services",23.18,2.00,27.00,16.48
+"SLDE","Slide Insurance Holdings, Inc.","Financial Services",25.77,5.00,30.00,16.41
+"FFBC","First Financial Bancorp.","Financial Services",32.65,7.00,38.00,16.39
+"AVPT","AvePoint, Inc.","Technology",16.55,14.00,19.25,16.31
+"RYN","Rayonier Inc.","Real Estate",21.50,6.00,25.00,16.28
+"WLTH","Wealthfront Corporation","Technology",10.72,7.00,12.46,16.27
+"AUPH","Aurinia Pharmaceuticals Inc.","Healthcare",15.73,7.00,18.29,16.25
+"CARE","Carter Bankshares, Inc.","Financial Services",29.32,3.00,34.08,16.25
+"CTO","CTO Realty Growth, Inc.","Real Estate",20.32,5.00,23.60,16.14
+"PATH","UiPath, Inc.","Technology",13.27,16.00,15.40,16.09
+"CAE","CAE Inc.","Industrials",27.93,3.00,32.42,16.08
+"CNOB","ConnectOne Bancorp, Inc.","Financial Services",32.57,5.00,37.80,16.06
+"SBH","Sally Beauty Holdings, Inc.","Consumer Cyclical",18.96,5.00,22.00,16.03
+"BLMN","Bloomin' Brands, Inc.","Consumer Cyclical",10.37,10.00,12.03,16.01
+"VERX","Vertex, Inc.","Technology",17.97,13.00,20.85,16.01
+"ACEL","Accel Entertainment, Inc.","Consumer Cyclical",13.55,7.00,15.71,15.97
+"AMWL","American Well Corporation","Healthcare",11.74,5.00,13.60,15.84
+"PPC","Pilgrim's Pride Corporation","Consumer Defensive",28.12,7.00,32.57,15.83
+"CLF","Cleveland-Cliffs Inc.","Basic Materials",12.65,10.00,14.65,15.81
+"KT","KT Corporation","Communication Services",18.97,4.00,21.94,15.68
+"ONB","Old National Bancorp","Financial Services",25.05,15.00,28.97,15.64
+"AHCO","AdaptHealth Corp.","Healthcare",7.66,7.00,8.86,15.63
+"INGM","Ingram Micro Holding Corporation","Technology",28.42,13.00,32.85,15.57
+"CHCT","Community Healthcare Trust Incorporated","Real Estate",14.71,4.00,17.00,15.57
+"VBNK","VersaBank","Financial Services",23.81,2.00,27.50,15.50
+"ENIC","Enel Chile S.A.","Utilities",4.22,5.00,4.87,15.48
+"XPRO","Expro Ltd","Energy",13.51,5.00,15.60,15.47
+"EPC","Edgewell Personal Care Company","Consumer Defensive",27.28,6.00,31.50,15.47
+"NOMD","Nomad Foods Limited","Consumer Defensive",11.92,5.00,13.76,15.46
+"HFWA","Heritage Financial Corporation","Financial Services",28.25,5.00,32.60,15.40
+"MTA","Metalla Royalty & Streaming Ltd.","Basic Materials",7.37,1.00,8.50,15.33
+"AM","Antero Midstream Corporation","Energy",20.46,7.00,23.57,15.21
+"BRCB","Black Rock Coffee Bar, Inc.","Consumer Cyclical",10.79,7.00,12.43,15.19
+"OPRT","Oportun Financial Corporation","Financial Services",11.73,4.00,13.50,15.09
+"MWA","Mueller Water Products, Inc.","Industrials",24.20,6.00,27.83,15.01
+"BFST","Business First Bancshares, Inc.","Financial Services",32.27,5.00,37.05,14.81
+"NTST","NETSTREIT Corp.","Real Estate",18.51,19.00,21.25,14.80
+"ASIX","AdvanSix Inc.","Basic Materials",15.68,2.00,18.00,14.80
+"MOS","The Mosaic Company","Basic Materials",21.92,18.00,25.16,14.79
+"KRNY","Kearny Financial Corp.","Financial Services",9.15,3.00,10.50,14.75
+"FVR","FrontView REIT, Inc.","Real Estate",18.75,12.00,21.50,14.67
+"RXST","RxSight, Inc.","Healthcare",5.32,8.00,6.10,14.66
+"FFIN","First Financial Bankshares, Inc.","Financial Services",30.28,7.00,34.71,14.64
+"AKR","Acadia Realty Trust","Real Estate",20.21,7.00,23.14,14.51
+"BWB","Bridgewater Bancshares, Inc.","Financial Services",20.77,4.00,23.75,14.35
+"BBT","Beacon Financial Corporation","Financial Services",30.76,6.00,35.17,14.33
+"NBBK","NB Bancorp, Inc.","Financial Services",21.87,2.00,25.00,14.31
+"DEA","Easterly Government Properties, Inc.","Real Estate",22.06,7.00,25.21,14.30
+"PSTL","Postal Realty Trust, Inc.","Real Estate",22.35,7.00,25.54,14.25
+"EVER","EverQuote, Inc.","Communication Services",28.30,6.00,32.33,14.25
+"SIBN","SI-BONE, Inc.","Healthcare",23.44,9.00,26.78,14.24
+"NIQ","NIQ Global Intelligence plc",,19.36,13.00,22.12,14.23
+"BEP","Brookfield Renewable Partners L.P.","Utilities",29.98,14.00,34.24,14.20
+"LYFT","Lyft, Inc.","Technology",16.98,37.00,19.37,14.09
+"STGW","Stagwell Inc.","Communication Services",11.27,7.00,12.86,14.08
+"MQ","Marqeta, Inc.","Technology",18.23,10.00,20.78,13.99
+"HUN","Huntsman Corporation","Basic Materials",9.53,14.00,10.86,13.93
+"GCMG","GCM Grosvenor Inc.","Financial Services",13.50,4.00,15.38,13.89
+"CCAP","Crescent Capital BDC, Inc.","Financial Services",10.13,7.00,11.54,13.88
+"CURB","Curbline Properties Corp.","Real Estate",29.15,9.00,33.19,13.87
+"SPNT","SiriusPoint Ltd.","Financial Services",26.57,4.00,30.25,13.85
+"EVTC","EVERTEC, Inc.","Technology",32.54,5.00,37.00,13.71
+"GNK","Genco Shipping & Trading Limited","Industrials",26.14,5.00,29.72,13.70
+"SDGR","Schrödinger, Inc.","Healthcare",29.53,7.00,33.57,13.69
+"NCDL","Nuveen Churchill Direct Lending Corp.","Financial Services",11.79,5.00,13.40,13.66
+"FCF","First Commonwealth Financial Corporation","Financial Services",20.93,7.00,23.79,13.64
+"AMRX","Amneal Pharmaceuticals, Inc.","Healthcare",21.38,7.00,24.29,13.59
+"MMI","Marcus & Millichap, Inc.","Real Estate",24.66,1.00,28.00,13.54
+"PERI","Perion Network Ltd.","Communication Services",11.37,3.00,12.90,13.46
+"GLAD","Gladstone Capital Corporation","Financial Services",19.41,3.00,22.00,13.34
+"RYZ","Ryerson Holding Corporation","Industrials",29.13,1.00,33.00,13.29
+"VLRS","Controladora Vuela Compañía de Aviación, S.A.B. de C.V.","Industrials",7.99,13.00,9.05,13.22
+"OTEX","Open Text Corporation","Technology",24.86,11.00,28.14,13.18
+"SHBI","Shore Bancshares, Inc.","Financial Services",22.71,5.00,25.70,13.17
+"MGM","MGM Resorts International","Consumer Cyclical",33.49,19.00,37.89,13.15
+"SPT","Sprout Social, Inc.","Technology",11.64,9.00,13.17,13.12
+"SGHT","Sight Sciences, Inc.","Healthcare",10.83,6.00,12.25,13.11
+"MCFT","MasterCraft Boat Holdings, Inc.","Consumer Cyclical",21.89,4.00,24.75,13.07
+"BBDC","Barings BDC, Inc.","Financial Services",8.59,6.00,9.71,13.02
+"EBF","Ennis, Inc.","Industrials",21.24,1.00,24.00,12.99
+"UPWK","Upwork Inc.","Communication Services",9.93,7.00,11.21,12.99
+"BMRC","Bank of Marin Bancorp","Financial Services",28.50,5.00,32.20,12.98
+"CFFN","Capitol Federal Financial, Inc.","Financial Services",8.41,3.00,9.50,12.96
+"CARS","Cars.com Inc.","Communication Services",12.71,7.00,14.36,12.96
+"AQN","Algonquin Power & Utilities Corp.","Utilities",5.60,10.00,6.33,12.95
+"BCSF","Bain Capital Specialty Finance, Inc.","Financial Services",11.07,4.00,12.50,12.92
+"FMNB","Farmers National Banc Corp.","Financial Services",15.50,2.00,17.50,12.90
+"CLOV","Clover Health Investments, Corp.","Healthcare",4.96,5.00,5.60,12.90
+"OSBC","Old Second Bancorp, Inc.","Financial Services",25.10,6.00,28.33,12.88
+"HBNC","Horizon Bancorp, Inc.","Financial Services",21.27,5.00,24.00,12.83
+"HSHP","Himalaya Shipping Ltd.","Industrials",15.96,1.00,18.00,12.78
+"BOBS","Bob's Discount Furniture, Inc.","Consumer Cyclical",20.53,13.00,23.15,12.78
+"XPOF","Xponential Fitness, Inc.","Consumer Cyclical",4.70,5.00,5.30,12.77
+"HTLD","Heartland Express, Inc.","Industrials",10.47,5.00,11.80,12.70
+"UE","Urban Edge Properties","Real Estate",20.86,6.00,23.50,12.66
+"BCAL","California BanCorp","Financial Services",21.97,4.00,24.75,12.65
+"REF","Reformation Inc.","Consumer Cyclical",18.21,8.00,20.50,12.58
+"CUZ","Cousins Properties Incorporated","Real Estate",29.64,11.00,33.36,12.56
+"BSM","Black Stone Minerals, L.P.","Energy",14.22,1.00,16.00,12.52
+"CYRX","Cryoport, Inc.","Industrials",19.89,9.00,22.33,12.28
+"S","SentinelOne, Inc.","Technology",22.20,30.00,24.92,12.24
+"ADPT","Adaptive Biotechnologies Corporation","Healthcare",29.04,7.00,32.57,12.16
+"WBTN","WEBTOON Entertainment Inc.","Communication Services",9.85,7.00,11.04,12.11
+"OUT","OUTFRONT Media Inc.","Real Estate",33.54,5.00,37.60,12.10
+"MCHB","Mechanics Bancorp","Financial Services",14.40,4.00,16.12,11.98
+"TITN","Titan Machinery Inc.","Industrials",22.57,4.00,25.25,11.87
+"FNB","F.N.B. Corporation","Financial Services",18.18,9.00,20.33,11.84
+"FCBM","First Carolina Financial Services, Inc.","Financial Services",13.42,3.00,15.00,11.77
+"RNW","ReNew Energy Global Plc","Utilities",6.96,4.00,7.78,11.74
+"RSKD","Riskified Ltd.","Technology",9.27,5.00,10.35,11.65
+"ASLE","AerSale Corporation","Industrials",5.15,2.00,5.75,11.65
+"EBC","Eastern Bankshares, Inc.","Financial Services",22.88,8.00,25.50,11.45
+"HOPE","Hope Bancorp, Inc.","Financial Services",13.02,4.00,14.50,11.37
+"GPK","Graphic Packaging Holding Company","Consumer Cyclical",10.87,10.00,12.10,11.32
+"CTKB","Cytek Biosciences, Inc.","Healthcare",5.84,3.00,6.50,11.30
+"CRSR","Corsair Gaming, Inc.","Technology",11.78,9.00,13.11,11.30
+"IMXI","International Money Express, Inc.","Technology",6.29,1.00,7.00,11.29
+"FDUS","Fidus Investment Corporation","Financial Services",19.41,5.00,21.60,11.28
+"ASB","Associated Banc-Corp","Financial Services",30.94,10.00,34.40,11.18
+"SFNC","Simmons First National Corporation","Financial Services",23.46,7.00,26.07,11.13
+"SBRA","Sabra Health Care REIT, Inc.","Real Estate",20.44,14.00,22.71,11.13
+"COLB","Columbia Banking System, Inc.","Financial Services",30.60,15.00,34.00,11.11
+"FCPT","Four Corners Property Trust, Inc.","Real Estate",23.32,9.00,25.89,11.02
+"LXU","LSB Industries, Inc.","Basic Materials",11.43,6.00,12.68,10.97
+"RES","RPC, Inc.","Energy",5.77,5.00,6.40,10.92
+"HR","Healthcare Realty Trust Incorporated","Real Estate",19.32,12.00,21.42,10.85
+"PRGO","Perrigo Company plc","Healthcare",16.24,3.00,18.00,10.84
+"NWL","Newell Brands Inc.","Consumer Defensive",5.78,8.00,6.41,10.83
+"MSBI","Midland States Bancorp, Inc.","Financial Services",31.36,4.00,34.75,10.81
+"KRG","Kite Realty Group Trust","Real Estate",25.55,10.00,28.30,10.76
+"TSLX","Sixth Street Specialty Lending, Inc.","Financial Services",17.64,11.00,19.52,10.64
+"INMD","InMode Ltd.","Healthcare",13.27,3.00,14.67,10.53
+"LEVI","Levi Strauss & Co.","Consumer Cyclical",24.29,14.00,26.79,10.27
+"BUSE","First Busey Corporation","Financial Services",28.87,6.00,31.83,10.26
+"CGBD","Carlyle Secured Lending, Inc.","Financial Services",11.08,7.00,12.21,10.24
+"GTN","Gray Media, Inc.","Communication Services",5.99,5.00,6.60,10.18
+"DGICA","Donegal Group Inc.","Financial Services",19.06,2.00,21.00,10.18
+"MGNI","Magnite, Inc.","Communication Services",29.29,15.00,32.27,10.16
+"AII","American Integrity Insurance Group, Inc.","Financial Services",27.92,4.00,30.75,10.14
+"BRX","Brixmor Property Group Inc.","Real Estate",30.30,15.00,33.37,10.12
+"BB","BlackBerry Limited","Technology",8.90,7.00,9.80,10.11
+"SWBI","Smith & Wesson Brands, Inc.","Industrials",15.67,2.00,17.25,10.08
+"OLN","Olin Corporation","Basic Materials",17.46,16.00,19.19,9.89
+"TFSL","TFS Financial Corporation","Financial Services",16.38,2.00,18.00,9.89
+"LION","Lionsgate Studios Corp.",,14.03,12.00,15.42,9.88
+"VNCE","Vince Holding Corp.","Consumer Cyclical",13.67,2.00,15.00,9.73
+"FRBA","First Bank","Financial Services",19.75,3.00,21.67,9.70
+"JILL","J.Jill, Inc.","Consumer Cyclical",22.34,4.00,24.50,9.67
+"AB","AllianceBernstein Holding L.P.","Financial Services",33.49,7.00,36.71,9.63
+"AMTB","Amerant Bancorp Inc.","Financial Services",30.33,4.00,33.25,9.63
+"HOMB","Home BancShares, Inc.","Financial Services",29.99,8.00,32.88,9.62
+"CERT","Certara, Inc.","Healthcare",11.57,11.00,12.68,9.61
+"NCLH","Norwegian Cruise Line Holdings Ltd.","Consumer Cyclical",17.96,24.00,19.67,9.50
+"HAFC","Hanmi Financial Corporation","Financial Services",32.65,4.00,35.75,9.49
+"FULT","Fulton Financial Corporation","Financial Services",23.99,6.00,26.25,9.42
+"AMBP","Ardagh Metal Packaging S.A.","Consumer Cyclical",4.64,6.00,5.08,9.38
+"AOSL","Alpha and Omega Semiconductor Limited","Technology",27.20,4.00,29.75,9.38
+"KMPR","Kemper Corporation","Financial Services",34.15,3.00,37.33,9.32
+"GIII","G-III Apparel Group, Ltd.","Consumer Cyclical",31.80,4.00,34.75,9.28
+"PHR","Phreesia, Inc.","Healthcare",12.69,15.00,13.87,9.27
+"KBDC","Kayne Anderson BDC, Inc.","Financial Services",12.83,5.00,14.00,9.12
+"SXC","SunCoke Energy, Inc.","Basic Materials",10.54,2.00,11.50,9.11
+"IVT","InvenTrust Properties Corp.","Real Estate",31.54,8.00,34.38,8.99
+"JAN","Janus Living, Inc.","Real Estate",31.82,15.00,34.67,8.95
+"UPBD","Upbound Group, Inc.","Technology",25.09,6.00,27.33,8.94
+"CIVB","Civista Bancshares, Inc.","Financial Services",28.62,6.00,31.17,8.90
+"REYN","Reynolds Consumer Products Inc.","Consumer Cyclical",24.80,7.00,27.00,8.87
+"OCTV","Octave Intelligence plc","Technology",21.98,7.00,23.93,8.87
+"IART","Integra LifeSciences Holdings Corporation","Healthcare",14.40,9.00,15.67,8.80
+"KMTS","Kestra Medical Technologies, Ltd.","Healthcare",28.64,8.00,31.12,8.68
+"CHA","Chagee Holdings Limited","Consumer Cyclical",14.37,11.00,15.62,8.67
+"NWBI","Northwest Bancshares, Inc.","Financial Services",15.12,7.00,16.43,8.65
+"GBDC","Golub Capital BDC, Inc.","Financial Services",12.54,6.00,13.62,8.65
+"MTG","MGIC Investment Corporation","Financial Services",27.77,6.00,30.17,8.63
+"SBCF","Seacoast Banking Corporation of Florida","Financial Services",33.72,6.00,36.62,8.62
+"HLF","Herbalife Ltd.","Consumer Defensive",15.96,3.00,17.33,8.60
+"FNKO","Funko, Inc.","Consumer Cyclical",6.91,2.00,7.50,8.54
+"AAT","American Assets Trust, Inc.","Real Estate",21.70,2.00,23.50,8.29
+"ZGN","Ermenegildo Zegna N.V.","Consumer Cyclical",13.80,14.00,14.94,8.27
+"STAA","STAAR Surgical Company","Healthcare",26.39,9.00,28.56,8.21
+"SMTI","Sanara MedTech Inc.","Healthcare",32.35,3.00,35.00,8.19
+"ACI","Albertsons Companies, Inc.","Consumer Defensive",13.08,16.00,14.12,7.99
+"CPRI","Capri Holdings Limited","Consumer Cyclical",21.46,15.00,23.17,7.95
+"WAFD","WaFd, Inc.","Financial Services",29.42,4.00,31.75,7.92
+"MAX","MediaAlpha, Inc.","Communication Services",14.71,7.00,15.86,7.80
+"MFIC","MidCap Financial Investment Corporation","Financial Services",10.18,6.00,10.96,7.65
+"PUBM","PubMatic, Inc.","Technology",20.61,11.00,22.18,7.63
+"RPD","Rapid7, Inc.","Technology",14.41,20.00,15.50,7.54
+"GPGI","GPGI, Inc.","Industrials",13.95,1.00,15.00,7.53
+"PDM","Piedmont Realty Trust, Inc.","Real Estate",10.00,4.00,10.75,7.50
+"SD","SandRidge Energy, Inc.","Energy",13.04,1.00,14.00,7.36
+"TRIN","Trinity Capital Inc.","Financial Services",17.70,9.00,19.00,7.34
+"NCNO","nCino, Inc.","Technology",22.76,12.00,24.42,7.28
+"LILA","Liberty Latin America Ltd.","Communication Services",9.84,4.00,10.55,7.22
+"MAC","The Macerich Company","Real Estate",25.07,15.00,26.87,7.17
+"OSW","OneSpaWorld Holdings Limited","Consumer Cyclical",30.80,5.00,33.00,7.14
+"HCSG","Healthcare Services Group, Inc.","Healthcare",24.90,6.00,26.67,7.10
+"SSTI","SoundThinking, Inc.","Technology",8.26,5.00,8.84,7.02
+"CSWC","Capital Southwest Corporation","Financial Services",23.45,6.00,25.08,6.97
+"LSPD","Lightspeed Commerce Inc.","Technology",10.21,13.00,10.90,6.80
+"PSBD","Palmer Square Capital BDC Inc.","Financial Services",9.80,6.00,10.46,6.72
+"CZR","Caesars Entertainment, Inc.","Consumer Cyclical",29.33,15.00,31.27,6.60
+"REPL","Replimune Group, Inc.","Healthcare",21.89,6.00,23.33,6.59
+"TRUP","Trupanion, Inc.","Financial Services",34.48,4.00,36.75,6.58
+"SWIM","Latham Group, Inc.","Industrials",8.26,6.00,8.80,6.54
+"CRI","Carter's, Inc.","Consumer Cyclical",34.29,6.00,36.50,6.45
+"HAYW","Hayward Holdings, Inc.","Industrials",16.45,7.00,17.50,6.38
+"PTLO","Portillo's Inc.","Consumer Cyclical",6.79,9.00,7.22,6.37
+"YELP","Yelp Inc.","Communication Services",20.34,8.00,21.62,6.32
+"EGBN","Eagle Bancorp, Inc.","Financial Services",34.44,6.00,36.58,6.22
+"GSBD","Goldman Sachs BDC, Inc.","Financial Services",8.25,4.00,8.75,6.06
+"YORW","The York Water Company","Utilities",31.50,1.00,33.40,6.03
+"HGTY","Hagerty, Inc.","Financial Services",16.17,8.00,17.12,5.91
+"DBI","Designer Brands Inc.","Consumer Cyclical",6.38,2.00,6.75,5.80
+"LUXE","LuxExperience B.V.","Consumer Cyclical",10.51,6.00,11.11,5.72
+"CNNE","Cannae Holdings, Inc.","Consumer Cyclical",17.29,2.00,18.25,5.55
+"ALRS","Alerus Financial Corporation","Financial Services",34.50,5.00,36.40,5.51
+"ASAN","Asana, Inc.","Technology",9.71,13.00,10.23,5.36
+"OSPN","OneSpan Inc.","Technology",22.31,4.00,23.50,5.33
+"FIGS","FIGS, Inc.","Consumer Cyclical",22.05,9.00,23.22,5.32
+"HESM","Hess Midstream LP","Energy",30.95,7.00,32.57,5.24
+"FLYW","Flywire Corporation","Technology",22.26,14.00,23.39,5.09
+"FOXF","Fox Factory Holding Corp.","Consumer Cyclical",17.45,6.00,18.33,5.06
+"RXO","RXO, Inc.","Industrials",28.42,13.00,29.83,4.95
+"IPI","Intrepid Potash, Inc.","Basic Materials",32.91,2.00,34.50,4.83
+"MG","Mistras Group, Inc.","Industrials",20.20,2.00,21.18,4.83
+"TRN","Trinity Industries, Inc.","Industrials",30.54,2.00,32.00,4.78
+"PK","Park Hotels & Resorts Inc.","Real Estate",16.17,17.00,16.94,4.77
+"CRTO","Criteo S.A.","Communication Services",18.03,10.00,18.85,4.55
+"MSDL","Morgan Stanley Direct Lending Fund","Financial Services",13.84,7.00,14.46,4.51
+"SHOE","Shoe Station Group Inc.","Consumer Cyclical",14.36,1.00,15.00,4.46
+"VREX","Varex Imaging Corporation","Healthcare",18.10,2.00,18.90,4.42
+"DBX","Dropbox, Inc.","Technology",33.53,6.00,35.00,4.38
+"LCLN","Lincoln International, Inc.","Financial Services",27.19,7.00,28.36,4.29
+"MYGN","Myriad Genetics, Inc.","Healthcare",5.66,8.00,5.90,4.24
+"HNST","The Honest Company, Inc.","Consumer Defensive",5.01,6.00,5.22,4.19
+"MBGL","Mobility Global, Inc.","Technology",23.28,12.00,24.25,4.17
+"CRK","Comstock Resources, Inc.","Energy",15.18,15.00,15.77,3.86
+"ESRT","Empire State Realty Trust, Inc.","Real Estate",5.30,5.00,5.50,3.77
+"XERS","Xeris Biopharma Holdings, Inc.","Healthcare",16.66,7.00,17.29,3.76
+"BXSL","Blackstone Secured Lending Fund","Financial Services",23.78,11.00,24.66,3.70
+"WWW","Wolverine World Wide, Inc.","Consumer Cyclical",24.89,10.00,25.80,3.66
+"SONO","Sonos, Inc.","Technology",17.97,4.00,18.62,3.64
+"KD","Kyndryl Holdings, Inc.","Technology",16.81,5.00,17.40,3.51
+"FSK","FS KKR Capital Corp.","Financial Services",11.72,10.00,12.12,3.46
+"SOBO","South Bow Corporation","Energy",33.32,8.00,34.38,3.18
+"ERII","Energy Recovery, Inc.","Industrials",7.27,2.00,7.50,3.16
+"TBCH","Turtle Beach Corporation","Technology",16.29,5.00,16.80,3.13
+"FG","F&G Annuities & Life, Inc.","Financial Services",23.28,1.00,24.00,3.09
+"DDI","DoubleDown Interactive Co., Ltd.","Communication Services",15.77,5.00,16.25,3.04
+"BLCO","Bausch + Lomb Corporation","Healthcare",21.09,14.00,21.71,2.96
+"OCSL","Oaktree Specialty Lending Corporation","Financial Services",12.16,6.00,12.50,2.80
+"PAYO","Payoneer Global Inc.","Technology",7.20,4.00,7.40,2.78
+"KRO","Kronos Worldwide, Inc.","Basic Materials",8.29,2.00,8.50,2.53
+"PAGP","Plains GP Holdings, L.P.","Energy",26.37,13.00,27.00,2.39
+"EGAN","eGain Corporation","Technology",6.20,3.00,6.33,2.15
+"DRH","DiamondRock Hospitality Company","Real Estate",14.40,13.00,14.69,2.03
+"ARX","Accelerant Holdings","Financial Services",19.85,3.00,20.25,2.02
+"MANU","Manchester","Communication Services",22.43,2.00,22.86,1.93
+"PRTH","Priority Technology Holdings, Inc.","Technology",7.90,3.00,8.03,1.69
+"GO","Grocery Outlet Holding Corp.","Consumer Defensive",12.65,13.00,12.85,1.55
+"FLGT","Fulgent Genetics, Inc.","Healthcare",24.66,1.00,25.00,1.38
+"ARHS","Arhaus, Inc.","Consumer Cyclical",13.75,13.00,13.92,1.26
+"HIW","Highwoods Properties, Inc.","Real Estate",31.07,9.00,31.44,1.21
+"BWIN","The Baldwin Insurance Group, Inc.","Financial Services",32.05,6.00,32.42,1.14
+"ADT","ADT Inc.","Industrials",9.90,3.00,10.00,1.01
+"CCC","CCC Intelligent Solutions Holdings Inc.","Technology",7.68,6.00,7.75,0.91
+"DV","DoubleVerify Holdings, Inc.","Communication Services",13.56,9.00,13.64,0.62
+"BHC","Bausch Health Companies Inc.","Healthcare",8.35,5.00,8.40,0.60
+"BOW","Bowhead Specialty Holdings Inc.","Financial Services",34.13,6.00,34.33,0.60
+"ATHM","Autohome Inc.","Communication Services",21.80,11.00,21.88,0.38
+"UTZ","Utz Brands, Inc.","Consumer Defensive",14.28,8.00,14.31,0.23
+"HE","Hawaiian Electric Industries, Inc.","Utilities",8.61,4.00,8.62,0.17
+"COLD","Americold Realty Trust, Inc.","Real Estate",16.69,17.00,16.71,0.10
+"TDOC","Teladoc Health, Inc.","Healthcare",8.80,18.00,8.81,0.06
+"WU","The Western Union Company","Financial Services",6.74,13.00,6.73,-0.14
+"JBGS","JBG SMITH Properties","Real Estate",12.54,2.00,12.50,-0.32
+"CNXC","Concentrix Corporation","Technology",32.72,5.00,32.60,-0.37
+"BCBP","BCB Bancorp, Inc.","Financial Services",9.17,3.00,9.13,-0.40
+"SLN","Silence Therapeutics plc","Healthcare",19.83,4.00,19.75,-0.40
+"TASK","TaskUs, Inc.","Technology",9.21,6.00,9.17,-0.47
+"ZIM","ZIM Integrated Shipping Services Ltd.","Industrials",29.34,4.00,29.18,-0.56
+"CLDT","Chatham Lodging Trust","Real Estate",16.26,3.00,16.17,-0.57
+"ASBH","American Savings Bank, National Association","Financial Services",21.13,4.00,21.00,-0.62
+"SG","Sweetgreen, Inc.","Consumer Cyclical",12.26,12.00,12.18,-0.69
+"WEN","The Wendy's Company","Consumer Cyclical",8.28,12.00,8.21,-0.87
+"XHR","Xenia Hotels & Resorts, Inc.","Real Estate",21.83,5.00,21.60,-1.05
+"AOUT","American Outdoor Brands, Inc.","Consumer Cyclical",18.57,3.00,18.33,-1.27
+"GDYN","Grid Dynamics Holdings, Inc.","Technology",13.21,5.00,13.00,-1.59
+"INN","Summit Hotel Properties, Inc.","Real Estate",7.25,4.00,7.12,-1.72
+"TAC","TransAlta Corporation","Utilities",13.21,2.00,12.97,-1.85
+"VFC","V.F. Corporation","Consumer Cyclical",20.68,22.00,20.27,-1.97
+"LFCR","Lifecore Biomedical, Inc.","Healthcare",6.42,2.00,6.28,-2.18
+"SPH","Suburban Propane Partners, L.P.","Utilities",17.41,1.00,17.00,-2.35
+"CCU","Compañía Cervecerías Unidas S.A.","Consumer Defensive",10.75,6.00,10.49,-2.40
+"FLNG","FLEX LNG Ltd.","Energy",25.48,4.00,24.82,-2.57
+"APLE","Apple Hospitality REIT, Inc.","Real Estate",19.46,9.00,18.94,-2.65
+"ULCC","Frontier Group Holdings, Inc.","Industrials",7.59,9.00,7.39,-2.65
+"SHO","Sunstone Hotel Investors, Inc.","Real Estate",12.79,12.00,12.40,-3.08
+"WOLF","Wolfspeed, Inc.","Technology",24.83,2.00,24.00,-3.34
+"PSNL","Personalis, Inc.","Healthcare",15.71,3.00,15.17,-3.46
+"NTSK","Netskope, Inc.","Technology",21.75,19.00,20.97,-3.57
+"LXFR","Luxfer Holdings PLC","Industrials",17.34,2.00,16.70,-3.69
+"RLJ","RLJ Lodging Trust","Real Estate",12.94,10.00,12.45,-3.79
+"MD","Pediatrix Medical Group, Inc.","Healthcare",31.30,6.00,30.08,-3.89
+"ODD","Oddity Tech Ltd.","Consumer Defensive",17.63,8.00,16.94,-3.93
+"PRCT","PROCEPT BioRobotics Corporation","Healthcare",23.80,12.00,22.75,-4.41
+"SMPL","The Simply Good Foods Company","Consumer Defensive",12.57,8.00,12.00,-4.53
+"ZIP","ZipRecruiter, Inc.","Communication Services",5.51,2.00,5.25,-4.72
+"KIDS","OrthoPediatrics Corp.","Healthcare",32.35,8.00,30.75,-4.95
+"IHS","IHS Holding Limited","Real Estate",8.42,2.00,8.00,-4.99
+"OPCH","Option Care Health, Inc.","Healthcare",31.65,8.00,30.03,-5.11
+"PEB","Pebblebrook Hotel Trust","Real Estate",21.62,15.00,20.48,-5.26
+"HOG","Harley-Davidson, Inc.","Consumer Cyclical",32.38,10.00,30.65,-5.34
+"DOCS","Doximity, Inc.","Healthcare",33.34,18.00,31.50,-5.52
+"TTD","The Trade Desk, Inc.","Communication Services",15.68,30.00,14.75,-5.93
+"M","Macy's, Inc.","Consumer Cyclical",24.70,10.00,23.20,-6.07
+"PLGO","Pelagos Insurance Capital Limit","Financial Services",28.78,9.00,26.94,-6.38
+"ARDT","Ardent Health, Inc.","Healthcare",17.80,12.00,16.62,-6.60
+"CAG","Conagra Brands, Inc.","Consumer Defensive",14.73,15.00,13.74,-6.72
+"EAF","GrafTech International Ltd.","Industrials",9.72,2.00,9.00,-7.41
+"MED","Medifast, Inc.","Consumer Cyclical",12.97,1.00,12.00,-7.48
+"VSTS","Vestis Corporation","Industrials",14.09,7.00,13.00,-7.74
+"VRA","Vera Bradley, Inc.","Consumer Cyclical",7.61,1.00,7.00,-8.02
+"CPB","The Campbell's Company","Consumer Defensive",22.77,17.00,20.79,-8.66
+"YEXT","Yext, Inc.","Technology",7.67,1.00,7.00,-8.74
+"ENR","Energizer Holdings, Inc.","Industrials",24.13,6.00,22.00,-8.83
+"SGRY","Surgery Partners, Inc.","Healthcare",26.95,5.00,24.40,-9.46
+"ONT","Onterris, Inc.","Industrials",23.23,5.00,21.00,-9.60
+"LKFT","Lakefront Biotherapeutics NV","Healthcare",33.98,3.00,30.41,-10.50
+"AEO","American Eagle Outfitters, Inc.","Consumer Cyclical",21.71,10.00,19.20,-11.56
+"WPP","WPP plc","Communication Services",27.79,3.00,24.47,-11.96
+"DXC","DXC Technology Company","Technology",14.73,7.00,12.50,-15.14
+"FIRY","Firy Inc.","Communication Services",10.85,3.00,9.17,-15.51
+"AMPH","Amphastar Pharmaceuticals, Inc.","Healthcare",29.37,6.00,24.50,-16.58
+"DNA","Ginkgo Bioworks Holdings, Inc.","Healthcare",9.61,2.00,8.00,-16.75
+"LILAK","Liberty Latin America Ltd.","Communication Services",9.86,2.00,8.20,-16.84
+"CLAR","Clarus Corporation","Consumer Cyclical",5.06,5.00,4.20,-17.00
+"KSS","Kohl's Corporation","Consumer Cyclical",24.00,12.00,19.79,-17.53
+"PD","PagerDuty, Inc.","Technology",15.95,7.00,13.14,-17.60
+"CGAU","Centerra Gold Inc.","Basic Materials",20.24,1.00,16.00,-20.95
+"AI","C3.ai, Inc.","Technology",11.82,10.00,8.90,-24.70
+"OGN","Organon & Co.","Healthcare",13.90,3.00,10.33,-25.66
+"MTW","The Manitowoc Company, Inc.","Industrials",23.81,2.00,17.50,-26.50
+"BMBL","Bumble Inc.","Communication Services",5.99,6.00,4.21,-29.74
+"CHPT","ChargePoint Holdings, Inc.","Consumer Cyclical",11.67,5.00,7.50,-35.73
+"EMBC","Embecta Corp.","Healthcare",6.46,2.00,4.00,-38.08
+"CRCT","Cricut, Inc.","Technology",8.65,3.00,4.73,-45.28
+"PSLV","Sprott Physical Silver Trust",,15.78,,,
+"PDI","PIMCO Dynamic Income Fund","Financial Services",14.24,,,
+"OGC","OceanaGold Corporation","Basic Materials",26.94,,,
+"MAAS","Maase Inc.","Technology",9.98,,,
+"GUNN","Gunnison Copper Corp.","Basic Materials",7.70,,,
+"DNP","DNP Select Income Fund Inc.","Financial Services",10.12,,,
+"SKE","Skeena Resources Limited","Basic Materials",28.77,,,
+"IEP","Icahn Enterprises L.P.","Energy",4.74,,,
+"LBTYK","Liberty Global Ltd.","Communication Services",10.52,,,
+"BWLP","BW LPG Limited","Energy",22.58,,,
+"AYA","Aya Gold & Silver Inc.","Basic Materials",22.88,,,
+"ADX","Adams Diversified Equity Fund, Inc.","Financial Services",25.10,,,
+"UTG","Reaves Utility Income Fund","Financial Services",34.01,,,
+"CSQ","Calamos Strategic Total Return Fund","Financial Services",19.33,,,
+"NEA","Nuveen AMT-Free Quality Municipal Income Fund","Financial Services",10.03,,,
+"VVVV","vVARDIS Holding AG","Healthcare",16.50,,,
+"BTE","Baytex Energy Corp.","Energy",4.35,,,
+"AAUC","Allied Gold Corporation","Basic Materials",20.68,,,
+"EXG","Eaton Vance Tax-Managed Global Diversified Equity Income Fund","Financial Services",9.44,,,
+"UTF","Cohen & Steers Infrastructure Fund, Inc","Financial Services",25.69,,,
+"PLBL","Polibeli Group Ltd","Consumer Cyclical",7.24,,,
+"JPC","Nuveen Preferred & Income Opportunities Fund","Financial Services",6.80,,,
+"RGC","Regencell Bioscience Holdings Limited","Healthcare",4.94,,,
+"NAD","Nuveen Quality Municipal Income Fund","Financial Services",10.43,,,
+"PTY","PIMCO Corporate & Income Opportunity Fund","Financial Services",10.69,,,
+"NVG","Nuveen AMT-Free Municipal Credit Income Fund","Financial Services",11.01,,,
+"KYN","Kayne Anderson Energy Infrastructure Fund, Inc.","Financial Services",13.93,,,
+"NZF","Nuveen Municipal Credit Income Fund","Financial Services",11.08,,,
+"ETY","Eaton Vance Tax-Managed Diversified Equity Income Fund","Financial Services",13.57,,,
+"RVT","Royce Small-Cap Trust, Inc.","Financial Services",16.96,,,
+"TOP","TOP Financial Group Limited","Financial Services",17.00,,,
+"UA","Under Armour, Inc.","Consumer Cyclical",4.71,,,
+"GOF","Guggenheim Strategic Opportunities Fund","Financial Services",8.66,,,
+"NMZ","Nuveen Municipal High Income Opportunity Fund","Financial Services",8.75,,,
+"NGL","NGL Energy Partners LP","Energy",15.11,,,
+"MHD","BlackRock MuniHoldings Fund, Inc.","Financial Services",10.66,,,
+"GFR","Greenfire Resources Ltd.","Energy",7.74,,,
+"GAB","The Gabelli Equity Trust Inc.","Financial Services",5.37,,,
+"CLM","Cornerstone Strategic Investment Fund, Inc.","Financial Services",5.86,,,
+"USA","Liberty All-Star Equity Fund","Financial Services",5.89,,,
+"NUV","Nuveen Municipal Value Fund, Inc.","Financial Services",8.29,,,
+"BPRE","Bluerock Private Real Estate Fund","Financial Services",12.19,,,
+"RQI","Cohen & Steers Quality Income Realty Fund, Inc.","Financial Services",11.70,,,
+"XXI","Twenty One Capital, Inc.","Consumer Defensive",4.95,,,
+"BDJ","BlackRock Enhanced Equity Dividend Trust","Financial Services",9.65,,,
+"BSTZ","BlackRock Science and Technology Term Trust","Financial Services",24.79,,,
+"NAC","Nuveen California Quality Municipal Income Fund","Financial Services",9.97,,,
+"ATS","ATS Corporation","Industrials",17.50,,,
+"PDO","Pimco Dynamic Income Opportunities Fund","Financial Services",11.57,,,
+"ETV","Eaton Vance Tax-Managed Buy-Write Opportunities Fund","Financial Services",14.30,,,
+"VET","Vermilion Energy Inc.","Energy",10.99,,,
+"WWB","Windward Bio Group AG","Healthcare",28.50,,,
+"LYCA","Lycia Therapeutics, Inc.","Healthcare",31.20,,,
+"MQY","BlackRock MuniYield Quality Fund, Inc.","Financial Services",10.41,,,
+"HYT","BlackRock Corporate High Yield Fund, Inc.","Financial Services",7.79,,,
+"DMLP","Dorchester Minerals, L.P.","Energy",28.75,,,
+"PBT","Permian Basin Royalty Trust","Energy",31.03,,,
+"BTT","Blackrock Municipal 2030 Target Term Trust","Financial Services",22.07,,,
+"BCAT","BlackRock Capital Allocation Term Trust","Financial Services",12.95,,,
+"NFJ","Virtus Dividend, Interest & Premium Strategy Fund","Financial Services",14.22,,,
+"DJT","Trump Media & Technology Group Corp.","Communication Services",4.64,,,
+"DXYZ","Destiny Tech100 Inc.","Financial Services",26.47,,,
+"ECAT","BlackRock ESG Capital Allocation Term Trust","Financial Services",12.45,,,
+"MUC","BlackRock MuniHoldings California Quality Fund, Inc.","Financial Services",9.89,,,
+"MYI","BlackRock MuniYield Quality Fund III, Inc.","Financial Services",10.04,,,
+"HQH","Abrdn Healthcare Investors","Financial Services",21.43,,,
+"TK","Teekay Corporation Ltd.","Energy",13.64,,,
+"NWCL","newcleo plc","Industrials",4.22,,,
+"JFR","Nuveen Floating Rate Income Fund","Financial Services",7.20,,,
+"DSL","DoubleLine Income Solutions Fund","Financial Services",9.76,,,
+"NBXG","Neuberger Berman Income Funds - Neuberger Next Generation Connectivity Fund Inc.","Financial Services",14.10,,,
+"GLIBK","Liberty Capital Corporation","Communication Services",27.39,,,
+"BMEZ","BlackRock Health Sciences Term Trust","Financial Services",17.18,,,
+"EOS","Eaton Vance Enhanced Equity Income Fund II","Financial Services",20.09,,,
+"AOD","Abrdn Total Dynamic Dividend Fund","Financial Services",10.10,,,
+"BUUU","BUUU Group Limited","Industrials",5.32,,,
+"FSCO","FS Credit Opportunities Corp.","Financial Services",5.11,,,
+"ETW","Eaton Vance Tax-Managed Global Buy-Write Opportunities Fund","Financial Services",9.34,,,
+"GPRK","GeoPark Limited","Energy",9.42,,,
+"EVV","Eaton Vance Limited Duration Income Fund","Financial Services",8.40,,,
+"CRF","Cornerstone Total Return Fund, Inc.","Financial Services",5.69,,,
+"DFH","Dream Finders Homes, Inc.","Consumer Cyclical",10.66,,,
+"FPF","First Trust Intermediate Duration Preferred & Income Fund","Financial Services",15.66,,,
+"PTA","Cohen & Steers Tax-Advantaged Preferred Securities and Income Fund","Financial Services",16.93,,,
+"RNP","Cohen & Steers REIT and Preferred Income Fund, Inc.","Financial Services",18.96,,,
+"PDX","PIMCO Dynamic Income Strategy Fund","Financial Services",20.16,,,
+"BTX","BlackRock Innovation and Growth Term Trust","Financial Services",7.71,,,
+"BCX","Blackrock Resources & Commodities Strategy Trust","Financial Services",11.71,,,
+"ABX","Abacus Global Management, Inc.",,8.81,,,
+"CHY","Calamos Convertible and High Income Fund","Financial Services",10.59,,,
+"CHI","Calamos Convertible Opportunities and Income Fund","Financial Services",10.44,,,
+"PML","PIMCO Municipal Income Fund II","Financial Services",6.70,,,
+"NXP","Nuveen Select Tax-Free Income Portfolio","Financial Services",13.20,,,
+"AWF","AllianceBernstein Global High Income Fund","Financial Services",9.59,,,
+"BBTX","Bambusa Therapeutics, Inc.","Healthcare",16.09,,,
+"NRK","Nuveen New York AMT-Free Quality Municipal Income Fund","Financial Services",9.27,,,
+"PCN","PIMCO Corporate & Income Strategy Fund","Financial Services",10.63,,,
+"VCX","Fundrise Growth Tech Fund, LLC","Financial Services",22.38,,,
+"THQ","Abrdn Healthcare Opportunities Fund","Financial Services",19.04,,,
+"GGN","GAMCO Global Gold, Natural Resources & Income Trust","Financial Services",5.06,,,
+"MEGI","NYLI CBRE Global Infrastructure Megatrends Term Fund","Financial Services",14.54,,,
+"KPLT","Katapult Holdings, Inc.","Technology",8.83,,,
+"FFC","Flaherty & Crumrine Preferred Securities Income Fund Inc.","Financial Services",14.92,,,
+"JQC","Nuveen Credit Strategies Income Fund","Financial Services",4.53,,,
+"GDOT","Green Dot Corporation","Financial Services",11.56,,,
+"DMII","Drugs Made In America Acquisition II Corp.","Financial Services",10.24,,,
+"MAKO","Mako Mining Corp.","Basic Materials",7.40,,,
+"TIPT","Tiptree Inc.","Financial Services",17.56,,,
+"RA","Brookfield Real Assets Income Fund Inc.","Financial Services",11.64,,,
+"MUA","BlackRock MuniAssets Fund, Inc.","Financial Services",9.51,,,
+"BIT","BlackRock Multi-Sector Income Trust","Financial Services",11.10,,,
+"NKX","Nuveen California AMT-Free Quality Municipal Income Fund","Financial Services",11.21,,,
+"DLY","DoubleLine Yield Opportunities Fund","Financial Services",13.02,,,
+"BOE","BlackRock Enhanced Global Dividend Trust","Financial Services",11.20,,,
+"PAXS","PIMCO Access Income Fund","Financial Services",12.91,,,
+"PFN","PIMCO Income Strategy Fund II","Financial Services",6.12,,,
+"VMO","Invesco Municipal Opportunity Trust","Financial Services",8.92,,,
+"BHK","BlackRock Core Bond Trust","Financial Services",8.30,,,
+"WDI","Western Asset Diversified Income Fund","Financial Services",11.41,,,
+"CEPF","Cantor Equity Partners IV, Inc.","Financial Services",10.33,,,
+"MUJ","BlackRock MuniHoldings New Jersey Quality Fund, Inc.","Financial Services",11.10,,,
+"PDT","John Hancock Premium Dividend Fund","Financial Services",11.90,,,
+"HQL","Abrdn Life Sciences Investors","Financial Services",18.28,,,
+"DSU","BlackRock Debt Strategies Fund, Inc.","Financial Services",8.55,,,
+"ACP","Abrdn Income Credit Strategies Fund","Financial Services",4.30,,,
+"NDMO","Nuveen Dynamic Municipal Opportunities Fund","Financial Services",8.86,,,
+"EMD","Western Asset Emerging Markets Debt Fund Inc.","Financial Services",9.21,,,
+"AEXA","American Exceptionalism Acquisi","Financial Services",10.79,,,
+"THW","Abrdn World Healthcare Fund","Financial Services",13.14,,,
+"GLRE","Greenlight Capital Re, Ltd.","Financial Services",16.45,,,
+"FAX","Abrdn Asia-Pacific Income Fund Inc","Financial Services",12.76,,,
+"ETJ","Eaton Vance Risk-Managed Diversified Equity Income Fund","Financial Services",7.73,,,
+"NMCO","Nuveen Municipal Credit Opportunities Fund","Financial Services",8.69,,,
+"IIM","Invesco Value Municipal Income Trust","Financial Services",10.98,,,
+"IGD","Voya Global Equity Dividend and Premium Opportunity Fund","Financial Services",6.46,,,
+"MMU","Western Asset Managed Municipals Fund Inc.","Financial Services",9.32,,,
+"NWAX","New America Acquisition I Corp.","Financial Services",10.05,,,
+"BGB","Blackstone Strategic Credit 2027 Term Fund","Financial Services",11.19,,,
+"VKQ","Invesco Municipal Trust","Financial Services",8.97,,,
+"IFN","Aberdeen India Fund, Inc.","Financial Services",11.46,,,
+"VGM","Invesco Trust for Investment Grade Municipals","Financial Services",9.09,,,
+"BGY","BlackRock Enhanced International Dividend Trust","Financial Services",5.42,,,
+"ISOU","IsoEnergy Ltd.","Energy",7.47,,,
+"WIW","Western Asset Inflation-Linked Opportunities & Income Fund","Financial Services",7.98,,,
+"ACIC","American Coastal Insurance Corporation","Financial Services",10.27,,,
+"BRTM","B&R Technology Merger Corp.","Financial Services",9.78,,,
+"SPPP","Sprott Physical Platinum & Palladium Tr",,11.61,,,
+"VCV","Invesco California Value Municipal Income Trust","Financial Services",9.47,,,
+"CHW","Calamos Global Dynamic Income Fund","Financial Services",7.46,,,
+"GUT","The Gabelli Utility Trust","Financial Services",5.26,,,
+"IQI","Invesco Quality Municipal Income Trust","Financial Services",8.95,,,
+"AVK","Advent Convertible and Income Fund","Financial Services",10.67,,,
+"FTHY","First Trust High Yield Opportunities 2027 Term Fund","Financial Services",12.77,,,
+"APXT","Apex Treasury Corporation","Financial Services",10.21,,,
+"CD","Chaince Digital Holdings Inc.","Financial Services",4.26,,,
+"EIM","Eaton Vance Municipal Bond Fund","Financial Services",9.03,,,
+"PWRL","Powerlaw Corp.","Financial Services",10.65,,,
+"GUG","Guggenheim Active Allocation Fund","Financial Services",13.76,,,
+"XRPN","Evernorth Holdings, Inc.","Financial Services",7.85,,,
+"PCQ","PIMCO California Municipal Income Fund","Financial Services",8.02,,,
+"BLW","BlackRock Limited Duration Income Trust","Financial Services",11.46,,,
+"BOT","Robostrategy, Inc.","Financial Services",18.28,,,
+"GHY","PGIM Global High Yield Fund, Inc","Financial Services",10.71,,,
+"JRI","Nuveen Real Asset Income and Growth Fund","Financial Services",11.29,,,
+"KIO","KKR Income Opportunities Fund","Financial Services",9.81,,,
+"PBYI","Puma Biotechnology, Inc.","Healthcare",7.77,,,
+"QVCG","QVC Group, Inc.","Consumer Cyclical",7.98,,,
+"AMCX","AMC Global Media Inc.","Communication Services",9.50,6.00,9.50,0.00
+"BOC","Boston Omaha Corporation","Industrials",13.71,,,
+"XMAX","XMax Inc.","Consumer Cyclical",5.90,,,
+"EVN","Eaton Vance Municipal Income Trust","Financial Services",9.56,,,
+"ISD","PGIM High Yield Bond Fund, Inc.","Financial Services",11.37,,,
+"FPI","Farmland Partners Inc.","Real Estate",9.00,1.00,9.00,0.00
+"VKI","Invesco Advantage Municipal Income Trust II","Financial Services",8.47,,,
+"HPS","John Hancock Preferred Income Fund III","Financial Services",11.46,,,
+"ASPE","Aspen Neuroscience, Inc.","Healthcare",12.59,,,
+"LEO","BNY Mellon Strategic Municipals, Inc.","Financial Services",5.82,,,
+"FRA","BlackRock Floating Rate Income Strategies Fund, Inc.","Financial Services",10.12,,,
+"PFL","PIMCO Income Strategy Fund","Financial Services",6.66,,,
+"GTE","Gran Tierra Energy Inc.","Energy",9.47,,,
+"NAN","Nuveen New York Quality Municipal Income Fund","Financial Services",9.83,,,
+"PACH","Pioneer Acquisition I Corp","Financial Services",10.43,,,
+"SPXX","Nuveen S&P 500 Dynamic Overwrite Fund","Financial Services",18.29,,,
+"AWP","abrdn Global Premier Properties Fund","Financial Services",10.54,,,
+"ACB","Aurora Cannabis Inc.","Healthcare",4.94,,,
+"KTF","DWS Municipal Income Trust","Financial Services",8.23,,,
+"TVA","Texas Ventures Acquisition III Corp","Financial Services",10.72,,,
+"BKT","BlackRock Income Trust, Inc.","Financial Services",9.62,,,
+"RIV","RiverNorth Opportunities Fund, Inc.","Financial Services",10.02,,,
+"ASG","Liberty All-Star Growth Fund, Inc.","Financial Services",4.83,,,
+"EFR","Eaton Vance Senior Floating-Rate Trust","Financial Services",10.23,,,
+"BGT","BlackRock Floating Rate Income Trust","Financial Services",10.02,,,
+"BRW","Saba Capital Income & Opportunities Fund","Financial Services",5.75,,,
+"AFB","AllianceBernstein National Municipal Income Fund, Inc.","Financial Services",10.16,,,
+"HPI","John Hancock Preferred Income Fund","Financial Services",12.79,,,
+"TEI","Templeton Emerging Markets Income Fund","Financial Services",6.08,,,
+"OPTX","Syntec Optics Holdings, Inc.","Technology",7.08,,,
+"EFT","Eaton Vance Floating-Rate Income Trust","Financial Services",10.72,,,
+"RFI","Cohen & Steers Total Return Realty Fund, Inc.","Financial Services",10.63,,,
+"PMO","Franklin Municipal Opportunities Trust","Financial Services",10.13,,,
+"FNRN","First Northern Community Bancorp","Financial Services",17.30,,,
+"NCA","Nuveen California Municipal Income Fund","Financial Services",8.35,,,
+"RDIB","Reading International, Inc.","Communication Services",12.20,,,
+"CEPO","Cantor Equity Partners I, Inc.","Financial Services",10.82,,,
+"NBH","Neuberger Berman Income Funds - Neuberger Municipal Fund Inc.","Financial Services",9.29,,,
+"ARDC","Ares Dynamic Credit Allocation Fund, Inc.","Financial Services",11.44,,,
+"DSM","BNY Mellon Strategic Municipal Bond Fund, Inc.","Financial Services",5.50,,,
+"OIA","Invesco Municipal Income Opportunities Trust","Financial Services",5.57,,,
+"DBL","DoubleLine Opportunistic Credit Fund","Financial Services",13.26,,,
+"ULBI","Ultralife Corporation","Industrials",15.73,,,
+"ARQQ","Arqit Quantum Inc.","Technology",14.76,,,
+"BGH","Barings Global Short Duration High Yield Fund","Financial Services",12.55,,,
+"IVAI","Ives Ultra AI Opportunities Inc.","Financial Services",10.06,,,
+"SPOK","Spok Holdings, Inc.","Healthcare",11.67,,,
+"BIII","Black Spade Acquisition III Co","Financial Services",10.15,,,
+"NHS","Neuberger Berman Income Funds - Neuberger High Yield Strategies Fund Inc.","Financial Services",5.53,,,
+"NARA","Narragansett Bancorp, Inc.","Financial Services",10.60,,,
+"SUPX","SuperX AI Technology Limited","Technology",5.05,,,
+"FTF","Franklin Limited Duration Income Trust","Financial Services",5.39,,,
+"ZUMZ","Zumiez Inc.","Consumer Cyclical",14.00,,,
+"MFM","Aberdeen Municipal Income Fund","Financial Services",5.11,,,
+"SND","Smart Sand, Inc.","Energy",4.77,,,
+"RBKB","Rhinebeck Bancorp, Inc.","Financial Services",13.05,,,
+"TG","Tredegar Corporation","Industrials",5.75,,,
+"NPV","Nuveen Virginia Quality Municipal Income Fund","Financial Services",9.60,,,
+"AEHL","Antelope Enterprise Holdings Limited","Industrials",8.29,,,
+"NLOP","Net Lease Office Properties","Real Estate",9.54,,,
+"RVII","Robinhood Ventures Fund II","Financial Services",14.92,,,
+"USDE","StablecoinX Inc.","Financial Services",5.30,,,
+"MF","MindForge Inc.","Communication Services",19.50,,,
+"JLHL","Julong Holding Limited","Industrials",5.50,,,
