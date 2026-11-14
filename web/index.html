@@ -252,7 +252,8 @@ function seguimientoVista() {
       <div class="row"><span class="tk">${esc(t)}</span><b style="color:${col[e.estado] || "inherit"}">${esc(e.estado)}</b></div>
       <div class="sub">Cierre ${esc(e.cierre)} $ (${esc(e.fecha)}) · RSI ${esc(e.rsi)} · EMA 9 ${esc(e.ema9)} $ · entrar como mucho hasta ${esc(e.niveles?.entrada_max)} $ · stop ${esc(e.niveles?.stop)} $</div>
       ${grafico(e)}
-      <article class="md">${DOMPurify.sanitize(marked.parse(e.texto || ""))}</article></div>`).join("");
+      ${e.notas ? `<details open><summary><b>Repaso diario de Claude (noticias y tesis)</b></summary><article class="md">${DOMPurify.sanitize(marked.parse(e.notas))}</article></details>` : ""}
+      <details ${e.notas ? "" : "open"}><summary><b>Informe técnico de hoy</b></summary><article class="md">${DOMPurify.sanitize(marked.parse(e.texto || ""))}</article></details></div>`).join("");
 }
 
 function pintar(mantener) {
