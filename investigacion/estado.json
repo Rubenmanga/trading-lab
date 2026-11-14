@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-14T19:25:03+00:00",
+ "actualizado": "2026-11-14T21:57:22+00:00",
  "alertas": [],
  "precios": [
   {
@@ -8,6 +8,13 @@
    "distancia_zona_pct": 9.7,
    "potencial_pct": 32.6,
    "distancia_stop_pct": 41.9
+  },
+  {
+   "ticker": "AEHR",
+   "precio": 56.97999954223633,
+   "distancia_zona_pct": 21.2,
+   "potencial_pct": 14.1,
+   "distancia_stop_pct": 49.9
   }
  ]
 }
