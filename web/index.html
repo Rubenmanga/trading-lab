@@ -110,7 +110,8 @@ function oportunidades() {
   const carriles = [...new Set(R.filas.map((f) => f.carril).filter(Boolean))].sort();
   const filas = R.filas.filter((f) => (!filtroSector || f.sector === filtroSector) && (!filtroCarril || f.carril === filtroCarril)).slice(0, 60);
   const enLista = new Set(D.watchlist.map((w) => w.ticker));
-  let h = `<p class="sub">De <b>${R.universo}</b> small caps de EE. UU. se han puntuado <b>${R.analizadas}</b> en 8 factores (0-100, 50 = en la media). Las banderas rojas restan puntos. <b>Es un filtro, no una recomendación</b>: las primeras son las que merecen un análisis a fondo.</p>
+  const prov = R.provisional ? `<div class="flag" style="margin-bottom:8px">⏳ Ranking provisional: de momento hay datos de ${R.descargadas ?? R.analizadas} de ${R.universo} empresas. Se completa en la siguiente ejecución.</div>` : "";
+  let h = prov + `<p class="sub">De <b>${R.universo}</b> small caps de EE. UU. se han puntuado <b>${R.analizadas}</b> en 8 factores (0-100, 50 = en la media). Las banderas rojas restan puntos. <b>Es un filtro, no una recomendación</b>: las primeras son las que merecen un análisis a fondo.</p>
   <div class="filtros"><select id="fs"><option value="">Todos los sectores</option>${sectores.map((x) => `<option ${x === filtroSector ? "selected" : ""}>${esc(x)}</option>`).join("")}</select>
   <select id="fc"><option value="">Todos los tipos</option>${carriles.map((x) => `<option ${x === filtroCarril ? "selected" : ""}>${esc(x)}</option>`).join("")}</select></div>`;
   h += filas.map((f) => `<a class="card" style="display:block;text-decoration:none;color:inherit" href="#/empresa/${encodeURIComponent(f.ticker)}">

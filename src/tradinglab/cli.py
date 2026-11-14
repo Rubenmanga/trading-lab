@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
@@ -71,14 +72,35 @@ def _medio(args):
         print(f"\n{len(filas)} candidatos guardados en {path}")
     elif args.accion == "oportunidades":
         from .medio_plazo import oportunidades
-        res = oportunidades.ejecutar(cfg, maximo=args.max)
+        if args.salida:  # solo descargar un trozo (GitHub Actions reparte el trabajo en varias máquinas)
+            d = oportunidades.descargar_parte(cfg, parte=args.parte - 1, de=args.de, salida=args.salida,
+                                              minutos=args.minutos, maximo=args.max)
+            print(f"Guardado en {args.salida}: {len(d['filas'])} de {d['parte']} empresas de esta parte")
+            return
+        if args.entrada:  # juntar los trozos ya descargados y puntuar (aunque falte alguno: ranking provisional)
+            import glob
+            rutas = sorted(glob.glob(os.path.join(args.entrada, "*.jsonl")))
+            metas = [json.load(open(r + ".meta.json")) for r in rutas if os.path.exists(r + ".meta.json")]
+            universo_n = max([m["universo"] for m in metas] or [0])
+            filas = oportunidades.leer_partes(rutas)
+            print(f"{len(rutas)} partes · {len(filas)} empresas descargadas de un universo de {universo_n}")
+            res = oportunidades.combinar(cfg, filas, universo_n or len(filas))
+            previo = oportunidades.ranking_actual()
+            if res.get("provisional") and previo and previo.get("analizadas", 0) > res["analizadas"] \
+                    and not previo.get("provisional"):
+                print(f"Ranking de hoy a medias ({res['analizadas']} empresas): se mantiene el anterior, más completo "
+                      f"({previo['analizadas']}). Lo bajado se guarda y la siguiente ejecución continúa.")
+                return
+        else:
+            res = oportunidades.ejecutar(cfg, maximo=args.max)
         pj, pm = oportunidades.guardar(res, top=cfg["oportunidades"].get("top_guardado", 150))
         for f in res["filas"][:25]:
             s = f["factores"]
             print(f"{f['puesto']:>3} {f['ticker']:6} nota {f['nota']:5.1f}  {str(f.get('sector'))[:20]:20} {f['carril'][:28]:28} "
                   + " ".join(f"{k[:4]}={'—' if v is None else round(v)}" for k, v in s.items())
                   + (f"  ⚠ {'; '.join(f['banderas'])}" if f['banderas'] else ""))
-        print(f"\nUniverso {res['universo']} · analizadas {res['analizadas']} · guardado en {pj} y {pm}")
+        print(f"\nUniverso {res['universo']} · analizadas {res['analizadas']}"
+              + (" · PROVISIONAL" if res.get("provisional") else "") + f" · guardado en {pj} y {pm}")
     elif args.accion == "probar":
         from .medio_plazo import metricas
         print(json.dumps(metricas.empresa(args.ticker.upper()), indent=1, ensure_ascii=False, default=str))
@@ -111,6 +133,11 @@ def main(argv=None):
     pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas"])
     pm.add_argument("ticker", nargs="?")
     pm.add_argument("--max", type=int, default=None, help="máximo de empresas a analizar (para pruebas)")
+    pm.add_argument("--parte", type=int, default=1, help="oportunidades: qué trozo del universo descargar (1..N)")
+    pm.add_argument("--de", type=int, default=1, help="oportunidades: en cuántos trozos se reparte")
+    pm.add_argument("--salida", help="oportunidades: solo descargar y guardar en este archivo .jsonl")
+    pm.add_argument("--minutos", type=float, default=None, help="oportunidades: tiempo máximo de descarga")
+    pm.add_argument("--entrada", help="oportunidades: carpeta con los .jsonl descargados para juntar y puntuar")
     sub.add_parser("diario", help="Escribe el diario del día")
     sub.add_parser("panel", help="Abre el panel web")
     args = p.parse_args(argv)

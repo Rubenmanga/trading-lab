@@ -67,3 +67,21 @@ def test_sin_claves_no_hace_nada(monkeypatch):
     for k in ("FINNHUB_API_KEY", "ALPACA_API_KEY", "ALPACA_SECRET_KEY"):
         monkeypatch.delenv(k, raising=False)
     assert fuentes_extra.completar([{"ticker": "X"}]) == {"finnhub": False, "alpaca": False}
+
+
+def test_partes_y_ranking_provisional(tmp_path):
+    import json
+
+    from tradinglab.medio_plazo import oportunidades as op
+    lista = [{"ticker": t} for t in "EDCBA"]
+    assert [b["ticker"] for b in op._parte(lista, 0, 2)] == ["A", "C", "E"]
+    assert [b["ticker"] for b in op._parte(lista, 1, 2)] == ["B", "D"]
+    r = tmp_path / "p.jsonl"
+    filas = [{"ticker": "AAA", "errores": ["info: X"]}, {"ticker": "AAA", "errores": []},
+             {"ticker": "BBB", "errores": [], "sector": "Technology", "capitalizacion": 1e9}]
+    r.write_text("\n".join(json.dumps(f) for f in filas) + "\nlinea rota\n", encoding="utf-8")
+    leidas = op.leer_partes([str(r)])
+    assert len(leidas) == 2 and next(f for f in leidas if f["ticker"] == "AAA")["errores"] == []
+    cfg = {"oportunidades": {"extra_top": 0}}
+    res = op.combinar(cfg, leidas, universo_n=100)
+    assert res["provisional"] is True and res["descargadas"] == 2 and res["analizadas"] == 1
