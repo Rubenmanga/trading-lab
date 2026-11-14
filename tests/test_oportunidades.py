@@ -73,9 +73,10 @@ def test_partes_y_ranking_provisional(tmp_path):
     import json
 
     from tradinglab.medio_plazo import oportunidades as op
-    lista = [{"ticker": t} for t in "EDCBA"]
-    assert [b["ticker"] for b in op._parte(lista, 0, 2)] == ["A", "C", "E"]
-    assert [b["ticker"] for b in op._parte(lista, 1, 2)] == ["B", "D"]
+    lista = [{"ticker": t} for t in ("AAPL", "MSFT", "AEHR", "AMSC", "DFIN", "REPX", "IRWD", "ZZZ")]
+    trozos = [op._parte(lista, k, 4) for k in range(4)]
+    assert sorted(b["ticker"] for t in trozos for b in t) == sorted(b["ticker"] for b in lista)  # ni repetidas ni olvidadas
+    assert op._parte(list(reversed(lista)), 2, 4) == trozos[2]  # el orden de llegada no importa
     r = tmp_path / "p.jsonl"
     filas = [{"ticker": "AAA", "errores": ["info: X"]}, {"ticker": "AAA", "errores": []},
              {"ticker": "BBB", "errores": [], "sector": "Technology", "capitalizacion": 1e9}]

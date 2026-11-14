@@ -292,8 +292,10 @@ def enriquecer(tickers: list[str], hilos: int = 4, pausa: float = 0.15, limite_s
 
 
 def _parte(lista: list, parte: int, de: int) -> list:
-    """Reparte la lista en `de` trozos parecidos (por orden alfabético, para que sea estable)."""
-    return sorted(lista, key=lambda b: b["ticker"])[parte::de]
+    """Reparte la lista en `de` trozos. Cada empresa va siempre al mismo trozo (según su ticker), aunque cada
+    máquina reciba la lista de Yahoo en un orden algo distinto: así no hay empresas repetidas ni olvidadas."""
+    import zlib
+    return sorted((b for b in lista if zlib.crc32(b["ticker"].encode()) % de == parte), key=lambda b: b["ticker"])
 
 
 def descargar_parte(cfg: dict, parte: int = 0, de: int = 1, salida: str | None = None, minutos: float | None = None,
