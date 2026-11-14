@@ -1,0 +1,69 @@
+# ============================================================
+#  AGENTE A: TRADING INTRADÍA  (solo cuenta DEMO de Alpaca)
+# ============================================================
+# Todo lo que abre este agente se cierra el MISMO día, antes de la hora de cierre forzado.
+
+modo_cuenta: demo            # si pone otra cosa, el programa se niega a arrancar
+
+# Dónde se ejecutan las órdenes:
+#   simulado = cuenta sombra dentro del programa (no necesita claves)
+#   alpaca   = cuenta demo (paper) de Alpaca, con precios reales
+broker: simulado
+
+# Mercado y valores. PROVISIONAL: se decidirá con la investigación de estrategias.
+simbolos: [SPY, QQQ]
+temporalidad_min: 5          # velas de 5 minutos
+
+# Estrategia: el "hueco" donde se enchufa la estrategia elegida.
+#   ninguna            = no genera señales (seguro por defecto)
+#   ejemplo_cruce_medias = SOLO para probar que todo funciona. NO es una estrategia validada.
+estrategia:
+  nombre: ejemplo_cruce_medias
+  parametros:
+    media_rapida: 9
+    media_lenta: 21
+
+# Horario. Se escribe en hora de Nueva York porque así no hay líos con los cambios de hora.
+# Equivalencia habitual en Madrid: 9:35 NY = 15:35 · 11:30 NY = 17:30 · 12:20 NY = 18:20
+# (Unas pocas semanas en marzo y octubre/noviembre la diferencia es de 5 h en vez de 6 h.)
+horario:
+  zona: America/New_York
+  inicio: "09:35"            # empieza a buscar entradas (evita los primeros 5 min, muy locos)
+  fin_entradas: "11:30"      # a partir de aquí ya no abre nada nuevo
+  cierre_forzado: "12:20"    # cierra TODO lo que quede abierto
+  revisar_cada_seg: 60
+
+riesgo:
+  stop_loss_pct: 1.0                 # el stop se pone a un 1% del precio de entrada
+  ratio_beneficio_riesgo: 3.0        # objetivo = 3 veces lo que arriesgas (pon 4.0 para 4:1)
+  ratio_minimo: 3.0                  # señales con un ratio menor se rechazan
+  riesgo_por_operacion_pct: 0.5      # % del capital que pierdes si salta el stop
+  max_exposicion_por_operacion_pct: 25   # una operación nunca mueve más de este % del capital
+  corte_perdida_diaria_pct: 2.0      # si el día pierde esto, ya no se abre nada más
+  max_operaciones_dia: 4
+  max_posiciones_abiertas: 2
+  capital_simulado: 10000            # solo para el broker "simulado"
+
+# Trailing stop ("stop que persigue al precio"):
+# cuando la operación gana "activar_en_R" veces lo arriesgado, el stop sube a precio de entrada
+# (ya no puedes perder) y después sigue al precio a "distancia_pct" del mejor precio alcanzado.
+trailing:
+  activo: true
+  activar_en_R: 1.0
+  distancia_pct: 1.0
+
+# Costes para backtests y cuenta sombra (para no engañarnos con resultados demasiado bonitos)
+costes:
+  deslizamiento_pct: 0.02    # el precio real suele ser algo peor que el teórico
+  comision_por_accion: 0.0   # Alpaca no cobra comisión en acciones
+
+# Analista IA (revisa cada señal ANTES de ejecutarla)
+#   modo sombra = la IA opina y se apunta, pero NO bloquea (para medir si acierta)
+#   modo veto   = la IA puede frenar operaciones
+#   revisor ninguno    = no se consulta a la IA
+#   revisor claude_cli = usa Claude Code instalado en tu PC (va con tu suscripción, sin API de pago)
+ia:
+  revisor: ninguno
+  modo: sombra
+  tiempo_maximo_seg: 120
+  si_falla_la_ia: dejar_pasar   # en modo sombra da igual; en veto: frenar | dejar_pasar

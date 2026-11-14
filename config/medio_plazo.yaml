@@ -1,0 +1,24 @@
+# ============================================================
+#  AGENTE B: INVERSIÓN A MEDIO PLAZO (12 meses)
+# ============================================================
+# Este agente NO compra ni vende solo. Analiza, guarda una lista de vigilancia
+# y avisa cuando una empresa llega a su zona de entrada.
+
+modo_cuenta: demo
+
+# Filtro inicial ("cribado") de empresas pequeñas de EE. UU., de TODOS los sectores.
+cribado:
+  capitalizacion_min_usd: 300000000      # 300 millones $  (por debajo: "micro caps", demasiado riesgo)
+  capitalizacion_max_usd: 2000000000     # 2.000 millones $ (definición habitual de small cap)
+  volumen_medio_min: 200000              # acciones al día; si se negocia poco, cuesta entrar y salir
+  precio_min_usd: 2
+  analistas_min: 3                       # mínimo de analistas que la siguen
+  potencial_min_pct: 30                  # subida mínima hasta el precio objetivo medio de los analistas
+  max_resultados: 60
+  # Sectores a priorizar. Lo rellena la skill "buscar-small-caps" tras investigar qué sectores
+  # esperan los analistas que vayan bien a 12 meses. Vacío = todos los sectores por igual.
+  sectores_prioritarios: []
+
+alertas:
+  dias_aviso_catalizador: 10    # avisa si un catalizador (resultados, FDA, contrato...) está a menos de X días
+  revisar_tesis_cada_dias: 30   # avisa si un análisis tiene más de X días y conviene repasarlo
