@@ -55,6 +55,8 @@ const datos = {
   candidatos: csv(leer("investigacion", "candidatos.csv")),
   estado,
   ranking,
+  // Perfil «¿puede duplicar?»: el informe más reciente (o la lista provisional si aún no hay informe).
+  duplicar: (markdowns("investigacion/duplicar", "INFORME")[0] || markdowns("investigacion/duplicar", "PROVISIONAL")[0] || null),
   informes: [
     ...markdowns("investigacion/analisis").map((d) => ({ ...d, clase: "Empresa" })),
     ...markdowns("investigacion", "oportunidades").map((d) => ({ ...d, clase: "Buscador" })),
