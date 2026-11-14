@@ -37,14 +37,23 @@ th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;white-
 .md pre{overflow-x:auto;background:var(--chip);padding:10px;border-radius:8px}
 .empty{color:var(--sub);text-align:center;padding:28px 8px}
 footer{color:var(--sub);font-size:.78rem;text-align:center;padding:0 16px 32px}
+.nota{font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.bars{display:grid;grid-template-columns:auto 1fr auto;gap:3px 8px;align-items:center;margin-top:10px;font-size:.8rem}
+.bar{height:8px;border-radius:4px;background:var(--chip);overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--acc);border-radius:4px}
+.bar>i.lo{background:var(--bad)} .bar>i.mid{background:var(--warn)} .bar>i.hi{background:var(--ok)}
+.flag{color:var(--bad);font-size:.82rem} .sig{color:var(--ok);font-size:.82rem}
+.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+select{font:inherit;font-size:.88rem;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--txt);max-width:100%}
+.puesto{color:var(--sub);font-weight:600;margin-right:6px}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <h1>Trading Lab · Agente 12 meses</h1>
+  <h1>Trading Lab · Buscador 12 meses</h1>
   <div class="demo">Solo lectura · nada de esto es una recomendación de compra · el agente no opera solo</div>
   <nav id="nav">
-    <a href="#/">Resumen</a><a href="#/informes">Informes</a><a href="#/candidatos">Candidatos</a><a href="#/ayuda">Cómo se usa</a>
+    <a href="#/">Oportunidades</a><a href="#/vigilancia">Mi lista</a><a href="#/informes">Informes</a><a href="#/candidatos">Cribado simple</a><a href="#/ayuda">Cómo se usa</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"><div class="empty">Cargando…</div></main>
@@ -60,7 +69,7 @@ const fecha = (iso) => { try { return new Date(iso).toLocaleString("es-ES", {dat
 const VEREDICTO = {comprar_en_zona: "Comprar en zona", vigilar: "Vigilar", descartar: "Descartado"};
 let D = null;
 
-function resumen() {
+function resumen() {  // "Mi lista": avisos y lista de vigilancia
   const precios = Object.fromEntries((D.estado?.precios || []).map((p) => [p.ticker, p]));
   const alertas = D.estado?.alertas || [];
   let h = `<h2 style="font-size:1rem">Avisos</h2>`;
@@ -88,6 +97,63 @@ function resumen() {
   return h;
 }
 
+const FAC = [["calidad","Calidad"],["crecimiento","Crecimiento"],["valoracion","Valoración"],["revisiones","Revisiones analistas"],["insiders","Directivos"],["momentum","Momentum"],["catalizadores","Catalizadores"],["solidez","Solidez"]];
+const clase = (v) => v == null ? "" : v >= 65 ? "hi" : v >= 40 ? "mid" : "lo";
+const barras = (f) => `<div class="bars">${FAC.map(([k, n]) => { const v = f.factores?.[k]; return `<span class="sub">${n}</span><span class="bar"><i class="${clase(v)}" style="width:${v ?? 0}%"></i></span><span class="n">${v == null ? "—" : Math.round(v)}</span>`; }).join("")}</div>`;
+let filtroSector = "", filtroCarril = "";
+try { filtroSector = localStorage.getItem("fs") || ""; filtroCarril = localStorage.getItem("fc") || ""; } catch {}
+
+function oportunidades() {
+  const R = D.ranking;
+  if (!R) return `<div class="card empty">El primer ranking se calcula esta noche (23:30) en cuanto el sistema esté activado.</div>`;
+  const sectores = [...new Set(R.filas.map((f) => f.sector).filter(Boolean))].sort();
+  const carriles = [...new Set(R.filas.map((f) => f.carril).filter(Boolean))].sort();
+  const filas = R.filas.filter((f) => (!filtroSector || f.sector === filtroSector) && (!filtroCarril || f.carril === filtroCarril)).slice(0, 60);
+  const enLista = new Set(D.watchlist.map((w) => w.ticker));
+  let h = `<p class="sub">De <b>${R.universo}</b> small caps de EE. UU. se han puntuado <b>${R.analizadas}</b> en 8 factores (0-100, 50 = en la media). Las banderas rojas restan puntos. <b>Es un filtro, no una recomendación</b>: las primeras son las que merecen un análisis a fondo.</p>
+  <div class="filtros"><select id="fs"><option value="">Todos los sectores</option>${sectores.map((x) => `<option ${x === filtroSector ? "selected" : ""}>${esc(x)}</option>`).join("")}</select>
+  <select id="fc"><option value="">Todos los tipos</option>${carriles.map((x) => `<option ${x === filtroCarril ? "selected" : ""}>${esc(x)}</option>`).join("")}</select></div>`;
+  h += filas.map((f) => `<a class="card" style="display:block;text-decoration:none;color:inherit" href="#/empresa/${encodeURIComponent(f.ticker)}">
+    <div class="row"><span><span class="puesto">#${f.puesto}</span><span class="tk">${esc(f.ticker)}</span> <span class="sub">${esc(f.empresa || "")}</span>${enLista.has(f.ticker) ? ' <span class="chip">en mi lista</span>' : ""}</span><span class="nota">${Math.round(f.nota)}</span></div>
+    <div class="sub">${esc(f.sector || "")} · ${esc(f.carril)}</div>
+    ${barras(f)}
+    ${(f.senales || []).map((x) => `<div class="sig">▲ ${esc(x)}</div>`).join("")}
+    ${(f.banderas || []).map((x) => `<div class="flag">⚠ ${esc(x)}</div>`).join("")}
+  </a>`).join("") || `<div class="card empty">Ninguna con ese filtro.</div>`;
+  return h;
+}
+
+function empresaFicha(t) {
+  const f = D.ranking?.filas.find((x) => x.ticker === t);
+  if (!f) return `<div class="card empty">No está en el ranking.</div>`;
+  const informe = D.informes.filter((i) => i.archivo.startsWith(t + "-"))[0];
+  const m = (k, n, fmt) => `<div><div class="k">${n}</div><div class="n">${f[k] == null ? "—" : fmt(f[k])}</div></div>`;
+  const P = (x) => pct(x), Pf = (x) => pct(x * 100), N = (x) => num(x, 1), D0 = (x) => num(x, 0);
+  return `<a href="#/">← Oportunidades</a>
+  <div class="card"><div class="row"><span><span class="puesto">#${f.puesto}</span><span class="tk">${esc(f.ticker)}</span> <span class="sub">${esc(f.empresa || "")}</span></span><span class="nota">${Math.round(f.nota)}</span></div>
+  <div class="sub">${esc(f.sector || "")} · ${esc(f.industria || "")}</div>
+  <div class="sub">Tipo: <b>${esc(f.carril)}</b> · nota sin penalizar ${num(f.nota_base, 1)} · datos disponibles ${Math.round((f.cobertura_total || 0) * 100)} %</div>
+  ${barras(f)}
+  ${(f.senales || []).map((x) => `<div class="sig" style="margin-top:6px">▲ ${esc(x)}</div>`).join("")}
+  ${(f.banderas || []).map((x) => `<div class="flag" style="margin-top:6px">⚠ ${esc(x)}</div>`).join("")}
+  ${informe ? `<div style="margin-top:10px"><a href="#/informe/${encodeURIComponent(informe.id)}">Leer el análisis profundo →</a></div>` : `<div class="sub" style="margin-top:10px">Sin análisis profundo todavía. Pide en el chat: <i>"Analiza ${esc(f.ticker)} a 12 meses"</i>.</div>`}
+  </div>
+  <div class="card"><b>Datos clave</b><div class="grid">
+    ${m("precio", "Precio", (x) => num(x) + " $")}${m("capitalizacion", "Capitalización", (x) => num(x / 1e6, 0) + " M$")}
+    ${m("analistas", "Nº analistas", D0)}${m("recomendacion", "Consenso", (x) => esc(x))}
+    ${m("objetivo_medio", "Objetivo analistas", (x) => num(x) + " $")}${m("potencial_analistas_pct", "Potencial (analistas)", P)}
+    ${m("potencial_objetivo_bajo_pct", "Hasta el objetivo más bajo", P)}${m("per_futuro", "PER futuro", N)}
+    ${m("ev_ventas", "Valor empresa / ventas", N)}${m("rent_fcf_pct", "Rentab. flujo de caja", P)}
+    ${m("crec_ventas", "Crec. ventas (último año)", Pf)}${m("crec_ventas_sig_anio", "Crec. ventas previsto", Pf)}
+    ${m("crec_bpa_sig_anio", "Crec. beneficio previsto", Pf)}${m("rev_bpa_90d_anio", "Cambio previsión BPA 90 d", P)}
+    ${m("revisiones_neto", "Revisiones netas 30 d", D0)}${m("mejoras_neto_90d", "Mejoras netas recomend. 90 d", D0)}
+    ${m("insiders_neto_pct", "Compras netas directivos 6 m", P)}${m("ret_6m", "Rentab. 6 meses", P)}
+    ${m("dist_max52_pct", "Distancia a máximo anual", P)}${m("dilucion_1a_pct", "Nuevas acciones 1 año", P)}
+    ${m("meses_de_caja", "Meses de caja", D0)}${m("cortos_flotante", "Posiciones cortas", Pf)}
+    ${m("proximos_resultados", "Próximos resultados", (x) => esc(x))}
+  </div></div>`;
+}
+
 function informes() {
   if (!D.informes.length) return `<div class="card empty">Aún no hay informes.</div>`;
   return D.informes.map((i) => `<a class="card" style="display:block;text-decoration:none;color:inherit" href="#/informe/${encodeURIComponent(i.id)}">
@@ -112,10 +178,22 @@ function ayuda() {
   return `<div class="card md">
   <h2>Cómo se usa (todo desde el móvil)</h2>
   <ol>
-    <li><b>Pedir un análisis:</b> en el chat del proyecto de Claude escribe, por ejemplo, <i>"Analiza la empresa ABCD a 12 meses"</i> o <i>"Busca nuevas small caps"</i>. Claude investiga en la web, escribe el informe y lo publica aquí solo.</li>
+    <li><b>Oportunidades:</b> cada día laborable a las 23:30 el sistema puntúa todas las small caps de EE. UU. en 8 factores y ordena el ranking. Toca una empresa para ver su ficha.</li>
+    <li><b>Análisis profundo:</b> en el chat del proyecto escribe <i>"Busca oportunidades"</i> (Claude elige las mejores del ranking y las analiza a fondo) o <i>"Analiza ABCD a 12 meses"</i>. El informe aparece aquí solo.</li>
     <li><b>Avisos:</b> cada día laborable a las 23:30 se revisan los precios. Si una empresa entra en su zona de entrada, se acerca un catalizador o cae bajo el stop de tesis, te llega una notificación de GitHub.</li>
     <li><b>Repaso:</b> una vez por semana pide <i>"Revisa mi lista"</i>.</li>
   </ol>
+  <h2>Los 8 factores</h2>
+  <ul>
+    <li><b>Calidad:</b> márgenes, rentabilidad y flujo de caja (comparada con su sector).</li>
+    <li><b>Crecimiento:</b> ventas y beneficios, pasados y previstos.</li>
+    <li><b>Valoración:</b> lo barata que está (PER futuro, valor/ventas, flujo de caja), frente a su sector.</li>
+    <li><b>Revisiones analistas:</b> si los analistas suben o bajan sus previsiones y recomendaciones.</li>
+    <li><b>Directivos:</b> si los directivos compran o venden acciones de su empresa.</li>
+    <li><b>Momentum:</b> cómo se ha movido el precio frente al resto.</li>
+    <li><b>Catalizadores:</b> resultados cerca, sorpresas positivas recientes.</li>
+    <li><b>Solidez:</b> caja, deuda, nuevas acciones emitidas (dilución), posiciones cortas.</li>
+  </ul>
   <h2>Palabras</h2>
   <ul>
     <li><b>Zona de entrada:</b> precio por debajo del cual el agente cree que compensa comprar.</li>
@@ -126,14 +204,20 @@ function ayuda() {
   <p class="sub">El agente no compra ni vende nada. Las small caps se mueven mucho: ninguna posición debería ser grande.</p></div>`;
 }
 
-function pintar() {
+function pintar(mantener) {
   const r = location.hash.replace(/^#/, "") || "/";
-  document.querySelectorAll("#nav a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + (r.startsWith("/informe/") ? "/informes" : r)));
+  const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/" : r;
+  document.querySelectorAll("#nav a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + pest));
   const app = $("#app");
   if (!D) return;
   app.innerHTML = r.startsWith("/informe/") ? informe(decodeURIComponent(r.slice(9)))
-    : r === "/informes" ? informes() : r === "/candidatos" ? candidatos() : r === "/ayuda" ? ayuda() : resumen();
-  window.scrollTo(0, 0);
+    : r.startsWith("/empresa/") ? empresaFicha(decodeURIComponent(r.slice(9)))
+    : r === "/informes" ? informes() : r === "/candidatos" ? candidatos() : r === "/ayuda" ? ayuda()
+    : r === "/vigilancia" ? resumen() : oportunidades();
+  const fs = $("#fs"), fc = $("#fc");
+  if (fs) fs.onchange = () => { filtroSector = fs.value; try { localStorage.setItem("fs", filtroSector); } catch {} pintar(true); };
+  if (fc) fc.onchange = () => { filtroCarril = fc.value; try { localStorage.setItem("fc", filtroCarril); } catch {} pintar(true); };
+  if (!mantener) window.scrollTo(0, 0);
 }
 
 fetch("datos.json", {cache: "no-store"}).then((r) => r.json()).then((d) => {
@@ -141,7 +225,7 @@ fetch("datos.json", {cache: "no-store"}).then((r) => r.json()).then((d) => {
   $("#pie").textContent = `Precios: ${D.estado ? fecha(D.estado.actualizado) : "aún sin calcular"} · Panel generado: ${fecha(D.construido)}`;
   pintar();
 }).catch(() => { $("#app").innerHTML = `<div class="card empty">No se han podido cargar los datos.</div>`; });
-addEventListener("hashchange", pintar);
+addEventListener("hashchange", () => pintar());
 </script>
 </body>
 </html>

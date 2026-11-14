@@ -40,6 +40,8 @@ jobs:
       PYTHONUTF8: "1"
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}   # en un PR, la rama del PR (para poder guardar el ranking de prueba)
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -57,6 +59,10 @@ jobs:
         run: python -m tradinglab.cli medio probar AMSC | head -c 6000
 
       - name: Buscador de oportunidades (ranking multifactor)
+        env:   # claves gratuitas opcionales (Settings → Secrets → Actions). Si no existen, se ignoran.
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
         run: python -m tradinglab.cli medio oportunidades
 
       - name: Cribado de small caps (domingos o a mano)
@@ -83,13 +89,12 @@ jobs:
           if-no-files-found: ignore
 
       - name: Guardar resultados en el repo
-        if: github.event_name != 'pull_request'
         run: |
           git config user.name "agente-12m"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add investigacion/alertas.md investigacion/estado.json investigacion/ranking.json investigacion/ranking.md investigacion/ranking_detalle.json 2>/dev/null || true
           git add investigacion/candidatos.csv 2>/dev/null || true
-          git diff --cached --quiet || git commit -m "Agente 12m: alertas y precios $(date -u +%F)"
+          git diff --cached --quiet || git commit -m "Agente 12m: ranking, alertas y precios $(date -u +%F)"
           git pull --rebase --autostash -q || true
           git push
 

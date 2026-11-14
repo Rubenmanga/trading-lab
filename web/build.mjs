@@ -44,6 +44,8 @@ function markdowns(carpeta, tipo) {
     .sort((a, b) => b.fecha.localeCompare(a.fecha) || a.archivo.localeCompare(b.archivo));
 }
 
+let ranking = null;
+try { ranking = JSON.parse(leer("investigacion", "ranking.json") || "null"); } catch { ranking = null; }
 let estado = null;
 try { estado = JSON.parse(leer("investigacion", "estado.json") || "null"); } catch { estado = null; }
 
@@ -52,8 +54,10 @@ const datos = {
   watchlist: csv(leer("investigacion", "watchlist.csv")),
   candidatos: csv(leer("investigacion", "candidatos.csv")),
   estado,
+  ranking,
   informes: [
     ...markdowns("investigacion/analisis").map((d) => ({ ...d, clase: "Empresa" })),
+    ...markdowns("investigacion", "oportunidades").map((d) => ({ ...d, clase: "Buscador" })),
     ...markdowns("investigacion", "sectores").map((d) => ({ ...d, clase: "Sectores" })),
     ...markdowns("investigacion", "repaso").map((d) => ({ ...d, clase: "Repaso" })),
     ...markdowns("diario").map((d) => ({ ...d, clase: "Diario intradía" })),
@@ -65,4 +69,4 @@ fs.mkdirSync(DIST, { recursive: true });
 fs.writeFileSync(path.join(DIST, "datos.json"), JSON.stringify(datos));
 fs.copyFileSync(path.join(RAIZ, "web", "index.html"), path.join(DIST, "index.html"));
 fs.cpSync(path.join(RAIZ, "web", "vendor"), path.join(DIST, "vendor"), { recursive: true });
-console.log(`Panel listo: ${datos.watchlist.length} en vigilancia, ${datos.candidatos.length} candidatos, ${datos.informes.length} informes.`);
+console.log(`Panel listo: ${datos.ranking ? datos.ranking.filas.length : 0} en ranking, ${datos.watchlist.length} en vigilancia, ${datos.candidatos.length} candidatos, ${datos.informes.length} informes.`);

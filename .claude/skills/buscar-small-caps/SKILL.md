@@ -5,6 +5,9 @@ description: Busca small caps de EE. UU. de todos los sectores con buenas perspe
 
 # Buscar small caps con potencial a 12 meses (agente B)
 
+> Para el embudo completo usa **`oportunidades-12m`**, que parte del ranking multifactor diario. Esta skill
+> queda para la investigación sectorial (paso 1) y el cribado sencillo.
+
 **No es solo biotecnología.** El universo son empresas pequeñas (300 M$ - 2.000 M$ de capitalización)
 de **cualquier sector** en el que los analistas esperen buenos resultados en los próximos 12 meses.
 Biotech con un ensayo de Fase 3 es un ejemplo de catalizador, no el foco.

@@ -50,3 +50,20 @@ def test_tecnico_detecta_tendencia():
     h = pd.DataFrame(dict(Open=c, High=c * 1.01, Low=c * 0.99, Close=c, Volume=np.full(n, 1e6)), index=idx)
     t = metricas.tecnico(h)
     assert t["tendencia_fase2"] and t["ret_6m"] > 0 and t["dist_max52_pct"] > -2
+
+
+def test_tendencia_recomendaciones():
+    from tradinglab.medio_plazo.fuentes_extra import tendencia_recomendaciones
+    recs = [dict(period="2026-11-01", strongBuy=3, buy=5, hold=2, sell=0, strongSell=0),
+            dict(period="2026-10-01", strongBuy=2, buy=4, hold=4),
+            dict(period="2026-09-01", strongBuy=2, buy=3, hold=5),
+            dict(period="2026-08-01", strongBuy=1, buy=3, hold=6)]
+    r = tendencia_recomendaciones(recs)
+    assert r["recs_pct_compra"] == 80.0 and r["recs_cambio_3m"] == 40.0
+
+
+def test_sin_claves_no_hace_nada(monkeypatch):
+    from tradinglab.medio_plazo import fuentes_extra
+    for k in ("FINNHUB_API_KEY", "ALPACA_API_KEY", "ALPACA_SECRET_KEY"):
+        monkeypatch.delenv(k, raising=False)
+    assert fuentes_extra.completar([{"ticker": "X"}]) == {"finnhub": False, "alpaca": False}

@@ -278,9 +278,26 @@ def ejecutar(cfg: dict, maximo: int | None = None) -> dict:
     # Fuera fondos cerrados y similares: una empresa operativa tiene sector y ventas.
     filas = [f for f in filas if f.get("tipo", "EQUITY") in (None, "EQUITY") and f.get("capitalizacion")
              and f.get("sector") and f.get("ventas")]
+    # Datos extra con claves gratuitas (si existen). El calendario de resultados de Finnhub se aplica a todas
+    # ANTES de puntuar; noticias, recomendaciones e insiders de Finnhub/Alpaca se añaden a las mejores DESPUÉS
+    # (para el panel y el análisis profundo), sin cambiar la nota, para que la comparación sea justa.
+    from . import fuentes_extra
+    extra = {}
+    if fuentes_extra.hay_finnhub():
+        try:
+            cal = fuentes_extra.Finnhub().calendario_resultados()
+            for f in filas:
+                if f["ticker"] in cal:
+                    f["proximos_resultados"] = cal[f["ticker"]]
+            extra["calendario_resultados"] = len(cal)
+        except PermissionError as e:
+            extra["finnhub_error"] = str(e)
     puntuar(filas, c.get("pesos"))
+    if fuentes_extra.hay_finnhub() or fuentes_extra.hay_alpaca():
+        extra |= fuentes_extra.completar(filas, top=c.get("extra_top", 60), calendario=False)
+    print("Fuentes extra:", extra or "ninguna (sin claves)")
     return dict(actualizado=ahora(), universo=len(base), analizadas=len(filas), pesos=c.get("pesos") or PESOS_DEFECTO,
-                filas=filas)
+                fuentes_extra=extra, filas=filas)
 
 
 COLUMNAS_PANEL = [
@@ -289,7 +306,7 @@ COLUMNAS_PANEL = [
     "potencial_analistas_pct", "potencial_objetivo_bajo_pct", "per_futuro", "ev_ventas", "rent_fcf_pct",
     "crec_ventas", "crec_ventas_sig_anio", "crec_bpa_sig_anio", "rev_bpa_90d_anio", "revisiones_neto",
     "mejoras_neto_90d", "insiders_neto_pct", "ret_6m", "dist_max52_pct", "dilucion_1a_pct", "meses_de_caja",
-    "cortos_flotante", "proximos_resultados", "dias_a_resultados"]
+    "cortos_flotante", "proximos_resultados", "dias_a_resultados", "extra"]
 
 
 def _limpio(v):

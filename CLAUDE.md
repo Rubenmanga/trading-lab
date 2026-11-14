@@ -19,11 +19,11 @@ técnicos la primera vez que salgan.
 
 ## Comandos
 `lab intradia demo|comprobar|backtest|sesion|cerrar-todo`, `lab diario`,
-`lab medio cribado|ficha TICKER|alertas`, `lab panel`. Tests: `pytest`.
+`lab medio oportunidades|probar TICKER|cribado|ficha TICKER|alertas`, `lab panel`. Tests: `pytest`.
 
 ## Skills del proyecto (`.claude/skills/`)
 Propias: `sesion-intradia`, `revisor-senal-intradia`, `investigar-estrategias-intradia`, `diario-operaciones`,
-`buscar-small-caps`, `analizar-empresa-12m`, `revisar-cartera-12m`.
+`oportunidades-12m` (buscador completo), `buscar-small-caps`, `analizar-empresa-12m` (análisis profundo: GARP + TradingAgents), `revisar-cartera-12m`.
 De tradermonty (MIT): `position-sizer`, `drawdown-circuit-breaker`, `pre-trade-discipline-gate`,
 `market-environment-analysis`, `us-stock-analysis`, `market-news-analyst`, `trader-memory-core`.
 Algunas de tradermonty mencionan APIs de pago (FMP, FINVIZ Elite): no las uses; usa la web y `lab medio ficha`.
@@ -36,7 +36,8 @@ empieza siempre con un resumen de 5 líneas.
 Ruben suele pedir el agente B desde el móvil, en una sesión en la nube. Allí:
 - La terminal no llega a webs de bolsa (Yahoo, SEC, Finviz bloqueados). Usa **WebSearch y WebFetch**:
   `stockanalysis.com/stocks/TICKER/forecast/`, `/statistics/`, `/financials/`, `data.sec.gov`, webs de la empresa.
-- Precios diarios, alertas y cribado los calcula **GitHub Actions** (`.github/workflows/agente-12m.yml`) y los deja en
+- El **ranking diario de oportunidades** (`lab medio oportunidades`: todas las small caps puntuadas en 8 factores →
+  `investigacion/ranking.json`, `ranking_detalle.json`), los precios, alertas y cribado los calcula **GitHub Actions** (`.github/workflows/agente-12m.yml`) y los deja en
   `investigacion/` (`estado.json`, `alertas.md`, `candidatos.csv`). Si hay algo importante abre un issue (aviso al móvil).
 - Al terminar un análisis, el pull request debe tocar **solo** `investigacion/`: así se publica solo
   (`publicar-investigacion.yml`) y aparece en el panel web de Vercel (`web/`, se construye con `node web/build.mjs`).
