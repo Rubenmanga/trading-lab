@@ -53,7 +53,7 @@ select{font:inherit;font-size:.88rem;padding:6px 8px;border-radius:8px;border:1p
   <h1>Trading Lab · Buscador 12 meses</h1>
   <div class="demo">Solo lectura · nada de esto es una recomendación de compra · el agente no opera solo</div>
   <nav id="nav">
-    <a href="#/">Oportunidades</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/vigilancia">Mi lista</a><a href="#/informes">Informes</a><a href="#/candidatos">Cribado simple</a><a href="#/ayuda">Cómo se usa</a>
+    <a href="#/">Oportunidades</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Mi lista</a><a href="#/informes">Informes</a><a href="#/candidatos">Cribado simple</a><a href="#/ayuda">Cómo se usa</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"><div class="empty">Cargando…</div></main>
@@ -230,6 +230,32 @@ function duplicar() {
   <article class="card md">${DOMPurify.sanitize(marked.parse(d.texto))}</article>`;
 }
 
+function grafico(e) {
+  const h = (e.historial || []).filter((f) => f.cierre !== "" && f.cierre != null).map((f) => +f.cierre);
+  const n = e.niveles || {};
+  if (h.length < 2) return "";
+  const lv = [n.stop, n.soporte?.[0], n.soporte?.[1], n.confirmacion].filter((x) => x != null);
+  const min = Math.min(...h, ...lv) * 0.97, max = Math.max(...h, ...lv) * 1.03, W = 320, H = 120;
+  const y = (v) => H - ((v - min) / (max - min)) * H, x = (i) => (i / (h.length - 1)) * W;
+  const linea = (v, col, txt) => v == null ? "" : `<line x1="0" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="${col}" stroke-dasharray="4 3" stroke-width="1"/><text x="2" y="${y(v) - 2}" font-size="9" fill="${col}">${txt} ${v}</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;margin:8px 0">
+    ${linea(n.confirmacion, "#2e7d32", "señal B")}${linea(n.soporte?.[1], "#f9a825", "soporte")}${linea(n.soporte?.[0], "#f9a825", "")}${linea(n.stop, "#c62828", "stop")}
+    <polyline fill="none" stroke="currentColor" stroke-width="1.6" points="${h.map((v, i) => `${x(i)},${y(v)}`).join(" ")}"/></svg>`;
+}
+
+function seguimientoVista() {
+  const S = D.seguimiento;
+  if (!S || !Object.keys(S.empresas || {}).length) return `<div class="card empty">El seguimiento diario aún no ha corrido. Se calcula cada día laborable tras el cierre de Wall Street (23:30 en Madrid).</div>`;
+  const col = { "SEÑAL DE ENTRADA": "#2e7d32", "PELIGRO": "#c62828", "ATENTO": "#f9a825" };
+  return `<p class="sub">Cada día laborable, tras el cierre, el agente mira el gráfico y las noticias y comprueba las señales de entrada del plan. Actualizado: ${esc(fecha(S.actualizado))}.</p>` +
+    Object.entries(S.empresas).map(([t, e]) => `<div class="card">
+      <div class="row"><span class="tk">${esc(t)}</span><b style="color:${col[e.estado] || "inherit"}">${esc(e.estado)}</b></div>
+      <div class="sub">Cierre ${esc(e.cierre)} $ (${esc(e.fecha)}) · RSI ${esc(e.rsi)} · EMA 9 ${esc(e.ema9)} $ · entrar como mucho hasta ${esc(e.niveles?.entrada_max)} $ · stop ${esc(e.niveles?.stop)} $</div>
+      ${grafico(e)}
+      ${e.notas ? `<details open><summary><b>Repaso diario de Claude (noticias y tesis)</b></summary><article class="md">${DOMPurify.sanitize(marked.parse(e.notas))}</article></details>` : ""}
+      <details ${e.notas ? "" : "open"}><summary><b>Informe técnico de hoy</b></summary><article class="md">${DOMPurify.sanitize(marked.parse(e.texto || ""))}</article></details></div>`).join("");
+}
+
 function pintar(mantener) {
   const r = location.hash.replace(/^#/, "") || "/";
   const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/" : r;
@@ -239,7 +265,7 @@ function pintar(mantener) {
   app.innerHTML = r.startsWith("/informe/") ? informe(decodeURIComponent(r.slice(9)))
     : r.startsWith("/empresa/") ? empresaFicha(decodeURIComponent(r.slice(9)))
     : r === "/informes" ? informes() : r === "/candidatos" ? candidatos() : r === "/ayuda" ? ayuda()
-    : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : oportunidades();
+    : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : r === "/seguimiento" ? seguimientoVista() : oportunidades();
   const fs = $("#fs"), fc = $("#fc");
   if (fs) fs.onchange = () => { filtroSector = fs.value; try { localStorage.setItem("fs", filtroSector); } catch {} pintar(true); };
   if (fc) fc.onchange = () => { filtroCarril = fc.value; try { localStorage.setItem("fc", filtroCarril); } catch {} pintar(true); };

@@ -48,3 +48,17 @@ oportunidades:
 alertas:
   dias_aviso_catalizador: 10    # avisa si un catalizador (resultados, FDA, contrato...) está a menos de X días
   revisar_tesis_cada_dias: 30   # avisa si un análisis tiene más de X días y conviene repasarlo
+
+# Seguimiento diario para elegir el MOMENTO de entrada (lab medio seguimiento; lo ejecuta GitHub Actions
+# cada día laborable). Los niveles salen del "Plan del trader" del análisis de cada empresa.
+#   soporte: zona donde buscar la señal A (suelo: vela de giro con volumen, mejor con divergencia del RSI)
+#   confirmacion: señal B = dos cierres seguidos por encima de este precio
+seguimiento:
+  ORIC:
+    soporte: [7.2, 7.5]
+    confirmacion: 9.3
+    entrada_max: 8.5
+    stop: 6.5
+    objetivo: 13
+    tamano_max: "2 %"
+    informe: investigacion/analisis/ORIC-2026-11-14.md
