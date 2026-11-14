@@ -275,7 +275,9 @@ def ejecutar(cfg: dict, maximo: int | None = None) -> dict:
     maximo = maximo or c.get("max_empresas", 2000)
     elegidas = base[:maximo]
     filas = enriquecer([b["ticker"] for b in elegidas], hilos=c.get("hilos", 4))
-    filas = [f for f in filas if f.get("tipo", "EQUITY") in (None, "EQUITY") and f.get("capitalizacion")]
+    # Fuera fondos cerrados y similares: una empresa operativa tiene sector y ventas.
+    filas = [f for f in filas if f.get("tipo", "EQUITY") in (None, "EQUITY") and f.get("capitalizacion")
+             and f.get("sector") and f.get("ventas")]
     puntuar(filas, c.get("pesos"))
     return dict(actualizado=ahora(), universo=len(base), analizadas=len(filas), pesos=c.get("pesos") or PESOS_DEFECTO,
                 filas=filas)
@@ -302,6 +304,10 @@ def guardar(res: dict, top: int = 150) -> tuple[str, str]:
     pj = ruta("investigacion", "ranking.json")
     with open(pj, "w", encoding="utf-8") as fh:
         json.dump({k: v for k, v in res.items() if k != "filas"} | {"filas": ligero}, fh, ensure_ascii=False)
+    # Ficha completa (todas las métricas) de las 40 primeras, para el análisis profundo.
+    with open(ruta("investigacion", "ranking_detalle.json"), "w", encoding="utf-8") as fh:
+        json.dump({"actualizado": res["actualizado"],
+                   "filas": [{k: _limpio(v) for k, v in f.items()} for f in filas[:40]]}, fh, ensure_ascii=False, indent=0)
     pm = ruta("investigacion", "ranking.md")
     with open(pm, "w", encoding="utf-8") as fh:
         fh.write("# Ranking de oportunidades (small caps EE. UU.)\n\n")

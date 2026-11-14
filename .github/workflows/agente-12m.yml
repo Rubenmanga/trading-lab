@@ -57,9 +57,7 @@ jobs:
         run: python -m tradinglab.cli medio probar AMSC | head -c 6000
 
       - name: Buscador de oportunidades (ranking multifactor)
-        run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then MAX="--max 120"; else MAX=""; fi
-          python -m tradinglab.cli medio oportunidades $MAX
+        run: python -m tradinglab.cli medio oportunidades
 
       - name: Cribado de small caps (domingos o a mano)
         if: github.event.schedule == '0 9 * * 0' || inputs.cribado
@@ -72,12 +70,24 @@ jobs:
           cat investigacion/estado.json
           cat investigacion/ranking.md
 
+      - name: Subir el ranking como archivo descargable
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ranking
+          path: |
+            investigacion/ranking.json
+            investigacion/ranking.md
+            investigacion/ranking_detalle.json
+            investigacion/estado.json
+          if-no-files-found: ignore
+
       - name: Guardar resultados en el repo
         if: github.event_name != 'pull_request'
         run: |
           git config user.name "agente-12m"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add investigacion/alertas.md investigacion/estado.json investigacion/ranking.json investigacion/ranking.md 2>/dev/null || true
+          git add investigacion/alertas.md investigacion/estado.json investigacion/ranking.json investigacion/ranking.md investigacion/ranking_detalle.json 2>/dev/null || true
           git add investigacion/candidatos.csv 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Agente 12m: alertas y precios $(date -u +%F)"
           git pull --rebase --autostash -q || true
