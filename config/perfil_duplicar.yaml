@@ -1,0 +1,38 @@
+# ============================================================
+#  PERFIL "¿PUEDE DUPLICAR?" del agente B (12 meses)
+# ============================================================
+# Es el MISMO agente de 12 meses (mismo universo de Yahoo, mismas métricas, misma nota de 8 factores,
+# mismos datos extra de Finnhub/Alpaca), pero con los criterios de Ruben del 14-nov-2026.
+# No cambia config/medio_plazo.yaml ni el ranking normal: guarda todo en investigacion/duplicar/.
+# Se ejecuta con:  python -m tradinglab.perfiles.duplicar
+
+modo_cuenta: demo
+
+# Paso 1: universo (se pasa tal cual al buscador del agente B).
+oportunidades:
+  capitalizacion_min_usd: 100000000     # Ruben no puso límite de tamaño: se amplía a 100 M$ - 10.000 M$
+  capitalizacion_max_usd: 10000000000
+  precio_min_usd: 4                     # se afina luego con el rango en euros
+  volumen_medio_min: 100000
+  volumen_dolares_min: 1000000
+  hilos: 4
+  extra_top: 40
+  pesos: {calidad: 15, crecimiento: 15, valoracion: 15, revisiones: 20, insiders: 5, momentum: 10, catalizadores: 5, solidez: 15}
+
+# Criterios de Ruben. Son OBLIGATORIOS: si nadie los cumple, el informe lo dice y enseña las que se quedan cerca.
+criterios:
+  precio_eur_min: 5
+  precio_eur_max: 25
+  potencial_min_pct: 100          # precio objetivo medio de los analistas a 12 meses > +100 %
+  analistas_min: 10
+  trimestres_mejorando_min: 2     # resultado operativo, beneficio neto o flujo de caja mejorando 2 trimestres seguidos
+  dilucion:
+    meses_caja_min: 24            # caja para al menos 2 años al ritmo de gasto actual (o ya genera caja)
+    acciones_nuevas_12m_max_pct: 10   # no más de un 10 % de acciones nuevas en el último año
+    deuda_sobre_caja_max: 1.0     # la deuda no supera la caja
+
+# Lista corta para el análisis detallado (incluye las que se quedan "cerca" para el informe de casi-candidatas).
+lista_corta:
+  potencial_min_pct: 60
+  analistas_min: 5
+  margen_precio: 0.25             # también mira acciones hasta un 25 % fuera del rango de precio
