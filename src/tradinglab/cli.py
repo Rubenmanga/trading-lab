@@ -18,6 +18,7 @@
   lab medio alertas         Revisa la lista de vigilancia y avisa
   lab medio seguimiento     Seguimiento diario de las empresas en config (momento de entrada + lista de noticias)
   lab medio noticias        Solo la lista de noticias (revisión rápida cada 2 h en horario de bolsa)
+  lab radar parte|informe   Radar de resultados: prueba con el pasado (corre en GitHub Actions)
   lab panel                 Abre el panel web
 """
 from __future__ import annotations
@@ -203,6 +204,43 @@ def _corto(args):
     print(f"{len(d.filas)} decisiones apuntadas; {len(d.avisos)} avisos.")
 
 
+def _radar(args):
+    import csv
+    import json
+    import zlib
+    from pathlib import Path
+
+    from .common import config
+    from .radar import resultados as rr
+
+    if args.accion == "parte":
+        with open(config.ruta("investigacion", "duplicar", "universo.csv"), newline="", encoding="utf-8") as fh:
+            tks = sorted({f["ticker"].strip().upper() for f in csv.DictReader(fh) if f.get("ticker")})
+        mios = [t for t in tks if zlib.crc32(t.encode()) % args.de == args.parte - 1]
+        if args.max:
+            mios = mios[: args.max]
+        Path(args.salida).parent.mkdir(parents=True, exist_ok=True)
+        r = rr.correr_parte(mios, Path(args.salida), minutos=args.minutos or 50)
+        print(f"Parte {args.parte}/{args.de}: {len(mios)} empresas, {r['ok']} bajadas, {len(r['fallos'])} fallos")
+        (Path(args.salida).with_suffix(".fallos.json")).write_text(json.dumps(r["fallos"]), encoding="utf-8")
+    else:  # informe
+        evs, fallos = [], []
+        for f in sorted(Path(args.entrada).glob("*.jsonl")):
+            for linea in f.read_text(encoding="utf-8").splitlines():
+                try:
+                    evs += json.loads(linea)["eventos"]
+                except Exception:  # noqa: BLE001
+                    pass
+        for f in Path(args.entrada).glob("*.fallos.json"):
+            fallos += json.loads(f.read_text(encoding="utf-8"))
+        res = rr.analizar(evs)
+        sal = config.ruta("investigacion", "radar")
+        sal.mkdir(parents=True, exist_ok=True)
+        (sal / "prueba-resultados.md").write_text(rr.informe(res, fallos), encoding="utf-8")
+        (sal / "prueba-resultados.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+        print((sal / "prueba-resultados.md").read_text(encoding="utf-8"))
+
+
 def main(argv=None):
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")  # para que Windows muestre bien las tildes
@@ -231,6 +269,14 @@ def main(argv=None):
     pe.add_argument("--nombre", default="tramo")
     pe.add_argument("--max", type=int, default=None, help="universo: máximo de símbolos (para pruebas)")
     pe.add_argument("--por-minuto", type=int, default=None, help="llamadas por minuto a Alpaca (máx. 200 gratis)")
+    pr = sub.add_parser("radar", help="Radar de resultados (agente B): prueba con el pasado")
+    pr.add_argument("accion", choices=["parte", "informe"])
+    pr.add_argument("--parte", type=int, default=1)
+    pr.add_argument("--de", type=int, default=1)
+    pr.add_argument("--max", type=int, default=None)
+    pr.add_argument("--minutos", type=float, default=None)
+    pr.add_argument("--salida", default="partes_radar/parte-1.jsonl")
+    pr.add_argument("--entrada", default="partes_radar")
     pc = sub.add_parser("corto", help="Agente A · corto del hueco en eToro DEMO")
     pc.add_argument("accion", choices=["operar", "cerrar"])
     pc.add_argument("--ensayo", action="store_true", help="hace todo menos enviar órdenes")
@@ -250,6 +296,8 @@ def main(argv=None):
         _estudio(args)
     elif args.grupo == "corto":
         _corto(args)
+    elif args.grupo == "radar":
+        _radar(args)
     elif args.grupo == "diario":
         from .diario import escribir
         print("Diario guardado en", escribir())
