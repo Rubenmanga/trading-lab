@@ -241,12 +241,13 @@ def empresa(ticker: str, ref_close=None) -> dict:
         if fcf is not None:
             v = [_n(a) for a in fcf.tolist()[:4]]
             v = [x for x in v if x is not None]
-            if v:
+            if len(v) == 4:  # con menos de 4 trimestres no es un año: se usa el dato anual
                 m["fcf_4t"] = sum(v)
+            if v:
                 m["fcf_trim_positivos"] = sum(1 for x in v if x > 0)
         if sbc is not None:
             v = [x for x in (_n(a) for a in sbc.tolist()[:4]) if x is not None]
-            if v:
+            if len(v) == 4:
                 m["sbc_4t"] = sum(v)
 
     def calendario():

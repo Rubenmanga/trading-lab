@@ -69,17 +69,25 @@ def spearman(a: list[float], b: list[float]) -> float | None:
 
 def comparar(foto: list[dict], precios_hoy: dict[str, float]) -> dict | None:
     """Rentabilidad desde la foto hasta hoy. Solo empresas que siguen teniendo precio hoy."""
-    filas = [(f, (precios_hoy[f["ticker"]] / f["precio"] - 1) * 100) for f in foto
-             if precios_hoy.get(f["ticker"]) and f["precio"] > 0]
-    if len(filas) < 30:
+    # La cohorte es la foto original: se fija por puesto ANTES de mirar quién sigue con precio.
+    orig = sorted((f for f in foto if f["precio"] > 0), key=lambda f: f["puesto"])
+    con = {f["ticker"] for f in orig if precios_hoy.get(f["ticker"])}
+    if len(con) < 30:
         return None
-    filas.sort(key=lambda x: x[0]["puesto"])
+    ret = lambda f: (precios_hoy[f["ticker"]] / f["precio"] - 1) * 100  # noqa: E731
+    filas = [(f, ret(f)) for f in orig if f["ticker"] in con]
     rets = [r for _, r in filas]
-    top = lambda n: round(mean(rets[:n]), 2)  # noqa: E731
+    sin_precio = len(orig) - len(con)
+
+    def top(n):
+        r = [ret(f) for f in orig[:n] if f["ticker"] in con]
+        return round(mean(r), 2) if r else None
     med = round(median(rets), 2)
-    return dict(empresas=len(filas), top20=top(20), top50=top(50), mediana_todas=med,
-                ventaja_top20=round(top(20) - med, 2), ventaja_top50=round(top(50) - med, 2),
-                aciertos_top20=sum(1 for r in rets[:20] if r > med),
+    t20, t50 = top(20), top(50)
+    ventaja = lambda t: round(t - med, 2) if t is not None else None  # noqa: E731
+    return dict(empresas=len(filas), sin_precio=sin_precio, top20=t20, top50=t50, mediana_todas=med,
+                ventaja_top20=ventaja(t20), ventaja_top50=ventaja(t50),
+                aciertos_top20=sum(1 for f in orig[:20] if f["ticker"] in con and ret(f) > med),
                 correlacion=spearman([f["nota"] for f, _ in filas], rets))
 
 
@@ -118,17 +126,19 @@ def informe(v: dict) -> str:
         return "\n".join(l)
     mejor = v["plazos"][-1]
     l += [f"- **Plazo más largo medido: {mejor['plazo']}** (desde la foto del {mejor['desde']}).",
-          f"- Las 20 mejores de entonces: **{mejor['top20']:+.1f} %** frente a {mejor['mediana_todas']:+.1f} % de la "
-          f"empresa mediana (ventaja {mejor['ventaja_top20']:+.1f} puntos).",
+          f"- Las 20 mejores de entonces: **{(mejor['top20'] or 0):+.1f} %** frente a {mejor['mediana_todas']:+.1f} % de la "
+          f"empresa mediana (ventaja {(mejor['ventaja_top20'] or 0):+.1f} puntos).",
           f"- {mejor['aciertos_top20']} de las 20 lo hicieron mejor que la mediana.",
+          f"- Empresas de la foto que ya no tienen precio (no cuentan en la media, pueden haber caído mucho): "
+          f"**{mejor.get('sin_precio', 0)}**.",
           f"- Correlación nota-rentabilidad: {mejor['correlacion'] if mejor['correlacion'] is not None else '—'} "
           "(0 = la nota no predice nada; 0,05-0,10 ya es útil en bolsa).",
           "- **Ojo:** con menos de 3-6 meses de historia esto es casi todo azar. No cambies pesos por una semana mala.",
           "", "| Plazo | Desde | Empresas | Top 20 | Top 50 | Mediana | Ventaja top 20 | Aciertos top 20 | Correlación |",
           "|---|---|---|---|---|---|---|---|---|"]
     for p in v["plazos"]:
-        l.append(f"| {p['plazo']} | {p['desde']} | {p['empresas']} | {p['top20']:+.1f} % | {p['top50']:+.1f} % | "
-                 f"{p['mediana_todas']:+.1f} % | {p['ventaja_top20']:+.1f} | {p['aciertos_top20']}/20 | "
+        l.append(f"| {p['plazo']} | {p['desde']} | {p['empresas']} | {(p['top20'] or 0):+.1f} % | {(p['top50'] or 0):+.1f} % | "
+                 f"{p['mediana_todas']:+.1f} % | {(p['ventaja_top20'] or 0):+.1f} | {p['aciertos_top20']}/20 | "
                  f"{p['correlacion'] if p['correlacion'] is not None else '—'} |")
     l += ["", "Las empresas que ya no cotizan o salen del rango no se cuentan (puede inflar un poco el resultado)."]
     return "\n".join(l) + "\n"

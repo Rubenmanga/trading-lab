@@ -38,7 +38,7 @@ def revisar(cfg: dict, filas: list[dict] | None = None, precio_de=datos.precio, 
 
         zona, obj, stop = _f(w.get("zona_entrada_max")), _f(w.get("precio_objetivo_12m")), _f(w.get("stop_tesis"))
         if p is not None:
-            if w.get("veredicto") == "comprar_en_zona" and zona and p <= zona:
+            if w.get("veredicto") == "comprar_en_zona" and zona and p <= zona and not (stop and p <= stop):
                 pot = f", potencial {((obj / p) - 1) * 100:.0f}% hasta objetivo" if obj else ""
                 add("ZONA DE ENTRADA", f"{t} a {p:.2f} $ está en su zona de entrada (≤ {zona}){pot}")
             if stop and p <= stop:
