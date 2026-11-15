@@ -1,7 +1,7 @@
 """Informe en Markdown (para el móvil) del backtest del agente B."""
 from __future__ import annotations
 
-NOMBRES = {"nota": "Nota completa del ranking", "calidad": "Solo calidad", "crecimiento": "Solo crecimiento",
+NOMBRES = {"nota": "Nota completa del ranking", "nota_50": "Nota: las 50 mejores", "nota_100": "Nota: las 100 mejores", "calidad": "Solo calidad", "crecimiento": "Solo crecimiento",
            "valoracion": "Solo valoración (barata)", "momentum": "Solo momentum (tendencia)",
            "solidez": "Solo solidez (balance)", "f_score": "Piotroski F alto (y barata para desempatar)"}
 
@@ -21,7 +21,7 @@ def escribir(res: dict, ruta: str) -> str:
     tasa_sup = sup.get("media_anual_pct")
     exceso = n["estrategia"]["anual_pct"] - n["universo"]["anual_pct"]
     exceso_iwm = n["estrategia"]["anual_pct"] - n["iwm"]["anual_pct"]
-    mejor = max((k for k in c if k != "nota"), key=lambda k: c[k]["estrategia"]["anual_pct"])
+    mejor = max((k for k in c if not k.startswith("nota")), key=lambda k: c[k]["estrategia"]["anual_pct"])
     veredicto = ("**sí aporta**" if exceso > 2 and (ic.get("nota", {}).get("pct_positivas") or 0) >= 60
                  else "**aporta poco o nada**" if exceso < 1 else "**aporta algo, pero poco seguro**")
     L = []
@@ -58,6 +58,16 @@ def escribir(res: dict, ruta: str) -> str:
     L.append("|---|---|---|")
     for k, v in ic.items():
         L.append(f"| {NOMBRES.get(k, k)} | {v['media']:+.3f} | {v['pct_positivas']:.0f} % |")
+    qs = res["doce_meses"].get("quintiles") or []
+    if qs:
+        L.append("\n**Por quintiles de nota** (5 grupos del mismo tamaño; 1 = el 20 % con mejor nota). "
+                 "Rentabilidad a 12 meses frente a la media del universo:\n")
+        L.append("| Quintil | Frente al universo | % de trimestres que gana |")
+        L.append("|---|---|---|")
+        for q in qs:
+            L.append(f"| {q['quintil']} | {_p(q['exceso_12m_pct'])} | {q['pct_cohortes_gana']:.0f} % |")
+        L.append("\nOjo: las empresas que quebraron (que faltan) habrían caído sobre todo en los quintiles malos, así que "
+                 "la diferencia real entre el 1 y el 5 probablemente es **mayor** que la que se ve aquí.")
     co = res["doce_meses"]["cohortes"]
     if co:
         L.append("\n| Fecha | Top 20 a 12 m | Top 50 | Universo | IWM |")

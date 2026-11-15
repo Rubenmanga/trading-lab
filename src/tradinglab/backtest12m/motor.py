@@ -244,6 +244,7 @@ def estudio_12m(cohortes: dict, pre: dict, ultimo: str) -> dict:
     """Para cada cohorte con 12 meses de futuro: rentabilidad media de las 20/50 mejores frente al universo,
     y correlación de rangos (Spearman) entre nota/factor y rentabilidad a 12 meses."""
     filas_out, ic = [], {k: [] for k in ["nota"] + FACTORES_PROBADOS}
+    quint: list[list[float]] = [[] for _ in range(5)]     # quintiles de nota: rentabilidad frente al universo
     for m, filas in sorted(cohortes.items()):
         if mes_mas(m, 12) > ultimo or len(filas) < 60:
             continue
@@ -251,6 +252,9 @@ def estudio_12m(cohortes: dict, pre: dict, ultimo: str) -> dict:
         par = [(f, r) for f, r in zip(filas, rets) if r is not None]
         orden = sorted(par, key=lambda x: x[0]["nota"], reverse=True)
         u = [r for _, r in par]
+        q = max(1, len(orden) // 5)
+        for i in range(5):
+            quint[i].append(mean(r for _, r in orden[i * q:(i + 1) * q if i < 4 else None]) - mean(u))
         filas_out.append({"fecha": m, "empresas": len(par), "top20_pct": mean(r for _, r in orden[:20]) * 100,
                           "top50_pct": mean(r for _, r in orden[:50]) * 100, "universo_pct": mean(u) * 100,
                           "mediana_pct": median(u) * 100, "iwm_pct": (_ret(pre.get("IWM", {}), m, mes_mas(m, 12)) or 0) * 100})
@@ -263,7 +267,9 @@ def estudio_12m(cohortes: dict, pre: dict, ultimo: str) -> dict:
                     ic[k].append(s)
     resumen = {k: {"media": mean(v), "pct_positivas": 100 * sum(x > 0 for x in v) / len(v), "n": len(v)}
                for k, v in ic.items() if v}
-    return {"cohortes": filas_out, "correlacion": resumen}
+    quintiles = [{"quintil": i + 1, "exceso_12m_pct": mean(v) * 100,
+                  "pct_cohortes_gana": 100 * sum(x > 0 for x in v) / len(v)} for i, v in enumerate(quint) if v]
+    return {"cohortes": filas_out, "correlacion": resumen, "quintiles": quintiles}
 
 
 def estudio_pelotazos(cohortes: dict, pre: dict, ultimo: str, x: float = 3.0, meses: int = 36) -> dict:
@@ -338,7 +344,9 @@ def ejecutar(carpeta: str, salida: str) -> dict:
             op.puntuar(filas)
     ultimo = meta["ultimo_mes"]
     res = {"meta": meta | {"empresas_por_trimestre": {m: len(f) for m, f in cohortes.items()}}}
-    res["cartera"] = {"nota": simular(cohortes, pre, lambda f: f["nota"], ultimo=ultimo)}
+    res["cartera"] = {"nota": simular(cohortes, pre, lambda f: f["nota"], ultimo=ultimo),
+                      "nota_50": simular(cohortes, pre, lambda f: f["nota"], top=50, ultimo=ultimo),
+                      "nota_100": simular(cohortes, pre, lambda f: f["nota"], top=100, ultimo=ultimo)}
     for k in FACTORES_PROBADOS:
         res["cartera"][k] = simular(cohortes, pre, lambda f, k=k: f["factores"].get(k), ultimo=ultimo)
     res["cartera"]["f_score"] = simular(cohortes, pre, lambda f: (f["f_score"] + f["factores"]["valoracion"] / 1000)
