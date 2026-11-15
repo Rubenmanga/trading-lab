@@ -54,6 +54,14 @@ for (const g of ["empresas", "materias_primas"]) for (const e of Object.values(s
 let estado = null;
 try { estado = JSON.parse(leer("investigacion", "estado.json") || "null"); } catch { estado = null; }
 
+// Bot del corto del hueco (agente A, eToro DEMO): registro de decisiones y unos pocos parámetros de su config.
+const cfgCorto = {};
+for (const l of (leer("config", "corto_hueco.yaml") || "").split("\n")) {
+  const m = l.match(/^([a-z_]+):\s*"?([^"#]+?)"?\s*(#.*)?$/);
+  if (m) cfgCorto[m[1]] = isNaN(+m[2]) ? m[2] : +m[2];
+}
+delete cfgCorto.modo_cuenta;
+
 const datos = {
   construido: new Date().toISOString(),
   watchlist: csv(leer("investigacion", "watchlist.csv")),
@@ -61,6 +69,8 @@ const datos = {
   estado,
   seguimiento,
   ranking,
+  corto: { registro: csv(leer("investigacion/corto-hueco", "registro.csv")), config: cfgCorto },
+  historial_lista: csv(leer("investigacion/seguimiento", "lista-historial.csv")).map(({ porque, ...r }) => r),
   // Perfil «¿puede duplicar?»: el informe más reciente (o la lista provisional si aún no hay informe).
   duplicar: (markdowns("investigacion/duplicar", "INFORME")[0] || markdowns("investigacion/duplicar", "PROVISIONAL")[0] || null),
   // Investigación «+500 %»: objetivos de analistas que multiplican por 6 (el informe más reciente).
@@ -72,6 +82,7 @@ const datos = {
     ...markdowns("investigacion", "sectores").map((d) => ({ ...d, clase: "Sectores" })),
     ...markdowns("investigacion", "repaso").map((d) => ({ ...d, clase: "Repaso" })),
     ...markdowns("investigacion", "validacion").map((d) => ({ ...d, clase: "¿Acierta el ranking?" })),
+    ...markdowns("investigacion/corto-hueco").map((d) => ({ ...d, clase: "Corto del hueco" })),
     ...markdowns("investigacion/estrategias").map((d) => ({ ...d, clase: "Intradía (agente A)" })),
     ...markdowns("diario").map((d) => ({ ...d, clase: "Diario intradía" })),
   ],
