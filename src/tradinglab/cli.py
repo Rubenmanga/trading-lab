@@ -8,6 +8,8 @@
   lab estudio universo      Estudio intradía (Alpaca, solo lectura): velas diarias -> candidatas
   lab estudio tramo         ... velas de 1 min de las candidatas -> top gainers y operaciones ORB
   lab estudio informe       ... junta todo y escribe el informe en investigacion/estrategias/
+  lab corto operar          Corto del hueco en eToro DEMO: escanea a las 9:34 NY y vende en corto a las 9:35
+  lab corto cerrar          ... cierra las posiciones del bot (a partir de las 15:45 NY)
   lab diario                Escribe el diario del día en diario/
   lab medio oportunidades   Buscador: puntúa todas las small caps (8 factores) y guarda el ranking
   lab medio fuentes TICKER  Prueba las fuentes públicas gratis (SEC EDGAR, ClinicalTrials.gov, FRED)
@@ -171,6 +173,23 @@ def _estudio(args):
         print(f"Tramo {args.nombre}: {len(g)} filas gainers, {len(o)} operaciones ORB · {cliente.llamadas} llamadas")
 
 
+def _corto(args):
+    from .common import config
+    from .intradia.corto_hueco import sesion
+    from .intradia.corto_hueco.etoro import EToroDemo
+
+    config.cargar_env()
+    cfg = config.cargar("corto_hueco")
+    sims = [x.strip().upper() for x in (args.simbolos or "").split(",") if x.strip()] or None
+    etoro = EToroDemo()
+    if args.accion == "operar":
+        from .intradia.estudio.alpaca_rest import Alpaca
+        d = sesion.operar(cfg, Alpaca(), etoro, ensayo=args.ensayo, simbolos=sims)
+    else:
+        d = sesion.cerrar(cfg, etoro, ensayo=args.ensayo, forzar=args.forzar)
+    print(f"{len(d.filas)} decisiones apuntadas; {len(d.avisos)} avisos.")
+
+
 def main(argv=None):
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")  # para que Windows muestre bien las tildes
@@ -199,6 +218,11 @@ def main(argv=None):
     pe.add_argument("--nombre", default="tramo")
     pe.add_argument("--max", type=int, default=None, help="universo: máximo de símbolos (para pruebas)")
     pe.add_argument("--por-minuto", type=int, default=None, help="llamadas por minuto a Alpaca (máx. 200 gratis)")
+    pc = sub.add_parser("corto", help="Agente A · corto del hueco en eToro DEMO")
+    pc.add_argument("accion", choices=["operar", "cerrar"])
+    pc.add_argument("--ensayo", action="store_true", help="hace todo menos enviar órdenes")
+    pc.add_argument("--simbolos", help="ensayo: mirar estos tickers aunque no tengan hueco")
+    pc.add_argument("--forzar", action="store_true", help="cerrar: cerrar ya, sin esperar a la hora")
     sub.add_parser("diario", help="Escribe el diario del día")
     sub.add_parser("panel", help="Abre el panel web")
     args = p.parse_args(argv)
@@ -211,6 +235,8 @@ def main(argv=None):
         _medio(args)
     elif args.grupo == "estudio":
         _estudio(args)
+    elif args.grupo == "corto":
+        _corto(args)
     elif args.grupo == "diario":
         from .diario import escribir
         print("Diario guardado en", escribir())
