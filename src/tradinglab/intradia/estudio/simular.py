@@ -134,6 +134,12 @@ def rasgos_gainer(m: pd.DataFrame, cierre_ant: float, reglas: dict, costes: Cost
     obj = p0935 + (p0935 - stop) * reglas["rr"]
     res = gestionar(tras, "compra", p0935, stop, obj, T(reglas["cierre_forzado"]), reglas["trailing"], costes)
     d["reglasA_R"], d["reglasA_salida"], d["reglasA_ret_pct"] = res["R"], res["motivo"], res["ret_pct"]
+    # Idea «corto del hueco»: vender en corto a las 9:35 si abrió con hueco >= 10 %, stop ancho, sin objetivo,
+    # cerrar antes del cierre. Solo es una simulación para saber si compensa (no se opera nada).
+    if apertura / cierre_ant - 1 >= 0.10:
+        for pct in (10, 15, 25, 35):
+            r = gestionar(tras, "venta", p0935, p0935 * (1 + pct / 100), None, T("15:55"), None, costes)
+            d[f"corto{pct}_ret_pct"], d[f"corto{pct}_salida"] = r["ret_pct"], r["motivo"]
     return d
 
 
