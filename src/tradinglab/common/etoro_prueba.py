@@ -34,6 +34,45 @@ def _llamar(metodo: str, ruta: str, **kw):
     return r, (time.perf_counter() - t0) * 1000
 
 
+def _buscar_lista(datos):
+    """Devuelve la primera lista de diccionarios que encuentre en la respuesta."""
+    if isinstance(datos, list):
+        return [d for d in datos if isinstance(d, dict)]
+    if isinstance(datos, dict):
+        for v in datos.values():
+            if isinstance(v, list) and v and isinstance(v[0], dict):
+                return v
+        for v in datos.values():
+            if isinstance(v, dict):
+                lista = _buscar_lista(v)
+                if lista:
+                    return lista
+    return []
+
+
+def _simbolo(inst: dict) -> str:
+    for k in ("symbol", "symbolFull", "internalSymbolFull", "ticker"):
+        if inst.get(k):
+            return str(inst[k]).upper().split(".")[0]
+    return ""
+
+
+def _forma(datos) -> str:
+    """Solo nombres de campos (sin valores) para depurar sin exponer nada."""
+    if isinstance(datos, dict):
+        partes = []
+        for k, v in list(datos.items())[:8]:
+            if isinstance(v, list):
+                sub = list(v[0].keys())[:12] if v and isinstance(v[0], dict) else []
+                partes.append(f"{k}[{len(v)}]{sub}")
+            else:
+                partes.append(k)
+        return ", ".join(partes)
+    if isinstance(datos, list):
+        return f"lista[{len(datos)}]"
+    return type(datos).__name__
+
+
 def _alpaca_velas(simbolo: str, n: int = 30):
     cab = {"APCA-API-KEY-ID": os.getenv("ALPACA_API_KEY", ""), "APCA-API-SECRET-KEY": os.getenv("ALPACA_SECRET_KEY", "")}
     url = f"https://data.alpaca.markets/v2/stocks/{simbolo}/bars"
@@ -58,12 +97,13 @@ def main(simbolos: list[str]) -> str:
             notas.append(f"{s}: búsqueda de instrumento HTTP {r.status_code}")
             continue
         datos = r.json()
-        lista = datos.get("instruments") or datos.get("items") or (datos if isinstance(datos, list) else [])
-        inst = next((i for i in lista if str(i.get("symbol", "")).upper() == s.upper()), None)
+        lista = _buscar_lista(datos)
+        inst = next((i for i in lista if _simbolo(i) == s.upper()), None) or (lista[0] if len(lista) == 1 else None)
         if not inst:
-            out.append(f"| {s} | no está en eToro | | | | | | |")
+            out.append(f"| {s} | no encontrado | | | | | | |")
+            notas.append(f"{s}: forma de la respuesta: {_forma(datos)}")
             continue
-        iid = inst["instrumentId"]
+        iid = inst.get("instrumentId") or inst.get("instrumentID") or inst.get("id")
         r, ms_e = _llamar("GET", f"/api/v1/market-data/instruments/{iid}/history/candles/desc/OneMinute/30")
         c_e = None
         if r.ok:
