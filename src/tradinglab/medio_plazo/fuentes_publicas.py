@@ -26,7 +26,9 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import date, timedelta
 
 # La SEC pide un "User-Agent" que identifique quién pregunta. Se puede cambiar con el secreto SEC_USER_AGENT.
-UA_DEFECTO = "trading-lab research bot (github.com/Rubenmanga/trading-lab) noreply@github.com"
+# Ojo: la SEC rechaza los User-Agent que contienen "bot" o que no tienen forma "Nombre email".
+UA_DEFECTO = "TradingLab Research noreply@github.com"
+ULTIMO_ERROR: dict = {}
 
 
 def _ua() -> str:
@@ -42,10 +44,12 @@ def _get(url: str, json_: bool = True, intentos: int = 3, cab: dict | None = Non
                 txt = r.read().decode("utf-8", errors="replace")
                 return json.loads(txt) if json_ else txt
         except urllib.error.HTTPError as e:
+            ULTIMO_ERROR[urllib.parse.urlparse(url).netloc] = f"HTTP {e.code}"
             if e.code == 404:
                 return None
             time.sleep(3 * (i + 1) if e.code in (429, 403, 503) else 1)
-        except Exception:  # noqa: BLE001
+        except Exception as e:  # noqa: BLE001
+            ULTIMO_ERROR[urllib.parse.urlparse(url).netloc] = type(e).__name__
             time.sleep(2 * (i + 1))
     return None
 
@@ -317,6 +321,8 @@ def completar(filas: list[dict], cfg: dict | None = None) -> dict:
                 f.update(sec[f["ticker"]])
         res["sec_empresas"] = len(sec)
         res["sec_segundos"] = round(time.monotonic() - t0)
+        if not sec and ULTIMO_ERROR.get("www.sec.gov"):
+            res["sec_error"] = ULTIMO_ERROR["www.sec.gov"]
     if cfg.get("ensayos", True):
         salud = {f["ticker"]: f.get("empresa") for f in filas if f.get("sector") == "Healthcare" and f.get("empresa")}
         t0 = time.monotonic()

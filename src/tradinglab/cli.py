@@ -106,7 +106,7 @@ def _medio(args):
         from .medio_plazo import fuentes_publicas as fp
         t = (args.ticker or "ORIC").upper()
         sec = fp.datos_sec([t])
-        print("SEC EDGAR:", json.dumps(sec.get(t), indent=1, ensure_ascii=False))
+        print("SEC EDGAR:", json.dumps(sec.get(t), indent=1, ensure_ascii=False), fp.ULTIMO_ERROR or "")
         nombre = args.nombre or t
         print("ClinicalTrials.gov:", json.dumps(fp.datos_ensayos({t: nombre}).get(t), indent=1, ensure_ascii=False))
         print("Macro:", json.dumps(fp.datos_macro(), indent=1, ensure_ascii=False, default=str))
