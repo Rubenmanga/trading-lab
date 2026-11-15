@@ -83,7 +83,7 @@ class EToroDemo:
             return {"ok": False, "motivo": "eToro no permite corto en esta acción"}
         lev = set()
         for c in cortos:
-            for k in ("leverage", "leverages", "allowedLeverages", "availableLeverages", "defaultLeverage"):
+            for k in ("leverageValues", "leverage", "leverages", "allowedLeverages", "availableLeverages", "defaultLeverage"):
                 v = c.get(k)
                 if isinstance(v, (int, float)):
                     lev.add(int(v))
@@ -91,7 +91,8 @@ class EToroDemo:
                     lev |= {int(x) for x in v if isinstance(x, (int, float))}
         mins = [c["minStopLossPercentage"] for c in cortos if c.get("minStopLossPercentage") is not None]
         maxs = [c["maxStopLossPercentage"] for c in cortos if c.get("maxStopLossPercentage") is not None]
-        return {"ok": True, "apalancamientos": sorted(lev), "stop_min": min(mins) if mins else None,
+        minimos = [c["minPositionAmount"] for c in cortos if c.get("minPositionAmount") is not None]
+        return {"ok": True, "apalancamientos": sorted(lev), "importe_min": max(minimos) if minimos else None, "stop_min": min(mins) if mins else None,
                 "stop_max": max(maxs) if maxs else None, "forma": sorted(cortos[0].keys())}
 
     def precios(self, ids: list[int]) -> dict[int, dict]:

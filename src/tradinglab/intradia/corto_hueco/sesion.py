@@ -163,7 +163,11 @@ def operar(cfg: dict, alpaca, etoro, ensayo: bool = False, simbolos: list[str] |
             diario.apuntar(c["simbolo"], "descartada", f"ya ha bajado mucho antes de entrar ({bid / c['cierre_ant'] - 1:+.0%})")
             continue
         stop_pct = riesgo.stop_ajustado(cfg["stop_pct"], el.get("stop_min"), el.get("stop_max"))
-        importe, motivo = riesgo.tamano(cap, credito, expuesto, stop_pct, cfg)
+        levs = el.get("apalancamientos") or []
+        lev = 1 if (not levs or 1 in levs) else min(levs)       # sin apalancamiento si eToro lo permite
+        cfg_op = {**cfg, "apalancamiento": lev,
+                  "importe_min_usd": max(cfg.get("importe_min_usd", 50), float(el.get("importe_min") or 0))}
+        importe, motivo = riesgo.tamano(cap, credito, expuesto, stop_pct, cfg_op)
         if not importe:
             diario.apuntar(c["simbolo"], "descartada", motivo)
             continue
@@ -173,13 +177,13 @@ def operar(cfg: dict, alpaca, etoro, ensayo: bool = False, simbolos: list[str] |
                            f"({stop_pct:g} %); precio {tasa.get('quoteType', '?')}", precio=bid, importe_usd=importe, stop=stop)
             hechas += 1
             continue
-        r = etoro.abrir_corto(iid, importe, stop, cfg.get("apalancamiento", 1))
+        r = etoro.abrir_corto(iid, importe, stop, lev)
         if not r.get("ok"):
             diario.apuntar(c["simbolo"], "error", r.get("motivo", "orden rechazada"))
             diario.avisos.append(f"{c['simbolo']}: eToro rechazó la orden ({r.get('motivo', '')[:120]})")
             continue
         hechas += 1
-        expuesto += importe
+        expuesto += importe * lev
         credito -= importe
         abiertas.append({"simbolo": c["simbolo"], "instrumentId": iid, "orderId": r.get("orderId"), "dia": hoy,
                          "precio_aprox": bid, "importe": importe, "stop": stop})
