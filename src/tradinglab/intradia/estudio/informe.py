@@ -8,6 +8,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from .universo import leer_csv
+
 
 def _pct(x: float | None, dec: int = 1) -> str:
     return "—" if x is None or (isinstance(x, float) and math.isnan(x)) else f"{100 * x:.{dec}f} %".replace(".", ",")
@@ -22,7 +24,9 @@ def stats_ops(df: pd.DataFrame) -> dict:
         return dict(operaciones=0)
     R = df["R"]
     gan, per = R[R > 0].sum(), -R[R < 0].sum()
+    sin = df["R_sin_costes"] if "R_sin_costes" in df else None
     return dict(operaciones=int(len(df)), aciertos=float((R > 0).mean()), R_medio=float(R.mean()),
+                R_medio_sin_costes=float(sin.mean()) if sin is not None else None,
                 R_mediana=float(R.median()), R_total=float(R.sum()),
                 profit_factor=float(gan / per) if per > 0 else None,
                 salidas={k: int(v) for k, v in df["motivo"].value_counts().items()})
@@ -99,9 +103,9 @@ def estudio_gainers(g: pd.DataFrame, subida_min: float) -> dict:
 
 
 def generar(carpeta: Path, cfg: dict) -> dict:
-    g = pd.concat([pd.read_csv(f) for f in sorted(carpeta.glob("gainers-*.csv*"))], ignore_index=True) \
+    g = pd.concat([leer_csv(f) for f in sorted(carpeta.glob("gainers-*.csv*"))], ignore_index=True) \
         if list(carpeta.glob("gainers-*.csv*")) else pd.DataFrame()
-    o = pd.concat([pd.read_csv(f) for f in sorted(carpeta.glob("orb-*.csv*"))], ignore_index=True) \
+    o = pd.concat([leer_csv(f) for f in sorted(carpeta.glob("orb-*.csv*"))], ignore_index=True) \
         if list(carpeta.glob("orb-*.csv*")) else pd.DataFrame()
     fechas = sorted(set(g["fecha"]) if len(g) else set())
     res = dict(periodo=[fechas[0], fechas[-1]] if fechas else [], gainers=estudio_gainers(g, cfg["gainers"]["subida_min"]),
@@ -146,7 +150,8 @@ def markdown(res: dict, fecha: str) -> str:
         t, c = v["total"], v.get("cartera", {})
         L += ["", f"## ORB · variante «{nombre}»", "",
               f"- Operaciones: **{t['operaciones']}** · aciertos **{_pct(t.get('aciertos'), 0)}** · R medio **{_num(t.get('R_medio'), 3)}** · "
-              f"profit factor **{_num(t.get('profit_factor'))}**.",
+              f"profit factor **{_num(t.get('profit_factor'))}** · R medio **sin costes** {_num(t.get('R_medio_sin_costes'), 3)} "
+              f"(la diferencia es lo que se comen deslizamiento y comisiones).",
               f"- Solo compras: R medio {_num(v['compras'].get('R_medio'), 3)} ({v['compras']['operaciones']} ops) · "
               f"solo ventas: R medio {_num(v['ventas'].get('R_medio'), 3)} ({v['ventas']['operaciones']} ops).",
               f"- Cartera: rentabilidad total **{_pct(c.get('rentabilidad_total'), 0)}**, anual **{_pct(c.get('cagr'))}**, "

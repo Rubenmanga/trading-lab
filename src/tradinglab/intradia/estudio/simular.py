@@ -43,16 +43,30 @@ def preparar(m: pd.DataFrame) -> pd.DataFrame:
 
 
 def gestionar(barras: pd.DataFrame, lado: str, entrada_bruta: float, stop: float, objetivo: float | None,
-              cierre: time, trailing: dict | None, costes: Costes) -> dict:
-    """Sigue la operación vela a vela desde la vela de entrada (incluida) hasta salir."""
+              cierre: time, trailing: dict | None, costes: Costes, entrada_a_mitad: bool = False) -> dict:
+    """Sigue la operación vela a vela desde la vela de entrada (incluida) hasta salir.
+
+    `entrada_a_mitad`: la entrada fue dentro de la primera vela (una ruptura), no en su apertura. Entonces
+    lo que pasó en esa vela ANTES de entrar no cuenta. Se supone el camino típico de una vela:
+    verde = apertura -> mínimo -> máximo -> cierre; roja = apertura -> máximo -> mínimo -> cierre."""
     stop_ini, stop_act = stop, stop
     mejor = entrada_bruta
     entrada = costes.peor(entrada_bruta, lado, True)
     salida_bruta, motivo, hora = None, "", None
     largo = lado == "compra"
     O, H, L, HORA = barras["o"].tolist(), barras["h"].tolist(), barras["l"].tolist(), barras["hora"].tolist()
+    C = barras["c"].tolist()
     for i in range(len(O)):
         o, h, l, hh = O[i], H[i], L[i], HORA[i]
+        if i == 0 and entrada_a_mitad:
+            # Tras entrar en una ruptura, primero se llega al extremo a favor y luego al cierre de la vela
+            if largo:
+                l = C[0] if C[0] >= o else l
+            else:
+                h = C[0] if C[0] <= o else h
+            if objetivo is not None and (h >= objetivo if largo else l <= objetivo):
+                salida_bruta, motivo, hora = objetivo, "objetivo", hh
+                break
         if hh >= cierre:
             salida_bruta, motivo, hora = o, "cierre forzado", hh
             break
@@ -76,8 +90,10 @@ def gestionar(barras: pd.DataFrame, lado: str, entrada_bruta: float, stop: float
     signo = 1 if largo else -1
     pnl_accion = signo * (salida - entrada) - 2 * costes.por_accion
     riesgo = abs(entrada_bruta - stop_ini)
+    bruto = signo * (salida_bruta - entrada_bruta)
     return dict(lado=lado, entrada=round(entrada, 4), salida=round(salida, 4), stop_inicial=round(stop_ini, 4),
                 motivo=motivo, hora_salida=str(hora), R=round(pnl_accion / riesgo, 3) if riesgo else 0.0,
+                R_sin_costes=round(bruto / riesgo, 3) if riesgo else 0.0,
                 ret_pct=round(100 * pnl_accion / entrada_bruta, 3))
 
 
@@ -157,7 +173,9 @@ def orb(m: pd.DataFrame, atr14: float, variante: dict, costes: Costes, minutos: 
         if variante.get("rr"):
             obj = entrada + dist * variante["rr"] if lado == "compra" else entrada - dist * variante["rr"]
         resto = r[r.index >= ts]
-        res = gestionar(resto, lado, entrada, stop, obj, T(variante["cierre"]), variante.get("trailing"), costes)
+        a_mitad = (b["o"] < nivel) if lado == "compra" else (b["o"] > nivel)
+        res = gestionar(resto, lado, entrada, stop, obj, T(variante["cierre"]), variante.get("trailing"), costes,
+                        entrada_a_mitad=a_mitad)
         res.update(hora_entrada=b["hora"].strftime("%H:%M"), entrada_bruta=round(entrada, 4),
                    riesgo_pct=round(100 * dist / entrada, 3))
         return res

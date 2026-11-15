@@ -18,6 +18,12 @@ BOLSAS = {"NYSE", "NASDAQ", "AMEX", "ARCA", "BATS", "NYSEARCA"}
 TICKER = re.compile(r"^[A-Z]{1,5}$")  # las inactivas traen códigos raros (CUSIP, derechos...): fuera
 
 
+def leer_csv(ruta) -> pd.DataFrame:
+    """Lee un CSV del estudio sin convertir en vacío los tickers «NA», «NAN» o «NULL»: solo las celdas
+    vacías cuentan como dato que falta."""
+    return pd.read_csv(ruta, keep_default_na=False, na_values=[""])
+
+
 def simbolos_validos(valores: list[dict]) -> list[str]:
     out = set()
     for a in valores:

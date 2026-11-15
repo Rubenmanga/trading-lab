@@ -4,6 +4,7 @@
 #               estudio de top gainers + operaciones ORB «acciones en juego» (3 variantes)
 #  3) informe:  junta todo y guarda el informe en investigacion/estrategias/ (sale en el panel)
 # Se lanza a mano: pestaña Actions -> "Estudio intradía" -> Run workflow. Tarda 1-2 horas.
+# Si solo se repiten algunos años (p. ej. desde 2022), el informe junta los nuevos con los ya guardados.
 # En un pull request hace una prueba corta (unos días de 2025) y no guarda nada.
 name: Estudio intradía
 
@@ -118,6 +119,10 @@ jobs:
           python-version: "3.12"
       - name: Instalar lo mínimo
         run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" requests "python-dotenv>=1" tzdata
+      - name: Años ya calculados antes (si esta ejecución solo repite algunos)
+        run: |
+          mkdir -p datos_estudio
+          cp investigacion/estrategias/backtest/datos/*.csv.gz datos_estudio/ 2>/dev/null || true
       - uses: actions/download-artifact@v4
         with:
           pattern: tramo-*
