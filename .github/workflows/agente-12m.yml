@@ -24,6 +24,7 @@ on:
       - "src/tradinglab/medio_plazo/**"
       - "tests/test_oportunidades.py"
       - "tests/test_fuentes_publicas.py"
+      - "tests/test_sec_cuentas.py"
       - "tests/test_seguimiento.py"
 
 permissions:
@@ -106,7 +107,7 @@ jobs:
         run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" anthropic tzdata pytest
 
       - name: Pruebas
-        run: python -m pytest -q tests/test_medio_plazo.py tests/test_oportunidades.py tests/test_fuentes_publicas.py tests/test_seguimiento.py tests/test_novedades.py
+        run: python -m pytest -q tests/test_medio_plazo.py tests/test_oportunidades.py tests/test_fuentes_publicas.py tests/test_sec_cuentas.py tests/test_seguimiento.py tests/test_novedades.py
 
       - name: Alertas de la lista de vigilancia
         run: python -m tradinglab.cli medio alertas

@@ -53,6 +53,7 @@ alertas:
 fuentes_publicas:
   activar: true
   sec: true        # SEC EDGAR: ventas de acciones nuevas (S-3/424B), fondos >5 % (13D/13G), cuentas tarde
+  cuentas: true    # SEC XBRL: cuentas anuales → Piotroski F, Altman Z'', Beneish M, rentabilidad bruta
   ensayos: true    # ClinicalTrials.gov: ensayos de fase 2/3 con resultados en 12 meses (solo sector salud)
   macro: true      # FRED + IWM: semáforo macro para small caps (no cambia la nota)
 

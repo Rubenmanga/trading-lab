@@ -115,6 +115,10 @@ def _medio(args):
         t = (args.ticker or "ORIC").upper()
         sec = fp.datos_sec([t])
         print("SEC EDGAR:", json.dumps(sec.get(t), indent=1, ensure_ascii=False), fp.ULTIMO_ERROR or "")
+        from .medio_plazo import sec_cuentas
+        for tk in (t, "AMSC", "PGY"):   # cuentas XBRL + Piotroski / Altman Z'' / Beneish M
+            print(f"SEC cuentas {tk}:", json.dumps(sec_cuentas.descargar([tk]).get(tk), ensure_ascii=False),
+                  fp.ULTIMO_ERROR.get("data.sec.gov") or "")
         nombre = args.nombre or t
         print("ClinicalTrials.gov:", json.dumps(fp.datos_ensayos({t: nombre}).get(t), indent=1, ensure_ascii=False))
         print("Macro:", json.dumps(fp.datos_macro(), indent=1, ensure_ascii=False, default=str))
