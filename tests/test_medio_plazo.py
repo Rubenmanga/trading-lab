@@ -65,3 +65,21 @@ def test_estado_calcula_distancias():
     e = alertas.estado(filas, {"AAA": 12.0}.get)
     assert e[0]["distancia_zona_pct"] == 20.0 and e[0]["potencial_pct"] == 25.0 and e[0]["distancia_stop_pct"] == 50.0
     assert e[1]["precio"] is None and e[1]["potencial_pct"] is None
+
+
+def test_alerta_zona_no_sale_bajo_el_stop():
+    cfg = {"alertas": {"dias_aviso_catalizador": 10, "revisar_tesis_cada_dias": 30}}
+    f = [dict(ticker="X", veredicto="comprar_en_zona", zona_entrada_max="22", precio_objetivo_12m="32",
+              stop_tesis="17", fecha_analisis="2026-11-14")]
+    tipos = [a["tipo"] for a in alertas.revisar(cfg, f, lambda t: 15.0, hoy=date(2026, 11, 14))]
+    assert tipos == ["TESIS EN PELIGRO"]
+
+
+def test_cohorte_fija_y_cuenta_las_que_desaparecen():
+    from tradinglab.medio_plazo import validacion
+    foto = [dict(puesto=i, ticker=f"T{i}", nota=100 - i, precio=10.0) for i in range(1, 61)]
+    precios = {f"T{i}": 12.0 for i in range(1, 61) if i != 1}  # la nº 1 desaparece
+    r = validacion.comparar(foto, precios)
+    assert r["sin_precio"] == 1 and r["empresas"] == 59
+    assert r["top20"] == 20.0
+

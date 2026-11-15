@@ -123,7 +123,7 @@ def trimestres_y_fondos(t: str) -> dict:
     quema = -sum(fl) / len(fl) if fl else None
     d["caja"], d["deuda"] = caja, deuda
     d["quema_trimestral"] = quema if quema and quema > 0 else 0.0
-    d["meses_caja"] = round(caja / quema * 3, 1) if caja and quema and quema > 0 else (999 if caja else None)
+    d["meses_caja"] = round(caja / quema * 3, 1) if caja and quema and quema > 0 else (999 if caja and quema is not None else None)
     d["deuda_sobre_caja"] = round(deuda / caja, 2) if caja else None
     acc = [v for _, v in (tr["acciones"] or [])]
     d["acciones_nuevas_periodo_pct"] = round((acc[-1] / acc[0] - 1) * 100, 1) if len(acc) >= 2 else None
@@ -161,8 +161,8 @@ def evaluar(f: dict, c: dict, usd_por_eur: float) -> dict:
         "economia_mejorando": ((d.get("trimestres_mejorando") or 0) >= c["trimestres_mejorando_min"],
                                f"{d.get('trimestres_mejorando')} trimestres seguidos mejorando {d.get('rachas')}"),
         "poca_dilucion": (bool(meses is not None and meses >= dil["meses_caja_min"]
-                               and (acc12 is None or acc12 <= dil["acciones_nuevas_12m_max_pct"])
-                               and (d.get("deuda_sobre_caja") is None or d["deuda_sobre_caja"] <= dil["deuda_sobre_caja_max"])),
+                               and (acc12 is not None and acc12 <= dil["acciones_nuevas_12m_max_pct"])
+                               and (d.get("deuda_sobre_caja") is not None and d["deuda_sobre_caja"] <= dil["deuda_sobre_caja_max"])),
                           f"caja para {meses} meses, acciones nuevas 12m {acc12} %, deuda/caja {d.get('deuda_sobre_caja')}"),
     }
     f["criterios"] = {k: {"cumple": v[0], "dato": v[1]} for k, v in res.items()}
