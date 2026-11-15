@@ -158,7 +158,7 @@ def test_simbolos_raros_y_400():
 
 def test_ticker_na_no_es_un_vacio(tmp_path):
     pd.DataFrame(dict(fecha=["2025-01-02"], simbolo=["NA"], variante=["original"], R=[1.0])).to_csv(tmp_path / "x.csv", index=False)
-    assert pd.read_csv(tmp_path / "x.csv", converters={"simbolo": str})["simbolo"][0] == "NA"
+    assert universo.leer_csv(tmp_path / "x.csv")["simbolo"][0] == "NA"
 
 
 def test_ruptura_a_mitad_de_vela_no_cuenta_lo_de_antes():

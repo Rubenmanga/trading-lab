@@ -161,7 +161,8 @@ def _estudio(args):
               f"en {c['fecha'].nunique() if len(c) else 0} días · {cliente.llamadas} llamadas · feed {cliente.feed}")
     elif args.accion == "tramo":
         from .intradia.estudio import ejecutar
-        cands = pd.read_csv(args.candidatas, converters={"simbolo": str})  # "NA" es un ticker, no un vacío
+        from .intradia.estudio.universo import leer_csv
+        cands = leer_csv(args.candidatas)  # "NA" es un ticker, no un vacío
         g, o = ejecutar.procesar(cliente, cands, desde, hasta, cfg)
         sal = Path(args.salida)
         sal.mkdir(parents=True, exist_ok=True)
