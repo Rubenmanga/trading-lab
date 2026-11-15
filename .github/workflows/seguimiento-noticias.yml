@@ -1,0 +1,67 @@
+# Revisión rápida de TU lista de seguimiento de noticias, cada 2 horas con la bolsa de EE. UU. abierta.
+# Gratis y sin IA: precios (Yahoo), titulares (Finnhub/Alpaca gratis), SEC y ensayos clínicos.
+# Si hay un movimiento grande o una noticia importante NUEVA, abre un aviso (issue) → notificación al móvil.
+# El resumen completo del día lo hace "Agente 12 meses" tras el cierre. Lista en config/medio_plazo.yaml → lista_noticias.
+name: Seguimiento de noticias
+
+on:
+  schedule:
+    - cron: "0 15,17,19 * * 1-5"   # 16:00, 18:00 y 20:00 en Madrid (invierno)
+    - cron: "15 21 * * 1-5"        # 22:15 en Madrid, justo tras el cierre
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: datos-investigacion
+  cancel-in-progress: false
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" anthropic tzdata
+      - name: Revisar la lista
+        env:
+          PYTHONPATH: src
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # opcional: lectura con Haiku (tope 3 $/mes en config)
+        run: python -m tradinglab.cli medio noticias
+      - name: Guardar (el panel se actualiza solo)
+        run: |
+          git config user.name "agente-12m"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add investigacion/seguimiento.json investigacion/seguimiento/ investigacion/estado.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Seguimiento de noticias $(date -u +'%F %H:%M')"
+          git pull --rebase --autostash -q || true
+          git push
+      - name: Avisar al móvil si hay algo nuevo e importante
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY' > aviso.md
+          import json
+          d = json.load(open("investigacion/seguimiento.json", encoding="utf-8")).get("lista") or {}
+          for grupo in ("empresas", "materias_primas"):
+              for t, e in (d.get(grupo) or {}).items():
+                  for a in e.get("avisos_nuevos", []):
+                      print(f"- **{t} · {a['tipo']}** · {a['texto']}")
+          PY
+          if [ -s aviso.md ]; then
+            echo "" >> aviso.md
+            echo "Detalle en la pestaña Seguimiento del panel: https://trading-lab-kappa.vercel.app/#/seguimiento" >> aviso.md
+            echo "Es información, no una recomendación de compra o venta." >> aviso.md
+            gh label create alerta-noticias --color D93F0B --force >/dev/null 2>&1 || true
+            gh issue create --title "📰 Tu lista: avisos $(date -u +'%d/%m %H:%M') UTC" --body-file aviso.md --label alerta-noticias --assignee "${{ github.repository_owner }}" || gh issue create --title "📰 Tu lista: avisos $(date -u +'%d/%m %H:%M') UTC" --body-file aviso.md --label alerta-noticias
+          fi

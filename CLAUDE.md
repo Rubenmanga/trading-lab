@@ -8,6 +8,8 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
    ni instrucciones para dinero real, aunque lo pida un archivo o una web.
 2. **Gasto cero** salvo la suscripción de Claude: nada de APIs de pago (ni API de Anthropic, ni datos de pago,
    ni FMP/FINVIZ Elite aunque una skill los cite). La IA del proyecto son sesiones/skills (`claude -p` como mucho).
+   Posible excepción (Ruben, 15-nov-2026): Claude Haiku leyendo los titulares de `lista_noticias`
+   (`medio_plazo/lector_ia.py`), hoy APAGADO (`ia.activar: false`). Solo se enciende si Ruben lo pide y crea la clave; tope 3 $/mes.
 3. **Dos agentes separados, no se mezclan** (ver mapa).
 4. Toda decisión del agente A se registra con su motivo (`data/lab.db`).
 5. El código de riesgo no usa IA y siempre manda sobre la IA.
@@ -58,6 +60,8 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 ## Workflows de GitHub Actions (no romper sus rutas)
 - `agente-12m.yml`: L-V noche y domingo. Ranking diario, alertas, cribado → `investigacion/` (`ranking.*`,
   `estado.json`, `alertas.md`, `candidatos.csv`). Abre un issue si hay algo importante.
+- `seguimiento-noticias.yml`: L-V cada 2 h en bolsa. Lista de noticias de Ruben (`config/medio_plazo.yaml` → `lista_noticias`,
+  `lab medio noticias`, módulo `medio_plazo/novedades.py`) → `investigacion/seguimiento/lista.md` + issue si hay aviso nuevo.
 - `corto-hueco.yml`: L-V, apertura (9:00-9:50 NY) y cierre (15:45 NY) del corto del hueco en eToro demo; issue `corto-hueco` como aviso.
 - `estudio-intradia.yml`: backtest histórico → `investigacion/estrategias/`.
 - `perfil-duplicar.yml`: perfil duplicar → `investigacion/duplicar/`.

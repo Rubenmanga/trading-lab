@@ -55,3 +55,42 @@ fuentes_publicas:
   sec: true        # SEC EDGAR: ventas de acciones nuevas (S-3/424B), fondos >5 % (13D/13G), cuentas tarde
   ensayos: true    # ClinicalTrials.gov: ensayos de fase 2/3 con resultados en 12 meses (solo sector salud)
   macro: true      # FRED + IWM: semáforo macro para small caps (no cambia la nota)
+
+# Seguimiento diario para elegir el MOMENTO de entrada (lab medio seguimiento; lo ejecuta GitHub Actions
+# cada día laborable). Los niveles salen del "Plan del trader" del análisis de cada empresa.
+#   soporte: zona donde buscar la señal A (suelo: vela de giro con volumen, mejor con divergencia del RSI)
+#   confirmacion: señal B = dos cierres seguidos por encima de este precio
+seguimiento:
+  ORIC:
+    soporte: [7.2, 7.5]
+    confirmacion: 9.3
+    entrada_max: 8.5
+    stop: 6.5
+    objetivo: 13
+    tamano_max: "2 %"
+    informe: investigacion/analisis/ORIC-2026-11-14.md
+
+# Lista de seguimiento de NOTICIAS (tus empresas). Cada día laborable, tras el cierre, el programa mira si el
+# precio se movió más de lo normal, busca el porqué en los titulares, los próximos catalizadores y qué cambió.
+# Solo tickers: aquí NO se guardan cantidades ni importes. Para añadir o quitar una empresa, edita esta lista.
+#   referencia: fondo (ETF) de su sector, para saber si se movió "con todos" o por algo propio
+#   sector: "salud" activa la búsqueda de ensayos clínicos (ClinicalTrials.gov)
+lista_noticias:
+  umbral_movimiento_pct: 8    # aviso al móvil si sube o baja más de esto en un día...
+  umbral_sigmas: 2.5          # ...o si se mueve 2,5 veces más de lo normal para esa acción (y al menos un 3 %)
+  umbral_volumen: 2.5         # volumen 2,5 veces su media de 20 días = movimiento que merece explicación
+  mercado: SPY
+  incluir_vigilancia: true    # añade cada día las empresas de investigacion/watchlist.csv
+  incluir_ranking_top: 10     # y las 10 mejores ideas del buscador (de estas solo avisa si hay noticia importante)
+  ia:                         # lectura de titulares con Claude Haiku (elegido por Ruben el 15-nov; ~1-2 $ al mes)
+    activar: false            # APAGADO (decisión de Ruben 15-nov). Para encender: true + secreto ANTHROPIC_API_KEY en GitHub
+    tope_mensual_usd: 3       # al llegar a este gasto en el mes, deja de llamar a Haiku hasta el mes siguiente
+  empresas:
+    ALT:  {nombre: "Altimmune", sector: salud, referencia: XBI}
+    RCAT: {nombre: "Red Cat Holdings", sector: defensa y drones, referencia: ITA}
+    MSFT: {nombre: "Microsoft", sector: tecnología, referencia: QQQ, umbral_movimiento_pct: 4}
+    RAPP: {nombre: "Rapport Therapeutics", sector: salud, referencia: XBI}
+    DFTX: {nombre: "Definium Therapeutics", sector: salud, referencia: XBI}
+    POET: {nombre: "POET Technologies", sector: semiconductores, referencia: SOXX}
+  materias_primas:
+    XAU: {nombre: "Oro", yahoo: "GC=F", umbral_movimiento_pct: 3}

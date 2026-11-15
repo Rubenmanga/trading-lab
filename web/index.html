@@ -53,7 +53,7 @@ select{font:inherit;font-size:.88rem;padding:6px 8px;border-radius:8px;border:1p
   <h1>Trading Lab · Buscador 12 meses</h1>
   <div class="demo">Solo lectura · nada de esto es una recomendación de compra · el agente no opera solo</div>
   <nav id="nav">
-    <a href="#/">Oportunidades</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/vigilancia">Mi lista</a><a href="#/informes">Informes</a><a href="#/candidatos">Cribado simple</a><a href="#/ayuda">Cómo se usa</a>
+    <a href="#/">Oportunidades</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Mi lista</a><a href="#/informes">Informes</a><a href="#/candidatos">Cribado simple</a><a href="#/ayuda">Cómo se usa</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"><div class="empty">Cargando…</div></main>
@@ -265,6 +265,55 @@ function quintuplicar() {
   <article class="card md">${DOMPurify.sanitize(marked.parse(d.texto))}</article>`;
 }
 
+function grafico(e) {
+  const h = (e.historial || []).filter((f) => f.cierre !== "" && f.cierre != null).map((f) => +f.cierre);
+  const n = e.niveles || {};
+  if (h.length < 2) return "";
+  const lv = [n.stop, n.soporte?.[0], n.soporte?.[1], n.confirmacion].filter((x) => x != null);
+  const min = Math.min(...h, ...lv) * 0.97, max = Math.max(...h, ...lv) * 1.03, W = 320, H = 120;
+  const y = (v) => H - ((v - min) / (max - min)) * H, x = (i) => (i / (h.length - 1)) * W;
+  const linea = (v, col, txt) => v == null ? "" : `<line x1="0" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="${col}" stroke-dasharray="4 3" stroke-width="1"/><text x="2" y="${y(v) - 2}" font-size="9" fill="${col}">${txt} ${v}</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;margin:8px 0">
+    ${linea(n.confirmacion, "#2e7d32", "señal B")}${linea(n.soporte?.[1], "#f9a825", "soporte")}${linea(n.soporte?.[0], "#f9a825", "")}${linea(n.stop, "#c62828", "stop")}
+    <polyline fill="none" stroke="currentColor" stroke-width="1.6" points="${h.map((v, i) => `${x(i)},${y(v)}`).join(" ")}"/></svg>`;
+}
+
+function listaVista(L) {
+  if (!L) return "";
+  const G = { cartera: "Tus acciones", vigilancia: "Tu lista de vigilancia", ideas: "Mejores ideas del buscador", materias: "Materias primas" };
+  const orden = Object.keys(G);
+  const todo = Object.entries({ ...(L.empresas || {}), ...(L.materias_primas || {}) })
+    .sort((a, b) => orden.indexOf(a[1].grupo || "materias") - orden.indexOf(b[1].grupo || "materias"));
+  let gAct = null;
+  const cab = (e) => { const g = e.grupo || "materias"; if (g === gAct) return ""; gAct = g; return `<h3>${esc(G[g] || g)}</h3>`; };
+  const c = (e) => e.cambio_pct == null ? "inherit" : e.cambio_pct > 0 ? "#2e7d32" : e.cambio_pct < 0 ? "#c62828" : "inherit";
+  const mes = new Date().toISOString().slice(0, 7);
+  return `<h2>Seguimiento diario · ${esc(L.fecha)}</h2><p class="sub">Información, no recomendación de compra o venta. Se revisa cada 2 h con la bolsa abierta. Mercado (${esc(L.mercado?.ticker)}): ${esc(L.mercado?.cambio_pct)} %.</p>` +
+    (L.ia ? `<p class="sub">Resúmenes de Haiku (IA barata que solo lee estos titulares) · gasto del mes ${esc((L.ia.gasto_mes || {})[mes] ?? 0)} $${L.ia.aviso ? " · " + esc(L.ia.aviso) : ""}</p>` : "") +
+    todo.map(([t, e]) => cab(e) + `<div class="card"><div class="row"><span class="tk">${esc(t)}</span><b style="color:${c(e)}">${e.cambio_pct == null ? "sin precio" : (e.cambio_pct > 0 ? "▲ " : "▼ ") + esc(e.cambio_pct) + " %"}${e.avisos?.length ? " ⚠️" : ""}</b></div>
+      <div class="sub">${esc(e.nombre)} · cierre ${esc(e.cierre)} · volumen ${esc(e.volumen_rel ?? "—")}x lo normal</div>
+      ${e.ia ? `<p><b>Resumen (Haiku):</b> ${esc(e.ia.resumen)} <i>Causa probable: ${esc(e.ia.causa_probable)} (confianza ${esc(e.ia.confianza)})</i></p>` : ""}
+      <p><b>Por qué (reglas):</b> ${esc(e.porque)}</p>
+      <p><b>Qué cambió:</b> ${esc((e.cambios || []).join("; ") || "nada nuevo")}</p>
+      ${(e.catalizadores || []).length ? `<p><b>Próximos catalizadores:</b> ${esc(e.catalizadores.join("; "))}</p>` : ""}
+      ${(e.problemas || []).map((x) => `<p>❗ ${esc(x)}</p>`).join("")}
+      ${(e.titulares || []).filter((n) => n.nueva).slice(0, 4).map((n) => `<div class="sub">${esc(n.fecha)} · ${/^https?:/.test(n.url || "") ? `<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.titulo)}</a>` : esc(n.titulo)}</div>`).join("")}</div>`).join("");
+}
+
+function seguimientoVista() {
+  const S = D.seguimiento;
+  if (!S || (!S.lista && !Object.keys(S.empresas || {}).length)) return `<div class="card empty">El seguimiento aún no ha corrido. Se revisa cada 2 h con la bolsa de EE. UU. abierta y se resume tras el cierre (23:30 en Madrid).</div>`;
+  const col = { "SEÑAL DE ENTRADA": "#2e7d32", "PELIGRO": "#c62828", "ATENTO": "#f9a825" };
+  const ent = Object.entries(S.empresas || {});
+  return listaVista(S.lista) + (ent.length ? `<h2>Momento de entrada</h2><p class="sub">Señales técnicas del plan de cada empresa analizada. Actualizado: ${esc(fecha(S.actualizado))}.</p>` : "") +
+    ent.map(([t, e]) => `<div class="card">
+      <div class="row"><span class="tk">${esc(t)}</span><b style="color:${col[e.estado] || "inherit"}">${esc(e.estado)}</b></div>
+      <div class="sub">Cierre ${esc(e.cierre)} $ (${esc(e.fecha)}) · RSI ${esc(e.rsi)} · EMA 9 ${esc(e.ema9)} $ · entrar como mucho hasta ${esc(e.niveles?.entrada_max)} $ · stop ${esc(e.niveles?.stop)} $</div>
+      ${grafico(e)}
+      ${e.notas ? `<details open><summary><b>Repaso diario de Claude (noticias y tesis)</b></summary><article class="md">${DOMPurify.sanitize(marked.parse(e.notas))}</article></details>` : ""}
+      <details ${e.notas ? "" : "open"}><summary><b>Informe técnico de hoy</b></summary><article class="md">${DOMPurify.sanitize(marked.parse(e.texto || ""))}</article></details></div>`).join("");
+}
+
 function pintar(mantener) {
   const r = location.hash.replace(/^#/, "") || "/";
   const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/" : r;
@@ -274,7 +323,7 @@ function pintar(mantener) {
   app.innerHTML = r.startsWith("/informe/") ? informe(decodeURIComponent(r.slice(9)))
     : r.startsWith("/empresa/") ? empresaFicha(decodeURIComponent(r.slice(9)))
     : r === "/informes" ? informes() : r === "/candidatos" ? candidatos() : r === "/ayuda" ? ayuda()
-    : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : r === "/x6" ? quintuplicar() : oportunidades();
+    : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : r === "/x6" ? quintuplicar() : r === "/seguimiento" ? seguimientoVista() : oportunidades();
   const fs = $("#fs"), fc = $("#fc");
   if (fs) fs.onchange = () => { filtroSector = fs.value; try { localStorage.setItem("fs", filtroSector); } catch {} pintar(true); };
   if (fc) fc.onchange = () => { filtroCarril = fc.value; try { localStorage.setItem("fc", filtroCarril); } catch {} pintar(true); };
