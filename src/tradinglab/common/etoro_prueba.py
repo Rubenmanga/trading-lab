@@ -10,7 +10,7 @@ import os
 import sys
 import time
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -77,7 +77,8 @@ def _alpaca_velas(simbolo: str, n: int = 30):
     cab = {"APCA-API-KEY-ID": os.getenv("ALPACA_API_KEY", ""), "APCA-API-SECRET-KEY": os.getenv("ALPACA_SECRET_KEY", "")}
     url = f"https://data.alpaca.markets/v2/stocks/{simbolo}/bars"
     t0 = time.perf_counter()
-    r = requests.get(url, headers=cab, params={"timeframe": "1Min", "limit": n, "sort": "desc",
+    desde = (datetime.now(timezone.utc) - timedelta(days=7)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    r = requests.get(url, headers=cab, params={"timeframe": "1Min", "limit": n, "sort": "desc", "start": desde,
                      "feed": os.getenv("ALPACA_FEED", "iex")}, timeout=30)
     ms = (time.perf_counter() - t0) * 1000
     return (r.json().get("bars") or []) if r.ok else [], ms, r.status_code
@@ -87,8 +88,8 @@ def main(simbolos: list[str]) -> str:
     if os.getenv("ETORO_API_KEY") is None or os.getenv("ETORO_USER_KEY") is None:
         return "# Prueba eToro\n\nFaltan los secretos ETORO_API_KEY y ETORO_USER_KEY."
     out = [f"# Prueba eToro vs Alpaca (solo lectura, demo)\n\nHecha: {datetime.now(timezone.utc):%Y-%m-%d %H:%M} UTC\n",
-           "| Ticker | eToro id | eToro ms | Alpaca ms | Último cierre eToro | Último cierre Alpaca | Dif. % | Corto (CFD/real) |",
-           "|---|---|---|---|---|---|---|---|"]
+           "| Ticker | eToro id | eToro ms | Alpaca ms | Último cierre eToro | Último cierre Alpaca | Dif. % | Corto | Trailing | Stop mín. % |",
+           "|---|---|---|---|---|---|---|---|---|---|"]
     notas = []
     for s in simbolos:
         r, ms_i = _llamar("GET", "/api/v2/market-data/instruments", params={"symbols": s})
@@ -116,18 +117,26 @@ def main(simbolos: list[str]) -> str:
         barras, ms_a, st = _alpaca_velas(s)
         c_a = barras[0]["c"] if barras else None
         dif = f"{(c_e - c_a) / c_a * 100:+.2f}" if c_e and c_a else "n/d"
-        corto = "n/d"
-        re_, _ = _llamar("POST", "/api/v2/trading/info/demo/eligibility", json={"instrumentId": iid})
+        corto = trailing = sl_min = "n/d"
+        re_, _ = _llamar("POST", "/api/v2/trading/info/demo/eligibility",
+                         json={"instrumentIds": [int(iid)], "currency": "USD"})
         if re_.ok:
             try:
-                cfg = re_.json().get("leverageConfigs", [])
-                tipos = sorted({f"{c.get('settlementType')}" for c in cfg if c.get("direction") == "short"})
+                eleg = (re_.json().get("eligibilities") or [{}])[0]
+                cfg = eleg.get("leverageConfigs") or []
+                cortos = [c for c in cfg if str(c.get("direction", "")).lower() == "short"]
+                tipos = sorted({str(c.get("settlementType")) for c in cortos})
                 corto = "/".join(tipos) if tipos else "NO"
+                trailing = "sí" if eleg.get("allowTrailingStopLoss") else "no"
+                mins = [c.get("minStopLossPercentage") for c in cfg if c.get("minStopLossPercentage") is not None]
+                sl_min = str(min(mins)) if mins else "n/d"
             except Exception:
-                pass
+                notas.append(f"{s}: elegibilidad con forma inesperada: {_forma(re_.json())}")
         else:
             notas.append(f"{s}: elegibilidad HTTP {re_.status_code}")
-        out.append(f"| {s} | {iid} | {ms_e:.0f} | {ms_a:.0f} | {c_e} | {c_a} | {dif} | {corto} |")
+        if c_a is None:
+            notas.append(f"{s}: Alpaca sin velas (HTTP {st})")
+        out.append(f"| {s} | {iid} | {ms_e:.0f} | {ms_a:.0f} | {c_e} | {c_a} | {dif} | {corto} | {trailing} | {sl_min} |")
     if notas:
         out += ["", "Avisos:"] + [f"- {n}" for n in notas]
     out += ["", "Nota: la diferencia puede deberse a que Alpaca gratis usa una sola bolsa (IEX) y a que las velas",
