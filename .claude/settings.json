@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./investigacion/estrategias/backtest/datos/**)",
+      "Read(./investigacion/ranking.json)",
+      "Read(./investigacion/ranking_detalle.json)",
+      "Read(./investigacion/duplicar/resultado.json)",
+      "Read(./web/vendor/**)",
+      "Read(./web/dist/**)",
+      "Read(./data/**)"
+    ]
+  }
+}
