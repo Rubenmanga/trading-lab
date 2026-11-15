@@ -1,97 +1,112 @@
-# Backtest intradía: ORB y top gainers · datos de 2016-01-19 a 2021-12-31
+# Backtest intradía: ORB y top gainers · datos de 2016-01-19 a 2026-11-13
 
 *Informe automático (lo genera GitHub Actions con datos de Alpaca). La lectura en sencillo la añade Claude aparte.*
 
 ## Top gainers (suben ≥ +15 % en el día)
 
-- Días estudiados: **1501** · top gainers: **21475** (**14,3 al día**).
-- Ya abrían con hueco ≥ +5 %: **49,1 %** · ≥ +10 %: **28,7 %**.
-- A las 9:00 (premercado) ya subían ≥ +5 %: **38,6 %** · ≥ +10 %: **24,4 %**.
-- Hora del máximo del día: antes de las 10:00 **11,3 %**, 10-12 h **16,4 %**, después **72,3 %** (hora de NY).
+- Días estudiados: **2723** · top gainers: **58960** (**21,7 al día**).
+- Ya abrían con hueco ≥ +5 %: **46,8 %** · ≥ +10 %: **28,2 %**.
+- A las 9:00 (premercado) ya subían ≥ +5 %: **40,4 %** · ≥ +10 %: **24,7 %**.
+- Hora del máximo del día: antes de las 10:00 **10,4 %**, 10-12 h **17,0 %**, después **72,6 %** (hora de NY).
 
 ### Las que abren con hueco ≥ +10 % (lo que se puede ver a tiempo)
 
-- Casos: **14548**. Acaban el día ≥ +15 %: **42,3 %**. Cierran por debajo de su apertura: **62,1 %**. Mediana apertura→cierre: **-2,5 %**.
+- Casos: **37522**. Acaban el día ≥ +15 %: **44,3 %**. Cierran por debajo de su apertura: **60,8 %**. Mediana apertura→cierre: **-2,5 %**.
 
 | Grupo | Casos | Comprar 9:35 y vender al cierre (media) | Mediana | % que gana | Reglas agente A (R medio) | % aciertos |
 |---|---|---|---|---|---|---|
-| todas (hueco ≥ 10 %) | 14548 | -1,0 % | -1,4 % | 41 % | -0,25 | 34 % |
-| precio < 5 $ | 2433 | 0,1 % | -1,5 % | 42 % | -0,46 | 29 % |
-| precio 5-20 $ | 4569 | -0,5 % | -1,0 % | 43 % | -0,26 | 35 % |
-| precio ≥ 20 $ | 7546 | -1,6 % | -1,6 % | 40 % | -0,18 | 34 % |
-| hueco 10-20 % | 10772 | -0,3 % | -1,0 % | 43 % | -0,25 | 35 % |
-| hueco 20-50 % | 3020 | -2,4 % | -3,0 % | 37 % | -0,24 | 32 % |
-| hueco ≥ 50 % | 756 | -5,1 % | -10,5 % | 29 % | -0,34 | 24 % |
+| todas (hueco ≥ 10 %) | 37522 | -1,0 % | -1,4 % | 42 % | -0,23 | 34 % |
+| precio < 5 $ | 7807 | 0,0 % | -1,8 % | 42 % | -0,41 | 30 % |
+| precio 5-20 $ | 12285 | -0,5 % | -1,0 % | 44 % | -0,19 | 36 % |
+| precio ≥ 20 $ | 17430 | -1,8 % | -1,6 % | 41 % | -0,16 | 35 % |
+| hueco 10-20 % | 27176 | -0,4 % | -1,0 % | 44 % | -0,23 | 36 % |
+| hueco 20-50 % | 7961 | -1,4 % | -2,6 % | 40 % | -0,18 | 33 % |
+| hueco ≥ 50 % | 2385 | -5,9 % | -11,3 % | 29 % | -0,37 | 24 % |
 
 ### Motivo según los titulares · top gainers (muestra)
 
 | Motivo | Casos | Peso | Apertura→cierre (media) | Reglas agente A (R medio) |
 |---|---|---|---|---|
-| sin noticia | 300 | 48 % | 16,0 % | 0,14 |
-| resultados | 135 | 22 % | 14,7 % | 0,28 |
-| otra noticia | 122 | 19 % | 16,5 % | 0,25 |
-| FDA o ensayo | 32 | 5 % | 9,9 % | 0,02 |
-| fusión o compra | 21 | 3 % | 6,7 % | -0,08 |
-| contrato o acuerdo | 11 | 2 % | 10,8 % | 0,26 |
-| cripto/IA/moda | 4 | 1 % | 10,0 % | -0,54 |
-| ampliación de capital | 2 | 0 % | 10,4 % | 0,83 |
+| sin noticia | 571 | 48 % | 16,2 % | 0,19 |
+| otra noticia | 252 | 21 % | 17,7 % | 0,41 |
+| resultados | 218 | 18 % | 13,3 % | 0,30 |
+| FDA o ensayo | 75 | 6 % | 13,5 % | -0,07 |
+| fusión o compra | 28 | 2 % | 11,5 % | -0,16 |
+| contrato o acuerdo | 24 | 2 % | 6,2 % | 0,18 |
+| cripto/IA/moda | 12 | 1 % | 9,7 % | -0,09 |
+| ampliación de capital | 6 | 1 % | 16,9 % | 0,15 |
 
 ### Motivo según los titulares · huecos ≥ 10 % (muestra)
 
 | Motivo | Casos | Peso | Apertura→cierre (media) | Reglas agente A (R medio) |
 |---|---|---|---|---|
-| sin noticia | 169 | 36 % | -2,9 % | -0,41 |
-| resultados | 137 | 29 % | 2,7 % | -0,09 |
-| otra noticia | 91 | 20 % | -4,5 % | -0,16 |
-| FDA o ensayo | 36 | 8 % | -3,1 % | -0,23 |
-| fusión o compra | 18 | 4 % | 2,2 % | -0,30 |
-| contrato o acuerdo | 11 | 2 % | -5,7 % | -0,13 |
-| ampliación de capital | 2 | 0 % | -10,7 % | -1,18 |
-| cripto/IA/moda | 2 | 0 % | -4,8 % | -1,12 |
+| sin noticia | 302 | 37 % | -3,8 % | -0,46 |
+| resultados | 220 | 27 % | 1,9 % | -0,08 |
+| otra noticia | 159 | 20 % | -3,0 % | -0,02 |
+| FDA o ensayo | 69 | 9 % | -3,6 % | -0,37 |
+| fusión o compra | 24 | 3 % | 4,0 % | -0,29 |
+| contrato o acuerdo | 22 | 3 % | -6,9 % | 0,03 |
+| cripto/IA/moda | 9 | 1 % | -10,8 % | -0,49 |
+| ampliación de capital | 5 | 1 % | 7,9 % | -1,20 |
 
 ## ORB · variante «original»
 
-- Operaciones: **24651** · aciertos **11 %** · R medio **-0,524** · profit factor **0,56**.
-- Solo compras: R medio -0,512 (12207 ops) · solo ventas: R medio -0,535 (12444 ops).
-- Cartera: rentabilidad total **-100 %**, anual **-87,0 %**, Sharpe **-7,81**, peor caída **-100,0 %**.
+- Operaciones: **44924** · aciertos **15 %** · R medio **0,001** · profit factor **1,00** · R medio **sin costes** 0,301 (la diferencia es lo que se comen deslizamiento y comisiones).
+- Solo compras: R medio -0,010 (22105 ops) · solo ventas: R medio 0,012 (22819 ops).
+- Cartera: rentabilidad total **49 %**, anual **3,7 %**, Sharpe **0,29**, peor caída **-86,4 %**.
 
 | Año | Operaciones | Aciertos | R medio | Rentabilidad cartera |
 |---|---|---|---|---|
-| 2016 | 3920 | 13 % | -0,413 | -75,9 % |
-| 2017 | 4037 | 11 % | -0,720 | -84,7 % |
-| 2018 | 4116 | 10 % | -0,539 | -83,6 % |
-| 2019 | 4084 | 12 % | -0,545 | -82,6 % |
-| 2020 | 4236 | 11 % | -0,425 | -92,6 % |
-| 2021 | 4258 | 10 % | -0,501 | -93,0 % |
+| 2016 | 3920 | 17 % | -0,025 | -12,9 % |
+| 2017 | 4037 | 15 % | -0,214 | -40,7 % |
+| 2018 | 4116 | 15 % | 0,050 | 11,9 % |
+| 2019 | 4084 | 17 % | 0,044 | 6,0 % |
+| 2020 | 4236 | 15 % | -0,061 | -53,5 % |
+| 2021 | 4258 | 14 % | 0,018 | 15,1 % |
+| 2022 | 4234 | 16 % | 0,039 | 24,9 % |
+| 2023 | 4140 | 13 % | -0,146 | -45,1 % |
+| 2024 | 4125 | 14 % | 0,017 | 19,7 % |
+| 2025 | 4079 | 14 % | 0,128 | 125,2 % |
+| 2026 | 3695 | 17 % | 0,180 | 145,1 % |
 
 ## ORB · variante «original_solo_compras»
 
-- Operaciones: **12207** · aciertos **11 %** · R medio **-0,512** · profit factor **0,57**.
-- Solo compras: R medio -0,512 (12207 ops) · solo ventas: R medio — (0 ops).
-- Cartera: rentabilidad total **-100 %**, anual **-88,9 %**, Sharpe **-5,50**, peor caída **-100,0 %**.
+- Operaciones: **22105** · aciertos **15 %** · R medio **-0,010** · profit factor **0,99** · R medio **sin costes** 0,296 (la diferencia es lo que se comen deslizamiento y comisiones).
+- Solo compras: R medio -0,010 (22105 ops) · solo ventas: R medio — (0 ops).
+- Cartera: rentabilidad total **-94 %**, anual **-23,2 %**, Sharpe **-0,15**, peor caída **-99,3 %**.
 
 | Año | Operaciones | Aciertos | R medio | Rentabilidad cartera |
 |---|---|---|---|---|
-| 2016 | 1998 | 13 % | -0,332 | -76,6 % |
-| 2017 | 1995 | 11 % | -0,703 | -86,4 % |
-| 2018 | 2032 | 10 % | -0,548 | -89,5 % |
-| 2019 | 2075 | 12 % | -0,607 | -87,4 % |
-| 2020 | 2004 | 12 % | -0,294 | -86,3 % |
-| 2021 | 2103 | 9 % | -0,579 | -96,5 % |
+| 2016 | 1998 | 17 % | 0,044 | -14,8 % |
+| 2017 | 1995 | 15 % | -0,269 | -54,4 % |
+| 2018 | 2032 | 14 % | -0,058 | -50,4 % |
+| 2019 | 2075 | 17 % | 0,014 | -17,5 % |
+| 2020 | 2004 | 15 % | 0,071 | -32,2 % |
+| 2021 | 2103 | 13 % | -0,052 | -27,1 % |
+| 2022 | 2013 | 14 % | -0,100 | -54,1 % |
+| 2023 | 2074 | 13 % | -0,168 | -59,6 % |
+| 2024 | 2017 | 14 % | -0,019 | -4,5 % |
+| 2025 | 1975 | 13 % | 0,155 | 39,7 % |
+| 2026 | 1819 | 17 % | 0,310 | 195,7 % |
 
 ## ORB · variante «agente_a»
 
-- Operaciones: **4597** · aciertos **38 %** · R medio **-0,254** · profit factor **0,60**.
-- Solo compras: R medio -0,284 (2141 ops) · solo ventas: R medio -0,229 (2456 ops).
-- Cartera: rentabilidad total **-95 %**, anual **-39,0 %**, Sharpe **-6,02**, peor caída **-94,7 %**.
+- Operaciones: **8340** · aciertos **48 %** · R medio **0,030** · profit factor **1,06** · R medio **sin costes** 0,154 (la diferencia es lo que se comen deslizamiento y comisiones).
+- Solo compras: R medio -0,001 (3999 ops) · solo ventas: R medio 0,058 (4341 ops).
+- Cartera: rentabilidad total **77 %**, anual **5,4 %**, Sharpe **0,63**, peor caída **-21,9 %**.
 
 | Año | Operaciones | Aciertos | R medio | Rentabilidad cartera |
 |---|---|---|---|---|
-| 2016 | 711 | 42 % | -0,194 | -29,3 % |
-| 2017 | 745 | 42 % | -0,209 | -32,4 % |
-| 2018 | 778 | 43 % | -0,157 | -26,7 % |
-| 2019 | 775 | 39 % | -0,217 | -34,6 % |
-| 2020 | 788 | 35 % | -0,282 | -42,8 % |
-| 2021 | 800 | 29 % | -0,453 | -59,8 % |
+| 2016 | 711 | 48 % | -0,034 | -6,1 % |
+| 2017 | 745 | 49 % | -0,068 | -12,1 % |
+| 2018 | 778 | 51 % | 0,053 | 10,4 % |
+| 2019 | 775 | 47 % | -0,033 | -6,6 % |
+| 2020 | 788 | 51 % | 0,151 | 33,9 % |
+| 2021 | 800 | 45 % | -0,050 | -10,0 % |
+| 2022 | 777 | 46 % | -0,014 | -3,0 % |
+| 2023 | 755 | 48 % | 0,049 | 9,3 % |
+| 2024 | 765 | 50 % | 0,086 | 17,3 % |
+| 2025 | 758 | 49 % | 0,098 | 19,9 % |
+| 2026 | 688 | 48 % | 0,087 | 15,7 % |
 
 _Generado el 2026-11-15. Costes incluidos: deslizamiento y coste por acción en cada lado. R = lo ganado o perdido en veces lo arriesgado (−1 R = saltó el stop)._
