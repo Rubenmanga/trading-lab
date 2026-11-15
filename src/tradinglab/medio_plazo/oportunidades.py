@@ -29,7 +29,8 @@ from ..common.db import ahora
 FACTORES = {
     "calidad": dict(sector=True, metricas=[
         ("margen_bruto", 1), ("margen_operativo", 1), ("roe", 1), ("roa", 1),
-        ("rent_fcf_pct", 1), ("fcf_trim_positivos", 1)]),
+        ("rent_fcf_pct", 1), ("fcf_trim_positivos", 1),
+        ("f_score", 1), ("rent_bruta_activos", 1)]),   # cuentas de la SEC: Piotroski y Novy-Marx
     "crecimiento": dict(sector=False, metricas=[
         ("crec_ventas", 1), ("crec_ventas_ult_trim", 1), ("crec_ventas_sig_anio", 1),
         ("crec_bpa_anio", 1), ("crec_bpa_sig_anio", 1)]),
@@ -49,7 +50,8 @@ FACTORES = {
         ("ensayos_clave_12m", 1)]),   # ClinicalTrials.gov (solo salud; en el resto queda sin dato y no cuenta)
     "solidez": dict(sector=False, metricas=[
         ("caja_neta_sobre_cap", 1), ("meses_de_caja_cap", 1), ("dilucion_1a_pct", -1),
-        ("cortos_flotante", -1), ("cortos_cambio_1m_pct", -1), ("deuda_neta_ebitda", -1), ("max_caida_1a_pct", 1)]),
+        ("cortos_flotante", -1), ("cortos_cambio_1m_pct", -1), ("deuda_neta_ebitda", -1), ("max_caida_1a_pct", 1),
+        ("altman_z", 1)]),   # Altman Z'' con cuentas de la SEC
 }
 
 PESOS_DEFECTO = dict(calidad=15, crecimiento=15, valoracion=15, revisiones=20, insiders=5,
@@ -141,6 +143,17 @@ def banderas(f: dict) -> list[tuple[str, int]]:
         b.append(("Registro en la SEC para poder vender acciones nuevas (S-1/S-3): posible dilución", 3))
     if (f.get("sec_retraso_365d") or 0) > 0:
         b.append(("Ha presentado cuentas tarde en el último año (NT 10-K/10-Q)", 8))
+    # Fórmulas clásicas con las cuentas anuales de la SEC (sec_cuentas.py). Sin dato, no penalizan ni ayudan.
+    financiera = f.get("sector") in ("Financial Services", "Real Estate")   # bancos y REIT: no aplican
+    z = f.get("altman_z")
+    if z is not None and z < 1.1 and not financiera:
+        b.append(("Riesgo de quiebra según Altman Z'' (%.1f; peligro por debajo de 1,1)" % z, 8))
+    m = f.get("beneish_m")
+    if m is not None and m > -1.78 and not financiera:
+        b.append(("Posible maquillaje contable según Beneish M (%.2f; sospechoso por encima de -1,78)" % m, 6))
+    fs = f.get("f_score")
+    if fs is not None and fs <= 2:
+        b.append(("Salud financiera muy floja (Piotroski %d de 9)" % fs, 5))
     if (f.get("analistas") or 0) < 2:
         b.append(("Casi sin analistas (datos de previsión poco fiables)", 5))
     if f.get("rev_bpa_90d_anio") is not None and f["rev_bpa_90d_anio"] < -15:
@@ -453,7 +466,8 @@ COLUMNAS_PANEL = [
     "mejoras_neto_90d", "insiders_neto_pct", "ret_6m", "dist_max52_pct", "dilucion_1a_pct", "meses_de_caja",
     "cortos_flotante", "cortos_cambio_1m_pct", "dias_para_cubrir", "proximos_resultados", "dias_a_resultados",
     "sec_registro_180d", "sec_colocacion_90d", "sec_13d_180d", "sec_13g_180d", "sec_form4_90d", "sec_retraso_365d",
-    "sec_8k_30d", "sec_documentos", "ensayos_activos", "ensayos_clave_12m", "ensayos", "extra"]
+    "sec_8k_30d", "sec_documentos", "f_score", "f_score_aprobadas", "altman_z", "beneish_m",
+    "rent_bruta_activos", "sec_ejercicio_fin", "ensayos_activos", "ensayos_clave_12m", "ensayos", "extra"]
 
 
 def _limpio(v):
