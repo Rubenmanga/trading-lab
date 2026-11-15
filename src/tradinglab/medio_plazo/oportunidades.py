@@ -39,15 +39,17 @@ FACTORES = {
     "revisiones": dict(sector=False, metricas=[
         ("rev_bpa_30d_anio", 1), ("rev_bpa_90d_anio", 1), ("rev_bpa_90d_sig", 1),
         ("revisiones_neto", 1), ("mejoras_neto_90d", 1), ("objetivos_neto_90d", 1)]),
-    "insiders": dict(sector=False, metricas=[("insiders_neto_pct", 1), ("insiders_compras_n", 1)]),
+    "insiders": dict(sector=False, metricas=[("insiders_neto_pct", 1), ("insiders_compras_n", 1),
+                                             ("sec_grandes_inversores_180d", 1)]),   # 13D/13G de la SEC
     "momentum": dict(sector=False, metricas=[
         ("ret_12m_1m", 1), ("ret_6m", 1), ("fuerza_relativa_6m", 1), ("sobre_ma200_pct", 1),
         ("dist_max52_pct", 1)]),
     "catalizadores": dict(sector=False, metricas=[
-        ("sorpresa_media", 1), ("sorpresas_positivas", 1), ("resultados_cerca", 1), ("hueco_pead", 1)]),
+        ("sorpresa_media", 1), ("sorpresas_positivas", 1), ("resultados_cerca", 1), ("hueco_pead", 1),
+        ("ensayos_clave_12m", 1)]),   # ClinicalTrials.gov (solo salud; en el resto queda sin dato y no cuenta)
     "solidez": dict(sector=False, metricas=[
         ("caja_neta_sobre_cap", 1), ("meses_de_caja_cap", 1), ("dilucion_1a_pct", -1),
-        ("cortos_flotante", -1), ("deuda_neta_ebitda", -1), ("max_caida_1a_pct", 1)]),
+        ("cortos_flotante", -1), ("cortos_cambio_1m_pct", -1), ("deuda_neta_ebitda", -1), ("max_caida_1a_pct", 1)]),
 }
 
 PESOS_DEFECTO = dict(calidad=15, crecimiento=15, valoracion=15, revisiones=20, insiders=5,
@@ -129,6 +131,16 @@ def banderas(f: dict) -> list[tuple[str, int]]:
     c = f.get("cortos_flotante")
     if c is not None and c > 0.20:
         b.append(("Muchas posiciones cortas (%.0f%%)" % (c * 100), 5))
+    cc = f.get("cortos_cambio_1m_pct")
+    if c is not None and c > 0.10 and cc is not None and cc > 25:
+        b.append(("Las posiciones cortas suben con fuerza (+%.0f%% en un mes)" % cc, 3))
+    # Documentos oficiales de la SEC (EDGAR)
+    if (f.get("sec_colocacion_90d") or 0) > 0:
+        b.append(("Colocación de acciones nuevas en los últimos 90 días (folleto 424B en la SEC)", 6))
+    elif (f.get("sec_registro_180d") or 0) > 0:
+        b.append(("Registro en la SEC para poder vender acciones nuevas (S-1/S-3): posible dilución", 3))
+    if (f.get("sec_retraso_365d") or 0) > 0:
+        b.append(("Ha presentado cuentas tarde en el último año (NT 10-K/10-Q)", 8))
     if (f.get("analistas") or 0) < 2:
         b.append(("Casi sin analistas (datos de previsión poco fiables)", 5))
     if f.get("rev_bpa_90d_anio") is not None and f["rev_bpa_90d_anio"] < -15:
@@ -193,6 +205,13 @@ def puntuar(filas: list[dict], pesos: dict | None = None, min_sector: int = 8, h
             sen.append("Base estrecha tipo VCP")
         if f.get("hueco_mantenido"):
             sen.append("Hueco al alza tras noticia/resultados que se mantiene (PEAD)")
+        if f.get("sec_13d_180d"):
+            sen.append("Un inversor activista ha declarado más del 5 % (13D en la SEC)")
+        elif f.get("sec_13g_180d"):
+            sen.append("Un fondo grande ha declarado más del 5 % (13G en la SEC)")
+        if f.get("ensayos_clave_12m"):
+            n = f["ensayos_clave_12m"]
+            sen.append(f"{n} ensayo{'s' if n > 1 else ''} de fase 2/3 con resultados esperados en 12 meses")
         f["senales"] = sen
     filas.sort(key=lambda f: -f["nota"])
     for i, f in enumerate(filas, 1):
@@ -390,13 +409,31 @@ def combinar(cfg: dict, filas: list[dict], universo_n: int, base: list[dict] | N
             extra["calendario_resultados"] = len(cal)
         except PermissionError as e:
             extra["finnhub_error"] = str(e)
+    # Fuentes públicas sin clave (SEC EDGAR y ClinicalTrials.gov) para TODAS, antes de puntuar.
+    fp_cfg = cfg.get("fuentes_publicas") or {}
+    if fp_cfg.get("activar", True):
+        from . import fuentes_publicas
+        try:
+            extra |= fuentes_publicas.completar(filas, fp_cfg)
+        except Exception as e:  # noqa: BLE001 - una fuente caída no puede tirar el ranking
+            extra["fuentes_publicas_error"] = type(e).__name__
     puntuar(filas, c.get("pesos"))
     if fuentes_extra.hay_finnhub() or fuentes_extra.hay_alpaca():
         extra |= fuentes_extra.completar(filas, top=c.get("extra_top", 60), calendario=False)
-    print("Fuentes extra:", extra or "ninguna (sin claves)")
+    from . import sentimiento
+    extra["sentimiento_empresas"] = sentimiento.aplicar(filas[:c.get("extra_top", 60)])
+    macro = None
+    if fp_cfg.get("activar", True) and fp_cfg.get("macro", True):
+        try:
+            from . import fuentes_publicas
+            macro = fuentes_publicas.datos_macro()
+        except Exception as e:  # noqa: BLE001
+            extra["macro_error"] = type(e).__name__
+    print("Fuentes extra:", extra or "ninguna")
     completo = descargadas >= universo_n * 0.97
     return dict(actualizado=ahora(), universo=universo_n, descargadas=descargadas, analizadas=len(filas),
-                provisional=not completo, pesos=c.get("pesos") or PESOS_DEFECTO, fuentes_extra=extra, filas=filas)
+                provisional=not completo, pesos=c.get("pesos") or PESOS_DEFECTO, fuentes_extra=extra, macro=macro,
+                filas=filas)
 
 
 def ejecutar(cfg: dict, maximo: int | None = None) -> dict:
@@ -414,7 +451,9 @@ COLUMNAS_PANEL = [
     "potencial_analistas_pct", "potencial_objetivo_bajo_pct", "per_futuro", "ev_ventas", "rent_fcf_pct",
     "crec_ventas", "crec_ventas_sig_anio", "crec_bpa_sig_anio", "rev_bpa_90d_anio", "revisiones_neto",
     "mejoras_neto_90d", "insiders_neto_pct", "ret_6m", "dist_max52_pct", "dilucion_1a_pct", "meses_de_caja",
-    "cortos_flotante", "proximos_resultados", "dias_a_resultados", "extra"]
+    "cortos_flotante", "cortos_cambio_1m_pct", "dias_para_cubrir", "proximos_resultados", "dias_a_resultados",
+    "sec_registro_180d", "sec_colocacion_90d", "sec_13d_180d", "sec_13g_180d", "sec_form4_90d", "sec_retraso_365d",
+    "sec_8k_30d", "sec_documentos", "ensayos_activos", "ensayos_clave_12m", "ensayos", "extra"]
 
 
 def _limpio(v):
@@ -434,6 +473,11 @@ def ranking_actual() -> dict | None:
 
 def guardar(res: dict, top: int = 150) -> tuple[str, str]:
     filas = res["filas"]
+    try:   # foto diaria + "¿acierta el ranking?" (investigacion/historico/ y validacion.md)
+        from . import validacion
+        res["validacion"] = validacion.actualizar(res)
+    except Exception as e:  # noqa: BLE001
+        print("Validación del ranking no disponible:", type(e).__name__)
     ligero = [{k: _limpio(f.get(k)) for k in COLUMNAS_PANEL} for f in filas[:top]]
     pj = ruta("investigacion", "ranking.json")
     with open(pj, "w", encoding="utf-8") as fh:
@@ -446,6 +490,18 @@ def guardar(res: dict, top: int = 150) -> tuple[str, str]:
     with open(pm, "w", encoding="utf-8") as fh:
         fh.write("# Ranking de oportunidades (small caps EE. UU.)\n\n")
         fh.write(f"_Actualizado: {res['actualizado']} · universo {res['universo']} · analizadas {res['analizadas']}_\n\n")
+        mc = res.get("macro") or {}
+        if mc.get("estado"):
+            emoji = {"verde": "🟢", "ambar": "🟡", "rojo": "🔴"}[mc["estado"]]
+            fh.write(f"**Semáforo macro para small caps: {emoji} {mc['resumen']}**\n\n")
+            for i in mc["indicadores"]:
+                fh.write(f"- {i['nombre']}: {i['valor']} ({i['estado']})\n")
+            fh.write("\n")
+        v = res.get("validacion") or {}
+        if v.get("plazos"):
+            p = v["plazos"][-1]
+            fh.write(f"_¿Acierta el ranking? Las 20 mejores de hace {p['plazo']}: {p['top20']:+.1f} % frente a "
+                     f"{p['mediana_todas']:+.1f} % de la mediana (ver validacion.md)._\n\n")
         fh.write("Nota 0-100 = suma ponderada de 8 factores comparando cada empresa con las demás, menos "
                  "penalizaciones por banderas rojas. **No es una recomendación**: es la lista de las que merecen "
                  "un análisis a fondo.\n\n")

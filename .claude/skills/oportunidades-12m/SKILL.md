@@ -25,6 +25,11 @@ Embudo completo. Las dos primeras etapas las hace el programa cada día (GitHub 
 
 ## Paso 0 · Contexto de mercado (rápido)
 - Mira la fecha de `investigacion/ranking.json` (campo `actualizado`). Si tiene más de 3 días, dilo.
+- Lee el **semáforo macro** (`macro` en `ranking.json`: diferencial high yield, curva de tipos, condiciones
+  financieras de FRED e IWM frente a su media de 200 días). En rojo: menos finalistas, entradas escalonadas y más
+  margen de seguridad. Dilo en la primera línea del informe.
+- Lee `investigacion/validacion.md` (¿acierta el ranking?). Si el top lleva meses sin batir a la mediana, dilo y
+  apóyate más en el análisis profundo que en la nota.
 - Contexto general en 5 líneas con la skill `market-environment-analysis` (¿mercado alcista o bajista?,
   ¿small caps a favor?). Es la "M" de CANSLIM: en mercado bajista, sé más exigente con la entrada.
 - Si hay `investigacion/sectores-*.md` reciente úsalo; si no, investiga qué sectores ven bien los analistas
@@ -36,6 +41,13 @@ Embudo completo. Las dos primeras etapas las hace el programa cada día (GitHub 
   insiders, momentum, catalizadores, solidez. Se comparan con todo el universo; calidad y valoración con su sector.
 - `banderas` (rojas, ya restadas en la nota), `carril` (tipo de oportunidad), `senales` técnicas.
 - Métricas clave: potencial según analistas, PER futuro, revisiones del BPA a 90 días, dilución, meses de caja...
+- **SEC EDGAR** (gratis, para todas): `sec_registro_180d` (S-1/S-3: pueden vender acciones nuevas),
+  `sec_colocacion_90d` (424B: colocación hecha), `sec_13d_180d` / `sec_13g_180d` (fondos >5 %),
+  `sec_retraso_365d` (cuentas tarde), `sec_documentos` (enlaces). Ya restan/suman en la nota.
+- **ClinicalTrials.gov** (solo salud): `ensayos_clave_12m` y `ensayos` (fase 2/3 con resultados en 12 meses).
+- **Cortos**: `cortos_flotante`, `cortos_cambio_1m_pct`, `dias_para_cubrir`.
+- **Tono de noticias** (top 60, en `extra`): `sent_nota` (−100 a 100) y `sent_alarmas` (ampliación, FDA,
+  investigación...). Una alarma obliga a leer esa noticia antes de seguir.
 Para más detalle de las 40 primeras: `investigacion/ranking_detalle.json`.
 
 ## Paso 2 · Elegir 10-12 candidatas (diversificadas)
