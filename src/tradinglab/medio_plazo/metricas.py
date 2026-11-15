@@ -138,6 +138,8 @@ def empresa(ticker: str, ref_close=None) -> dict:
             objetivo_bajo=_n(i.get("targetLowPrice")), objetivo_alto=_n(i.get("targetHighPrice")),
             precio_info=_n(i.get("currentPrice") or i.get("regularMarketPrice")), beta=_n(i.get("beta")),
             tipo=i.get("quoteType"),
+            cortos_acciones=_n(i.get("sharesShort")), cortos_mes_antes=_n(i.get("sharesShortPriorMonth")),
+            dias_para_cubrir=_n(i.get("shortRatio")),
         )
 
     def tendencia_bpa():
@@ -274,6 +276,8 @@ def empresa(ticker: str, ref_close=None) -> dict:
         m["meses_de_caja"] = caja / (-fcf / 12)
     if deuda is not None and caja is not None and m.get("ebitda"):
         m["deuda_neta_ebitda"] = (deuda - caja) / m["ebitda"] if m["ebitda"] > 0 else None
+    if m.get("cortos_acciones") and m.get("cortos_mes_antes"):
+        m["cortos_cambio_1m_pct"] = _pct(m["cortos_acciones"], m["cortos_mes_antes"])
     p = m.get("precio") or m.get("precio_info")
     if p and m.get("objetivo_medio"):
         m["potencial_analistas_pct"] = (m["objetivo_medio"] / p - 1) * 100

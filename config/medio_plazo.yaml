@@ -48,3 +48,10 @@ oportunidades:
 alertas:
   dias_aviso_catalizador: 10    # avisa si un catalizador (resultados, FDA, contrato...) está a menos de X días
   revisar_tesis_cada_dias: 30   # avisa si un análisis tiene más de X días y conviene repasarlo
+
+# Fuentes públicas GRATIS y sin clave (se usan en GitHub Actions; si una falla, el buscador sigue sin ella).
+fuentes_publicas:
+  activar: true
+  sec: true        # SEC EDGAR: ventas de acciones nuevas (S-3/424B), fondos >5 % (13D/13G), cuentas tarde
+  ensayos: true    # ClinicalTrials.gov: ensayos de fase 2/3 con resultados en 12 meses (solo sector salud)
+  macro: true      # FRED + IWM: semáforo macro para small caps (no cambia la nota)

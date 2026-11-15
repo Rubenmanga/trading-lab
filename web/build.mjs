@@ -65,6 +65,7 @@ const datos = {
     ...markdowns("investigacion", "oportunidades").map((d) => ({ ...d, clase: "Buscador" })),
     ...markdowns("investigacion", "sectores").map((d) => ({ ...d, clase: "Sectores" })),
     ...markdowns("investigacion", "repaso").map((d) => ({ ...d, clase: "Repaso" })),
+    ...markdowns("investigacion", "validacion").map((d) => ({ ...d, clase: "¿Acierta el ranking?" })),
     ...markdowns("diario").map((d) => ({ ...d, clase: "Diario intradía" })),
   ],
 };

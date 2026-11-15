@@ -4,7 +4,7 @@
 #  - Cada domingo: además, el cribado sencillo antiguo (candidatos.csv).
 #  - Si hay un aviso importante, abre un "issue" en GitHub -> te llega una notificación al móvil.
 # También se puede lanzar a mano: pestaña Actions -> "Agente 12 meses" -> Run workflow.
-# Solo LEE datos públicos gratuitos (Yahoo/Stooq). No compra ni vende nada.
+# Solo LEE datos públicos gratuitos (Yahoo, SEC EDGAR, ClinicalTrials.gov, FRED, Finnhub/Alpaca gratis). No compra ni vende nada.
 name: Agente 12 meses
 
 on:
@@ -23,6 +23,7 @@ on:
       - ".github/workflows/agente-12m.yml"
       - "src/tradinglab/medio_plazo/**"
       - "tests/test_oportunidades.py"
+      - "tests/test_fuentes_publicas.py"
 
 permissions:
   contents: write
@@ -104,7 +105,7 @@ jobs:
         run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" tzdata pytest
 
       - name: Pruebas
-        run: python -m pytest -q tests/test_medio_plazo.py tests/test_oportunidades.py
+        run: python -m pytest -q tests/test_medio_plazo.py tests/test_oportunidades.py tests/test_fuentes_publicas.py
 
       - name: Alertas de la lista de vigilancia
         run: python -m tradinglab.cli medio alertas
@@ -112,6 +113,12 @@ jobs:
       - name: Prueba de datos de una empresa (solo en pruebas)
         if: github.event_name == 'pull_request'
         run: python -m tradinglab.cli medio probar AMSC | head -c 6000
+
+      - name: Prueba de fuentes públicas sin clave (solo en pruebas)
+        if: github.event_name == 'pull_request'
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python -m tradinglab.cli medio fuentes ORIC --nombre "ORIC Pharmaceuticals" | head -c 8000
 
       - name: Traer las partes descargadas
         uses: actions/download-artifact@v4
@@ -125,6 +132,7 @@ jobs:
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}   # opcional: "nombre email" para la SEC
         run: python -m tradinglab.cli medio oportunidades --entrada partes
 
       - name: Cribado de small caps (domingos o a mano)
@@ -137,6 +145,7 @@ jobs:
           cat investigacion/alertas.md
           cat investigacion/estado.json
           cat investigacion/ranking.md
+          cat investigacion/validacion.md || true
 
       - name: Subir el ranking como archivo descargable
         if: always()
@@ -156,6 +165,7 @@ jobs:
           git config user.name "agente-12m"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add investigacion/alertas.md investigacion/estado.json investigacion/ranking.json investigacion/ranking.md investigacion/ranking_detalle.json 2>/dev/null || true
+          git add investigacion/validacion.md investigacion/historico 2>/dev/null || true
           git add investigacion/candidatos.csv 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Agente 12m: ranking, alertas y precios $(date -u +%F)"
           git pull --rebase --autostash -q || true

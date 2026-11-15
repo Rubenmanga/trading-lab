@@ -111,7 +111,14 @@ function oportunidades() {
   const filas = R.filas.filter((f) => (!filtroSector || f.sector === filtroSector) && (!filtroCarril || f.carril === filtroCarril)).slice(0, 60);
   const enLista = new Set(D.watchlist.map((w) => w.ticker));
   const prov = R.provisional ? `<div class="flag" style="margin-bottom:8px">⏳ Ranking provisional: de momento hay datos de ${R.descargadas ?? R.analizadas} de ${R.universo} empresas. Se completa en la siguiente ejecución.</div>` : "";
-  let h = prov + `<p class="sub">De <b>${R.universo}</b> small caps de EE. UU. se han puntuado <b>${R.analizadas}</b> en 8 factores (0-100, 50 = en la media). Las banderas rojas restan puntos. <b>Es un filtro, no una recomendación</b>: las primeras son las que merecen un análisis a fondo.</p>
+  const M = R.macro;
+  const color = { verde: "🟢", ambar: "🟡", rojo: "🔴" };
+  const macro = M && M.estado ? `<details class="card" style="margin-bottom:8px"><summary><b>Semáforo macro ${color[M.estado]}</b> <span class="sub">${esc(M.resumen)}</span></summary>
+    <ul>${(M.indicadores || []).map((i) => `<li>${color[i.estado] || ""} <b>${esc(i.nombre)}</b>: ${num(i.valor, 2)}${i.cambio_3m == null ? "" : ` (en 3 meses ${i.cambio_3m > 0 ? "+" : ""}${num(i.cambio_3m, 2)})`}<br><span class="sub">${esc(i.explicacion)}</span></li>`).join("")}</ul>
+    <div class="sub">Datos de FRED (Reserva Federal de St. Louis) del ${esc(M.fecha || "")}. Es orientativo: no cambia la nota de las empresas.</div></details>` : "";
+  const V = R.validacion, vp = V && V.plazos && V.plazos[V.plazos.length - 1];
+  const valid = vp ? `<div class="sub" style="margin-bottom:8px">¿Acierta el ranking? Las 20 mejores de hace ${esc(vp.plazo)}: <b>${pct(vp.top20)}</b> frente a ${pct(vp.mediana_todas)} de la empresa mediana (con poca historia es casi azar).</div>` : "";
+  let h = prov + macro + valid + `<p class="sub">De <b>${R.universo}</b> small caps de EE. UU. se han puntuado <b>${R.analizadas}</b> en 8 factores (0-100, 50 = en la media). Las banderas rojas restan puntos. <b>Es un filtro, no una recomendación</b>: las primeras son las que merecen un análisis a fondo.</p>
   <div class="filtros"><select id="fs"><option value="">Todos los sectores</option>${sectores.map((x) => `<option ${x === filtroSector ? "selected" : ""}>${esc(x)}</option>`).join("")}</select>
   <select id="fc"><option value="">Todos los tipos</option>${carriles.map((x) => `<option ${x === filtroCarril ? "selected" : ""}>${esc(x)}</option>`).join("")}</select></div>`;
   h += filas.map((f) => `<a class="card" style="display:block;text-decoration:none;color:inherit" href="#/empresa/${encodeURIComponent(f.ticker)}">
@@ -151,8 +158,28 @@ function empresaFicha(t) {
     ${m("insiders_neto_pct", "Compras netas directivos 6 m", P)}${m("ret_6m", "Rentab. 6 meses", P)}
     ${m("dist_max52_pct", "Distancia a máximo anual", P)}${m("dilucion_1a_pct", "Nuevas acciones 1 año", P)}
     ${m("meses_de_caja", "Meses de caja", D0)}${m("cortos_flotante", "Posiciones cortas", Pf)}
-    ${m("proximos_resultados", "Próximos resultados", (x) => esc(x))}
-  </div></div>${extraFicha(f.extra)}`;
+    ${m("proximos_resultados", "Próximos resultados", (x) => esc(x))}${m("cortos_cambio_1m_pct", "Cambio de cortos en 1 mes", P)}
+    ${m("dias_para_cubrir", "Días para cubrir cortos", N)}
+  </div></div>${oficialFicha(f)}${extraFicha(f.extra)}`;
+}
+
+// Documentos de la SEC y ensayos clínicos (fuentes públicas gratis, sin clave).
+function oficialFicha(f) {
+  const url = (u) => (/^https:\/\/www\.sec\.gov\//.test(u || "") ? esc(u) : null);
+  const docs = (f.sec_documentos || []).map((d) => `<li><span class="sub">${esc(d.fecha)}</span> ${url(d.url) ? `<a href="${url(d.url)}" target="_blank" rel="noopener">${esc(d.tipo)}</a>` : esc(d.tipo)}</li>`).join("");
+  const ens = (f.ensayos || []).map((e) => `<li><span class="sub">${esc(e.fecha)} · ${esc(e.fase)} · ${esc(e.estado || "")}</span><br><a href="https://clinicaltrials.gov/study/${encodeURIComponent(e.nct || "")}" target="_blank" rel="noopener">${esc(e.titulo)}</a></li>`).join("");
+  if (f.sec_registro_180d == null && f.ensayos_activos == null) return "";
+  const v = (x) => (x == null ? "—" : x);
+  return `<div class="card"><b>Registros oficiales (SEC) ${f.ensayos_activos != null ? "y ensayos clínicos" : ""}</b><div class="grid">
+    <div><div class="k">Registros para vender acciones (6 m)</div><div class="n">${v(f.sec_registro_180d)}</div></div>
+    <div><div class="k">Colocaciones de acciones (3 m)</div><div class="n">${v(f.sec_colocacion_90d)}</div></div>
+    <div><div class="k">Fondos que declaran &gt;5 % (6 m)</div><div class="n">${f.sec_13d_180d == null ? "—" : f.sec_13d_180d + f.sec_13g_180d}</div></div>
+    <div><div class="k">Operaciones de directivos (formularios 4, 3 m)</div><div class="n">${v(f.sec_form4_90d)}</div></div>
+    ${f.ensayos_activos != null ? `<div><div class="k">Ensayos en marcha</div><div class="n">${f.ensayos_activos}</div></div><div><div class="k">Fase 2/3 con resultados en 12 meses</div><div class="n">${f.ensayos_clave_12m}</div></div>` : ""}
+  </div>
+  ${docs ? `<div class="sub" style="margin-top:8px">Documentos destacados:</div><ul>${docs}</ul>` : ""}
+  ${ens ? `<div class="sub" style="margin-top:8px">Ensayos con resultados esperados (ClinicalTrials.gov):</div><ul>${ens}</ul>` : ""}
+  </div>`;
 }
 
 // Datos de Finnhub y noticias de Alpaca (solo si hay claves en los secretos de GitHub).
@@ -167,6 +194,7 @@ function extraFicha(x) {
     <div><div class="k">Cambio en 3 meses</div><div class="n">${x.recs_cambio_3m == null ? "—" : (x.recs_cambio_3m > 0 ? "+" : "") + num(x.recs_cambio_3m, 1) + " pts"}</div></div>
     <div><div class="k">Sentimiento directivos (MSPR, de −100 a 100)</div><div class="n">${x.insiders_mspr_3m == null ? "—" : num(x.insiders_mspr_3m, 1)}</div></div>
     <div><div class="k">Noticias en 30 días</div><div class="n">${x.noticias_30d_n ?? "—"}</div></div>
+    <div><div class="k">Tono de los titulares (−100 a 100)</div><div class="n">${x.sent_nota == null ? "—" : num(x.sent_nota, 0) + " · " + esc(x.sent_etiqueta || "")}</div></div>
   </div>
   ${sorp ? `<div class="sub" style="margin-top:8px">Últimos resultados (beneficio por acción):</div><ul>${sorp}</ul>` : ""}
   ${noticias.length ? `<div class="sub" style="margin-top:8px">Últimas noticias:</div><ul>${lista(noticias)}</ul>` : ""}

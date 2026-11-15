@@ -19,7 +19,7 @@ técnicos la primera vez que salgan.
 
 ## Comandos
 `lab intradia demo|comprobar|backtest|sesion|cerrar-todo`, `lab diario`,
-`lab medio oportunidades|probar TICKER|cribado|ficha TICKER|alertas`, `lab panel`. Tests: `pytest`.
+`lab medio oportunidades|probar TICKER|fuentes TICKER|cribado|ficha TICKER|alertas`, `lab panel`. Tests: `pytest`.
 
 ## Skills del proyecto (`.claude/skills/`)
 Propias: `sesion-intradia`, `revisor-senal-intradia`, `investigar-estrategias-intradia`, `diario-operaciones`,

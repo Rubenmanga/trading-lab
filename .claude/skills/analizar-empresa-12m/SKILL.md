@@ -18,6 +18,10 @@ Lee antes las referencias que se citan (están en `references/`).
    `financials/cash-flow-statement/?p=quarterly`, `financials/balance-sheet/?p=quarterly`), **SEC EDGAR**
    (`https://data.sec.gov/submissions/CIK##########.json` → 10-Q/10-K/8-K/Form 4/S-3/424B) y la web de
    inversores. Finviz no deja leerse. Anota fecha y fuente de cada dato.
+   El ranking ya trae resumidos los documentos de la SEC (`sec_*`, `sec_documentos` con enlaces), los ensayos
+   clínicos (`ensayos`) y el tono de los titulares (`extra.sent_*`): úsalos como punto de partida y ábrelos.
+   Biotech: confirma cada ensayo en `clinicaltrials.gov/study/NCT...` y busca la fecha PDUFA (decisión de la FDA)
+   con WebSearch en las notas de prensa de la empresa (no hay calendario oficial gratis de la FDA).
 
 ## Fase 1 · Equipo de analistas (TradingAgents)
 Sigue `references/tradingagents-roles.md`, roles 1-4. Cada analista escribe su sección con una **tabla final**.
@@ -26,7 +30,7 @@ Sigue `references/tradingagents-roles.md`, roles 1-4. Cada analista escribe su s
   caja/deuda, ROIC, márgenes, valoración frente a 3+ comparables (PER futuro, EV/ventas, EV/EBITDA, rentab. FCF).
 - **Mercado/técnico**: `references/tradermonty/vcp_methodology.md` y `pead_strategy.md` + campos técnicos del ranking.
 - **Noticias y catalizadores**: catalizadores con fecha a 12 meses; `scenario_playbooks.md`.
-- **Sentimiento**: directivos (Form 4), cortos, institucionales (`institutional_interpretation_framework.md`),
+- **Sentimiento**: directivos (Form 4), cortos (y si suben: `cortos_cambio_1m_pct`), fondos >5 % (13D/13G), institucionales (`institutional_interpretation_framework.md`),
   revisiones y cambios de recomendación.
 También revisa CANSLIM (`canslim_methodology.md`) como lista rápida: C, A, N, S, L, I, M.
 

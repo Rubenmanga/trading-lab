@@ -24,6 +24,17 @@ https://github.com/HKUDS/Vibe-Trading
 Ideas (no código) para el backtest con costes y la "cuenta sombra" (`intradia/backtest.py`,
 `intradia/brokers/simulado.py`).
 
+## quantopian/alphalens — Apache-2.0
+https://github.com/quantopian/alphalens
+Idea (no código) para comprobar si la nota del buscador predice la rentabilidad futura
+(`medio_plazo/validacion.py`: rentabilidad del top frente a la mediana y correlación de rangos).
+
+## Datos públicos sin clave
+SEC EDGAR (data.sec.gov), ClinicalTrials.gov (API v2) y FRED (St. Louis Fed) son servicios públicos gratuitos.
+Se piden respetando sus límites (SEC: menos de 10 peticiones por segundo, con User-Agent identificativo).
+La lista de palabras de `medio_plazo/sentimiento.py` es propia.
+
 ## Descartados a propósito
-FinceptTerminal (AGPL) y TradingAgents-CN (partes con licencia propietaria): no se usa nada de ellos.
+FinceptTerminal (AGPL), OpenBB Platform (AGPL desde 2024) y TradingAgents-CN (partes con licencia
+propietaria): no se usa nada de ellos.
 backtrader (GPL) no se incluye; si algún día se usa, que sea como dependencia aparte.

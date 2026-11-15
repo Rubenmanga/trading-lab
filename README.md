@@ -177,6 +177,7 @@ con las claves de Alpaca demo guardadas como *secrets*. Lo probaremos cuando abr
 | `lab medio cribado` | Busca small caps con potencial según analistas |
 | `lab medio ficha TICKER` | Datos de una empresa |
 | `lab medio alertas` | Revisa la lista de vigilancia |
+| `lab medio fuentes TICKER` | Prueba las fuentes públicas gratis (SEC EDGAR, ensayos clínicos, semáforo macro FRED) |
 | `lab panel` | Panel web (pestañas Intradía, Medio plazo y Backtests) |
 
 ## Estructura

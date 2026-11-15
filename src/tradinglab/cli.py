@@ -7,6 +7,7 @@
   lab intradia cerrar-todo  Botón del pánico: cierra todo en la cuenta demo
   lab diario                Escribe el diario del día en diario/
   lab medio oportunidades   Buscador: puntúa todas las small caps (8 factores) y guarda el ranking
+  lab medio fuentes TICKER  Prueba las fuentes públicas gratis (SEC EDGAR, ClinicalTrials.gov, FRED)
   lab medio cribado         Cribado sencillo antiguo (solo potencial según analistas)
   lab medio ficha TICKER    Datos de una empresa (los usa la skill de análisis)
   lab medio alertas         Revisa la lista de vigilancia y avisa
@@ -101,6 +102,14 @@ def _medio(args):
                   + (f"  ⚠ {'; '.join(f['banderas'])}" if f['banderas'] else ""))
         print(f"\nUniverso {res['universo']} · analizadas {res['analizadas']}"
               + (" · PROVISIONAL" if res.get("provisional") else "") + f" · guardado en {pj} y {pm}")
+    elif args.accion == "fuentes":   # prueba de las fuentes públicas sin clave (SEC, ensayos, macro)
+        from .medio_plazo import fuentes_publicas as fp
+        t = (args.ticker or "ORIC").upper()
+        sec = fp.datos_sec([t])
+        print("SEC EDGAR:", json.dumps(sec.get(t), indent=1, ensure_ascii=False), fp.ULTIMO_ERROR or "")
+        nombre = args.nombre or t
+        print("ClinicalTrials.gov:", json.dumps(fp.datos_ensayos({t: nombre}).get(t), indent=1, ensure_ascii=False))
+        print("Macro:", json.dumps(fp.datos_macro(), indent=1, ensure_ascii=False, default=str))
     elif args.accion == "probar":
         from .medio_plazo import metricas
         print(json.dumps(metricas.empresa(args.ticker.upper()), indent=1, ensure_ascii=False, default=str))
@@ -130,13 +139,14 @@ def main(argv=None):
     pi.add_argument("accion", choices=["demo", "comprobar", "backtest", "sesion", "cerrar-todo"])
     pi.add_argument("--dias", type=int, default=30)
     pm = sub.add_parser("medio", help="Agente B: inversión a 12 meses")
-    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas"])
+    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas", "fuentes"])
     pm.add_argument("ticker", nargs="?")
     pm.add_argument("--max", type=int, default=None, help="máximo de empresas a analizar (para pruebas)")
     pm.add_argument("--parte", type=int, default=1, help="oportunidades: qué trozo del universo descargar (1..N)")
     pm.add_argument("--de", type=int, default=1, help="oportunidades: en cuántos trozos se reparte")
     pm.add_argument("--salida", help="oportunidades: solo descargar y guardar en este archivo .jsonl")
     pm.add_argument("--minutos", type=float, default=None, help="oportunidades: tiempo máximo de descarga")
+    pm.add_argument("--nombre", help="fuentes: nombre de la empresa para buscar sus ensayos clínicos")
     pm.add_argument("--entrada", help="oportunidades: carpeta con los .jsonl descargados para juntar y puntuar")
     sub.add_parser("diario", help="Escribe el diario del día")
     sub.add_parser("panel", help="Abre el panel web")
