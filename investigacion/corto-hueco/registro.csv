@@ -7,3 +7,4 @@ fecha_hora_ny,simbolo,accion,motivo,hueco,precio,importe_usd,stop,order_id,posit
 2026-11-15 09:50:08,AMSC,ensayo,"vendería en corto 6,667 $ a ~24.09 $ con stop 27.7265 $ (15 %); precio realtime",,24.09,6666.67,27.7265,,,
 2026-11-15 09:50:09,PGY,ensayo,"vendería en corto 6,667 $ a ~16.86 $ con stop 19.4005 $ (15 %); precio realtime",,16.86,6666.67,19.4005,,,
 2026-11-15 09:50:09,REPX,descartada,ya hay 3 operaciones hoy (máximo),,,,,,,
+2026-11-15 09:55:10,,nada,ninguna acción abre con hueco ≥ 50% y liquidez suficiente,,,,,,,
