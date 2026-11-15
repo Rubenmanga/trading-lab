@@ -57,8 +57,11 @@ const datos = {
   ranking,
   // Perfil «¿puede duplicar?»: el informe más reciente (o la lista provisional si aún no hay informe).
   duplicar: (markdowns("investigacion/duplicar", "INFORME")[0] || markdowns("investigacion/duplicar", "PROVISIONAL")[0] || null),
+  // Investigación «+500 %»: objetivos de analistas que multiplican por 6 (el informe más reciente).
+  quintuplicar: (markdowns("investigacion/quintuplicar", "INFORME")[0] || null),
   informes: [
     ...markdowns("investigacion/analisis").map((d) => ({ ...d, clase: "Empresa" })),
+    ...markdowns("investigacion/quintuplicar", "INFORME").map((d) => ({ ...d, clase: "+500 %" })),
     ...markdowns("investigacion", "oportunidades").map((d) => ({ ...d, clase: "Buscador" })),
     ...markdowns("investigacion", "sectores").map((d) => ({ ...d, clase: "Sectores" })),
     ...markdowns("investigacion", "repaso").map((d) => ({ ...d, clase: "Repaso" })),

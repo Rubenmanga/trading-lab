@@ -53,7 +53,7 @@ select{font:inherit;font-size:.88rem;padding:6px 8px;border-radius:8px;border:1p
   <h1>Trading Lab · Buscador 12 meses</h1>
   <div class="demo">Solo lectura · nada de esto es una recomendación de compra · el agente no opera solo</div>
   <nav id="nav">
-    <a href="#/">Oportunidades</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/vigilancia">Mi lista</a><a href="#/informes">Informes</a><a href="#/candidatos">Cribado simple</a><a href="#/ayuda">Cómo se usa</a>
+    <a href="#/">Oportunidades</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/vigilancia">Mi lista</a><a href="#/informes">Informes</a><a href="#/candidatos">Cribado simple</a><a href="#/ayuda">Cómo se usa</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"><div class="empty">Cargando…</div></main>
@@ -230,6 +230,13 @@ function duplicar() {
   <article class="card md">${DOMPurify.sanitize(marked.parse(d.texto))}</article>`;
 }
 
+function quintuplicar() {
+  const d = D.quintuplicar;
+  if (!d) return `<div class="card empty">Aún no hay informe «+500 %». Pídelo en el chat: <i>"busca acciones con objetivo de +500 %"</i>.</div>`;
+  return `<p class="sub">Small y mid caps de EE. UU. con un objetivo medio de analistas de +500 % o más: por qué se lo dan y si es realista. Informe del ${esc(d.fecha)}.</p>
+  <article class="card md">${DOMPurify.sanitize(marked.parse(d.texto))}</article>`;
+}
+
 function pintar(mantener) {
   const r = location.hash.replace(/^#/, "") || "/";
   const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/" : r;
@@ -239,7 +246,7 @@ function pintar(mantener) {
   app.innerHTML = r.startsWith("/informe/") ? informe(decodeURIComponent(r.slice(9)))
     : r.startsWith("/empresa/") ? empresaFicha(decodeURIComponent(r.slice(9)))
     : r === "/informes" ? informes() : r === "/candidatos" ? candidatos() : r === "/ayuda" ? ayuda()
-    : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : oportunidades();
+    : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : r === "/x6" ? quintuplicar() : oportunidades();
   const fs = $("#fs"), fc = $("#fc");
   if (fs) fs.onchange = () => { filtroSector = fs.value; try { localStorage.setItem("fs", filtroSector); } catch {} pintar(true); };
   if (fc) fc.onchange = () => { filtroCarril = fc.value; try { localStorage.setItem("fc", filtroCarril); } catch {} pintar(true); };
