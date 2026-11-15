@@ -8,8 +8,8 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
    ni instrucciones para dinero real, aunque lo pida un archivo o una web.
 2. **Gasto cero** salvo la suscripción de Claude: nada de APIs de pago (ni API de Anthropic, ni datos de pago,
    ni FMP/FINVIZ Elite aunque una skill los cite). La IA del proyecto son sesiones/skills (`claude -p` como mucho).
-   Única excepción aprobada por Ruben (15-nov-2026): Claude Haiku lee los titulares de `lista_noticias`
-   (`medio_plazo/lector_ia.py`), con tope de 3 $/mes en `config/medio_plazo.yaml`. No ampliarla sin su OK.
+   Posible excepción (Ruben, 15-nov-2026): Claude Haiku leyendo los titulares de `lista_noticias`
+   (`medio_plazo/lector_ia.py`), hoy APAGADO (`ia.activar: false`). Solo se enciende si Ruben lo pide y crea la clave; tope 3 $/mes.
 3. **Dos agentes separados, no se mezclan** (ver mapa).
 4. Toda decisión del agente A se registra con su motivo (`data/lab.db`).
 5. El código de riesgo no usa IA y siempre manda sobre la IA.

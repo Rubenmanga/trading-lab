@@ -30,7 +30,7 @@ CAUSAS = [
     ("compra o fusión", r"\b(acquir\w*|merger|buyout|takeover|tender offer)\b", True),
     ("FDA / regulador", r"\b(fda|pdufa|ema|chmp|nda|bla|ind)\b|complete response|clinical hold|breakthrough therapy|fast track|orphan drug", True),
     ("ensayo clínico", r"\b(phase ?(1|2|3|i{1,3})[ab]?|trial|topline|endpoint|readout|clinical data|data from)\b", True),
-    ("resultados", r"\b(earnings|quarterly results|(first|second|third|fourth)[- ]quarter|q[1-4]|fiscal \d{4}|revenue|eps|guidance|outlook)\b", True),
+    ("resultados", r"\b(financial results|reports? .{0,40}results|earnings (results|report|call|miss|beat)|quarterly results|(first|second|third|fourth)[- ]quarter (results|earnings|financial)|q[1-4] (results|earnings)|(raises?|cuts?|lowers?|withdraws?) (full[- ]year )?guidance)\b", True),
     ("contrato o pedido", r"\b(contract|orders?|awarded|award|deal|agreement|partnership|collaboration|licens\w+|army|pentagon|dod|navy|air force)\b", False),
     ("analistas", r"\b(upgrades?|downgrades?|upgraded|downgraded|price target|initiat\w+ coverage|reiterat\w+|outperform|overweight|underweight|buy rating|sell rating|neutral rating)\b", False),
     ("directivos", r"\b(ceo|cfo|chief \w+ officer|appoints?|resign\w*|steps down|board of directors)\b", False),
@@ -265,7 +265,8 @@ def analizar(t: str, info: dict, d: dict, previo: dict, u: dict, ref: dict | Non
             catalizadores.append(f"Fecha regulatoria citada en titular: «{n['titulo'][:100]}»")
             break
 
-    importantes = [n for n in nuevas if n["importante"]]
+    reciente_desde = (date.today() - timedelta(days=3)).isoformat()
+    importantes = [n for n in nuevas if n["importante"] and n["fecha"] >= reciente_desde]
     avisos = []
     if grande:
         avisos.append(dict(tipo="MOVIMIENTO GRANDE",
@@ -281,6 +282,8 @@ def analizar(t: str, info: dict, d: dict, previo: dict, u: dict, ref: dict | Non
     nuevos_avisos = [a for a in avisos if f"{a['tipo']}|{a['texto'][:50]}" not in avisados]
     if any(a["tipo"] == "MOVIMIENTO GRANDE" for a in avisos) and any(x.startswith("MOVIMIENTO GRANDE|") for x in avisados):
         nuevos_avisos = [a for a in nuevos_avisos if a["tipo"] != "MOVIMIENTO GRANDE"]  # ya avisado hoy
+    if primera:   # primer día de esta empresa: solo se toma nota de lo que ya había, no se avisa de todo a la vez
+        nuevos_avisos = []
     avisados |= {f"{a['tipo']}|{a['texto'][:50]}" for a in avisos}
 
     problemas = []

@@ -83,7 +83,7 @@ lista_noticias:
   incluir_vigilancia: true    # añade cada día las empresas de investigacion/watchlist.csv
   incluir_ranking_top: 10     # y las 10 mejores ideas del buscador (de estas solo avisa si hay noticia importante)
   ia:                         # lectura de titulares con Claude Haiku (elegido por Ruben el 15-nov; ~1-2 $ al mes)
-    activar: true             # solo funciona si existe el secreto ANTHROPIC_API_KEY en GitHub
+    activar: false            # APAGADO (decisión de Ruben 15-nov). Para encender: true + secreto ANTHROPIC_API_KEY en GitHub
     tope_mensual_usd: 3       # al llegar a este gasto en el mes, deja de llamar a Haiku hasta el mes siguiente
   empresas:
     ALT:  {nombre: "Altimmune", sector: salud, referencia: XBI}

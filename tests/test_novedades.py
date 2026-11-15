@@ -1,3 +1,5 @@
+from datetime import date
+
 from tradinglab.medio_plazo import novedades as nv
 
 U = dict(umbral_movimiento_pct=8, umbral_sigmas=2.5, umbral_minimo_pct=3, umbral_volumen=2.5, mercado="SPY")
@@ -103,3 +105,14 @@ def test_universo_suma_vigilancia_e_ideas(tmp_path, monkeypatch):
     (tmp_path / "investigacion/ranking.json").write_text(json.dumps({"filas": [{"ticker": "REPX", "empresa": "Riley", "sector": "Energy"}]}))
     u = nv.universo(dict(empresas={"ALT": {"nombre": "Altimmune"}}, incluir_ranking_top=5))
     assert u["ALT"]["grupo"] == "cartera" and u["AMSC"]["grupo"] == "vigilancia" and u["REPX"]["referencia"] == "XLE"
+
+
+def test_primer_dia_no_avisa_de_todo_y_resultados_no_es_tan_amplio():
+    assert "resultados" not in nv.clasificar("Microsoft revenue outlook for cloud")["causas"]
+    assert "resultados" in nv.clasificar("Altimmune Q3 earnings miss, stock sinks")["causas"]
+    base = [10 + (0.1 if i % 2 else -0.1) for i in range(30)]
+    v = _velas(base + [10.0])
+    d = dict(velas=v, finnhub={"noticias": [dict(fecha=date.today().isoformat(), titulo="Company prices public offering of shares", fuente="x", url="")]},
+             alpaca=[], sec=None, ensayos=None)
+    e = nv.analizar("ALT", dict(nombre="Altimmune"), d, {}, U, None, None)
+    assert e["avisos"] and e["avisos_nuevos"] == []
