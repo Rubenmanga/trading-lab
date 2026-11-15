@@ -46,6 +46,9 @@ function markdowns(carpeta, tipo) {
 
 let ranking = null;
 try { ranking = JSON.parse(leer("investigacion", "ranking.json") || "null"); } catch { ranking = null; }
+let seguimiento = null;
+try { seguimiento = JSON.parse(leer("investigacion", "seguimiento.json") || "null"); } catch { seguimiento = null; }
+if (seguimiento) for (const t of Object.keys(seguimiento.empresas || {})) { seguimiento.empresas[t].texto = leer("investigacion/seguimiento", `${t}.md`) || ""; seguimiento.empresas[t].notas = leer("investigacion/seguimiento", `${t}-notas.md`) || ""; }
 let estado = null;
 try { estado = JSON.parse(leer("investigacion", "estado.json") || "null"); } catch { estado = null; }
 
@@ -54,6 +57,7 @@ const datos = {
   watchlist: csv(leer("investigacion", "watchlist.csv")),
   candidatos: csv(leer("investigacion", "candidatos.csv")),
   estado,
+  seguimiento,
   ranking,
   // Perfil «¿puede duplicar?»: el informe más reciente (o la lista provisional si aún no hay informe).
   duplicar: (markdowns("investigacion/duplicar", "INFORME")[0] || markdowns("investigacion/duplicar", "PROVISIONAL")[0] || null),

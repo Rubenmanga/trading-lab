@@ -57,6 +57,8 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 ## Workflows de GitHub Actions (no romper sus rutas)
 - `agente-12m.yml`: L-V noche y domingo. Ranking diario, alertas, cribado → `investigacion/` (`ranking.*`,
   `estado.json`, `alertas.md`, `candidatos.csv`). Abre un issue si hay algo importante.
+- `seguimiento-noticias.yml`: L-V cada 2 h en bolsa. Lista de noticias de Ruben (`config/medio_plazo.yaml` → `lista_noticias`,
+  `lab medio noticias`, módulo `medio_plazo/novedades.py`) → `investigacion/seguimiento/lista.md` + issue si hay aviso nuevo.
 - `estudio-intradia.yml`: backtest histórico → `investigacion/estrategias/`.
 - `perfil-duplicar.yml`: perfil duplicar → `investigacion/duplicar/`.
 - `publicar-investigacion.yml`: si un PR toca **solo** `investigacion/`, se fusiona y publica solo en el panel.

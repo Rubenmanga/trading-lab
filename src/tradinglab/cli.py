@@ -14,6 +14,8 @@
   lab medio cribado         Cribado sencillo antiguo (solo potencial según analistas)
   lab medio ficha TICKER    Datos de una empresa (los usa la skill de análisis)
   lab medio alertas         Revisa la lista de vigilancia y avisa
+  lab medio seguimiento     Seguimiento diario de las empresas en config (momento de entrada + lista de noticias)
+  lab medio noticias        Solo la lista de noticias (revisión rápida cada 2 h en horario de bolsa)
   lab panel                 Abre el panel web
 """
 from __future__ import annotations
@@ -131,6 +133,17 @@ def _medio(args):
         for a in lista:
             print(f"[{a['tipo']}] {a['mensaje']}")
         print(f"{len(lista)} alertas. Guardadas en {path}")
+    elif args.accion == "noticias":
+        from .medio_plazo import seguimiento
+        res = seguimiento.solo_lista(cfg)
+        for t, e in {**(res.get("lista") or {}).get("empresas", {}), **(res.get("lista") or {}).get("materias_primas", {})}.items():
+            print(f"{t}: {e.get('cambio_pct')} % · {e.get('resumen')} · {'; '.join(a['texto'] for a in e.get('avisos_nuevos', []))}")
+    elif args.accion == "seguimiento":
+        from .medio_plazo import seguimiento
+        res = seguimiento.ejecutar(cfg)
+        for t, e in res["empresas"].items():
+            print(f"{t} {e.get('fecha')}: {e['estado']} · cierre {e.get('cierre')} · RSI {e.get('rsi')} · "
+                  + "; ".join(a["texto"] for a in e.get("avisos", [])))
 
 
 def _estudio(args):
@@ -180,7 +193,7 @@ def main(argv=None):
     pi.add_argument("accion", choices=["demo", "comprobar", "backtest", "sesion", "cerrar-todo"])
     pi.add_argument("--dias", type=int, default=30)
     pm = sub.add_parser("medio", help="Agente B: inversión a 12 meses")
-    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas", "fuentes"])
+    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas", "fuentes", "seguimiento", "noticias"])
     pm.add_argument("ticker", nargs="?")
     pm.add_argument("--max", type=int, default=None, help="máximo de empresas a analizar (para pruebas)")
     pm.add_argument("--parte", type=int, default=1, help="oportunidades: qué trozo del universo descargar (1..N)")
