@@ -22,7 +22,9 @@ def stats_ops(df: pd.DataFrame) -> dict:
         return dict(operaciones=0)
     R = df["R"]
     gan, per = R[R > 0].sum(), -R[R < 0].sum()
+    sin = df["R_sin_costes"] if "R_sin_costes" in df else None
     return dict(operaciones=int(len(df)), aciertos=float((R > 0).mean()), R_medio=float(R.mean()),
+                R_medio_sin_costes=float(sin.mean()) if sin is not None else None,
                 R_mediana=float(R.median()), R_total=float(R.sum()),
                 profit_factor=float(gan / per) if per > 0 else None,
                 salidas={k: int(v) for k, v in df["motivo"].value_counts().items()})
@@ -146,7 +148,8 @@ def markdown(res: dict, fecha: str) -> str:
         t, c = v["total"], v.get("cartera", {})
         L += ["", f"## ORB · variante «{nombre}»", "",
               f"- Operaciones: **{t['operaciones']}** · aciertos **{_pct(t.get('aciertos'), 0)}** · R medio **{_num(t.get('R_medio'), 3)}** · "
-              f"profit factor **{_num(t.get('profit_factor'))}**.",
+              f"profit factor **{_num(t.get('profit_factor'))}** · R medio **sin costes** {_num(t.get('R_medio_sin_costes'), 3)} "
+              f"(la diferencia es lo que se comen deslizamiento y comisiones).",
               f"- Solo compras: R medio {_num(v['compras'].get('R_medio'), 3)} ({v['compras']['operaciones']} ops) · "
               f"solo ventas: R medio {_num(v['ventas'].get('R_medio'), 3)} ({v['ventas']['operaciones']} ops).",
               f"- Cartera: rentabilidad total **{_pct(c.get('rentabilidad_total'), 0)}**, anual **{_pct(c.get('cagr'))}**, "

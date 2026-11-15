@@ -159,3 +159,24 @@ def test_simbolos_raros_y_400():
 def test_ticker_na_no_es_un_vacio(tmp_path):
     pd.DataFrame(dict(fecha=["2025-01-02"], simbolo=["NA"], variante=["original"], R=[1.0])).to_csv(tmp_path / "x.csv", index=False)
     assert pd.read_csv(tmp_path / "x.csv", converters={"simbolo": str})["simbolo"][0] == "NA"
+
+
+def test_ruptura_a_mitad_de_vela_no_cuenta_lo_de_antes():
+    # Vela verde que abre en 10, baja a 9,9, sube a 10,3 y cierra en 10,25. Entramos al romper 10,1
+    # con stop en 10,05: el mínimo (9,9) fue ANTES de entrar, así que no salta el stop.
+    b = velas_dia(precios=[(10, 10.3, 9.9, 10.25), 10.25, 10.3])
+    r = simular.gestionar(b, "compra", 10.1, 10.05, None, time(9, 32), None, SIN_COSTES, entrada_a_mitad=True)
+    assert r["motivo"] == "cierre forzado" and r["R"] > 0
+    # Sin esa corrección (supuesto prudente de siempre) contaría como stop
+    r2 = simular.gestionar(b, "compra", 10.1, 10.05, None, time(9, 32), None, SIN_COSTES)
+    assert r2["motivo"] == "stop"
+    # Vela roja: sube a 10,3 (entramos), luego cae a 9,9: ahí sí salta el stop
+    b = velas_dia(precios=[(10, 10.3, 9.9, 9.95), 10.0])
+    r3 = simular.gestionar(b, "compra", 10.1, 10.05, None, time(9, 32), None, SIN_COSTES, entrada_a_mitad=True)
+    assert r3["motivo"] == "stop"
+
+
+def test_r_sin_costes():
+    b = velas_dia(precios=[100, 101, 102, 103.5])
+    r = simular.gestionar(b, "compra", 100, 99, 103, time(12, 20), None, Costes(0.1, 0.01))
+    assert r["R_sin_costes"] == pytest.approx(3.0) and r["R"] < r["R_sin_costes"]
