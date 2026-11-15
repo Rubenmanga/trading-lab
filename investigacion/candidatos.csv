@@ -1,0 +1,61 @@
+ticker,empresa,sector,industria,precio,capitalizacion_musd,analistas,recomendacion,objetivo_medio,potencial_pct,prioritario
+AMPX,"Amprius Technologies, Inc.",Industrials,Electrical Equipment & Parts,7.93,1163,9,strong_buy,19.77778,149.4,sí
+ADEA,Adeia Inc.,Technology,Software - Application,16.22,1790,4,strong_buy,38.25,135.8,sí
+AEVA,"Aeva Technologies, Inc.",Technology,Software - Infrastructure,10.58,740,5,buy,24.8,134.4,sí
+INFQ,"Infleqtion, Inc.",Technology,Software - Infrastructure,8.48,1911,7,strong_buy,19.57143,130.8,sí
+AADX,"Applied Aerospace & Defense, In",Industrials,Aerospace & Defense,8.38,1445,8,strong_buy,19.0,126.7,sí
+PICS,PicS N.V.,Technology,Software - Infrastructure,7.42,962,9,strong_buy,16.756433,125.8,sí
+EROC,"ERock, Inc.",Industrials,Specialty Industrial Machinery,8.41,2325,8,strong_buy,18.875,124.4,sí
+APPS,"Digital Turbine, Inc.",Technology,Software - Application,7.61,928,5,strong_buy,17.0,123.4,sí
+TH,Target Hospitality Corp.,Industrials,Specialty Business Services,11.59,1135,5,strong_buy,24.4,110.5,sí
+AMSC,American Superconductor Corpora,Industrials,Specialty Industrial Machinery,24.13,1169,4,strong_buy,50.75,110.3,sí
+LPTH,"LightPath Technologies, Inc.",Technology,Electronic Components,6.84,479,4,strong_buy,14.375,110.2,sí
+AEHR,Aehr Test Systems,Technology,Semiconductor Equipment & Materials,56.98,1869,5,strong_buy,117.0,105.3,sí
+AVEX,AEVEX Corp.,Industrials,Aerospace & Defense,12.51,866,9,strong_buy,25.44444,103.4,sí
+SPIR,"Spire Global, Inc.",Industrials,Specialty Business Services,9.21,362,4,strong_buy,18.625,102.2,sí
+QNT,Quantinuum Inc.,Technology,Software - Application,35.4,9483,13,strong_buy,71.15385,101.0,sí
+ITG,"ITG, Inc.",Industrials,Engineering & Construction,5.68,1563,9,strong_buy,11.33333,99.5,sí
+PUMP,ProPetro Holding Corp.,Energy,Oil & Gas Equipment & Services,7.51,923,13,buy,14.88462,98.2,sí
+MEC,"Mayville Engineering Company, I",Industrials,Metal Fabrication,12.82,327,4,strong_buy,25.25,97.0,sí
+SECZ,Securitize Corp.,Technology,Software - Application,8.08,1319,7,strong_buy,15.8,95.5,sí
+YSS,York Space Systems Inc.,Industrials,Aerospace & Defense,5.78,784,12,buy,11.16667,93.2,sí
+MNTN,"MNTN, Inc.",Technology,Software - Application,5.04,382,9,buy,9.66667,91.8,sí
+QMCO,Quantum Corporation,Technology,Computer Hardware,15.34,607,3,strong_buy,29.33333,91.2,sí
+ICHR,Ichor Holdings,Technology,Semiconductor Equipment & Materials,35.72,1342,8,strong_buy,67.875,90.0,sí
+PSIX,"Power Solutions International, ",Industrials,Specialty Industrial Machinery,38.88,897,3,strong_buy,72.79,87.2,sí
+ROCK,"Gibraltar Industries, Inc.",Industrials,Building Products & Equipment,30.35,902,4,strong_buy,55.25,82.0,sí
+MNR,Mach Natural Resources LP,Energy,Oil & Gas E&P,9.03,1539,7,strong_buy,16.28571,80.4,sí
+OPFI,OppFi Inc.,Financial Services,Credit Services,5.94,852,4,buy,10.5275,77.2,sí
+TTI,"Tetra Technologies, Inc.",Energy,Oil & Gas Equipment & Services,6.39,948,4,strong_buy,10.875,70.2,sí
+GOLD,"Gold.com, Inc.",Financial Services,Capital Markets,36.22,1056,5,strong_buy,60.8,67.9,sí
+AGBK,AGI Inc,Financial Services,Banks - Regional,6.26,1633,11,strong_buy,10.440523,66.8,sí
+INR,"Infinity Natural Resources, Inc",Energy,Oil & Gas E&P,12.94,1400,9,strong_buy,21.11111,63.1,sí
+ETOR,eToro Group Ltd.,Financial Services,Capital Markets,22.5,1789,15,buy,36.6,62.7,sí
+PAX,Patria Investments Limited,Financial Services,Asset Management,9.17,1490,6,buy,14.83333,61.8,sí
+UPST,"Upstart Holdings, Inc.",Financial Services,Credit Services,19.56,1935,16,buy,31.1875,59.4,sí
+PWP,Perella Weinberg Partners,Financial Services,Capital Markets,13.26,1340,4,buy,21.0,58.4,sí
+VTOL,"Bristow Group, Inc.",Energy,Oil & Gas Equipment & Services,40.3,1173,3,strong_buy,63.0,56.3,sí
+ABX,"Abacus Global Management, Inc.",Financial Services,Insurance - Life,8.81,861,6,strong_buy,13.75,56.1,sí
+FTK,"Flotek Industries, Inc.",Energy,Oil & Gas Equipment & Services,25.33,919,6,strong_buy,39.41667,55.6,sí
+DEC,Diversified Energy Company,Energy,Oil & Gas Integrated,13.84,948,8,strong_buy,20.60754,48.9,sí
+EZPW,"EZCORP, Inc.",Financial Services,Credit Services,27.55,1690,5,buy,40.8,48.1,sí
+NEWT,"NewtekOne, Inc.",Financial Services,Banks - Regional,10.62,307,5,buy,15.2,43.1,sí
+TREE,"LendingTree, Inc.",Financial Services,Insurance Brokers,35.76,502,7,strong_buy,50.85714,42.2,sí
+OIG,Orion180 Insurance Group Inc.,Financial Services,Insurance - Property & Casualty,10.67,1057,5,buy,15.08,41.3,sí
+FLOC,Flowco Holdings Inc.,Energy,Oil & Gas Equipment & Services,21.28,1944,9,buy,29.77778,39.9,sí
+VTS,"Vitesse Energy, Inc.",Energy,Oil & Gas E&P,15.42,650,4,strong_buy,21.5,39.4,sí
+GEL,"Genesis Energy, L.P.",Energy,Oil & Gas Midstream,12.82,1567,3,strong_buy,17.66667,37.8,sí
+GRNT,"Granite Ridge Resources, Inc.",Energy,Oil & Gas E&P,6.3,831,5,buy,8.6,36.5,sí
+INVX,"Innovex International, Inc.",Energy,Oil & Gas Equipment & Services,25.3,1774,6,buy,34.16667,35.0,sí
+IMTX,Immatics N.V.,Healthcare,Biotechnology,6.39,973,7,strong_buy,15.97143,149.9,
+QURE,uniQure N.V.,Healthcare,Biotechnology,23.81,1670,11,strong_buy,59.440792,149.6,
+RAPP,"Rapport Therapeutics, Inc.",Healthcare,Biotechnology,26.15,1550,14,strong_buy,64.21429,145.6,
+ASMB,"Assembly Biosciences, Inc.",Healthcare,Biotechnology,21.12,432,5,strong_buy,51.2,142.4,
+MLTX,MoonLake Immunotherapeutics,Healthcare,Biotechnology,12.5,1064,14,buy,30.28571,142.3,
+ADRX,"ADARx Pharmaceuticals, Inc.",Healthcare,Biotechnology,14.2,1572,4,strong_buy,34.25,141.2,
+MUX,McEwen Inc.,Basic Materials,Other Precious Metals & Mining,11.9,733,5,strong_buy,28.4,138.7,
+TYRA,"Tyra Biosciences, Inc.",Healthcare,Biotechnology,20.025,1383,11,strong_buy,47.45455,137.0,
+NTLA,"Intellia Therapeutics, Inc.",Healthcare,Biotechnology,9.7,1361,18,buy,22.77778,134.8,
+VIR,"Vir Biotechnology, Inc.",Healthcare,Biotechnology,9.96,1706,8,strong_buy,23.375,134.7,
+AURA,"Aura Biosciences, Inc.",Healthcare,Biotechnology,7.11,740,5,strong_buy,16.6,133.5,
+PRE,Prenetics Global Limited,Consumer Defensive,Packaged Foods,16.51,322,9,strong_buy,38.44444,132.9,

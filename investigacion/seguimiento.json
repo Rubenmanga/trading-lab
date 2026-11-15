@@ -1,5 +1,57 @@
 {
- "empresas": {},
+ "actualizado": "2026-11-15T16:27:43+00:00",
+ "empresas": {
+  "ORIC": {
+   "niveles": {
+    "soporte": [
+     7.2,
+     7.5
+    ],
+    "confirmacion": 9.3,
+    "entrada_max": 8.5,
+    "stop": 6.5,
+    "objetivo": 13,
+    "tamano_max": "2 %",
+    "informe": "investigacion/analisis/ORIC-2026-11-14.md"
+   },
+   "fecha": "2026-11-13",
+   "cierre": 7.86,
+   "cambio_dia_pct": -7.5,
+   "ema9": 8.85,
+   "ma50": 11.56,
+   "ma200": 11.0,
+   "rsi": 31.4,
+   "volumen_rel": 0.51,
+   "minimo_52s": 7.23,
+   "maximo_52s": 14.68,
+   "divergencia": false,
+   "toca_soporte": false,
+   "vela_giro": false,
+   "estado": "ESPERAR",
+   "senales": [],
+   "avisos": [],
+   "pistas": [
+    "sigue por debajo de la EMA 9 (la caída no ha frenado)",
+    "baja con poco volumen (la venta se está secando)"
+   ],
+   "distancia_entrada_pct": -7.5,
+   "distancia_stop_pct": 20.9,
+   "distancia_confirmacion_pct": -15.5,
+   "potencial_pct": 65.4,
+   "proximos_resultados": null,
+   "historial": [
+    {
+     "fecha": "2026-11-13",
+     "cierre": 7.86,
+     "rsi": 31.4,
+     "ema9": 8.85,
+     "ma50": 11.56,
+     "volumen_rel": 0.51,
+     "estado": "ESPERAR"
+    }
+   ]
+  }
+ },
  "lista": {
   "fecha": "2026-11-13",
   "mercado": {
@@ -471,6 +523,15 @@
      },
      {
       "fecha": "2026-11-15",
+      "titulo": "Microsoft Ignite Starts Nov. 17. Will Microsoft Update Its Paid Copilot Seat Count?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=ded014e1a20cc2bd18b4f134761861977f0de329aa981aeef75030c6ead4a9aa",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-15",
       "titulo": "Want to Invest in Top Growth Stocks Like Amazon, Apple, and Microsoft but Avoid Nvidia? Consider This Low-Cost Vanguard ETF That’s Up 24.8% This Year.",
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=f0f2e8bf2db5dd4d82f1a1e145d5dc169d2ebfe544c1da76df578048f3228480",
@@ -587,17 +648,6 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "Cerebras Q3 Results: How Much More Proof Does Wall Street Need?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=93c59a185cf737cdbe0d38b9a890deaeee4684ee8e98120ccc9c03a3a3062821",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": true,
-      "importante": true
      }
     ],
     "vistos": [
@@ -627,6 +677,7 @@
      "insight enterprises inc nsit q3 2026 earnings call highlights aidriven",
      "iren is down 63 in a year is it time to sell or load up",
      "microsoft experiences widespread global service outage",
+     "microsoft ignite starts nov 17 will microsoft update its paid copilot",
      "microsoft just relived the crowdstrike nightmare but theres one crucia",
      "microsoft outage disrupts oil trader data and dealmaking",
      "microsoft outage hit more than outlook even its cybersecurity defenses",
@@ -653,7 +704,6 @@
      "sp 500 most active stocks nov 13 2026 session",
      "spacex hollows out its ai video division elon musk now has different p",
      "the price tag on jensen huangs resignation 639 billion and counting",
-     "update microsoft services continue to recover from global outage",
      "want to invest in top growth stocks like amazon apple and microsoft bu",
      "we are not immune nebius is still up 38 in 2026 take profits or buy mo",
      "what does dominion energy offer that nisource does not",
@@ -894,17 +944,6 @@
      },
      {
       "fecha": "2026-11-10",
-      "titulo": "RBC Capital Maintains Outperform on Definium Therapeutics, Raises Price Target to $70",
-      "fuente": "benzinga",
-      "url": "https://www.benzinga.com/news/26/11/63100391/rbc-capital-maintains-outperform-definium-therapeutics-raises-price-target-70",
-      "causas": [
-       "analistas"
-      ],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
       "titulo": "Definium Q3 Earnings: Psychedelics Approval Beckons But Valuation Seems Inflated",
       "fuente": "SeekingAlpha",
       "url": "https://finnhub.io/api/news?id=a125ad347b1f2ffc4afeac90107660bbadf222cad50c0966d87657dbbbdb5b9f",
@@ -913,6 +952,17 @@
       ],
       "nueva": true,
       "importante": true
+     },
+     {
+      "fecha": "2026-11-10",
+      "titulo": "RBC Capital Maintains Outperform on Definium Therapeutics, Raises Price Target to $70",
+      "fuente": "Benzinga",
+      "url": "https://finnhub.io/api/news?id=3955ee415bd4900f25b9c13f0d017a2b7dcf3c43760c66051a7e225a4a95073c",
+      "causas": [
+       "analistas"
+      ],
+      "nueva": true,
+      "importante": false
      },
      {
       "fecha": "2026-11-10",
@@ -2473,6 +2523,5 @@
     "avisos_nuevos": []
    }
   }
- },
- "actualizado": "2026-11-15T15:14:27+00:00"
+ }
 }

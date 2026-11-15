@@ -40,9 +40,9 @@ Cierre 523.88 (2026-11-13) · 5 días -1.3 % · lo normal en un día: ±2.3 %.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
   - 2026-11-15 · [Consumer Tech (Nov 9-13): Jensen Resigns From Nvidia Amid Affair Controvery, Microsoft Faces Massive Outage & More](https://www.benzinga.com/markets/tech/26/11/63277092/consumer-tech-nov-9-13-jensen-resigns-from-nvidia-amid-affair-controvery-microsoft-faces-massive-outage-more) [directivos]
+  - 2026-11-15 · [Microsoft Ignite Starts Nov. 17. Will Microsoft Update Its Paid Copilot Seat Count?](https://finnhub.io/api/news?id=ded014e1a20cc2bd18b4f134761861977f0de329aa981aeef75030c6ead4a9aa)
   - 2026-11-15 · [Want to Invest in Top Growth Stocks Like Amazon, Apple, and Microsoft but Avoid Nvidia? Consider This Low-Cost Vanguard ETF That’s Up 24.8% This Year.](https://finnhub.io/api/news?id=f0f2e8bf2db5dd4d82f1a1e145d5dc169d2ebfe544c1da76df578048f3228480)
   - 2026-11-15 · [IREN Is Down 63% in a Year. Is It Time to Sell, or Load Up?](https://finnhub.io/api/news?id=122179e2b3d503ee2b797ca3734c0d2c116793fbac4580d64f727cca92ff9087)
-  - 2026-11-15 · [Nvidia had no succession plan when Jensen Huang quit. Former Fortune 500 CEOs call it ‘preposterous’](https://finnhub.io/api/news?id=b912cf0856740e67e5b0758a47c6fa800dcf76c8438403927e152373e959f9d3)
 
 ## RAPP · Rapport Therapeutics — ▲ +1.2 % · volumen 0.2x lo normal
 Cierre 26.15 (2026-11-13) · 5 días +7.0 % · lo normal en un día: ±6.97 %.
