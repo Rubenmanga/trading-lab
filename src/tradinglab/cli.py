@@ -5,6 +5,9 @@
   lab intradia backtest     Prueba la estrategia con datos reales del pasado (Alpaca, gratis)
   lab intradia sesion       Sesión en vivo durante la ventana de trading
   lab intradia cerrar-todo  Botón del pánico: cierra todo en la cuenta demo
+  lab estudio universo      Estudio intradía (Alpaca, solo lectura): velas diarias -> candidatas
+  lab estudio tramo         ... velas de 1 min de las candidatas -> top gainers y operaciones ORB
+  lab estudio informe       ... junta todo y escribe el informe en investigacion/estrategias/
   lab diario                Escribe el diario del día en diario/
   lab medio oportunidades   Buscador: puntúa todas las small caps (8 factores) y guarda el ranking
   lab medio fuentes TICKER  Prueba las fuentes públicas gratis (SEC EDGAR, ClinicalTrials.gov, FRED)
@@ -130,6 +133,43 @@ def _medio(args):
         print(f"{len(lista)} alertas. Guardadas en {path}")
 
 
+def _estudio(args):
+    from pathlib import Path
+
+    import pandas as pd
+
+    from .common import config
+    from .intradia.estudio import informe
+
+    config.cargar_env()
+    cfg = config.cargar("estudio_intradia")
+    desde, hasta = args.desde or cfg["desde"], args.hasta or cfg["hasta"]
+    if args.accion == "informe":
+        res = informe.generar(Path(args.entrada), cfg)
+        hoy = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        md = informe.guardar(res, config.ruta("investigacion", "estrategias", "backtest"), hoy)
+        print(md.read_text(encoding="utf-8"))
+        return
+    from .intradia.estudio.alpaca_rest import Alpaca
+    cliente = Alpaca(por_minuto=args.por_minuto)
+    if args.accion == "universo":
+        from .intradia.estudio import universo
+        c = universo.descargar(cliente, desde, hasta, cfg, max_simbolos=args.max)
+        Path(args.salida).parent.mkdir(parents=True, exist_ok=True)
+        c.to_csv(args.salida, index=False)
+        print(f"{len(c)} candidatas ({int(c['A'].sum()) if len(c) else 0} A, {int(c['B'].sum()) if len(c) else 0} B) "
+              f"en {c['fecha'].nunique() if len(c) else 0} días · {cliente.llamadas} llamadas · feed {cliente.feed}")
+    elif args.accion == "tramo":
+        from .intradia.estudio import ejecutar
+        cands = pd.read_csv(args.candidatas)
+        g, o = ejecutar.procesar(cliente, cands, desde, hasta, cfg)
+        sal = Path(args.salida)
+        sal.mkdir(parents=True, exist_ok=True)
+        g.to_csv(sal / f"gainers-{args.nombre}.csv.gz", index=False)
+        o.to_csv(sal / f"orb-{args.nombre}.csv.gz", index=False)
+        print(f"Tramo {args.nombre}: {len(g)} filas gainers, {len(o)} operaciones ORB · {cliente.llamadas} llamadas")
+
+
 def main(argv=None):
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")  # para que Windows muestre bien las tildes
@@ -148,6 +188,16 @@ def main(argv=None):
     pm.add_argument("--minutos", type=float, default=None, help="oportunidades: tiempo máximo de descarga")
     pm.add_argument("--nombre", help="fuentes: nombre de la empresa para buscar sus ensayos clínicos")
     pm.add_argument("--entrada", help="oportunidades: carpeta con los .jsonl descargados para juntar y puntuar")
+    pe = sub.add_parser("estudio", help="Estudio intradía con datos históricos de Alpaca (solo lectura)")
+    pe.add_argument("accion", choices=["universo", "tramo", "informe"])
+    pe.add_argument("--desde")
+    pe.add_argument("--hasta")
+    pe.add_argument("--salida", default="datos_estudio")
+    pe.add_argument("--candidatas", default="datos_estudio/candidatas.csv.gz")
+    pe.add_argument("--entrada", default="datos_estudio")
+    pe.add_argument("--nombre", default="tramo")
+    pe.add_argument("--max", type=int, default=None, help="universo: máximo de símbolos (para pruebas)")
+    pe.add_argument("--por-minuto", type=int, default=None, help="llamadas por minuto a Alpaca (máx. 200 gratis)")
     sub.add_parser("diario", help="Escribe el diario del día")
     sub.add_parser("panel", help="Abre el panel web")
     args = p.parse_args(argv)
@@ -158,6 +208,8 @@ def main(argv=None):
         if args.accion in ("ficha", "probar") and not args.ticker:
             p.error("indica el ticker, por ejemplo: lab medio ficha ABCD")
         _medio(args)
+    elif args.grupo == "estudio":
+        _estudio(args)
     elif args.grupo == "diario":
         from .diario import escribir
         print("Diario guardado en", escribir())

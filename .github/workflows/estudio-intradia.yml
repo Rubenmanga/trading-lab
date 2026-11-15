@@ -1,0 +1,140 @@
+# Estudio intradía (agente A) con datos históricos GRATIS de Alpaca. Solo LEE datos: no envía órdenes.
+#  1) universo: velas diarias de todas las acciones de EE. UU. (también las deslistadas) -> candidatas de cada día
+#  2) tramos:   un año por máquina: velas de 1 minuto (con premercado) de las candidatas ->
+#               estudio de top gainers + operaciones ORB «acciones en juego» (3 variantes)
+#  3) informe:  junta todo y guarda el informe en investigacion/estrategias/ (sale en el panel)
+# Se lanza a mano: pestaña Actions -> "Estudio intradía" -> Run workflow. Tarda 1-2 horas.
+# En un pull request hace una prueba corta (unos días de 2025) y no guarda nada.
+name: Estudio intradía
+
+on:
+  workflow_dispatch:
+    inputs:
+      desde:
+        description: "Desde (AAAA-MM-DD)"
+        default: "2016-01-01"
+      hasta:
+        description: "Hasta (AAAA-MM-DD)"
+        default: "2026-11-13"
+  pull_request:
+    paths:
+      - ".github/workflows/estudio-intradia.yml"
+      - "src/tradinglab/intradia/estudio/**"
+      - "config/estudio_intradia.yaml"
+      - "tests/test_estudio_intradia.py"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: estudio-intradia
+  cancel-in-progress: false
+
+env:
+  PYTHONPATH: src
+  PYTHONUTF8: "1"
+  ALPACA_PAPER: "true"
+  ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+  ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+  DESDE: ${{ github.event_name == 'pull_request' && '2025-10-06' || inputs.desde }}
+  HASTA: ${{ github.event_name == 'pull_request' && '2025-10-10' || inputs.hasta }}
+
+jobs:
+  universo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    outputs:
+      anios: ${{ steps.plan.outputs.anios }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" requests "python-dotenv>=1" tzdata pytest
+      - name: Pruebas
+        run: python -m pytest -q tests/test_estudio_intradia.py tests/test_seguridad.py
+      - name: Años a repartir
+        id: plan
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          a, b = int(os.environ["DESDE"][:4]), int(os.environ["HASTA"][:4])
+          print("anios=" + json.dumps([str(x) for x in range(a, b + 1)]))
+          PY
+      - name: Velas diarias de todas las acciones -> candidatas
+        run: |
+          python -m tradinglab.cli estudio universo --desde "$DESDE" --hasta "$HASTA" \
+            --salida datos_estudio/candidatas.csv.gz --por-minuto 180 \
+            ${{ github.event_name == 'pull_request' && '--max 800' || '' }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidatas
+          path: datos_estudio/candidatas.csv.gz
+          retention-days: 7
+
+  tramos:
+    needs: universo
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      max-parallel: 3          # 3 máquinas x 60 llamadas/min = dentro del límite gratis de Alpaca (200/min)
+      matrix:
+        anio: ${{ fromJSON(needs.universo.outputs.anios) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" requests "python-dotenv>=1" tzdata
+      - uses: actions/download-artifact@v4
+        with:
+          name: candidatas
+          path: datos_estudio
+      - name: Velas de 1 minuto del año ${{ matrix.anio }} -> top gainers y ORB
+        run: |
+          A=${{ matrix.anio }}
+          D=$(python -c "import os;print(max(os.environ['DESDE'], '$A-01-01'))")
+          H=$(python -c "import os;print(min(os.environ['HASTA'], '$A-12-31'))")
+          python -m tradinglab.cli estudio tramo --desde "$D" --hasta "$H" --nombre "$A" \
+            --candidatas datos_estudio/candidatas.csv.gz --salida tramos --por-minuto 60
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tramo-${{ matrix.anio }}
+          path: tramos/
+          retention-days: 30
+
+  informe:
+    needs: tramos
+    if: always() && needs.tramos.result != 'skipped'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" requests "python-dotenv>=1" tzdata
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: tramo-*
+          path: datos_estudio
+          merge-multiple: true
+      - name: Informe
+        run: |
+          ls -la datos_estudio
+          python -m tradinglab.cli estudio informe --entrada datos_estudio
+          mkdir -p investigacion/estrategias/backtest/datos
+          cp datos_estudio/*.csv.gz investigacion/estrategias/backtest/datos/
+      - name: Guardar en el repo (sale en el panel)
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "estudio-intradia"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add investigacion/estrategias
+          git diff --cached --quiet || git commit -m "Estudio intradía: backtest ORB y top gainers ($DESDE a $HASTA)"
+          git pull --rebase --autostash -q || true
+          git push

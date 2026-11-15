@@ -18,7 +18,7 @@ técnicos la primera vez que salgan.
 5. El código de riesgo no usa IA y siempre manda sobre la IA.
 
 ## Comandos
-`lab intradia demo|comprobar|backtest|sesion|cerrar-todo`, `lab diario`,
+`lab intradia demo|comprobar|backtest|sesion|cerrar-todo`, `lab estudio universo|tramo|informe` (backtest histórico ORB + top gainers, lo corre `estudio-intradia.yml`), `lab diario`,
 `lab medio oportunidades|probar TICKER|fuentes TICKER|cribado|ficha TICKER|alertas`, `lab panel`. Tests: `pytest`.
 
 ## Skills del proyecto (`.claude/skills/`)
