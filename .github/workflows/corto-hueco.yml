@@ -1,0 +1,89 @@
+# Agente A · «corto del hueco» en eToro DEMO (nunca dinero real: el código solo conoce rutas /demo/).
+# Lunes a viernes: varias ejecuciones alrededor de la apertura (cubren horario de verano/invierno y retrasos
+# de GitHub). Solo la que cae entre las 9:00 y las 9:50 de Nueva York trabaja; las demás salen en segundos.
+# Cierre: a partir de las 15:45 NY. A mano: Actions -> "Corto del hueco" -> Run workflow (ensayo = sin órdenes).
+name: Corto del hueco
+
+on:
+  schedule:
+    - cron: "12 13 * * 1-5"   # apertura (verano: 9:12 NY)
+    - cron: "32 13 * * 1-5"   # apertura (verano: 9:32 NY, por si la anterior se retrasa)
+    - cron: "7 14 * * 1-5"    # apertura (invierno: 9:07 NY)
+    - cron: "27 14 * * 1-5"   # apertura (invierno: 9:27 NY)
+    - cron: "47 19 * * 1-5"   # cierre (verano: 15:47 NY)
+    - cron: "57 19 * * 1-5"   # cierre (verano, repaso)
+    - cron: "47 20 * * 1-5"   # cierre (invierno: 15:47 NY)
+    - cron: "57 20 * * 1-5"   # cierre (invierno, repaso)
+  workflow_dispatch:
+    inputs:
+      accion:
+        description: "operar o cerrar"
+        default: "operar"
+      ensayo:
+        description: "true = todo menos enviar órdenes"
+        default: "true"
+      simbolos:
+        description: "ensayo: tickers a mirar aunque no tengan hueco (ej. AMSC,PGY)"
+        default: ""
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: corto-hueco
+  cancel-in-progress: false
+
+env:
+  PYTHONPATH: src
+  PYTHONUTF8: "1"
+  ALPACA_PAPER: "true"
+  ETORO_DEMO: "true"
+  ALPACA_FEED: sip
+  ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+  ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+  ETORO_API_KEY: ${{ secrets.ETORO_API_KEY }}
+  ETORO_USER_KEY: ${{ secrets.ETORO_USER_KEY }}
+
+jobs:
+  corto:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet "pyyaml>=6" "pandas>=2" requests "python-dotenv>=1" tzdata
+      - name: Operar o cerrar
+        env:
+          ACCION: ${{ github.event_name == 'schedule' && (contains(github.event.schedule, ' 19 ') || contains(github.event.schedule, ' 20 ')) && 'cerrar' || inputs.accion || 'operar' }}
+          ENSAYO: ${{ github.event_name == 'workflow_dispatch' && inputs.ensayo || 'false' }}
+          SIMBOLOS: ${{ inputs.simbolos }}
+        run: |
+          git pull -q --rebase origin main || true
+          args="$ACCION"
+          [ "$ENSAYO" = "true" ] && args="$args --ensayo"
+          [ -n "$SIMBOLOS" ] && args="$args --simbolos $SIMBOLOS"
+          echo "lab corto $args"
+          python -m tradinglab.cli corto $args | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Aviso al móvil (issue) si hay algo que contar
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          f=investigacion/corto-hueco/aviso.md
+          if [ -f "$f" ]; then
+            gh label create corto-hueco --color D93F0B --description "Avisos del corto del hueco (demo)" 2>/dev/null || true
+            gh issue create --title "Corto del hueco (demo) · $(TZ=America/New_York date +%F)" --body-file "$f" --label corto-hueco || true
+            rm -f "$f"
+          fi
+      - name: Guardar registro en el repo
+        if: always()
+        run: |
+          git config user.name "corto-hueco"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add investigacion/corto-hueco 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Corto del hueco (demo): registro $(TZ=America/New_York date '+%F %H:%M') NY"
+          for i in 1 2 3 4; do git pull -q --rebase origin main && git push -q && break; sleep $((i*5)); done
