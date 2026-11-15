@@ -49,9 +49,13 @@ CONCEPTOS = {
     "beneficios_retenidos": ["RetainedEarningsAccumulatedDeficit"],
     "cobros_pendientes": ["AccountsReceivableNetCurrent", "ReceivablesNetCurrent"],
     "inmovilizado": ["PropertyPlantAndEquipmentNet"],
+    "caja": ["CashAndCashEquivalentsAtCarryingValue",
+             "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents", "Cash"],
+    "inversiones_cp": ["ShortTermInvestments", "MarketableSecuritiesCurrent", "AvailableForSaleSecuritiesDebtSecuritiesCurrent"],
+    "capex": ["PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets"],
 }
 BALANCE = {"activos", "activo_corriente", "pasivo_corriente", "pasivo", "patrimonio", "deuda_lp",
-           "beneficios_retenidos", "cobros_pendientes", "inmovilizado"}
+           "beneficios_retenidos", "cobros_pendientes", "inmovilizado", "caja", "inversiones_cp"}
 FORMULARIOS_ANUALES = ("10-K", "10-K/A", "10-KT", "20-F", "20-F/A", "40-F", "40-F/A")
 
 
@@ -207,10 +211,10 @@ def beneish_m(e0: dict, e1: dict | None) -> float | None:
             + 4.679 * tata - 0.327 * lvgi)
 
 
-def metricas(facts: dict, fecha: date | None = None) -> dict:
-    """Todo lo que se sabía a `fecha` (por defecto hoy). Las claves llevan prefijo para el ranking."""
+def metricas(facts: dict, fecha: date | None = None, ej: list[dict] | None = None) -> dict:
+    """Todo lo que se sabía a `fecha` (por defecto hoy). `ej` = ejercicios ya calculados (para no repetir)."""
     fecha = fecha or date.today()
-    ej = ejercicios(facts, fecha)
+    ej = ejercicios(facts, fecha) if ej is None else ej
     if not ej:
         return {}
     e0, e1, e2 = ej[0], (ej[1] if len(ej) > 1 else None), (ej[2] if len(ej) > 2 else None)
