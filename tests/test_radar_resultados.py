@@ -50,3 +50,13 @@ def test_previos_y_analisis():
     assert base["reaccion"]["n"] == 500
     assert rr.veredicto(base, base) in ("no se nota", "pocos casos")
     assert "Radar de resultados" in rr.informe(res)
+
+
+def test_informe_incluye_cortes_nuevos():
+    v = _velas()
+    evs = []
+    for k in (260, 280, 300, 320, 340):
+        evs.append(rr.construir_evento(v, v[k]["fecha"], 17, 3.0, evs))
+    res = rr.analizar(evs * 100)
+    assert "Todas las presentaciones (referencia)" in res["deriva_base"] and "Superó por poco (0 a 5 %)" in res["por_sorpresa"]
+    assert "Según cuánto superó" in rr.informe(res)

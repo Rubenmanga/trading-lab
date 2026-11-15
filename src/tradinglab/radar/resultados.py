@@ -198,6 +198,22 @@ def analizar(eventos: list[dict]) -> dict:
             deriva_20d_tras_subida=_stats([e["deriva_20d"] for e in sel if e["reaccion"] >= 5 and e["supero"]]),
             deriva_20d_tras_trampa=_stats([e["deriva_20d"] for e in sel if e["trampa"]]),
         )
+    cubos = [("No superó las previsiones", lambda e: e["sorpresa_pct"] <= 0),
+             ("Superó por poco (0 a 5 %)", lambda e: 0 < e["sorpresa_pct"] <= 5),
+             ("Superó bastante (5 a 20 %)", lambda e: 5 < e["sorpresa_pct"] <= 20),
+             ("Superó muchísimo (más de 20 %)", lambda e: e["sorpresa_pct"] > 20)]
+    res["por_sorpresa"] = {}
+    for nombre, f in cubos:
+        sel = [e for e in ev if f(e)]
+        res["por_sorpresa"][nombre] = dict(reaccion=_stats([e["reaccion"] for e in sel]),
+                                           deriva_20d=_stats([e["deriva_20d"] for e in sel]))
+    por_reac = [("Cayó más de 5 %", lambda e: e["reaccion"] < -5), ("Cayó entre 0 y 5 %", lambda e: -5 <= e["reaccion"] < 0),
+                ("Subió entre 0 y 5 %", lambda e: 0 <= e["reaccion"] < 5), ("Subió 5 % o más", lambda e: e["reaccion"] >= 5)]
+    res["deriva_base"] = {"Todas las presentaciones (referencia)": _stats([e["deriva_20d"] for e in ev])}
+    for sup, tag in ((True, "Superó"), (False, "No superó")):
+        for nombre, f in por_reac:
+            sel = [e for e in ev if e["supero"] == sup and f(e)]
+            res["deriva_base"][f"{tag} y {nombre.lower()}"] = _stats([e["deriva_20d"] for e in sel])
     return res
 
 
@@ -256,6 +272,18 @@ def informe(res: dict, fallos: list[str] | None = None) -> str:
         s = r0[k]
         if s.get("n"):
             l.append(f"| {etiqueta} | {s['n']} | {s['media']:+} % | {s['aciertos']} % | {s['peor10']} % |")
+    l += ["", "## Según cuánto superó las previsiones",
+          "| Sorpresa | Casos | Reacción media | Aciertos | Deriva 20 sesiones |", "|---|---|---|---|---|"]
+    for nombre, x in res.get("por_sorpresa", {}).items():
+        r, d = x["reaccion"], x["deriva_20d"]
+        if r.get("n"):
+            l.append(f"| {nombre} | {r['n']} | {r['media']:+} % | {r['aciertos']} % | {d.get('media', '—')} % |")
+    l += ["", "## Deriva a 20 sesiones según resultado y reacción (comparada con TODAS)",
+          "Si una fila no supera claramente a la referencia, esperar a ver la reacción no da ventaja.", "",
+          "| Situación | Casos | Deriva media | Aciertos | Peor 10 % |", "|---|---|---|---|---|"]
+    for nombre, s_ in res.get("deriva_base", {}).items():
+        if s_.get("n"):
+            l.append(f"| {nombre} | {s_['n']} | {s_['media']:+} % | {s_['aciertos']} % | {s_['peor10']} % |")
     l += ["", "## Qué NO se pudo probar",
           "- Revisiones de analistas, valoración frente al precio objetivo y ventas en corto: no hay histórico gratuito de esos datos tal como se veían entonces.",
           "- Costes de comprar y vender (en small caps el hueco entre compra y venta puede comerse parte de la ganancia).", ""]

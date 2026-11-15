@@ -236,6 +236,8 @@ def _radar(args):
         res = rr.analizar(evs)
         sal = config.ruta("investigacion", "radar")
         sal.mkdir(parents=True, exist_ok=True)
+        import pandas as pd
+        pd.DataFrame(evs).to_csv(sal / "eventos-resultados.csv.gz", index=False)   # datos para reutilizar en otras pruebas
         (sal / "prueba-resultados.md").write_text(rr.informe(res, fallos), encoding="utf-8")
         (sal / "prueba-resultados.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
         print((sal / "prueba-resultados.md").read_text(encoding="utf-8"))
