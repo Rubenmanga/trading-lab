@@ -1,0 +1,67 @@
+# ============================================================
+#  ESTUDIO INTRADÍA con datos históricos de Alpaca (solo LEE datos, no opera)
+#  Lo ejecuta GitHub Actions: pestaña Actions -> "Estudio intradía" -> Run workflow
+# ============================================================
+
+modo_cuenta: demo          # obligatorio en este proyecto (solo se leen datos)
+
+desde: "2016-01-01"
+hasta: "2026-11-13"
+
+# A) Estudio de top gainers: ¿por qué suben y qué pasa desde la apertura?
+gainers:
+  subida_min: 0.15          # "top gainer" = sube un 15 % o más en el día (cierre contra cierre)
+  hueco_apertura_min: 0.08  # también se estudian las que ABREN un 8 % o más por encima (se ven a las 9:30)
+  precio_min: 1.0           # se dejan fuera las de menos de 1 $
+  min_dolares_dia: 200000   # y las que casi no se negocian (volumen medio x precio)
+
+# Reglas del agente A para probarlas en las top gainers (compra a las 9:35)
+reglas_agente_a:
+  stop_pct: 1.0
+  rr: 3.0
+  cierre_forzado: "12:20"
+  trailing: {activo: true, activar_en_R: 1.0, distancia_pct: 1.0}
+
+# B) ORB en "acciones en juego" (Zarattini, Barbon y Aziz, 2024)
+orb:
+  precio_min: 5.0
+  vol_medio_min: 1000000    # acciones al día (media de 14 días)
+  atr_min: 0.5              # ATR = cuánto se mueve de media al día, en $
+  prefiltro_por_dia: 40     # de cada día se miran las 40 con más hueco (arriba o abajo)
+  minutos: 5                # rango de apertura: los 5 primeros minutos
+  top: 20                   # acciones en juego = las 20 con más volumen relativo en esos 5 minutos
+  variantes:
+    original:               # como en el estudio: stop a 10 % del ATR, se sale al cierre, compras y ventas
+      stop: atr
+      stop_atr: 0.10
+      fin_entradas: "16:00"
+      cierre: "15:59"
+      cortos: true
+    original_solo_compras:
+      stop: atr
+      stop_atr: 0.10
+      fin_entradas: "16:00"
+      cierre: "15:59"
+      cortos: false
+    agente_a:               # con las reglas de nuestro agente A
+      top: 4
+      stop: pct
+      stop_pct: 1.0
+      rr: 3.0
+      trailing: {activo: true, activar_en_R: 1.0, distancia_pct: 1.0}
+      fin_entradas: "11:30"
+      cierre: "12:20"
+      cortos: true
+
+# Cartera para el resultado en % (como en el estudio: 1 % de riesgo por operación, apalancamiento máx. 4)
+cartera:
+  original: {riesgo_pct: 1.0, apalancamiento_max: 4.0}
+  original_solo_compras: {riesgo_pct: 1.0, apalancamiento_max: 4.0}
+  agente_a: {riesgo_pct: 0.5, exposicion_max: 0.25, apalancamiento_max: 1.0}   # como config/intradia.yaml
+
+costes:
+  desliz_pct: 0.05          # deslizamiento por lado: más alto que en el agente A porque son acciones muy movidas
+  por_accion: 0.0035        # $ por acción y lado (lo mismo que supone el estudio)
+
+noticias:
+  muestra_por_tramo: 150    # por año: cuántas top gainers se clasifican por su noticia (API de noticias de Alpaca)
