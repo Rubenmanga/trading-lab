@@ -137,3 +137,20 @@ def test_clasificar_titulares():
     assert ejecutar.clasificar(["XYZ to be acquired by Big Pharma for $12 per share"]) == "fusión o compra"
     assert ejecutar.clasificar(["XYZ reports third quarter results"]) == "resultados"
     assert ejecutar.clasificar(["XYZ announces $5M registered direct offering"]) == "ampliación de capital"
+
+
+def test_simbolos_raros_y_400():
+    import requests
+    vals = [dict(symbol="AAPL", exchange="NASDAQ"), dict(symbol="0029900E0", exchange="NASDAQ"),
+            dict(symbol="BRK.B", exchange="NYSE"), dict(symbol="XYZ", exchange="OTC")]
+    assert universo.simbolos_validos(vals) == ["AAPL"]
+
+    class C:
+        def velas(self, sims, *a):
+            if "MALO" in sims:
+                r = requests.Response()
+                r.status_code = 400
+                raise requests.HTTPError(response=r)
+            return pd.DataFrame(dict(simbolo=sims))
+    df = universo.velas_seguras(C(), ["A", "B", "MALO", "C"], "1Day", None, None)
+    assert sorted(df["simbolo"]) == ["A", "B", "C"]

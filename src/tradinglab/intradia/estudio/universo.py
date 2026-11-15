@@ -8,19 +8,21 @@ precio de apertura), así que no hay trampa de "mirar el futuro".
 """
 from __future__ import annotations
 
+import re
 from datetime import datetime, timedelta, timezone
 
 import numpy as np
 import pandas as pd
 
 BOLSAS = {"NYSE", "NASDAQ", "AMEX", "ARCA", "BATS", "NYSEARCA"}
+TICKER = re.compile(r"^[A-Z]{1,5}$")  # las inactivas traen códigos raros (CUSIP, derechos...): fuera
 
 
 def simbolos_validos(valores: list[dict]) -> list[str]:
     out = set()
     for a in valores:
         s = str(a.get("symbol", ""))
-        if a.get("exchange") not in BOLSAS or not s or "/" in s or "." in s or " " in s:
+        if a.get("exchange") not in BOLSAS or not TICKER.match(s):
             continue
         out.add(s)
     return sorted(out)
@@ -61,6 +63,24 @@ def candidatas(r: pd.DataFrame, cfg: dict) -> pd.DataFrame:
     return out[out["A"] | out["B"]].reset_index(drop=True)
 
 
+def velas_seguras(cliente, sims: list[str], timeframe: str, ini, fin) -> pd.DataFrame:
+    """Como cliente.velas, pero si Alpaca rechaza la lista (400: algún símbolo no válido),
+    la parte en dos hasta aislar y saltar el símbolo malo."""
+    import requests
+    try:
+        return cliente.velas(sims, timeframe, ini, fin)
+    except requests.HTTPError as e:
+        if e.response is None or e.response.status_code != 400:
+            raise
+        if len(sims) == 1:
+            print(f"  aviso: Alpaca no acepta el símbolo {sims[0]}, se salta")
+            return pd.DataFrame()
+        mitad = len(sims) // 2
+        partes = [velas_seguras(cliente, sims[:mitad], timeframe, ini, fin),
+                  velas_seguras(cliente, sims[mitad:], timeframe, ini, fin)]
+        return pd.concat([p for p in partes if len(p)], ignore_index=True) if any(len(p) for p in partes) else pd.DataFrame()
+
+
 def descargar(cliente, desde: str, hasta: str, cfg: dict, max_simbolos: int | None = None,
               trozo: int = 100) -> pd.DataFrame:
     """Baja las velas diarias por trozos de símbolos y se queda solo con las candidatas."""
@@ -72,7 +92,7 @@ def descargar(cliente, desde: str, hasta: str, cfg: dict, max_simbolos: int | No
               datetime.now(timezone.utc) - timedelta(minutes=20))
     partes = []
     for i in range(0, len(sims), trozo):
-        df = cliente.velas(sims[i:i + trozo], "1Day", ini, fin)
+        df = velas_seguras(cliente, sims[i:i + trozo], "1Day", ini, fin)
         c = candidatas(rasgos_diarios(df), cfg)
         partes.append(c[(c["fecha"] >= desde) & (c["fecha"] <= hasta)])
         if (i // trozo) % 10 == 0:

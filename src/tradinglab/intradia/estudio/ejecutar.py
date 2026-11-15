@@ -11,6 +11,7 @@ from zoneinfo import ZoneInfo
 
 from . import simular
 from .simular import Costes
+from .universo import velas_seguras
 
 NY = ZoneInfo("America/New_York")
 
@@ -50,7 +51,9 @@ def procesar(cliente, cands: pd.DataFrame, desde: str, hasta: str, cfg: dict,
     for n, fecha in enumerate(fechas):
         dia = cands[cands["fecha"] == fecha]
         sims = sorted(dia["simbolo"].unique())
-        partes = [cliente.velas(sims[i:i + 100], "1Min", _ny(fecha, 4), _ny(fecha, 16)) for i in range(0, len(sims), 100)]
+        partes = [velas_seguras(cliente, sims[i:i + 100], "1Min", _ny(fecha, 4), _ny(fecha, 16))
+                  for i in range(0, len(sims), 100)]
+        partes = [p for p in partes if len(p)]
         m = pd.concat(partes, ignore_index=True) if partes else pd.DataFrame()
         if m.empty:
             continue
