@@ -12,7 +12,7 @@ y dónde se guarda (`investigacion/duplicar/`). **No cambies `config/medio_plazo
 `python -m tradinglab.perfiles.duplicar` (workflow "Perfil duplicar"). Reutiliza `oportunidades.universo`,
 `enriquecer` (metricas.empresa), `puntuar` (nota de 8 factores) y `fuentes_extra` (Finnhub, Alpaca), y añade:
 precio en euros, racha de trimestres mejorando, meses de caja, acciones nuevas en 12 meses, deuda/caja y los
-10 mayores fondos. Resultado: `investigacion/duplicar/resultado.json` / `.md` y `universo.csv`.
+10 mayores fondos. Resultado: `investigacion/duplicar/resultado.json` (grande: léelo con `jq`, o mejor el `.md`) / `.md` y `universo.csv`.
 
 ## Paso 2 · Lo que el código no puede ver (web)
 Para las que cumplen los 4 criterios automáticos y las 5-8 que más se acercan:

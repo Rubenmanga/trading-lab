@@ -50,6 +50,10 @@ Embudo completo. Las dos primeras etapas las hace el programa cada día (GitHub 
   investigación...). Una alarma obliga a leer esa noticia antes de seguir.
 Para más detalle de las 40 primeras: `investigacion/ranking_detalle.json`.
 
+> **Ahorro de tokens:** estos JSON pesan cientos de KB. No los abras enteros: saca solo lo que necesitas con
+> `jq` (p. ej. `jq '.filas[:40][] | {ticker,nota,carril,sector,potencial_analistas_pct,banderas}' investigacion/ranking.json`)
+> o empieza por la tabla corta `investigacion/ranking.md`.
+
 ## Paso 2 · Elegir 10-12 candidatas (diversificadas)
 Idea de los "carriles" del screener GARP de tradermonty: no dejes que un solo estilo llene la lista.
 - Hasta 3 de **GARP**, 2 de **Crecimiento fuerte**, 2 de **Calidad barata**, 2 de **Giro: previsiones

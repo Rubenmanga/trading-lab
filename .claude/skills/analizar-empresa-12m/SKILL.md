@@ -9,7 +9,7 @@ No es un resumen de datos: es una **decisión de inversión defendible**. Sigue 
 Lee antes las referencias que se citan (están en `references/`).
 
 ## Fase 0 · Punto de partida (5 min)
-1. Busca la empresa en `investigacion/ranking.json` (lo genera GitHub Actions cada día): puesto, nota, los 8
+1. Busca la empresa en `investigacion/ranking.json` (solo su fila: `jq '.filas[] | select(.ticker=="TICKER")' investigacion/ranking.json`) (lo genera GitHub Actions cada día): puesto, nota, los 8
    factores, carril, banderas rojas y señales técnicas. Es tu **hipótesis inicial**: explica por qué el
    buscador la ha subido y qué hay que confirmar o desmentir.
 2. Si hay informe previo en `investigacion/analisis/`, léelo y di qué ha cambiado.
