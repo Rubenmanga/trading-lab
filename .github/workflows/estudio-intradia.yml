@@ -128,6 +128,18 @@ jobs:
           pattern: tramo-*
           path: datos_estudio
           merge-multiple: true
+      - name: ¿Cuáles se pueden vender en corto hoy en Alpaca? (solo lectura)
+        if: github.event_name != 'pull_request'
+        run: |
+          python - <<'PY'
+          import pandas as pd
+          from tradinglab.intradia.estudio.alpaca_rest import Alpaca
+          v = Alpaca().valores()
+          df = pd.DataFrame([{k: a.get(k) for k in ("symbol", "status", "shortable", "easy_to_borrow", "marginable")} for a in v])
+          df.to_csv("datos_estudio/activos-cortables.csv.gz", index=False)
+          print(len(df), "activos;", int(df["shortable"].fillna(False).sum()), "vendibles en corto;",
+                int(df["easy_to_borrow"].fillna(False).sum()), "fáciles de prestar")
+          PY
       - name: Informe
         run: |
           ls -la datos_estudio
