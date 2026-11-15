@@ -130,6 +130,48 @@
    "pct_trimestres_gana_universo": 54.0,
    "pct_trimestres_gana_iwm": 54.0
   },
+  "nota_50": {
+   "trimestres": 50,
+   "anios": 12.5,
+   "estrategia": {
+    "total_pct": 235.56874363697605,
+    "anual_pct": 10.169789632376446,
+    "max_caida_pct": -34.082762709843415
+   },
+   "universo": {
+    "total_pct": 218.5735613481824,
+    "anual_pct": 9.712668519200541,
+    "max_caida_pct": -33.55449709227823
+   },
+   "iwm": {
+    "total_pct": 180.6289252475232,
+    "anual_pct": 8.605193732682825,
+    "max_caida_pct": -30.68123630140841
+   },
+   "pct_trimestres_gana_universo": 44.0,
+   "pct_trimestres_gana_iwm": 48.0
+  },
+  "nota_100": {
+   "trimestres": 50,
+   "anios": 12.5,
+   "estrategia": {
+    "total_pct": 235.4683554842043,
+    "anual_pct": 10.167152613491815,
+    "max_caida_pct": -34.97093569795731
+   },
+   "universo": {
+    "total_pct": 218.5735613481824,
+    "anual_pct": 9.712668519200541,
+    "max_caida_pct": -33.55449709227823
+   },
+   "iwm": {
+    "total_pct": 180.6289252475232,
+    "anual_pct": 8.605193732682825,
+    "max_caida_pct": -30.68123630140841
+   },
+   "pct_trimestres_gana_universo": 40.0,
+   "pct_trimestres_gana_iwm": 50.0
+  },
   "calidad": {
    "trimestres": 50,
    "anios": 12.5,
@@ -714,7 +756,34 @@
     "pct_positivas": 78.72340425531915,
     "n": 47
    }
-  }
+  },
+  "quintiles": [
+   {
+    "quintil": 1,
+    "exceso_12m_pct": 0.7750767586824724,
+    "pct_cohortes_gana": 63.829787234042556
+   },
+   {
+    "quintil": 2,
+    "exceso_12m_pct": 0.8943662024767389,
+    "pct_cohortes_gana": 57.4468085106383
+   },
+   {
+    "quintil": 3,
+    "exceso_12m_pct": -0.615427790570279,
+    "pct_cohortes_gana": 48.93617021276596
+   },
+   {
+    "quintil": 4,
+    "exceso_12m_pct": -1.152114225050938,
+    "pct_cohortes_gana": 34.04255319148936
+   },
+   {
+    "quintil": 5,
+    "exceso_12m_pct": 0.11318475951803937,
+    "pct_cohortes_gana": 42.5531914893617
+   }
+  ]
  },
  "pelotazos": {
   "x": 3.0,
