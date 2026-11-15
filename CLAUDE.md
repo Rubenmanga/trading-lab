@@ -33,6 +33,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 |---|---|
 | CLI `lab` (punto de entrada) | `src/tradinglab/cli.py` |
 | **A · Intradía**: reglas → riesgo → revisor IA → ejecución. Stop 1 %, objetivo 3R/4R, trailing. Todo cerrado antes del cierre forzado | `src/tradinglab/intradia/`, `config/intradia.yaml` |
+| A · **corto del hueco** en eToro DEMO (hueco ≥ +50 % → corto 9:35 NY, stop 15 %, cierre 15:45) | `src/tradinglab/intradia/corto_hueco/`, `config/corto_hueco.yaml`, workflow `corto-hueco.yml`, registro en `investigacion/corto-hueco/` |
 | A · estudio histórico (ORB + top gainers) | `lab estudio …`, workflow `estudio-intradia.yml`, informes en `investigacion/estrategias/*.md` |
 | **B · Medio plazo 12 meses**: small caps de **todos los sectores** con buenas previsiones. No opera: analiza, vigila, avisa | `src/tradinglab/medio_plazo/`, `config/medio_plazo.yaml`, `investigacion/` |
 | B · perfiles («¿puede duplicar?», «+500 %») | `src/tradinglab/perfiles/`, `investigacion/duplicar/`, `investigacion/quintuplicar/` |
@@ -53,7 +54,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 - `README.md` largo: es para personas; este archivo ya resume lo necesario.
 
 ## Comandos
-`lab intradia demo|comprobar|backtest|sesion|cerrar-todo` · `lab estudio universo|tramo|informe` ·
+`lab intradia demo|comprobar|backtest|sesion|cerrar-todo` · `lab corto operar|cerrar [--ensayo]` · `lab estudio universo|tramo|informe` ·
 `lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|cribado|ficha TICKER|alertas` · `lab panel`.
 
 ## Workflows de GitHub Actions (no romper sus rutas)
@@ -61,6 +62,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
   `estado.json`, `alertas.md`, `candidatos.csv`). Abre un issue si hay algo importante.
 - `seguimiento-noticias.yml`: L-V cada 2 h en bolsa. Lista de noticias de Ruben (`config/medio_plazo.yaml` → `lista_noticias`,
   `lab medio noticias`, módulo `medio_plazo/novedades.py`) → `investigacion/seguimiento/lista.md` + issue si hay aviso nuevo.
+- `corto-hueco.yml`: L-V, apertura (9:00-9:50 NY) y cierre (15:45 NY) del corto del hueco en eToro demo; issue `corto-hueco` como aviso.
 - `estudio-intradia.yml`: backtest histórico → `investigacion/estrategias/`.
 - `perfil-duplicar.yml`: perfil duplicar → `investigacion/duplicar/`.
 - `publicar-investigacion.yml`: si un PR toca **solo** `investigacion/`, se fusiona y publica solo en el panel.

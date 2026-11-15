@@ -1,0 +1,31 @@
+# ============================================================
+#  AGENTE A · estrategia «corto del hueco» en eToro DEMO
+#  Idea (backtest 2016-2026, investigacion/estrategias/): las acciones que abren con un hueco
+#  enorme (>= +50 %) suelen devolver parte de la subida durante el día. Se venden en corto
+#  a las 9:35 de Nueva York con stop ancho y se cierra todo antes del cierre.
+#  SOLO CUENTA DEMO de eToro: el código solo conoce las rutas /demo/ de la API.
+# ============================================================
+
+modo_cuenta: demo            # obligatorio en este proyecto
+
+# Qué acciones se miran (igual que en el backtest)
+hueco_min: 0.50              # abre un 50 % o más por encima del cierre de ayer
+precio_min: 1.0              # nada por debajo de 1 $
+dolares_dia_min: 200000      # que se negocie de media al menos 200.000 $ al día (14 días)
+
+# Riesgo (código sin IA; siempre manda)
+riesgo_pct: 1.0              # % del capital demo que se arriesga por operación (si salta el stop)
+stop_pct: 15                 # stop un 15 % por encima del precio de entrada
+max_operaciones_dia: 3
+max_posicion_pct: 10         # una posición no pasa del 10 % del capital
+max_exposicion_pct: 30       # entre todas, como mucho el 30 % del capital
+freno_caida_pct: 10          # si el capital demo cae un 10 % desde el inicio, el bot deja de abrir
+apalancamiento: 1            # sin apalancamiento
+importe_min_usd: 50          # eToro no acepta órdenes muy pequeñas
+
+# Horario (hora de Nueva York; en España suma 6 h)
+hora_ventana_desde: "09:00"  # si el programa arranca antes, sale (lo vuelve a lanzar GitHub más tarde)
+hora_escaneo: "09:34:00"
+hora_entrada: "09:35:00"
+hora_limite_entrada: "09:50" # si por retrasos llega tarde, no abre nada ese día
+hora_cierre: "15:45"         # a partir de aquí se cierra todo (el backtest cerraba a las 15:55)
