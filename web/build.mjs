@@ -73,6 +73,7 @@ const datos = {
     ...markdowns("investigacion", "repaso").map((d) => ({ ...d, clase: "Repaso" })),
     ...markdowns("investigacion", "validacion").map((d) => ({ ...d, clase: "¿Acierta el ranking?" })),
     ...markdowns("investigacion/estrategias").map((d) => ({ ...d, clase: "Intradía (agente A)" })),
+    ...markdowns("investigacion/backtest-12m", "INFORME").map((d) => ({ ...d, clase: "Backtest 12 meses" })),
     ...markdowns("diario").map((d) => ({ ...d, clase: "Diario intradía" })),
   ],
 };

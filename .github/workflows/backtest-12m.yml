@@ -1,0 +1,126 @@
+# Backtest del agente B (small caps a 12 meses) desde 2014 hasta hoy. Gratis, en la nube de GitHub.
+#  1) sec: archivo masivo de cuentas de la SEC (todas las empresas, con fecha de presentación).
+#  2) precios: Yahoo, diario con splits → fin de mes (4 máquinas a la vez).
+#  3) motor: universo de cada trimestre, misma nota del ranking, carteras frente a IWM → investigacion/backtest-12m/.
+# Se lanza solo al cambiar su código en una rama, o a mano: Actions -> "Backtest 12 meses" -> Run workflow.
+name: Backtest 12 meses
+
+on:
+  push:
+    branches-ignore: [main]
+    paths:
+      - "src/tradinglab/backtest12m/**"
+      - ".github/workflows/backtest-12m.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: backtest-12m
+  cancel-in-progress: true
+
+env:
+  PYTHONPATH: src
+  PYTHONUTF8: "1"
+
+jobs:
+  sec:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet "pyyaml>=6" "pandas>=2" pytest
+      - name: Pruebas
+        run: python -m pytest -q tests/test_backtest12m.py tests/test_sec_cuentas.py
+      - name: Semana (para reutilizar la descarga)
+        id: semana
+        run: echo "s=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        id: cache
+        with:
+          path: datos_bt
+          key: bt12m-sec-${{ steps.semana.outputs.s }}-${{ hashFiles('src/tradinglab/backtest12m/datos.py', 'src/tradinglab/medio_plazo/sec_cuentas.py') }}
+      - name: Cuentas de la SEC (companyfacts.zip)
+        if: steps.cache.outputs.cache-hit != 'true'
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python -m tradinglab.backtest12m.datos sec --salida datos_bt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sec
+          path: datos_bt
+          retention-days: 3
+
+  precios:
+    needs: sec
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        parte: [1, 2, 3, 4]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "pyyaml>=6"
+      - uses: actions/download-artifact@v4
+        with:
+          name: sec
+          path: datos_bt
+      - name: Semana
+        id: semana
+        run: echo "s=$(date -u +%G-%V)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache@v4
+        with:
+          path: datos_bt/precios-${{ matrix.parte }}.csv.gz
+          key: bt12m-precios-${{ matrix.parte }}-${{ steps.semana.outputs.s }}-${{ github.run_id }}
+          restore-keys: bt12m-precios-${{ matrix.parte }}-${{ steps.semana.outputs.s }}-
+      - name: Precios de Yahoo (mi parte)
+        run: python -m tradinglab.backtest12m.datos precios --parte ${{ matrix.parte }} --de 4 --salida datos_bt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: precios-${{ matrix.parte }}
+          path: datos_bt/precios-${{ matrix.parte }}.csv.gz
+          retention-days: 3
+
+  motor:
+    needs: precios
+    if: always() && needs.precios.result != 'cancelled'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install --quiet "pyyaml>=6" "pandas>=2"
+      - uses: actions/download-artifact@v4
+        with:
+          name: sec
+          path: datos_bt
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: precios-*
+          path: datos_bt
+          merge-multiple: true
+      - name: Backtest
+        run: |
+          ls -la datos_bt
+          python -m tradinglab.backtest12m.motor datos_bt investigacion/backtest-12m
+          cat investigacion/backtest-12m/INFORME-*.md
+      - name: Guardar resultados en la rama
+        run: |
+          git config user.name "backtest-12m"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add investigacion/backtest-12m/
+          git diff --cached --quiet || git commit -m "Backtest 12 meses: resultados $(date -u +%F)"
+          git pull --rebase --autostash -q || true
+          git push
