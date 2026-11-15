@@ -276,6 +276,8 @@ def analizar(t: str, info: dict, d: dict, previo: dict, u: dict, ref: dict | Non
     if any(s["tipo"].startswith(("Registro", "Colocación")) for s in sec_nuevos):
         avisos.append(dict(tipo="NOTICIA IMPORTANTE", texto="Documento nuevo en la SEC para vender acciones nuevas (posible dilución)"))
 
+    if info.get("grupo") == "ideas":   # ideas del buscador: avisar solo de noticias, no de cada movimiento
+        avisos = [a for a in avisos if a["tipo"] != "MOVIMIENTO GRANDE"]
     nuevos_avisos = [a for a in avisos if f"{a['tipo']}|{a['texto'][:50]}" not in avisados]
     if any(a["tipo"] == "MOVIMIENTO GRANDE" for a in avisos) and any(x.startswith("MOVIMIENTO GRANDE|") for x in avisados):
         nuevos_avisos = [a for a in nuevos_avisos if a["tipo"] != "MOVIMIENTO GRANDE"]  # ya avisado hoy
@@ -294,14 +296,14 @@ def analizar(t: str, info: dict, d: dict, previo: dict, u: dict, ref: dict | Non
         resumen = "Sin cambios: movimiento normal y nada nuevo."
     else:
         resumen = porque
-    return dict(nombre=info.get("nombre") or t, sector=info.get("sector"), **m, grande=grande,
+    return dict(nombre=info.get("nombre") or t, sector=info.get("sector"), grupo=info.get("grupo", "cartera"), **m, grande=grande,
                 porque=porque, resumen=resumen, cambios=cambios, catalizadores=catalizadores, avisos=avisos,
                 avisos_nuevos=nuevos_avisos, avisados=sorted(avisados),
                 problemas=problemas, nombre_fuente=fh.get("nombre_fuente"),
                 recs_pct_compra=pct if pct is not None else pct_antes, recs_n=fh.get("recs_n"),
                 proximos_resultados=pr or pr_antes, resultados_recientes=rr or previo.get("resultados_recientes"),
                 referencia=ref, titulares=[{k: n[k] for k in ("fecha", "titulo", "fuente", "url", "causas", "nueva", "importante")}
-                                           for n in utiles[:8]],
+                                           for n in utiles[:15]],
                 vistos=sorted(vistos_antes | {n["clave"] for n in todas})[-300:],
                 sec_vistos=sorted(sec_vistos | {f"{s['fecha']}{s['tipo']}" for s in sec_docs})[-60:],
                 anterior=anterior)
@@ -349,8 +351,21 @@ def informe(res: dict) -> str:
          f"4. Resultados en los próximos 14 días: {', '.join(pronto) if pronto else 'ninguno'}.",
          f"5. Datos: {'; '.join(probl) if probl else 'todas las empresas se leyeron bien'}.", "",
          "> Información, no recomendación de compra o venta. Lo calcula un programa con reglas fijas (sin IA).", ""]
-    for t, e in todo.items():
+    ia = res.get("ia") or {}
+    if ia:
+        mes = hoy.strftime("%Y-%m")
+        l += [f"> Resúmenes de Haiku (IA barata que solo lee estos titulares). Gasto del mes: {ia.get('gasto_mes', {}).get(mes, 0):.2f} $."
+              + (f" {ia['aviso']}" if ia.get("aviso") else ""), ""]
+    grupo_actual = None
+    orden = sorted(todo.items(), key=lambda kv: list(GRUPOS).index(kv[1].get("grupo")) if kv[1].get("grupo") in GRUPOS else 9)
+    for t, e in orden:
+        g = e.get("grupo") or "materias"
+        if g != grupo_actual:
+            grupo_actual = g
+            l += [f"# {GRUPOS.get(g, 'Materias primas')}", ""]
         l.append(f"## {t} · {e['nombre']} — {_flecha(e)}" + (" ⚠️" if e.get("avisos") else ""))
+        if e.get("ia"):
+            l.append(f"- **Resumen (Haiku):** {e['ia'].get('resumen')} _Causa probable: {e['ia'].get('causa_probable')} (confianza {e['ia'].get('confianza')})._")
         if e.get("cierre") is not None:
             extra = f" · 5 días {e['cambio_5d_pct']:+.1f} %" if e.get("cambio_5d_pct") is not None else ""
             normal = f" · lo normal en un día: ±{e['sigma_pct']} %" if e.get("sigma_pct") else ""
@@ -392,12 +407,48 @@ def _historial(res: dict) -> None:
 
 
 # ---------------------------------------------------------------- todo junto
+SECTOR_ETF = {"healthcare": "XBI", "technology": "QQQ", "industrials": "XLI", "energy": "XLE",
+              "financial services": "XLF", "consumer cyclical": "XLY", "consumer defensive": "XLP",
+              "basic materials": "XLB", "communication services": "XLC", "real estate": "XLRE", "utilities": "XLU"}
+GRUPOS = {"cartera": "Tus acciones", "vigilancia": "Tu lista de vigilancia", "ideas": "Mejores ideas del buscador"}
+
+
+def universo(lc: dict) -> dict[str, dict]:
+    """Cartera (config) + lista de vigilancia (watchlist.csv) + las N mejores del ranking diario, sin repetir."""
+    out = {t: {**(i or {}), "grupo": "cartera"} for t, i in (lc.get("empresas") or {}).items()}
+
+    def add(t, nombre, sector, grupo):
+        if not t or t in out:
+            return
+        sec = (sector or "").strip()
+        out[t] = dict(nombre=nombre or t, grupo=grupo, sector="salud" if sec.lower() == "healthcare" else sec,
+                      referencia=SECTOR_ETF.get(sec.lower()))
+    if lc.get("incluir_vigilancia", True):
+        try:
+            with open(ruta("investigacion", "watchlist.csv"), newline="", encoding="utf-8") as fh:
+                for f in csv.DictReader(fh):
+                    add((f.get("ticker") or "").strip().upper(), f.get("empresa"), f.get("sector"), "vigilancia")
+        except FileNotFoundError:
+            pass
+    n = int(lc.get("incluir_ranking_top", 0) or 0)
+    if n:
+        import json
+        try:
+            with open(ruta("investigacion", "ranking.json"), encoding="utf-8") as fh:
+                filas = (json.load(fh) or {}).get("filas") or []
+        except (FileNotFoundError, ValueError):
+            filas = []
+        for f in filas[:n]:
+            add(f.get("ticker"), f.get("empresa"), f.get("sector"), "ideas")
+    return out
+
+
 DEFECTOS = dict(umbral_movimiento_pct=8, umbral_sigmas=2.5, umbral_minimo_pct=3, umbral_volumen=2.5, mercado="SPY")
 
 
 def ejecutar(cfg: dict, previo: dict | None = None, fuentes: dict | None = None, guardar: bool = True) -> dict | None:
     lc = cfg.get("lista_noticias") or {}
-    if not lc.get("empresas") and not lc.get("materias_primas"):
+    if not lc.get("empresas") and not lc.get("materias_primas") and not lc.get("incluir_vigilancia"):
         return None
     fu = {**FUENTES, **(fuentes or {})}
     previo = previo or {}
@@ -410,7 +461,7 @@ def ejecutar(cfg: dict, previo: dict | None = None, fuentes: dict | None = None,
             cache[t] = dict(ticker=t, **movimiento(_seguro(fu["velas"], t, defecto=[], nombre=f"precios {t}") or []))
         return cache[t]
     mercado = mov_de(base["mercado"])
-    emp = lc.get("empresas") or {}
+    emp = universo(lc)
     sec = _seguro(fu["sec"], list(emp), defecto={}, nombre="SEC") or {}
     salud = {t: i.get("nombre") for t, i in emp.items() if (i.get("sector") or "").lower().startswith("salud") and i.get("nombre")}
     ens = _seguro(fu["ensayos"], salud, defecto={}, nombre="ClinicalTrials") if salud else {}
@@ -428,6 +479,23 @@ def ejecutar(cfg: dict, previo: dict | None = None, fuentes: dict | None = None,
         info = info or {}
         velas = _seguro(fu["velas"], info.get("yahoo") or t, defecto=[], nombre=f"precios {t}") or []
         res["materias_primas"][t] = materia_prima(t, info, velas, base, (previo.get("materias_primas") or {}).get(t))
+    # Lectura de titulares con Haiku (opcional: solo si hay clave y tope de gasto)
+    from . import lector_ia
+    ia = _seguro(lector_ia.leer, res["empresas"], previo.get("ia"), lc.get("ia"), defecto=None, nombre="Haiku")
+    if ia:
+        res["ia"] = ia
+        for t, x in (ia.get("por_ticker") or {}).items():
+            e = res["empresas"].get(t)
+            if not e:
+                continue
+            e["ia"] = x
+            if x.get("importante") and not any(a["tipo"] == "NOTICIA IMPORTANTE" for a in e["avisos"]) and not ia.get("reutilizada"):
+                a = dict(tipo="NOTICIA IMPORTANTE", texto=f"(lectura de Haiku) {x.get('motivo_importante') or x.get('resumen')}")
+                clave_a = f"{a['tipo']}|{a['texto'][:50]}"
+                if clave_a not in e.get("avisados", []):
+                    e["avisos"].append(a)
+                    e.setdefault("avisos_nuevos", []).append(a)
+                    e["avisados"] = sorted(set(e.get("avisados", [])) | {clave_a})
     if guardar:
         os.makedirs(ruta("investigacion", "seguimiento"), exist_ok=True)
         with open(ruta("investigacion", "seguimiento", "lista.md"), "w", encoding="utf-8") as fh:

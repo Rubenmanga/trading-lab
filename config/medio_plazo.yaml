@@ -80,6 +80,11 @@ lista_noticias:
   umbral_sigmas: 2.5          # ...o si se mueve 2,5 veces más de lo normal para esa acción (y al menos un 3 %)
   umbral_volumen: 2.5         # volumen 2,5 veces su media de 20 días = movimiento que merece explicación
   mercado: SPY
+  incluir_vigilancia: true    # añade cada día las empresas de investigacion/watchlist.csv
+  incluir_ranking_top: 10     # y las 10 mejores ideas del buscador (de estas solo avisa si hay noticia importante)
+  ia:                         # lectura de titulares con Claude Haiku (elegido por Ruben el 15-nov; ~1-2 $ al mes)
+    activar: true             # solo funciona si existe el secreto ANTHROPIC_API_KEY en GitHub
+    tope_mensual_usd: 3       # al llegar a este gasto en el mes, deja de llamar a Haiku hasta el mes siguiente
   empresas:
     ALT:  {nombre: "Altimmune", sector: salud, referencia: XBI}
     RCAT: {nombre: "Red Cat Holdings", sector: defensa y drones, referencia: ITA}

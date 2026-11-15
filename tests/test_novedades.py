@@ -55,3 +55,51 @@ def test_ejecutar_con_fuentes_falsas(tmp_path, monkeypatch):
     assert "ALT" in res["empresas"] and "XAU" in res["materias_primas"]
     assert (tmp_path / "investigacion/seguimiento/lista.md").exists()
     assert "Sin cambios" in res["empresas"]["ALT"]["resumen"]
+
+
+class _Bloque:
+    type = "text"
+    text = '{"empresas": [{"ticker": "ALT", "resumen": "Nada nuevo.", "causa_probable": "no hay noticia", "confianza": "ninguna", "importante": false, "motivo_importante": ""}]}'
+
+
+class _Resp:
+    stop_reason = "end_turn"
+    content = [_Bloque()]
+
+    class usage:
+        input_tokens = 10000
+        output_tokens = 1000
+
+
+class _Cliente:
+    llamadas = 0
+
+    class messages:
+        @staticmethod
+        def create(**kw):
+            _Cliente.llamadas += 1
+            assert kw["model"] == "claude-haiku-5-5"
+            return _Resp()
+
+
+def test_lector_ia_reutiliza_y_tope():
+    from tradinglab.medio_plazo import lector_ia
+    emp = {"ALT": dict(nombre="Altimmune", titulares=[], cambios=[])}
+    r = lector_ia.leer(emp, None, {}, cliente=_Cliente)
+    assert r["por_ticker"]["ALT"]["confianza"] == "ninguna" and r["coste_ultima_usd"] == 0.0015
+    r2 = lector_ia.leer(emp, r, {}, cliente=_Cliente)
+    assert r2.get("reutilizada") and _Cliente.llamadas == 1
+    emp["ALT"]["cambios"] = ["algo nuevo"]
+    mes = list(r["gasto_mes"])[0]
+    r3 = lector_ia.leer(emp, {**r, "gasto_mes": {mes: 5}}, {"tope_mensual_usd": 3}, cliente=_Cliente)
+    assert "Tope" in r3["aviso"] and _Cliente.llamadas == 1
+
+
+def test_universo_suma_vigilancia_e_ideas(tmp_path, monkeypatch):
+    import json
+    monkeypatch.setattr(nv, "ruta", lambda *p: tmp_path.joinpath(*p))
+    (tmp_path / "investigacion").mkdir()
+    (tmp_path / "investigacion/watchlist.csv").write_text("ticker,empresa,sector\nAMSC,American Superconductor,Industrials\nALT,Altimmune,Healthcare\n")
+    (tmp_path / "investigacion/ranking.json").write_text(json.dumps({"filas": [{"ticker": "REPX", "empresa": "Riley", "sector": "Energy"}]}))
+    u = nv.universo(dict(empresas={"ALT": {"nombre": "Altimmune"}}, incluir_ranking_top=5))
+    assert u["ALT"]["grupo"] == "cartera" and u["AMSC"]["grupo"] == "vigilancia" and u["REPX"]["referencia"] == "XLE"

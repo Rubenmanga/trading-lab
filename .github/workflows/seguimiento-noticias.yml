@@ -28,7 +28,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Instalar lo mínimo
-        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" tzdata
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" anthropic tzdata
       - name: Revisar la lista
         env:
           PYTHONPATH: src
@@ -36,6 +36,7 @@ jobs:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
           ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # opcional: lectura con Haiku (tope 3 $/mes en config)
         run: python -m tradinglab.cli medio noticias
       - name: Guardar (el panel se actualiza solo)
         run: |

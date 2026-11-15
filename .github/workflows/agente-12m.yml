@@ -55,7 +55,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Instalar lo mínimo
-        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" tzdata
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" anthropic tzdata
       - name: Fecha
         id: fecha
         run: echo "hoy=$(date -u +%F)" >> "$GITHUB_OUTPUT"
@@ -103,7 +103,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Instalar lo mínimo
-        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" tzdata pytest
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" anthropic tzdata pytest
 
       - name: Pruebas
         run: python -m pytest -q tests/test_medio_plazo.py tests/test_oportunidades.py tests/test_fuentes_publicas.py tests/test_seguimiento.py tests/test_novedades.py
@@ -113,6 +113,7 @@ jobs:
 
       - name: Seguimiento diario (momento de entrada + noticias de tu lista)
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
