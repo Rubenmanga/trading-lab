@@ -154,3 +154,8 @@ def test_simbolos_raros_y_400():
             return pd.DataFrame(dict(simbolo=sims))
     df = universo.velas_seguras(C(), ["A", "B", "MALO", "C"], "1Day", None, None)
     assert sorted(df["simbolo"]) == ["A", "B", "C"]
+
+
+def test_ticker_na_no_es_un_vacio(tmp_path):
+    pd.DataFrame(dict(fecha=["2025-01-02"], simbolo=["NA"], variante=["original"], R=[1.0])).to_csv(tmp_path / "x.csv", index=False)
+    assert pd.read_csv(tmp_path / "x.csv", converters={"simbolo": str})["simbolo"][0] == "NA"

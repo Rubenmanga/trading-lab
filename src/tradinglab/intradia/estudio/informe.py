@@ -99,9 +99,9 @@ def estudio_gainers(g: pd.DataFrame, subida_min: float) -> dict:
 
 
 def generar(carpeta: Path, cfg: dict) -> dict:
-    g = pd.concat([pd.read_csv(f) for f in sorted(carpeta.glob("gainers-*.csv*"))], ignore_index=True) \
+    g = pd.concat([pd.read_csv(f, converters={"simbolo": str}) for f in sorted(carpeta.glob("gainers-*.csv*"))], ignore_index=True) \
         if list(carpeta.glob("gainers-*.csv*")) else pd.DataFrame()
-    o = pd.concat([pd.read_csv(f) for f in sorted(carpeta.glob("orb-*.csv*"))], ignore_index=True) \
+    o = pd.concat([pd.read_csv(f, converters={"simbolo": str}) for f in sorted(carpeta.glob("orb-*.csv*"))], ignore_index=True) \
         if list(carpeta.glob("orb-*.csv*")) else pd.DataFrame()
     fechas = sorted(set(g["fecha"]) if len(g) else set())
     res = dict(periodo=[fechas[0], fechas[-1]] if fechas else [], gainers=estudio_gainers(g, cfg["gainers"]["subida_min"]),
