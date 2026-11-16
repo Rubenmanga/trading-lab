@@ -11,6 +11,7 @@
   lab laboratorio tramo     Laboratorio intradía: 6 estrategias en papel con el pasado (un tramo de fechas)
   lab laboratorio dia       ... cuenta sombra: apunta lo que habría hecho cada estrategia hoy
   lab laboratorio demo      ... EN DIRECTO en la demo de Alpaca (cada 10 min; a las 15:45 NY cierra)
+  lab laboratorio directo   ... igual que demo pero con conexión continua (websocket Alpaca IEX, 30 acciones, al segundo)
   lab laboratorio informe   ... compara las estrategias y escribe investigacion/laboratorio/
   lab corto operar          Corto del hueco en eToro DEMO: escanea a las 9:34 NY y vende en corto a las 9:35
   lab corto cerrar          ... cierra las posiciones del bot (a partir de las 15:45 NY)
@@ -224,6 +225,12 @@ def _laboratorio(args):
     from .intradia.estudio.alpaca_rest import Alpaca
     from .intradia.estudio.universo import leer_csv
     cliente = Alpaca(por_minuto=args.por_minuto)
+    if args.accion == "directo":
+        from .intradia.laboratorio import directo
+        from .intradia.laboratorio.alpaca_demo import AlpacaDemo
+        directo.ejecutar(cfg, config.cargar("estudio_intradia"), cliente, None if args.ensayo else AlpacaDemo(),
+                         ensayo=args.ensayo, cache=Path(args.salida), max_simbolos=args.max)
+        return
     if args.accion == "demo":
         from .intradia.laboratorio import demo
         from .intradia.laboratorio.alpaca_demo import AlpacaDemo
@@ -349,7 +356,7 @@ def main(argv=None):
     pr.add_argument("--salida", default="partes_radar/parte-1.jsonl")
     pr.add_argument("--entrada", default="partes_radar")
     pl = sub.add_parser("laboratorio", help="Agente A · laboratorio de estrategias en cuenta sombra (solo papel)")
-    pl.add_argument("accion", choices=["tramo", "dia", "informe", "demo"])
+    pl.add_argument("accion", choices=["tramo", "dia", "informe", "demo", "directo"])
     pl.add_argument("--ensayo", action="store_true", help="demo: todo menos enviar órdenes")
     pl.add_argument("--ahora", help="demo (ensayo): hacer como si fuera esta hora, AAAA-MM-DDTHH:MM-05:00")
     pl.add_argument("--desde")

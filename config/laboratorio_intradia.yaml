@@ -79,6 +79,7 @@ demo:
   estrategias: [orb, hueco_volumen, vwap, rebote, corto_hueco]   # el azar se queda solo en papel
   desde: "09:35"                # hora NY (15:35 España)
   hasta: "13:05"                # después ya no se abren operaciones (todas las estrategias dejan de entrar a las 13:00)
+  senal_max_min_directo: 2     # en la conexión continua solo cuentan señales de los últimos 2 min
   senal_max_min: 12             # solo señales de los últimos 12 min (las pasadas son cada 10)
   riesgo:                       # código fijo, sin IA: siempre manda
     riesgo_pct: 0.5             # se arriesga el 0,5 % de la cuenta demo por operación
