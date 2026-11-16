@@ -17,7 +17,8 @@ Lee antes las referencias que se citan (están en `references/`).
    `stockanalysis.com/stocks/TICKER/` (`forecast/`, `statistics/`, `financials/?p=quarterly`,
    `financials/cash-flow-statement/?p=quarterly`, `financials/balance-sheet/?p=quarterly`), **SEC EDGAR**
    (`https://data.sec.gov/submissions/CIK##########.json` → 10-Q/10-K/8-K/Form 4/S-3/424B) y la web de
-   inversores. Finviz no deja leerse. Anota fecha y fuente de cada dato.
+   inversores. Finviz no deja leerse. Anota fecha y fuente de cada dato (regla de fuentes, Fase 6): caja, deuda y
+   acciones, del 10-Q/10-K de la SEC, no de webs intermediarias.
    El ranking ya trae resumidos los documentos de la SEC (`sec_*`, `sec_documentos` con enlaces), los ensayos
    clínicos (`ensayos`) y el tono de los titulares (`extra.sent_*`): úsalos como punto de partida y ábrelos.
    Biotech: confirma cada ensayo en `clinicaltrials.gov/study/NCT...` y busca la fecha PDUFA (decisión de la FDA)
@@ -65,7 +66,29 @@ Antes de terminar, pasa la skill `pre-trade-discipline-gate` mentalmente: ¿hay 
    **Resumen (5 líneas, español sencillo)** · Tarjeta de decisión (calificación, zona, objetivo, stop,
    convicción, nota GARP, nota de datos, carril) · Por qué lo encontró el buscador (factores) ·
    Analistas 1-4 (con tablas) · Nota GARP desglosada · Debate · Jefe de investigación · Plan del trader ·
-   Debate de riesgo · Decisión final · Qué cambiaría la tesis · Fuentes (enlaces con fecha).
+   Debate de riesgo · Decisión final · Qué cambiaría la tesis · **Tabla de fuentes** (al final, obligatoria).
+
+   **Regla de fuentes** (la comprueba una máquina: sin ella el informe no se publica):
+   - Primero fuentes oficiales (**nivel 1**): SEC (10-Q, 10-K, 8-K, Form 4), FDA, ClinicalTrials.gov,
+     nota de prensa o web de la empresa. **Nivel 2** = datos de mercado (Alpaca, Finnhub, Yahoo, Nasdaq,
+     o los ficheros de `investigacion/` que deja GitHub Actions). **Nivel 3** = webs intermediarias
+     (stockanalysis, MarketBeat, TipRanks, Investing, prensa…): solo diciéndolo y **nunca para precio ni caja**.
+   - Cada dato importante, una fila con fuente (enlace o fichero) y fecha AAAA-MM-DD del dato.
+   - Fila `precio` obligatoria, de como mucho 2 días de bolsa antes del informe. Al menos una fila de nivel 1.
+   - Plantilla (copia y rellena; la columna `nivel` es opcional y no puede decir mejor nivel que la web):
+     ```
+     ## Tabla de fuentes
+     | dato | valor | fuente | fecha | nivel |
+     |---|---|---|---|---|
+     | precio | 4,10 $ | investigacion/ranking.json | 2026-11-20 | 2 |
+     | caja | 50 M$ | [10-Q](https://www.sec.gov/...) | 2026-09-30 | 1 |
+     | deuda | 20 M$ | [10-Q](https://www.sec.gov/...) | 2026-09-30 | 1 |
+     | acciones en circulación | 30 M | [10-Q](https://www.sec.gov/...) | 2026-11-05 | 1 |
+     | próximo catalizador | FDA 22-nov | [nota de prensa](https://www.globenewswire.com/...) | 2026-10-01 | 1 |
+     | objetivo de analistas | 8 $ | https://stockanalysis.com/... (intermediaria) | 2026-11-20 | 3 |
+     ```
+   - Antes del PR: `lab medio regla-fuentes investigacion/analisis/TICKER-AAAA-MM-DD.md` (o
+     `PYTHONPATH=src python -m tradinglab.medio_plazo.regla_fuentes RUTA`) debe decir «pasa».
 2. Fila en `investigacion/watchlist.csv` (columnas: ticker, empresa, sector, fecha_analisis, veredicto,
    conviccion, precio_analisis, zona_entrada_max, precio_objetivo_12m, stop_tesis, proximo_catalizador,
    fecha_catalizador [AAAA-MM-DD], informe).

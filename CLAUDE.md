@@ -59,7 +59,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 
 ## Comandos
 `lab intradia demo|comprobar|backtest|sesion|cerrar-todo` · `lab corto operar|cerrar [--ensayo]` · `lab estudio universo|tramo|informe` · `lab laboratorio tramo|dia|informe` ·
-`lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|expediente [TICKER]|cribado|ficha TICKER|alertas` · `lab panel`.
+`lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|expediente [TICKER]|regla-fuentes [RUTA]|cribado|ficha TICKER|alertas` · `lab panel`.
 
 ## Workflows de GitHub Actions (no romper sus rutas)
 - `agente-12m.yml`: L-V noche y domingo. Ranking diario, alertas, cribado → `investigacion/` (`ranking.*`,
@@ -82,8 +82,13 @@ De tradermonty (MIT): `position-sizer`, `drawdown-circuit-breaker`, `pre-trade-d
 `market-environment-analysis`, `us-stock-analysis`, `market-news-analyst`, `trader-memory-core`.
 
 ## Sesiones en la nube (sin PC)
-- La terminal no llega a webs de bolsa (Yahoo, SEC, Finviz bloqueados). Usa WebSearch/WebFetch:
-  `stockanalysis.com/stocks/TICKER/forecast/` (`/statistics/`, `/financials/`), `data.sec.gov`, web de la empresa.
+- La terminal no llega a webs de bolsa (Yahoo, SEC, Finviz bloqueados). Usa WebSearch/WebFetch, por este orden:
+  `sec.gov`/`data.sec.gov` y web o notas de prensa de la empresa (nivel 1); precio de `investigacion/` (nivel 2);
+  `stockanalysis.com/stocks/TICKER/forecast/` solo para previsiones de analistas (nivel 3, dicho en el informe).
 - Los precios y el ranking ya los deja GitHub Actions en `investigacion/`: léelos, no los recalcules.
 - Un análisis termina en un PR que toca **solo** `investigacion/` (se publica solo en el panel).
 - Informes de `investigacion/` y `diario/`: Markdown para el móvil, empiezan con un resumen de 5 líneas.
+- **Regla de fuentes** (`medio_plazo/regla_fuentes.py`): primero SEC, FDA, ClinicalTrials.gov y la empresa; cada dato con
+  fuente y fecha; webs intermediarias solo diciéndolo y nunca para precio o caja. Los informes de `investigacion/analisis/`
+  acaban con «## Tabla de fuentes» (`dato | valor | fuente | fecha`, plantilla en la skill `analizar-empresa-12m`);
+  `publicar-investigacion.yml` no publica uno sin tabla o con precio de más de 2 días de bolsa (`lab medio regla-fuentes`).
