@@ -2,155 +2,446 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Trading Lab</title>
+<meta name="theme-color" content="#0b0d10">
+<title>Agente de trading</title>
 <style>
-:root{--bg:#f6f7f9;--card:#fff;--txt:#16181d;--sub:#5d6573;--line:#e3e6eb;--acc:#2456d6;--ok:#137a3b;--warn:#a86200;--bad:#b42318;--chip:#eef1f6}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f1115;--card:#171a20;--txt:#e8eaee;--sub:#9aa3b2;--line:#2a2f38;--acc:#7aa2ff;--ok:#4cc57a;--warn:#f0a841;--bad:#ff6b5e;--chip:#222731}}
-:root[data-theme=dark]{--bg:#0f1115;--card:#171a20;--txt:#e8eaee;--sub:#9aa3b2;--line:#2a2f38;--acc:#7aa2ff;--ok:#4cc57a;--warn:#f0a841;--bad:#ff6b5e;--chip:#222731}
+/* Colores con significado: verde = bien / entra · ámbar = atento · rojo = peligro · azul = información · morado = IA.
+   Oscuro por defecto (como el panel del vídeo); claro si el móvil está en modo claro o si se elige con el botón ◐. */
+:root{color-scheme:dark;--bg:#0b0d10;--card:#14171c;--card2:#1b1f26;--line:#262c35;--txt:#eef0f3;--sub:#a3abb8;--mut:#7d8592;
+  --acc:#3987e5;--ok:#0ca30c;--okt:#3ccb5a;--warn:#fab219;--warnt:#fab219;--bad:#d03b3b;--badt:#f07171;--ia:#9085e9;
+  --hm-hi:#3987e5;--hm-lo:#e66767;--hm-mid:#2c2f33;--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--shadow:0 1px 0 rgba(255,255,255,.03) inset}
+@media (prefers-color-scheme:light){:root:not([data-theme=dark]){color-scheme:light;--bg:#f3f4f6;--card:#fff;--card2:#f4f5f7;--line:#e2e5ea;--txt:#111418;--sub:#4f5662;--mut:#7b828e;
+  --acc:#2a78d6;--okt:#006300;--warnt:#8a5a00;--badt:#b42318;--ia:#6250d6;--hm-hi:#2a78d6;--hm-lo:#e34948;--hm-mid:#f0efec;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--shadow:0 1px 2px rgba(0,0,0,.04)}}
+:root[data-theme=light]{color-scheme:light;--bg:#f3f4f6;--card:#fff;--card2:#f4f5f7;--line:#e2e5ea;--txt:#111418;--sub:#4f5662;--mut:#7b828e;
+  --acc:#2a78d6;--okt:#006300;--warnt:#8a5a00;--badt:#b42318;--ia:#6250d6;--hm-hi:#2a78d6;--hm-lo:#e34948;--hm-mid:#f0efec;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--shadow:0 1px 2px rgba(0,0,0,.04)}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:2}
-.wrap{max-width:860px;margin:0 auto;padding:0 16px}
-h1{font-size:1.15rem;margin:0;padding:14px 0 6px}
-.demo{font-size:.75rem;color:var(--sub)}
-nav{display:flex;gap:4px;overflow-x:auto;padding:6px 0 10px}
-nav a{white-space:nowrap;padding:6px 12px;border-radius:999px;color:var(--sub);text-decoration:none;font-size:.9rem;background:var(--chip)}
-nav a.on{background:var(--acc);color:#fff}
-main{padding:16px 0 48px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:0 0 12px}
-.row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
-.tk{font-weight:700;font-size:1.1rem}
-.sub{color:var(--sub);font-size:.88rem}
-.chip{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.78rem;font-weight:600;background:var(--chip)}
-.v-comprar_en_zona{color:var(--ok)} .v-vigilar{color:var(--warn)} .v-descartar{color:var(--bad)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:8px;margin-top:10px}
-.k{font-size:.75rem;color:var(--sub)} .n{font-variant-numeric:tabular-nums;font-weight:600}
-.al{border-left:4px solid var(--warn)} .al.ZONA{border-left-color:var(--ok)} .al.TESIS{border-left-color:var(--bad)}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:var(--acc)}
-table{width:100%;border-collapse:collapse;font-size:.88rem}
-th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
-.scroll{overflow-x:auto}
-.md{overflow-wrap:anywhere} .md table{display:block;overflow-x:auto} .md h1{font-size:1.35rem} .md h2{font-size:1.1rem;margin-top:1.6em}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top{display:flex;align-items:center;gap:10px;padding:10px 0}
+.logo{width:30px;height:30px;border-radius:9px;flex:none;background:conic-gradient(from 200deg,#3987e5,#9085e9,#d55181,#fab219,#0ca30c,#3987e5)}
+.marca{flex:1;min-width:0}
+.marca b{display:block;font-size:1.02rem;line-height:1.2}
+.marca span{display:block;font-size:.72rem;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pill{font-size:.68rem;font-weight:700;letter-spacing:.06em;padding:3px 8px;border-radius:999px;border:1px solid var(--line);color:var(--warnt);white-space:nowrap}
+.tema{background:none;border:1px solid var(--line);color:var(--sub);border-radius:999px;width:32px;height:32px;font-size:1rem;cursor:pointer;flex:none}
+nav.tabs{display:none;gap:4px;padding:0 0 10px;overflow-x:auto}
+nav.tabs a{white-space:nowrap;padding:6px 12px;border-radius:999px;color:var(--sub);text-decoration:none;font-size:.88rem}
+nav.tabs a.on{background:var(--card2);color:var(--txt);box-shadow:inset 0 0 0 1px var(--line)}
+nav.abajo{position:fixed;left:0;right:0;bottom:0;z-index:6;display:grid;grid-template-columns:repeat(5,1fr);background:color-mix(in srgb,var(--card) 94%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+nav.abajo a{display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--mut);text-decoration:none;font-size:.68rem;padding:4px 0}
+nav.abajo a svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+nav.abajo a.on{color:var(--txt)}
+nav.abajo a.on svg{stroke:var(--acc)}
+@media (min-width:860px){nav.tabs{display:flex}nav.abajo{display:none}main{padding-bottom:48px!important}}
+main{padding:14px 0 96px}
+footer{color:var(--mut);font-size:.74rem;text-align:center;padding:0 16px 110px}
+@media (min-width:860px){footer{padding-bottom:32px}}
+/* Piezas */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 10px;box-shadow:var(--shadow)}
+.sec{display:flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sub);margin:22px 0 10px}
+.sec::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c,var(--acc));flex:none}
+.sec .mas{margin-left:auto;font-weight:600;letter-spacing:0;text-transform:none;font-size:.8rem}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+@media (min-width:760px){.kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;text-decoration:none;color:inherit;display:block;min-width:0;box-shadow:var(--shadow)}
+.kpi .lbl{font-size:.66rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kpi .lbl::before{content:"";display:inline-block;width:10px;height:2px;background:var(--c,var(--acc));margin-right:6px;vertical-align:middle}
+.kpi .val{font-size:1.9rem;font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums;margin-top:4px;letter-spacing:-.01em}
+.kpi .det{font-size:.76rem;color:var(--sub);line-height:1.35}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.tk{font-weight:800;font-size:1.05rem;letter-spacing:.01em}
+.sub{color:var(--sub);font-size:.86rem}
+.mut{color:var(--mut);font-size:.78rem}
+.chip{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.74rem;font-weight:600;background:var(--card2);border:1px solid var(--line);color:var(--sub);white-space:nowrap}
+.n{font-variant-numeric:tabular-nums;font-weight:650}
+.okt{color:var(--okt)} .badt{color:var(--badt)} .warnt{color:var(--warnt)} .iat{color:var(--ia)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px 12px;margin-top:10px}
+.k{font-size:.72rem;color:var(--sub);line-height:1.3}
+.empty{color:var(--sub);text-align:center;padding:22px 10px;font-size:.9rem}
+.empty b{display:block;color:var(--txt);margin-bottom:2px}
+.dos{display:grid;gap:10px}
+@media (min-width:760px){.dos{grid-template-columns:1fr 1fr}}
+/* Avisos */
+.aviso{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-left:3px solid var(--c)}
+.aviso .ico{flex:none;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;font-size:.9rem;font-weight:800;background:color-mix(in srgb,var(--c) 18%,transparent);color:var(--c)}
+.aviso .t{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sub)}
+/* Escala precio (stop · zona · precio · objetivo) */
+.esc{position:relative;height:30px;margin:22px 4px 10px}
+.esc .pista{position:absolute;left:0;right:0;top:15px;height:6px;border-radius:3px;background:var(--card2);box-shadow:inset 0 0 0 1px var(--line)}
+.esc .zona{position:absolute;top:15px;height:6px;border-radius:3px;background:color-mix(in srgb,var(--ok) 55%,transparent)}
+.esc .tick{position:absolute;top:10px;width:2px;height:16px;border-radius:1px;transform:translateX(-1px)}
+.esc-ley{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.72rem;color:var(--sub);margin:-6px 0 8px}.esc-ley i{display:inline-block;width:3px;height:10px;border-radius:1px;margin-right:5px;vertical-align:-1px}
+.esc .et{position:absolute;top:28px;font-size:.68rem;color:var(--sub);white-space:nowrap;transform:translateX(-50%)}
+.esc .et.ar{top:-16px;color:var(--txt);font-weight:700}
+.esc .pto{position:absolute;top:10px;width:16px;height:16px;border-radius:50%;background:var(--txt);border:3px solid var(--card);transform:translateX(-8px);box-shadow:0 0 0 1px var(--line)}
+/* Barras divergentes (cambio del día) */
+.div{display:grid;grid-template-columns:52px 1fr 64px;gap:6px 8px;align-items:center;font-size:.82rem}
+.div a{color:inherit;text-decoration:none;font-weight:700}
+.div .zona2{position:relative;height:14px}
+.div .zona2::before{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--line)}
+.div .zona2 i{position:absolute;top:2px;height:10px;border-radius:3px}
+.div .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:650}
+/* Mapa de calor del ranking */
+.hm{width:100%;border-collapse:separate;border-spacing:3px;font-size:.78rem;table-layout:fixed}
+.hm th{font-size:.62rem;font-weight:700;color:var(--sub);text-transform:uppercase;letter-spacing:.04em;padding:0 0 4px;text-align:center}
+.hm td{padding:0;height:30px;text-align:center}
+.hm td.tkc{text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hm td.tkc a{color:var(--txt);text-decoration:none;font-weight:800}
+.hm td.tkc small{display:block;font-size:.62rem;color:var(--mut);font-weight:500;line-height:1.1;overflow:hidden;text-overflow:ellipsis}
+.hm .c{display:grid;place-items:center;height:28px;border-radius:5px;font-variant-numeric:tabular-nums;font-size:.72rem;cursor:pointer}
+.hm .nt{font-weight:800;font-size:.92rem;font-variant-numeric:tabular-nums}
+.leyenda{display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--sub);flex-wrap:wrap}
+.leyenda .grad{width:120px;height:8px;border-radius:4px;background:linear-gradient(90deg,var(--hm-lo),var(--hm-mid),var(--hm-hi))}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:8px;scrollbar-width:none}
+.chips button{font:inherit;font-size:.8rem;white-space:nowrap;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--sub);cursor:pointer}
+.chips button.on{background:var(--txt);color:var(--bg);border-color:var(--txt)}
+select{font:inherit;font-size:.86rem;padding:7px 10px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--txt);max-width:100%}
+/* Flujo numerado */
+.flujo{display:grid;gap:10px}
+@media (min-width:760px){.flujo{grid-template-columns:repeat(4,1fr)}}
+.paso{background:var(--card);border:1px solid var(--line);border-top:2px solid var(--c);border-radius:14px;padding:12px 14px}
+.paso .cab{display:flex;align-items:center;gap:8px;font-weight:700}
+.paso .num{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:.75rem;font-weight:800;background:var(--c);color:#fff;flex:none}
+.paso .tag{margin-left:auto;font-size:.68rem;color:var(--c);font-weight:600}
+.paso dl{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:8px 0 0;font-size:.8rem}
+.paso dt{color:var(--mut)} .paso dd{margin:0}
+/* Embudo */
+.emb{display:grid;grid-template-columns:110px 1fr 34px;gap:8px;align-items:center;font-size:.82rem}
+.emb .b{height:20px;border-radius:5px;background:var(--c);min-width:3px}
+/* Línea de tiempo */
+.tl{position:relative;margin:0;padding:0;list-style:none}
+.tl li{position:relative;padding:0 0 12px 22px}
+.tl li::before{content:"";position:absolute;left:5px;top:6px;bottom:-6px;width:1px;background:var(--line)}
+.tl li:last-child::before{display:none}
+.tl li::after{content:"";position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:50%;background:var(--c,var(--acc));box-shadow:0 0 0 3px var(--card)}
+.tl .cuando{font-size:.72rem;color:var(--sub);font-variant-numeric:tabular-nums}
+/* Titulares (lo que lee el agente) */
+.puntos{display:grid;grid-template-columns:52px 1fr;gap:6px 8px;align-items:center}
+.puntos .fila{display:flex;flex-wrap:wrap;gap:4px}
+.pt{width:20px;height:20px;border-radius:50%;border:none;padding:0;display:grid;place-items:center;font-size:.6rem;font-weight:800;color:#fff;cursor:pointer;background:var(--c)}
+.pt.vieja{opacity:.35}
+.pt.imp{box-shadow:0 0 0 2px var(--card),0 0 0 3.5px var(--c)}
+#det-titular{min-height:20px}
+/* Markdown */
+.md{overflow-wrap:anywhere} .md table{display:block;overflow-x:auto;border-collapse:collapse;font-size:.85rem} .md th,.md td{padding:6px;border-bottom:1px solid var(--line);text-align:left}
+.md h1{font-size:1.3rem;line-height:1.3} .md h2{font-size:1.06rem;margin-top:1.6em} .md h3{font-size:.98rem}
 .md blockquote{margin:0;padding:4px 12px;border-left:3px solid var(--line);color:var(--sub)}
-.md pre{overflow-x:auto;background:var(--chip);padding:10px;border-radius:8px}
-.empty{color:var(--sub);text-align:center;padding:28px 8px}
-footer{color:var(--sub);font-size:.78rem;text-align:center;padding:0 16px 32px}
-.nota{font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
-.bars{display:grid;grid-template-columns:auto 1fr auto;gap:3px 8px;align-items:center;margin-top:10px;font-size:.8rem}
-.bar{height:8px;border-radius:4px;background:var(--chip);overflow:hidden}
-.bar>i{display:block;height:100%;background:var(--acc);border-radius:4px}
-.bar>i.lo{background:var(--bad)} .bar>i.mid{background:var(--warn)} .bar>i.hi{background:var(--ok)}
-.flag{color:var(--bad);font-size:.82rem} .sig{color:var(--ok);font-size:.82rem}
-.filtros{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-select{font:inherit;font-size:.88rem;padding:6px 8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--txt);max-width:100%}
-.puesto{color:var(--sub);font-weight:600;margin-right:6px}
+.md pre{overflow-x:auto;background:var(--card2);padding:10px;border-radius:8px}
+table.t{width:100%;border-collapse:collapse;font-size:.85rem}
+table.t th,table.t td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+.scroll{overflow-x:auto}
+details>summary{cursor:pointer;list-style:none}
+details>summary::-webkit-details-marker{display:none}
+details>summary::after{content:"›";float:right;color:var(--mut);transition:transform .15s}
+details[open]>summary::after{transform:rotate(90deg)}
+.flag{color:var(--badt);font-size:.82rem} .sig{color:var(--okt);font-size:.82rem}
+.back{display:inline-block;margin-bottom:10px;text-decoration:none;font-size:.88rem}
+.menu a{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit}
+.menu .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c);font-weight:800;flex:none}
+.ficha-cab{display:flex;gap:14px;align-items:center}
+.ficha-cab .tit{flex:1;min-width:0}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:6px;vertical-align:middle}
+#tip{position:fixed;z-index:20;pointer-events:none;background:var(--txt);color:var(--bg);font-size:.76rem;padding:5px 8px;border-radius:7px;max-width:240px;opacity:0;transition:opacity .1s}
+#tip.on{opacity:1}
+svg text{font-family:inherit}
 </style>
 </head>
 <body>
 <header><div class="wrap">
-  <h1>Trading Lab · Buscador 12 meses</h1>
-  <div class="demo">Solo lectura · nada de esto es una recomendación de compra · el agente no opera solo</div>
-  <nav id="nav">
-    <a href="#/">Oportunidades</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Mi lista</a><a href="#/informes">Informes</a><a href="#/candidatos">Cribado simple</a><a href="#/ayuda">Cómo se usa</a>
+  <div class="top">
+    <div class="logo" aria-hidden="true"></div>
+    <div class="marca"><b>Agente de trading</b><span id="sub-cab">Cargando…</span></div>
+    <span class="pill">DEMO</span>
+    <button class="tema" id="tema" title="Cambiar tema (automático / oscuro / claro)" aria-label="Cambiar tema">◐</button>
+  </div>
+  <nav class="tabs" id="tabs">
+    <a href="#/">Hoy</a><a href="#/ranking">Ranking</a><a href="#/bot">Bot corto</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Mi lista</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/informes">Informes</a><a href="#/mas">Más</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"><div class="empty">Cargando…</div></main>
 <footer id="pie"></footer>
+<nav class="abajo" id="abajo">
+  <a href="#/"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Hoy</a>
+  <a href="#/ranking"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Ranking</a>
+  <a href="#/bot"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Bot</a>
+  <a href="#/seguimiento"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h8M8 17h5"/></svg>Noticias</a>
+  <a href="#/mas"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg>Más</a>
+</nav>
+<div id="tip"></div>
 <script src="vendor/marked.min.js"></script>
 <script src="vendor/purify.min.js"></script>
 <script>
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const num = (x, d = 2) => (x === null || x === undefined || x === "" || isNaN(+x)) ? "—" : (+x).toLocaleString("es-ES", {maximumFractionDigits: d, minimumFractionDigits: d});
-const pct = (x) => (x === null || x === undefined || isNaN(+x)) ? "—" : `${+x > 0 ? "+" : ""}${num(x, 1)} %`;
+const vacio = (x) => x === null || x === undefined || x === "" || isNaN(+x);
+const num = (x, d = 2) => vacio(x) ? "—" : (+x).toLocaleString("es-ES", {maximumFractionDigits: d, minimumFractionDigits: d});
+const pct = (x) => vacio(x) ? "—" : `${+x > 0 ? "+" : ""}${num(x, 1)} %`;
 const fecha = (iso) => { try { return new Date(iso).toLocaleString("es-ES", {dateStyle: "medium", timeStyle: "short", timeZone: "Europe/Madrid"}); } catch { return iso; } };
+const diaCorto = (iso) => { try { return new Date(iso + (iso.length === 10 ? "T12:00:00Z" : "")).toLocaleDateString("es-ES", {weekday: "short", day: "numeric", month: "short", timeZone: "Europe/Madrid"}); } catch { return iso; } };
+const md = (t) => DOMPurify.sanitize(marked.parse(t || ""));
+const urlOk = (u) => /^https?:\/\//.test(u || "") ? esc(u) : null;
 const VEREDICTO = {comprar_en_zona: "Comprar en zona", vigilar: "Vigilar", descartar: "Descartado"};
+const vacioBox = (titulo, texto) => `<div class="card empty"><b>${titulo}</b>${texto}</div>`;
 let D = null;
+const HOY = () => new Date().toISOString().slice(0, 10);
+const dias = (iso) => Math.round((new Date(iso + "T12:00:00Z") - new Date(HOY() + "T12:00:00Z")) / 864e5);
 
-function resumen() {  // "Mi lista": avisos y lista de vigilancia
-  const precios = Object.fromEntries((D.estado?.precios || []).map((p) => [p.ticker, p]));
-  const alertas = D.estado?.alertas || [];
-  let h = `<h2 style="font-size:1rem">Avisos</h2>`;
-  h += alertas.length ? alertas.map((a) => `<div class="card al ${esc(a.tipo.split(" ")[0])}"><b>${esc(a.tipo)}</b><div>${esc(a.mensaje)}</div></div>`).join("")
-    : `<div class="card sub">${D.estado ? "Sin avisos hoy." : "Aún no se han calculado avisos. Se calculan solos cada día laborable a las 23:30."}</div>`;
-  h += `<h2 style="font-size:1rem;margin-top:24px">Lista de vigilancia (${D.watchlist.length})</h2>`;
-  if (!D.watchlist.length) h += `<div class="card empty">Todavía no hay empresas analizadas.</div>`;
-  for (const w of D.watchlist) {
-    const p = precios[w.ticker] || {};
-    const inf = D.informes.find((i) => w.informe && i.id.endsWith(w.informe.split("/").pop()));
-    h += `<div class="card">
-      <div class="row"><span><span class="tk">${esc(w.ticker)}</span> <span class="sub">${esc(w.empresa)}</span></span>
-        <span class="chip v-${esc(w.veredicto)}">${esc(VEREDICTO[w.veredicto] || w.veredicto)} · convicción ${esc(w.conviccion)}/5</span></div>
-      <div class="sub">${esc(w.sector)} · analizada el ${esc(w.fecha_analisis)}</div>
-      <div class="grid">
-        <div><div class="k">Precio ahora</div><div class="n">${num(p.precio)} $</div></div>
-        <div><div class="k">Zona de entrada ≤</div><div class="n">${num(w.zona_entrada_max)} $</div><div class="k">${p.distancia_zona_pct != null ? (p.distancia_zona_pct <= 0 ? "✅ dentro" : `a ${pct(p.distancia_zona_pct)}`) : ""}</div></div>
-        <div><div class="k">Objetivo 12 meses</div><div class="n">${num(w.precio_objetivo_12m)} $</div><div class="k">${p.potencial_pct != null ? `potencial ${pct(p.potencial_pct)}` : ""}</div></div>
-        <div><div class="k">Stop de tesis</div><div class="n">${num(w.stop_tesis)} $</div></div>
-      </div>
-      ${w.proximo_catalizador ? `<div class="sub" style="margin-top:8px">📅 ${esc(w.proximo_catalizador)}${w.fecha_catalizador ? ` · ${esc(w.fecha_catalizador)}` : ""}</div>` : ""}
-      ${inf ? `<div style="margin-top:8px"><a href="#/informe/${encodeURIComponent(inf.id)}">Leer el análisis →</a></div>` : ""}
-    </div>`;
-  }
+/* ---------- Piezas visuales ---------- */
+// Escala horizontal de precios: stop (rojo) · zona de entrada (verde) · precio (punto) · objetivo (azul).
+function escala({ precio, stop, zona, objetivo, objBajo }) {
+  const vals = [precio, stop, zona, objetivo, objBajo].filter((x) => !vacio(x)).map(Number);
+  if (vals.length < 2 || vacio(precio)) return "";
+  const lo = Math.min(...vals), hi = Math.max(...vals), pad = (hi - lo) * 0.06 || 1;
+  const x = (v) => ((v - (lo - pad)) / (hi - lo + 2 * pad)) * 100;
+  let h = `<div class="esc"><div class="pista"></div>`;
+  if (!vacio(zona)) h += `<div class="zona" style="left:${x(vacio(stop) ? lo - pad : stop)}%;width:${x(zona) - x(vacio(stop) ? lo - pad : stop)}%"></div>`;
+  const m = (v, col) => vacio(v) ? "" : `<div class="tick" style="left:${x(v)}%;background:${col}"></div>`;
+  h += m(stop, "var(--bad)") + m(objBajo, "var(--mut)") + m(objetivo, "var(--acc)");
+  h += `<div class="pto" style="left:${x(precio)}%"></div><div class="et ar" style="left:${Math.min(88, Math.max(12, x(precio)))}%">${num(precio)} $</div></div>`;
+  const ley = (v, col, txt) => vacio(v) ? "" : `<span><i style="background:${col}"></i>${txt} ${num(v, 1)}</span>`;
+  h += `<div class="esc-ley">${ley(stop, "var(--bad)", "stop")}${vacio(zona) ? "" : `<span><i style="background:color-mix(in srgb,var(--ok) 55%,transparent);width:12px"></i>zona ≤ ${num(zona, 1)}</span>`}${ley(objBajo, "var(--mut)", "obj. bajo")}${ley(objetivo, "var(--acc)", "objetivo")}</div>`;
   return h;
 }
+// Barras divergentes: cuánto se movió cada acción hoy (verde sube, rojo baja; flecha y signo para no depender del color).
+function divergentes(filas) {
+  if (!filas.length) return "";
+  const max = Math.max(3, ...filas.map((f) => Math.abs(f.v)));
+  return `<div class="div">${filas.map((f) => {
+    const w = Math.abs(f.v) / max * 50, pos = f.v >= 0, cero = Math.abs(f.v) < 0.05;
+    return `<a href="${f.href || "#/seguimiento"}">${esc(f.t)}</a><div class="zona2" data-tip="${esc(f.tip || "")}"><i style="${pos ? "left:50%" : `left:${50 - w}%`};width:${Math.max(w, 0.6)}%;background:var(--${cero ? "mut" : pos ? "ok" : "bad"})"></i></div><span class="v ${cero ? "mut" : pos ? "okt" : "badt"}">${cero ? "=" : pos ? "▲" : "▼"} ${num(Math.abs(f.v), 1)} %</span>`;
+  }).join("")}</div>`;
+}
+// Anillo con la nota (0-100).
+function anillo(v, tam = 64) {
+  const r = 26, c = 2 * Math.PI * r, col = v >= 65 ? "var(--ok)" : v >= 45 ? "var(--warn)" : "var(--bad)";
+  return `<svg viewBox="0 0 64 64" width="${tam}" height="${tam}" role="img" aria-label="Nota ${Math.round(v)} de 100"><circle cx="32" cy="32" r="${r}" fill="none" stroke="var(--card2)" stroke-width="7"/><circle cx="32" cy="32" r="${r}" fill="none" stroke="${col}" stroke-width="7" stroke-linecap="round" stroke-dasharray="${c * v / 100} ${c}" transform="rotate(-90 32 32)"/><text x="32" y="37" text-anchor="middle" font-size="17" font-weight="800" fill="var(--txt)">${Math.round(v)}</text></svg>`;
+}
+// Gráfico de araña de los 8 factores (el anillo discontinuo es 50 = la media).
+function arana(f) {
+  const W = 280, cx = 140, cy = 128, R = 84, n = FAC.length;
+  const pt = (i, v) => { const a = -Math.PI / 2 + i * 2 * Math.PI / n; return [cx + Math.cos(a) * R * v / 100, cy + Math.sin(a) * R * v / 100]; };
+  const anillo = (v, extra = "") => `<polygon points="${FAC.map((_, i) => pt(i, v).join(",")).join(" ")}" fill="none" stroke="var(--line)" ${extra}/>`;
+  const vals = FAC.map(([k]) => f.factores?.[k] ?? 0);
+  return `<svg viewBox="-60 0 ${W + 120} 258" style="width:100%;max-width:380px;display:block;margin:0 auto" role="img" aria-label="Factores">
+    ${anillo(100)}${anillo(75)}${anillo(50, 'stroke-dasharray="3 3" stroke="var(--mut)"')}${anillo(25)}
+    ${FAC.map((_, i) => `<line x1="${cx}" y1="${cy}" x2="${pt(i, 100)[0]}" y2="${pt(i, 100)[1]}" stroke="var(--line)"/>`).join("")}
+    <polygon points="${vals.map((v, i) => pt(i, v).join(",")).join(" ")}" fill="color-mix(in srgb,var(--acc) 28%,transparent)" stroke="var(--acc)" stroke-width="2" stroke-linejoin="round"/>
+    ${vals.map((v, i) => `<circle cx="${pt(i, v)[0]}" cy="${pt(i, v)[1]}" r="4" fill="var(--acc)" stroke="var(--card)" stroke-width="2"><title>${FAC[i][1]}: ${Math.round(v)}</title></circle>`).join("")}
+    ${FAC.map(([, nom], i) => { const [x, y] = pt(i, 122); return `<text x="${x}" y="${y + 4}" font-size="10.5" text-anchor="${Math.abs(x - cx) < 5 ? "middle" : x > cx ? "start" : "end"}" fill="var(--sub)">${nom.split(" ")[0]} <tspan font-weight="700" fill="var(--txt)">${Math.round(vals[i])}</tspan></text>`; }).join("")}
+  </svg>`;
+}
+// Línea simple (curva de resultados, precio…). Si hay pocos puntos, nada.
+function linea(vals, { alto = 120, base = null, color = "var(--acc)", etiquetas = [] } = {}) {
+  if (vals.length < 2) return "";
+  const W = 320, lo = Math.min(...vals, base ?? Infinity), hi = Math.max(...vals, base ?? -Infinity), pad = (hi - lo) * 0.1 || 1;
+  const y = (v) => alto - 6 - ((v - lo + pad) / (hi - lo + 2 * pad)) * (alto - 12), x = (i) => i / (vals.length - 1) * W;
+  const p = vals.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
+  return `<svg viewBox="0 0 ${W} ${alto}" style="width:100%;height:auto;display:block" preserveAspectRatio="none">
+    ${base != null ? `<line x1="0" x2="${W}" y1="${y(base)}" y2="${y(base)}" stroke="var(--mut)" stroke-dasharray="3 3"/>` : ""}
+    <polygon points="0,${alto} ${p} ${W},${alto}" fill="color-mix(in srgb,${color} 14%,transparent)"/>
+    <polyline points="${p}" fill="none" stroke="${color}" stroke-width="2" stroke-linejoin="round"/>
+    ${vals.map((v, i) => `<circle cx="${x(i)}" cy="${y(v)}" r="9" fill="transparent" data-tip="${esc(etiquetas[i] || num(v))}"/>`).join("")}</svg>`;
+}
+const colorNota = (v) => {  // mapa de calor: rojo (malo) · gris (50 = media) · azul (bueno)
+  if (v == null) return "background:var(--card2);color:var(--mut)";
+  const t = Math.max(-1, Math.min(1, (v - 50) / 40));
+  return `background:color-mix(in oklab,var(${t >= 0 ? "--hm-hi" : "--hm-lo"}) ${Math.round(Math.abs(t) * 88)}%,var(--hm-mid));color:${Math.abs(t) > 0.55 ? "#fff" : "var(--txt)"}`;
+};
 
-const FAC = [["calidad","Calidad"],["crecimiento","Crecimiento"],["valoracion","Valoración"],["revisiones","Revisiones analistas"],["insiders","Directivos"],["momentum","Momentum"],["catalizadores","Catalizadores"],["solidez","Solidez"]];
-const clase = (v) => v == null ? "" : v >= 65 ? "hi" : v >= 40 ? "mid" : "lo";
-const barras = (f) => `<div class="bars">${FAC.map(([k, n]) => { const v = f.factores?.[k]; return `<span class="sub">${n}</span><span class="bar"><i class="${clase(v)}" style="width:${v ?? 0}%"></i></span><span class="n">${v == null ? "—" : Math.round(v)}</span>`; }).join("")}</div>`;
-let filtroSector = "", filtroCarril = "";
+/* ---------- Datos derivados ---------- */
+const TIPO_AVISO = {
+  "ZONA DE ENTRADA": ["var(--ok)", "✓", "Precio en zona de entrada"],
+  "CATALIZADOR CERCA": ["var(--warn)", "⏰", "Catalizador cerca"],
+  "TESIS EN PELIGRO": ["var(--bad)", "!", "Tesis en peligro"],
+  "OBJETIVO ALCANZADO": ["var(--acc)", "★", "Objetivo alcanzado"],
+  "NOTICIA IMPORTANTE": ["var(--warn)", "N", "Noticia importante"],
+  "MOVIMIENTO GRANDE": ["var(--warn)", "↕", "Movimiento grande"],
+  "SEÑAL DE ENTRADA": ["var(--ok)", "✓", "Señal de entrada"],
+  "PELIGRO": ["var(--bad)", "!", "Peligro"],
+  "FUENTE": ["var(--bad)", "×", "Fuente sin datos"],
+  "BOT": ["var(--ia)", "⚡", "Bot corto del hueco"],
+};
+const CORTO_AV = { "ZONA DE ENTRADA": "en zona", "CATALIZADOR CERCA": "catalizador cerca", "TESIS EN PELIGRO": "tesis en peligro", "OBJETIVO ALCANZADO": "objetivo alcanzado" };
+function atencion() {
+  const out = [];
+  for (const a of D.estado?.alertas || []) out.push({ tipo: a.tipo, ticker: a.ticker, texto: a.mensaje, href: D.ranking?.filas.some((f) => f.ticker === a.ticker) ? `#/empresa/${encodeURIComponent(a.ticker)}` : "#/vigilancia" });
+  const L = D.seguimiento?.lista;
+  for (const [t, e] of Object.entries({ ...(L?.empresas || {}), ...(L?.materias_primas || {}) })) {
+    const av = e.avisos || [];
+    if (!av.length) continue;
+    const porTipo = {};
+    for (const a of av) (porTipo[a.tipo] ||= []).push(a.texto);
+    for (const [tipo, textos] of Object.entries(porTipo)) out.push({ tipo, ticker: t, texto: textos.length > 1 ? `${textos.length} avisos: ${textos[0]}` : textos[0], href: `#/seguimiento/${encodeURIComponent(t)}` });
+  }
+  for (const [t, e] of Object.entries(D.seguimiento?.empresas || {})) if (e.estado === "SEÑAL DE ENTRADA" || e.estado === "PELIGRO") out.push({ tipo: e.estado, ticker: t, texto: `Plan de entrada de ${t}: ${e.estado.toLowerCase()} (cierre ${e.cierre} $)`, href: "#/seguimiento" });
+  const dia = cortoDias()[0];
+  if (dia && dia.fecha === HOY()) for (const r of dia.filas.filter((r) => r.accion === "abierta" || r.accion === "error" || r.accion === "cerrada")) out.push({ tipo: "BOT", ticker: r.simbolo, texto: `${r.accion}: ${r.motivo}`, href: "#/bot" });
+  for (const f of fuentes().filter((f) => f.estado === "mal")) out.push({ tipo: "FUENTE", ticker: "", texto: `${f.nombre}: ${f.det}`, href: "#/fuentes" });
+  return out;
+}
+function avisoHtml(a) {
+  const [c, ico, nom] = TIPO_AVISO[a.tipo] || ["var(--acc)", "i", a.tipo];
+  return `<a class="card aviso" style="--c:${c};text-decoration:none;color:inherit;display:flex" href="${a.href}"><span class="ico">${ico}</span><span style="min-width:0"><span class="t">${esc(nom)}${a.ticker ? ` · ${esc(a.ticker)}` : ""}</span><div style="font-size:.9rem">${esc(a.texto)}</div></span></a>`;
+}
+function catalizadores() {
+  const ev = [], visto = new Set(), hoy = HOY();
+  const add = (t, f, texto, origen, col) => { if (!f || f < hoy) return; const k = t + f + texto.slice(0, 12); if (visto.has(k)) return; visto.add(k); ev.push({ t, f, texto, origen, col }); };
+  for (const w of D.watchlist) add(w.ticker, (w.fecha_catalizador || "").slice(0, 10), w.proximo_catalizador || "Catalizador", "Mi lista", "var(--ok)");
+  for (const a of D.estado?.alertas || []) if (a.tipo === "CATALIZADOR CERCA") { const m = a.mensaje.match(/'([^']+)' el (\d{4}-\d{2}-\d{2})/); if (m) add(a.ticker, m[2], m[1], "Aviso", "var(--warn)"); }
+  for (const [t, e] of Object.entries(D.seguimiento?.lista?.empresas || {})) {
+    for (const c of e.catalizadores || []) { const m = c.match(/(\d{4}-\d{2}(?:-\d{2})?)/); if (m) add(t, m[1].length === 7 ? m[1] + "-28" : m[1], c.replace(/\s*\d{4}-\d{2}(-\d{2})?/, "").replace(/:\s*resultado principal previsto$/, ""), e.grupo === "cartera" ? "Tus acciones" : "Seguimiento", "var(--acc)"); }
+  }
+  for (const f of (D.ranking?.filas || []).slice(0, 30)) if (f.proximos_resultados && dias(f.proximos_resultados) <= 45) add(f.ticker, f.proximos_resultados, `Resultados (ranking #${f.puesto})`, "Ranking", "var(--mut)");
+  return ev.sort((a, b) => a.f.localeCompare(b.f));
+}
+function cortoDias() {
+  const g = {};
+  for (const r of D.corto?.registro || []) { const f = (r.fecha_hora_ny || "").slice(0, 10); if (f) (g[f] ||= []).push(r); }
+  return Object.entries(g).sort((a, b) => b[0].localeCompare(a[0])).map(([fecha, filas]) => ({ fecha, filas }));
+}
+function cortoCerradas() { return (D.corto?.registro || []).filter((r) => r.accion === "cerrada" && !vacio(r.resultado_pct)); }
+function edadH(iso) { if (!iso) return null; const t = new Date(iso.length === 10 ? iso + "T22:00:00Z" : iso); return (Date.now() - t) / 36e5; }
+function fuentes() {
+  const R = D.ranking, X = R?.fuentes_extra || {}, L = D.seguimiento?.lista, out = [];
+  const porEdad = (nombre, iso, que, horas = 80) => { const h = edadH(iso); out.push({ nombre, que, estado: h == null ? "mal" : h <= 36 ? "bien" : h <= horas ? "regular" : "mal", det: iso ? `datos del ${fecha(iso)}` : "sin datos todavía" }); };
+  porEdad("Ranking de small caps", R?.actualizado, "Puntúa todas las small caps cada noche");
+  if (R?.provisional) out[out.length - 1] = { ...out[out.length - 1], estado: "regular", det: `provisional: ${R.descargadas ?? R.analizadas} de ${R.universo}` };
+  porEdad("Precios y avisos de tu lista", D.estado?.actualizado, "Comprueba zona de entrada, stop y catalizadores");
+  porEdad("Seguimiento de noticias", L?.fecha, "Titulares y precios cada 2 h con la bolsa abierta", 100);
+  const dia = cortoDias()[0];
+  porEdad("Bot corto del hueco", dia?.fecha, "Decisiones del bot en eToro demo", 100);
+  const est = (nombre, ok, det, que) => out.push({ nombre, que, estado: ok === null ? "regular" : ok ? "bien" : "mal", det });
+  if (R) {
+    est("Calendario de resultados", X.calendario_resultados > 0, `${X.calendario_resultados ?? 0} fechas`, "Cuándo presenta resultados cada empresa");
+    est("SEC (registros oficiales)", !X.sec_error && X.sec_empresas > 0, X.sec_error ? `error ${X.sec_error}` : `${X.sec_empresas ?? 0} empresas`, "Ampliaciones de capital, grandes inversores, directivos");
+    est("ClinicalTrials.gov", X.ensayos_empresas > 0, `${X.ensayos_empresas ?? 0} empresas · ${X.ensayos_con_catalizador ?? 0} con resultados en 12 meses`, "Ensayos clínicos de las empresas de salud");
+    est("Finnhub", X.finnhub ? X.finnhub_empresas > 0 : false, X.finnhub ? `${X.finnhub_empresas} empresas` : "sin clave", "Recomendaciones y directivos");
+    est("Alpaca (noticias)", X.alpaca ? X.alpaca_empresas_con_noticias > 0 : false, X.alpaca ? `${X.alpaca_empresas_con_noticias} empresas con noticias` : "sin clave", "Titulares de cada empresa");
+    est("Tono de titulares", X.sentimiento_empresas > 0, `${X.sentimiento_empresas ?? 0} empresas`, "Si las noticias suenan bien o mal");
+    est("Semáforo macro (FRED)", R.macro?.estado ? true : null, R.macro?.estado ? `${R.macro.estado} · ${R.macro.fecha || ""}` : "sin datos", "Tipos de interés, crédito, small caps");
+  }
+  return out;
+}
+
+/* ---------- Pantallas ---------- */
+function hoy() {
+  const E = D.estado, R = D.ranking, L = D.seguimiento?.lista;
+  const al = E?.alertas || [];
+  const enZona = (E?.precios || []).filter((p) => !vacio(p.distancia_zona_pct) && p.distancia_zona_pct <= 0);
+  const M = R?.macro, MC = { verde: ["var(--ok)", "Verde", "okt"], ambar: ["var(--warn)", "Ámbar", "warnt"], rojo: ["var(--bad)", "Rojo", "badt"] }[M?.estado] || ["var(--mut)", "—", ""];
+  const dia = cortoDias()[0], abiertas = dia ? dia.filas.filter((r) => r.accion === "abierta").length : 0, cand = dia ? dia.filas.filter((r) => r.accion === "candidata").length : 0;
+  const ensayo = dia && dia.filas.some((r) => r.accion.startsWith("ensayo"));
+  const tipos = al.reduce((o, a) => (o[a.tipo] = (o[a.tipo] || 0) + 1, o), {});
+  let h = `<div class="kpis">
+    <a class="kpi" href="#/vigilancia" style="--c:var(--warn)"><div class="lbl">Avisos de hoy</div><div class="val ${al.length ? "warnt" : ""}">${E ? al.length : "—"}</div><div class="det">${Object.entries(tipos).map(([t, n]) => `${n} ${esc(CORTO_AV[t] || t.toLowerCase())}`).join(" · ") || (E ? "nada que mirar" : "aún sin calcular")}</div></a>
+    <a class="kpi" href="#/vigilancia" style="--c:var(--ok)"><div class="lbl">En zona</div><div class="val okt">${E ? enZona.length : "—"}<span class="mut" style="font-size:1rem;font-weight:600"> / ${D.watchlist.length}</span></div><div class="det">de tu lista: ${enZona.map((p) => esc(p.ticker)).join(", ") || "ninguna"}</div></a>
+    <a class="kpi" href="#/ranking" style="--c:${MC[0]}"><div class="lbl">Semáforo macro</div><div class="val ${MC[2]}"><span class="dot" style="--c:${MC[0]};width:14px;height:14px"></span>${MC[1]}</div><div class="det">${esc(M?.resumen || "sin datos")}</div></a>
+    <a class="kpi" href="#/bot" style="--c:var(--ia)"><div class="lbl">Bot del hueco</div><div class="val">${dia ? abiertas : "—"}<span class="mut" style="font-size:1rem;font-weight:600"> cortos</span></div><div class="det">${dia ? `${diaCorto(dia.fecha)} · ${cand} candidatas${ensayo ? " · ensayo" : ""}` : "aún sin decisiones"}</div></a>
+  </div>`;
+  const at = atencion();
+  h += `<div class="sec" style="--c:var(--warn)">Requiere atención <span class="mas">${at.length}</span></div>`;
+  h += at.length ? at.slice(0, 6).map(avisoHtml).join("") + (at.length > 6 ? `<details><summary class="sub" style="padding:4px 2px 10px">Ver ${at.length - 6} más</summary>${at.slice(6).map(avisoHtml).join("")}</details>` : "") : vacioBox("Todo tranquilo", "No hay avisos ni problemas hoy.");
+  // Tu lista de un vistazo
+  const precios = Object.fromEntries((E?.precios || []).map((p) => [p.ticker, p]));
+  h += `<div class="sec" style="--c:var(--ok)">Tu lista de un vistazo <a class="mas" href="#/vigilancia">Ver todo →</a></div>`;
+  h += D.watchlist.length ? `<div class="dos">${D.watchlist.map((w) => wlMini(w, precios[w.ticker])).join("")}</div>` : vacioBox("Lista vacía", "Todavía no hay empresas analizadas.");
+  // Movimientos del día
+  const mov = Object.entries({ ...(L?.empresas || {}), ...(L?.materias_primas || {}) }).filter(([, e]) => !vacio(e.cambio_pct)).map(([t, e]) => ({ t, v: +e.cambio_pct, href: `#/seguimiento/${encodeURIComponent(t)}`, tip: `${e.nombre}: cierre ${e.cierre}` })).sort((a, b) => b.v - a.v);
+  h += `<div class="sec" style="--c:var(--acc)">Cómo se movió tu seguimiento${L?.fecha ? ` · ${esc(diaCorto(L.fecha))}` : ""}<a class="mas" href="#/seguimiento">Noticias →</a></div>`;
+  h += mov.length ? `<div class="card">${L?.mercado ? `<div class="sub" style="margin-bottom:8px">Mercado (${esc(L.mercado.ticker)}): <b class="${L.mercado.cambio_pct >= 0 ? "okt" : "badt"}">${pct(L.mercado.cambio_pct)}</b></div>` : ""}${divergentes(mov)}</div>` : vacioBox("Sin datos", "El seguimiento de noticias aún no ha corrido.");
+  // Calendario
+  const ev = catalizadores();
+  h += `<div class="sec" style="--c:var(--warn)">Próximos catalizadores y resultados</div>`;
+  h += ev.length ? `<div class="card"><ul class="tl">${ev.slice(0, 10).map((e) => `<li style="--c:${e.col}"><div class="cuando">${esc(diaCorto(e.f))} · ${dias(e.f) === 0 ? "hoy" : dias(e.f) === 1 ? "mañana" : `en ${dias(e.f)} días`} · ${esc(e.origen)}</div><div><b>${esc(e.t)}</b> ${esc(e.texto)}</div></li>`).join("")}</ul>${ev.length > 10 ? `<details><summary class="sub">Ver ${ev.length - 10} más</summary><ul class="tl" style="margin-top:10px">${ev.slice(10).map((e) => `<li style="--c:${e.col}"><div class="cuando">${esc(diaCorto(e.f))} · en ${dias(e.f)} días · ${esc(e.origen)}</div><div><b>${esc(e.t)}</b> ${esc(e.texto)}</div></li>`).join("")}</ul></details>` : ""}</div>` : vacioBox("Sin fechas", "No hay catalizadores con fecha próxima.");
+  // Los dos agentes
+  h += `<div class="sec">Los dos agentes</div><div class="dos">
+    <a class="card" href="#/bot" style="text-decoration:none;color:inherit;border-top:2px solid var(--ia)"><div class="row"><b>A · Intradía</b><span class="chip">eToro demo</span></div><div class="sub">Corto del hueco: vende en corto las acciones que abren ≥ +${num((D.corto?.config?.hueco_min ?? 0.5) * 100, 0)} %, con stop y cierre el mismo día.</div><div class="mut" style="margin-top:6px">Reglas → riesgo → orden → cierre · ver decisiones →</div></a>
+    <a class="card" href="#/ranking" style="text-decoration:none;color:inherit;border-top:2px solid var(--acc)"><div class="row"><b>B · Medio plazo (12 meses)</b><span class="chip">no opera</span></div><div class="sub">Puntúa ${R ? R.analizadas : "las"} small caps en 8 factores, vigila tu lista y avisa. Tú decides.</div><div class="mut" style="margin-top:6px">Ranking → análisis → vigilancia → aviso · ver ranking →</div></a></div>`;
+  const F = fuentes(), mal = F.filter((f) => f.estado === "mal").length, reg = F.filter((f) => f.estado === "regular").length;
+  h += `<a class="card" href="#/fuentes" style="display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit;margin-top:14px"><span><span class="dot" style="--c:var(--ok)"></span>${F.length - mal - reg} bien</span><span><span class="dot" style="--c:var(--warn)"></span>${reg} regular</span><span><span class="dot" style="--c:var(--bad)"></span>${mal} mal</span><span class="sub" style="margin-left:auto">Salud de las fuentes →</span></a>`;
+  return h;
+}
+function wlMini(w, p) {
+  p = p || {};
+  const dentro = !vacio(p.distancia_zona_pct) && p.distancia_zona_pct <= 0;
+  return `<div class="card"><div class="row"><span><span class="tk">${esc(w.ticker)}</span> <span class="sub">${esc(w.empresa)}</span></span><span class="chip" style="color:${w.veredicto === "comprar_en_zona" ? "var(--okt)" : w.veredicto === "descartar" ? "var(--badt)" : "var(--warnt)"}">${esc(VEREDICTO[w.veredicto] || w.veredicto)}</span></div>
+    ${escala({ precio: p.precio ?? w.precio_analisis, stop: w.stop_tesis, zona: w.zona_entrada_max, objetivo: w.precio_objetivo_12m })}
+    <div class="sub">${dentro ? `<b class="okt">✓ Dentro de la zona</b>` : vacio(p.distancia_zona_pct) ? "sin precio actual" : `A ${pct(p.distancia_zona_pct)} de la zona`} · potencial ${pct(p.potencial_pct)}${vacio(p.precio) ? ` · precio del análisis` : ""}</div></div>`;
+}
+
+const FAC = [["calidad","Calidad","Cal"],["crecimiento","Crecimiento","Cre"],["valoracion","Valoración","Val"],["revisiones","Revisiones analistas","Rev"],["insiders","Directivos","Dir"],["momentum","Momentum","Mom"],["catalizadores","Catalizadores","Cat"],["solidez","Solidez","Sol"]];
+let filtroSector = "", filtroCarril = "", cuantas = 30;
 try { filtroSector = localStorage.getItem("fs") || ""; filtroCarril = localStorage.getItem("fc") || ""; } catch {}
 
 function oportunidades() {
   const R = D.ranking;
-  if (!R) return `<div class="card empty">El primer ranking se calcula esta noche (23:30) en cuanto el sistema esté activado.</div>`;
+  if (!R) return vacioBox("Aún no hay ranking", "El primer ranking se calcula por la noche (23:30) en GitHub.");
   const sectores = [...new Set(R.filas.map((f) => f.sector).filter(Boolean))].sort();
   const carriles = [...new Set(R.filas.map((f) => f.carril).filter(Boolean))].sort();
-  const filas = R.filas.filter((f) => (!filtroSector || f.sector === filtroSector) && (!filtroCarril || f.carril === filtroCarril)).slice(0, 60);
+  const todas = R.filas.filter((f) => (!filtroSector || f.sector === filtroSector) && (!filtroCarril || f.carril === filtroCarril));
+  const filas = todas.slice(0, cuantas);
   const enLista = new Set(D.watchlist.map((w) => w.ticker));
-  const prov = R.provisional ? `<div class="flag" style="margin-bottom:8px">⏳ Ranking provisional: de momento hay datos de ${R.descargadas ?? R.analizadas} de ${R.universo} empresas. Se completa en la siguiente ejecución.</div>` : "";
-  const M = R.macro;
-  const color = { verde: "🟢", ambar: "🟡", rojo: "🔴" };
-  const macro = M && M.estado ? `<details class="card" style="margin-bottom:8px"><summary><b>Semáforo macro ${color[M.estado]}</b> <span class="sub">${esc(M.resumen)}</span></summary>
-    <ul>${(M.indicadores || []).map((i) => `<li>${color[i.estado] || ""} <b>${esc(i.nombre)}</b>: ${num(i.valor, 2)}${i.cambio_3m == null ? "" : ` (en 3 meses ${i.cambio_3m > 0 ? "+" : ""}${num(i.cambio_3m, 2)})`}<br><span class="sub">${esc(i.explicacion)}</span></li>`).join("")}</ul>
-    <div class="sub">Datos de FRED (Reserva Federal de St. Louis) del ${esc(M.fecha || "")}. Es orientativo: no cambia la nota de las empresas.</div></details>` : "";
+  const M = R.macro, color = { verde: "var(--ok)", ambar: "var(--warn)", rojo: "var(--bad)" }, nomM = { verde: "Verde", ambar: "Ámbar", rojo: "Rojo" };
+  const mejor = R.filas[0];
+  let h = R.provisional ? `<div class="card aviso" style="--c:var(--warn)"><span class="ico">⏳</span><span>Ranking provisional: hay datos de ${R.descargadas ?? R.analizadas} de ${R.universo} empresas. Se completa en la siguiente ejecución.</span></div>` : "";
+  h += `<div class="kpis">
+    <div class="kpi" style="--c:var(--mut)"><div class="lbl">Universo</div><div class="val">${R.universo}</div><div class="det">small caps de EE. UU.</div></div>
+    <div class="kpi" style="--c:var(--acc)"><div class="lbl">Puntuadas</div><div class="val">${R.analizadas}</div><div class="det">en 8 factores · ${esc(diaCorto(R.actualizado.slice(0, 10)))}</div></div>
+    <a class="kpi" href="#/empresa/${encodeURIComponent(mejor.ticker)}" style="--c:var(--ok)"><div class="lbl">La n.º 1</div><div class="val">${esc(mejor.ticker)} <span class="okt" style="font-size:1.1rem">${Math.round(mejor.nota)}</span></div><div class="det">${esc(mejor.empresa || "")}</div></a>
+    <div class="kpi" style="--c:${color[M?.estado] || "var(--mut)"}"><div class="lbl">Semáforo macro</div><div class="val" style="font-size:1.4rem"><span class="dot" style="--c:${color[M?.estado] || "var(--mut)"};width:12px;height:12px"></span>${nomM[M?.estado] || "—"}</div><div class="det">orientativo, no cambia la nota</div></div>
+  </div>`;
+  h += `<div class="sec" style="--c:var(--acc)">Mapa de calor del ranking</div>
+  <p class="sub" style="margin-top:-4px">Cada fila es una empresa y cada casilla un factor (0-100; 50 = en la media). <b>Azul = bien, rojo = flojo.</b> Toca una casilla para ver el factor, o la empresa para abrir su ficha. Es un filtro, no una recomendación.</p>
+  <div class="chips">${["", ...carriles].map((c) => `<button data-carril="${esc(c)}" class="${c === filtroCarril ? "on" : ""}">${c ? esc(c) : "Todas"}</button>`).join("")}</div>
+  <div style="margin-bottom:10px"><select id="fs"><option value="">Todos los sectores</option>${sectores.map((x) => `<option ${x === filtroSector ? "selected" : ""}>${esc(x)}</option>`).join("")}</select></div>`;
+  if (!filas.length) h += vacioBox("Ninguna", "No hay empresas con ese filtro.");
+  else {
+  h += `<div class="card" style="padding:10px 8px"><table class="hm"><colgroup><col style="width:22%"><col style="width:10%">${FAC.map(() => "<col>").join("")}</colgroup>
+    <thead><tr><th style="text-align:left">Empresa</th><th>Nota</th>${FAC.map(([, n, a]) => `<th title="${n}">${a}</th>`).join("")}</tr></thead><tbody>
+    ${filas.map((f) => `<tr><td class="tkc"><a href="#/empresa/${encodeURIComponent(f.ticker)}"><span class="mut" style="font-size:.66rem">${f.puesto}</span> ${esc(f.ticker)}${enLista.has(f.ticker) ? ' <span class="okt" title="En tu lista">●</span>' : ""}${(f.banderas || []).length ? ` <span class="badt" title="${esc(f.banderas.join(" · "))}">⚠</span>` : ""}<small>${esc(f.sector || "")}</small></a></td>
+      <td><a class="nt" style="color:${f.nota >= 65 ? "var(--okt)" : f.nota >= 45 ? "var(--txt)" : "var(--badt)"};text-decoration:none" href="#/empresa/${encodeURIComponent(f.ticker)}">${Math.round(f.nota)}</a></td>
+      ${FAC.map(([k, n]) => { const v = f.factores?.[k]; return `<td><span class="c" style="${colorNota(v)}" data-tip="${esc(f.ticker)} · ${n}: ${v == null ? "sin datos" : Math.round(v)}">${v == null ? "·" : Math.round(v)}</span></td>`; }).join("")}</tr>`).join("")}
+    </tbody></table>
+    <div class="leyenda" style="margin-top:8px;padding:0 4px"><span>flojo</span><span class="grad"></span><span>bueno</span><span class="mut">· ● en tu lista · ⚠ bandera roja</span></div>
+    <div class="mut" style="padding:4px 4px 0">Cal calidad · Cre crecimiento · Val valoración · Rev revisiones de analistas · Dir directivos · Mom momentum · Cat catalizadores · Sol solidez</div>
+  </div>`;
+  if (todas.length > cuantas) h += `<button class="chip" id="mas-filas" style="display:block;margin:8px auto;padding:8px 16px;cursor:pointer;font:inherit">Ver más (${todas.length - cuantas} restantes)</button>`;
+  }
+  if (M?.estado) h += `<div class="sec" style="--c:var(--ok)">Semáforo macro</div><details class="card"><summary><b>Por qué el semáforo está así</b></summary><ul style="padding-left:18px">${(M.indicadores || []).map((i) => `<li><span class="dot" style="--c:${color[i.estado] || "var(--mut)"}"></span><b>${esc(i.nombre)}</b>: ${num(i.valor, 2)}${i.cambio_3m == null ? "" : ` (3 meses: ${i.cambio_3m > 0 ? "+" : ""}${num(i.cambio_3m, 2)})`}<br><span class="sub">${esc(i.explicacion)}</span></li>`).join("")}</ul><div class="mut">FRED (Reserva Federal de St. Louis), ${esc(M.fecha || "")}.</div></details>`;
   const V = R.validacion, vp = V && V.plazos && V.plazos[V.plazos.length - 1];
-  const valid = vp ? `<div class="sub" style="margin-bottom:8px">¿Acierta el ranking? Las 20 mejores de hace ${esc(vp.plazo)}: <b>${pct(vp.top20)}</b> frente a ${pct(vp.mediana_todas)} de la empresa mediana (con poca historia es casi azar).</div>` : "";
-  let h = prov + macro + valid + `<p class="sub">De <b>${R.universo}</b> small caps de EE. UU. se han puntuado <b>${R.analizadas}</b> en 8 factores (0-100, 50 = en la media). Las banderas rojas restan puntos. <b>Es un filtro, no una recomendación</b>: las primeras son las que merecen un análisis a fondo.</p>
-  <div class="filtros"><select id="fs"><option value="">Todos los sectores</option>${sectores.map((x) => `<option ${x === filtroSector ? "selected" : ""}>${esc(x)}</option>`).join("")}</select>
-  <select id="fc"><option value="">Todos los tipos</option>${carriles.map((x) => `<option ${x === filtroCarril ? "selected" : ""}>${esc(x)}</option>`).join("")}</select></div>`;
-  h += filas.map((f) => `<a class="card" style="display:block;text-decoration:none;color:inherit" href="#/empresa/${encodeURIComponent(f.ticker)}">
-    <div class="row"><span><span class="puesto">#${f.puesto}</span><span class="tk">${esc(f.ticker)}</span> <span class="sub">${esc(f.empresa || "")}</span>${enLista.has(f.ticker) ? ' <span class="chip">en mi lista</span>' : ""}</span><span class="nota">${Math.round(f.nota)}</span></div>
-    <div class="sub">${esc(f.sector || "")} · ${esc(f.carril)}</div>
-    ${barras(f)}
-    ${(f.senales || []).map((x) => `<div class="sig">▲ ${esc(x)}</div>`).join("")}
-    ${(f.banderas || []).map((x) => `<div class="flag">⚠ ${esc(x)}</div>`).join("")}
-  </a>`).join("") || `<div class="card empty">Ninguna con ese filtro.</div>`;
+  h += `<div class="sec">¿Acierta el ranking?</div>` + (vp ? `<div class="card"><div class="row"><span>Las 20 mejores de hace ${esc(vp.plazo)}</span><b class="${vp.top20 >= vp.mediana_todas ? "okt" : "badt"}">${pct(vp.top20)}</b></div><div class="sub">frente a ${pct(vp.mediana_todas)} de la empresa mediana. Con poca historia es casi azar.</div></div>` : vacioBox("Todavía sin historia", "Se guarda una foto del ranking cada día; en unas semanas se verá si las primeras suben más que la media."));
   return h;
 }
 
 function empresaFicha(t) {
   const f = D.ranking?.filas.find((x) => x.ticker === t);
-  if (!f) return `<div class="card empty">No está en el ranking.</div>`;
+  if (!f) return `<a class="back" href="#/ranking">← Ranking</a>` + vacioBox("No está en el ranking", "Esta empresa no aparece en el ranking de hoy.");
   const informe = D.informes.filter((i) => i.archivo.startsWith(t + "-"))[0];
+  const w = D.watchlist.find((x) => x.ticker === t), p = (D.estado?.precios || []).find((x) => x.ticker === t) || {};
   const m = (k, n, fmt) => `<div><div class="k">${n}</div><div class="n">${f[k] == null ? "—" : fmt(f[k])}</div></div>`;
   const P = (x) => pct(x), Pf = (x) => pct(x * 100), N = (x) => num(x, 1), D0 = (x) => num(x, 0);
-  return `<a href="#/">← Oportunidades</a>
-  <div class="card"><div class="row"><span><span class="puesto">#${f.puesto}</span><span class="tk">${esc(f.ticker)}</span> <span class="sub">${esc(f.empresa || "")}</span></span><span class="nota">${Math.round(f.nota)}</span></div>
-  <div class="sub">${esc(f.sector || "")} · ${esc(f.industria || "")}</div>
-  <div class="sub">Tipo: <b>${esc(f.carril)}</b> · nota sin penalizar ${num(f.nota_base, 1)} · datos disponibles ${Math.round((f.cobertura_total || 0) * 100)} %</div>
-  ${barras(f)}
-  ${(f.senales || []).map((x) => `<div class="sig" style="margin-top:6px">▲ ${esc(x)}</div>`).join("")}
-  ${(f.banderas || []).map((x) => `<div class="flag" style="margin-top:6px">⚠ ${esc(x)}</div>`).join("")}
-  ${informe ? `<div style="margin-top:10px"><a href="#/informe/${encodeURIComponent(informe.id)}">Leer el análisis profundo →</a></div>` : `<div class="sub" style="margin-top:10px">Sin análisis profundo todavía. Pide en el chat: <i>"Analiza ${esc(f.ticker)} a 12 meses"</i>.</div>`}
+  const objBajo = !vacio(f.precio) && !vacio(f.potencial_objetivo_bajo_pct) ? f.precio * (1 + f.potencial_objetivo_bajo_pct / 100) : null;
+  return `<a class="back" href="#/ranking">← Ranking</a>
+  <div class="card"><div class="ficha-cab">${anillo(f.nota, 68)}<div class="tit"><div><span class="mut">#${f.puesto}</span> <span class="tk" style="font-size:1.35rem">${esc(f.ticker)}</span></div><div class="sub">${esc(f.empresa || "")}</div><div class="mut">${esc(f.sector || "")} · ${esc(f.industria || "")}</div></div></div>
+    <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap"><span class="chip">${esc(f.carril)}</span>${w ? `<span class="chip okt">En tu lista · ${esc(VEREDICTO[w.veredicto] || w.veredicto)}</span>` : ""}<span class="chip">datos ${Math.round((f.cobertura_total || 0) * 100)} %</span><span class="chip">sin penalizar ${num(f.nota_base, 0)}</span></div>
+    ${(f.senales || []).map((x) => `<div class="sig" style="margin-top:6px">▲ ${esc(x)}</div>`).join("")}
+    ${(f.banderas || []).map((x) => `<div class="flag" style="margin-top:6px">⚠ ${esc(x)}</div>`).join("")}
   </div>
-  <div class="card"><b>Datos clave</b><div class="grid">
+  <div class="dos"><div class="card"><b>Los 8 factores</b><div class="mut">La línea discontinua es 50 (la media). Cuanto más hacia fuera, mejor.</div>${arana(f)}</div>
+  <div class="card"><b>Precio frente a objetivos</b><div class="mut">Objetivo medio y más bajo de ${f.analistas ?? "—"} analistas${w ? "; con tu lista, la zona de entrada y el stop de tesis" : ""}.</div>
+    ${escala({ precio: p.precio ?? f.precio, objetivo: f.objetivo_medio, objBajo, stop: w?.stop_tesis, zona: w?.zona_entrada_max })}
+    <div class="grid"><div><div class="k">Potencial (objetivo medio)</div><div class="n ${f.potencial_analistas_pct >= 0 ? "okt" : "badt"}">${pct(f.potencial_analistas_pct)}</div></div><div><div class="k">Hasta el objetivo más bajo</div><div class="n">${pct(f.potencial_objetivo_bajo_pct)}</div></div>${w ? `<div><div class="k">Tu objetivo 12 meses</div><div class="n">${num(w.precio_objetivo_12m)} $</div></div>` : ""}<div><div class="k">${f.proximos_resultados && dias(f.proximos_resultados) < 0 ? "Últimos resultados" : "Próximos resultados"}</div><div class="n">${f.proximos_resultados ? esc(diaCorto(f.proximos_resultados)) : "—"}</div></div></div>
+    ${informe ? `<a class="chip" style="display:inline-block;margin-top:12px;color:var(--acc)" href="#/informe/${encodeURIComponent(informe.id)}">Leer el análisis profundo →</a>` : `<div class="sub" style="margin-top:12px">Sin análisis profundo todavía. Pide en el chat: <i>"Analiza ${esc(f.ticker)} a 12 meses"</i>.</div>`}
+  </div></div>
+  <details class="card" open><summary><b>Datos clave</b></summary><div class="grid">
     ${m("precio", "Precio", (x) => num(x) + " $")}${m("capitalizacion", "Capitalización", (x) => num(x / 1e6, 0) + " M$")}
     ${m("analistas", "Nº analistas", D0)}${m("recomendacion", "Consenso", (x) => esc(x))}
-    ${m("objetivo_medio", "Objetivo analistas", (x) => num(x) + " $")}${m("potencial_analistas_pct", "Potencial (analistas)", P)}
-    ${m("potencial_objetivo_bajo_pct", "Hasta el objetivo más bajo", P)}${m("per_futuro", "PER futuro", N)}
+    ${m("objetivo_medio", "Objetivo analistas", (x) => num(x) + " $")}${m("per_futuro", "PER futuro", N)}
     ${m("ev_ventas", "Valor empresa / ventas", N)}${m("rent_fcf_pct", "Rentab. flujo de caja", P)}
     ${m("crec_ventas", "Crec. ventas (último año)", Pf)}${m("crec_ventas_sig_anio", "Crec. ventas previsto", Pf)}
     ${m("crec_bpa_sig_anio", "Crec. beneficio previsto", Pf)}${m("rev_bpa_90d_anio", "Cambio previsión BPA 90 d", P)}
@@ -158,9 +449,8 @@ function empresaFicha(t) {
     ${m("insiders_neto_pct", "Compras netas directivos 6 m", P)}${m("ret_6m", "Rentab. 6 meses", P)}
     ${m("dist_max52_pct", "Distancia a máximo anual", P)}${m("dilucion_1a_pct", "Nuevas acciones 1 año", P)}
     ${m("meses_de_caja", "Meses de caja", D0)}${m("cortos_flotante", "Posiciones cortas", Pf)}
-    ${m("proximos_resultados", "Próximos resultados", (x) => esc(x))}${m("cortos_cambio_1m_pct", "Cambio de cortos en 1 mes", P)}
-    ${m("dias_para_cubrir", "Días para cubrir cortos", N)}
-  </div></div>${oficialFicha(f)}${extraFicha(f.extra)}`;
+    ${m("cortos_cambio_1m_pct", "Cambio de cortos en 1 mes", P)}${m("dias_para_cubrir", "Días para cubrir cortos", N)}
+  </div></details>${oficialFicha(f)}${extraFicha(f.extra)}`;
 }
 
 // Documentos de la SEC y ensayos clínicos (fuentes públicas gratis, sin clave).
@@ -170,7 +460,7 @@ function oficialFicha(f) {
   const ens = (f.ensayos || []).map((e) => `<li><span class="sub">${esc(e.fecha)} · ${esc(e.fase)} · ${esc(e.estado || "")}</span><br><a href="https://clinicaltrials.gov/study/${encodeURIComponent(e.nct || "")}" target="_blank" rel="noopener">${esc(e.titulo)}</a></li>`).join("");
   if (f.sec_registro_180d == null && f.ensayos_activos == null) return "";
   const v = (x) => (x == null ? "—" : x);
-  return `<div class="card"><b>Registros oficiales (SEC) ${f.ensayos_activos != null ? "y ensayos clínicos" : ""}</b><div class="grid">
+  return `<details class="card"><summary><b>Registros oficiales (SEC)${f.ensayos_activos != null ? " y ensayos clínicos" : ""}</b></summary><div class="grid">
     <div><div class="k">Registros para vender acciones (6 m)</div><div class="n">${v(f.sec_registro_180d)}</div></div>
     <div><div class="k">Colocaciones de acciones (3 m)</div><div class="n">${v(f.sec_colocacion_90d)}</div></div>
     <div><div class="k">Fondos que declaran &gt;5 % (6 m)</div><div class="n">${f.sec_13d_180d == null ? "—" : f.sec_13d_180d + f.sec_13g_180d}</div></div>
@@ -179,56 +469,241 @@ function oficialFicha(f) {
   </div>
   ${docs ? `<div class="sub" style="margin-top:8px">Documentos destacados:</div><ul>${docs}</ul>` : ""}
   ${ens ? `<div class="sub" style="margin-top:8px">Ensayos con resultados esperados (ClinicalTrials.gov):</div><ul>${ens}</ul>` : ""}
-  </div>`;
+  </details>`;
 }
 
 // Datos de Finnhub y noticias de Alpaca (solo si hay claves en los secretos de GitHub).
 function extraFicha(x) {
   if (!x) return "";
-  const url = (u) => (/^https?:\/\//.test(u || "") ? esc(u) : "#");
-  const lista = (ns) => (ns || []).map((n) => `<li><span class="sub">${esc(n.fecha)} · ${esc(n.fuente || "")}</span><br><a href="${url(n.url)}" target="_blank" rel="noopener">${esc(n.titulo)}</a></li>`).join("");
+  const lista = (ns) => (ns || []).map((n) => `<li><span class="sub">${esc(n.fecha)} · ${esc(n.fuente || "")}</span><br>${urlOk(n.url) ? `<a href="${urlOk(n.url)}" target="_blank" rel="noopener">${esc(n.titulo)}</a>` : esc(n.titulo)}</li>`).join("");
   const sorp = (x.sorpresas_finnhub || []).map((s) => `<li>${esc(s.periodo)}: real ${num(s.real, 2)} vs previsto ${num(s.estimado, 2)} (${s.sorpresa_pct == null ? "—" : pct(s.sorpresa_pct)})</li>`).join("");
   const noticias = [...(x.noticias_alpaca || []), ...(x.noticias || [])].slice(0, 8);
-  return `<div class="card"><b>Más datos (Finnhub y Alpaca)</b><div class="grid">
+  return `<details class="card"><summary><b>Analistas, directivos y noticias</b></summary><div class="grid">
     <div><div class="k">Analistas que dicen comprar</div><div class="n">${x.recs_pct_compra == null ? "—" : pct(x.recs_pct_compra)}</div></div>
     <div><div class="k">Cambio en 3 meses</div><div class="n">${x.recs_cambio_3m == null ? "—" : (x.recs_cambio_3m > 0 ? "+" : "") + num(x.recs_cambio_3m, 1) + " pts"}</div></div>
-    <div><div class="k">Sentimiento directivos (MSPR, de −100 a 100)</div><div class="n">${x.insiders_mspr_3m == null ? "—" : num(x.insiders_mspr_3m, 1)}</div></div>
+    <div><div class="k">Sentimiento directivos (MSPR, −100 a 100)</div><div class="n">${x.insiders_mspr_3m == null ? "—" : num(x.insiders_mspr_3m, 1)}</div></div>
     <div><div class="k">Noticias en 30 días</div><div class="n">${x.noticias_30d_n ?? "—"}</div></div>
     <div><div class="k">Tono de los titulares (−100 a 100)</div><div class="n">${x.sent_nota == null ? "—" : num(x.sent_nota, 0) + " · " + esc(x.sent_etiqueta || "")}</div></div>
   </div>
   ${sorp ? `<div class="sub" style="margin-top:8px">Últimos resultados (beneficio por acción):</div><ul>${sorp}</ul>` : ""}
   ${noticias.length ? `<div class="sub" style="margin-top:8px">Últimas noticias:</div><ul>${lista(noticias)}</ul>` : ""}
-  </div>`;
+  </details>`;
 }
 
+/* ---------- Bot del corto del hueco (agente A) ---------- */
+const ACC = { candidata: ["var(--acc)", "Candidata"], descartada: ["var(--mut)", "Descartada"], ensayo: ["var(--ia)", "Ensayo"], "ensayo cierre": ["var(--ia)", "Ensayo cierre"], abierta: ["var(--warn)", "Corto abierto"], cerrada: ["var(--ok)", "Cerrada"], error: ["var(--bad)", "Error"], nada: ["var(--mut)", "Nada hoy"] };
+const horaEsp = (hhmm) => { const [h, m] = String(hhmm || "").split(":").map(Number); return isNaN(h) ? "—" : `${String((h + 6) % 24).padStart(2, "0")}:${String(m || 0).padStart(2, "0")}`; };
+function bot() {
+  const C = D.corto?.config || {}, dd = cortoDias(), cer = cortoCerradas();
+  const reales = (D.corto?.registro || []).filter((r) => r.accion === "abierta").length;
+  const ganadas = cer.filter((r) => +r.resultado_pct > 0).length, acum = cer.reduce((s, r) => s + +r.resultado_pct, 0);
+  let h = `<p class="sub" style="margin-top:0">Agente A · cada día laborable el bot mira qué acciones abren con un gran <b>hueco</b> (abren muy por encima del cierre de ayer) y las vende en <b>corto</b> (gana si bajan) en la cuenta <b>demo</b> de eToro. Todo se cierra el mismo día. No es dinero real.</p>
+  <div class="kpis">
+    <div class="kpi" style="--c:var(--mut)"><div class="lbl">Días registrados</div><div class="val">${dd.length}</div><div class="det">${dd[0] ? `último: ${esc(diaCorto(dd[0].fecha))}` : "aún ninguno"}</div></div>
+    <div class="kpi" style="--c:var(--warn)"><div class="lbl">Cortos abiertos</div><div class="val">${reales}</div><div class="det">en total (demo)</div></div>
+    <div class="kpi" style="--c:var(--ok)"><div class="lbl">Acertadas</div><div class="val">${cer.length ? `${ganadas}<span class="mut" style="font-size:1rem"> / ${cer.length}</span>` : "—"}</div><div class="det">${cer.length ? `${Math.round(ganadas / cer.length * 100)} % ganadoras` : "sin operaciones cerradas"}</div></div>
+    <div class="kpi" style="--c:var(--acc)"><div class="lbl">Resultado sumado</div><div class="val ${acum > 0 ? "okt" : acum < 0 ? "badt" : ""}">${cer.length ? pct(acum) : "—"}</div><div class="det">suma de % por operación</div></div>
+  </div>
+  <div class="sec" style="--c:var(--ia)">Cómo decide</div>
+  <div class="flujo">
+    <div class="paso" style="--c:var(--acc)"><div class="cab"><span class="num">1</span>Escáner<span class="tag">reglas · sin IA</span></div><dl><dt>Mira</dt><dd>hueco ≥ +${num((C.hueco_min ?? 0.5) * 100, 0)} % a las ${esc(String(C.hora_escaneo || "09:34").slice(0, 5))} NY</dd><dt>Filtra</dt><dd>precio ≥ ${num(C.precio_min ?? 1, 0)} $ y ≥ ${num((C.dolares_dia_min ?? 200000) / 1000, 0)} mil $ negociados al día</dd><dt>Y</dt><dd>que eToro deje venderla en corto</dd></dl></div>
+    <div class="paso" style="--c:var(--warn)"><div class="cab"><span class="num">2</span>Riesgo<span class="tag">reglas · manda siempre</span></div><dl><dt>Arriesga</dt><dd>${num(C.riesgo_pct ?? 1, 0)} % del capital por operación</dd><dt>Límites</dt><dd>máx. ${C.max_operaciones_dia ?? 3} al día · ${C.max_posicion_pct ?? 10} % por posición · ${C.max_exposicion_pct ?? 30} % en total</dd><dt>Freno</dt><dd>si la cuenta cae un ${C.freno_caida_pct ?? 10} %, deja de abrir</dd></dl></div>
+    <div class="paso" style="--c:var(--ia)"><div class="cab"><span class="num">3</span>Orden<span class="tag">${esc(String(C.hora_entrada || "09:35").slice(0, 5))} NY · ${horaEsp(C.hora_entrada || "09:35")} España</span></div><dl><dt>Hace</dt><dd>vende en corto en eToro demo</dd><dt>Stop</dt><dd>${C.stop_pct ?? 15} % por encima de la entrada</dd><dt>Tarde</dt><dd>si llega después de las ${esc(C.hora_limite_entrada || "09:50")} NY, no abre</dd></dl></div>
+    <div class="paso" style="--c:var(--ok)"><div class="cab"><span class="num">4</span>Cierre<span class="tag">${esc(C.hora_cierre || "15:45")} NY · ${horaEsp(C.hora_cierre || "15:45")} España</span></div><dl><dt>Hace</dt><dd>cierra todo antes del final de la sesión</dd><dt>Apunta</dt><dd>resultado y motivo de cada decisión</dd><dt>Avisa</dt><dd>con un aviso en GitHub</dd></dl></div>
+  </div>
+  <div class="mut" style="margin-top:6px">Este bot no usa IA: solo reglas. La hora de España es la habitual (+6 h); puede variar unos días al año por el cambio de hora.</div>`;
+  // Curva
+  h += `<div class="sec" style="--c:var(--acc)">Curva de resultados (demo)</div>`;
+  if (cer.length >= 2) { let s = 0; const serie = [0, ...cer.map((r) => (s += +r.resultado_pct))]; h += `<div class="card">${linea(serie, { base: 0, color: acum >= 0 ? "var(--ok)" : "var(--bad)", etiquetas: ["inicio", ...cer.map((r, i) => `${r.fecha_hora_ny.slice(0, 10)} ${r.simbolo}: ${pct(r.resultado_pct)} (acumulado ${pct(serie[i + 1])})`)] })}<div class="mut">Suma de los % de cada operación cerrada. Toca un punto para ver la operación.</div></div>`; }
+  else h += vacioBox("Todavía sin operaciones cerradas", "La curva aparecerá cuando el bot haya cerrado al menos dos cortos en la demo.");
+  // Reloj de decisiones
+  const horas = (D.corto?.registro || []).filter((r) => ["abierta", "cerrada", "error"].includes(r.accion));
+  h += `<div class="sec" style="--c:var(--ia)">Reloj del bot (hora de Nueva York)</div>` + (horas.length >= 3 ? `<div class="card">${reloj(horas)}</div>` : vacioBox("Todavía sin datos", "Cuando haya operaciones reales se verá a qué hora decide y cierra el bot."));
+  // Embudo y decisiones por día
+  if (!dd.length) return h + `<div class="sec">Decisiones</div>` + vacioBox("Aún sin decisiones", "El bot apunta aquí cada decisión con su motivo a partir de su primer día.");
+  const d0 = dd[0], cuenta = (a) => d0.filas.filter((r) => r.accion === a).length;
+  const etapas = [["Candidatas", cuenta("candidata"), "var(--acc)"], ["Descartadas", cuenta("descartada"), "var(--mut)"], ["Ensayo (sin orden)", cuenta("ensayo"), "var(--ia)"], ["Cortos abiertos", cuenta("abierta"), "var(--warn)"], ["Cerradas", cuenta("cerrada"), "var(--ok)"]];
+  const mx = Math.max(1, ...etapas.map((e) => e[1]));
+  h += `<div class="sec" style="--c:var(--acc)">Embudo del ${esc(diaCorto(d0.fecha))}</div><div class="card"><div class="emb">${etapas.map(([n, v, c]) => `<span class="sub">${n}</span><span class="b" style="--c:${c};width:${v / mx * 100}%;opacity:${v ? 1 : .25}"></span><span class="n">${v}</span>`).join("")}</div></div>`;
+  h += `<div class="sec">Decisiones con su motivo</div>`;
+  h += dd.slice(0, 5).map((d, i) => {
+    const inf = D.informes.find((x) => x.id === `investigacion/corto-hueco/${d.fecha}.md`);
+    return `<details class="card" ${i === 0 ? "open" : ""}><summary><b>${esc(diaCorto(d.fecha))}</b> <span class="sub">· ${d.filas.length} apuntes</span></summary><ul class="tl" style="margin-top:12px">${d.filas.map((r) => { const [c, nom] = ACC[r.accion] || ["var(--mut)", r.accion]; return `<li style="--c:${c}"><div class="cuando">${esc((r.fecha_hora_ny || "").slice(11, 16))} NY · ${esc(nom)}${vacio(r.resultado_pct) ? "" : ` · <b class="${+r.resultado_pct >= 0 ? "okt" : "badt"}">${pct(r.resultado_pct)}</b>`}</div><div><b>${esc(r.simbolo || "—")}</b> ${esc(r.motivo)}</div></li>`; }).join("")}</ul>${inf ? `<a href="#/informe/${encodeURIComponent(inf.id)}">Informe del día →</a>` : ""}</details>`;
+  }).join("");
+  return h;
+}
+function reloj(filas) {
+  const cx = 120, cy = 120, R = 92, ang = (hh) => (hh / 24) * 2 * Math.PI - Math.PI / 2;
+  const marcas = Array.from({ length: 24 }, (_, i) => { const a = ang(i), r1 = R + 6, r2 = R + (i % 6 ? 10 : 16); return `<line x1="${cx + Math.cos(a) * r1}" y1="${cy + Math.sin(a) * r1}" x2="${cx + Math.cos(a) * r2}" y2="${cy + Math.sin(a) * r2}" stroke="var(--line)" stroke-width="${i % 6 ? 1 : 2}"/>`; }).join("");
+  const pts = filas.map((r, i) => { const t = (r.fecha_hora_ny || "").slice(11, 16).split(":").map(Number); const hh = t[0] + t[1] / 60, a = ang(hh), rr = R - 10 - (i % 4) * 9; const c = (ACC[r.accion] || ["var(--mut)"])[0]; return `<circle cx="${cx + Math.cos(a) * rr}" cy="${cy + Math.sin(a) * rr}" r="5" fill="${c}" stroke="var(--card)" stroke-width="2" data-tip="${esc(r.fecha_hora_ny)} · ${esc(r.simbolo)} · ${esc(r.accion)}"/>`; }).join("");
+  return `<svg viewBox="0 0 240 240" style="width:100%;max-width:280px;display:block;margin:0 auto"><circle cx="${cx}" cy="${cy}" r="${R}" fill="none" stroke="var(--line)"/>${marcas}${[0, 6, 12, 18].map((hh) => { const a = ang(hh); return `<text x="${cx + Math.cos(a) * (R - 22)}" y="${cy + Math.sin(a) * (R - 22) + 4}" font-size="11" text-anchor="middle" fill="var(--mut)">${hh}</text>`; }).join("")}${pts}</svg>
+  <div class="leyenda" style="justify-content:center"><span><span class="dot" style="--c:var(--warn)"></span>abre</span><span><span class="dot" style="--c:var(--ok)"></span>cierra</span><span><span class="dot" style="--c:var(--bad)"></span>error</span></div>`;
+}
+
+/* ---------- Seguimiento de noticias ---------- */
+// Familias de titulares (de las causas que detecta medio_plazo/novedades.py). Letra + color, para no depender solo del color.
+const FAM = [["Resultados", "R", "var(--s1)", ["resultados"]], ["Analistas", "A", "var(--s2)", ["analistas"]], ["Negocio", "N", "var(--s3)", ["contrato o pedido", "compra o fusión", "directivos"]], ["Salud y regulador", "S", "var(--s5)", ["ensayo clínico", "FDA / regulador"]], ["Riesgo", "!", "var(--bad)", ["ampliación de capital", "legal"]]];
+const familia = (n) => FAM.find((f) => (n.causas || []).some((c) => f[3].includes(c))) || ["Otras", "·", "var(--mut)", []];
+let TITULARES = [];
+function seguimientoVista(foco) {
+  const S = D.seguimiento;
+  if (!S || (!S.lista && !Object.keys(S.empresas || {}).length)) return vacioBox("El seguimiento aún no ha corrido", "Se revisa cada 2 h con la bolsa de EE. UU. abierta y se resume tras el cierre (23:30 en Madrid).");
+  const L = S.lista;
+  let h = "";
+  if (L) {
+    const todo = Object.entries({ ...(L.empresas || {}), ...(L.materias_primas || {}) });
+    const nuevos = todo.reduce((s, [, e]) => s + (e.titulares || []).filter((n) => n.nueva).length, 0), imp = todo.reduce((s, [, e]) => s + (e.avisos || []).length, 0);
+    h += `<p class="sub" style="margin-top:0">Información, no recomendación. Se revisa cada 2 h con la bolsa abierta. Último día: <b>${esc(diaCorto(L.fecha))}</b>.</p>
+    <div class="kpis">
+      <div class="kpi" style="--c:var(--acc)"><div class="lbl">Mercado (${esc(L.mercado?.ticker || "")})</div><div class="val ${L.mercado?.cambio_pct >= 0 ? "okt" : "badt"}">${pct(L.mercado?.cambio_pct)}</div><div class="det">S&amp;P 500 hoy</div></div>
+      <div class="kpi" style="--c:var(--mut)"><div class="lbl">Siguiendo</div><div class="val">${todo.length}</div><div class="det">acciones y materias primas</div></div>
+      <div class="kpi" style="--c:var(--s1)"><div class="lbl">Titulares nuevos</div><div class="val">${nuevos}</div><div class="det">leídos por el agente</div></div>
+      <div class="kpi" style="--c:var(--warn)"><div class="lbl">Noticias importantes</div><div class="val ${imp ? "warnt" : ""}">${imp}</div><div class="det">resultados, FDA, contratos…</div></div>
+    </div>`;
+    const mov = todo.filter(([, e]) => !vacio(e.cambio_pct)).map(([t, e]) => ({ t, v: +e.cambio_pct, href: `#/seguimiento/${encodeURIComponent(t)}`, tip: `${e.nombre}: cierre ${e.cierre} · volumen ${e.volumen_rel ?? "—"}x` })).sort((a, b) => b.v - a.v);
+    if (mov.length) h += `<div class="sec" style="--c:var(--acc)">Cómo se movió cada una</div><div class="card">${divergentes(mov)}</div>`;
+    // Lo que lee el agente: un punto por titular.
+    TITULARES = [];
+    const filas = todo.filter(([, e]) => (e.titulares || []).length).map(([t, e]) => `<a href="#/seguimiento/${encodeURIComponent(t)}" style="font-weight:700;color:inherit;text-decoration:none;font-size:.82rem">${esc(t)}</a><div class="fila">${(e.titulares || []).map((n) => { const [nom, letra, col] = familia(n); TITULARES.push({ ...n, t, nom }); return `<button class="pt ${n.nueva ? "" : "vieja"} ${n.importante ? "imp" : ""}" style="--c:${col}" data-tit="${TITULARES.length - 1}" aria-label="${esc(nom)}: ${esc(n.titulo)}">${letra}</button>`; }).join("")}</div>`).join("");
+    if (filas) h += `<div class="sec" style="--c:var(--s1)">Lo que lee el agente</div><div class="card"><div class="sub" style="margin-bottom:10px">Cada punto es un titular. El color y la letra dicen de qué trata; con anillo, los importantes; apagados, los ya vistos. Toca uno para leerlo.</div><div class="puntos">${filas}</div>
+      <div class="leyenda" style="margin-top:12px">${[...FAM, ["Otras", "·", "var(--mut)"]].map(([n, l, c]) => `<span><span class="pt" style="--c:${c};display:inline-grid;width:16px;height:16px;vertical-align:middle;cursor:default">${l}</span> ${n}</span>`).join("")}</div>
+      <div id="det-titular" class="card" style="margin:12px 0 0;background:var(--card2)"><span class="mut">Toca un punto para ver el titular.</span></div></div>`;
+    h += `<div class="sec">Ficha de cada una</div>` + listaVista(L, foco);
+  }
+  const ent = Object.entries(S.empresas || {});
+  const col = { "SEÑAL DE ENTRADA": "var(--okt)", "PELIGRO": "var(--badt)", "ATENTO": "var(--warnt)" };
+  if (ent.length) h += `<div class="sec" style="--c:var(--ok)">Momento de entrada</div><p class="sub" style="margin-top:-4px">Señales técnicas del plan de cada empresa analizada. Actualizado: ${esc(fecha(S.actualizado))}.</p>` +
+    ent.map(([t, e]) => `<div class="card">
+      <div class="row"><span class="tk">${esc(t)}</span><b style="color:${col[e.estado] || "var(--sub)"}">${esc(e.estado)}</b></div>
+      <div class="grid"><div><div class="k">Cierre</div><div class="n">${esc(e.cierre)} $</div></div><div><div class="k">RSI</div><div class="n">${esc(e.rsi)}</div></div><div><div class="k">Entrar como mucho</div><div class="n">${esc(e.niveles?.entrada_max)} $</div></div><div><div class="k">Stop</div><div class="n">${esc(e.niveles?.stop)} $</div></div></div>
+      ${grafico(e)}
+      ${e.notas ? `<details open><summary><b>Repaso diario de Claude (noticias y tesis)</b></summary><article class="md">${md(e.notas)}</article></details>` : ""}
+      <details ${e.notas ? "" : "open"}><summary><b>Informe técnico de hoy</b></summary><article class="md">${md(e.texto)}</article></details></div>`).join("");
+  return h;
+}
+function grafico(e) {
+  const h = (e.historial || []).filter((f) => f.cierre !== "" && f.cierre != null).map((f) => +f.cierre);
+  const n = e.niveles || {};
+  if (h.length < 2) return `<div class="mut" style="margin:8px 0">El gráfico aparecerá cuando haya al menos dos días de precios guardados.</div>`;
+  const lv = [n.stop, n.soporte?.[0], n.soporte?.[1], n.confirmacion].filter((x) => x != null);
+  const min = Math.min(...h, ...lv) * 0.97, max = Math.max(...h, ...lv) * 1.03, W = 320, H = 130;
+  const y = (v) => H - ((v - min) / (max - min)) * H, x = (i) => (i / (h.length - 1)) * W;
+  const lin = (v, col, txt) => v == null ? "" : `<line x1="0" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="${col}" stroke-dasharray="4 3" stroke-width="1"/><text x="2" y="${y(v) - 3}" font-size="9" fill="${col}">${txt} ${v}</text>`;
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;margin:10px 0">
+    ${lin(n.confirmacion, "var(--ok)", "señal B")}${lin(n.soporte?.[1], "var(--warn)", "soporte")}${lin(n.soporte?.[0], "var(--warn)", "")}${lin(n.stop, "var(--bad)", "stop")}
+    <polyline fill="none" stroke="var(--acc)" stroke-width="2" points="${h.map((v, i) => `${x(i)},${y(v)}`).join(" ")}"/></svg>`;
+}
+function listaVista(L, foco) {
+  const G = { cartera: "Tus acciones", vigilancia: "Tu lista de vigilancia", ideas: "Mejores ideas del buscador", materias: "Materias primas" };
+  const orden = Object.keys(G);
+  const todo = Object.entries({ ...(L.empresas || {}), ...(L.materias_primas || {}) })
+    .sort((a, b) => orden.indexOf(a[1].grupo || "materias") - orden.indexOf(b[1].grupo || "materias"));
+  const hist = {};
+  for (const r of D.historial_lista || []) if (!vacio(r.cierre)) (hist[r.ticker] ||= []).push(+r.cierre);
+  let gAct = null;
+  const cab = (e) => { const g = e.grupo || "materias"; if (g === gAct) return ""; gAct = g; return `<div class="mut" style="margin:14px 2px 6px;font-weight:700">${esc(G[g] || g)}</div>`; };
+  const mes = new Date().toISOString().slice(0, 7);
+  return (L.ia ? `<p class="sub"><span class="iat">●</span> Resúmenes de Haiku (IA barata que solo lee estos titulares) · gasto del mes ${esc((L.ia.gasto_mes || {})[mes] ?? 0)} $${L.ia.aviso ? " · " + esc(L.ia.aviso) : ""}</p>` : "") +
+    todo.map(([t, e]) => { const up = e.cambio_pct > 0, nuevos = (e.titulares || []).filter((n) => n.nueva); return cab(e) + `<details class="card" id="seg-${esc(t)}" ${foco === t ? "open" : ""}><summary><div class="row" style="padding-right:16px"><span><span class="tk">${esc(t)}</span> <span class="sub">${esc(e.nombre)}</span></span><b class="${e.cambio_pct == null ? "" : up ? "okt" : e.cambio_pct < 0 ? "badt" : ""}">${e.cambio_pct == null ? "sin precio" : (up ? "▲ " : e.cambio_pct < 0 ? "▼ " : "") + num(Math.abs(e.cambio_pct), 1) + " %"}</b></div>
+      <div class="mut">cierre ${esc(e.cierre)} · volumen ${esc(e.volumen_rel ?? "—")}x lo normal${nuevos.length ? ` · ${nuevos.length} titulares nuevos` : ""}${e.avisos?.length ? ` · <span class="warnt">⚠ ${e.avisos.length} aviso${e.avisos.length > 1 ? "s" : ""}</span>` : ""}</div></summary>
+      ${(hist[t] || []).length >= 3 ? linea(hist[t], { alto: 60 }) : ""}
+      ${e.ia ? `<p><span class="iat">●</span> <b>Resumen (Haiku):</b> ${esc(e.ia.resumen)} <i>Causa probable: ${esc(e.ia.causa_probable)} (confianza ${esc(e.ia.confianza)})</i></p>` : ""}
+      <p><b>Por qué (reglas):</b> ${esc(e.porque)}</p>
+      <p><b>Qué cambió:</b> ${esc((e.cambios || []).join("; ") || "nada nuevo")}</p>
+      ${(e.catalizadores || []).length ? `<p><b>Próximos catalizadores:</b> ${esc(e.catalizadores.join("; "))}</p>` : ""}
+      ${(e.problemas || []).map((x) => `<p class="badt">❗ ${esc(x)}</p>`).join("")}
+      ${nuevos.slice(0, 5).map((n) => { const [nom, , c] = familia(n); return `<div class="sub" style="margin-top:4px"><span class="dot" style="--c:${c}" title="${esc(nom)}"></span>${esc(n.fecha)} · ${urlOk(n.url) ? `<a href="${urlOk(n.url)}" target="_blank" rel="noopener">${esc(n.titulo)}</a>` : esc(n.titulo)}</div>`; }).join("")}</details>`; }).join("");
+}
+
+/* ---------- Mi lista, informes, perfiles, cribado, ayuda, fuentes ---------- */
+function resumen() {
+  const precios = Object.fromEntries((D.estado?.precios || []).map((p) => [p.ticker, p]));
+  const alertas = D.estado?.alertas || [];
+  let h = `<div class="sec" style="--c:var(--warn)">Avisos</div>`;
+  h += alertas.length ? alertas.map((a) => avisoHtml({ tipo: a.tipo, ticker: a.ticker, texto: a.mensaje, href: `#/empresa/${encodeURIComponent(a.ticker)}` })).join("")
+    : vacioBox(D.estado ? "Sin avisos hoy" : "Aún sin avisos", D.estado ? "" : "Se calculan solos cada día laborable a las 23:30.");
+  h += `<div class="sec" style="--c:var(--ok)">Lista de vigilancia (${D.watchlist.length})</div>`;
+  if (!D.watchlist.length) h += vacioBox("Lista vacía", "Todavía no hay empresas analizadas.");
+  for (const w of D.watchlist) {
+    const p = precios[w.ticker] || {};
+    const inf = D.informes.find((i) => w.informe && i.id.endsWith(w.informe.split("/").pop()));
+    h += `<div class="card">
+      <div class="row"><span><span class="tk">${esc(w.ticker)}</span> <span class="sub">${esc(w.empresa)}</span></span>
+        <span class="chip" style="color:${w.veredicto === "comprar_en_zona" ? "var(--okt)" : w.veredicto === "descartar" ? "var(--badt)" : "var(--warnt)"}">${esc(VEREDICTO[w.veredicto] || w.veredicto)} · convicción ${esc(w.conviccion)}/5</span></div>
+      <div class="mut">${esc(w.sector)} · analizada el ${esc(w.fecha_analisis)}</div>
+      ${escala({ precio: p.precio ?? w.precio_analisis, stop: w.stop_tesis, zona: w.zona_entrada_max, objetivo: w.precio_objetivo_12m })}
+      <div class="grid">
+        <div><div class="k">Precio ahora</div><div class="n">${num(p.precio)} $</div></div>
+        <div><div class="k">Zona de entrada ≤</div><div class="n">${num(w.zona_entrada_max)} $</div><div class="k">${p.distancia_zona_pct != null ? (p.distancia_zona_pct <= 0 ? '<span class="okt">✓ dentro</span>' : `a ${pct(p.distancia_zona_pct)}`) : ""}</div></div>
+        <div><div class="k">Objetivo 12 meses</div><div class="n">${num(w.precio_objetivo_12m)} $</div><div class="k">${p.potencial_pct != null ? `potencial ${pct(p.potencial_pct)}` : ""}</div></div>
+        <div><div class="k">Stop de tesis</div><div class="n">${num(w.stop_tesis)} $</div></div>
+      </div>
+      ${w.proximo_catalizador ? `<div class="sub" style="margin-top:10px">📅 ${esc(w.proximo_catalizador)}${w.fecha_catalizador ? ` · ${esc(w.fecha_catalizador)}` : ""}</div>` : ""}
+      <div style="margin-top:8px;display:flex;gap:14px;flex-wrap:wrap">${inf ? `<a href="#/informe/${encodeURIComponent(inf.id)}">Leer el análisis →</a>` : ""}${D.ranking?.filas.some((f) => f.ticker === w.ticker) ? `<a href="#/empresa/${encodeURIComponent(w.ticker)}">Ficha del ranking →</a>` : ""}</div>
+    </div>`;
+  }
+  return h;
+}
+const CLASE_COL = { "Empresa": "var(--acc)", "+500 %": "var(--s5)", "Buscador": "var(--ok)", "Sectores": "var(--s3)", "Repaso": "var(--warn)", "¿Acierta el ranking?": "var(--s4)", "Corto del hueco": "var(--ia)", "Backtest 12 meses": "var(--s3)", "Intradía (agente A)": "var(--ia)", "Diario intradía": "var(--ia)" };
+let filtroInf = "";
 function informes() {
-  if (!D.informes.length) return `<div class="card empty">Aún no hay informes.</div>`;
-  return D.informes.map((i) => `<a class="card" style="display:block;text-decoration:none;color:inherit" href="#/informe/${encodeURIComponent(i.id)}">
-    <div class="row"><b>${esc(i.titulo)}</b><span class="chip">${esc(i.clase)}</span></div><div class="sub">${esc(i.fecha)}</div></a>`).join("");
+  if (!D.informes.length) return vacioBox("Aún no hay informes", "");
+  const clases = [...new Set(D.informes.map((i) => i.clase))];
+  const lista = D.informes.filter((i) => !filtroInf || i.clase === filtroInf);
+  return `<div class="chips">${["", ...clases].map((c) => `<button data-inf="${esc(c)}" class="${c === filtroInf ? "on" : ""}">${c ? esc(c) : "Todos"}</button>`).join("")}</div>` +
+    lista.map((i) => `<a class="card" style="display:block;text-decoration:none;color:inherit;border-left:3px solid ${CLASE_COL[i.clase] || "var(--mut)"}" href="#/informe/${encodeURIComponent(i.id)}">
+    <div class="row"><b style="font-size:.95rem">${esc(i.titulo)}</b></div><div class="mut"><span class="dot" style="--c:${CLASE_COL[i.clase] || "var(--mut)"}"></span>${esc(i.clase)}${i.fecha ? ` · ${esc(diaCorto(i.fecha))}` : ""}</div></a>`).join("");
 }
-
 function informe(id) {
   const i = D.informes.find((x) => x.id === id);
-  if (!i) return `<div class="card empty">No encuentro ese informe.</div>`;
-  return `<a href="#/informes">← Informes</a><article class="card md">${DOMPurify.sanitize(marked.parse(i.texto))}</article>`;
+  if (!i) return vacioBox("No encuentro ese informe", "");
+  return `<a class="back" href="#/informes">← Informes</a><article class="card md">${md(i.texto)}</article>`;
 }
-
 function candidatos() {
-  if (!D.candidatos.length) return `<div class="card empty">Aún no hay candidatos. El cribado se hace solo cada domingo.</div>`;
+  if (!D.candidatos.length) return vacioBox("Aún no hay candidatos", "El cribado se hace solo cada domingo.");
   const cols = [["ticker","Ticker"],["empresa","Empresa"],["sector","Sector"],["precio","Precio"],["objetivo_medio","Objetivo analistas"],["potencial_pct","Potencial %"],["analistas","Nº analistas"],["capitalizacion_musd","Capitalización (M$)"]];
-  return `<p class="sub">Primera criba automática: small caps de EE. UU. de todos los sectores con un precio objetivo medio de los analistas bastante por encima del precio. <b>No es una lista de compra</b>: son ideas para analizar.</p>
-  <div class="card scroll"><table><thead><tr>${cols.map(([, t]) => `<th>${t}</th>`).join("")}</tr></thead><tbody>
+  return `<p class="sub" style="margin-top:0">Primera criba automática: small caps de EE. UU. con un precio objetivo medio de los analistas bastante por encima del precio. <b>No es una lista de compra</b>: son ideas para analizar.</p>
+  <div class="card scroll"><table class="t"><thead><tr>${cols.map(([, t]) => `<th>${t}</th>`).join("")}</tr></thead><tbody>
   ${D.candidatos.map((c) => `<tr>${cols.map(([k]) => `<td>${esc(c[k])}</td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
 }
-
+function duplicar() {
+  const d = D.duplicar;
+  if (!d) return vacioBox("Aún no hay informe «¿puede duplicar?»", `Pídelo en el chat: <i>"busca acciones que puedan duplicar"</i>.`);
+  return `<div class="card aviso" style="--c:var(--ok)"><span class="ico">×2</span><span class="sub">Tus criterios: precio 5-25 €, objetivo de analistas de más del doble (10+ analistas), cuentas mejorando y poca dilución. Informe del ${esc(d.fecha)}.</span></div>
+  <article class="card md">${md(d.texto)}</article>`;
+}
+function quintuplicar() {
+  const d = D.quintuplicar;
+  if (!d) return vacioBox("Aún no hay informe «+500 %»", `Pídelo en el chat: <i>"busca acciones con objetivo de +500 %"</i>.`);
+  return `<div class="card aviso" style="--c:var(--s5)"><span class="ico">×6</span><span class="sub">Small y mid caps de EE. UU. con un objetivo medio de analistas de +500 % o más: por qué se lo dan y si es realista. Informe del ${esc(d.fecha)}.</span></div>
+  <article class="card md">${md(d.texto)}</article>`;
+}
+function fuentesVista() {
+  const F = fuentes(), C = { bien: ["var(--ok)", "Bien"], regular: ["var(--warn)", "Regular"], mal: ["var(--bad)", "Mal"] };
+  return `<p class="sub" style="margin-top:0">De dónde saca el agente cada dato y si ha llegado a tiempo. Verde: al día. Ámbar: con retraso (normal en fin de semana) o incompleto. Rojo: no llega.</p>` +
+    F.map((f) => `<div class="card" style="display:flex;gap:12px;align-items:flex-start;border-left:3px solid ${C[f.estado][0]}"><span style="min-width:0;flex:1"><div class="row"><b>${esc(f.nombre)}</b><span class="chip" style="color:${C[f.estado][0]}">${C[f.estado][1]}</span></div><div class="sub">${esc(f.que)}</div><div class="mut">${esc(f.det)}</div></span></div>`).join("") +
+    (F.some((f) => f.nombre.startsWith("SEC") && f.estado === "mal") ? `<div class="card sub">La SEC pide identificarse para dar datos. Se arregla creando en GitHub el secreto <b>SEC_USER_AGENT</b> con «Nombre email». Pídeselo a Claude en el chat si quieres ayuda.</div>` : "");
+}
+function masVista() {
+  const it = [["#/vigilancia", "✓", "var(--ok)", "Mi lista", "Avisos y tu lista de vigilancia con zona de entrada, objetivo y stop."],
+    ["#/duplicar", "×2", "var(--ok)", "¿Puede duplicar?", "Perfil con tus criterios para buscar acciones que puedan doblar."],
+    ["#/x6", "×6", "var(--s5)", "¿+500 %?", "Objetivos de analistas de +500 %: por qué y si es realista."],
+    ["#/informes", "▤", "var(--acc)", "Informes", "Análisis de empresas, buscador, sectores, diario y bot."],
+    ["#/candidatos", "≡", "var(--mut)", "Cribado simple", "La primera criba de cada domingo, en tabla."],
+    ["#/fuentes", "●", "var(--warn)", "Salud de las fuentes", "Qué datos llegan, de cuándo y cuáles fallan."],
+    ["#/ayuda", "?", "var(--ia)", "Cómo se usa", "Qué hace cada parte y qué significan las palabras."]];
+  return `<div class="menu">${it.map(([h, ic, c, t, d]) => `<a class="card" href="${h}" style="--c:${c}"><span class="ic">${ic}</span><span><b>${t}</b><div class="sub">${d}</div></span></a>`).join("")}</div>`;
+}
 function ayuda() {
   return `<div class="card md">
   <h2>Cómo se usa (todo desde el móvil)</h2>
   <ol>
-    <li><b>Oportunidades:</b> cada día laborable a las 23:30 el sistema puntúa todas las small caps de EE. UU. en 8 factores y ordena el ranking. Toca una empresa para ver su ficha.</li>
-    <li><b>Análisis profundo:</b> en el chat del proyecto escribe <i>"Busca oportunidades"</i> (Claude elige las mejores del ranking y las analiza a fondo) o <i>"Analiza ABCD a 12 meses"</i>. El informe aparece aquí solo.</li>
-    <li><b>Avisos:</b> cada día laborable a las 23:30 se revisan los precios. Si una empresa entra en su zona de entrada, se acerca un catalizador o cae bajo el stop de tesis, te llega una notificación de GitHub.</li>
-    <li><b>Repaso:</b> una vez por semana pide <i>"Revisa mi lista"</i>.</li>
+    <li><b>Hoy:</b> la portada. Arriba los números del día, debajo lo que requiere atención, tu lista, cómo se movieron tus acciones y las próximas fechas importantes.</li>
+    <li><b>Ranking:</b> cada día laborable a las 23:30 el sistema puntúa todas las small caps de EE. UU. en 8 factores. En el mapa de calor, azul es bueno y rojo flojo. Toca una empresa para ver su ficha.</li>
+    <li><b>Bot:</b> el agente A (corto del hueco en eToro demo). Cómo decide, qué hizo cada día y por qué.</li>
+    <li><b>Noticias:</b> el seguimiento de tus acciones cada 2 h: cuánto se movieron, qué titulares leyó el agente y qué cambió.</li>
+    <li><b>Análisis profundo:</b> en el chat del proyecto escribe <i>"Busca oportunidades"</i> o <i>"Analiza ABCD a 12 meses"</i>. El informe aparece aquí solo.</li>
+    <li><b>Avisos:</b> si una empresa entra en su zona de entrada, se acerca un catalizador o cae bajo el stop de tesis, te llega una notificación de GitHub.</li>
   </ol>
   <h2>Los 8 factores</h2>
   <ul>
@@ -247,94 +722,74 @@ function ayuda() {
     <li><b>Objetivo 12 meses:</b> precio al que cree que puede llegar en un año (estimación propia, no promesa).</li>
     <li><b>Stop de tesis:</b> precio (o hecho) que indicaría que la idea era errónea.</li>
     <li><b>Catalizador:</b> evento con fecha que puede mover mucho la acción (resultados, aprobación, contrato…).</li>
+    <li><b>Hueco:</b> cuando una acción abre muy por encima (o por debajo) de donde cerró ayer.</li>
+    <li><b>Corto:</b> vender primero y recomprar después; se gana si el precio baja.</li>
+    <li><b>Mapa de calor:</b> tabla donde el color de cada casilla dice si el valor es alto o bajo.</li>
   </ul>
-  <p class="sub">El agente no compra ni vende nada. Las small caps se mueven mucho: ninguna posición debería ser grande.</p></div>`;
+  <p class="sub">El agente B no compra ni vende nada. El bot del agente A solo opera en la cuenta demo. Las small caps se mueven mucho: ninguna posición debería ser grande.</p></div>`;
 }
 
-function duplicar() {
-  const d = D.duplicar;
-  if (!d) return `<div class="card empty">Aún no hay informe del perfil «¿puede duplicar?». Pídelo en el chat: <i>"busca acciones que puedan duplicar"</i>.</div>`;
-  return `<p class="sub">Perfil con tus criterios: precio 5-25 €, objetivo de analistas de más del doble (10+ analistas), cuentas mejorando y poca dilución. Informe del ${esc(d.fecha)}.</p>
-  <article class="card md">${DOMPurify.sanitize(marked.parse(d.texto))}</article>`;
-}
-
-function quintuplicar() {
-  const d = D.quintuplicar;
-  if (!d) return `<div class="card empty">Aún no hay informe «+500 %». Pídelo en el chat: <i>"busca acciones con objetivo de +500 %"</i>.</div>`;
-  return `<p class="sub">Small y mid caps de EE. UU. con un objetivo medio de analistas de +500 % o más: por qué se lo dan y si es realista. Informe del ${esc(d.fecha)}.</p>
-  <article class="card md">${DOMPurify.sanitize(marked.parse(d.texto))}</article>`;
-}
-
-function grafico(e) {
-  const h = (e.historial || []).filter((f) => f.cierre !== "" && f.cierre != null).map((f) => +f.cierre);
-  const n = e.niveles || {};
-  if (h.length < 2) return "";
-  const lv = [n.stop, n.soporte?.[0], n.soporte?.[1], n.confirmacion].filter((x) => x != null);
-  const min = Math.min(...h, ...lv) * 0.97, max = Math.max(...h, ...lv) * 1.03, W = 320, H = 120;
-  const y = (v) => H - ((v - min) / (max - min)) * H, x = (i) => (i / (h.length - 1)) * W;
-  const linea = (v, col, txt) => v == null ? "" : `<line x1="0" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="${col}" stroke-dasharray="4 3" stroke-width="1"/><text x="2" y="${y(v) - 2}" font-size="9" fill="${col}">${txt} ${v}</text>`;
-  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:auto;margin:8px 0">
-    ${linea(n.confirmacion, "#2e7d32", "señal B")}${linea(n.soporte?.[1], "#f9a825", "soporte")}${linea(n.soporte?.[0], "#f9a825", "")}${linea(n.stop, "#c62828", "stop")}
-    <polyline fill="none" stroke="currentColor" stroke-width="1.6" points="${h.map((v, i) => `${x(i)},${y(v)}`).join(" ")}"/></svg>`;
-}
-
-function listaVista(L) {
-  if (!L) return "";
-  const G = { cartera: "Tus acciones", vigilancia: "Tu lista de vigilancia", ideas: "Mejores ideas del buscador", materias: "Materias primas" };
-  const orden = Object.keys(G);
-  const todo = Object.entries({ ...(L.empresas || {}), ...(L.materias_primas || {}) })
-    .sort((a, b) => orden.indexOf(a[1].grupo || "materias") - orden.indexOf(b[1].grupo || "materias"));
-  let gAct = null;
-  const cab = (e) => { const g = e.grupo || "materias"; if (g === gAct) return ""; gAct = g; return `<h3>${esc(G[g] || g)}</h3>`; };
-  const c = (e) => e.cambio_pct == null ? "inherit" : e.cambio_pct > 0 ? "#2e7d32" : e.cambio_pct < 0 ? "#c62828" : "inherit";
-  const mes = new Date().toISOString().slice(0, 7);
-  return `<h2>Seguimiento diario · ${esc(L.fecha)}</h2><p class="sub">Información, no recomendación de compra o venta. Se revisa cada 2 h con la bolsa abierta. Mercado (${esc(L.mercado?.ticker)}): ${esc(L.mercado?.cambio_pct)} %.</p>` +
-    (L.ia ? `<p class="sub">Resúmenes de Haiku (IA barata que solo lee estos titulares) · gasto del mes ${esc((L.ia.gasto_mes || {})[mes] ?? 0)} $${L.ia.aviso ? " · " + esc(L.ia.aviso) : ""}</p>` : "") +
-    todo.map(([t, e]) => cab(e) + `<div class="card"><div class="row"><span class="tk">${esc(t)}</span><b style="color:${c(e)}">${e.cambio_pct == null ? "sin precio" : (e.cambio_pct > 0 ? "▲ " : "▼ ") + esc(e.cambio_pct) + " %"}${e.avisos?.length ? " ⚠️" : ""}</b></div>
-      <div class="sub">${esc(e.nombre)} · cierre ${esc(e.cierre)} · volumen ${esc(e.volumen_rel ?? "—")}x lo normal</div>
-      ${e.ia ? `<p><b>Resumen (Haiku):</b> ${esc(e.ia.resumen)} <i>Causa probable: ${esc(e.ia.causa_probable)} (confianza ${esc(e.ia.confianza)})</i></p>` : ""}
-      <p><b>Por qué (reglas):</b> ${esc(e.porque)}</p>
-      <p><b>Qué cambió:</b> ${esc((e.cambios || []).join("; ") || "nada nuevo")}</p>
-      ${(e.catalizadores || []).length ? `<p><b>Próximos catalizadores:</b> ${esc(e.catalizadores.join("; "))}</p>` : ""}
-      ${(e.problemas || []).map((x) => `<p>❗ ${esc(x)}</p>`).join("")}
-      ${(e.titulares || []).filter((n) => n.nueva).slice(0, 4).map((n) => `<div class="sub">${esc(n.fecha)} · ${/^https?:/.test(n.url || "") ? `<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.titulo)}</a>` : esc(n.titulo)}</div>`).join("")}</div>`).join("");
-}
-
-function seguimientoVista() {
-  const S = D.seguimiento;
-  if (!S || (!S.lista && !Object.keys(S.empresas || {}).length)) return `<div class="card empty">El seguimiento aún no ha corrido. Se revisa cada 2 h con la bolsa de EE. UU. abierta y se resume tras el cierre (23:30 en Madrid).</div>`;
-  const col = { "SEÑAL DE ENTRADA": "#2e7d32", "PELIGRO": "#c62828", "ATENTO": "#f9a825" };
-  const ent = Object.entries(S.empresas || {});
-  return listaVista(S.lista) + (ent.length ? `<h2>Momento de entrada</h2><p class="sub">Señales técnicas del plan de cada empresa analizada. Actualizado: ${esc(fecha(S.actualizado))}.</p>` : "") +
-    ent.map(([t, e]) => `<div class="card">
-      <div class="row"><span class="tk">${esc(t)}</span><b style="color:${col[e.estado] || "inherit"}">${esc(e.estado)}</b></div>
-      <div class="sub">Cierre ${esc(e.cierre)} $ (${esc(e.fecha)}) · RSI ${esc(e.rsi)} · EMA 9 ${esc(e.ema9)} $ · entrar como mucho hasta ${esc(e.niveles?.entrada_max)} $ · stop ${esc(e.niveles?.stop)} $</div>
-      ${grafico(e)}
-      ${e.notas ? `<details open><summary><b>Repaso diario de Claude (noticias y tesis)</b></summary><article class="md">${DOMPurify.sanitize(marked.parse(e.notas))}</article></details>` : ""}
-      <details ${e.notas ? "" : "open"}><summary><b>Informe técnico de hoy</b></summary><article class="md">${DOMPurify.sanitize(marked.parse(e.texto || ""))}</article></details></div>`).join("");
-}
-
+/* ---------- Navegación ---------- */
+const TITULO = { "/ranking": "Ranking", "/bot": "Bot corto del hueco", "/seguimiento": "Seguimiento de noticias", "/vigilancia": "Mi lista", "/duplicar": "¿Puede duplicar?", "/x6": "¿+500 %?", "/informes": "Informes", "/candidatos": "Cribado simple", "/ayuda": "Cómo se usa", "/mas": "Más", "/fuentes": "Salud de las fuentes" };
+const EN_MAS = ["/vigilancia", "/duplicar", "/x6", "/informes", "/candidatos", "/ayuda", "/fuentes"];
 function pintar(mantener) {
   const r = location.hash.replace(/^#/, "") || "/";
-  const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/" : r;
-  document.querySelectorAll("#nav a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + pest));
+  const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/ranking" : r.startsWith("/seguimiento") ? "/seguimiento" : r;
+  document.querySelectorAll("#tabs a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + pest || (pest !== "/" && !TITULO[pest] && a.getAttribute("href") === "#/mas")));
+  document.querySelectorAll("#abajo a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + (EN_MAS.includes(pest) ? "/mas" : pest)));
   const app = $("#app");
   if (!D) return;
-  app.innerHTML = r.startsWith("/informe/") ? informe(decodeURIComponent(r.slice(9)))
-    : r.startsWith("/empresa/") ? empresaFicha(decodeURIComponent(r.slice(9)))
-    : r === "/informes" ? informes() : r === "/candidatos" ? candidatos() : r === "/ayuda" ? ayuda()
-    : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : r === "/x6" ? quintuplicar() : r === "/seguimiento" ? seguimientoVista() : oportunidades();
-  const fs = $("#fs"), fc = $("#fc");
-  if (fs) fs.onchange = () => { filtroSector = fs.value; try { localStorage.setItem("fs", filtroSector); } catch {} pintar(true); };
-  if (fc) fc.onchange = () => { filtroCarril = fc.value; try { localStorage.setItem("fc", filtroCarril); } catch {} pintar(true); };
-  if (!mantener) window.scrollTo(0, 0);
+  const titulo = TITULO[pest] && pest !== "/" ? `<h1 style="font-size:1.25rem;margin:4px 0 12px">${TITULO[pest]}</h1>` : "";
+  let cuerpo;
+  try {
+    cuerpo = r.startsWith("/informe/") ? informe(decodeURIComponent(r.slice(9)))
+      : r.startsWith("/empresa/") ? empresaFicha(decodeURIComponent(r.slice(9)))
+      : r.startsWith("/seguimiento") ? seguimientoVista(decodeURIComponent(r.slice(13)))
+      : r === "/ranking" ? oportunidades() : r === "/bot" ? bot() : r === "/informes" ? informes() : r === "/candidatos" ? candidatos()
+      : r === "/ayuda" ? ayuda() : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : r === "/x6" ? quintuplicar()
+      : r === "/mas" ? masVista() : r === "/fuentes" ? fuentesVista() : hoy();
+  } catch (e) { console.error(e); cuerpo = vacioBox("Algo ha fallado al dibujar esta parte", esc(e.message)); }
+  app.innerHTML = (r.startsWith("/informe/") || r.startsWith("/empresa/") ? "" : titulo) + cuerpo;
+  const fs = $("#fs");
+  if (fs) fs.onchange = () => { filtroSector = fs.value; cuantas = 30; try { localStorage.setItem("fs", filtroSector); } catch {} pintar(true); };
+  document.querySelectorAll("[data-carril]").forEach((b) => b.onclick = () => { filtroCarril = b.dataset.carril; cuantas = 30; try { localStorage.setItem("fc", filtroCarril); } catch {} pintar(true); });
+  document.querySelectorAll("[data-inf]").forEach((b) => b.onclick = () => { filtroInf = b.dataset.inf; pintar(true); });
+  const mf = $("#mas-filas"); if (mf) mf.onclick = () => { cuantas += 40; pintar(true); };
+  document.querySelectorAll("[data-tit]").forEach((b) => b.onclick = () => {
+    const n = TITULARES[+b.dataset.tit], [, , c] = familia(n);
+    $("#det-titular").innerHTML = `<div class="mut"><span class="dot" style="--c:${c}"></span>${esc(n.nom)} · ${esc(n.t)} · ${esc(n.fecha)} · ${esc(n.fuente || "")}${n.importante ? ' · <b class="warnt">importante</b>' : ""}</div><div>${urlOk(n.url) ? `<a href="${urlOk(n.url)}" target="_blank" rel="noopener">${esc(n.titulo)}</a>` : esc(n.titulo)}</div>`;
+  });
+  const foco = r.startsWith("/seguimiento/") && document.getElementById("seg-" + decodeURIComponent(r.slice(13)));
+  if (foco) foco.scrollIntoView({ block: "start" }); else if (!mantener) window.scrollTo(0, 0);
 }
+
+// Pistas al tocar o pasar por encima (casillas del mapa de calor, puntos de gráficos…).
+const tip = $("#tip");
+function verTip(e) {
+  const el = e.target.closest?.("[data-tip]");
+  if (!el || !el.dataset.tip) { tip.classList.remove("on"); return; }
+  tip.textContent = el.dataset.tip; tip.classList.add("on");
+  const r = el.getBoundingClientRect(), w = tip.offsetWidth;
+  tip.style.left = Math.max(8, Math.min(innerWidth - w - 8, r.left + r.width / 2 - w / 2)) + "px";
+  tip.style.top = Math.max(8, r.top - tip.offsetHeight - 8) + "px";
+}
+addEventListener("pointerover", (e) => { if (e.pointerType === "mouse") verTip(e); });
+addEventListener("click", verTip);
+addEventListener("scroll", () => tip.classList.remove("on"), { passive: true });
+
+// Tema: automático → oscuro → claro.
+const TEMAS = ["auto", "dark", "light"];
+function aplicarTema(t) { if (t === "auto") document.documentElement.removeAttribute("data-theme"); else document.documentElement.dataset.theme = t; $("#tema").title = `Tema: ${{ auto: "automático", dark: "oscuro", light: "claro" }[t]}`; }
+let tema = "auto"; try { tema = localStorage.getItem("tema") || "auto"; } catch {}
+aplicarTema(tema);
+$("#tema").onclick = () => { tema = TEMAS[(TEMAS.indexOf(tema) + 1) % 3]; try { localStorage.setItem("tema", tema); } catch {} aplicarTema(tema); };
 
 fetch("datos.json", {cache: "no-store"}).then((r) => r.json()).then((d) => {
   D = d;
-  $("#pie").textContent = `Precios: ${D.estado ? fecha(D.estado.actualizado) : "aún sin calcular"} · Panel generado: ${fecha(D.construido)}`;
+  $("#sub-cab").textContent = `Datos al ${D.estado ? fecha(D.estado.actualizado) : fecha(D.construido)} · solo lectura`;
+  $("#pie").innerHTML = `Nada de esto es una recomendación de compra. El agente B no opera; el bot del agente A solo usa la cuenta demo.<br>Precios: ${D.estado ? esc(fecha(D.estado.actualizado)) : "aún sin calcular"} · Panel generado: ${esc(fecha(D.construido))}`;
   pintar();
-}).catch(() => { $("#app").innerHTML = `<div class="card empty">No se han podido cargar los datos.</div>`; });
+}).catch((e) => { console.error(e); $("#app").innerHTML = vacioBox("No se han podido cargar los datos", "Prueba a recargar la página."); });
 addEventListener("hashchange", () => pintar());
 </script>
 </body>
