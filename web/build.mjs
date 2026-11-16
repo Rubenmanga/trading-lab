@@ -62,6 +62,14 @@ for (const l of (leer("config", "corto_hueco.yaml") || "").split("\n")) {
 }
 delete cfgCorto.modo_cuenta;
 
+// Mis acciones reales (config/mi_cartera.csv). Ruben aceptó (16-nov-2026) que el panel muestre cantidades e importes:
+// no hay claves ni datos de acceso, solo posiciones. Si algún día quiere ocultarlos, quitar `cantidad` e `importe_eur` aquí.
+const num0 = (x) => (x === "" || x == null || isNaN(+x) ? null : +x);
+const cartera = csv(leer("config", "mi_cartera.csv")).map((r) => ({
+  ticker: r.ticker, broker: r.broker, moneda: r.moneda, estado: r.estado || "abierta",
+  precio_entrada: num0(r.precio_medio), cantidad: num0(r.cantidad), importe_eur: num0(r.importe_eur),
+}));
+
 const datos = {
   construido: new Date().toISOString(),
   watchlist: csv(leer("investigacion", "watchlist.csv")),
@@ -69,6 +77,7 @@ const datos = {
   estado,
   seguimiento,
   ranking,
+  cartera,
   corto: { registro: csv(leer("investigacion/corto-hueco", "registro.csv")), config: cfgCorto },
   historial_lista: csv(leer("investigacion/seguimiento", "lista-historial.csv")).map(({ porque, ...r }) => r),
   // Perfil «¿puede duplicar?»: el informe más reciente (o la lista provisional si aún no hay informe).
