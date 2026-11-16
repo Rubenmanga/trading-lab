@@ -68,6 +68,25 @@ estrategias:
     desde: "09:35"
     fin_entradas: "11:30"
 
+# Filtro «¿entrar o no?» (laboratorio/filtro.py): 8 puntos de varias temporalidades e indicadores -> nota 0-100.
+# En el pasado y en la sombra se apunta la nota de TODAS las señales; en la demo solo se entra si llega al umbral.
+filtro:
+  umbral: 62.5                  # 5 de 8 puntos a favor
+  aplicar_a: [orb, hueco_volumen, vwap, rebote]   # el corto del hueco va contra la tendencia a propósito: sin filtro
+
+# DEMO EN DIRECTO en Alpaca paper (dinero ficticio). Workflow laboratorio-demo.yml cada 10 min.
+demo:
+  estrategias: [orb, hueco_volumen, vwap, rebote, corto_hueco]   # el azar se queda solo en papel
+  desde: "09:35"                # hora NY (15:35 España)
+  hasta: "13:05"                # después ya no se abren operaciones (todas las estrategias dejan de entrar a las 13:00)
+  senal_max_min: 12             # solo señales de los últimos 12 min (las pasadas son cada 10)
+  riesgo:                       # código fijo, sin IA: siempre manda
+    riesgo_pct: 0.5             # se arriesga el 0,5 % de la cuenta demo por operación
+    max_posicion_pct: 10        # una posición no pasa del 10 % de la cuenta
+    max_exposicion_pct: 100     # entre todas, como mucho el 100 % de la cuenta (sin apalancarse)
+    max_ops_dia: 20
+    freno_dia_pct: 3            # si la cuenta cae un 3 % en el día, no se abre nada más
+
 # Cuándo una estrategia «aprueba» (semáforo del panel)
 listones:
   ops_minimas: 100              # menos de 100 operaciones = aún no se puede saber

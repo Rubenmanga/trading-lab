@@ -82,6 +82,7 @@ const datos = {
   ranking,
   cartera,
   lab,
+  lab_demo: csv(leer("investigacion/laboratorio/demo", "registro.csv")),
   corto: { registro: csv(leer("investigacion/corto-hueco", "registro.csv")), config: cfgCorto },
   historial_lista: csv(leer("investigacion/seguimiento", "lista-historial.csv")).map(({ porque, ...r }) => r),
   // Perfil «¿puede duplicar?»: el informe más reciente (o la lista provisional si aún no hay informe).

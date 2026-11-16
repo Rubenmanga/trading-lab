@@ -11,7 +11,9 @@ from zoneinfo import ZoneInfo
 from ..estudio import simular
 from ..estudio.simular import Costes
 from ..estudio.universo import velas_seguras
-from . import estrategias
+from . import estrategias, filtro
+
+INDICE = "QQQ"  # el Nasdaq 100: sirve al filtro para saber si el mercado acompaña
 
 NY = ZoneInfo("America/New_York")
 
@@ -53,6 +55,7 @@ def operaciones_dia(fecha: str, dia: pd.DataFrame, por_sim: dict[str, pd.DataFra
     for p, c in enumerate(huecos, start=1):
         c["puesto_hueco"] = p
     ops = []
+    indice = por_sim.get(INDICE)
     for nombre, fn in estrategias.TODAS.items():
         e = ests.get(nombre) or {}
         if not e.get("activa"):
@@ -64,6 +67,7 @@ def operaciones_dia(fecha: str, dia: pd.DataFrame, por_sim: dict[str, pd.DataFra
                 print(f"  aviso {fecha} {c['simbolo']} {nombre}: {ex}")
                 continue
             if op:
+                op.update(filtro.evaluar(por_sim[c["simbolo"]], op["hora_entrada"], op["lado"], c, indice))
                 extra = {"puesto": c["puesto_hueco"]} if nombre == "corto_hueco" else {"puesto": c["puesto"]}
                 ops.append(dict(fecha=fecha, estrategia=nombre, simbolo=c["simbolo"], hueco=round(c["hueco"], 4),
                                 rvol5=round(c["rvol5"], 4), **extra, **op))
@@ -76,7 +80,7 @@ def procesar(cliente, cands: pd.DataFrame, desde: str, hasta: str, cfg: dict) ->
     ops = []
     for n, fecha in enumerate(fechas):
         dia = cands[cands["fecha"] == fecha]
-        sims = sorted(universo_dia(dia)["simbolo"].unique())
+        sims = sorted(set(universo_dia(dia)["simbolo"]) | {INDICE})
         partes = [velas_seguras(cliente, sims[i:i + 100], "1Min", _ny(fecha, 9, 30), _ny(fecha, 16))
                   for i in range(0, len(sims), 100)]
         partes = [p for p in partes if len(p)]

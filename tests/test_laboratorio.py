@@ -115,3 +115,77 @@ def test_semaforo():
     assert informe.semaforo({"n": 150, "R_medio": 0.3, "ic95": [0.1, 0.5]}, L) == "verde"
     assert informe.semaforo({"n": 50, "R_medio": 0.3, "ic95": [-0.1, 0.7]}, L) == "amarillo"
     assert informe.semaforo({"n": 150, "R_medio": -0.1, "ic95": [-0.2, 0.0]}, L) == "rojo"
+
+
+def test_filtro_a_favor_y_en_contra():
+    from tradinglab.intradia.laboratorio import filtro
+    sube = velas([100 + i * 0.1 for i in range(40)])
+    a = filtro.evaluar(sube, "10:10", "compra", {"hueco": 0.05, "rvol5": 0.2}, sube)
+    b = filtro.evaluar(sube, "10:10", "venta", {"hueco": 0.05, "rvol5": 0.2}, sube)
+    assert a["nota"] > 60 and b["nota"] < 40
+    # temprano (9:31) casi todo es neutro: no hay datos todavía
+    assert 30 <= filtro.evaluar(sube, "09:31", "compra", {}, None)["nota"] <= 70
+
+
+def test_informe_con_filtro(tmp_path):
+    filas = [dict(fecha="2025-03-03", estrategia="orb", simbolo="A", lado="compra", hora_entrada="10:00", R=r, R_alt=r,
+                  ret_pct=r, hueco=0.05, puesto=1, nota=n, filtro="11110000") for r, n in [(2, 80), (-1, 30), (3, 70), (-1, 40)]]
+    df = pd.DataFrame(filas)
+    res = informe.generar(df, df.iloc[0:0], CFG, "2025-03-04")
+    assert res["estrategias"]["orb"]["pasado_filtrado"]["n"] == 2
+    assert res["estrategias"]["orb"]["por_punto"]["1min"]["n_favor"] == 4
+    assert "Filtro" in informe.markdown(res)
+
+
+class BrokerFalso:
+    def __init__(self):
+        self.enviadas, self.movidos = [], []
+
+    def reloj(self):
+        return {"is_open": True}
+
+    def ordenes(self, estado="all", desde=None):
+        return []
+
+    def posiciones(self):
+        return []
+
+    def cuenta(self):
+        return {"equity": "100000", "last_equity": "100000"}
+
+    def valor(self, s):
+        return {"shortable": True, "easy_to_borrow": True}
+
+    def orden_con_stop(self, *a):
+        self.enviadas.append(a)
+        return {}
+
+
+def test_demo_envia_orden_con_stop(tmp_path, monkeypatch):
+    from tradinglab.intradia.laboratorio import demo
+    monkeypatch.setattr(demo, "carpeta", lambda: tmp_path / "reg")
+    cfg = {**CFG, "filtro": {**CFG["filtro"], "aplicar_a": []}}
+    # Hueco de +60 % que se desinfla: el corto del hueco da señal a las 9:35
+    m = velas([(150, 151, 149, 150)] * 5 + [150] * 3)
+    cands = pd.DataFrame([dict(fecha="2025-03-03", simbolo="GAP", A=True, B=False, hueco=0.6, cierre_ant=94, atr14=5,
+                               vol_medio14=1e5, v=1e6)])
+    (tmp_path / "cache").mkdir()
+    cands.to_csv(tmp_path / "cache" / "candidatas-2025-03-03.csv.gz", index=False)
+    monkeypatch.setattr(demo, "velas_hasta_ahora", lambda c, s, f, a: m.reset_index(drop=True).assign(simbolo="GAP"))
+    b = BrokerFalso()
+    ahora = datetime(2025, 3, 3, 9, 40, tzinfo=NY)
+    filas = demo.pasada(cfg, {}, None, b, ahora=ahora, cache=tmp_path / "cache")
+    assert len(b.enviadas) == 1
+    sim, qty, lado, stop, obj, cid = b.enviadas[0]
+    assert sim == "GAP" and lado == "venta" and stop > 150 and cid.startswith("lab-20250303-corto_hueco")
+    assert qty * 150 * 0.15 <= 100000 * 0.005 + 1          # riesgo 0,5 %
+    assert (tmp_path / "reg" / "registro.csv").exists() and filas[0]["accion"] == "abierta"
+    # fuera de la ventana no hace nada
+    assert demo.pasada(cfg, {}, None, b, ahora=datetime(2025, 3, 3, 14, 0, tzinfo=NY), cache=tmp_path / "cache") == []
+
+
+def test_demo_tamano_y_niveles():
+    from tradinglab.intradia.laboratorio import demo
+    R = CFG["demo"]["riesgo"]
+    assert demo.tamano(100000, 50, 1, R)[0] == 200            # 10 % máx. de la cuenta (sin eso serían 1000)
+    assert demo.niveles(100, "venta", 1, 3) == (101.0, 97.0)

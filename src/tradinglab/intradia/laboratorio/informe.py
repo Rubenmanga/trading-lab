@@ -64,6 +64,34 @@ def semaforo(d: dict, L: dict) -> str:
     return "amarillo"
 
 
+TRAMOS = [(0, 50, "< 50"), (50, 62.5, "50-62"), (62.5, 75, "62-75"), (75, 101, "≥ 75")]
+
+
+def por_nota(o: pd.DataFrame) -> list[dict]:
+    if o.empty or "nota" not in o:
+        return []
+    out = []
+    for lo, hi, nom in TRAMOS:
+        g = o[(o["nota"] >= lo) & (o["nota"] < hi)]
+        out.append(dict(tramo=nom, n=int(len(g)), R=round(float(g["R"].mean()), 3) if len(g) else None))
+    return out
+
+
+def por_punto(o: pd.DataFrame) -> dict:
+    """Para cada indicador del filtro: R medio cuando estaba a favor (1) y en contra (0)."""
+    from .filtro import NOMBRES
+    if o.empty or "filtro" not in o:
+        return {}
+    f = o["filtro"].astype(str).str.pad(len(NOMBRES), fillchar="·")
+    out = {}
+    for k, nom in enumerate(NOMBRES):
+        letra = f.str[k]
+        a, e = o[letra == "1"]["R"], o[letra == "0"]["R"]
+        out[nom] = dict(a_favor=round(float(a.mean()), 3) if len(a) else None, n_favor=int(len(a)),
+                        en_contra=round(float(e.mean()), 3) if len(e) else None, n_contra=int(len(e)))
+    return out
+
+
 def curva_mensual(o: pd.DataFrame) -> list[dict]:
     if o.empty:
         return []
@@ -86,13 +114,21 @@ def leer_ops(carpeta: Path, patron: str) -> pd.DataFrame:
 
 def generar(back: pd.DataFrame, sombra: pd.DataFrame, cfg: dict, hoy: str) -> dict:
     L = cfg["listones"]
-    res = dict(actualizado=hoy, listones=L, riesgo=cfg["riesgo"], estrategias={})
+    res = dict(actualizado=hoy, listones=L, riesgo=cfg["riesgo"], filtro=cfg.get("filtro") or {}, estrategias={})
     for clave, e in cfg["estrategias"].items():
         b = back[back["estrategia"] == clave] if len(back) else back
         s = sombra[sombra["estrategia"] == clave] if len(sombra) else sombra
         d = dict(nombre=e.get("nombre", clave), explica=EXPLICA.get(clave, ""), activa=bool(e.get("activa")),
                  pasado=estadisticas(b, L), sombra=estadisticas(s, L),
                  curva_pasado=curva_mensual(b), curva_sombra=curva_diaria(s))
+        F = cfg.get("filtro") or {}
+        if "nota" in getattr(b, "columns", []):
+            d["por_nota"] = por_nota(b)
+            d["por_punto"] = por_punto(b)
+            d["pasado_filtrado"] = estadisticas(b[b["nota"] >= F.get("umbral", 62.5)], L)
+        if "nota" in getattr(s, "columns", []):
+            d["sombra_filtrada"] = estadisticas(s[s["nota"] >= F.get("umbral", 62.5)], L)
+        d["filtro_aplica"] = clave in (F.get("aplicar_a") or [])
         if clave == "corto_hueco" and len(b):
             bot = b[(b["hueco"] >= 0.5) & (b["puesto"] <= 3)]
             d["pasado_como_bot"] = estadisticas(bot, L)
@@ -151,6 +187,30 @@ def markdown(res: dict) -> str:
     if cb and cb.get("n"):
         lin += ["", f"Corto del hueco **como el bot de eToro** (hueco ≥ +50 %, 3 al día): {cb['n']} operaciones, "
                     f"{_f(cb['R_medio'])} R de media ({_f(cb.get('ret_pct_medio'))} % por operación), aciertos {_f(cb['aciertos_pct'], 0, False)} %."]
+    if any(E[k].get("por_nota") for k in E):
+        u = res.get("filtro", {}).get("umbral", 62.5)
+        lin += ["", f"## Filtro «¿entrar o no?» (nota ≥ {_f(u, 1, False)} de 100)", "",
+                "Nota = cuántos de 8 indicadores (tendencia en 1, 5 y 15 min, hueco del día, VWAP, RSI, Nasdaq y volumen) estaban a favor justo antes de entrar.", "",
+                "| Estrategia | Sin filtro | Con filtro | Nota < 50 | 50-62 | 62-75 | ≥ 75 |", "|---|---|---|---|---|---|---|"]
+        for k in orden:
+            d, pf = E[k]["pasado"], E[k].get("pasado_filtrado") or {}
+            tr = {t["tramo"]: t for t in E[k].get("por_nota") or []}
+            celda = lambda t: f"{_f(t['R'])} ({t['n']})" if t and t.get("n") else "—"  # noqa: E731
+            lin.append(f"| {E[k]['nombre']} | {_f(d.get('R_medio'))} ({d.get('n', 0)}) | {_f(pf.get('R_medio'))} ({pf.get('n', 0)}) | "
+                       + " | ".join(celda(tr.get(n)) for _, _, n in TRAMOS) + " |")
+        pp = {}
+        for k in E:
+            if E[k].get("filtro_aplica"):
+                for nom, v in (E[k].get("por_punto") or {}).items():
+                    pp.setdefault(nom, []).append(v)
+        if pp:
+            lin += ["", "Qué indicador ayuda (estrategias con filtro): R medio cuando estaba **a favor** frente a **en contra**.", "",
+                    "| Indicador | A favor | En contra | Diferencia |", "|---|---|---|---|"]
+            for nom, vs in pp.items():
+                nf, nc = sum(v["n_favor"] for v in vs), sum(v["n_contra"] for v in vs)
+                af = sum((v["a_favor"] or 0) * v["n_favor"] for v in vs) / nf if nf else None
+                ec = sum((v["en_contra"] or 0) * v["n_contra"] for v in vs) / nc if nc else None
+                lin.append(f"| {nom} | {_f(af)} ({nf}) | {_f(ec)} ({nc}) | {_f(af - ec) if af is not None and ec is not None else '—'} |")
     lin += ["", "## Cuenta sombra (desde el 16-nov-2026)", "",
             "| | Estrategia | Ops | R medio | Aciertos | R total | Vs azar |", "|---|---|---|---|---|---|---|"]
     for k in orden:
