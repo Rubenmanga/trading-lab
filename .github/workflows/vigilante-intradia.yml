@@ -1,0 +1,51 @@
+# Vigilante cada 10 minutos con la bolsa de EE. UU. abierta (solo los días de config/vigilante.yaml).
+# Gratis y sin IA. Mira precio y volumen de la empresa frente a sus competidores y abre un aviso (issue) si algo se separa.
+# Solo información: no opera. Resultado en investigacion/vigilante/ (panel: Informes).
+name: Vigilante intradía
+
+on:
+  schedule:
+    - cron: "*/10 14-21 * * 1-5"   # cada 10 min, 15:00-22:50 Madrid (invierno); el programa filtra la sesión 9:35-16:05 NY
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: vigilante-intradia
+  cancel-in-progress: false
+
+jobs:
+  vigilar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" tzdata
+      - name: Vigilar
+        env:
+          PYTHONPATH: src
+        run: python -m tradinglab.medio_plazo.vigilante
+      - name: Guardar
+        run: |
+          git config user.name "agente-12m"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add investigacion/vigilante/ 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Vigilante $(date -u +'%F %H:%M')"
+          git pull --rebase --autostash -q || true
+          git push || (sleep 5 && git pull --rebase --autostash -q && git push) || true
+      - name: Avisar al móvil
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -s aviso.md ]; then
+            echo "" >> aviso.md
+            echo "Detalle: https://trading-lab-kappa.vercel.app/#/informes · Información, no una orden de compra o venta." >> aviso.md
+            gh label create vigilante --color 0E8A16 --force >/dev/null 2>&1 || true
+            gh issue create --title "👁 Vigilante $(TZ=Europe/Madrid date +'%H:%M') (España)" --body-file aviso.md --label vigilante --assignee "${{ github.repository_owner }}" || gh issue create --title "👁 Vigilante $(TZ=Europe/Madrid date +'%H:%M') (España)" --body-file aviso.md --label vigilante
+          fi
