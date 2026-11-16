@@ -68,6 +68,12 @@ estrategias:
     desde: "09:35"
     fin_entradas: "11:30"
 
+# Filtro «¿entrar o no?» (laboratorio/filtro.py): 8 puntos de varias temporalidades e indicadores -> nota 0-100.
+# En el pasado y en la sombra se apunta la nota de TODAS las señales; en la demo solo se entra si llega al umbral.
+filtro:
+  umbral: 62.5                  # 5 de 8 puntos a favor
+  aplicar_a: [orb, hueco_volumen, vwap, rebote]   # el corto del hueco va contra la tendencia a propósito: sin filtro
+
 # Cuándo una estrategia «aprueba» (semáforo del panel)
 listones:
   ops_minimas: 100              # menos de 100 operaciones = aún no se puede saber
