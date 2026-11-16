@@ -23,8 +23,8 @@
 - Cada workflow debe registrar fecha UTC, SHA, run ID, origen de datos, resultado y estado de error, idealmente en artefacto independiente.
 - Si falla la descarga: conservar último dataset con marca «antiguo», no reemplazar silenciosamente por array vacío.
 - Si falla el proveedor o un cálculo: no emitir señal nueva basada en estado incompleto; reintentar de forma acotada, registrar causa.
-- Si falla un push de Git: no ignorar el fallo con \`|| true\` salvo que se establezca explícitamente un protocolo de reconciliación.
-- Tras cambios: ejecutar \`node --test web/test/*.test.cjs\`, \`node web/build.mjs\`, \`python -m pytest -q tests/\` y revisar GitHub Actions. No asumir que son pruebas end-to-end.
+- Si falla un push de Git: no ignorar el fallo con `|| true` salvo que se establezca explícitamente un protocolo de reconciliación.
+- Tras cambios: ejecutar `node --test web/test/*.test.cjs`, `node web/build.mjs`, `python -m pytest -q tests/` y revisar GitHub Actions. No asumir que son pruebas end-to-end.
 
 ## Tres roles de revisión
 - **Arquitecto:** defiende solo decisiones con beneficio medible y reversibilidad.
@@ -40,4 +40,7 @@
 - No se promueve código con resultados financieros «superiores» si solo se optimizó sobre los mismos datos.
 
 ## Excepciones de instrucciones
-\`CLAUDE.md\` recomienda detenerse por aprobación tras un plan grande para ahorrar tokens. La autorización **explícita** de ejecutar autónomamente en rama para esta misión prevalece para cambios reversibles; no se interpreta como permiso de merge, trading live, servicios de pago ni borrados. La solicitud posterior deja la cartera personal **fuera de alcance**. Codex y asistentes nuevos deben seguir \`AGENTS.md\`.
+`CLAUDE.md` recomienda detenerse por aprobación tras un plan grande para ahorrar tokens. La autorización **explícita** de ejecutar autónomamente en rama para esta misión prevalece para cambios reversibles; no se interpreta como permiso de merge, trading live, servicios de pago ni borrados. La solicitud posterior deja la cartera personal **fuera de alcance**. Codex y asistentes nuevos deben seguir `AGENTS.md`.
+
+## Control de coste de las automatizaciones
+Los cambios editoriales no desencadenan descargas masivas. Las PR ejecutan primero tests sin consultar cotizaciones. La lógica de recálculo y publicación de datos queda reservada a ejecución programada, manual o a cambios relevantes del motor.

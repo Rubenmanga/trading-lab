@@ -11,7 +11,7 @@
 ## Sistema visual
 - Diseño sobrio, tipografía del sistema, énfasis mediante espacio y jerarquía, no por tarjetas de distintos colores.
 - Azul para acciones de navegación, ámbar para revisar/retraso, rojo para ausencia o peligro; siempre palabra junto al color.
-- Componentes propios \`tl-*\` en \`web/decision-center.css\`; tamaño de lectura estable; separaciones claras; fondo oscuro/claro heredado.
+- Componentes propios `tl-*` en `web/decision-center.css`; tamaño de lectura estable; separaciones claras; fondo oscuro/claro heredado.
 - Móvil: una columna para paneles y bloques críticos, dos columnas para procedencia; escritorio dos paneles y cuatro fuentes.
 - Botones y enlaces grandes, foco visible y movimiento reducido respetado.
 - El menú de escritorio cambia el lenguaje técnico opaco por **Centro / Radar / Laboratorio / Bot demo / Mi cartera / Noticias / Fuentes / Archivo y ayuda**. El menú móvil conserva cinco destinos esenciales.
