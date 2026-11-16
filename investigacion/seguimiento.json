@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-15T16:27:43+00:00",
+ "actualizado": "2026-11-16T10:33:38+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -93,10 +93,6 @@
      {
       "tipo": "NOTICIA IMPORTANTE",
       "texto": "resultados: «ALT Q3 Earnings Miss, Stock Sinks on Higher Costs & Funding Concerns»"
-     },
-     {
-      "tipo": "NOTICIA IMPORTANTE",
-      "texto": "resultados: «Altimmune Q3 2026 Earnings Call Transcript»"
      }
     ],
     "avisos_nuevos": [],
@@ -305,7 +301,9 @@
      "what altimmune alt said on its q3 earnings call",
      "why did nvda alt plug stocks plunge to 52week lows today"
     ],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-11-10Fondo grande >5 % (13G)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -423,17 +421,6 @@
       ],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Ondas Retreats 9% Despite Attack Drone Purchase Order Ahead of Earnings; Red Cat Declines 9%, AeroVironment Falls 4%",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=dcd3b7f7117a3b65c07dd7c9ed5698f7fb4dc74f2f1cce5aabe1f99f037a4f73",
-      "causas": [
-       "contrato o pedido"
-      ],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
@@ -441,12 +428,15 @@
      "is red cat holdings rcat a bargain following its new communications an",
      "ondas drops 5 as drone stocks slide unusual machines falls 6 red cat d",
      "ondas retreats 5 despite record revenue and raised outlook red cat dro",
-     "ondas retreats 9 despite attack drone purchase order ahead of earnings",
      "planet labs pbc vs red cat which industrials stock is a better buy for",
      "red cat earnings preview real army orders but a stock price i cant jus",
      "red cat rcat stock could be fully priced as purchase offer advances"
     ],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-08-07Fondo grande >5 % (13G)",
+     "2026-08-14Fondo grande >5 % (13G)",
+     "2026-11-10Fondo grande >5 % (13G)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -511,6 +501,125 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-16",
+      "titulo": "Elizabeth Warren Takes Aim at Big Tech Billionaires Over China AI Access — '...Put Our National Security Above Their Bottom Line'",
+      "fuente": "benzinga",
+      "url": "https://www.benzinga.com/markets/tech/26/11/63280126/elizabeth-warren-big-tech-ceos-us-national-security-china-ai-technology",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "'Trump Administration to Name Nvidia Among AI ‘National Champions’' - WSJ Exclusive",
+      "fuente": "benzinga",
+      "url": "https://www.benzinga.com/news/26/11/63279232/trump-administration-name-nvidia-among-ai-national-champions-wsj-exclusive",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "Market Chatter: Nvidia, Amazon, Microsoft, OpenAI and Anthropic To Be Named AI National Champs By White House",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=d7a172a740533d18c879bebb06501bd148eb21e68d1232ba94e650c494eac3c5",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "November 2026 Cash Flow Stocks Like NVIDIA Stock",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=de40b60342d540c4464375b58b2b70072e9db76ef5b10c0c2ba8e105e416757e",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "Has Microsoft Stock Become A Different Bet?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=2db1d8744d4ffdc69a67d8b1a126308f04f45db45d64df048120a62a60361e78",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "Nvidia and OpenAI Are “the New Defense Contractors,” Says Scott Galloway. Bad News: That Means Oversight",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=7265de8c58d8418419aff509998ec7fe742e1a84db3b9e9198a5ee3961143c4a",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "It Now Costs More to Insure Chip Debt Than Big Tech’s. Bond Markets Say “Risk Is Migrating”",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=ed0648081319835f55d9924e634ec963f60f1ae2886d62ba2d0104f698dbd867",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "Nvidia’s All-Important Q3 Report, China Tech Results, Anthropic IPO And Microsoft Ignite To Keep Investors Hooked This Week",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=5846bbdb13a93a51bcd4070054b807085104427cb34052d8f645a673c6fff84b",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "Microsoft (MSFT) Strikes AI Deal That Broadens Its Chip Supplier Base",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=be7f5a4fb30272c051d1e127564aef594b99c07e59dd4c2022f2ff8cfdc5b74c",
+      "causas": [
+       "contrato o pedido"
+      ],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "U.S. plans to name Nvidia among AI ‘national champions’, WSJ reports",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=d6d3bbbd35a74150cea16988433405ecad567076147eb73d0927d1a027881f35",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "Jim Cramer: Anthropic’s “Next $100 Billion in Revenue” Might Be Cybersecurity. CrowdStrike Should Worry",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=fdd2c9ecade07a04677780f1bfa87e1212574c4127e266374d38c5e2e1658b66",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "Microsoft Is the Only Tech Giant Not “Highly Reliant on Advertising” as AI Upends Search",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=c128d8efce1f5ce780df278873e97c1224d5ea27bf9bedc16fa4b37c78e4e6ce",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "Anthropic's record IPO faces some big questions",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=7ff5f12b78809a3a19aa0ede6444bea981fab8003994de12c8bd167418132ba5",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-15",
       "titulo": "Consumer Tech (Nov 9-13): Jensen Resigns From Nvidia Amid Affair Controvery, Microsoft Faces Massive Outage & More",
       "fuente": "benzinga",
@@ -523,129 +632,12 @@
      },
      {
       "fecha": "2026-11-15",
-      "titulo": "Microsoft Ignite Starts Nov. 17. Will Microsoft Update Its Paid Copilot Seat Count?",
+      "titulo": "Americans fear the worst after Pentagon doomsday prepping, ‘Black October’ cyberattacks, stock crash, spy scandal, Microsoft outage, and airport chaos",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=ded014e1a20cc2bd18b4f134761861977f0de329aa981aeef75030c6ead4a9aa",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-15",
-      "titulo": "Want to Invest in Top Growth Stocks Like Amazon, Apple, and Microsoft but Avoid Nvidia? Consider This Low-Cost Vanguard ETF That’s Up 24.8% This Year.",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=f0f2e8bf2db5dd4d82f1a1e145d5dc169d2ebfe544c1da76df578048f3228480",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-15",
-      "titulo": "IREN Is Down 63% in a Year. Is It Time to Sell, or Load Up?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=122179e2b3d503ee2b797ca3734c0d2c116793fbac4580d64f727cca92ff9087",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-15",
-      "titulo": "Nvidia had no succession plan when Jensen Huang quit. Former Fortune 500 CEOs call it ‘preposterous’",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=b912cf0856740e67e5b0758a47c6fa800dcf76c8438403927e152373e959f9d3",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-15",
-      "titulo": "Founderz AI Wins 2026 Microsoft Partner of the Year Award in Training Services Category",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=0ec3f68569e5666582f0d9857676c05e1d6541683b84d813098cea7426e2a02c",
+      "url": "https://finnhub.io/api/news?id=a273bdc6858fcb627ee9f75117c9ff023b687c4880e20df844e1599e2e1d6c53",
       "causas": [
        "contrato o pedido"
       ],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "Microsoft Restores Services Following Global Outage",
-      "fuente": "fiscal.ai",
-      "url": "https://www.cobramcourier.com.au/world/microsoft-services-fully-recover-after-global-outage/",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "FAA Resumes Flights After Nationwide Ground Stop, Says No Link to Microsoft Outage or Cyberattack; Marjorie Taylor Greene Slams Duffy's $50 Billion Ask (UPDATED)",
-      "fuente": "benzinga",
-      "url": "https://www.benzinga.com/news/politics/26/11/63273371/faa-lifts-nationwide-ground-stop-telecommunications-outage",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "Anthropic IPO to test Wall Street's faith in AI as skepticism mounts",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=d5369c3f32115c3c7fd745b1903dbd613b269bb30ad77537b4cb9cb65d79e6b6",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "Credo Technology Group vs. Marvell Technology: Which Technology Stock Is a Better Buy for 2027?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=61d066ea06f00921cbaa5deab26a5c92bd3a7b28ed7d54847568143ed5a648b9",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "C3.ai vs. SentinelOne: Which Technology Stock Is a Better Buy for 2027?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=abd349ffd74d57747266e0d0c89aae960685485b612270c713e236a3fafbdd97",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "Billionaire Bill Ackman Says There’s a Huge Disconnect in Wall Street’s Expectations for Amazon, Microsoft, Meta, and Alphabet",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=d65d8020216f5e6d7add2864d5dd9203bafa39994057094f042e2e3f025f73ad",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "Why the Microsoft Outage Came at the Worst Possible Time for the Stock",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=10452ff38f95ffa45395e9d96aa6108ee305a9320bbbc77b80985dddc3c197fc",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "Harvard Cut Nvidia by a Third and Bought AMD",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=9ea285b8c1b9e1a10d6d8b27c5449e6ed352c5638848f9a8b2de92accdb8672f",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "SpaceX Hollows Out Its AI Video Division. Elon Musk Now Has Different Priorities",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=9a0262600a3f13c19395e9d9f56a1282468bc302d95063775760b30fdd7672bc",
-      "causas": [],
       "nueva": true,
       "importante": false
      }
@@ -653,60 +645,60 @@
     "vistos": [
      "amd benefits from nvidias troubles smart money sells nvidia cooler ppi",
      "amd sinks 105 as chip rally unwinds nasdaq 100 falls 17 stock market t",
-     "amd stock looks poised to revisit its alltime highs",
+     "americans fear the worst after pentagon doomsday prepping black octobe",
      "analyst shrugs off nebius data center delay as slight blemish on stron",
      "anthropic ipo to test wall streets faith in ai as skepticism mounts",
+     "anthropics record ipo faces some big questions",
      "big tech will spend well over 1 trillion in 2027 says applied material",
      "billionaire bill ackman says theres a huge disconnect in wall streets",
      "c3ai vs sentinelone which technology stock is a better buy for 2027",
-     "cbrg 2x cerebras etf surges 16 as cerebras jumps 8 on microsoft deal a",
-     "cerebras cbrs stock is trending premarket heres why",
-     "cerebras lands microsoft deal as profit test nears",
      "cerebras q3 results how much more proof does wall street need",
-     "cerebras stock surges on microsoft deal what it means for nvidia",
-     "cerebras stocks jump 1170 after raising outlook and confirming microso",
      "chamath palihapitiya says nvidia oversight would be a disaster after j",
      "cohesity expands data resilience capabilities for microsoft ecosystem",
      "consumer tech nov 913 jensen resigns from nvidia amid affair controver",
      "coreweave jumped 20 and pulled oracle higher is it time to sell or loa",
      "credo technology group vs marvell technology which technology stock is",
      "das technology gives retailers a competitive advantage during microsof",
+     "elizabeth warren takes aim at big tech billionaires over china ai acce",
+     "faa chief warns system will continue to break att verizon and lumen co",
      "faa resumes flights after nationwide ground stop says no link to micro",
      "founderz ai wins 2026 microsoft partner of the year award in training",
      "harvard cut nvidia by a third and bought amd",
+     "has microsoft stock become a different bet",
      "insight enterprises inc nsit q3 2026 earnings call highlights aidriven",
      "iren is down 63 in a year is it time to sell or load up",
+     "it now costs more to insure chip debt than big techs bond markets say",
+     "jim cramer anthropics next 100 billion in revenue might be cybersecuri",
+     "market chatter nvidia amazon microsoft openai and anthropic to be name",
+     "michael burry warned ai chips would lose value fast new data suggests",
      "microsoft experiences widespread global service outage",
      "microsoft ignite starts nov 17 will microsoft update its paid copilot",
+     "microsoft is the only tech giant not highly reliant on advertising as",
      "microsoft just relived the crowdstrike nightmare but theres one crucia",
-     "microsoft outage disrupts oil trader data and dealmaking",
+     "microsoft msft strikes ai deal that broadens its chip supplier base",
      "microsoft outage hit more than outlook even its cybersecurity defenses",
-     "microsoft outage sends cybersecurity stocks higher palo alto and crowd",
-     "microsoft outlook outage hits colorado jail forces families to post ba",
      "microsoft restores services following global outage",
      "microsoft says infrastructure stabilizes as queued messages drain and",
      "microsoft stock in focus as massive 365 outage hits outlook teams and",
-     "microsoft stocks edge lower as outlook and teams outage tops 12 hours",
-     "microsoft vs salesforce one software stock remains a top pick the othe",
-     "microsofts latest outage hit outlook and copilot  what it means for yo",
+     "morgan stanley doubles down on microsoft stock with bold outlook",
      "nebius stock falls nearly 17 weak outlook nvidia turmoil and nscales w",
+     "november 2026 cash flow stocks like nvidia stock",
      "nscale reports ballooning debt and need for more as ipo approaches",
      "nvidia alphabet microsoft and micron are all buying anthropics ipo sho",
+     "nvidia and openai are the new defense contractors says scott galloway",
      "nvidia had no succession plan when jensen huang quit former fortune 50",
-     "nvidia is lending this ai startup 2 billion now jensen huang is gone a",
      "nvidiabacked nscale warns it needs more financing amid 446b anthropic",
+     "nvidias allimportant q3 report china tech results anthropic ipo and mi",
      "nvidias competitors pounce and what gpu rental prices say about the ai",
      "nvidias shakeup clouds coppers ai boom",
-     "nvidias ties to nscale put the data center startups ipo on shakier gro",
      "openai disbands its robotics team as its general models start running",
      "openai introduces chatgpt wallet built in partnership with american ex",
-     "sector update tech stocks fall late afternoon",
-     "sp 500 most active stocks nov 13 2026 session",
+     "rigetti computing vs soundhound ai which technology stock is a better",
      "spacex hollows out its ai video division elon musk now has different p",
-     "the price tag on jensen huangs resignation 639 billion and counting",
+     "trump administration to name nvidia among ai national champions  wsj e",
+     "us plans to name nvidia among ai national champions wsj reports",
      "want to invest in top growth stocks like amazon apple and microsoft bu",
      "we are not immune nebius is still up 38 in 2026 take profits or buy mo",
-     "what does dominion energy offer that nisource does not",
      "why the microsoft outage came at the worst possible time for the stock",
      "with nvidia floundering ai bulls need more than spending watch revenue"
     ],
@@ -783,23 +775,16 @@
       ],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Buy the Dip: 5 Stocks Insiders Are Loading Up On After the Recent Market Sell-Off",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=2e11465ca183524bc3ff11e83ca7c6c12f7f0e698a5ad37059fc5b46f481ae45",
-      "causas": [],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
-     "buy the dip 5 stocks insiders are loading up on after the recent marke",
      "jonestrading maintains buy rating and 82 price target for rapport ther",
      "stifel maintains buy rating and 56 price target for rapport therapeuti"
     ],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-10-27Colocación de acciones (424B5)",
+     "2026-10-30Colocación de acciones (424B5)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -825,22 +810,14 @@
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Movimiento normal para esta acción.",
     "cambios": [
-     "3 titulares nuevos"
+     "3 titulares nuevos",
+     "SEC 2026-11-13: Fondo grande >5 % (13G)"
     ],
     "catalizadores": [
      "Resultados el 2027-02-24 (tras el cierre)",
      "Ensayo F3 «A Phase 3 Trial of DT120 for Major Depressive Disorder (Ascend)»: resultado principal previsto 2027-09"
     ],
-    "avisos": [
-     {
-      "tipo": "NOTICIA IMPORTANTE",
-      "texto": "ensayo clínico: «Is Definium Therapeutics (DFTX) Fully Priced After Positive Phase 3 Results?»"
-     },
-     {
-      "tipo": "NOTICIA IMPORTANTE",
-      "texto": "ensayo clínico: «How Investors May Respond To Definium Therapeutics Stock After Phase 3 Success»"
-     }
-    ],
+    "avisos": [],
     "avisos_nuevos": [],
     "avisados": [
      "NOTICIA IMPORTANTE|ensayo clínico: «How Investors May Respond To Defi",
@@ -941,100 +918,21 @@
       ],
       "nueva": true,
       "importante": true
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Definium Q3 Earnings: Psychedelics Approval Beckons But Valuation Seems Inflated",
-      "fuente": "SeekingAlpha",
-      "url": "https://finnhub.io/api/news?id=a125ad347b1f2ffc4afeac90107660bbadf222cad50c0966d87657dbbbdb5b9f",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": true,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "RBC Capital Maintains Outperform on Definium Therapeutics, Raises Price Target to $70",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=3955ee415bd4900f25b9c13f0d017a2b7dcf3c43760c66051a7e225a4a95073c",
-      "causas": [
-       "analistas"
-      ],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Definium Therapeutics Inc (DFTX) (Q3 2026) Earnings Call Highlights: $1. ...",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=8a4341427128f21653d7ea0753d69ddbf8806e51bb67274848f80a273df31f60",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": true,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Definium Therapeutics, Inc. (DFTX) Q3 2026 Earnings Call Transcript",
-      "fuente": "SeekingAlpha",
-      "url": "https://finnhub.io/api/news?id=066b96dd27d308b9c9878c0516fab504da6e9e557df23293496dd4aca937b0b6",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": true,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Definium (DFTX) Q3 2026 Earnings Call Transcript",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=2a5fab61c960463dc60c4a9f1940c47a2bfb0a28a2f22d62ea80310da73abef4",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": true,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "What Definium Therapeutics (DFTX) Said on Its Q3 Earnings Call",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=71fa425785a8e85108f66857450ac8b15d09f8936bd30cb1f70b4569ba2e1295",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": true,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Definium Therapeutics (NASDAQ:DFTX) Q3 Loss Narrower as Pipeline Momentum Builds",
-      "fuente": "ChartMill",
-      "url": "https://finnhub.io/api/news?id=38c038fd8f1efff2b62c26e8555dddb881ac73a6bf7b3106b9ebe9e3a1423d37",
-      "causas": [],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
-     "definium dftx q3 2026 earnings call transcript",
-     "definium q3 earnings psychedelics approval beckons but valuation seems",
      "definium therapeutics dftx following dt120 phase 3 data is the underva",
      "definium therapeutics eyes fda filing for lsd treatment after three po",
-     "definium therapeutics inc dftx q3 2026 earnings call highlights 1",
-     "definium therapeutics inc dftx q3 2026 earnings call transcript",
-     "definium therapeutics nasdaqdftx q3 loss narrower as pipeline momentum",
      "definium therapeutics receives hope corporate visionary award",
      "how investors may respond to definium therapeutics stock after phase 3",
      "is definium therapeutics dftx fully priced after positive phase 3 resu",
      "oppenheimer maintains buy rating and 75 price target on definium thera",
-     "rbc capital maintains outperform on definium therapeutics raises price",
-     "wells fargo maintains buy rating on definium therapeutics",
-     "what definium therapeutics dftx said on its q3 earnings call"
+     "wells fargo maintains buy rating on definium therapeutics"
     ],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-11-05Fondo grande >5 % (13G)",
+     "2026-11-13Fondo grande >5 % (13G)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -1099,7 +997,12 @@
     "vistos": [
      "poet stock soars after coreweaves strong q3 results and fy26 guidance"
     ],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-06-22Fondo grande >5 % (13G)",
+     "2026-07-08Fondo grande >5 % (13G)",
+     "2026-08-13Fondo grande >5 % (13G)",
+     "2026-08-14Fondo grande >5 % (13G)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -1128,12 +1031,7 @@
      "3 titulares nuevos"
     ],
     "catalizadores": [],
-    "avisos": [
-     {
-      "tipo": "NOTICIA IMPORTANTE",
-      "texto": "resultados: «Corteva Posts Downbeat Q3 Results, Joins Nvidia, Alvotech And Other Big Stocks Moving Lower In Thursday’s Pre-Market Session»"
-     }
-    ],
+    "avisos": [],
     "avisos_nuevos": [],
     "avisados": [
      "NOTICIA IMPORTANTE|resultados: «Corteva Posts Downbeat Q3 Results, Jo"
@@ -1184,21 +1082,11 @@
       ],
       "nueva": true,
       "importante": true
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "AMSC Q3 CY2026 deep dive: grid and wind demand offset by margin pressures",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=7d5067b0af1da7fb9ac6b691a9bb1589575f8afe0574cf39bc0ab9cddd0cef34",
-      "causas": [],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
      "5 best renewable  clean energy stocks to buy according to analysts",
      "american superconductor amsc stock could be 35 undervalued after grid",
-     "amsc q3 cy2026 deep dive grid and wind demand offset by margin pressur",
      "corteva posts downbeat q3 results joins nvidia alvotech and other big"
     ],
     "sec_vistos": [],
@@ -1226,7 +1114,9 @@
     "grande": false,
     "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
     "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "cambios": [],
+    "cambios": [
+     "2 titulares nuevos"
+    ],
     "catalizadores": [
      "Resultados el 2027-01-06"
     ],
@@ -1252,6 +1142,24 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-15",
+      "titulo": "3 AI Chip Stocks With Lower China Exposure After Nvidia Stock Fell 28%",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=0c83efcc3bcef2a9a89fa00204e95acbfea517a516ae44a6d1399d6d21ac9c02",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-14",
+      "titulo": "MarketBeat Week in Review – 11/9 - 11/13",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=62e4db146fcba5e9f023fa036b8c1e0a196b730580f64b40ce9c29fad5ef84b9",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-11",
       "titulo": "Aehr Test Systems Pops 30% After Earnings",
       "fuente": "Yahoo",
@@ -1271,10 +1179,16 @@
      }
     ],
     "vistos": [
+     "3 ai chip stocks with lower china exposure after nvidia stock fell 28",
      "aehr test systems notches another postearnings win as sales triple on",
-     "aehr test systems pops 30 after earnings"
+     "aehr test systems pops 30 after earnings",
+     "marketbeat week in review  119  1113"
     ],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-07-27Registro para vender acciones (S-3ASR)",
+     "2026-07-29Fondo grande >5 % (13G)",
+     "2026-11-10Fondo grande >5 % (13G)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -1371,7 +1285,9 @@
      "truist securities lowers price target for riley exploration permian in",
      "zackscom featured highlights include jabil vista energy and riley expl"
     ],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-07-29Fondo grande >5 % (13G)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -1397,7 +1313,7 @@
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Movimiento normal para esta acción.",
     "cambios": [
-     "1 titular nuevo"
+     "2 titulares nuevos"
     ],
     "catalizadores": [
      "Resultados el 2027-02-03 (tras el cierre)"
@@ -1424,6 +1340,15 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-15",
+      "titulo": "Pagaya Technologies Targets Major Auto and Bank Partners as New Deals Ramp Up in 2027",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=92a6723cd6613904eefdad16dcc6ac5238ef8b5b510585bd8f26558db0e2c507",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-12",
       "titulo": "AI Economy Signals Could Matter More Than Earnings Calls for Zeta Global Stock",
       "fuente": "Yahoo",
@@ -1431,30 +1356,11 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "5 Best AI-Powered Financial Stocks to Buy According to Analysts",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=b8b84a3e460a4d96348613bcf239fee3dd5f492c60bc2d309b3d59b810192aaf",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "What's in the Offing for FIGR Stock This Earnings Season?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=b19059afb4f5ee827bb7f60d5f98b64a073aed882f536fee1cfbb816d403a0cb",
-      "causas": [],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
-     "5 best aipowered financial stocks to buy according to analysts",
      "ai economy signals could matter more than earnings calls for zeta glob",
-     "whats in the offing for figr stock this earnings season"
+     "pagaya technologies targets major auto and bank partners as new deals"
     ],
     "sec_vistos": [],
     "anterior": {
@@ -1575,28 +1481,6 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "HC Wainwright & Co. Maintains Buy on Delcath Systems, Raises Price Target to $36",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=a2349f1e337a5619ab66b6471a1aa06dcb8e94af3cbb1126e9161cb59a5bc587",
-      "causas": [
-       "analistas"
-      ],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Delcath Systems Inc (DCTH) (Q3 2026) Earnings Call Highlights: Record Revenue, Raised Guidance ...",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=8c26d6a329792076e6f05454221c8fa08fa13b0c8c4f9f6a3140959577a6599d",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": true,
-      "importante": true
      }
     ],
     "vistos": [
@@ -1604,13 +1488,14 @@
      "ccorf maintains delcath systems dcthus with buy rating raises target p",
      "delcath systems dcth is on the move heres why the trend could be susta",
      "delcath systems inc dcth is a great momentum stock should you buy",
-     "delcath systems inc dcth q3 2026 earnings call highlights record reven",
      "delcath systems to be featured on health uncensored with dr drew",
      "delcath systems to be featured on health uncensored with dr drew in se",
-     "hc wainwright  co maintains buy on delcath systems raises price target",
      "wall street analysts think delcath systems dcth could surge 277 read t"
     ],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-07-28Fondo grande >5 % (13G)",
+     "2026-10-27Fondo grande >5 % (13G)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -1666,34 +1551,18 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Citigroup Maintains Buy on Faeth Therapeutics, Raises Price Target to $60",
-      "fuente": "benzinga",
-      "url": "https://www.benzinga.com/news/26/11/63115192/citigroup-maintains-buy-faeth-therapeutics-raises-price-target-60",
-      "causas": [
-       "analistas"
-      ],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Faeth selloff ‘disproportionate’ to data, says Lucid Capital",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=5645098b4a91d47f6e907ebf511db6bea86c30cf170bf4469543373aa82a0413",
-      "causas": [],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
-     "citigroup maintains buy on faeth therapeutics raises price target to 6",
-     "faeth selloff disproportionate to data says lucid capital",
      "faeth therapeutics to participate in upcoming november investor confer"
     ],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-06-02Registro para vender acciones (S-3/A)",
+     "2026-06-10Registro para vender acciones (S-3/A)",
+     "2026-06-18Registro para vender acciones (S-3ASR)",
+     "2026-06-23Fondo grande >5 % (13G)",
+     "2026-08-14Fondo grande >5 % (13G)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -1796,7 +1665,10 @@
     },
     "titulares": [],
     "vistos": [],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-08-07Fondo grande >5 % (13G)",
+     "2026-11-10Fondo grande >5 % (13G)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -1903,35 +1775,138 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
+     }
+    ],
+    "vistos": [
+     "asos plc announces repurchase of 90 million of 2028 convertible bonds",
+     "energy shippers report their quarters amid ongoing tightness in the gl",
+     "intesa sanpaolo lowers ascopiave target price",
+     "investec upgrades asos to buy rating",
+     "peel hunt maintains buy recommendation for asos plc",
+     "peel hunt upgrades asos to buy rating"
+    ],
+    "sec_vistos": [
+     "2026-07-27Fondo grande >5 % (13G)"
+    ],
+    "anterior": {
+     "fecha": null,
+     "vistos": null,
+     "sec_vistos": null,
+     "recs_pct_compra": null,
+     "proximos_resultados": null,
+     "resultados_recientes": null
+    }
+   },
+   "OPRT": {
+    "nombre": "Oportun Financial Corporation",
+    "sector": "Financial Services",
+    "grupo": "ideas",
+    "fecha": "2026-11-13",
+    "fecha_anterior": "2026-11-12",
+    "cierre": 11.73,
+    "cambio_pct": -0.26,
+    "cambio_5d_pct": 3.7,
+    "sigma_pct": 7.11,
+    "veces_normal": 0.0,
+    "volumen_rel": 0.5,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "3 titulares nuevos"
+    ],
+    "catalizadores": [
+     "Resultados el 2027-02-24"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [
+     "NOTICIA IMPORTANTE|compra o fusión: «HLI to Acquire Vicente & Partner"
+    ],
+    "problemas": [],
+    "nombre_fuente": "Oportun Financial Corp",
+    "recs_pct_compra": 63.6,
+    "recs_n": 11,
+    "proximos_resultados": "2027-02-24",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLF",
+     "fecha": "2026-11-13",
+     "fecha_anterior": "2026-11-12",
+     "cierre": 58.68,
+     "cambio_pct": 0.81,
+     "cambio_5d_pct": 2.7,
+     "sigma_pct": 1.33,
+     "veces_normal": 0.6,
+     "volumen_rel": 0.9
+    },
+    "titulares": [
      {
-      "fecha": "2026-11-10",
-      "titulo": "TORM Yields Nearly 13% and Trades at Just 6 Times Earnings. What’s the Catch?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=c60c6ea8408a0c062f2fa7b911970302765dff554e55c37e5c3a665b5ef70959",
+      "fecha": "2026-11-12",
+      "titulo": "Oportun to Participate in Stephens NASH2026 Annual Investor Conference",
+      "fuente": "fiscal.ai",
+      "url": "https://www.globenewswire.com/news-release/2026/11/12/3402193/0/en/oportun-to-present-at-stephens-nash2026-annual-investor-conference.html",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-10",
-      "titulo": "CORRECTION: Ardmore Shipping Reported Q3 Adj. EPS $0.40 Beats $0.38 Estimate, Sales $87.711M Beat $63.000M Estimate",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=a5403d06b67848ad95fd8cfd3458837810c78d97c6f06331715a6ae219405934",
+      "fecha": "2026-11-12",
+      "titulo": "Oportun to Present at Stephens NASH2026 Annual Investor Conference",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=f3453cf002dc28d0a2c6082e3f573dfd9e162c6d1b7782436b4510ed90122ed2",
       "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-12",
+      "titulo": "HLI to Acquire Vicente & Partners to Expand Consumer Advisory",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=3eca1a7f44b2fb1af938659f4abe5a306cebff9a1ee810fbec6527a78b2fa560",
+      "causas": [
+       "compra o fusión"
+      ],
+      "nueva": true,
+      "importante": true
+     },
+     {
+      "fecha": "2026-11-11",
+      "titulo": "Oportun Financial Raises Full-Year 2026 Guidance",
+      "fuente": "fiscal.ai",
+      "url": "https://www.moomoo.com/stock/OPRT-US/news?chain_id=Name1K9-3FXPhg.1l5djc0&global_content=%7B%22promote_id%22%3A13764,%22sub_promote_id%22%3A63,%22f%22%3A%22www.moomoo.com%2Fcommunity%2Fdiscussion%2Fjensen-huang-praises-marvell-technology-can-optical-stocks-continue-their-2132803649%22%7D",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-11",
+      "titulo": "Is Oportun Financial (OPRT) Stock Undervalued Right Now?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=993de4888fcc9a7edc16287359d8fc3dfde24b4e8b65971c156f3b23c123697e",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-11",
+      "titulo": "Oportun Financial (OPRT) Upgraded to Strong Buy: What Does It Mean for the Stock?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=981e51d9247efe242441686694782085cd4eb79b3dd01ffd7738e8e0cdc0edf4",
+      "causas": [
+       "analistas"
+      ],
       "nueva": true,
       "importante": false
      }
     ],
     "vistos": [
-     "asos plc announces repurchase of 90 million of 2028 convertible bonds",
-     "correction ardmore shipping reported q3 adj eps 040 beats 038 estimate",
-     "energy shippers report their quarters amid ongoing tightness in the gl",
-     "intesa sanpaolo lowers ascopiave target price",
-     "investec upgrades asos to buy rating",
-     "peel hunt maintains buy recommendation for asos plc",
-     "peel hunt upgrades asos to buy rating",
-     "torm yields nearly 13 and trades at just 6 times earnings whats the ca"
+     "hli to acquire vicente  partners to expand consumer advisory",
+     "is oportun financial oprt stock undervalued right now",
+     "oportun financial oprt upgraded to strong buy what does it mean for th",
+     "oportun financial raises fullyear 2026 guidance",
+     "oportun to participate in stephens nash2026 annual investor conference",
+     "oportun to present at stephens nash2026 annual investor conference"
     ],
     "sec_vistos": [],
     "anterior": {
@@ -2073,55 +2048,6 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "American Integrity Insurance Group, Inc. Reports Third Quarter 2026 Results",
-      "fuente": "fiscal.ai",
-      "url": "https://www.businesswire.com/newsroom/industry/professional-services/insurance",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": true,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "CORRECTION: American Integrity Insurance Group Ticker Is “AII” Not “ALL”",
-      "fuente": "benzinga",
-      "url": "https://www.benzinga.com/quote/ALL",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "American Integrity Q3 Adj. EPS $1.44 Beats $0.67 Estimate, Sales $113.492M Beat $100.419M Estimate",
-      "fuente": "benzinga",
-      "url": "https://www.benzinga.com/news/earnings/26/11/63123314/american-integrity-q3-adj-eps-1-44-beats-0-67-estimate-sales-113-492m-beat-100-419m-estimate",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "American Integrity Insurance (NYSE:AII) Q3 2026 Earnings Beat Estimates, Sending Shares Higher",
-      "fuente": "ChartMill",
-      "url": "https://finnhub.io/api/news?id=27d4c818fe7e97574d2cb7171753ecbf498b474db9355e7331e7b4ded0d5e546",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": true,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Mixed Economic Data, Ebola Scares Rattle Markets",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=0048c58a67080bbb80e00f2e24c170040189b898216ddb9e87e44b710f43d6b6",
-      "causas": [],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
@@ -2129,18 +2055,15 @@
      "american integrity insurance group inc aii q3 2026 earnings call highl",
      "american integrity insurance group inc aii q3 2026 earnings call trans",
      "american integrity insurance group inc q3 2026 earnings call summary",
-     "american integrity insurance group inc reports third quarter 2026 resu",
-     "american integrity insurance nyseaii q3 2026 earnings beat estimates s",
-     "american integrity q3 adj eps 144 beats 067 estimate sales 113492m bea",
      "best momentum stocks to buy for november 11th",
      "best value stocks to buy for november 11th",
      "citizens maintains market outperform on american integrity raises pric",
-     "correction american integrity insurance group ticker is aii not all",
-     "mixed economic data ebola scares rattle markets",
      "new strong buy stocks for november 11th",
      "what american integrity insurance group aii said on its q3 earnings ca"
     ],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-10-02Registro para vender acciones (S-3)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -2150,123 +2073,96 @@
      "resultados_recientes": null
     }
    },
-   "OPRT": {
-    "nombre": "Oportun Financial Corporation",
-    "sector": "Financial Services",
+   "DFIN": {
+    "nombre": "Donnelley Financial Solutions, ",
+    "sector": "Technology",
     "grupo": "ideas",
     "fecha": "2026-11-13",
     "fecha_anterior": "2026-11-12",
-    "cierre": 11.73,
-    "cambio_pct": -0.26,
-    "cambio_5d_pct": 3.7,
-    "sigma_pct": 7.11,
-    "veces_normal": 0.0,
-    "volumen_rel": 0.5,
+    "cierre": 68.13,
+    "cambio_pct": -0.71,
+    "cambio_5d_pct": 1.7,
+    "sigma_pct": 4.1,
+    "veces_normal": 0.2,
+    "volumen_rel": 0.7,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Movimiento normal para esta acción.",
     "cambios": [
-     "3 titulares nuevos"
+     "4 titulares nuevos"
     ],
     "catalizadores": [
-     "Resultados el 2027-02-24"
+     "Resultados el 2027-02-15 (antes de abrir)"
     ],
-    "avisos": [
-     {
-      "tipo": "NOTICIA IMPORTANTE",
-      "texto": "compra o fusión: «HLI to Acquire Vicente & Partners to Expand Consumer Advisory»"
-     }
-    ],
+    "avisos": [],
     "avisos_nuevos": [],
-    "avisados": [
-     "NOTICIA IMPORTANTE|compra o fusión: «HLI to Acquire Vicente & Partner"
-    ],
+    "avisados": [],
     "problemas": [],
-    "nombre_fuente": "Oportun Financial Corp",
-    "recs_pct_compra": 63.6,
-    "recs_n": 11,
-    "proximos_resultados": "2027-02-24",
+    "nombre_fuente": "Donnelley Financial Solutions, Inc.",
+    "recs_pct_compra": 88.9,
+    "recs_n": 9,
+    "proximos_resultados": "2027-02-15",
     "resultados_recientes": null,
     "referencia": {
-     "ticker": "XLF",
+     "ticker": "QQQ",
      "fecha": "2026-11-13",
      "fecha_anterior": "2026-11-12",
-     "cierre": 58.68,
-     "cambio_pct": 0.81,
-     "cambio_5d_pct": 2.7,
-     "sigma_pct": 1.33,
-     "veces_normal": 0.6,
-     "volumen_rel": 0.9
+     "cierre": 679.89,
+     "cambio_pct": -1.2,
+     "cambio_5d_pct": 3.6,
+     "sigma_pct": 2.22,
+     "veces_normal": 0.5,
+     "volumen_rel": 0.8
     },
     "titulares": [
      {
-      "fecha": "2026-11-12",
-      "titulo": "Oportun to Participate in Stephens NASH2026 Annual Investor Conference",
+      "fecha": "2026-11-14",
+      "titulo": "DFIN CEO Files Form 144 for Proposed Sale of Common Stock",
       "fuente": "fiscal.ai",
-      "url": "https://www.globenewswire.com/news-release/2026/11/12/3402193/0/en/oportun-to-present-at-stephens-nash2026-annual-investor-conference.html",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-12",
-      "titulo": "Oportun to Present at Stephens NASH2026 Annual Investor Conference",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=f3453cf002dc28d0a2c6082e3f573dfd9e162c6d1b7782436b4510ed90122ed2",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-12",
-      "titulo": "HLI to Acquire Vicente & Partners to Expand Consumer Advisory",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=3eca1a7f44b2fb1af938659f4abe5a306cebff9a1ee810fbec6527a78b2fa560",
+      "url": "https://www.moomoo.com/news/flash/1004625616/form-144-donnelley-financial-solutions-dfinus-officer-proposes-to-sell",
       "causas": [
-       "compra o fusión"
+       "directivos"
       ],
       "nueva": true,
-      "importante": true
+      "importante": false
      },
      {
-      "fecha": "2026-11-11",
-      "titulo": "Oportun Financial Raises Full-Year 2026 Guidance",
+      "fecha": "2026-11-13",
+      "titulo": "Donnelley Financial Solutions Named #1 Technology Company on BPI's Most Loved Workplaces List",
       "fuente": "fiscal.ai",
-      "url": "https://www.moomoo.com/stock/OPRT-US/news?chain_id=Name1K9-3FXPhg.1l5djc0&global_content=%7B%22promote_id%22%3A13764,%22sub_promote_id%22%3A63,%22f%22%3A%22www.moomoo.com%2Fcommunity%2Fdiscussion%2Fjensen-huang-praises-marvell-technology-can-optical-stocks-continue-their-2132803649%22%7D",
+      "url": "https://www.prnewswire.com/news-releases/dfin-named-1-technology-company-on-best-practice-institutes-most-loved-workplaces-by-industry-list-302938507.html",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-11",
-      "titulo": "Is Oportun Financial (OPRT) Stock Undervalued Right Now?",
+      "fecha": "2026-11-13",
+      "titulo": "DFIN Named #1 Technology Company on Best Practice Institute's Most Loved Workplaces® by Industry List",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=993de4888fcc9a7edc16287359d8fc3dfde24b4e8b65971c156f3b23c123697e",
+      "url": "https://finnhub.io/api/news?id=49eed51d3fb15fd6aff33e3b10eb898cf6712aca93e166c7c3f04072ef6ce394",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-11",
-      "titulo": "Oportun Financial (OPRT) Upgraded to Strong Buy: What Does It Mean for the Stock?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=981e51d9247efe242441686694782085cd4eb79b3dd01ffd7738e8e0cdc0edf4",
-      "causas": [
-       "analistas"
-      ],
+      "fecha": "2026-11-12",
+      "titulo": "Donnelley Financial (NYSE:DFIN) Screens Well on Growth at a Reasonable Price",
+      "fuente": "ChartMill",
+      "url": "https://finnhub.io/api/news?id=40f847e94224e6eb6de64a55144bf55b273ef089f400caf1e46cb87c92ab0996",
+      "causas": [],
       "nueva": true,
       "importante": false
      }
     ],
     "vistos": [
-     "hli to acquire vicente  partners to expand consumer advisory",
-     "is oportun financial oprt stock undervalued right now",
-     "oportun financial oprt upgraded to strong buy what does it mean for th",
-     "oportun financial raises fullyear 2026 guidance",
-     "oportun to participate in stephens nash2026 annual investor conference",
-     "oportun to present at stephens nash2026 annual investor conference"
+     "dfin ceo files form 144 for proposed sale of common stock",
+     "dfin named 1 technology company on best practice institutes most loved",
+     "donnelley financial nysedfin screens well on growth at a reasonable pr",
+     "donnelley financial solutions named 1 technology company on bpis most"
     ],
-    "sec_vistos": [],
+    "sec_vistos": [
+     "2026-10-30Fondo grande >5 % (13G)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -2375,119 +2271,10 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-10",
-      "titulo": "Freedom Capital Markets Maintains Buy on Consensus Cloud Solns, Raises Price Target to $50",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=16f0fd7217ac191e7d40a8ce64a390071cd79c30a9793d8160313f8ba8c5100b",
-      "causas": [
-       "analistas"
-      ],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
-     "freedom capital markets maintains buy on consensus cloud solns raises",
      "why a legacy fax stock doubled while ai software stocks sank"
-    ],
-    "sec_vistos": [],
-    "anterior": {
-     "fecha": null,
-     "vistos": null,
-     "sec_vistos": null,
-     "recs_pct_compra": null,
-     "proximos_resultados": null,
-     "resultados_recientes": null
-    }
-   },
-   "DFIN": {
-    "nombre": "Donnelley Financial Solutions, ",
-    "sector": "Technology",
-    "grupo": "ideas",
-    "fecha": "2026-11-13",
-    "fecha_anterior": "2026-11-12",
-    "cierre": 68.13,
-    "cambio_pct": -0.71,
-    "cambio_5d_pct": 1.7,
-    "sigma_pct": 4.1,
-    "veces_normal": 0.2,
-    "volumen_rel": 0.7,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "4 titulares nuevos"
-    ],
-    "catalizadores": [
-     "Resultados el 2027-02-15 (antes de abrir)"
-    ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "Donnelley Financial Solutions, Inc.",
-    "recs_pct_compra": 88.9,
-    "recs_n": 9,
-    "proximos_resultados": "2027-02-15",
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "QQQ",
-     "fecha": "2026-11-13",
-     "fecha_anterior": "2026-11-12",
-     "cierre": 679.89,
-     "cambio_pct": -1.2,
-     "cambio_5d_pct": 3.6,
-     "sigma_pct": 2.22,
-     "veces_normal": 0.5,
-     "volumen_rel": 0.8
-    },
-    "titulares": [
-     {
-      "fecha": "2026-11-14",
-      "titulo": "DFIN CEO Files Form 144 for Proposed Sale of Common Stock",
-      "fuente": "fiscal.ai",
-      "url": "https://www.moomoo.com/news/flash/1004625616/form-144-donnelley-financial-solutions-dfinus-officer-proposes-to-sell",
-      "causas": [
-       "directivos"
-      ],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-13",
-      "titulo": "Donnelley Financial Solutions Named #1 Technology Company on BPI's Most Loved Workplaces List",
-      "fuente": "fiscal.ai",
-      "url": "https://www.prnewswire.com/news-releases/dfin-named-1-technology-company-on-best-practice-institutes-most-loved-workplaces-by-industry-list-302938507.html",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-13",
-      "titulo": "DFIN Named #1 Technology Company on Best Practice Institute's Most Loved Workplaces® by Industry List",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=49eed51d3fb15fd6aff33e3b10eb898cf6712aca93e166c7c3f04072ef6ce394",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-12",
-      "titulo": "Donnelley Financial (NYSE:DFIN) Screens Well on Growth at a Reasonable Price",
-      "fuente": "ChartMill",
-      "url": "https://finnhub.io/api/news?id=40f847e94224e6eb6de64a55144bf55b273ef089f400caf1e46cb87c92ab0996",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "dfin ceo files form 144 for proposed sale of common stock",
-     "dfin named 1 technology company on best practice institutes most loved",
-     "donnelley financial nysedfin screens well on growth at a reasonable pr",
-     "donnelley financial solutions named 1 technology company on bpis most"
     ],
     "sec_vistos": [],
     "anterior": {
@@ -2504,14 +2291,35 @@
    "XAU": {
     "nombre": "Oro",
     "sector": "materia prima",
-    "fecha": "2026-11-13",
-    "fecha_anterior": "2026-11-12",
-    "cierre": 3886.3,
-    "cambio_pct": 0.03,
-    "cambio_5d_pct": -4.6,
+    "fecha": "2026-11-16",
+    "fecha_anterior": "2026-11-13",
+    "cierre": 3866.4,
+    "cambio_pct": -0.51,
+    "cambio_5d_pct": -6.0,
     "sigma_pct": 1.55,
-    "veces_normal": 0.0,
-    "volumen_rel": 0.9,
+    "veces_normal": 0.3,
+    "volumen_rel": 0.4,
+    "grande": false,
+    "porque": "Movimiento normal.",
+    "resumen": "Movimiento normal.",
+    "cambios": [],
+    "catalizadores": [],
+    "titulares": [],
+    "problemas": [],
+    "avisos": [],
+    "avisos_nuevos": []
+   },
+   "EURUSD": {
+    "nombre": "Euro/dólar (para pasar tu oro de dólares a euros)",
+    "sector": "materia prima",
+    "fecha": "2026-11-16",
+    "fecha_anterior": "2026-11-13",
+    "cierre": 1.1,
+    "cambio_pct": -0.29,
+    "cambio_5d_pct": -1.2,
+    "sigma_pct": 0.35,
+    "veces_normal": 0.8,
+    "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",
     "resumen": "Movimiento normal.",
