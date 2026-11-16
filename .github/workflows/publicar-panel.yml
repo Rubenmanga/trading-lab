@@ -1,0 +1,26 @@
+name: Publicar panel
+# Vercel gratis = 100 despliegues/día. Los commits de datos ya no despliegan (scripts/vercel-decidir.sh);
+# este workflow publica el panel con los datos nuevos: 7:30 España (tras la noche) y 15:00 L-V (antes de abrir NY).
+on:
+  schedule:
+    - cron: "30 6 * * *"
+    - cron: "0 14 * * 1-5"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publicar-panel
+  cancel-in-progress: false
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Marcar publicación
+        run: |
+          date -u +'%F %H:%M UTC' > web/.ultima-publicacion
+          git config user.name "publicar-panel"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add web/.ultima-publicacion
+          git commit -q -m "Publicar panel con los datos del día [panel]"
+          for i in 1 2 3 4; do git pull --rebase --autostash -q && git push -q && break; sleep $((i*5)); done

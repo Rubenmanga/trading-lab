@@ -3,5 +3,11 @@
   "framework": null,
   "installCommand": "",
   "buildCommand": "node web/build.mjs",
-  "outputDirectory": "web/dist"
+  "outputDirectory": "web/dist",
+  "ignoreCommand": "bash scripts/vercel-decidir.sh",
+  "git": {
+    "deploymentEnabled": {
+      "claude/**": false
+    }
+  }
 }

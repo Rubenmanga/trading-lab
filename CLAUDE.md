@@ -75,7 +75,10 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 - `backtest-12m.yml`: backtest del agente B → `investigacion/backtest-12m/` (`INFORME-*.md`, `resultados.json`: usa `jq`).
 - `expedientes.yml`: L-V 21:50 UTC. `lab medio expediente` → `investigacion/expedientes/` (un commit al día).
 - `marcador.yml`: viernes 22:30 UTC y al cambiar `watchlist.csv`. Apunta predicciones nuevas y puntúa → `investigacion/marcador/`.
-- `publicar-investigacion.yml`: si un PR toca **solo** `investigacion/`, se fusiona y publica solo en el panel.
+- `publicar-investigacion.yml`: si un PR toca **solo** `investigacion/`, se fusiona (sale en el panel en la próxima publicación).
+- `publicar-panel.yml`: publica el panel en Vercel 7:30 y 15:00 (España). Vercel gratis = 100 despliegues/día: los commits de
+  datos NO despliegan (`scripts/vercel-decidir.sh`); sí lo hacen `[panel]` en el mensaje, cambios en `web/`, `vercel.json`,
+  `investigacion/analisis/` o `propuestas/`. Ramas `claude/**` sin vista previa automática (créala con el MCP de Vercel si hace falta).
 
 ## Skills (`.claude/skills/`)
 Propias: `sesion-intradia`, `revisor-senal-intradia`, `investigar-estrategias-intradia`, `diario-operaciones`,
