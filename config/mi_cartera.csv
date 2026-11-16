@@ -1,9 +1,9 @@
-ticker,broker,moneda,cantidad,precio_medio,importe_eur,estado
-XAU,Revolut,EUR,0.068748,3749.64,,abierta
-POET,Revolut,USD,9.29359431,5.62,,abierta
-DFTX,Revolut,USD,1.58730159,34.65,,abierta
-RAPP,Revolut,USD,2.21119492,25.19,,abierta
-MSFT,Revolut,USD,0.40750997,544.77,,abierta
-ALT,Trading 212,USD,42.4095968,1.82,,abierta
-RCAT,Trading 212,USD,7.22300472,3.81,,abierta
-PGY,Trading 212,USD,1.1330944,16.51,,abierta
+ticker,broker,moneda,cantidad,precio_medio,importe_eur,estado,fecha_venta,precio_venta,neto_venta,comision_venta
+XAU,Revolut,EUR,0.068748,3749.64,,abierta,,,,
+POET,Revolut,USD,9.29359431,5.62,,vendida,2026-11-16,4.60,41.65,1.10
+DFTX,Revolut,USD,1.58730159,34.65,,vendida,2026-11-16,30.33,47.04,1.10
+RAPP,Revolut,USD,2.21119492,25.19,,abierta,,,,
+MSFT,Revolut,USD,0.40750997,544.77,,abierta,,,,
+ALT,Trading 212,USD,42.4095968,1.82,,abierta,,,,
+RCAT,Trading 212,USD,7.22300472,3.81,,abierta,,,,
+PGY,Trading 212,USD,1.1330944,16.51,,abierta,,,,

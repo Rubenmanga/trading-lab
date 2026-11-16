@@ -71,6 +71,8 @@ const num0 = (x) => (x === "" || x == null || isNaN(+x) ? null : +x);
 const cartera = csv(leer("config", "mi_cartera.csv")).map((r) => ({
   ticker: r.ticker, broker: r.broker, moneda: r.moneda, estado: r.estado || "abierta",
   precio_entrada: num0(r.precio_medio), cantidad: num0(r.cantidad), importe_eur: num0(r.importe_eur),
+  // Ventas (estado «vendida»): fecha, precio, dinero neto que entró y comisión.
+  fecha_venta: r.fecha_venta || null, precio_venta: num0(r.precio_venta), neto_venta: num0(r.neto_venta), comision_venta: num0(r.comision_venta),
 }));
 
 const datos = {
