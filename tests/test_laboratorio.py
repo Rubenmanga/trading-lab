@@ -14,6 +14,9 @@ from tradinglab.intradia.laboratorio import informe, motor
 
 NY = ZoneInfo("America/New_York")
 CFG = yaml.safe_load(open(Path(__file__).parents[1] / "config" / "laboratorio_intradia.yaml", encoding="utf-8"))
+# Los tests prueban el motor con TODAS las estrategias, aunque la cuenta sombra diaria tenga apagadas las perdedoras.
+for _e in CFG["estrategias"].values():
+    _e["activa"] = True
 RIESGO = {**CFG["riesgo"], "trailing": None}
 CERO = Costes(0, 0)
 

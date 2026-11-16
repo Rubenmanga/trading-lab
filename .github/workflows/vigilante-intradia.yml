@@ -1,6 +1,7 @@
 # Vigilante cada 10 minutos con la bolsa de EE. UU. abierta (solo los días de config/vigilante.yaml).
 # Gratis y sin IA. Mira precio y volumen de la empresa frente a sus competidores y abre un aviso (issue) si algo se separa.
 # Solo información: no opera. Resultado en investigacion/vigilante/ (panel: Informes).
+# Se guarda en el repo solo con aviso nuevo y al cierre; entre medias, lo del día viaja en la caché.
 name: Vigilante intradía
 
 on:
@@ -27,12 +28,30 @@ jobs:
           python-version: "3.12"
       - name: Instalar lo mínimo
         run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" tzdata
+      - name: Fecha de Nueva York
+        id: d
+        run: echo "fecha=$(TZ=America/New_York date +%F)" >> "$GITHUB_OUTPUT"
+      # Lo de hoy pasa de una vuelta a la siguiente por la caché de GitHub (gratis), no por el repo.
+      - name: Recuperar lo vigilado hoy
+        uses: actions/cache/restore@v4
+        with:
+          path: investigacion/vigilante
+          key: vigilante-${{ steps.d.outputs.fecha }}-${{ github.run_id }}
+          restore-keys: vigilante-${{ steps.d.outputs.fecha }}-
       - name: Vigilar
         env:
           PYTHONPATH: src
         run: python -m tradinglab.medio_plazo.vigilante
+      - name: Dejar lo vigilado para la siguiente vuelta
+        uses: actions/cache/save@v4
+        with:
+          path: investigacion/vigilante
+          key: vigilante-${{ steps.d.outputs.fecha }}-${{ github.run_id }}
+      # Paso 0 (revisión 16-nov): al repo solo cuando hay un aviso nuevo o al cierre (16:00 NY), no cada 10 min.
       - name: Guardar
         run: |
+          ahora=$(TZ=America/New_York date +%H%M)
+          if [ ! -s aviso.md ] && [ "$ahora" -lt 1600 ]; then echo "Sin aviso nuevo: no se guarda en el repo."; exit 0; fi
           git config user.name "agente-12m"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add investigacion/vigilante/ 2>/dev/null || true

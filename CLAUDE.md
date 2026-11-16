@@ -34,7 +34,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 | CLI `lab` (punto de entrada) | `src/tradinglab/cli.py` |
 | **A · Intradía**: reglas → riesgo → revisor IA → ejecución. Stop 1 %, objetivo 3R/4R, trailing. Todo cerrado antes del cierre forzado | `src/tradinglab/intradia/`, `config/intradia.yaml` |
 | A · **corto del hueco** en eToro DEMO (hueco ≥ +50 % → corto 9:35 NY, stop 15 %, cierre 15:45) | `src/tradinglab/intradia/corto_hueco/`, `config/corto_hueco.yaml`, workflow `corto-hueco.yml`, registro en `investigacion/corto-hueco/` |
-| A · **laboratorio**: 6 estrategias en cuenta sombra (papel) + pasado 2016→hoy, mismas reglas | `src/tradinglab/intradia/laboratorio/`, `config/laboratorio_intradia.yaml`, workflow `laboratorio-intradia.yml`, `investigacion/laboratorio/` (`resumen.json`: usa `jq`) |
+| A · **laboratorio**: 6 estrategias en cuenta sombra (papel; desde 16-nov solo corto del hueco activa, `activa:` en el yaml) + pasado 2016→hoy, mismas reglas | `src/tradinglab/intradia/laboratorio/`, `config/laboratorio_intradia.yaml`, workflow `laboratorio-intradia.yml`, `investigacion/laboratorio/` (`resumen.json`: usa `jq`) |
 | A · estudio histórico (ORB + top gainers) | `lab estudio …`, workflow `estudio-intradia.yml`, informes en `investigacion/estrategias/*.md` |
 | **B · Medio plazo 12 meses**: small caps de **todos los sectores** con buenas previsiones. No opera: analiza, vigila, avisa | `src/tradinglab/medio_plazo/`, `config/medio_plazo.yaml`, `investigacion/` |
 | B · **backtest 2014→hoy** (cuentas SEC con fecha + precios Yahoo, misma nota del ranking, frente a IWM) | `src/tradinglab/backtest12m/`, workflow `backtest-12m.yml`, informe en `investigacion/backtest-12m/` |
