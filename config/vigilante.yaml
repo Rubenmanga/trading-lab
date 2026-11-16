@@ -1,0 +1,27 @@
+# Vigilante intradía cada 10 minutos (agente B, solo información: NO opera).
+# Mira precio y volumen de cada empresa frente a sus competidores y avisa (issue) si se separa de forma rara.
+# Solo corre los días entre `desde` y `hasta` (hora de Nueva York, sesión normal 9:30-16:00).
+# En el archivo solo hay tickers: nada de importes.
+modo_cuenta: demo
+desde: 2026-11-16
+hasta: 2026-11-16
+empresas:
+  RCAT:
+    nombre: Red Cat Holdings
+    motivo: Resultados del 3.er trimestre el 16-nov tras el cierre (22:00 en España)
+    pares: [ONDS, UMAC, AVAV, KTOS]   # competidores de drones/defensa
+    sector: ITA                       # fondo de aeroespacial y defensa
+  POET:
+    nombre: POET Technologies
+    motivo: Resultados del 3.er trimestre el 16-nov a las 13:00 España (antes de abrir la bolsa); aquí se ve la reacción
+    pares: [AAOI, LITE, COHR, CRDO]   # óptica y conectividad para centros de datos
+    sector: SOXX                      # fondo de semiconductores
+mercado: IWM                          # small caps de EE. UU. (solo referencia)
+umbrales:
+  separacion_sigmas: 1.0     # aviso si se separa de sus pares ≥ 1 movimiento diario normal…
+  separacion_min_pct: 5      # …y como mínimo 5 puntos
+  volumen_rel: 2.0           # …con volumen ≥ 2x lo normal a esa hora
+  volumen_extremo: 3.0       # aviso solo por volumen ≥ 3x lo normal a esa hora
+  acelerón_10m_pct: 3        # aviso si en 10 minutos se mueve ≥ 3 %…
+  acelerón_10m_vol: 3.0      # …con volumen ≥ 3x lo normal en esa franja
+resumen_hora_ny: "15:25"     # a partir de esta hora manda el resumen del día (21:25 en España)

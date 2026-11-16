@@ -82,6 +82,7 @@ const datos = {
     ...markdowns("investigacion", "sectores").map((d) => ({ ...d, clase: "Sectores" })),
     ...markdowns("investigacion", "repaso").map((d) => ({ ...d, clase: "Repaso" })),
     ...markdowns("investigacion", "validacion").map((d) => ({ ...d, clase: "¿Acierta el ranking?" })),
+    ...markdowns("investigacion/vigilante").map((d) => ({ ...d, clase: "Vigilante" })),
     ...markdowns("investigacion/corto-hueco").map((d) => ({ ...d, clase: "Corto del hueco" })),
     ...markdowns("investigacion/estrategias").map((d) => ({ ...d, clase: "Intradía (agente A)" })),
     ...markdowns("investigacion/backtest-12m", "INFORME").map((d) => ({ ...d, clase: "Backtest 12 meses" })),
