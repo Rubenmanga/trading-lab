@@ -424,7 +424,7 @@ function fichaPosicion(p) {
     ${e?.porque ? `<p class="sub" style="margin-top:10px"><b>Por qué se movió:</b> ${esc(e.porque)}</p>` : ""}
     ${nuevos.length ? `<div class="sub" style="margin-top:6px"><b>Noticias nuevas</b></div>${nuevos.map((n) => { const [nom, , col] = familia(n); return `<div class="sub" style="margin-top:3px"><span class="dot" style="--c:${col}" title="${esc(nom)}"></span>${esc(n.fecha)} · ${urlOk(n.url) ? `<a href="${urlOk(n.url)}" target="_blank" rel="noopener">${esc(n.titulo)}</a>` : esc(n.titulo)}</div>`; }).join("")}` : ""}
     ${r ? `<details style="margin-top:10px"><summary><b>Análisis a fondo</b> <span class="mut">· ${esc(diaCorto(r.inf.fecha))}</span></summary><ol style="padding-left:18px;margin:8px 0">${r.lineas.map((l) => `<li class="sub">${esc(l.replace(/\*\*/g, ""))}</li>`).join("")}</ol><a href="#/informe/${encodeURIComponent(r.inf.id)}">Leer el informe completo →</a></details>` : `<div class="mut" style="margin-top:10px">Sin análisis a fondo todavía. Pídelo en el chat: <i>"Analiza ${esc(t)} a 12 meses"</i>.</div>`}
-    <div style="margin-top:10px;display:flex;gap:14px;flex-wrap:wrap"><a href="#/seguimiento/${encodeURIComponent(t)}">Seguimiento de noticias →</a>${pq ? `<a href="#/empresa/${encodeURIComponent(t)}">Ficha del ranking (nota ${Math.round(pq.nota)}) →</a>` : ""}</div>
+    <div style="margin-top:10px;display:flex;gap:14px;flex-wrap:wrap">${D.expedientes?.[t]?.length ? `<a href="#/historia/${encodeURIComponent(t)}"><b>Historia (${D.expedientes[t].length} hechos)</b> →</a>` : ""}<a href="#/seguimiento/${encodeURIComponent(t)}">Seguimiento de noticias →</a>${pq ? `<a href="#/empresa/${encodeURIComponent(t)}">Ficha del ranking (nota ${Math.round(pq.nota)}) →</a>` : ""}</div>
   </details>`;
 }
 
@@ -527,13 +527,13 @@ function oportunidades() {
 
 function empresaFicha(t) {
   const f = D.ranking?.filas.find((x) => x.ticker === t);
-  if (!f) return `<a class="back" href="#/ranking">← Ranking</a>` + vacioBox("No está en el ranking", "Esta empresa no aparece en el ranking de hoy.");
+  if (!f) return `<a class="back" href="#/ranking">← Ranking</a>` + vacioBox("No está en el ranking", "Esta empresa no aparece en el ranking de hoy.") + (D.expedientes?.[t]?.length ? `<a href="#/historia/${encodeURIComponent(t)}">Ver su historia →</a>` : "");
   const informe = D.informes.filter((i) => i.archivo.startsWith(t + "-"))[0];
   const w = D.watchlist.find((x) => x.ticker === t), p = (D.estado?.precios || []).find((x) => x.ticker === t) || {};
   const m = (k, n, fmt) => `<div><div class="k">${n}</div><div class="n">${f[k] == null ? "—" : fmt(f[k])}</div></div>`;
   const P = (x) => pct(x), Pf = (x) => pct(x * 100), N = (x) => num(x, 1), D0 = (x) => num(x, 0);
   const objBajo = !vacio(f.precio) && !vacio(f.potencial_objetivo_bajo_pct) ? f.precio * (1 + f.potencial_objetivo_bajo_pct / 100) : null;
-  return `<a class="back" href="#/ranking">← Ranking</a>
+  return `<a class="back" href="#/ranking">← Ranking</a>${D.expedientes?.[t]?.length ? ` <a href="#/historia/${encodeURIComponent(t)}" style="float:right">Historia (${D.expedientes[t].length} hechos) →</a>` : ""}
   <div class="card"><div class="ficha-cab">${anillo(f.nota, 68)}<div class="tit"><div><span class="mut">#${f.puesto}</span> <span class="tk" style="font-size:1.35rem">${esc(f.ticker)}</span></div><div class="sub">${esc(f.empresa || "")}</div><div class="mut">${esc(f.sector || "")} · ${esc(f.industria || "")}</div></div></div>
     <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap"><span class="chip">${esc(f.carril)}</span>${w ? `<span class="chip okt">En tu lista · ${esc(VEREDICTO[w.veredicto] || w.veredicto)}</span>` : ""}<span class="chip">datos ${Math.round((f.cobertura_total || 0) * 100)} %</span><span class="chip">sin penalizar ${num(f.nota_base, 0)}</span></div>
     ${(f.senales || []).map((x) => `<div class="sig" style="margin-top:6px">▲ ${esc(x)}</div>`).join("")}
@@ -770,6 +770,7 @@ function listaVista(L, foco) {
       ${(hist[t] || []).length >= 3 ? linea(hist[t], { alto: 60 }) : ""}
       ${e.ia ? `<p><span class="iat">●</span> <b>Resumen (Haiku):</b> ${esc(e.ia.resumen)} <i>Causa probable: ${esc(e.ia.causa_probable)} (confianza ${esc(e.ia.confianza)})</i></p>` : ""}
       <p><b>Por qué (reglas):</b> ${esc(e.porque)}</p>
+      ${D.expedientes?.[t]?.length ? `<a href="#/historia/${encodeURIComponent(t)}"><b>Ver su historia completa (${D.expedientes[t].length} hechos)</b> →</a>` : ""}
       <p><b>Qué cambió:</b> ${esc((e.cambios || []).join("; ") || "nada nuevo")}</p>
       ${(e.catalizadores || []).length ? `<p><b>Próximos catalizadores:</b> ${esc(e.catalizadores.join("; "))}</p>` : ""}
       ${(e.problemas || []).map((x) => `<p class="badt">❗ ${esc(x)}</p>`).join("")}
@@ -800,7 +801,7 @@ function resumen() {
         <div><div class="k">Stop de tesis</div><div class="n">${num(w.stop_tesis)} $</div></div>
       </div>
       ${w.proximo_catalizador ? `<div class="sub" style="margin-top:10px">📅 ${esc(w.proximo_catalizador)}${w.fecha_catalizador ? ` · ${esc(w.fecha_catalizador)}` : ""}</div>` : ""}
-      <div style="margin-top:8px;display:flex;gap:14px;flex-wrap:wrap">${inf ? `<a href="#/informe/${encodeURIComponent(inf.id)}">Leer el análisis →</a>` : ""}${D.ranking?.filas.some((f) => f.ticker === w.ticker) ? `<a href="#/empresa/${encodeURIComponent(w.ticker)}">Ficha del ranking →</a>` : ""}</div>
+      <div style="margin-top:8px;display:flex;gap:14px;flex-wrap:wrap">${D.expedientes?.[w.ticker]?.length ? `<a href="#/historia/${encodeURIComponent(w.ticker)}"><b>Historia (${D.expedientes[w.ticker].length} hechos)</b> →</a>` : ""}${inf ? `<a href="#/informe/${encodeURIComponent(inf.id)}">Leer el análisis →</a>` : ""}${D.ranking?.filas.some((f) => f.ticker === w.ticker) ? `<a href="#/empresa/${encodeURIComponent(w.ticker)}">Ficha del ranking →</a>` : ""}</div>
     </div>`;
   }
   return h;
@@ -893,12 +894,44 @@ function ayuda() {
   <p class="sub">El agente B no compra ni vende nada. El bot del agente A solo opera en la cuenta demo. Las small caps se mueven mucho: ninguna posición debería ser grande.</p></div>`;
 }
 
+
+/* ---------- Historia de una empresa (expediente) ---------- */
+const EXP_TIPO = {
+  resultados: ["Resultados", "R", "var(--acc)", "cuentas"], cuentas: ["Cuentas oficiales", "C", "var(--acc)", "cuentas"], "8k": ["Aviso oficial a la SEC", "A", "var(--acc)", "cuentas"],
+  contrato: ["Contrato importante", "K", "var(--ok)", "cuentas"], ampliacion: ["Ampliación de capital (más acciones)", "$", "var(--bad)", "dinero"],
+  grandes_inversores: ["Grandes inversores", "G", "var(--ok)", "dinero"], directivos: ["Directivos", "D", "var(--warn)", "dinero"], directivos_form4: ["Directivos (compra/venta, Form 4)", "d", "var(--warn)", "dinero"],
+  movimiento: ["Movimiento fuerte del precio", "↕", "var(--warn)", "precio"], dia: ["Resumen del día", "·", "var(--sub)", "precio"], vigilante: ["Vigilante en bolsa", "👁", "var(--sub)", "precio"],
+  noticia: ["Noticia", "N", "var(--sub)", "noticias"],
+};
+const EXP_FILTRO = [["", "Todo"], ["cuentas", "Cuentas y avisos"], ["dinero", "Directivos e inversores"], ["precio", "Precio"], ["noticias", "Noticias"]];
+let filtroExp = "";
+function reacc(v, n) { return v == null ? "" : `<span class="chip ${v > 0 ? "okt" : v < 0 ? "badt" : ""}" title="Cómo se movió el precio ${n} después">${n}: ${v > 0 ? "+" : ""}${num(v, 1)} %</span>`; }
+function historiaVista(t) {
+  const todos = D.expedientes?.[t] || [];
+  const nombre = seguim(t)?.nombre || D.watchlist.find((w) => w.ticker === t)?.empresa || D.ranking?.filas.find((f) => f.ticker === t)?.empresa || "";
+  let h = `<a class="back" href="#/cartera">← Mis acciones</a><h1 style="font-size:1.25rem;margin:4px 0 4px"><span class="tk" style="font-size:1.25rem">${esc(t)}</span> · Historia</h1><div class="sub" style="margin-bottom:10px">${esc(nombre)}</div>`;
+  if (!todos.length) return h + vacioBox("Todavía sin historia", "Esta empresa aún no tiene expediente. Se rellena solo cada día laborable (23:50 en España) para tus acciones y las que vigila el agente.");
+  const ev = todos.filter((e) => !filtroExp || (EXP_TIPO[e.tipo] || [])[3] === filtroExp);
+  const fuerte = todos.filter((e) => e.tipo === "movimiento").length, res = todos.filter((e) => e.tipo === "resultados").length;
+  h += `<div class="card aviso" style="--c:var(--acc)"><span class="ico">🗂</span><span class="sub">Todo lo que ha pasado con <b>${esc(t)}</b>, lo más nuevo arriba: ${todos.length} hechos (${res} resultados, ${fuerte} días de movimiento fuerte). Cada hecho tiene <b>fecha y fuente</b>; toca el texto para abrir el original. Los números de colores dicen cuánto se movió el precio <b>1, 5 y 20 sesiones después</b> (una sesión = un día de bolsa).</span></div>`;
+  h += `<div class="chips">${EXP_FILTRO.map(([k, n]) => `<button class="${filtroExp === k ? "on" : ""}" data-exp="${k}">${n}</button>`).join("")}</div>`;
+  if (!ev.length) return h + vacioBox("Nada de este tipo", "Prueba con «Todo».");
+  let mes = "";
+  h += ev.map((e) => {
+    const [nom, letra, col] = EXP_TIPO[e.tipo] || [e.tipo, "•", "var(--sub)"];
+    const m = e.f.slice(0, 7), cab = m !== mes ? `<div class="sec">${esc(new Date(m + "-01T12:00:00").toLocaleDateString("es-ES", { month: "long", year: "numeric" }))}</div>` : ""; mes = m;
+    const u = urlOk(e.url), txt = u ? `<a href="${u}" target="_blank" rel="noopener">${esc(e.txt)}</a>` : e.id ? `<a href="#/informe/${encodeURIComponent(e.id)}">${esc(e.txt)}</a>` : esc(e.txt);
+    return cab + `<div class="card" style="border-left:3px solid ${col};padding:10px 12px;margin-bottom:6px"><div class="mut"><span class="dot" style="--c:${col}"></span>${esc(e.f.split("-").reverse().join("/"))} · ${esc(nom)}${e.de ? ` · fuente: ${esc(e.de)}` : ""}${e.imp ? ' · <b class="warnt">importante</b>' : ""}</div><div class="sub" style="margin-top:3px">${txt}</div>${e.r1 != null || e.r5 != null || e.r20 != null ? `<div style="margin-top:5px;display:flex;gap:6px;flex-wrap:wrap">${reacc(e.r1, "1 día")}${reacc(e.r5, "5 días")}${reacc(e.r20, "20 días")}</div>` : ""}</div>`;
+  }).join("");
+  return h;
+}
+
 /* ---------- Navegación ---------- */
 const TITULO = { "/ranking": "Ranking", "/bot": "Bot corto del hueco", "/lab": "Laboratorio intradía", "/seguimiento": "Seguimiento de noticias", "/vigilancia": "Vigilancia del agente", "/cartera": "Mis acciones", "/duplicar": "¿Puede duplicar?", "/x6": "¿+500 %?", "/informes": "Informes", "/candidatos": "Cribado simple", "/ayuda": "Cómo se usa", "/mas": "Más", "/fuentes": "Salud de las fuentes" };
 const EN_MAS = ["/bot", "/lab", "/vigilancia", "/duplicar", "/x6", "/informes", "/candidatos", "/ayuda", "/fuentes"];
 function pintar(mantener) {
   const r = location.hash.replace(/^#/, "") || "/";
-  const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/ranking" : r.startsWith("/seguimiento") ? "/seguimiento" : r.startsWith("/cartera") ? "/cartera" : r;
+  const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/ranking" : r.startsWith("/seguimiento") ? "/seguimiento" : r.startsWith("/cartera") || r.startsWith("/historia/") ? "/cartera" : r;
   document.querySelectorAll("#tabs a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + pest || (pest !== "/" && !TITULO[pest] && a.getAttribute("href") === "#/mas")));
   document.querySelectorAll("#abajo a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + (EN_MAS.includes(pest) ? "/mas" : pest)));
   const app = $("#app");
@@ -909,16 +942,18 @@ function pintar(mantener) {
     cuerpo = r.startsWith("/informe/") ? informe(decodeURIComponent(r.slice(9)))
       : r.startsWith("/empresa/") ? empresaFicha(decodeURIComponent(r.slice(9)))
       : r.startsWith("/seguimiento") ? seguimientoVista(decodeURIComponent(r.slice(13)))
+      : r.startsWith("/historia/") ? historiaVista(decodeURIComponent(r.slice(10)))
       : r.startsWith("/cartera") ? carteraVista()
       : r === "/ranking" ? oportunidades() : r === "/bot" ? bot() : r === "/lab" ? labVista() : r === "/informes" ? informes() : r === "/candidatos" ? candidatos()
       : r === "/ayuda" ? ayuda() : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : r === "/x6" ? quintuplicar()
       : r === "/mas" ? masVista() : r === "/fuentes" ? fuentesVista() : hoy();
   } catch (e) { console.error(e); cuerpo = vacioBox("Algo ha fallado al dibujar esta parte", esc(e.message)); }
-  app.innerHTML = (r.startsWith("/informe/") || r.startsWith("/empresa/") ? "" : titulo) + cuerpo;
+  app.innerHTML = (r.startsWith("/informe/") || r.startsWith("/empresa/") || r.startsWith("/historia/") ? "" : titulo) + cuerpo;
   const fs = $("#fs");
   if (fs) fs.onchange = () => { filtroSector = fs.value; cuantas = 30; try { localStorage.setItem("fs", filtroSector); } catch {} pintar(true); };
   document.querySelectorAll("[data-carril]").forEach((b) => b.onclick = () => { filtroCarril = b.dataset.carril; cuantas = 30; try { localStorage.setItem("fc", filtroCarril); } catch {} pintar(true); });
   document.querySelectorAll("[data-inf]").forEach((b) => b.onclick = () => { filtroInf = b.dataset.inf; pintar(true); });
+  document.querySelectorAll("[data-exp]").forEach((b) => b.onclick = () => { filtroExp = b.dataset.exp; pintar(true); });
   const mf = $("#mas-filas"); if (mf) mf.onclick = () => { cuantas += 40; pintar(true); };
   document.querySelectorAll("[data-tit]").forEach((b) => b.onclick = () => {
     const n = TITULARES[+b.dataset.tit], [, , c] = familia(n);

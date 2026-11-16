@@ -75,6 +75,37 @@ const cartera = csv(leer("config", "mi_cartera.csv")).map((r) => ({
   fecha_venta: r.fecha_venta || null, precio_venta: num0(r.precio_venta), neto_venta: num0(r.neto_venta), comision_venta: num0(r.comision_venta),
 }));
 
+// Expediente por acción (paso 2): una sola línea de tiempo por empresa, juntando lo que ya se guarda.
+// Fuentes: investigacion/expedientes/T/eventos.csv (SEC y Yahoo, con enlace), el historial diario de la lista
+// de noticias, los titulares guardados y los informes del vigilante. Solo lectura: no se toca ningún archivo.
+function expedientes() {
+  const out = {};
+  const poner = (t, e) => { (out[t] ||= []).push(e); };
+  const dirE = path.join(RAIZ, "investigacion", "expedientes");
+  if (fs.existsSync(dirE)) for (const t of fs.readdirSync(dirE)) {
+    for (const r of csv(leer("investigacion/expedientes", t, "eventos.csv")))
+      poner(t, { f: r.fecha, tipo: r.tipo, txt: r.resumen, url: r.fuente_url, r1: num0(r.reaccion_1d), r5: num0(r.reaccion_5d), r20: num0(r.reaccion_20d), de: /sec\.gov/.test(r.fuente_url) ? "SEC" : /yahoo/.test(r.fuente_url) ? "Yahoo" : "" });
+  }
+  // Historial diario: solo los días con algo que contar (no los «movimiento normal»).
+  for (const r of csv(leer("investigacion/seguimiento", "lista-historial.csv")))
+    if (r.grande === "1" || (r.porque && !/^Movimiento normal/.test(r.porque)))
+      poner(r.ticker, { f: r.fecha, tipo: "dia", txt: `${+r.cambio_pct > 0 ? "Sube" : "Baja"} ${Math.abs(+r.cambio_pct)} % (cierre ${r.cierre}). ${r.porque}`, de: "Seguimiento" });
+  for (const g of ["empresas", "materias_primas"]) for (const [t, e] of Object.entries(seguimiento?.lista?.[g] || {}))
+    for (const n of e.titulares || []) poner(t, { f: n.fecha, tipo: "noticia", txt: n.titulo, url: n.url, de: n.fuente || "", imp: !!n.importante });
+  const dirV = path.join(RAIZ, "investigacion", "vigilante");
+  if (fs.existsSync(dirV)) for (const a of fs.readdirSync(dirV)) {
+    const m = a.match(/^([A-Z.]+)-(\d{4}-\d{2}-\d{2})\.md$/); if (!m) continue;
+    const lineas = (leer("investigacion/vigilante", a) || "").split("\n").filter((l) => /^[245]\. /.test(l)).map((l) => l.slice(3).replace(/\*\*/g, ""));
+    poner(m[1], { f: m[2], tipo: "vigilante", txt: lineas.join(" "), id: `investigacion/vigilante/${a}`, de: "Vigilante" });
+  }
+  for (const t of Object.keys(out)) {
+    const vistos = new Set();
+    out[t] = out[t].filter((e) => e.f && !vistos.has(e.f + e.tipo + (e.url || e.txt)) && vistos.add(e.f + e.tipo + (e.url || e.txt)))
+      .sort((a, b) => b.f.localeCompare(a.f));
+  }
+  return out;
+}
+
 const datos = {
   construido: new Date().toISOString(),
   watchlist: csv(leer("investigacion", "watchlist.csv")),
@@ -83,6 +114,7 @@ const datos = {
   seguimiento,
   ranking,
   cartera,
+  expedientes: expedientes(),
   lab,
   lab_demo: csv(leer("investigacion/laboratorio/demo", "registro.csv")),
   corto: { registro: csv(leer("investigacion/corto-hueco", "registro.csv")), config: cfgCorto },
@@ -112,4 +144,4 @@ fs.mkdirSync(DIST, { recursive: true });
 fs.writeFileSync(path.join(DIST, "datos.json"), JSON.stringify(datos));
 fs.copyFileSync(path.join(RAIZ, "web", "index.html"), path.join(DIST, "index.html"));
 fs.cpSync(path.join(RAIZ, "web", "vendor"), path.join(DIST, "vendor"), { recursive: true });
-console.log(`Panel listo: ${datos.ranking ? datos.ranking.filas.length : 0} en ranking, ${datos.watchlist.length} en vigilancia, ${datos.candidatos.length} candidatos, ${datos.informes.length} informes.`);
+console.log(`Panel listo: ${datos.ranking ? datos.ranking.filas.length : 0} en ranking, ${datos.watchlist.length} en vigilancia, ${datos.candidatos.length} candidatos, ${datos.informes.length} informes, ${Object.values(datos.expedientes).flat().length} hechos en ${Object.keys(datos.expedientes).length} expedientes.`);
