@@ -39,6 +39,15 @@ def elegir(cands: pd.DataFrame, max_n: int = MAX_SIMBOLOS) -> list[str]:
     return sims + [motor.INDICE]
 
 
+def latido(estado: "Estado", sims: list[str], ahora: datetime, extra: dict | None = None):
+    """Escribe un archivo pequeño con el estado de la conexión (se guarda en el repo cada 10 min)."""
+    f = demo.carpeta() / "estado-directo.json"
+    f.parent.mkdir(parents=True, exist_ok=True)
+    f.write_text(json.dumps(dict(hora_ny=ahora.strftime("%H:%M:%S"), acciones=len(sims), conectado=estado.conectado,
+                                 reconexiones=estado.reconexiones, velas_recibidas=estado.velas, operaciones_vistas=len(estado.ultimo),
+                                 ultima_vela=estado.hora_ultima_vela, **(extra or {})), ensure_ascii=False), encoding="utf-8")
+
+
 class Estado:
     """Velas del día por acción: la base por consulta + las velas nuevas de la conexión."""
 
@@ -48,6 +57,7 @@ class Estado:
         self.ultimo: dict[str, float] = {}
         self.sucio = False
         self.ultimo_mensaje = 0.0
+        self.conectado, self.reconexiones, self.velas, self.hora_ultima_vela = False, 0, 0, None
 
     def poner_base(self, m: pd.DataFrame):
         self.base = {s: g for s, g in m.groupby("simbolo")} if len(m) else {}
@@ -59,6 +69,8 @@ class Estado:
                 self.nuevas.setdefault(s, {})[x["t"]] = dict(simbolo=s, t=pd.Timestamp(x["t"]), o=x["o"], h=x["h"],
                                                              l=x["l"], c=x["c"], v=x["v"])
                 self.ultimo[s] = x["c"]
+                self.velas += 1
+                self.hora_ultima_vela = x["t"]
                 self.sucio, self.ultimo_mensaje = True, ahora_ts
             elif tipo == "t" and s:           # última operación: precio al instante
                 self.ultimo[s] = x["p"]
@@ -95,6 +107,7 @@ async def _conexion(estado: Estado, sims: list[str], parar: asyncio.Event):
                 if not any(x.get("msg") == "authenticated" for x in r):
                     raise RuntimeError(f"Alpaca no deja entrar: {r}")
                 await ws.send(json.dumps({"action": "subscribe", "bars": sims, "trades": sims}))
+                estado.conectado = True
                 print(f"Conectado: siguiendo {len(sims)} acciones", flush=True)
                 while not parar.is_set():
                     try:
@@ -103,6 +116,8 @@ async def _conexion(estado: Estado, sims: list[str], parar: asyncio.Event):
                         continue
                     estado.mensaje(json.loads(raw), asyncio.get_running_loop().time())
         except Exception as e:  # noqa: BLE001 - si se corta, se reconecta
+            estado.conectado = False
+            estado.reconexiones += 1
             if parar.is_set():
                 return
             print(f"Conexión cortada ({e}); reconecto en 5 s", flush=True)
@@ -141,10 +156,13 @@ async def correr(cfg: dict, cfg_estudio: dict, datos, broker, ensayo: bool = Fal
     refrescar = lambda: demo.velas_hasta_ahora(datos, sims, fecha, ahora())  # noqa: E731
     estado.poner_base(await asyncio.to_thread(refrescar))
     tarea = asyncio.create_task(_conexion(estado, sims, parar))
-    ultima_base, n = loop.time(), 0
+    ultima_base, ultimo_latido, n = loop.time(), 0.0, 0
     try:
         while ahora() < hasta:
             await asyncio.sleep(0.5)
+            if loop.time() - ultimo_latido > 30:
+                latido(estado, sims, ahora(), dict(pasadas=n, ensayo=ensayo))
+                ultimo_latido = loop.time()
             if loop.time() - ultima_base > 300:           # cada 5 min: historia al día (SIP hasta hace 16 min)
                 estado.poner_base(await asyncio.to_thread(refrescar))
                 ultima_base = loop.time()
@@ -157,6 +175,7 @@ async def correr(cfg: dict, cfg_estudio: dict, datos, broker, ensayo: bool = Fal
                 if filas:
                     print(f"{ahora():%H:%M:%S} NY · {len(filas)} decisiones · {loop.time() - t0:.1f} s", flush=True)
     finally:
+        latido(estado, sims, ahora(), dict(pasadas=n, ensayo=ensayo, fin=True))
         parar.set()
         await asyncio.wait([tarea], timeout=5)
     print(f"Fin de la ventana: {n} pasadas en directo.")
