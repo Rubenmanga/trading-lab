@@ -26,6 +26,7 @@ on:
       - "tests/test_fuentes_publicas.py"
       - "tests/test_sec_cuentas.py"
       - "tests/test_seguimiento.py"
+      - "tests/test_carpeta_dia.py"
 
 permissions:
   contents: write
@@ -107,7 +108,7 @@ jobs:
         run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" anthropic tzdata pytest
 
       - name: Pruebas
-        run: python -m pytest -q tests/test_medio_plazo.py tests/test_oportunidades.py tests/test_fuentes_publicas.py tests/test_sec_cuentas.py tests/test_seguimiento.py tests/test_novedades.py
+        run: python -m pytest -q tests/test_medio_plazo.py tests/test_oportunidades.py tests/test_fuentes_publicas.py tests/test_sec_cuentas.py tests/test_seguimiento.py tests/test_novedades.py tests/test_carpeta_dia.py
 
       - name: Alertas de la lista de vigilancia
         run: python -m tradinglab.cli medio alertas
@@ -152,6 +153,10 @@ jobs:
         if: github.event.schedule == '0 9 * * 0' || inputs.cribado
         run: python -m tradinglab.cli medio cribado
 
+      - name: Carpeta del día (resumen corto para el investigador diario, sin IA)
+        if: always()
+        run: python -m tradinglab.cli medio hoy
+
       - name: Enseñar resultado (prueba en seco)
         if: github.event_name == 'pull_request'
         run: |
@@ -181,6 +186,7 @@ jobs:
           git add investigacion/validacion.md investigacion/historico 2>/dev/null || true
           git add investigacion/candidatos.csv 2>/dev/null || true
           git add investigacion/seguimiento.json investigacion/seguimiento/ 2>/dev/null || true
+          git add investigacion/hoy.md 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Agente 12m: ranking, alertas y precios $(date -u +%F)"
           git pull --rebase --autostash -q || true
           git push

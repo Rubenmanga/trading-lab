@@ -40,6 +40,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 | B · **backtest 2014→hoy** (cuentas SEC con fecha + precios Yahoo, misma nota del ranking, frente a IWM) | `src/tradinglab/backtest12m/`, workflow `backtest-12m.yml`, informe en `investigacion/backtest-12m/` |
 | B · **expediente por acción** (hechos con fuente SEC/Yahoo, fecha y reacción 1/5/20 sesiones; solo añade) | `medio_plazo/expediente.py`, workflow `expedientes.yml`, `investigacion/expedientes/TICKER/` (`eventos.csv`, `tesis.md`); en el panel, `#/historia/TICKER` |
 | B · **marcador de aciertos** (libro `investigacion/predicciones.csv` solo-añadir, se llena desde `watchlist.csv`; puntúa frente a IWM) | `medio_plazo/marcador.py`, `lab medio marcador`, workflow `marcador.yml`, `investigacion/marcador/`; en el panel, `#/marcador` |
+| B · **carpeta del día** (`investigacion/hoy.md`, sin IA, < 1 pantalla: avisos, hechos nuevos, zona de entrada, catalizadores 14 d, nuevas del top 10). El investigador diario lee **solo** esto | `medio_plazo/carpeta_dia.py`, `lab medio hoy`, dentro de `agente-12m.yml` |
 | B · perfiles («¿puede duplicar?», «+500 %») | `src/tradinglab/perfiles/`, `investigacion/duplicar/`, `investigacion/quintuplicar/` |
 | Código común (datos, almacén) | `src/tradinglab/common/` |
 | Diario del agente A | `diario/`, `src/tradinglab/diario.py` |
@@ -59,11 +60,11 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 
 ## Comandos
 `lab intradia demo|comprobar|backtest|sesion|cerrar-todo` · `lab corto operar|cerrar [--ensayo]` · `lab estudio universo|tramo|informe` · `lab laboratorio tramo|dia|informe` ·
-`lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|expediente [TICKER]|regla-fuentes [RUTA]|cribado|ficha TICKER|alertas` · `lab panel`.
+`lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|expediente [TICKER]|hoy|regla-fuentes [RUTA]|cribado|ficha TICKER|alertas` · `lab panel`.
 
 ## Workflows de GitHub Actions (no romper sus rutas)
 - `agente-12m.yml`: L-V noche y domingo. Ranking diario, alertas, cribado → `investigacion/` (`ranking.*`,
-  `estado.json`, `alertas.md`, `candidatos.csv`). Abre un issue si hay algo importante.
+  `estado.json`, `alertas.md`, `candidatos.csv`, `hoy.md`). Abre un issue si hay algo importante.
 - `seguimiento-noticias.yml`: L-V cada 2 h en bolsa. Lista de noticias de Ruben (`config/medio_plazo.yaml` → `lista_noticias`,
   `lab medio noticias`, módulo `medio_plazo/novedades.py`) → `investigacion/seguimiento/lista.md` + issue si hay aviso nuevo.
 - `corto-hueco.yml`: L-V, apertura (9:00-9:50 NY) y cierre (15:45 NY) del corto del hueco en eToro demo; issue `corto-hueco` como aviso.
