@@ -13,3 +13,4 @@ fecha_hora_ny,estrategia,simbolo,accion,lado,precio,stop,objetivo,acciones,nota,
 2026-11-16 09:43,corto_hueco,GP,descartada,venta,1.785,2.05,0.89,1867,37.5,···00·10,,señal pasada: el precio ya se ha movido más que el stop desde la señal (1.46 → 1.785)
 2026-11-16 10:10:01,rebote,OMH,descartada,compra,4.17,4.13,4.3,2398,37.5,01001100,,el filtro dice que mejor no entrar (nota 37.5 < 62.5),4.17,61,,
 2026-11-16 10:11:01,rebote,OMH,descartada,compra,4.16,4.12,4.28,2403,37.5,01001100,,el filtro dice que mejor no entrar (nota 37.5 < 62.5),4.17,121,,
+2026-11-16 11:48:01,vwap,CGON,descartada,venta,82.91,83.74,80.42,120,50.0,00101101,,el filtro dice que mejor no entrar (nota 50.0 < 62.5),82.91,1,,
