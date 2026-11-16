@@ -21,12 +21,29 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       PR: ${{ github.event.pull_request.number }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: ¿Solo toca investigacion/?
         id: mira
         run: |
           gh pr view "$PR" -R "$GITHUB_REPOSITORY" --json files -q '.files[].path' > archivos.txt
           cat archivos.txt
           if [ -s archivos.txt ] && ! grep -qv '^investigacion/' archivos.txt; then echo "solo=si" >> "$GITHUB_OUTPUT"; fi
+      # Regla de fuentes: un informe nuevo de investigacion/analisis/ sin «Tabla de fuentes»,
+      # con precio viejo o con precio/caja de webs intermediarias NO se fusiona (y se avisa en el PR).
+      - name: Regla de fuentes
+        run: |
+          grep '^investigacion/analisis/.*\.md$' archivos.txt > informes.txt || true
+          [ -s informes.txt ] || exit 0
+          if ! PYTHONPATH=src python3 -m tradinglab.medio_plazo.regla_fuentes $(cat informes.txt) > regla.txt; then
+            cat regla.txt
+            { echo "**La regla de fuentes no deja publicar este informe:**"; echo '```'; cat regla.txt; echo '```'
+              echo 'Añade la «Tabla de fuentes» de `.claude/skills/analizar-empresa-12m/SKILL.md` y vuelve a subirlo.'; } > cuerpo.md
+            gh pr comment "$PR" -R "$GITHUB_REPOSITORY" --body-file cuerpo.md
+            exit 1
+          fi
+          cat regla.txt
       - name: Fusionar
         if: steps.mira.outputs.solo == 'si'
         run: gh pr merge "$PR" -R "$GITHUB_REPOSITORY" --squash --delete-branch

@@ -153,6 +153,10 @@ def _medio(args):
         for t, r in res.items():
             print(f"{t}: {r['eventos']} hechos (+{r['añadidas']} nuevos) · {r.get('ultimo') or '-'}"
                   + (f" · AVISO: {r['error']}" if r.get("error") else ""))
+    elif args.accion == "regla-fuentes":
+        from .medio_plazo import regla_fuentes
+        if regla_fuentes.main([args.ticker] if args.ticker else []):
+            raise SystemExit(1)
     elif args.accion == "marcador":
         from .medio_plazo import marcador
         r = marcador.ejecutar()
@@ -341,7 +345,7 @@ def main(argv=None):
     pi.add_argument("accion", choices=["demo", "comprobar", "backtest", "sesion", "cerrar-todo"])
     pi.add_argument("--dias", type=int, default=30)
     pm = sub.add_parser("medio", help="Agente B: inversión a 12 meses")
-    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas", "fuentes", "seguimiento", "noticias", "expediente", "marcador"])
+    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas", "fuentes", "seguimiento", "noticias", "expediente", "marcador", "regla-fuentes"])
     pm.add_argument("ticker", nargs="?")
     pm.add_argument("--max", type=int, default=None, help="máximo de empresas a analizar (para pruebas)")
     pm.add_argument("--parte", type=int, default=1, help="oportunidades: qué trozo del universo descargar (1..N)")
