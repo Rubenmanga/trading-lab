@@ -294,7 +294,7 @@ function catalizadores() {
   for (const w of D.watchlist) add(w.ticker, (w.fecha_catalizador || "").slice(0, 10), w.proximo_catalizador || "Catalizador", "Mi lista", "var(--ok)");
   for (const a of D.estado?.alertas || []) if (a.tipo === "CATALIZADOR CERCA") { const m = a.mensaje.match(/'([^']+)' el (\d{4}-\d{2}-\d{2})/); if (m) add(a.ticker, m[2], m[1], "Aviso", "var(--warn)"); }
   for (const [t, e] of Object.entries(D.seguimiento?.lista?.empresas || {})) {
-    for (const c of e.catalizadores || []) { const m = c.match(/(\d{4}-\d{2}(?:-\d{2})?)/); if (m) add(t, m[1].length === 7 ? m[1] + "-28" : m[1], c.replace(/\s*\d{4}-\d{2}(-\d{2})?/, "").replace(/\s+el(\s*\(|\s*$)/, "$1").replace(/:\s*resultado principal previsto$/, ""), e.grupo === "cartera" ? "Tus acciones" : "Seguimiento", "var(--acc)"); }
+    for (const c of e.catalizadores || []) { const m = c.match(/(\d{4}-\d{2}(?:-\d{2})?)/); if (m) add(t, m[1].length === 7 ? m[1] + "-28" : m[1], c.replace(/\s*\d{4}-\d{2}(-\d{2})?/, "").replace(/\s+el(\s*\(|\s*$)/, "$1").replace(/:\s*resultado principal previsto$/, ""), e.grupo === "cartera" && miTicker(t) ? "Tus acciones" : "Seguimiento", "var(--acc)"); }
   }
   for (const f of (D.ranking?.filas || []).slice(0, 30)) if (f.proximos_resultados && dias(f.proximos_resultados) <= 45) add(f.ticker, f.proximos_resultados, `Resultados (ranking #${f.puesto})`, "Ranking", "var(--mut)");
   return ev.sort((a, b) => a.f.localeCompare(b.f));
@@ -330,7 +330,7 @@ function fuentes() {
 
 /* ---------- Mis acciones (cartera real) ---------- */
 const BROKER_COL = { "Revolut": "var(--s1)", "Trading 212": "var(--s3)" };
-const miTicker = (t) => (D.cartera || []).some((c) => c.ticker === t);
+const miTicker = (t) => (D.cartera || []).some((c) => c.ticker === t && c.estado !== "vendida");
 function seguim(t) { const L = D.seguimiento?.lista; return L?.empresas?.[t] || L?.materias_primas?.[t] || null; }
 function eurusd() { const e = seguim("EURUSD"); return e && !vacio(e.cierre) ? +e.cierre : null; }
 const aUsd = (x, m) => x == null ? null : m === "USD" ? x : m === "EUR" && eurusd() ? x * eurusd() : null;
@@ -360,7 +360,10 @@ function cuenta(f) { const d = dias(f); return d === 0 ? "HOY" : d === 1 ? "mañ
 function carteraVista() {
   const P = (D.cartera || []).map(posicion);
   if (!P.length) return vacioBox("Aún no hay cartera", "Las acciones que compras de verdad se anotan en config/mi_cartera.csv.");
-  const abiertas = P.filter((p) => p.estado === "abierta"), pend = P.filter((p) => p.estado !== "abierta");
+  const abiertas = P.filter((p) => p.estado === "abierta"), pend = P.filter((p) => p.estado !== "abierta" && p.estado !== "vendida");
+  // Operaciones cerradas: lo que pusiste (cantidad × precio medio) frente al dinero neto que te entró al vender.
+  const vend = P.filter((p) => p.estado === "vendida").map((p) => ({ ...p, res: p.inv && p.neto_venta != null ? p.neto_venta - p.inv.v : null })).sort((a, b) => (b.fecha_venta || "").localeCompare(a.fecha_venta || ""));
+  const resVend = vend.filter((p) => p.res != null && p.inv?.m === "USD").reduce((s, p) => s + p.res, 0);
   const calc = abiertas.filter((p) => p.pl != null), media = calc.length ? calc.reduce((s, p) => s + p.pl, 0) / calc.length : null;
   const conValor = abiertas.filter((p) => p.valorUsd != null), sinCant = abiertas.filter((p) => p.valorUsd == null);
   const patri = conValor.reduce((s, p) => s + p.valorUsd, 0);
@@ -389,6 +392,7 @@ function carteraVista() {
     <div class="leyenda" style="margin-top:10px">${orden.map((p, i) => `<span><span class="dot" style="--c:${cols[i % 8]}"></span>${esc(p.ticker)} ${num(p.valorUsd / patri * 100, 0)} %</span>`).join("")}</div></div>`; }
   if (cats.length) h += `<div class="sec" style="--c:var(--warn)">Próximos catalizadores de tus acciones</div><div class="card"><ul class="tl">${cats.slice(0, 7).map(({ p, c }) => `<li style="--c:${dias(c.f) <= 1 ? "var(--warn)" : "var(--acc)"}"><div class="cuando">${esc(diaCorto(c.f))} · <b>${cuenta(c.f)}</b></div><div><a href="#/cartera/${esc(p.ticker)}" style="color:inherit;font-weight:700;text-decoration:none">${esc(p.ticker)}</a> ${esc(c.texto)}</div></li>`).join("")}</ul></div>`;
   if (calc.length) h += `<div class="sec" style="--c:var(--ok)">Resultado desde tu compra</div><div class="card">${divergentes(calc.map((p) => ({ t: p.ticker, v: p.pl, href: `#/cartera/${p.ticker}`, tip: `${p.e?.nombre || p.ticker}: compra ${num(p.precio_entrada)} ${p.moneda === "EUR" ? "€" : "$"} · cierre ${num(p.cierre)} ${p.moneda === "EUR" ? "€" : "$"}` })).sort((a, b) => b.v - a.v))}<div class="mut" style="margin-top:8px">Compara tu precio medio con el último cierre. ${abiertas.some((p) => p.moneda === "EUR" && p.pl == null) ? "El oro aún no sale: falta el euro/dólar." : ""}</div></div>`;
+  if (vend.length) h += `<div class="sec" style="--c:var(--mut)">Operaciones cerradas</div><div class="card">${vend.map((p) => `<div class="row" style="padding:6px 0;border-bottom:1px solid var(--line)"><span><span class="tk">${esc(p.ticker)}</span> <span class="sub">vendida el ${esc(p.fecha_venta ? diaCorto(p.fecha_venta) : "—")} · ${esc(p.broker)}</span><br><span class="mut">Compra ${num(p.precio_entrada)} $ → venta ${num(p.precio_venta)} $ · pusiste ${p.inv ? dinero(p.inv.v, p.inv.m) : "—"}, te entraron ${p.neto_venta != null ? dinero(p.neto_venta, p.moneda) : "—"}${p.comision_venta ? ` (ya restada la comisión de ${dinero(p.comision_venta, p.moneda)})` : ""}</span></span><b class="${p.res == null ? "mut" : p.res >= 0 ? "okt" : "badt"}">${p.res == null ? "—" : `${dineroS(p.res, p.moneda)}<br><span style="font-size:.8rem">${pct(p.res / p.inv.v * 100)}</span>`}</b></div>`).join("")}<div class="mut" style="margin-top:8px">Resultado ya hecho (realizado): <b class="${resVend >= 0 ? "okt" : "badt"}">${dineroS(resVend, "USD")}</b>. Ya no cuentan en el patrimonio ni en la gráfica.</div></div>`;
   h += `<div class="sec" style="--c:var(--acc)">Ficha de cada acción</div>`;
   h += abiertas.map((p) => fichaPosicion(p)).join("");
   if (pend.length) h += `<div class="sec" style="--c:var(--warn)">Órdenes pendientes</div>` + pend.map((p) => {
