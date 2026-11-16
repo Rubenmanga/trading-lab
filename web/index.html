@@ -429,6 +429,17 @@ function fichaPosicion(p) {
 }
 
 /* ---------- Pantallas ---------- */
+// La tabla del investigador diario, en fichas legibles en el móvil.
+const IDEA = { comprar_en_zona: "🟢 comprar en zona", vigilar: "🟡 vigilar", evitar: "🔴 evitar" };
+function propLista(t) {
+  return t.replace(/^#\s+.+$/m, "").split("\n").map((l) => {
+    const c = l.trim().replace(/^\||\|$/g, "").split("|").map((x) => x.trim());
+    if (!l.trim().startsWith("|") || c[0].toLowerCase() === "ticker" || /^[-: ]+$/.test(c.join(""))) return l.trim().startsWith("|") ? "" : l;
+    const [tk, idea, precio, ent, stop, obj, motivo] = c;
+    return `- **${tk}** · ${IDEA[idea] || idea} · entrada ≤ ${ent} · stop ${stop} · objetivo ${obj} _(precio ${precio})_  \n  ${motivo || ""}`;
+  }).join("\n");
+}
+
 function hoy() {
   const E = D.estado, R = D.ranking, L = D.seguimiento?.lista;
   const al = E?.alertas || [];
@@ -443,6 +454,10 @@ function hoy() {
     <a class="kpi" href="#/ranking" style="--c:${MC[0]}"><div class="lbl">Semáforo macro</div><div class="val ${MC[2]}"><span class="dot" style="--c:${MC[0]};width:14px;height:14px"></span>${MC[1]}</div><div class="det">${esc(M?.resumen || "sin datos")}</div></a>
     <a class="kpi" href="#/bot" style="--c:var(--ia)"><div class="lbl">Bot del hueco</div><div class="val">${dia ? abiertas : "—"}<span class="mut" style="font-size:1rem;font-weight:600"> cortos</span></div><div class="det">${dia ? `${diaCorto(dia.fecha)} · ${cand} candidatas${ensayo ? " · ensayo" : ""}` : "aún sin decisiones"}</div></a>
   </div>`;
+  const P = (D.propuestas || [])[0];
+  h += `<div class="sec" style="--c:var(--ia)">Propuestas de hoy <span class="mas">investigador diario</span></div>`;
+  h += P ? `<div class="card"><div class="mut">${esc(diaCorto(P.fecha))}${P.fecha < HOY() ? " · aún no hay las de hoy" : ""} · cada idea queda apuntada en el <a href="#/marcador">Marcador</a></div><article class="md">${md(propLista(P.texto))}</article></div>`
+    : vacioBox("Aún sin propuestas", "Cada mañana de lunes a viernes el investigador diario lee la carpeta del día y deja aquí 3-5 ideas con precio de entrada y stop.");
   const at = atencion();
   h += `<div class="sec" style="--c:var(--warn)">Requiere atención <span class="mas">${at.length}</span></div>`;
   h += at.length ? at.slice(0, 6).map(avisoHtml).join("") + (at.length > 6 ? `<details><summary class="sub" style="padding:4px 2px 10px">Ver ${at.length - 6} más</summary>${at.slice(6).map(avisoHtml).join("")}</details>` : "") : vacioBox("Todo tranquilo", "No hay avisos ni problemas hoy.");

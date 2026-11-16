@@ -117,6 +117,7 @@ const datos = {
   expedientes: expedientes(),
   // Paso 3: libro de predicciones (solo añadir) y su puntuación frente al índice de small caps (IWM).
   predicciones: csv(leer("investigacion", "predicciones.csv")),
+  propuestas: markdowns("investigacion/propuestas").slice(0, 7),
   marcador: (() => { try { return JSON.parse(leer("investigacion/marcador", "marcador.json") || "null"); } catch { return null; } })(),
   lab,
   lab_demo: csv(leer("investigacion/laboratorio/demo", "registro.csv")),
@@ -128,6 +129,7 @@ const datos = {
   quintuplicar: (markdowns("investigacion/quintuplicar", "INFORME")[0] || null),
   informes: [
     ...markdowns("investigacion/analisis").map((d) => ({ ...d, clase: "Empresa" })),
+    ...markdowns("investigacion/propuestas").map((d) => ({ ...d, clase: "Investigador diario" })),
     ...markdowns("investigacion/quintuplicar", "INFORME").map((d) => ({ ...d, clase: "+500 %" })),
     ...markdowns("investigacion", "oportunidades").map((d) => ({ ...d, clase: "Buscador" })),
     ...markdowns("investigacion", "sectores").map((d) => ({ ...d, clase: "Sectores" })),
