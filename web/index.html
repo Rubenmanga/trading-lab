@@ -160,15 +160,15 @@ svg text{font-family:inherit}
     <button class="tema" id="tema" title="Cambiar tema (automático / oscuro / claro)" aria-label="Cambiar tema">◐</button>
   </div>
   <nav class="tabs" id="tabs">
-    <a href="#/">Hoy</a><a href="#/ranking">Ranking</a><a href="#/bot">Bot corto</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Mi lista</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/informes">Informes</a><a href="#/mas">Más</a>
+    <a href="#/">Hoy</a><a href="#/cartera">Mis acciones</a><a href="#/ranking">Ranking</a><a href="#/bot">Bot corto</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Vigilancia del agente</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/informes">Informes</a><a href="#/mas">Más</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"><div class="empty">Cargando…</div></main>
 <footer id="pie"></footer>
 <nav class="abajo" id="abajo">
   <a href="#/"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Hoy</a>
+  <a href="#/cartera"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>Mis acciones</a>
   <a href="#/ranking"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Ranking</a>
-  <a href="#/bot"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg>Bot</a>
   <a href="#/seguimiento"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h8M8 17h5"/></svg>Noticias</a>
   <a href="#/mas"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg>Más</a>
 </nav>
@@ -282,11 +282,11 @@ function atencion() {
   const dia = cortoDias()[0];
   if (dia && dia.fecha === HOY()) for (const r of dia.filas.filter((r) => r.accion === "abierta" || r.accion === "error" || r.accion === "cerrada")) out.push({ tipo: "BOT", ticker: r.simbolo, texto: `${r.accion}: ${r.motivo}`, href: "#/bot" });
   for (const f of fuentes().filter((f) => f.estado === "mal")) out.push({ tipo: "FUENTE", ticker: "", texto: `${f.nombre}: ${f.det}`, href: "#/fuentes" });
-  return out;
+  return out.sort((a, b) => (miTicker(b.ticker) ? 1 : 0) - (miTicker(a.ticker) ? 1 : 0));
 }
 function avisoHtml(a) {
   const [c, ico, nom] = TIPO_AVISO[a.tipo] || ["var(--acc)", "i", a.tipo];
-  return `<a class="card aviso" style="--c:${c};text-decoration:none;color:inherit;display:flex" href="${a.href}"><span class="ico">${ico}</span><span style="min-width:0"><span class="t">${esc(nom)}${a.ticker ? ` · ${esc(a.ticker)}` : ""}</span><div style="font-size:.9rem">${esc(a.texto)}</div></span></a>`;
+  return `<a class="card aviso" style="--c:${c};text-decoration:none;color:inherit;display:flex" href="${a.href}"><span class="ico">${ico}</span><span style="min-width:0"><span class="t">${esc(nom)}${a.ticker ? ` · ${esc(a.ticker)}` : ""}${a.ticker && miTicker(a.ticker) ? ` <span class="chip" style="color:var(--acc);padding:0 7px;font-size:.66rem">MI CARTERA</span>` : ""}</span><div style="font-size:.9rem">${esc(a.texto)}</div></span></a>`;
 }
 function catalizadores() {
   const ev = [], visto = new Set(), hoy = HOY();
@@ -294,7 +294,7 @@ function catalizadores() {
   for (const w of D.watchlist) add(w.ticker, (w.fecha_catalizador || "").slice(0, 10), w.proximo_catalizador || "Catalizador", "Mi lista", "var(--ok)");
   for (const a of D.estado?.alertas || []) if (a.tipo === "CATALIZADOR CERCA") { const m = a.mensaje.match(/'([^']+)' el (\d{4}-\d{2}-\d{2})/); if (m) add(a.ticker, m[2], m[1], "Aviso", "var(--warn)"); }
   for (const [t, e] of Object.entries(D.seguimiento?.lista?.empresas || {})) {
-    for (const c of e.catalizadores || []) { const m = c.match(/(\d{4}-\d{2}(?:-\d{2})?)/); if (m) add(t, m[1].length === 7 ? m[1] + "-28" : m[1], c.replace(/\s*\d{4}-\d{2}(-\d{2})?/, "").replace(/:\s*resultado principal previsto$/, ""), e.grupo === "cartera" ? "Tus acciones" : "Seguimiento", "var(--acc)"); }
+    for (const c of e.catalizadores || []) { const m = c.match(/(\d{4}-\d{2}(?:-\d{2})?)/); if (m) add(t, m[1].length === 7 ? m[1] + "-28" : m[1], c.replace(/\s*\d{4}-\d{2}(-\d{2})?/, "").replace(/\s+el(\s*\(|\s*$)/, "$1").replace(/:\s*resultado principal previsto$/, ""), e.grupo === "cartera" ? "Tus acciones" : "Seguimiento", "var(--acc)"); }
   }
   for (const f of (D.ranking?.filas || []).slice(0, 30)) if (f.proximos_resultados && dias(f.proximos_resultados) <= 45) add(f.ticker, f.proximos_resultados, `Resultados (ranking #${f.puesto})`, "Ranking", "var(--mut)");
   return ev.sort((a, b) => a.f.localeCompare(b.f));
@@ -328,6 +328,82 @@ function fuentes() {
   return out;
 }
 
+/* ---------- Mis acciones (cartera real) ---------- */
+const BROKER_COL = { "Revolut": "var(--s1)", "Trading 212": "var(--s3)" };
+const miTicker = (t) => (D.cartera || []).some((c) => c.ticker === t);
+function seguim(t) { const L = D.seguimiento?.lista; return L?.empresas?.[t] || L?.materias_primas?.[t] || null; }
+function posicion(c) {
+  const e = seguim(c.ticker), cierre = e && !vacio(e.cierre) ? +e.cierre : null;
+  const pl = c.estado === "abierta" && c.moneda === "USD" && c.precio_entrada && cierre ? (cierre / c.precio_entrada - 1) * 100 : null;
+  // Dinero: invertido y resultado en la moneda del bróker (acciones: dólares; si solo se sabe el importe, euros).
+  const inv = c.cantidad && c.precio_entrada ? { v: c.cantidad * c.precio_entrada, m: c.moneda } : c.importe_eur ? { v: c.importe_eur, m: "EUR" } : null;
+  const gan = inv && pl != null ? inv.v * pl / 100 : null;
+  return { ...c, e, cierre, pl, inv, gan };
+}
+const dinero = (x, m) => `${num(x, Math.abs(x) < 100 ? 2 : 0)} ${m === "EUR" ? "€" : "$"}`;
+const dineroS = (x, m) => `${x >= 0 ? "+" : "−"}${dinero(Math.abs(x), m)}`;
+function resumenInforme(t) {
+  const inf = D.informes.filter((i) => i.archivo.startsWith(t + "-") && i.clase === "Empresa")[0];
+  if (!inf) return null;
+  const m = inf.texto.match(/\*\*Resumen[^\n]*\n((?:\d\.[^\n]*\n?)+)/);
+  return { inf, lineas: m ? m[1].trim().split("\n").map((l) => l.replace(/^\d\.\s*/, "")) : [] };
+}
+function proxCat(t) { return catalizadores().filter((x) => x.t === t)[0] || null; }
+function cuenta(f) { const d = dias(f); return d === 0 ? "HOY" : d === 1 ? "mañana" : `en ${d} días`; }
+
+function carteraVista() {
+  const P = (D.cartera || []).map(posicion);
+  if (!P.length) return vacioBox("Aún no hay cartera", "Las acciones que compras de verdad se anotan en config/mi_cartera.csv.");
+  const abiertas = P.filter((p) => p.estado === "abierta"), pend = P.filter((p) => p.estado !== "abierta");
+  const calc = abiertas.filter((p) => p.pl != null), media = calc.length ? calc.reduce((s, p) => s + p.pl, 0) / calc.length : null;
+  const ganUsd = calc.filter((p) => p.gan != null && p.moneda === "USD").reduce((s, p) => s + p.gan, 0);
+  const invUsd = calc.filter((p) => p.inv && p.moneda === "USD").reduce((s, p) => s + p.inv.v, 0);
+  const mejor = [...calc].sort((a, b) => b.pl - a.pl)[0], peor = [...calc].sort((a, b) => a.pl - b.pl)[0];
+  const cats = abiertas.map((p) => ({ p, c: proxCat(p.ticker) })).filter((x) => x.c).sort((a, b) => a.c.f.localeCompare(b.c.f));
+  let h = `<div class="card aviso" style="--c:var(--acc)"><span class="ico">★</span><span class="sub">Estas son <b>tus acciones reales</b> (Revolut y Trading 212). El agente <b>no opera</b> con ellas: solo las sigue y te avisa. Las empresas que vigila por su cuenta están en <a href="#/vigilancia">Vigilancia del agente</a>. Los importes son los que me diste el 16-nov (no se leen de tu bróker): si compras o vendes, avísame y los actualizo.</span></div>
+  <div class="kpis">
+    <div class="kpi" style="--c:var(--acc)"><div class="lbl">Posiciones</div><div class="val">${abiertas.length}</div><div class="det">${pend.length ? `y ${pend.length} orden pendiente` : "abiertas"}</div></div>
+    <div class="kpi" style="--c:${media == null ? "var(--mut)" : media >= 0 ? "var(--ok)" : "var(--bad)"}"><div class="lbl">Resultado medio</div><div class="val ${media == null ? "" : media >= 0 ? "okt" : "badt"}">${media == null ? "—" : pct(media)}</div><div class="det">${invUsd ? `${dineroS(ganUsd, "USD")} sobre ${dinero(invUsd, "USD")} en dólares` : `media simple de ${calc.length} acciones`}, desde tu compra</div></div>
+    <div class="kpi" style="--c:var(--ok)"><div class="lbl">La mejor</div><div class="val">${mejor ? esc(mejor.ticker) : "—"}</div><div class="det ${mejor && mejor.pl >= 0 ? "okt" : "badt"}">${mejor ? pct(mejor.pl) : "sin datos"}</div></div>
+    <div class="kpi" style="--c:var(--bad)"><div class="lbl">La peor</div><div class="val">${peor ? esc(peor.ticker) : "—"}</div><div class="det ${peor && peor.pl >= 0 ? "okt" : "badt"}">${peor ? pct(peor.pl) : "sin datos"}</div></div>
+  </div>`;
+  if (cats.length) h += `<div class="sec" style="--c:var(--warn)">Próximos catalizadores de tus acciones</div><div class="card"><ul class="tl">${cats.slice(0, 7).map(({ p, c }) => `<li style="--c:${dias(c.f) <= 1 ? "var(--warn)" : "var(--acc)"}"><div class="cuando">${esc(diaCorto(c.f))} · <b>${cuenta(c.f)}</b></div><div><a href="#/cartera/${esc(p.ticker)}" style="color:inherit;font-weight:700;text-decoration:none">${esc(p.ticker)}</a> ${esc(c.texto)}</div></li>`).join("")}</ul></div>`;
+  if (calc.length) h += `<div class="sec" style="--c:var(--ok)">Resultado desde tu compra</div><div class="card">${divergentes(calc.map((p) => ({ t: p.ticker, v: p.pl, href: `#/cartera/${p.ticker}`, tip: `${p.e?.nombre || p.ticker}: compra ${num(p.precio_entrada)} $ · cierre ${num(p.cierre)} $` })).sort((a, b) => b.v - a.v))}<div class="mut" style="margin-top:8px">Compara tu precio medio con el último cierre. ${abiertas.some((p) => p.moneda !== "USD") ? "El oro no sale: tu precio está en euros y el seguimiento lo mide en dólares." : ""}</div></div>`;
+  h += `<div class="sec" style="--c:var(--acc)">Ficha de cada acción</div>`;
+  h += abiertas.map((p) => fichaPosicion(p)).join("");
+  if (pend.length) h += `<div class="sec" style="--c:var(--warn)">Órdenes pendientes</div>` + pend.map((p) => {
+    const w = D.watchlist.find((x) => x.ticker === p.ticker), pr = (D.estado?.precios || []).find((x) => x.ticker === p.ticker);
+    return `<div class="card" style="border-left:3px solid var(--warn)"><div class="row"><span><span class="tk">${esc(p.ticker)}</span> <span class="sub">${esc(w?.empresa || p.e?.nombre || "")}</span></span><span><span class="chip" style="color:${BROKER_COL[p.broker] || "var(--sub)"}">${esc(p.broker)}</span> <span class="chip warnt">Orden pendiente</span></span></div>
+      <div class="sub" style="margin-top:6px">Todavía no la tienes: la orden de compra espera en tu bróker.${w ? ` Análisis del agente: <b>${esc(VEREDICTO[w.veredicto] || w.veredicto)}</b>, zona de entrada ≤ ${num(w.zona_entrada_max)} $${pr && !vacio(pr.precio) ? `, precio ahora ${num(pr.precio)} $` : ""}.` : ""}</div>${w ? escala({ precio: pr?.precio ?? w.precio_analisis, stop: w.stop_tesis, zona: w.zona_entrada_max, objetivo: w.precio_objetivo_12m }) : ""}</div>`; }).join("");
+  return h;
+}
+function fichaPosicion(p) {
+  const t = p.ticker, e = p.e, c = proxCat(t), r = resumenInforme(t), pq = D.ranking?.filas.find((x) => x.ticker === t);
+  const hist = (D.historial_lista || []).filter((x) => x.ticker === t && !vacio(x.cierre)).map((x) => +x.cierre);
+  const vig = D.informes.filter((i) => i.clase === "Vigilante" && i.texto.includes(t))[0];
+  const dia = c && dias(c.f) <= 1;
+  const nuevos = (e?.titulares || []).filter((n) => n.nueva).slice(0, 5);
+  const abierta = dia || location.hash === `#/cartera/${t}`;
+  return `<details class="card" id="pos-${esc(t)}" ${abierta ? "open" : ""} style="border-left:3px solid ${BROKER_COL[p.broker] || "var(--line)"}">
+    <summary><div class="row" style="padding-right:16px"><span><span class="tk">${esc(t)}</span> <span class="sub">${esc(e?.nombre || "")}</span></span>
+      <b class="${p.pl == null ? "mut" : p.pl >= 0 ? "okt" : "badt"}" style="font-size:1.15rem">${p.pl == null ? "sin cálculo" : (p.pl >= 0 ? "▲ " : "▼ ") + num(Math.abs(p.pl), 1) + " %"}</b></div>
+      <div style="margin-top:4px;display:flex;gap:6px;flex-wrap:wrap"><span class="chip" style="color:${BROKER_COL[p.broker] || "var(--sub)"}">${esc(p.broker)}</span>${dia ? `<span class="chip warnt">⏰ ${esc(c.texto.slice(0, 40))} · ${cuenta(c.f)}</span>` : c ? `<span class="chip">📅 ${esc(diaCorto(c.f))} · ${cuenta(c.f)}</span>` : ""}${e?.avisos?.length ? `<span class="chip warnt">⚠ ${e.avisos.length} aviso${e.avisos.length > 1 ? "s" : ""}</span>` : ""}</div></summary>
+    ${p.inv ? `<div class="grid" style="margin-top:12px"><div><div class="k">Tienes</div><div class="n">${p.cantidad ? num(p.cantidad, p.cantidad < 10 ? 4 : 2).replace(/,?0+$/, "") + (p.ticker === "XAU" ? " oz" : " acc.") : "sin dato"}</div></div><div><div class="k">Invertido</div><div class="n">${dinero(p.inv.v, p.inv.m)}</div></div><div><div class="k">Resultado ahora</div><div class="n ${p.gan == null ? "" : p.gan >= 0 ? "okt" : "badt"}">${p.gan == null ? "—" : dineroS(p.gan, p.inv.m)}</div></div></div>` : ""}
+    <div class="grid"><div><div class="k">Tu precio medio</div><div class="n">${num(p.precio_entrada)} ${p.moneda === "EUR" ? "€" : "$"}</div></div>
+      <div><div class="k">Último cierre${e?.fecha ? ` (${esc(diaCorto(e.fecha))})` : ""}</div><div class="n">${p.cierre == null ? "—" : num(p.cierre) + " $"}</div></div>
+      <div><div class="k">Hoy</div><div class="n ${e && e.cambio_pct > 0 ? "okt" : e && e.cambio_pct < 0 ? "badt" : ""}">${e ? pct(e.cambio_pct) : "—"}</div></div>
+      <div><div class="k">Volumen</div><div class="n">${e && !vacio(e.volumen_rel) ? num(e.volumen_rel, 1) + "x lo normal" : "—"}</div></div></div>
+    ${p.moneda !== "USD" ? `<div class="mut" style="margin-top:6px">Tu precio está en euros y el seguimiento mide en dólares, por eso no se calcula el resultado.</div>` : ""}
+    ${hist.length >= 3 ? `<div style="margin-top:10px">${linea(hist, { alto: 70, base: p.moneda === "USD" ? p.precio_entrada : null })}<div class="mut">Cierres guardados${p.moneda === "USD" ? "; la línea discontinua es tu precio de compra" : ""}.</div></div>` : ""}
+    ${c ? `<div class="sub" style="margin-top:10px">📅 <b>Próximo catalizador:</b> ${esc(c.texto)} · ${esc(diaCorto(c.f))} (${cuenta(c.f)})</div>` : `<div class="mut" style="margin-top:10px">Sin catalizador con fecha próxima.</div>`}
+    ${dia ? `<div class="card aviso" style="--c:var(--warn);margin:10px 0 0"><span class="ico">⏰</span><span class="sub"><b>Día de catalizador.</b> El agente repasa esta acción de cerca ${vig ? `y ${/10 min|cada 10/.test(vig.texto) ? "la vigila cada 10 minutos en bolsa" : "ha dejado un informe de vigilancia"}` : "con el seguimiento de noticias cada 2 horas"}. ${vig ? `<a href="#/informe/${encodeURIComponent(vig.id)}">Ver el informe →</a>` : ""}</span></div>` : ""}
+    ${e?.porque ? `<p class="sub" style="margin-top:10px"><b>Por qué se movió:</b> ${esc(e.porque)}</p>` : ""}
+    ${nuevos.length ? `<div class="sub" style="margin-top:6px"><b>Noticias nuevas</b></div>${nuevos.map((n) => { const [nom, , col] = familia(n); return `<div class="sub" style="margin-top:3px"><span class="dot" style="--c:${col}" title="${esc(nom)}"></span>${esc(n.fecha)} · ${urlOk(n.url) ? `<a href="${urlOk(n.url)}" target="_blank" rel="noopener">${esc(n.titulo)}</a>` : esc(n.titulo)}</div>`; }).join("")}` : ""}
+    ${r ? `<details style="margin-top:10px"><summary><b>Análisis a fondo</b> <span class="mut">· ${esc(diaCorto(r.inf.fecha))}</span></summary><ol style="padding-left:18px;margin:8px 0">${r.lineas.map((l) => `<li class="sub">${esc(l.replace(/\*\*/g, ""))}</li>`).join("")}</ol><a href="#/informe/${encodeURIComponent(r.inf.id)}">Leer el informe completo →</a></details>` : `<div class="mut" style="margin-top:10px">Sin análisis a fondo todavía. Pídelo en el chat: <i>"Analiza ${esc(t)} a 12 meses"</i>.</div>`}
+    <div style="margin-top:10px;display:flex;gap:14px;flex-wrap:wrap"><a href="#/seguimiento/${encodeURIComponent(t)}">Seguimiento de noticias →</a>${pq ? `<a href="#/empresa/${encodeURIComponent(t)}">Ficha del ranking (nota ${Math.round(pq.nota)}) →</a>` : ""}</div>
+  </details>`;
+}
+
 /* ---------- Pantallas ---------- */
 function hoy() {
   const E = D.estado, R = D.ranking, L = D.seguimiento?.lista;
@@ -346,9 +422,16 @@ function hoy() {
   const at = atencion();
   h += `<div class="sec" style="--c:var(--warn)">Requiere atención <span class="mas">${at.length}</span></div>`;
   h += at.length ? at.slice(0, 6).map(avisoHtml).join("") + (at.length > 6 ? `<details><summary class="sub" style="padding:4px 2px 10px">Ver ${at.length - 6} más</summary>${at.slice(6).map(avisoHtml).join("")}</details>` : "") : vacioBox("Todo tranquilo", "No hay avisos ni problemas hoy.");
+  // Mis acciones
+  const mp = (D.cartera || []).map(posicion).filter((p) => p.estado === "abierta");
+  if (mp.length) {
+    const calc = mp.filter((p) => p.pl != null).map((p) => ({ t: p.ticker, v: p.pl, href: `#/cartera/${p.ticker}` })).sort((a, b) => b.v - a.v);
+    const cs = mp.map((p) => ({ p, c: proxCat(p.ticker) })).filter((x) => x.c && dias(x.c.f) <= 7).sort((a, b) => a.c.f.localeCompare(b.c.f));
+    h += `<div class="sec" style="--c:var(--acc)">Mis acciones <a class="mas" href="#/cartera">Abrir →</a></div><div class="card">${cs.length ? `<div style="margin-bottom:10px">${cs.map(({ p, c }) => `<a class="chip" style="color:var(--warnt);text-decoration:none;margin:0 6px 6px 0;display:inline-block" href="#/cartera/${esc(p.ticker)}">⏰ ${esc(p.ticker)} · ${esc(c.texto.slice(0, 28))} · ${cuenta(c.f)}</a>`).join("")}</div>` : ""}${calc.length ? `<div class="mut" style="margin-bottom:6px">Resultado desde tu compra</div>${divergentes(calc)}` : `<div class="sub">Sin precios para calcular el resultado.</div>`}</div>`;
+  }
   // Tu lista de un vistazo
   const precios = Object.fromEntries((E?.precios || []).map((p) => [p.ticker, p]));
-  h += `<div class="sec" style="--c:var(--ok)">Tu lista de un vistazo <a class="mas" href="#/vigilancia">Ver todo →</a></div>`;
+  h += `<div class="sec" style="--c:var(--ok)">Vigilancia del agente <a class="mas" href="#/vigilancia">Ver todo →</a></div>`;
   h += D.watchlist.length ? `<div class="dos">${D.watchlist.map((w) => wlMini(w, precios[w.ticker])).join("")}</div>` : vacioBox("Lista vacía", "Todavía no hay empresas analizadas.");
   // Movimientos del día
   const mov = Object.entries({ ...(L?.empresas || {}), ...(L?.materias_primas || {}) }).filter(([, e]) => !vacio(e.cambio_pct)).map(([t, e]) => ({ t, v: +e.cambio_pct, href: `#/seguimiento/${encodeURIComponent(t)}`, tip: `${e.nombre}: cierre ${e.cierre}` })).sort((a, b) => b.v - a.v);
@@ -644,7 +727,7 @@ function resumen() {
   }
   return h;
 }
-const CLASE_COL = { "Empresa": "var(--acc)", "+500 %": "var(--s5)", "Buscador": "var(--ok)", "Sectores": "var(--s3)", "Repaso": "var(--warn)", "¿Acierta el ranking?": "var(--s4)", "Corto del hueco": "var(--ia)", "Backtest 12 meses": "var(--s3)", "Intradía (agente A)": "var(--ia)", "Diario intradía": "var(--ia)" };
+const CLASE_COL = { "Empresa": "var(--acc)", "+500 %": "var(--s5)", "Buscador": "var(--ok)", "Sectores": "var(--s3)", "Repaso": "var(--warn)", "¿Acierta el ranking?": "var(--s4)", "Corto del hueco": "var(--ia)", "Vigilante": "var(--ia)", "Backtest 12 meses": "var(--s3)", "Intradía (agente A)": "var(--ia)", "Diario intradía": "var(--ia)" };
 let filtroInf = "";
 function informes() {
   if (!D.informes.length) return vacioBox("Aún no hay informes", "");
@@ -685,7 +768,8 @@ function fuentesVista() {
     (F.some((f) => f.nombre.startsWith("SEC") && f.estado === "mal") ? `<div class="card sub">La SEC pide identificarse para dar datos. Se arregla creando en GitHub el secreto <b>SEC_USER_AGENT</b> con «Nombre email». Pídeselo a Claude en el chat si quieres ayuda.</div>` : "");
 }
 function masVista() {
-  const it = [["#/vigilancia", "✓", "var(--ok)", "Mi lista", "Avisos y tu lista de vigilancia con zona de entrada, objetivo y stop."],
+  const it = [["#/bot", "⚡", "var(--ia)", "Bot corto del hueco", "Agente A en eToro demo: cómo decide y qué hizo cada día."],
+    ["#/vigilancia", "✓", "var(--ok)", "Vigilancia del agente", "Empresas que el agente analiza y vigila por su cuenta, con zona de entrada, objetivo y stop."],
     ["#/duplicar", "×2", "var(--ok)", "¿Puede duplicar?", "Perfil con tus criterios para buscar acciones que puedan doblar."],
     ["#/x6", "×6", "var(--s5)", "¿+500 %?", "Objetivos de analistas de +500 %: por qué y si es realista."],
     ["#/informes", "▤", "var(--acc)", "Informes", "Análisis de empresas, buscador, sectores, diario y bot."],
@@ -699,6 +783,7 @@ function ayuda() {
   <h2>Cómo se usa (todo desde el móvil)</h2>
   <ol>
     <li><b>Hoy:</b> la portada. Arriba los números del día, debajo lo que requiere atención, tu lista, cómo se movieron tus acciones y las próximas fechas importantes.</li>
+    <li><b>Mis acciones:</b> tus acciones reales (Revolut y Trading 212): resultado desde tu compra, análisis, noticias y catalizadores. Son distintas de la <b>Vigilancia del agente</b>, que son empresas que el agente sigue por su cuenta.</li>
     <li><b>Ranking:</b> cada día laborable a las 23:30 el sistema puntúa todas las small caps de EE. UU. en 8 factores. En el mapa de calor, azul es bueno y rojo flojo. Toca una empresa para ver su ficha.</li>
     <li><b>Bot:</b> el agente A (corto del hueco en eToro demo). Cómo decide, qué hizo cada día y por qué.</li>
     <li><b>Noticias:</b> el seguimiento de tus acciones cada 2 h: cuánto se movieron, qué titulares leyó el agente y qué cambió.</li>
@@ -730,11 +815,11 @@ function ayuda() {
 }
 
 /* ---------- Navegación ---------- */
-const TITULO = { "/ranking": "Ranking", "/bot": "Bot corto del hueco", "/seguimiento": "Seguimiento de noticias", "/vigilancia": "Mi lista", "/duplicar": "¿Puede duplicar?", "/x6": "¿+500 %?", "/informes": "Informes", "/candidatos": "Cribado simple", "/ayuda": "Cómo se usa", "/mas": "Más", "/fuentes": "Salud de las fuentes" };
-const EN_MAS = ["/vigilancia", "/duplicar", "/x6", "/informes", "/candidatos", "/ayuda", "/fuentes"];
+const TITULO = { "/ranking": "Ranking", "/bot": "Bot corto del hueco", "/seguimiento": "Seguimiento de noticias", "/vigilancia": "Vigilancia del agente", "/cartera": "Mis acciones", "/duplicar": "¿Puede duplicar?", "/x6": "¿+500 %?", "/informes": "Informes", "/candidatos": "Cribado simple", "/ayuda": "Cómo se usa", "/mas": "Más", "/fuentes": "Salud de las fuentes" };
+const EN_MAS = ["/bot", "/vigilancia", "/duplicar", "/x6", "/informes", "/candidatos", "/ayuda", "/fuentes"];
 function pintar(mantener) {
   const r = location.hash.replace(/^#/, "") || "/";
-  const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/ranking" : r.startsWith("/seguimiento") ? "/seguimiento" : r;
+  const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/ranking" : r.startsWith("/seguimiento") ? "/seguimiento" : r.startsWith("/cartera") ? "/cartera" : r;
   document.querySelectorAll("#tabs a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + pest || (pest !== "/" && !TITULO[pest] && a.getAttribute("href") === "#/mas")));
   document.querySelectorAll("#abajo a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + (EN_MAS.includes(pest) ? "/mas" : pest)));
   const app = $("#app");
@@ -745,6 +830,7 @@ function pintar(mantener) {
     cuerpo = r.startsWith("/informe/") ? informe(decodeURIComponent(r.slice(9)))
       : r.startsWith("/empresa/") ? empresaFicha(decodeURIComponent(r.slice(9)))
       : r.startsWith("/seguimiento") ? seguimientoVista(decodeURIComponent(r.slice(13)))
+      : r.startsWith("/cartera") ? carteraVista()
       : r === "/ranking" ? oportunidades() : r === "/bot" ? bot() : r === "/informes" ? informes() : r === "/candidatos" ? candidatos()
       : r === "/ayuda" ? ayuda() : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : r === "/x6" ? quintuplicar()
       : r === "/mas" ? masVista() : r === "/fuentes" ? fuentesVista() : hoy();
@@ -759,7 +845,7 @@ function pintar(mantener) {
     const n = TITULARES[+b.dataset.tit], [, , c] = familia(n);
     $("#det-titular").innerHTML = `<div class="mut"><span class="dot" style="--c:${c}"></span>${esc(n.nom)} · ${esc(n.t)} · ${esc(n.fecha)} · ${esc(n.fuente || "")}${n.importante ? ' · <b class="warnt">importante</b>' : ""}</div><div>${urlOk(n.url) ? `<a href="${urlOk(n.url)}" target="_blank" rel="noopener">${esc(n.titulo)}</a>` : esc(n.titulo)}</div>`;
   });
-  const foco = r.startsWith("/seguimiento/") && document.getElementById("seg-" + decodeURIComponent(r.slice(13)));
+  const foco = (r.startsWith("/seguimiento/") && document.getElementById("seg-" + decodeURIComponent(r.slice(13)))) || (r.startsWith("/cartera/") && document.getElementById("pos-" + decodeURIComponent(r.slice(9))));
   if (foco) foco.scrollIntoView({ block: "start" }); else if (!mantener) window.scrollTo(0, 0);
 }
 
