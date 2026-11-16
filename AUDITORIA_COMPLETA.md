@@ -63,3 +63,6 @@ Rúbrica de juicio técnico: 0 = inutilizable, 5 = parcialmente útil, 10 = sól
 
 ## Límites
 Los nombres de servicios y calendarios son los configurados en Git; no se han verificado facturas, SLA, calidad de tick ni disponibilidad futura. La revisión no sustituye análisis SEC/FDA por ticker, prueba auditada de estrategias o investigación con usuarios.
+
+## Acción de mitigación posterior al dictamen
+Se añadió un indicador cuantitativo de cobertura del backtest (posiciones con/sin precio de trimestre y precios intermedios) sin rellenar retornos, cambiar las curvas o inventar exclusiones. Es evidencia diagnóstica, **no** reconstrucción del universo histórico completo ni aprobación estadística.

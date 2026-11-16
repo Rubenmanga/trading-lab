@@ -35,3 +35,6 @@
 
 ## Criterio de aceptación
 Se considera **avance implementado**, no reconstrucción completa. Propuesta de revisión sujeta a aprobación humana. Conservar la rama como punto reversible y hacer merge **solo** tras visto bueno explícito.
+
+## Control financiero adicional
+En `motor.auditar_cobertura_cartera()` se cuentan las posiciones que carecen de precio del trimestre de salida y los casos en los que existe una cotización intermedia. Esta información se muestra en el informe sin editar el P&L del histórico. Un 0 % de cotizaciones incompletas **no** demuestra ausencia de sesgo de supervivencia porque la muestra omite empresas desaparecidas. Prueba sintética de regresión añadida a `tests/test_backtest12m.py`. CI correspondiente al commit `248dd957` pendiente de verificación final.

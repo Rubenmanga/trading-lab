@@ -50,3 +50,6 @@ La heurística anterior concedía nivel 1 a todo dominio no listado. En una audi
 - Centralizar workflows o cambiar proveedores sin medir fallos, límites y cobertura.
 - Reconstruir el panel con framework JS, solo justificable si el refactor incremental fracasa en pruebas de experiencia.
 - Cartera personal: fuera de alcance por instrucción expresa.
+
+## ADR-007 · Medir censura antes de corregir el motor
+Añadir `auditar_cobertura_cartera()` sin alterar la cartera simulada: permite conocer la fracción de posiciones sin cotización del fin de trimestre. No se asignan pérdidas ficticias a delistings ni se recomputan históricos sin sus eventos corporativos. Se mantiene el estado «NO VALIDADO» aunque la cobertura aparente sea completa.
