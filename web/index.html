@@ -160,7 +160,7 @@ svg text{font-family:inherit}
     <button class="tema" id="tema" title="Cambiar tema (automático / oscuro / claro)" aria-label="Cambiar tema">◐</button>
   </div>
   <nav class="tabs" id="tabs">
-    <a href="#/">Hoy</a><a href="#/cartera">Mis acciones</a><a href="#/ranking">Ranking</a><a href="#/bot">Bot corto</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Vigilancia del agente</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/informes">Informes</a><a href="#/mas">Más</a>
+    <a href="#/">Hoy</a><a href="#/cartera">Mis acciones</a><a href="#/ranking">Ranking</a><a href="#/bot">Bot corto</a><a href="#/lab">Laboratorio</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Vigilancia del agente</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/informes">Informes</a><a href="#/mas">Más</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"><div class="empty">Cargando…</div></main>
@@ -593,6 +593,45 @@ function extraFicha(x) {
   </details>`;
 }
 
+/* ---------- Laboratorio intradía (agente A, cuenta sombra) ---------- */
+const SEMC = { verde: ["var(--ok)", "Aprueba"], amarillo: ["var(--warn)", "Prometedora / faltan datos"], rojo: ["var(--bad)", "Pierde"], gris: ["var(--mut)", "Sin datos"] };
+const rr = (x) => vacio(x) ? "—" : `${+x > 0 ? "+" : ""}${num(x, 2)} R`;
+function labVista() {
+  const L = D.lab;
+  if (!L) return vacioBox("El laboratorio aún no tiene datos", "Tras el primer cierre de bolsa (o la prueba con el pasado) aparecerán aquí las estrategias.");
+  const E = Object.entries(L.estrategias || {}).sort((a, b) => (b[1].pasado?.R_medio ?? -9) - (a[1].pasado?.R_medio ?? -9));
+  const Li = L.listones || {}, P = L.periodo_pasado;
+  const inf = D.informes.find((x) => x.id === "investigacion/laboratorio/INFORME.md");
+  let h = `<p class="sub" style="margin-top:0">Agente A · se prueban <b>${E.length} estrategias a la vez</b> con las mismas reglas (stop ${num(L.riesgo?.stop_pct, 0)} %, objetivo ${num(L.riesgo?.rr, 0)}R, trailing, todo cerrado a las ${esc(L.riesgo?.cierre || "15:45")} NY) y con costes. Es <b>cuenta sombra</b>: se apunta en papel lo que habría pasado con los precios reales, sin enviar ninguna orden. <b>R</b> = lo que se arriesga en una operación: +0,2 R de media = por cada 100 € arriesgados, 20 € de ganancia media.</p>
+  <div class="kpis">
+    <div class="kpi" style="--c:var(--acc)"><div class="lbl">Pasado</div><div class="val" style="font-size:1.05rem">${P ? `${esc(P[0].slice(0, 4))}–${esc(P[1].slice(0, 4))}` : "—"}</div><div class="det">${P ? "backtest con velas de 1 min" : "aún sin calcular"}</div></div>
+    <div class="kpi" style="--c:var(--ia)"><div class="lbl">Días en sombra</div><div class="val">${L.dias_sombra || 0}</div><div class="det">desde el 16-nov-2026</div></div>
+    <div class="kpi" style="--c:var(--ok)"><div class="lbl">Aprueban</div><div class="val okt">${E.filter(([k, e]) => k !== "azar" && e.pasado?.semaforo === "verde").length}</div><div class="det">≥ ${Li.ops_minimas} ops y ≥ ${num(Li.R_medio_min, 1)} R</div></div>
+  </div>`;
+  h += `<div class="sec" style="--c:var(--acc)">Estrategias</div>`;
+  for (const [k, e] of E) {
+    const p = e.pasado || {}, s = e.sombra || {}, [c, nom] = k === "azar" ? ["var(--mut)", "Control"] : SEMC[p.semaforo || "gris"], [cs, noms] = SEMC[s.semaforo || "gris"];
+    const curva = (e.curva_pasado || []).map((x) => x.R), cs2 = (e.curva_sombra || []).map((x) => x.R);
+    const faltan = Math.max(0, (Li.ops_minimas || 100) - (s.n || 0));
+    h += `<details class="card" style="border-left:3px solid ${c}"><summary><div class="row"><b>${esc(e.nombre)}</b><span class="chip" style="color:${c}">${nom}</span></div>
+      <div class="grid" style="margin-top:8px"><div><div class="k">R medio (pasado)</div><div class="n ${(p.R_medio ?? 0) >= 0 ? "okt" : "badt"}">${rr(p.R_medio)}</div></div><div><div class="k">Operaciones</div><div class="n">${p.n || 0}</div></div><div><div class="k">Aciertos</div><div class="n">${p.n ? num(p.aciertos_pct, 0) + " %" : "—"}</div></div><div><div class="k">En sombra</div><div class="n">${s.n ? `${s.n} · ${rr(s.R_medio)}` : "0"}</div></div></div></summary>
+      <p class="sub">${esc(e.explica)}</p>
+      ${curva.length >= 2 ? `<div class="mut">Suma de R mes a mes (pasado)</div>${linea([0, ...curva], { base: 0, color: (p.R_total ?? 0) >= 0 ? "var(--ok)" : "var(--bad)", etiquetas: ["inicio", ...e.curva_pasado.map((x) => `${x.f}: ${num(x.R, 1)} R`)] })}` : ""}
+      <div class="grid" style="margin-top:8px"><div><div class="k">Margen de error (95 %)</div><div class="n">${p.ic95 ? `${rr(p.ic95[0])} a ${rr(p.ic95[1])}` : "—"}</div></div><div><div class="k">Con objetivo 4R</div><div class="n">${rr(p.R_alt_medio)}</div></div><div><div class="k">Factor de beneficio</div><div class="n">${p.pf == null ? "—" : num(p.pf, 2)}</div></div><div><div class="k">Peor caída</div><div class="n badt">${p.n ? num(p.peor_caida_R, 0) + " R" : "—"}</div></div><div><div class="k">Años en positivo</div><div class="n">${p.anios ? `${p.anios_positivos}/${p.anios}` : "—"}</div></div><div><div class="k">Frente al azar</div><div class="n">${rr(p.vs_azar)}</div></div><div><div class="k">Operaciones al día</div><div class="n">${p.n ? num(p.ops_dia, 1) : "—"}</div></div><div><div class="k">Largos / cortos</div><div class="n">${p.n ? `${p.largos} / ${p.cortos}` : "—"}</div></div></div>
+      ${e.pasado_como_bot?.n ? `<div class="sub" style="margin-top:8px">Como el bot de eToro (hueco ≥ +50 %, 3 al día): <b>${e.pasado_como_bot.n}</b> ops, <b>${rr(e.pasado_como_bot.R_medio)}</b> (${pct(e.pasado_como_bot.ret_pct_medio)} por operación).</div>` : ""}
+      <div class="sec" style="--c:${cs};margin-top:12px">Cuenta sombra · ${noms}</div>
+      ${cs2.length >= 2 ? linea([0, ...cs2], { base: 0, color: (s.R_total ?? 0) >= 0 ? "var(--ok)" : "var(--bad)", etiquetas: ["inicio", ...e.curva_sombra.map((x) => `${x.f}: ${num(x.R, 1)} R`)] }) : ""}
+      <div class="sub">${s.n ? `${s.n} operaciones · ${rr(s.R_medio)} de media · ${num(s.aciertos_pct, 0)} % aciertos · total ${num(s.R_total, 1)} R.` : "Aún sin operaciones en sombra."} ${faltan ? `Faltan ~${faltan} para una primera lectura.` : "Ya hay operaciones suficientes para una primera lectura."}</div>
+    </details>`;
+  }
+  const U = (L.ultimas_sombra || []).slice().reverse();
+  h += `<div class="sec" style="--c:var(--ia)">Últimas operaciones en papel</div>`;
+  h += U.length ? `<div class="card scroll"><table class="t"><thead><tr><th>Día</th><th>Estrategia</th><th>Acción</th><th>Lado</th><th>Entra</th><th>Sale</th><th>R</th></tr></thead><tbody>${U.slice(0, 40).map((o) => `<tr><td>${esc(diaCorto(o.fecha))}</td><td>${esc(L.estrategias?.[o.estrategia]?.nombre || o.estrategia)}</td><td><b>${esc(o.simbolo)}</b></td><td>${o.lado === "compra" ? "largo" : "corto"}</td><td>${esc(o.hora_entrada)}</td><td>${esc(String(o.hora_salida || "").slice(0, 5))} · ${esc(o.motivo)}</td><td class="${+o.R >= 0 ? "okt" : "badt"}">${rr(o.R)}</td></tr>`).join("")}</tbody></table></div>` : vacioBox("Sin operaciones en papel todavía", "Cada día laborable, tras el cierre de Nueva York, se apuntan aquí.");
+  h += `<div class="mut" style="margin-top:8px">Semáforo: verde = al menos ${Li.ops_minimas} operaciones, ≥ ${num(Li.R_medio_min, 1)} R de media y margen de error por encima de 0. «Azar» es el control: si una estrategia no le gana, no aporta nada. Hacen falta unas ${Li.ops_minimas} operaciones para una primera lectura y ${Li.ops_fiables} para fiarse. Actualizado: ${esc(L.actualizado)}.</div>`;
+  if (inf) h += `<a class="chip" style="display:inline-block;margin-top:12px;color:var(--acc)" href="#/informe/${encodeURIComponent(inf.id)}">Leer el informe completo →</a>`;
+  return h;
+}
+
 /* ---------- Bot del corto del hueco (agente A) ---------- */
 const ACC = { candidata: ["var(--acc)", "Candidata"], descartada: ["var(--mut)", "Descartada"], ensayo: ["var(--ia)", "Ensayo"], "ensayo cierre": ["var(--ia)", "Ensayo cierre"], abierta: ["var(--warn)", "Corto abierto"], cerrada: ["var(--ok)", "Cerrada"], error: ["var(--bad)", "Error"], nada: ["var(--mut)", "Nada hoy"] };
 const horaEsp = (hhmm) => { const [h, m] = String(hhmm || "").split(":").map(Number); return isNaN(h) ? "—" : `${String((h + 6) % 24).padStart(2, "0")}:${String(m || 0).padStart(2, "0")}`; };
@@ -789,6 +828,7 @@ function fuentesVista() {
 }
 function masVista() {
   const it = [["#/bot", "⚡", "var(--ia)", "Bot corto del hueco", "Agente A en eToro demo: cómo decide y qué hizo cada día."],
+    ["#/lab", "⚗", "var(--ia)", "Laboratorio intradía", "Agente A: 6 estrategias a la vez en papel, con el pasado y cada día."],
     ["#/vigilancia", "✓", "var(--ok)", "Vigilancia del agente", "Empresas que el agente analiza y vigila por su cuenta, con zona de entrada, objetivo y stop."],
     ["#/duplicar", "×2", "var(--ok)", "¿Puede duplicar?", "Perfil con tus criterios para buscar acciones que puedan doblar."],
     ["#/x6", "×6", "var(--s5)", "¿+500 %?", "Objetivos de analistas de +500 %: por qué y si es realista."],
@@ -835,8 +875,8 @@ function ayuda() {
 }
 
 /* ---------- Navegación ---------- */
-const TITULO = { "/ranking": "Ranking", "/bot": "Bot corto del hueco", "/seguimiento": "Seguimiento de noticias", "/vigilancia": "Vigilancia del agente", "/cartera": "Mis acciones", "/duplicar": "¿Puede duplicar?", "/x6": "¿+500 %?", "/informes": "Informes", "/candidatos": "Cribado simple", "/ayuda": "Cómo se usa", "/mas": "Más", "/fuentes": "Salud de las fuentes" };
-const EN_MAS = ["/bot", "/vigilancia", "/duplicar", "/x6", "/informes", "/candidatos", "/ayuda", "/fuentes"];
+const TITULO = { "/ranking": "Ranking", "/bot": "Bot corto del hueco", "/lab": "Laboratorio intradía", "/seguimiento": "Seguimiento de noticias", "/vigilancia": "Vigilancia del agente", "/cartera": "Mis acciones", "/duplicar": "¿Puede duplicar?", "/x6": "¿+500 %?", "/informes": "Informes", "/candidatos": "Cribado simple", "/ayuda": "Cómo se usa", "/mas": "Más", "/fuentes": "Salud de las fuentes" };
+const EN_MAS = ["/bot", "/lab", "/vigilancia", "/duplicar", "/x6", "/informes", "/candidatos", "/ayuda", "/fuentes"];
 function pintar(mantener) {
   const r = location.hash.replace(/^#/, "") || "/";
   const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/ranking" : r.startsWith("/seguimiento") ? "/seguimiento" : r.startsWith("/cartera") ? "/cartera" : r;
@@ -851,7 +891,7 @@ function pintar(mantener) {
       : r.startsWith("/empresa/") ? empresaFicha(decodeURIComponent(r.slice(9)))
       : r.startsWith("/seguimiento") ? seguimientoVista(decodeURIComponent(r.slice(13)))
       : r.startsWith("/cartera") ? carteraVista()
-      : r === "/ranking" ? oportunidades() : r === "/bot" ? bot() : r === "/informes" ? informes() : r === "/candidatos" ? candidatos()
+      : r === "/ranking" ? oportunidades() : r === "/bot" ? bot() : r === "/lab" ? labVista() : r === "/informes" ? informes() : r === "/candidatos" ? candidatos()
       : r === "/ayuda" ? ayuda() : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : r === "/x6" ? quintuplicar()
       : r === "/mas" ? masVista() : r === "/fuentes" ? fuentesVista() : hoy();
   } catch (e) { console.error(e); cuerpo = vacioBox("Algo ha fallado al dibujar esta parte", esc(e.message)); }

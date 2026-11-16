@@ -51,6 +51,9 @@ try { seguimiento = JSON.parse(leer("investigacion", "seguimiento.json") || "nul
 if (seguimiento) for (const t of Object.keys(seguimiento.empresas || {})) { seguimiento.empresas[t].texto = leer("investigacion/seguimiento", `${t}.md`) || ""; seguimiento.empresas[t].notas = leer("investigacion/seguimiento", `${t}-notas.md`) || ""; }
 // La lista de noticias guarda memoria interna (titulares vistos, etc.) que el panel no necesita.
 for (const g of ["empresas", "materias_primas"]) for (const e of Object.values(seguimiento?.lista?.[g] || {})) { delete e.vistos; delete e.sec_vistos; delete e.anterior; delete e.avisados; }
+// Laboratorio intradía (agente A): estrategias en cuenta sombra, resumen calculado por GitHub Actions.
+let lab = null;
+try { lab = JSON.parse(leer("investigacion/laboratorio", "resumen.json") || "null"); } catch { lab = null; }
 let estado = null;
 try { estado = JSON.parse(leer("investigacion", "estado.json") || "null"); } catch { estado = null; }
 
@@ -78,6 +81,7 @@ const datos = {
   seguimiento,
   ranking,
   cartera,
+  lab,
   corto: { registro: csv(leer("investigacion/corto-hueco", "registro.csv")), config: cfgCorto },
   historial_lista: csv(leer("investigacion/seguimiento", "lista-historial.csv")).map(({ porque, ...r }) => r),
   // Perfil «¿puede duplicar?»: el informe más reciente (o la lista provisional si aún no hay informe).
@@ -93,6 +97,7 @@ const datos = {
     ...markdowns("investigacion", "validacion").map((d) => ({ ...d, clase: "¿Acierta el ranking?" })),
     ...markdowns("investigacion/vigilante").map((d) => ({ ...d, clase: "Vigilante" })),
     ...markdowns("investigacion/corto-hueco").map((d) => ({ ...d, clase: "Corto del hueco" })),
+    ...markdowns("investigacion/laboratorio", "INFORME").map((d) => ({ ...d, fecha: d.fecha || lab?.actualizado || "", clase: "Laboratorio intradía" })),
     ...markdowns("investigacion/estrategias").map((d) => ({ ...d, clase: "Intradía (agente A)" })),
     ...markdowns("investigacion/backtest-12m", "INFORME").map((d) => ({ ...d, clase: "Backtest 12 meses" })),
     ...markdowns("diario").map((d) => ({ ...d, clase: "Diario intradía" })),
