@@ -240,6 +240,39 @@ def simular(cohortes: dict, pre: dict, clave, top: int = TOP, ultimo: str | None
     return out
 
 
+def auditar_cobertura_cartera(cohortes: dict, pre: dict, ultimo: str, top: int = TOP) -> dict:
+    """Mide cuántos precios FINALES faltan en la cartera simulada, sin imputar retornos.
+
+    Este indicador NO detecta los tickers excluidos de la fuente histórica:
+    una cobertura del 100 % NO demuestra ausencia de sesgo de supervivencia.
+    """
+    iwm = pre.get("IWM", {})
+    periodos = posiciones = sin_fin = con_precio_anterior = 0
+    for m, filas in sorted(cohortes.items()):
+        fin = mes_mas(m, 3)
+        if fin > ultimo or m not in iwm or fin not in iwm:
+            continue
+        validas = [f for f in filas if f.get("nota") is not None]
+        if len(validas) < top * 3:
+            continue
+        periodos += 1
+        for f in sorted(validas, key=lambda x: x["nota"], reverse=True)[:top]:
+            posiciones += 1
+            serie = pre.get(f["ticker"], {})
+            if fin not in serie:
+                sin_fin += 1
+                if any(mes_mas(m, k) in serie for k in (1, 2)):
+                    con_precio_anterior += 1
+    return {
+        "trimestres_examinados": periodos,
+        "posiciones_examinadas": posiciones,
+        "sin_precio_fin_trimestre": sin_fin,
+        "con_ultimo_precio_intermedio": con_precio_anterior,
+        "pct_fin_incompleto": round(100 * sin_fin / posiciones, 2) if posiciones else None,
+        "validacion_financiera": "NO VALIDADA: faltan universo historico completo, delistings y OOS",
+    }
+
+
 def estudio_12m(cohortes: dict, pre: dict, ultimo: str) -> dict:
     """Para cada cohorte con 12 meses de futuro: rentabilidad media de las 20/50 mejores frente al universo,
     y correlación de rangos (Spearman) entre nota/factor y rentabilidad a 12 meses."""
@@ -343,7 +376,8 @@ def ejecutar(carpeta: str, salida: str) -> dict:
         if filas:
             op.puntuar(filas)
     ultimo = meta["ultimo_mes"]
-    res = {"meta": meta | {"empresas_por_trimestre": {m: len(f) for m, f in cohortes.items()}}}
+    res = {"meta": meta | {"empresas_por_trimestre": {m: len(f) for m, f in cohortes.items()},
+                           "auditoria_cobertura": auditar_cobertura_cartera(cohortes, pre, ultimo)}}
     res["cartera"] = {"nota": simular(cohortes, pre, lambda f: f["nota"], ultimo=ultimo),
                       "nota_50": simular(cohortes, pre, lambda f: f["nota"], top=50, ultimo=ultimo),
                       "nota_100": simular(cohortes, pre, lambda f: f["nota"], top=100, ultimo=ultimo)}

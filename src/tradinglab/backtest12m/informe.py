@@ -31,6 +31,12 @@ def escribir(res: dict, ruta: str) -> str:
     L.append("**ESTADO: EXPLORATORIO / NO VALIDADO PARA DECIDIR OPERACIONES.** Falta reconstruir el "
              "universo histórico con empresas excluidas de cotización, sus retornos de salida y pruebas "
              "fuera de muestra. Estas cifras no son un pronóstico ni una probabilidad de ganancia.\n")
+    cobertura = res.get("meta", {}).get("auditoria_cobertura", {})
+    if cobertura and cobertura["posiciones_examinadas"]:
+        L.append(f"**Control de cobertura de la cartera histórica:** {cobertura['sin_precio_fin_trimestre']} "
+                 f"de {cobertura['posiciones_examinadas']} posiciones ({cobertura['pct_fin_incompleto']:.2f} %) "
+                 "no tienen precio del fin de trimestre. Este indicador no incluye empresas excluidas "
+                 "del dataset: **cobertura aparente completa ≠ backtest válido**.\n")
     L.append("**Resumen en 5 líneas**\n")
     L.append(f"1. Desde {res['meta']['fechas'][0]} hasta {res['meta']['ultimo_mes']}, comprar cada trimestre las 20 "
              f"mejores según la nota habría dado **{_p(n['estrategia']['anual_pct'])} al año** (con costes).")

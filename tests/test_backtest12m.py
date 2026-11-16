@@ -90,6 +90,9 @@ def test_ejecutar_de_punta_a_punta(tmp_path):
                    "2": {"anios": {"2015": 2e8, "2016": 2e8, "2017": 2e8}, "cotiza_hoy": True}}, fh)
     res = motor.ejecutar(str(d), str(tmp_path / "salida"))
     assert res["cartera"]["nota"]["trimestres"] >= 10
+    assert res["meta"]["auditoria_cobertura"]["posiciones_examinadas"] > 0
+    assert res["meta"]["auditoria_cobertura"]["sin_precio_fin_trimestre"] == 0
+    assert "Control de cobertura" in next((tmp_path / "salida").glob("INFORME-*.md")).read_text()
     assert set(res["cartera"]) >= {"nota", "calidad", "momentum", "f_score"}
     assert res["doce_meses"]["correlacion"]["nota"]["n"] >= 10
     assert res["pelotazos"]["casos"] > 0
@@ -97,3 +100,21 @@ def test_ejecutar_de_punta_a_punta(tmp_path):
     informe = next((tmp_path / "salida").glob("INFORME-*.md")).read_text()
     assert "Resumen en 5 líneas" in informe and "Límites" in informe
     assert "NO VALIDADO PARA DECIDIR OPERACIONES" in informe
+
+def test_cobertura_detecta_retorno_censurado_sin_inventar_perdida():
+    from tradinglab.backtest12m.motor import auditar_cobertura_cartera, mes_mas
+    inicio = "2020-03"
+    fin = mes_mas(inicio, 3)
+    serie = {inicio: (10, 10, 1), fin: (11, 11, 1)}
+    pre = {f"T{i}": dict(serie) for i in range(60)}
+    pre["IWM"] = dict(serie)
+    pre["T0"].pop(fin)
+    pre["T0"][mes_mas(inicio, 2)] = (10.5, 10.5, 1)
+    filas = [{"ticker": f"T{i}", "nota": 100 - i} for i in range(60)]
+    diagnostico = auditar_cobertura_cartera({inicio: filas}, pre, fin)
+    assert diagnostico["trimestres_examinados"] == 1
+    assert diagnostico["posiciones_examinadas"] == 20
+    assert diagnostico["sin_precio_fin_trimestre"] == 1
+    assert diagnostico["con_ultimo_precio_intermedio"] == 1
+    assert diagnostico["pct_fin_incompleto"] == 5.0
+    assert "NO VALIDADA" in diagnostico["validacion_financiera"]
