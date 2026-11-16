@@ -1,0 +1,44 @@
+{
+ "actualizado": "2026-11-16",
+ "stop_pct": 15.0,
+ "bot": {
+  "n": 0,
+  "R_medio": null,
+  "R_total": 0.0,
+  "aciertos_pct": null,
+  "margen95": null,
+  "abiertas": 0,
+  "stops_supuestos": 0,
+  "ret_pct_medio": null,
+  "dias": 0,
+  "primer_dia": null
+ },
+ "backtest": {
+  "n": 2222,
+  "R_medio": 0.245,
+  "ic95": [
+   0.188,
+   0.303
+  ],
+  "aciertos_pct": 49.4,
+  "ret_pct_medio": 3.68,
+  "ops_dia": 1.68,
+  "dias": 1324,
+  "periodo": [
+   "2016-01-19",
+   "2026-11-13"
+  ],
+  "ops_por_dia_bolsa": 0.79,
+  "esperadas_a_la_decision": 52
+ },
+ "decision": {
+  "estado": "pronto",
+  "texto": "Aún no hay operaciones cerradas. Se decide el 15-02-2027.",
+  "fecha": "2027-02-15",
+  "dias": 91,
+  "ops_min": 40,
+  "R_min": 0.1
+ },
+ "operaciones": [],
+ "alpaca": {}
+}
