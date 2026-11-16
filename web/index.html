@@ -332,13 +332,19 @@ function fuentes() {
 const BROKER_COL = { "Revolut": "var(--s1)", "Trading 212": "var(--s3)" };
 const miTicker = (t) => (D.cartera || []).some((c) => c.ticker === t);
 function seguim(t) { const L = D.seguimiento?.lista; return L?.empresas?.[t] || L?.materias_primas?.[t] || null; }
+function eurusd() { const e = seguim("EURUSD"); return e && !vacio(e.cierre) ? +e.cierre : null; }
+const aUsd = (x, m) => x == null ? null : m === "USD" ? x : m === "EUR" && eurusd() ? x * eurusd() : null;
 function posicion(c) {
-  const e = seguim(c.ticker), cierre = e && !vacio(e.cierre) ? +e.cierre : null;
-  const pl = c.estado === "abierta" && c.moneda === "USD" && c.precio_entrada && cierre ? (cierre / c.precio_entrada - 1) * 100 : null;
-  // Dinero: invertido y resultado en la moneda del bróker (acciones: dólares; si solo se sabe el importe, euros).
+  const e = seguim(c.ticker), cierreUsd = e && !vacio(e.cierre) ? +e.cierre : null;
+  // Precio en la moneda de tu compra: acciones en dólares; el oro se pasa de dólares a euros con el euro/dólar.
+  const cierre = c.moneda === "EUR" ? (cierreUsd && eurusd() ? cierreUsd / eurusd() : null) : cierreUsd;
+  const pl = c.estado === "abierta" && c.precio_entrada && cierre ? (cierre / c.precio_entrada - 1) * 100 : null;
+  // Dinero: invertido y resultado en la moneda de tu compra (si solo se sabe el importe, en euros).
   const inv = c.cantidad && c.precio_entrada ? { v: c.cantidad * c.precio_entrada, m: c.moneda } : c.importe_eur ? { v: c.importe_eur, m: "EUR" } : null;
   const gan = inv && pl != null ? inv.v * pl / 100 : null;
-  return { ...c, e, cierre, pl, inv, gan };
+  const valorUsd = c.cantidad && cierreUsd ? c.cantidad * cierreUsd : null;
+  const hoyUsd = valorUsd != null && e && !vacio(e.cambio_pct) ? valorUsd - valorUsd / (1 + e.cambio_pct / 100) : null;
+  return { ...c, e, cierre, cierreUsd, pl, inv, gan, valorUsd, hoyUsd };
 }
 const dinero = (x, m) => `${num(x, Math.abs(x) < 100 ? 2 : 0)} ${m === "EUR" ? "€" : "$"}`;
 const dineroS = (x, m) => `${x >= 0 ? "+" : "−"}${dinero(Math.abs(x), m)}`;
@@ -356,19 +362,33 @@ function carteraVista() {
   if (!P.length) return vacioBox("Aún no hay cartera", "Las acciones que compras de verdad se anotan en config/mi_cartera.csv.");
   const abiertas = P.filter((p) => p.estado === "abierta"), pend = P.filter((p) => p.estado !== "abierta");
   const calc = abiertas.filter((p) => p.pl != null), media = calc.length ? calc.reduce((s, p) => s + p.pl, 0) / calc.length : null;
-  const ganUsd = calc.filter((p) => p.gan != null && p.moneda === "USD").reduce((s, p) => s + p.gan, 0);
-  const invUsd = calc.filter((p) => p.inv && p.moneda === "USD").reduce((s, p) => s + p.inv.v, 0);
+  const conValor = abiertas.filter((p) => p.valorUsd != null), sinCant = abiertas.filter((p) => p.valorUsd == null);
+  const patri = conValor.reduce((s, p) => s + p.valorUsd, 0);
+  const hoyTot = conValor.reduce((s, p) => s + (p.hoyUsd || 0), 0);
+  const invTot = conValor.map((p) => aUsd(p.inv?.v, p.inv?.m)), invOk = invTot.every((x) => x != null) && conValor.length > 0;
+  const invSuma = invOk ? invTot.reduce((s, x) => s + x, 0) : null, ganTot = invOk ? patri - invSuma : null;
   const mejor = [...calc].sort((a, b) => b.pl - a.pl)[0], peor = [...calc].sort((a, b) => a.pl - b.pl)[0];
   const cats = abiertas.map((p) => ({ p, c: proxCat(p.ticker) })).filter((x) => x.c).sort((a, b) => a.c.f.localeCompare(b.c.f));
-  let h = `<div class="card aviso" style="--c:var(--acc)"><span class="ico">★</span><span class="sub">Estas son <b>tus acciones reales</b> (Revolut y Trading 212). El agente <b>no opera</b> con ellas: solo las sigue y te avisa. Las empresas que vigila por su cuenta están en <a href="#/vigilancia">Vigilancia del agente</a>. Los importes son los que me diste el 16-nov (no se leen de tu bróker): si compras o vendes, avísame y los actualizo.</span></div>
+  // Evolución del patrimonio: cada día laborable el seguimiento guarda un cierre por acción; aquí se multiplica por tus acciones.
+  const porDia = {};
+  for (const r of D.historial_lista || []) if (!vacio(r.cierre)) (porDia[r.fecha] ||= {})[r.ticker] = +r.cierre;
+  const serie = Object.keys(porDia).sort().map((f) => conValor.every((p) => porDia[f][p.ticker] != null) ? { f, v: conValor.reduce((s, p) => s + p.cantidad * porDia[f][p.ticker], 0) } : null).filter(Boolean);
+  const usd0 = (x) => `${num(x, 2)} $`;
+  const sgn = (x) => `${x >= 0 ? "+" : "−"}${num(Math.abs(x), 2)} $`;
+  let h = `<div class="card aviso" style="--c:var(--acc)"><span class="ico">★</span><span class="sub">Estas son <b>tus acciones reales</b> (Revolut y Trading 212). El agente <b>no opera</b> con ellas: solo las sigue y te avisa. Las empresas que vigila por su cuenta están en <a href="#/vigilancia">Vigilancia del agente</a>. Los importes son los que me diste (no se leen de tu bróker): si compras o vendes, avísame y los actualizo.</span></div>
   <div class="kpis">
-    <div class="kpi" style="--c:var(--acc)"><div class="lbl">Posiciones</div><div class="val">${abiertas.length}</div><div class="det">${pend.length ? `y ${pend.length} orden pendiente` : "abiertas"}</div></div>
-    <div class="kpi" style="--c:${media == null ? "var(--mut)" : media >= 0 ? "var(--ok)" : "var(--bad)"}"><div class="lbl">Resultado medio</div><div class="val ${media == null ? "" : media >= 0 ? "okt" : "badt"}">${media == null ? "—" : pct(media)}</div><div class="det">${invUsd ? `${dineroS(ganUsd, "USD")} sobre ${dinero(invUsd, "USD")} en dólares` : `media simple de ${calc.length} acciones`}, desde tu compra</div></div>
-    <div class="kpi" style="--c:var(--ok)"><div class="lbl">La mejor</div><div class="val">${mejor ? esc(mejor.ticker) : "—"}</div><div class="det ${mejor && mejor.pl >= 0 ? "okt" : "badt"}">${mejor ? pct(mejor.pl) : "sin datos"}</div></div>
-    <div class="kpi" style="--c:var(--bad)"><div class="lbl">La peor</div><div class="val">${peor ? esc(peor.ticker) : "—"}</div><div class="det ${peor && peor.pl >= 0 ? "okt" : "badt"}">${peor ? pct(peor.pl) : "sin datos"}</div></div>
-  </div>`;
+    <div class="kpi" style="--c:var(--acc)"><div class="lbl">Patrimonio</div><div class="val">${conValor.length ? usd0(patri) : "—"}</div><div class="det">${conValor.length} posiciones, en dólares${sinCant.length ? ` · sin contar ${esc(sinCant.map((p) => p.ticker).join(", "))} (falta el nº de acciones)` : ""}</div></div>
+    <div class="kpi" style="--c:${ganTot == null ? "var(--mut)" : ganTot >= 0 ? "var(--ok)" : "var(--bad)"}"><div class="lbl">Resultado total</div><div class="val ${ganTot == null ? "" : ganTot >= 0 ? "okt" : "badt"}">${ganTot == null ? "—" : sgn(ganTot)}</div><div class="det">${ganTot == null ? "faltan datos para calcularlo" : `${pct(ganTot / invSuma * 100)} sobre lo invertido (${usd0(invSuma)})`}</div></div>
+    <div class="kpi" style="--c:${hoyTot >= 0 ? "var(--ok)" : "var(--bad)"}"><div class="lbl">Último día</div><div class="val ${hoyTot >= 0 ? "okt" : "badt"}">${conValor.length ? sgn(hoyTot) : "—"}</div><div class="det">${conValor.length ? pct(hoyTot / (patri - hoyTot) * 100) : ""} · cierre del ${esc(D.seguimiento?.lista?.fecha ? diaCorto(D.seguimiento.lista.fecha) : "—")}</div></div>
+    <div class="kpi" style="--c:var(--warn)"><div class="lbl">Mejor y peor</div><div class="val" style="font-size:1.25rem">${mejor ? `<span class="okt">${esc(mejor.ticker)}</span> · <span class="badt">${esc(peor.ticker)}</span>` : "—"}</div><div class="det">${mejor ? `${pct(mejor.pl)} · ${pct(peor.pl)}` : "sin datos"}</div></div>
+  </div>
+  <div class="sec" style="--c:var(--acc)">Cómo evoluciona tu patrimonio</div>
+  <div class="card">${serie.length >= 2 ? `${linea(serie.map((x) => x.v), { alto: 130, base: invSuma, etiquetas: serie.map((x) => `${diaCorto(x.f)}: ${usd0(x.v)}`) })}<div class="mut">Un punto por día laborable (cierre de bolsa)${invSuma ? "; la línea discontinua es lo que pusiste" : ""}. Va de ${esc(diaCorto(serie[0].f))} a ${esc(diaCorto(serie[serie.length - 1].f))}. Usa las acciones que tienes hoy.</div>` : `<div class="empty" style="padding:14px"><b>La gráfica empieza hoy</b>Cada día laborable, tras el cierre, el seguimiento añade un punto. Con dos días ya verás la línea.</div>`}</div>`;
+  if (conValor.length) { const cols = ["var(--s1)", "var(--s2)", "var(--s3)", "var(--s4)", "var(--s5)", "var(--ia)", "var(--acc)", "var(--ok)"]; const orden = [...conValor].sort((a, b) => b.valorUsd - a.valorUsd);
+    h += `<div class="sec" style="--c:var(--s3)">Dónde está tu dinero</div><div class="card"><div style="display:flex;height:18px;border-radius:5px;overflow:hidden;gap:2px">${orden.map((p, i) => `<i style="flex:${p.valorUsd};background:${cols[i % 8]}" data-tip="${esc(p.ticker)}: ${num(p.valorUsd / patri * 100, 1)} % · ${usd0(p.valorUsd)}"></i>`).join("")}</div>
+    <div class="leyenda" style="margin-top:10px">${orden.map((p, i) => `<span><span class="dot" style="--c:${cols[i % 8]}"></span>${esc(p.ticker)} ${num(p.valorUsd / patri * 100, 0)} %</span>`).join("")}</div></div>`; }
   if (cats.length) h += `<div class="sec" style="--c:var(--warn)">Próximos catalizadores de tus acciones</div><div class="card"><ul class="tl">${cats.slice(0, 7).map(({ p, c }) => `<li style="--c:${dias(c.f) <= 1 ? "var(--warn)" : "var(--acc)"}"><div class="cuando">${esc(diaCorto(c.f))} · <b>${cuenta(c.f)}</b></div><div><a href="#/cartera/${esc(p.ticker)}" style="color:inherit;font-weight:700;text-decoration:none">${esc(p.ticker)}</a> ${esc(c.texto)}</div></li>`).join("")}</ul></div>`;
-  if (calc.length) h += `<div class="sec" style="--c:var(--ok)">Resultado desde tu compra</div><div class="card">${divergentes(calc.map((p) => ({ t: p.ticker, v: p.pl, href: `#/cartera/${p.ticker}`, tip: `${p.e?.nombre || p.ticker}: compra ${num(p.precio_entrada)} $ · cierre ${num(p.cierre)} $` })).sort((a, b) => b.v - a.v))}<div class="mut" style="margin-top:8px">Compara tu precio medio con el último cierre. ${abiertas.some((p) => p.moneda !== "USD") ? "El oro no sale: tu precio está en euros y el seguimiento lo mide en dólares." : ""}</div></div>`;
+  if (calc.length) h += `<div class="sec" style="--c:var(--ok)">Resultado desde tu compra</div><div class="card">${divergentes(calc.map((p) => ({ t: p.ticker, v: p.pl, href: `#/cartera/${p.ticker}`, tip: `${p.e?.nombre || p.ticker}: compra ${num(p.precio_entrada)} ${p.moneda === "EUR" ? "€" : "$"} · cierre ${num(p.cierre)} ${p.moneda === "EUR" ? "€" : "$"}` })).sort((a, b) => b.v - a.v))}<div class="mut" style="margin-top:8px">Compara tu precio medio con el último cierre. ${abiertas.some((p) => p.moneda === "EUR" && p.pl == null) ? "El oro aún no sale: falta el euro/dólar." : ""}</div></div>`;
   h += `<div class="sec" style="--c:var(--acc)">Ficha de cada acción</div>`;
   h += abiertas.map((p) => fichaPosicion(p)).join("");
   if (pend.length) h += `<div class="sec" style="--c:var(--warn)">Órdenes pendientes</div>` + pend.map((p) => {
@@ -390,10 +410,10 @@ function fichaPosicion(p) {
       <div style="margin-top:4px;display:flex;gap:6px;flex-wrap:wrap"><span class="chip" style="color:${BROKER_COL[p.broker] || "var(--sub)"}">${esc(p.broker)}</span>${dia ? `<span class="chip warnt">⏰ ${esc(c.texto.slice(0, 40))} · ${cuenta(c.f)}</span>` : c ? `<span class="chip">📅 ${esc(diaCorto(c.f))} · ${cuenta(c.f)}</span>` : ""}${e?.avisos?.length ? `<span class="chip warnt">⚠ ${e.avisos.length} aviso${e.avisos.length > 1 ? "s" : ""}</span>` : ""}</div></summary>
     ${p.inv ? `<div class="grid" style="margin-top:12px"><div><div class="k">Tienes</div><div class="n">${p.cantidad ? num(p.cantidad, p.cantidad < 10 ? 4 : 2).replace(/,?0+$/, "") + (p.ticker === "XAU" ? " oz" : " acc.") : "sin dato"}</div></div><div><div class="k">Invertido</div><div class="n">${dinero(p.inv.v, p.inv.m)}</div></div><div><div class="k">Resultado ahora</div><div class="n ${p.gan == null ? "" : p.gan >= 0 ? "okt" : "badt"}">${p.gan == null ? "—" : dineroS(p.gan, p.inv.m)}</div></div></div>` : ""}
     <div class="grid"><div><div class="k">Tu precio medio</div><div class="n">${num(p.precio_entrada)} ${p.moneda === "EUR" ? "€" : "$"}</div></div>
-      <div><div class="k">Último cierre${e?.fecha ? ` (${esc(diaCorto(e.fecha))})` : ""}</div><div class="n">${p.cierre == null ? "—" : num(p.cierre) + " $"}</div></div>
+      <div><div class="k">Último cierre${e?.fecha ? ` (${esc(diaCorto(e.fecha))})` : ""}</div><div class="n">${p.cierre == null ? "—" : num(p.cierre) + (p.moneda === "EUR" ? " €" : " $")}</div></div>
       <div><div class="k">Hoy</div><div class="n ${e && e.cambio_pct > 0 ? "okt" : e && e.cambio_pct < 0 ? "badt" : ""}">${e ? pct(e.cambio_pct) : "—"}</div></div>
       <div><div class="k">Volumen</div><div class="n">${e && !vacio(e.volumen_rel) ? num(e.volumen_rel, 1) + "x lo normal" : "—"}</div></div></div>
-    ${p.moneda !== "USD" ? `<div class="mut" style="margin-top:6px">Tu precio está en euros y el seguimiento mide en dólares, por eso no se calcula el resultado.</div>` : ""}
+    ${p.moneda === "EUR" ? `<div class="mut" style="margin-top:6px">${p.cierre == null ? "Tu precio está en euros y el seguimiento mide el oro en dólares: el resultado saldrá cuando el seguimiento guarde también el euro/dólar." : `El oro se mide en dólares; se pasa a euros con el euro/dólar de ${eurusd() ? num(eurusd(), 4) : "—"}.`}</div>` : ""}
     ${hist.length >= 3 ? `<div style="margin-top:10px">${linea(hist, { alto: 70, base: p.moneda === "USD" ? p.precio_entrada : null })}<div class="mut">Cierres guardados${p.moneda === "USD" ? "; la línea discontinua es tu precio de compra" : ""}.</div></div>` : ""}
     ${c ? `<div class="sub" style="margin-top:10px">📅 <b>Próximo catalizador:</b> ${esc(c.texto)} · ${esc(diaCorto(c.f))} (${cuenta(c.f)})</div>` : `<div class="mut" style="margin-top:10px">Sin catalizador con fecha próxima.</div>`}
     ${dia ? `<div class="card aviso" style="--c:var(--warn);margin:10px 0 0"><span class="ico">⏰</span><span class="sub"><b>Día de catalizador.</b> El agente repasa esta acción de cerca ${vig ? `y ${/10 min|cada 10/.test(vig.texto) ? "la vigila cada 10 minutos en bolsa" : "ha dejado un informe de vigilancia"}` : "con el seguimiento de noticias cada 2 horas"}. ${vig ? `<a href="#/informe/${encodeURIComponent(vig.id)}">Ver el informe →</a>` : ""}</span></div>` : ""}
