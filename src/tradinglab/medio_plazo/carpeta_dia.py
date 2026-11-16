@@ -81,17 +81,20 @@ def hechos_nuevos(tickers: dict[str, str], carpeta: Path, hoy: date) -> list[str
     return [x for _, x in sorted(filas, key=lambda p: p[0], reverse=True)]
 
 
-def en_zona(watch: list[dict], precios: dict[str, float]) -> list[str]:
+def en_zona(watch: list[dict], precios: dict[str, float], entradas: dict | None = None) -> list[str]:
+    """Manda el precio de la calculadora (Paso 7, `entradas.json`); si no hay, la zona de la lista."""
     out = []
     for w in watch:
         t = (w.get("ticker") or "").upper()
-        p, zona = precios.get(t), _num(w.get("zona_entrada_max"))
+        calc = _num((entradas or {}).get(t, {}).get("entrada"))
+        p, zona = precios.get(t), calc if calc is not None else _num(w.get("zona_entrada_max"))
         if p is None or zona is None or p > zona:
             continue
         obj, stop = _num(w.get("precio_objetivo_12m")), _num(w.get("stop_tesis"))
         extra = f", objetivo {obj:g} (+{(obj / p - 1) * 100:.0f} %)" if obj else ""
         extra += f", stop de tesis {stop:g}" if stop else ""
-        out.append(f"- **{t}** a {p:.2f} $ ≤ zona {zona:g}{extra} · {w.get('veredicto', '')}")
+        nombre = "entrada calculada" if calc is not None else "zona"
+        out.append(f"- **{t}** a {p:.2f} $ ≤ {nombre} {zona:g}{extra} · {w.get('veredicto', '')}")
     return out
 
 
@@ -147,7 +150,7 @@ def construir(hoy: date | None = None, base: Path | None = None, tickers: dict[s
         ("🔔 Avisos de hoy", avisos(estado)),
         (f"📰 Hechos nuevos en tus expedientes (últimos {DIAS_HECHOS} días)",
          hechos_nuevos(tickers, inv / "expedientes", hoy)),
-        ("🎯 Dentro de su zona de entrada", en_zona(watch, precios)),
+        ("🎯 Dentro de su zona de entrada", en_zona(watch, precios, _json(inv / "entradas.json"))),
         (f"📅 Catalizadores en los próximos {DIAS_CATALIZADOR} días", catalizadores(watch, filas_rank, tickers, hoy)),
         (f"🆕 Nuevas en el top {TOP} del ranking",
          nuevas_arriba(filas_rank, _ranking_anterior(inv / "historico", hoy, rank.get("actualizado", "")))),

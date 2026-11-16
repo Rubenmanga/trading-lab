@@ -153,6 +153,10 @@ jobs:
         if: github.event.schedule == '0 9 * * 0' || inputs.cribado
         run: python -m tradinglab.cli medio cribado
 
+      - name: Calculadora del precio de entrada (3 escenarios de cada tesis, sin IA)
+        if: always()
+        run: python -m tradinglab.cli medio entrada
+
       - name: Carpeta del día (resumen corto para el investigador diario, sin IA)
         if: always()
         run: python -m tradinglab.cli medio hoy
@@ -186,7 +190,7 @@ jobs:
           git add investigacion/validacion.md investigacion/historico 2>/dev/null || true
           git add investigacion/candidatos.csv 2>/dev/null || true
           git add investigacion/seguimiento.json investigacion/seguimiento/ 2>/dev/null || true
-          git add investigacion/hoy.md 2>/dev/null || true
+          git add investigacion/hoy.md investigacion/entradas.json investigacion/expedientes/*/tesis.md 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Agente 12m: ranking, alertas y precios $(date -u +%F)"
           git pull --rebase --autostash -q || true
           git push

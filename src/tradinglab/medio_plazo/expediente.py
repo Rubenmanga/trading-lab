@@ -230,7 +230,8 @@ def plantilla_tesis(ticker: str, grupo: str, vig: dict | None = None) -> str:
                    f"· la tesis se rompe por debajo de {v.get('stop_tesis')} $",
                    f"- Próximo catalizador: {v.get('proximo_catalizador')} ({v.get('fecha_catalizador')})"]
     lineas += ["", "## Por qué interesa", "_(pendiente)_", "", "## Qué la rompería", "_(pendiente)_", "",
-               "## Escenarios y precio de entrada", "_(pendiente: lo rellena el paso 7, calculadora de precio de entrada)_", ""]
+               "## Escenarios y precio de entrada",
+               "_(rellena la tabla; `lab medio entrada` calcula el precio. Si está vacía, copia la del último informe)_", ""]
     return "\n".join(lineas)
 
 
