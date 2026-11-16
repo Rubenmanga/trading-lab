@@ -23,6 +23,7 @@
   lab medio alertas         Revisa la lista de vigilancia y avisa
   lab medio seguimiento     Seguimiento diario de las empresas en config (momento de entrada + lista de noticias)
   lab medio noticias        Solo la lista de noticias (revisión rápida cada 2 h en horario de bolsa)
+  lab medio expediente [T]  Expediente por acción: hechos con fuente, fecha y reacción del precio
   lab radar parte|informe   Radar de resultados: prueba con el pasado (corre en GitHub Actions)
   lab panel                 Abre el panel web
 """
@@ -145,6 +146,12 @@ def _medio(args):
         for a in lista:
             print(f"[{a['tipo']}] {a['mensaje']}")
         print(f"{len(lista)} alertas. Guardadas en {path}")
+    elif args.accion == "expediente":
+        from .medio_plazo import expediente
+        res = expediente.ejecutar(cfg, [args.ticker] if args.ticker else None)
+        for t, r in res.items():
+            print(f"{t}: {r['eventos']} hechos (+{r['añadidas']} nuevos) · {r.get('ultimo') or '-'}"
+                  + (f" · AVISO: {r['error']}" if r.get("error") else ""))
     elif args.accion == "noticias":
         from .medio_plazo import seguimiento
         res = seguimiento.solo_lista(cfg)
@@ -328,7 +335,7 @@ def main(argv=None):
     pi.add_argument("accion", choices=["demo", "comprobar", "backtest", "sesion", "cerrar-todo"])
     pi.add_argument("--dias", type=int, default=30)
     pm = sub.add_parser("medio", help="Agente B: inversión a 12 meses")
-    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas", "fuentes", "seguimiento", "noticias"])
+    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas", "fuentes", "seguimiento", "noticias", "expediente"])
     pm.add_argument("ticker", nargs="?")
     pm.add_argument("--max", type=int, default=None, help="máximo de empresas a analizar (para pruebas)")
     pm.add_argument("--parte", type=int, default=1, help="oportunidades: qué trozo del universo descargar (1..N)")
