@@ -78,6 +78,8 @@ const cartera = csv(leer("config", "mi_cartera.csv")).map((r) => ({
 // Expediente por acción (paso 2): una sola línea de tiempo por empresa, juntando lo que ya se guarda.
 // Fuentes: investigacion/expedientes/T/eventos.csv (SEC y Yahoo, con enlace), el historial diario de la lista
 // de noticias, los titulares guardados y los informes del vigilante. Solo lectura: no se toca ningún archivo.
+let autopsias = {};
+try { autopsias = JSON.parse(leer("investigacion/autopsias", "autopsias.json") || "{}"); } catch { autopsias = {}; }
 function expedientes() {
   const out = {};
   const poner = (t, e) => { (out[t] ||= []).push(e); };
@@ -98,6 +100,9 @@ function expedientes() {
     const lineas = (leer("investigacion/vigilante", a) || "").split("\n").filter((l) => /^[245]\. /.test(l)).map((l) => l.slice(3).replace(/\*\*/g, ""));
     poner(m[1], { f: m[2], tipo: "vigilante", txt: lineas.join(" "), id: `investigacion/vigilante/${a}`, de: "Vigilante" });
   }
+  // Paso 10: cada autopsia de resultados es un hecho más de la línea de tiempo.
+  for (const a of autopsias.autopsias || [])
+    poner(a.ticker, { f: a.fecha, tipo: "autopsia", txt: `${a.frase}. ${a.leccion}`, id: "investigacion/autopsias/resumen.md", r1: a.r1, r5: a.r5, r20: a.r20, de: "Autopsia" });
   for (const t of Object.keys(out)) {
     const vistos = new Set();
     out[t] = out[t].filter((e) => e.f && !vistos.has(e.f + e.tipo + (e.url || e.txt)) && vistos.add(e.f + e.tipo + (e.url || e.txt)))
@@ -115,6 +120,8 @@ const datos = {
   ranking,
   cartera,
   expedientes: expedientes(),
+  // Paso 10: autopsias de resultados (esperado vs. real, previsión, reacción del precio).
+  autopsias,
   // Paso 3: libro de predicciones (solo añadir) y su puntuación frente al índice de small caps (IWM).
   predicciones: csv(leer("investigacion", "predicciones.csv")),
   propuestas: markdowns("investigacion/propuestas").slice(0, 7),
@@ -137,6 +144,7 @@ const datos = {
     ...markdowns("investigacion/quintuplicar", "INFORME").map((d) => ({ ...d, clase: "+500 %" })),
     ...markdowns("investigacion", "oportunidades").map((d) => ({ ...d, clase: "Buscador" })),
     ...markdowns("investigacion", "sectores").map((d) => ({ ...d, clase: "Sectores" })),
+    ...markdowns("investigacion/autopsias").map((d) => ({ ...d, fecha: d.fecha || autopsias.actualizado || "", clase: "Autopsias" })),
     ...markdowns("investigacion", "repaso").map((d) => ({ ...d, clase: "Repaso" })),
     ...markdowns("investigacion", "validacion").map((d) => ({ ...d, clase: "¿Acierta el ranking?" })),
     ...markdowns("investigacion/vigilante").map((d) => ({ ...d, clase: "Vigilante" })),

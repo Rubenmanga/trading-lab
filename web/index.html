@@ -967,7 +967,7 @@ const EXP_TIPO = {
   contrato: ["Contrato importante", "K", "var(--ok)", "cuentas"], ampliacion: ["Ampliación de capital (más acciones)", "$", "var(--bad)", "dinero"],
   grandes_inversores: ["Grandes inversores", "G", "var(--ok)", "dinero"], directivos: ["Directivos", "D", "var(--warn)", "dinero"], directivos_form4: ["Directivos (compra/venta, Form 4)", "d", "var(--warn)", "dinero"],
   movimiento: ["Movimiento fuerte del precio", "↕", "var(--warn)", "precio"], dia: ["Resumen del día", "·", "var(--sub)", "precio"], vigilante: ["Vigilante en bolsa", "👁", "var(--sub)", "precio"],
-  noticia: ["Noticia", "N", "var(--sub)", "noticias"],
+  noticia: ["Noticia", "N", "var(--sub)", "noticias"], autopsia: ["Autopsia de resultados", "✚", "var(--warn)", "cuentas"],
 };
 const EXP_FILTRO = [["", "Todo"], ["cuentas", "Cuentas y avisos"], ["dinero", "Directivos e inversores"], ["precio", "Precio"], ["noticias", "Noticias"]];
 let filtroExp = "";
@@ -993,11 +993,32 @@ function entradaCard(t, precio) {
     ${veredicto}</div>`;
 }
 
+/* Paso 10: autopsia de resultados = qué se esperaba, qué salió, qué dijo del futuro y cómo reaccionó. */
+function autopsiaCard(t) {
+  const GUIA = { sube: "la sube", mantiene: "la mantiene", baja: "la baja", retira: "la retira", retrasa: "retrasa entregas o fechas", sin: "no da previsión" };
+  const n = (x, d = 2) => vacio(x) ? "—" : num(+x, d);
+  return (D.autopsias?.autopsias || []).filter((a) => a.ticker === t).map((a) => {
+    const p = a.prediccion, col = a.precio === "cae" ? "bad" : a.precio === "sube" ? "ok" : "warn";
+    return `<div class="card" style="border-left:3px solid var(--${col})"><b>✚ Autopsia de resultados · ${esc(a.trimestre)}</b> <span class="chip ${col}t">${esc(a.frase)}</span>
+      <div class="mut" style="margin:4px 0 8px">${esc(a.fecha.split("-").reverse().join("/"))}, ${a.hora === "tras_cierre" ? "tras el cierre" : "antes de la apertura"}. Sirve para aprender por qué una acción sube o cae tras sus resultados.</div>
+      <div class="row"><span>Ventas: esperadas → reales</span><b>${n(a.ventas_esperadas)} → ${n(a.ventas_reales)} M$</b></div>
+      <div class="row"><span>Beneficio por acción (BPA)</span><b>${n(a.bpa_esperado)} → ${n(a.bpa_real)} $</b></div>
+      <div class="row"><span>Previsión de la empresa</span><b>${esc(GUIA[a.guia] || a.guia)}</b></div>
+      <div class="row"><span>Movimiento en las 20 sesiones de antes</span><b>${a.previa_20d == null ? "—" : (a.previa_20d > 0 ? "+" : "") + num(a.previa_20d, 1) + " %"}</b></div>
+      <div style="margin:6px 0;display:flex;gap:6px;flex-wrap:wrap">${vacio(a.extendido_pct) ? "" : reacc(+a.extendido_pct, "fuera de horario")}${reacc(a.r1, "1 día")}${reacc(a.r5, "5 días")}${reacc(a.r20, "20 días")}</div>
+      <div class="sub">${esc(a.guia_texto)}</div>
+      ${p ? `<div class="sub" style="margin-top:6px">📒 Nuestra predicción: «${esc(p.veredicto)}» a ${esc(p.precio)} $${p.stop_tesis ? `, stop de tesis ${esc(p.stop_tesis)} $${p.stop_roto ? ' → <b class="badt">roto</b>' : p.stop_roto === false ? " → aguanta" : ""}` : ""}.</div>` : ""}
+      <div class="sub" style="margin-top:6px">💡 <b>Lección:</b> ${esc(a.leccion)}</div>
+      <div class="mut" style="margin-top:6px">Fuentes: <a href="${urlOk(a.fuente_resultados) || "#"}" target="_blank" rel="noopener">nota oficial (SEC)</a> · consenso: ${esc(a.fuente_consenso)} · <a href="#/informe/${encodeURIComponent("investigacion/autopsias/resumen.md")}">todas las autopsias →</a></div></div>`;
+  }).join("");
+}
+
 function historiaVista(t) {
   const todos = D.expedientes?.[t] || [];
   const nombre = seguim(t)?.nombre || D.watchlist.find((w) => w.ticker === t)?.empresa || D.ranking?.filas.find((f) => f.ticker === t)?.empresa || "";
   let h = `<a class="back" href="#/cartera">← Mis acciones</a><h1 style="font-size:1.25rem;margin:4px 0 4px"><span class="tk" style="font-size:1.25rem">${esc(t)}</span> · Historia</h1><div class="sub" style="margin-bottom:10px">${esc(nombre)}</div>`;
   h += entradaCard(t, (D.estado?.precios || []).find((x) => x.ticker === t)?.precio);
+  h += autopsiaCard(t);
   if (!todos.length) return h + vacioBox("Todavía sin historia", "Esta empresa aún no tiene expediente. Se rellena solo cada día laborable (23:50 en España) para tus acciones y las que vigila el agente.");
   const ev = todos.filter((e) => !filtroExp || (EXP_TIPO[e.tipo] || [])[3] === filtroExp);
   const fuerte = todos.filter((e) => e.tipo === "movimiento").length, res = todos.filter((e) => e.tipo === "resultados").length;
