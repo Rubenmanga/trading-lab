@@ -123,7 +123,9 @@ const datos = {
   marcador: (() => { try { return JSON.parse(leer("investigacion/marcador", "marcador.json") || "null"); } catch { return null; } })(),
   lab,
   lab_demo: csv(leer("investigacion/laboratorio/demo", "registro.csv")),
-  corto: { registro: csv(leer("investigacion/corto-hueco", "registro.csv")), config: cfgCorto },
+  corto: { registro: csv(leer("investigacion/corto-hueco", "registro.csv")), config: cfgCorto,
+    // Paso 9: marcador del bot (real frente al backtest) y fecha de decisión.
+    marcador: (() => { try { return JSON.parse(leer("investigacion/corto-hueco", "marcador.json") || "null"); } catch { return null; } })() },
   historial_lista: csv(leer("investigacion/seguimiento", "lista-historial.csv")).map(({ porque, ...r }) => r),
   // Perfil «¿puede duplicar?»: el informe más reciente (o la lista provisional si aún no hay informe).
   duplicar: (markdowns("investigacion/duplicar", "INFORME")[0] || markdowns("investigacion/duplicar", "PROVISIONAL")[0] || null),

@@ -15,6 +15,7 @@
   lab laboratorio informe   ... compara las estrategias y escribe investigacion/laboratorio/
   lab corto operar          Corto del hueco en eToro DEMO: escanea a las 9:34 NY y vende en corto a las 9:35
   lab corto cerrar          ... cierra las posiciones del bot (a partir de las 15:45 NY)
+  lab corto marcador        ... resultados reales del bot frente al backtest y fecha de decisión
   lab diario                Escribe el diario del día en diario/
   lab medio oportunidades   Buscador: puntúa todas las small caps (8 factores) y guarda el ranking
   lab medio fuentes TICKER  Prueba las fuentes públicas gratis (SEC EDGAR, ClinicalTrials.gov, FRED)
@@ -299,6 +300,11 @@ def _corto(args):
 
     config.cargar_env()
     cfg = config.cargar("corto_hueco")
+    if args.accion == "marcador":
+        from .intradia.corto_hueco import marcador
+        m = marcador.calcular(cfg)
+        print(f"{marcador.texto(m)}\nGuardado en {marcador.guardar(m)}")
+        return
     sims = [x.strip().upper() for x in (args.simbolos or "").split(",") if x.strip()] or None
     etoro = EToroDemo()
     if args.accion == "operar":
@@ -398,7 +404,7 @@ def main(argv=None):
     pl.add_argument("--max", type=int, default=None)
     pl.add_argument("--por-minuto", type=int, default=None)
     pc = sub.add_parser("corto", help="Agente A · corto del hueco en eToro DEMO")
-    pc.add_argument("accion", choices=["operar", "cerrar"])
+    pc.add_argument("accion", choices=["operar", "cerrar", "marcador"])
     pc.add_argument("--ensayo", action="store_true", help="hace todo menos enviar órdenes")
     pc.add_argument("--simbolos", help="ensayo: mirar estos tickers aunque no tengan hueco")
     pc.add_argument("--forzar", action="store_true", help="cerrar: cerrar ya, sin esperar a la hora")

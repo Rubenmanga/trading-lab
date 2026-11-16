@@ -66,6 +66,7 @@ jobs:
           [ -n "$SIMBOLOS" ] && args="$args --simbolos $SIMBOLOS"
           echo "lab corto $args"
           python -m tradinglab.cli corto $args | tee -a "$GITHUB_STEP_SUMMARY"
+          python -m tradinglab.cli corto marcador | tee -a "$GITHUB_STEP_SUMMARY" || true
       - name: Aviso al móvil (issue) si hay algo que contar
         if: always()
         env:

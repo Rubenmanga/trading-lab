@@ -482,7 +482,7 @@ function hoy() {
   h += ev.length ? `<div class="card"><ul class="tl">${ev.slice(0, 10).map((e) => `<li style="--c:${e.col}"><div class="cuando">${esc(diaCorto(e.f))} · ${dias(e.f) === 0 ? "hoy" : dias(e.f) === 1 ? "mañana" : `en ${dias(e.f)} días`} · ${esc(e.origen)}</div><div><b>${esc(e.t)}</b> ${esc(e.texto)}</div></li>`).join("")}</ul>${ev.length > 10 ? `<details><summary class="sub">Ver ${ev.length - 10} más</summary><ul class="tl" style="margin-top:10px">${ev.slice(10).map((e) => `<li style="--c:${e.col}"><div class="cuando">${esc(diaCorto(e.f))} · en ${dias(e.f)} días · ${esc(e.origen)}</div><div><b>${esc(e.t)}</b> ${esc(e.texto)}</div></li>`).join("")}</ul></details>` : ""}</div>` : vacioBox("Sin fechas", "No hay catalizadores con fecha próxima.");
   // Los dos agentes
   h += `<div class="sec">Los dos agentes</div><div class="dos">
-    <a class="card" href="#/bot" style="text-decoration:none;color:inherit;border-top:2px solid var(--ia)"><div class="row"><b>A · Intradía</b><span class="chip">eToro demo</span></div><div class="sub">Corto del hueco: vende en corto las acciones que abren ≥ +${num((D.corto?.config?.hueco_min ?? 0.5) * 100, 0)} %, con stop y cierre el mismo día.</div><div class="mut" style="margin-top:6px">Reglas → riesgo → orden → cierre · ver decisiones →</div></a>
+    <a class="card" href="#/bot" style="text-decoration:none;color:inherit;border-top:2px solid var(--ia)"><div class="row"><b>A · Intradía</b><span class="chip">eToro demo</span></div><div class="sub">Corto del hueco: vende en corto las acciones que abren ≥ +${num((D.corto?.config?.hueco_min ?? 0.5) * 100, 0)} %, con stop y cierre el mismo día.</div><div class="mut" style="margin-top:6px">Reglas → riesgo → orden → cierre · ver decisiones →${D.corto?.marcador?.decision ? ` · se decide si sigue el ${esc(diaCorto(D.corto.marcador.decision.fecha))}` : ""}</div></a>
     <a class="card" href="#/ranking" style="text-decoration:none;color:inherit;border-top:2px solid var(--acc)"><div class="row"><b>B · Medio plazo (12 meses)</b><span class="chip">no opera</span></div><div class="sub">Puntúa ${R ? R.analizadas : "las"} small caps en 8 factores, vigila tu lista y avisa. Tú decides.</div><div class="mut" style="margin-top:6px">Ranking → análisis → vigilancia → aviso · ver ranking →</div></a></div>`;
   const F = fuentes(), mal = F.filter((f) => f.estado === "mal").length, reg = F.filter((f) => f.estado === "regular").length;
   h += `<a class="card" href="#/fuentes" style="display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit;margin-top:14px"><span><span class="dot" style="--c:var(--ok)"></span>${F.length - mal - reg} bien</span><span><span class="dot" style="--c:var(--warn)"></span>${reg} regular</span><span><span class="dot" style="--c:var(--bad)"></span>${mal} mal</span><span class="sub" style="margin-left:auto">Salud de las fuentes →</span></a>`;
@@ -667,6 +667,31 @@ function labVista() {
 }
 
 /* ---------- Bot del corto del hueco (agente A) ---------- */
+/* Paso 9: marcador del bot · lo real frente al backtest y la fecha en que se decide si sigue. */
+function marcadorBot() {
+  const M = D.corto?.marcador;
+  if (!M) return `<div class="sec" style="--c:var(--warn)">Marcador: real frente al backtest</div>` + vacioBox("Aún sin marcador", "Se calcula cada vez que el bot abre o cierra (días laborables).");
+  const b = M.bot || {}, t = M.backtest || {}, d = M.decision || {};
+  const col = { seguir: "var(--ok)", "en camino": "var(--ok)", apagar: "var(--bad)", "por debajo": "var(--bad)", "faltan operaciones": "var(--warn)", pronto: "var(--mut)" }[d.estado] || "var(--mut)";
+  const avance = Math.min(100, Math.round((b.n || 0) / (d.ops_min || 40) * 100));
+  const fila = (q, real, bt) => `<tr><td>${q}</td><td><b>${real}</b></td><td>${bt}</td></tr>`;
+  return `<div class="sec" style="--c:var(--warn)">Marcador: real frente al backtest</div>
+  <div class="card" style="border-left:3px solid ${col}">
+    <div class="row"><b>Decisión: ${esc(diaCorto(d.fecha))}</b><span class="chip">${d.dias > 0 ? `faltan ${d.dias} días` : "¡hoy toca decidir!"}</span></div>
+    <div style="margin:6px 0">${esc(d.texto || "")}</div>
+    <div class="mut">Listón: al menos <b>${d.ops_min}</b> operaciones y media de al menos <b>${rr(d.R_min)}</b>. Si no se cumple, el bot se apaga. Llevamos ${b.n || 0} de ${d.ops_min} (${avance} %)${t.esperadas_a_la_decision ? `; al ritmo del backtest saldrían unas ${t.esperadas_a_la_decision}, pero en la vida real eToro no deja vender en corto algunas, así que pueden ser menos` : ""}.</div>
+    <div style="height:6px;background:var(--line,#8883);border-radius:3px;margin-top:8px"><div style="height:6px;width:${avance}%;background:${col};border-radius:3px"></div></div>
+  </div>
+  <div class="card scroll"><table class="t"><thead><tr><th></th><th>Real (demo)</th><th>Backtest ${t.periodo ? esc(String(t.periodo[0]).slice(0, 4)) + "-" + esc(String(t.periodo[1]).slice(0, 4)) : ""}</th></tr></thead><tbody>
+    ${fila("Operaciones cerradas", `${b.n || 0}${b.abiertas ? ` <span class="mut">(+${b.abiertas} abiertas)</span>` : ""}`, num(t.n, 0))}
+    ${fila("Resultado medio", `${rr(b.R_medio)}${b.margen95 ? ` <span class="mut">± ${num(b.margen95, 2)}</span>` : ""}`, `${rr(t.R_medio)}${t.ic95 ? ` <span class="mut">(${num(t.ic95[0], 2)} a ${num(t.ic95[1], 2)})</span>` : ""}`)}
+    ${fila("% medio por operación", pct(b.ret_pct_medio), pct(t.ret_pct_medio))}
+    ${fila("Ganadoras", vacio(b.aciertos_pct) ? "—" : `${num(b.aciertos_pct, 0)} %`, vacio(t.aciertos_pct) ? "—" : `${num(t.aciertos_pct, 0)} %`)}
+    ${fila("Stops saltados (supuestos)", num(b.stops_supuestos || 0, 0), "—")}
+  </tbody></table>
+  <div class="mut" style="margin-top:6px"><b>R</b> = cuánto se gana o pierde medido en «riesgos»: 1 R es lo que se pierde si salta el stop (${num(M.stop_pct, 0)} %). Así, un corto que acaba +3 % vale +0,2 R. «Supuesto» = el bot no la encontró abierta al cierre, lo más probable es que saltara el stop (se cuenta como −1 R). Con menos de 20 operaciones el resultado es casi todo suerte.</div></div>
+  ${Object.keys(M.alpaca || {}).length ? `<div class="card"><b>Demo de Alpaca (laboratorio)</b>${Object.values(M.alpaca).map((a) => `<div class="sub">${esc(a.nombre)}: ${a.n} cerradas, media ${rr(a.R_medio)} · backtest ${rr(a.backtest_R)}</div>`).join("")}</div>` : ""}`;
+}
 const ACC = { candidata: ["var(--acc)", "Candidata"], descartada: ["var(--mut)", "Descartada"], ensayo: ["var(--ia)", "Ensayo"], "ensayo cierre": ["var(--ia)", "Ensayo cierre"], abierta: ["var(--warn)", "Corto abierto"], cerrada: ["var(--ok)", "Cerrada"], error: ["var(--bad)", "Error"], nada: ["var(--mut)", "Nada hoy"] };
 const horaEsp = (hhmm) => { const [h, m] = String(hhmm || "").split(":").map(Number); return isNaN(h) ? "—" : `${String((h + 6) % 24).padStart(2, "0")}:${String(m || 0).padStart(2, "0")}`; };
 function bot() {
@@ -688,6 +713,7 @@ function bot() {
     <div class="paso" style="--c:var(--ok)"><div class="cab"><span class="num">4</span>Cierre<span class="tag">${esc(C.hora_cierre || "15:45")} NY · ${horaEsp(C.hora_cierre || "15:45")} España</span></div><dl><dt>Hace</dt><dd>cierra todo antes del final de la sesión</dd><dt>Apunta</dt><dd>resultado y motivo de cada decisión</dd><dt>Avisa</dt><dd>con un aviso en GitHub</dd></dl></div>
   </div>
   <div class="mut" style="margin-top:6px">Este bot no usa IA: solo reglas. La hora de España es la habitual (+6 h); puede variar unos días al año por el cambio de hora.</div>`;
+  h += marcadorBot();
   // Curva
   h += `<div class="sec" style="--c:var(--acc)">Curva de resultados (demo)</div>`;
   if (cer.length >= 2) { let s = 0; const serie = [0, ...cer.map((r) => (s += +r.resultado_pct))]; h += `<div class="card">${linea(serie, { base: 0, color: acum >= 0 ? "var(--ok)" : "var(--bad)", etiquetas: ["inicio", ...cer.map((r, i) => `${r.fecha_hora_ny.slice(0, 10)} ${r.simbolo}: ${pct(r.resultado_pct)} (acumulado ${pct(serie[i + 1])})`)] })}<div class="mut">Suma de los % de cada operación cerrada. Toca un punto para ver la operación.</div></div>`; }
