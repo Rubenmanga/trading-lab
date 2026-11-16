@@ -31,6 +31,9 @@ CAMPOS = ["fecha_hora_ny", "estrategia", "simbolo", "accion", "lado", "precio", 
           "nota", "filtro", "R", "motivo", "precio_senal", "retraso_s", "relleno", "deslizamiento_pct"]
 
 
+VISTAS: set = set()   # señales ya decididas (descartadas o enviadas) en esta ejecución
+
+
 def carpeta() -> Path:
     return config.ruta("investigacion", "laboratorio", "demo")
 
@@ -177,6 +180,9 @@ def decidir(cfg: dict, cands: pd.DataFrame, por_sim: dict, broker, ahora: dateti
         cid = id_cliente(fecha, o["estrategia"], o["simbolo"])
         if cid in ya:
             continue
+        clave = (fecha, o["estrategia"], o["simbolo"], o["hora_entrada"])
+        if clave in VISTAS:       # la misma señal se vuelve a ver en las pasadas siguientes: se apunta una sola vez
+            continue
         base = dict(fecha_hora_ny=marca, estrategia=o["estrategia"], simbolo=o["simbolo"], lado=o["lado"],
                     nota=o.get("nota"), filtro=o.get("filtro"))
         stop_pct = cfg["estrategias"][o["estrategia"]].get("stop_pct", cfg["riesgo"]["stop_pct"])
@@ -209,6 +215,7 @@ def decidir(cfg: dict, cands: pd.DataFrame, por_sim: dict, broker, ahora: dateti
             obj = round(float(ult) * (0.5 if o["lado"] == "venta" else 1.5), 2)
         fila = {**base, "precio": round(float(ult), 4), "stop": stop, "objetivo": obj, "acciones": qty,
                 "precio_senal": o["entrada_bruta"], "retraso_s": retraso}
+        VISTAS.add(clave)
         if motivo:
             filas.append({**fila, "accion": "descartada", "motivo": motivo})
             continue

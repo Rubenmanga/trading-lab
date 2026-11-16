@@ -75,7 +75,10 @@ class Estado:
             elif tipo == "t" and s:           # última operación: precio al instante
                 self.ultimo[s] = x["p"]
 
-    def por_sim(self) -> dict[str, pd.DataFrame]:
+    def por_sim(self, ahora: datetime | None = None) -> dict[str, pd.DataFrame]:
+        """Velas por acción. Con `ahora`, si la última vela acaba de cerrarse se añade una vela «de entrada»
+        sintética (precio = última operación): así la señal se ve en el MISMO segundo en que cierra la vela, sin
+        esperar un minuto más a que cierre la vela de entrada."""
         out = {}
         for s in set(self.base) | set(self.nuevas):
             partes = []
@@ -91,6 +94,12 @@ class Estado:
                     partes.append(n)
             if partes:
                 m = pd.concat(partes, ignore_index=True).drop_duplicates("t", keep="last").sort_values("t")
+                if ahora is not None:
+                    minuto = pd.Timestamp(ahora).tz_convert("UTC").floor("min")
+                    if m["t"].iloc[-1] + pd.Timedelta(minutes=1) == minuto:
+                        px = float(self.ultimo.get(s, m["c"].iloc[-1]))
+                        m = pd.concat([m, pd.DataFrame([dict(simbolo=s, t=minuto, o=px, h=px, l=px, c=px, v=0)])],
+                                      ignore_index=True)
                 out[s] = simular.preparar(m[["simbolo", "t", "o", "h", "l", "c", "v"]])
         return out
 
@@ -169,7 +178,7 @@ async def correr(cfg: dict, cfg_estudio: dict, datos, broker, ensayo: bool = Fal
             if estado.sucio and loop.time() - estado.ultimo_mensaje >= 1.5:   # ya llegaron las velas del minuto
                 estado.sucio = False
                 t0 = loop.time()
-                filas = await asyncio.to_thread(demo.decidir, cfg, cands, estado.por_sim(), broker, ahora(), ensayo,
+                filas = await asyncio.to_thread(demo.decidir, cfg, cands, estado.por_sim(ahora()), broker, ahora(), ensayo,
                                                 D.get("senal_max_min_directo", 2), dict(estado.ultimo))
                 n += 1
                 if filas:
