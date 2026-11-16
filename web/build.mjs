@@ -115,6 +115,9 @@ const datos = {
   ranking,
   cartera,
   expedientes: expedientes(),
+  // Paso 3: libro de predicciones (solo añadir) y su puntuación frente al índice de small caps (IWM).
+  predicciones: csv(leer("investigacion", "predicciones.csv")),
+  marcador: (() => { try { return JSON.parse(leer("investigacion/marcador", "marcador.json") || "null"); } catch { return null; } })(),
   lab,
   lab_demo: csv(leer("investigacion/laboratorio/demo", "registro.csv")),
   corto: { registro: csv(leer("investigacion/corto-hueco", "registro.csv")), config: cfgCorto },

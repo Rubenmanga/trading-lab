@@ -1,0 +1,14 @@
+id,fecha,ticker,informe,veredicto,conviccion,probabilidad,precio,zona_entrada_max,objetivo,stop_tesis,fecha_revision,nota
+AEHR-2026-11-14,2026-11-14,AEHR,investigacion/analisis/AEHR-2026-11-14.md,vigilar,2,,56.98,47,65,38,2027-11-14,copiada de watchlist.csv al crear el libro
+AMSC-2026-11-14,2026-11-14,AMSC,investigacion/analisis/AMSC-2026-11-14.md,comprar_en_zona,3,,24.13,22,32,17,2027-11-14,copiada de watchlist.csv al crear el libro
+DCTH-2026-11-14,2026-11-14,DCTH,investigacion/analisis/DCTH-2026-11-14.md,vigilar,3,,20.55,17,27,13,2027-11-14,copiada de watchlist.csv al crear el libro
+FTH-2026-11-14,2026-11-14,FTH,investigacion/analisis/FTH-2026-11-14.md,vigilar,2,,10.03,10.5,20,6.5,2027-11-14,copiada de watchlist.csv al crear el libro
+ORIC-2026-11-14,2026-11-14,ORIC,investigacion/analisis/ORIC-2026-11-14.md,vigilar,2,,7.86,8.5,13,6.5,2027-11-14,copiada de watchlist.csv al crear el libro
+PGY-2026-11-14,2026-11-14,PGY,investigacion/analisis/PGY-2026-11-14.md,comprar_en_zona,3,,16.87,17.5,25,12.5,2027-11-14,copiada de watchlist.csv al crear el libro
+REPX-2026-11-14,2026-11-14,REPX,investigacion/analisis/REPX-2026-11-14.md,comprar_en_zona,3,,44.40,46,58,36,2027-11-14,copiada de watchlist.csv al crear el libro
+AMPX-2026-11-16,2026-11-16,AMPX,investigacion/analisis/AMPX-2026-11-16.md,vigilar,3,,7.93,9.50,11.50,6.80,2027-11-16,copiada de watchlist.csv al crear el libro
+POET-2026-11-16,2026-11-16,POET,investigacion/analisis/POET-2026-11-16-resultados.md,mantener,,,5.13,,,,2027-02-16,mantener durante los resultados (sin objetivo ni stop); revisión a 3 meses
+RCAT-2026-11-16,2026-11-16,RCAT,investigacion/analisis/RCAT-2026-11-16.md,vigilar,2,,3.80,5.00,6,3.20,2027-11-16,copiada de watchlist.csv al crear el libro
+SSII-2026-11-16,2026-11-16,SSII,investigacion/analisis/SSII-2026-11-16.md,vigilar,1,,1.37,2.60,2.20,1.20,2027-11-16,copiada de watchlist.csv al crear el libro
+SVRA-2026-11-16,2026-11-16,SVRA,investigacion/analisis/SVRA-2026-11-16.md,vigilar,3,,4.45,4.80,8.00,4.10,2027-11-16,copiada de watchlist.csv al crear el libro
+TE-2026-11-16,2026-11-16,TE,investigacion/analisis/TE-2026-11-16.md,vigilar,2,,1.53,2.10,2.40,1.35,2027-11-16,copiada de watchlist.csv al crear el libro

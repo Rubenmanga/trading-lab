@@ -160,7 +160,7 @@ svg text{font-family:inherit}
     <button class="tema" id="tema" title="Cambiar tema (automático / oscuro / claro)" aria-label="Cambiar tema">◐</button>
   </div>
   <nav class="tabs" id="tabs">
-    <a href="#/">Hoy</a><a href="#/cartera">Mis acciones</a><a href="#/ranking">Ranking</a><a href="#/bot">Bot corto</a><a href="#/lab">Laboratorio</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Vigilancia del agente</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/informes">Informes</a><a href="#/mas">Más</a>
+    <a href="#/">Hoy</a><a href="#/cartera">Mis acciones</a><a href="#/ranking">Ranking</a><a href="#/bot">Bot corto</a><a href="#/lab">Laboratorio</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Vigilancia del agente</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/informes">Informes</a><a href="#/marcador">Marcador</a><a href="#/mas">Más</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"><div class="empty">Cargando…</div></main>
@@ -846,8 +846,32 @@ function fuentesVista() {
     F.map((f) => `<div class="card" style="display:flex;gap:12px;align-items:flex-start;border-left:3px solid ${C[f.estado][0]}"><span style="min-width:0;flex:1"><div class="row"><b>${esc(f.nombre)}</b><span class="chip" style="color:${C[f.estado][0]}">${C[f.estado][1]}</span></div><div class="sub">${esc(f.que)}</div><div class="mut">${esc(f.det)}</div></span></div>`).join("") +
     (F.some((f) => f.nombre.startsWith("SEC") && f.estado === "mal") ? `<div class="card sub">La SEC pide identificarse para dar datos. Se arregla creando en GitHub el secreto <b>SEC_USER_AGENT</b> con «Nombre email». Pídeselo a Claude en el chat si quieres ayuda.</div>` : "");
 }
+function marcadorVista() {
+  const M = D.marcador, libro = D.predicciones || [];
+  const inf = (ruta) => (D.informes || []).find((i) => i.id === ruta);
+  let h = `<div class="card aviso" style="--c:var(--acc)"><span class="ico">◎</span><span class="sub">Cada análisis deja apuntada una <b>predicción con fecha</b> (comprar, vigilar…, con precio, objetivo y stop). Aquí se comprueba sola si acertó, comparándola con el <b>índice de small caps (IWM)</b>, que es lo que habrías ganado sin elegir nada. Las predicciones <b>no se pueden cambiar</b> después: solo se añaden nuevas.</span></div>`;
+  if (!M) return h + vacioBox("Aún sin puntuar", `Hay ${libro.length} predicciones apuntadas. La primera puntuación llega en cuanto se ejecute el marcador (cada viernes por la noche y cada vez que se añade un análisis).`);
+  const r = M.resumen, poca = r.puntuadas < 10;
+  h += `<div class="card"><div class="row"><span>Aciertos</span><b class="${r.aciertos_pct == null ? "mut" : r.aciertos_pct >= 50 ? "okt" : "badt"}">${r.aciertos_pct == null ? "—" : `${r.aciertos} de ${r.puntuadas} (${r.aciertos_pct} %)`}</b></div>
+    <div class="row"><span>Si hubieras comprado todas, frente al IWM</span><b class="${r.exceso_medio_todas == null ? "mut" : r.exceso_medio_todas >= 0 ? "okt" : "badt"}">${pct(r.exceso_medio_todas)}</b></div>
+    <div class="row"><span>Solo las de «comprar/mantener» (${r.n_compras})</span><b class="${r.exceso_medio_compras == null ? "mut" : r.exceso_medio_compras >= 0 ? "okt" : "badt"}">${pct(r.exceso_medio_compras)}</b></div>
+    <div class="row"><span>En el libro</span><b>${r.total} <span class="mut">· ${r.pronto} aún pronto · ${r.cerradas} cerradas</span></b></div>
+    <div class="sub" style="margin-top:8px">${poca ? `<b class="warnt">Poco concluyente.</b> ` : ""}${esc(r.muestra)} Actualizado el ${esc(M.actualizado)}.</div></div>`;
+  if (r.calibracion?.length) h += `<div class="sec">¿Acierta más cuando está más seguro?</div><div class="card">${r.calibracion.map((c) => `<div class="row"><span>Convicción ${esc(c.conviccion)} de 3 <span class="mut">(${c.n} puntuadas)</span></span><b>${c.aciertos_pct == null ? "—" : c.aciertos_pct + " %"}</b></div>`).join("")}<div class="mut" style="margin-top:6px">Si todo va bien, la convicción 3 debería acertar más que la 1. Con menos de 10 en cada grupo, no se puede saber todavía.</div></div>`;
+  const ic = { acierto: ["✓", "okt", "Acierto"], fallo: ["✗", "badt", "Fallo"], pronto: ["…", "mut", "Aún pronto"] };
+  h += `<div class="sec">Cada predicción</div>` + [...M.filas].sort((a, b) => b.fecha.localeCompare(a.fecha) || a.ticker.localeCompare(b.ticker)).map((f) => {
+    const [s, c, t] = ic[f.resultado] || ic.pronto, i = inf(f.informe);
+    return `<div class="card"><div class="row"><span><span class="tk">${esc(f.ticker)}</span> <span class="sub">${esc(f.veredicto.replace(/_/g, " "))} · ${esc(f.fecha)}${f.conviccion ? ` · convicción ${esc(f.conviccion)}` : ""}</span></span><b class="${c}">${s} ${t}${f.estado === "abierta" && f.resultado !== "pronto" ? ' <span class="mut">(provisional)</span>' : ""}</b></div>
+      <div class="sub">Precio al analizar ${num(f.precio)} $ → ${num(f.precio_final)} $ (${f.sesiones} sesiones). Acción ${pct(f.rent_pct)} · IWM ${pct(f.rent_indice_pct)} · diferencia <b class="${f.exceso_pct == null ? "" : f.exceso_pct >= 0 ? "okt" : "badt"}">${pct(f.exceso_pct)}</b></div>
+      <div class="mut">${esc(f.explicacion)}${f.objetivo ? ` Objetivo ${f.objetivo} $` : ""}${f.stop ? ` · stop ${f.stop} $` : ""}${f.toco_zona ? " · tocó la zona de entrada" : ""} · revisión final ${esc(f.fecha_revision)}</div>
+      ${i ? `<a href="#/informe/${encodeURIComponent(i.id)}">Leer el análisis →</a>` : ""}</div>`;
+  }).join("");
+  h += `<div class="card md"><b>Cómo se puntúa</b><ul><li><b>Comprar / mantener</b>: acierta si la acción gana más que el IWM desde el día del análisis, o si llega al objetivo. Falla si toca el stop.</li><li><b>Vigilar</b>: acierta si esperar no costó nada (la acción no batió al IWM o tocó el stop). Falla si se escapó hacia arriba.</li><li>Antes de 5 sesiones de bolsa se marca <b>aún pronto</b>. Mientras no llega la fecha de revisión (12 meses), el resultado es <b>provisional</b> y puede cambiar.</li><li>Con pocas predicciones el porcentaje es casi azar: hacen falta decenas para fiarse.</li></ul></div>`;
+  return h;
+}
 function masVista() {
-  const it = [["#/bot", "⚡", "var(--ia)", "Bot corto del hueco", "Agente A en eToro demo: cómo decide y qué hizo cada día."],
+  const it = [["#/marcador", "◎", "var(--acc)", "Marcador de aciertos", "¿Aciertan los análisis? Cada predicción frente al índice de small caps."],
+    ["#/bot", "⚡", "var(--ia)", "Bot corto del hueco", "Agente A en eToro demo: cómo decide y qué hizo cada día."],
     ["#/lab", "⚗", "var(--ia)", "Laboratorio intradía", "Agente A: 6 estrategias a la vez en papel, con el pasado y cada día."],
     ["#/vigilancia", "✓", "var(--ok)", "Vigilancia del agente", "Empresas que el agente analiza y vigila por su cuenta, con zona de entrada, objetivo y stop."],
     ["#/duplicar", "×2", "var(--ok)", "¿Puede duplicar?", "Perfil con tus criterios para buscar acciones que puedan doblar."],
@@ -927,8 +951,8 @@ function historiaVista(t) {
 }
 
 /* ---------- Navegación ---------- */
-const TITULO = { "/ranking": "Ranking", "/bot": "Bot corto del hueco", "/lab": "Laboratorio intradía", "/seguimiento": "Seguimiento de noticias", "/vigilancia": "Vigilancia del agente", "/cartera": "Mis acciones", "/duplicar": "¿Puede duplicar?", "/x6": "¿+500 %?", "/informes": "Informes", "/candidatos": "Cribado simple", "/ayuda": "Cómo se usa", "/mas": "Más", "/fuentes": "Salud de las fuentes" };
-const EN_MAS = ["/bot", "/lab", "/vigilancia", "/duplicar", "/x6", "/informes", "/candidatos", "/ayuda", "/fuentes"];
+const TITULO = { "/ranking": "Ranking", "/bot": "Bot corto del hueco", "/lab": "Laboratorio intradía", "/seguimiento": "Seguimiento de noticias", "/vigilancia": "Vigilancia del agente", "/cartera": "Mis acciones", "/duplicar": "¿Puede duplicar?", "/x6": "¿+500 %?", "/informes": "Informes", "/candidatos": "Cribado simple", "/ayuda": "Cómo se usa", "/mas": "Más", "/fuentes": "Salud de las fuentes", "/marcador": "Marcador de aciertos" };
+const EN_MAS = ["/bot", "/lab", "/vigilancia", "/duplicar", "/x6", "/informes", "/candidatos", "/ayuda", "/fuentes", "/marcador"];
 function pintar(mantener) {
   const r = location.hash.replace(/^#/, "") || "/";
   const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/ranking" : r.startsWith("/seguimiento") ? "/seguimiento" : r.startsWith("/cartera") || r.startsWith("/historia/") ? "/cartera" : r;
@@ -946,6 +970,7 @@ function pintar(mantener) {
       : r.startsWith("/cartera") ? carteraVista()
       : r === "/ranking" ? oportunidades() : r === "/bot" ? bot() : r === "/lab" ? labVista() : r === "/informes" ? informes() : r === "/candidatos" ? candidatos()
       : r === "/ayuda" ? ayuda() : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : r === "/x6" ? quintuplicar()
+      : r === "/marcador" ? marcadorVista()
       : r === "/mas" ? masVista() : r === "/fuentes" ? fuentesVista() : hoy();
   } catch (e) { console.error(e); cuerpo = vacioBox("Algo ha fallado al dibujar esta parte", esc(e.message)); }
   app.innerHTML = (r.startsWith("/informe/") || r.startsWith("/empresa/") || r.startsWith("/historia/") ? "" : titulo) + cuerpo;

@@ -1,0 +1,44 @@
+# Marcador de aciertos (Paso 3 de la revisión del 16-nov-2026). SIN IA y gratis.
+# 1) Apunta en investigacion/predicciones.csv los análisis nuevos de watchlist.csv (solo añade líneas).
+# 2) Puntúa cada predicción frente a lo que hizo el precio y el índice de small caps (IWM).
+# Salida: investigacion/marcador/marcador.json y marcador.md → página «Marcador» del panel.
+name: Marcador de aciertos
+
+on:
+  schedule:
+    - cron: "30 22 * * 5"   # viernes 23:30 de Madrid (invierno), tras el cierre semanal
+  push:
+    branches: [main]
+    paths: ["investigacion/watchlist.csv", "investigacion/predicciones.csv"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: datos-investigacion
+  cancel-in-progress: false
+
+jobs:
+  puntuar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" tzdata
+      - name: Puntuar predicciones
+        env:
+          PYTHONPATH: src
+        run: python -m tradinglab.cli medio marcador
+      - name: Guardar (el panel se actualiza solo)
+        run: |
+          git config user.name "agente-12m"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add investigacion/predicciones.csv investigacion/marcador/ 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Marcador de aciertos $(date -u +%F)"
+          git pull --rebase --autostash -q || true
+          git push
