@@ -113,6 +113,10 @@ function expedientes() {
 
 const datos = {
   construido: new Date().toISOString(),
+  schema_version: 2,
+  // Distinguir fecha de compilación de fecha real de cada fuente.
+  procedencia: { ranking: ranking?.actualizado || null, alertas: estado?.actualizado || null,
+    noticias: seguimiento?.lista?.fecha || null, laboratorio: lab?.actualizado || null },
   watchlist: csv(leer("investigacion", "watchlist.csv")),
   candidatos: csv(leer("investigacion", "candidatos.csv")),
   estado,
@@ -160,5 +164,6 @@ fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
 fs.writeFileSync(path.join(DIST, "datos.json"), JSON.stringify(datos));
 fs.copyFileSync(path.join(RAIZ, "web", "index.html"), path.join(DIST, "index.html"));
+for (const nombre of ["quality.js", "decision-center.css"]) fs.copyFileSync(path.join(RAIZ, "web", nombre), path.join(DIST, nombre));
 fs.cpSync(path.join(RAIZ, "web", "vendor"), path.join(DIST, "vendor"), { recursive: true });
 console.log(`Panel listo: ${datos.ranking ? datos.ranking.filas.length : 0} en ranking, ${datos.watchlist.length} en vigilancia, ${datos.candidatos.length} candidatos, ${datos.informes.length} informes, ${Object.values(datos.expedientes).flat().length} hechos en ${Object.keys(datos.expedientes).length} expedientes.`);
