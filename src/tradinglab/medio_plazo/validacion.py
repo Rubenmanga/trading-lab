@@ -37,6 +37,33 @@ def guardar_foto(filas: list[dict], hoy: date | None = None, dir_: str | None = 
     return p
 
 
+# Foto diaria de lo que dicen los analistas. Su historia gratis no existe, así que la guardamos nosotros:
+# dentro de unos meses permitirá probar con el pasado la parte de "revisiones de analistas" del ranking.
+COLUMNAS_ANALISTAS = [
+    "ticker", "precio", "capitalizacion", "sector", "analistas", "recomendacion_media", "objetivo_medio",
+    "objetivo_alto", "objetivo_bajo", "rev_bpa_30d_anio", "rev_bpa_90d_anio", "rev_bpa_30d_sig", "rev_bpa_90d_sig",
+    "revisiones_suben_30d", "revisiones_bajan_30d", "mejoras_90d", "mejoras_neto_90d", "objetivos_suben_90d",
+    "objetivos_bajan_90d", "crec_bpa_sig_anio", "crec_ventas_sig_anio", "f_score", "altman_z", "beneish_m"]
+
+
+def guardar_foto_analistas(filas: list[dict], hoy: date | None = None, dir_: str | None = None) -> str:
+    import gzip
+    hoy = hoy or date.today()
+    dir_ = dir_ or os.path.join(carpeta(), "analistas")
+    os.makedirs(dir_, exist_ok=True)
+    p = os.path.join(dir_, f"{hoy.isoformat()}.csv.gz")
+    with gzip.open(p, "wt", encoding="utf-8", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(COLUMNAS_ANALISTAS)
+        for f in filas:
+            fila = []
+            for k in COLUMNAS_ANALISTAS:
+                v = f.get(k)
+                fila.append(round(v, 4) if isinstance(v, float) else ("" if v is None else v))
+            w.writerow(fila)
+    return p
+
+
 def leer_foto(p: str) -> list[dict]:
     with open(p, encoding="utf-8") as fh:
         return [dict(puesto=int(r["puesto"]), ticker=r["ticker"], nota=float(r["nota"]), precio=float(r["precio"]))
@@ -150,6 +177,7 @@ def actualizar(res: dict) -> dict:
     v = validar(filas)
     if not res.get("provisional"):
         guardar_foto(filas)
+        guardar_foto_analistas(filas)
     with open(ruta("investigacion", "validacion.md"), "w", encoding="utf-8") as fh:
         fh.write(informe(v))
     return v

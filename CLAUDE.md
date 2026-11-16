@@ -36,6 +36,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 | A · **corto del hueco** en eToro DEMO (hueco ≥ +50 % → corto 9:35 NY, stop 15 %, cierre 15:45) | `src/tradinglab/intradia/corto_hueco/`, `config/corto_hueco.yaml`, workflow `corto-hueco.yml`, registro en `investigacion/corto-hueco/` |
 | A · estudio histórico (ORB + top gainers) | `lab estudio …`, workflow `estudio-intradia.yml`, informes en `investigacion/estrategias/*.md` |
 | **B · Medio plazo 12 meses**: small caps de **todos los sectores** con buenas previsiones. No opera: analiza, vigila, avisa | `src/tradinglab/medio_plazo/`, `config/medio_plazo.yaml`, `investigacion/` |
+| B · **backtest 2014→hoy** (cuentas SEC con fecha + precios Yahoo, misma nota del ranking, frente a IWM) | `src/tradinglab/backtest12m/`, workflow `backtest-12m.yml`, informe en `investigacion/backtest-12m/` |
 | B · perfiles («¿puede duplicar?», «+500 %») | `src/tradinglab/perfiles/`, `investigacion/duplicar/`, `investigacion/quintuplicar/` |
 | Código común (datos, almacén) | `src/tradinglab/common/` |
 | Diario del agente A | `diario/`, `src/tradinglab/diario.py` |
@@ -65,6 +66,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 - `corto-hueco.yml`: L-V, apertura (9:00-9:50 NY) y cierre (15:45 NY) del corto del hueco en eToro demo; issue `corto-hueco` como aviso.
 - `estudio-intradia.yml`: backtest histórico → `investigacion/estrategias/`.
 - `perfil-duplicar.yml`: perfil duplicar → `investigacion/duplicar/`.
+- `backtest-12m.yml`: backtest del agente B → `investigacion/backtest-12m/` (`INFORME-*.md`, `resultados.json`: usa `jq`).
 - `publicar-investigacion.yml`: si un PR toca **solo** `investigacion/`, se fusiona y publica solo en el panel.
 
 ## Skills (`.claude/skills/`)

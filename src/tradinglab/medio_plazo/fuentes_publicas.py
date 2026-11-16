@@ -323,6 +323,18 @@ def completar(filas: list[dict], cfg: dict | None = None) -> dict:
         res["sec_segundos"] = round(time.monotonic() - t0)
         if not sec and ULTIMO_ERROR.get("www.sec.gov"):
             res["sec_error"] = ULTIMO_ERROR["www.sec.gov"]
+    if cfg.get("cuentas", True):   # cuentas anuales XBRL: Piotroski, Altman Z'', Beneish M, rentabilidad bruta
+        from . import sec_cuentas
+        t0 = time.monotonic()
+        cu = sec_cuentas.descargar([f["ticker"] for f in filas], limite_seg=cfg.get("cuentas_limite_seg", 1200))
+        for f in filas:
+            if f["ticker"] in cu:
+                f.update(cu[f["ticker"]])
+        res["cuentas_empresas"] = len(cu)
+        res["cuentas_con_f_score"] = sum(1 for v in cu.values() if v.get("f_score") is not None)
+        res["cuentas_segundos"] = round(time.monotonic() - t0)
+        if not cu and ULTIMO_ERROR.get("data.sec.gov"):
+            res["cuentas_error"] = ULTIMO_ERROR["data.sec.gov"]
     if cfg.get("ensayos", True):
         salud = {f["ticker"]: f.get("empresa") for f in filas if f.get("sector") == "Healthcare" and f.get("empresa")}
         t0 = time.monotonic()
