@@ -53,7 +53,11 @@ Comprar / Sobreponderar / Mantener / Infraponderar / Vender, sin refugiarse en "
 ## Fase 4 · Plan del trader
 Rol 8: zona de entrada máxima (precio), entrada escalonada, **señal técnica de confirmación** (tendencia fase 2,
 base VCP, hueco PEAD que se mantiene o vuelta sobre la MA50), stop de tesis (precio y hecho), objetivo propio
-a 12 meses y escenarios bueno/base/malo con probabilidad. Tamaño con la skill `position-sizer`
+a 12 meses y escenarios bueno/base/malo con probabilidad, en una tabla `| Escenario | Probabilidad | Precio a 12 meses | Por qué |`
+(probabilidades que sumen 100 %). **La zona de entrada máxima NO se elige a ojo**: sale de la calculadora
+(`lab medio entrada TICKER`, Paso 7: el más bajo entre la regla 3 a 1 y el valor esperado −15 %). Copia los
+escenarios en `investigacion/expedientes/TICKER/tesis.md`, ejecútala y usa su precio; si dice «todo o nada»,
+no hay precio de entrada: decide solo el tamaño (pequeño). Tamaño con la skill `position-sizer`
 (riesgo ≤ 1% de la cartera hasta el stop; ninguna small cap > 5%).
 
 ## Fase 5 · Debate de riesgo (agresivo, prudente, neutral) → Gestor de cartera
@@ -90,7 +94,7 @@ Antes de terminar, pasa la skill `pre-trade-discipline-gate` mentalmente: ¿hay 
    - Antes del PR: `lab medio regla-fuentes investigacion/analisis/TICKER-AAAA-MM-DD.md` (o
      `PYTHONPATH=src python -m tradinglab.medio_plazo.regla_fuentes RUTA`) debe decir «pasa».
 2. Fila en `investigacion/watchlist.csv` (columnas: ticker, empresa, sector, fecha_analisis, veredicto,
-   conviccion, precio_analisis, zona_entrada_max, precio_objetivo_12m, stop_tesis, proximo_catalizador,
+   conviccion, precio_analisis, zona_entrada_max (= precio de la calculadora), precio_objetivo_12m, stop_tesis, proximo_catalizador,
    fecha_catalizador [AAAA-MM-DD], informe).
 3. Registra la tesis con `trader-memory-core` si Ruben lleva diario.
 4. Desde la nube: PR que toque **solo** `investigacion/` → se publica solo en el panel.

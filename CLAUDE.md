@@ -42,6 +42,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 | B · **marcador de aciertos** (libro `investigacion/predicciones.csv` solo-añadir, se llena desde `watchlist.csv`; puntúa frente a IWM) | `medio_plazo/marcador.py`, `lab medio marcador`, workflow `marcador.yml`, `investigacion/marcador/`; en el panel, `#/marcador` |
 | B · **carpeta del día** (`investigacion/hoy.md`, sin IA, < 1 pantalla: avisos, hechos nuevos, zona de entrada, catalizadores 14 d, nuevas del top 10). El investigador diario lee **solo** esto | `medio_plazo/carpeta_dia.py`, `lab medio hoy`, dentro de `agente-12m.yml` |
 | B · **investigador diario** (tarea programada de Claude L-V 8:00 España: lee **solo** `hoy.md`, 3-5 ideas con entrada/stop/objetivo, las apunta en `predicciones.csv`) | skill `investigador-diario`, `medio_plazo/propuestas.py`, `lab medio propuestas`, `investigacion/propuestas/`; en el panel, inicio |
+| B · **calculadora del precio de entrada** (3 escenarios malo/normal/bueno de `tesis.md`; entrada = mín(regla 3 a 1, valor esperado −15 %); «todo o nada» → sin precio) | `medio_plazo/entrada.py`, `lab medio entrada [TICKER]`, `investigacion/entradas.json` (usa `jq`), dentro de `agente-12m.yml`; en el panel, `#/historia/TICKER` |
 | B · perfiles («¿puede duplicar?», «+500 %») | `src/tradinglab/perfiles/`, `investigacion/duplicar/`, `investigacion/quintuplicar/` |
 | Código común (datos, almacén) | `src/tradinglab/common/` |
 | Diario del agente A | `diario/`, `src/tradinglab/diario.py` |
@@ -61,7 +62,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 
 ## Comandos
 `lab intradia demo|comprobar|backtest|sesion|cerrar-todo` · `lab corto operar|cerrar [--ensayo]` · `lab estudio universo|tramo|informe` · `lab laboratorio tramo|dia|informe` ·
-`lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|expediente [TICKER]|hoy|propuestas [RUTA]|regla-fuentes [RUTA]|cribado|ficha TICKER|alertas` · `lab panel`.
+`lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|expediente [TICKER]|hoy|propuestas [RUTA]|entrada [TICKER]|regla-fuentes [RUTA]|cribado|ficha TICKER|alertas` · `lab panel`.
 
 ## Workflows de GitHub Actions (no romper sus rutas)
 - `agente-12m.yml`: L-V noche y domingo. Ranking diario, alertas, cribado → `investigacion/` (`ranking.*`,

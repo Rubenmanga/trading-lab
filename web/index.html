@@ -815,6 +815,7 @@ function resumen() {
         <div><div class="k">Objetivo 12 meses</div><div class="n">${num(w.precio_objetivo_12m)} $</div><div class="k">${p.potencial_pct != null ? `potencial ${pct(p.potencial_pct)}` : ""}</div></div>
         <div><div class="k">Stop de tesis</div><div class="n">${num(w.stop_tesis)} $</div></div>
       </div>
+      ${D.entradas?.[w.ticker] && !D.entradas[w.ticker].error ? `<div class="sub" style="margin-top:8px">🧮 Calculadora: ${D.entradas[w.ticker].binaria ? "<b>todo o nada</b>, sin precio de entrada" : `entrada <b>≤ ${num(D.entradas[w.ticker].entrada)} $</b> (valor esperado ${num(D.entradas[w.ticker].valor_esperado)} $)`} · <a href="#/historia/${encodeURIComponent(w.ticker)}">ver cálculo →</a></div>` : ""}
       ${w.proximo_catalizador ? `<div class="sub" style="margin-top:10px">📅 ${esc(w.proximo_catalizador)}${w.fecha_catalizador ? ` · ${esc(w.fecha_catalizador)}` : ""}</div>` : ""}
       <div style="margin-top:8px;display:flex;gap:14px;flex-wrap:wrap">${D.expedientes?.[w.ticker]?.length ? `<a href="#/historia/${encodeURIComponent(w.ticker)}"><b>Historia (${D.expedientes[w.ticker].length} hechos)</b> →</a>` : ""}${inf ? `<a href="#/informe/${encodeURIComponent(inf.id)}">Leer el análisis →</a>` : ""}${D.ranking?.filas.some((f) => f.ticker === w.ticker) ? `<a href="#/empresa/${encodeURIComponent(w.ticker)}">Ficha del ranking →</a>` : ""}</div>
     </div>`;
@@ -945,10 +946,32 @@ const EXP_TIPO = {
 const EXP_FILTRO = [["", "Todo"], ["cuentas", "Cuentas y avisos"], ["dinero", "Directivos e inversores"], ["precio", "Precio"], ["noticias", "Noticias"]];
 let filtroExp = "";
 function reacc(v, n) { return v == null ? "" : `<span class="chip ${v > 0 ? "okt" : v < 0 ? "badt" : ""}" title="Cómo se movió el precio ${n} después">${n}: ${v > 0 ? "+" : ""}${num(v, 1)} %</span>`; }
+/* Paso 7: calculadora del precio de entrada, explicada paso a paso. */
+function entradaCard(t, precio) {
+  const e = D.entradas?.[t];
+  if (!e) return "";
+  if (e.error) return `<div class="card"><b>🧮 Precio de entrada</b><div class="sub">Sin calcular: ${esc(e.error)}.</div></div>`;
+  const p = vacio(precio) ? null : +precio;
+  const fila = (n, pr, v) => `<div class="row"><span>${n} <span class="mut">(${num(pr, 0)} %)</span></span><b>${num(v)} $</b></div>`;
+  const veredicto = e.binaria
+    ? `<div class="sub warnt" style="margin-top:8px">⚠️ <b>Todo o nada</b>: si sale mal, la acción se hunde. No hay un buen precio de entrada; lo que se decide es <b>cuánto</b> arriesgar (poco).</div>`
+    : `<div class="row" style="margin-top:8px"><span><b>Precio de entrada</b></span><b class="okt" style="font-size:1.15rem">≤ ${num(e.entrada)} $</b></div>${p != null ? `<div class="sub">${p <= e.entrada ? '<span class="okt">✓ Ahora está dentro</span>' : `Ahora ${num(p)} $: tendría que bajar un ${num((1 - e.entrada / p) * 100, 0)} %`}.</div>` : ""}`;
+  return `<div class="card"><b>🧮 Precio de entrada (siempre el mismo método)</b>
+    <div class="mut" style="margin:4px 0 8px">Tres escenarios a 12 meses, cada uno con su probabilidad. Escenarios: ${esc((e.origen || "").replace(/`/g, ""))}.</div>
+    ${fila("😟 Malo", e.prob_malo, e.malo)}${fila("🙂 Normal", e.prob_normal, e.normal)}${fila("😃 Bueno", e.prob_bueno, e.bueno)}
+    <details style="margin-top:8px"><summary>Cómo se calcula</summary><ol class="sub" style="padding-left:18px;margin:6px 0">
+      <li><b>Valor esperado</b> (media pesada por probabilidad): <b>${num(e.valor_esperado)} $</b>.</li>
+      <li><b>Regla 3 a 1</b>: si sale «normal» ganas al menos 3 veces lo que pierdes si sale «malo» → ≤ ${num(e.regla_3a1)} $.</li>
+      <li><b>Regla del margen</b>: 15 % por debajo del valor esperado → ≤ ${num(e.regla_margen)} $.</li>
+      <li>El precio de entrada es <b>el más bajo de los dos</b>.</li></ol></details>
+    ${veredicto}</div>`;
+}
+
 function historiaVista(t) {
   const todos = D.expedientes?.[t] || [];
   const nombre = seguim(t)?.nombre || D.watchlist.find((w) => w.ticker === t)?.empresa || D.ranking?.filas.find((f) => f.ticker === t)?.empresa || "";
   let h = `<a class="back" href="#/cartera">← Mis acciones</a><h1 style="font-size:1.25rem;margin:4px 0 4px"><span class="tk" style="font-size:1.25rem">${esc(t)}</span> · Historia</h1><div class="sub" style="margin-bottom:10px">${esc(nombre)}</div>`;
+  h += entradaCard(t, (D.estado?.precios || []).find((x) => x.ticker === t)?.precio);
   if (!todos.length) return h + vacioBox("Todavía sin historia", "Esta empresa aún no tiene expediente. Se rellena solo cada día laborable (23:50 en España) para tus acciones y las que vigila el agente.");
   const ev = todos.filter((e) => !filtroExp || (EXP_TIPO[e.tipo] || [])[3] === filtroExp);
   const fuerte = todos.filter((e) => e.tipo === "movimiento").length, res = todos.filter((e) => e.tipo === "resultados").length;

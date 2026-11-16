@@ -15,6 +15,9 @@ lo pesado ya lo hizo GitHub Actions esta noche en `investigacion/hoy.md`.
 - Precios: los de `hoy.md` (fuente nivel 2, con su fecha). Si `hoy.md` tiene más de 2 días, escribe solo
   «Sin propuestas: la carpeta del día está vieja» y termina (no apuntes nada).
 - Cada idea dice **por qué** con un dato de `hoy.md` (aviso, hecho del expediente, zona, catalizador).
+- **Entrada = la de la calculadora** (Paso 7, mismo método siempre), nunca a ojo:
+  `jq '.TICKER | {entrada,binaria,valor_esperado}' investigacion/entradas.json`. Si `binaria` es true → `evitar`
+  o `vigilar`. Si el ticker no está, pon tu entrada y escribe «sin calculadora» en el motivo.
 - `stop < entrada < objetivo`. Si `hoy.md` trae zona/objetivo/stop de tesis de la lista, úsalos; si no, pon tú
   un stop prudente (≈10-15 % bajo la entrada) y dilo. Con una decisión «todo o nada» (FDA, ensayo) usa `evitar`
   o `vigilar`: ahí no hay buen precio, solo tamaño.

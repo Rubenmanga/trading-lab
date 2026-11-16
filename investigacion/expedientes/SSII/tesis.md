@@ -12,4 +12,14 @@ _(pendiente)_
 _(pendiente)_
 
 ## Escenarios y precio de entrada
-_(pendiente: lo rellena el paso 7, calculadora de precio de entrada)_
+| escenario | probabilidad | precio en 12 meses | qué tiene que pasar |
+|---|---|---|---|
+| malo | | | |
+| normal | | | |
+| bueno | | | |
+
+Tipo: normal _(pon «binaria» si todo depende de un solo hecho, p. ej. una decisión de la FDA)_
+
+<!-- entrada:inicio -->
+**Calculadora:** no se puede calcular: la tabla de escenarios está vacía.
+<!-- entrada:fin -->
