@@ -48,6 +48,7 @@ env:
   ALPACA_PAPER: "true"
   ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
   ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+  SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}   # la SEC (días de resultados) pide un «nombre email»
 
 jobs:
   # ------------------------------------------------------------------ cuenta sombra (cada día)
@@ -119,10 +120,17 @@ jobs:
           python -m tradinglab.cli estudio universo --desde "$DESDE" --hasta "$HASTA" \
             --salida datos_estudio/candidatas.csv.gz --por-minuto 180 \
             ${{ github.event_name == 'pull_request' && '--max 800' || '' }}
+      - name: Días de resultados de cada candidata (SEC, 8-K punto 2.02)
+        run: |
+          python -m tradinglab.cli laboratorio resultados --candidatas datos_estudio/candidatas.csv.gz \
+            --salida datos_estudio/resultados.csv.gz
+          rm -f datos_estudio/submissions.zip
       - uses: actions/upload-artifact@v4
         with:
           name: candidatas-lab
-          path: datos_estudio/candidatas.csv.gz
+          path: |
+            datos_estudio/candidatas.csv.gz
+            datos_estudio/resultados.csv.gz
           retention-days: 7
 
   tramos:
@@ -154,7 +162,8 @@ jobs:
           D=$(python -c "import os;print(max(os.environ['DESDE'], '$A-01-01'))")
           H=$(python -c "import os;print(min(os.environ['HASTA'], '$A-12-31'))")
           python -m tradinglab.cli laboratorio tramo --desde "$D" --hasta "$H" --nombre "$A" \
-            --candidatas datos_estudio/candidatas.csv.gz --salida tramos --por-minuto 60
+            --candidatas datos_estudio/candidatas.csv.gz --resultados datos_estudio/resultados.csv.gz \
+            --salida tramos --por-minuto 60
       - uses: actions/upload-artifact@v4
         with:
           name: lab-${{ matrix.anio }}

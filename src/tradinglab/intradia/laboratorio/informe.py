@@ -19,6 +19,11 @@ EXPLICA = {
     "vwap": "Si en la primera media hora va claramente al alza (o a la baja), espera a que el precio vuelva al VWAP (precio medio del día) y entra a favor de la tendencia.",
     "corto_hueco": "Vende en corto a las 9:35 las que abren +25 % o más; stop 15 %, sin objetivo, cierra a las 15:45. «Como el bot» = hueco ≥ +50 % y las 3 primeras del día.",
     "rebote": "Acciones que abren un 8 % o más abajo: compra cuando el precio vuelve a subir por encima del VWAP.",
+    "resultados_t3": "Idea de Ruben: abre ≥ +4 % y la empresa presentó resultados (8-K de la SEC) la tarde anterior o esa madrugada. Compra a las 9:35, SIN objetivo: stop y trailing al 3 %, aguanta hasta el cierre.",
+    "resultados_t5": "Igual, con stop y trailing al 5 %.",
+    "resultados_t8": "Igual, con stop y trailing al 8 % (más aire para acciones muy volátiles).",
+    "resultados_confirma_t5": "Igual (trailing 5 %), pero espera a las 10:00 y solo compra si sigue por encima de la apertura y del VWAP.",
+    "hueco_trailing_t5": "CONTROL de la idea: todas las que abren ≥ +4 %, haya resultados o no, trailing 5 % hasta el cierre. Si «resultados» no le gana, los resultados no aportan.",
     "azar": "CONTROL: 4 acciones en juego al azar, lado y hora al azar, mismas reglas de riesgo. Una estrategia que no le gane no aporta nada.",
 }
 

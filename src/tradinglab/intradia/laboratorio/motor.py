@@ -42,6 +42,7 @@ def operaciones_dia(fecha: str, dia: pd.DataFrame, por_sim: dict[str, pd.DataFra
         vm = float(f.get("vol_medio14") or 0)
         ctxs.append(dict(fecha=fecha, simbolo=f["simbolo"], hueco=float(f["hueco"]), cierre_ant=float(f["cierre_ant"]),
                          atr14=float(f.get("atr14") or 0), vol_medio14=vm, B=bool(f["B"]),
+                         resultados=bool(f.get("resultados", False)), con_cik=bool(f.get("con_cik", False)),
                          rvol5=(ra["v"] / vm) if (ra and vm > 0) else 0.0, en_juego=False, puesto=999))
     # Acciones en juego: de las B, las de más volumen relativo en los 5 primeros minutos
     juego = sorted([c for c in ctxs if c["B"] and c["rvol5"] > 0], key=lambda c: -c["rvol5"])[:cfg["en_juego"]["top"]]
