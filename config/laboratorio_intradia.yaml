@@ -68,6 +68,56 @@ estrategias:
     desde: "09:35"
     fin_entradas: "11:30"
 
+  # 7) Idea de Ruben (16-nov-2026): hueco al alza por RESULTADOS y dejarla correr con trailing hasta el cierre.
+  #    Sin objetivo fijo. Resultados = 8-K punto 2.02 en la SEC entre las 15:30 NY del día anterior y las 9:30.
+  #    Ojo: estas NO cierran a las 15:45; aguantan hasta las 15:59 si el trailing no salta antes.
+  resultados_t3:
+    activa: true
+    nombre: "Resultados + trailing 3 % hasta el cierre"
+    hueco_min: 0.04
+    solo_resultados: true
+    entrada: "09:35"
+    distancia_pct: 3.0          # stop inicial y distancia del trailing
+    activar_en_R: 1.0           # al ganar lo arriesgado, el stop sube a la entrada y luego persigue al precio
+    cierre: "15:59"
+  resultados_t5:
+    activa: true
+    nombre: "Resultados + trailing 5 % hasta el cierre"
+    hueco_min: 0.04
+    solo_resultados: true
+    entrada: "09:35"
+    distancia_pct: 5.0
+    activar_en_R: 1.0
+    cierre: "15:59"
+  resultados_t8:
+    activa: true
+    nombre: "Resultados + trailing 8 % hasta el cierre"
+    hueco_min: 0.04
+    solo_resultados: true
+    entrada: "09:35"
+    distancia_pct: 8.0
+    activar_en_R: 1.0
+    cierre: "15:59"
+  resultados_confirma_t5:
+    activa: true
+    nombre: "Resultados + confirmación 10:00 + trailing 5 %"
+    hueco_min: 0.04
+    solo_resultados: true
+    confirmar: true
+    entrada: "10:00"
+    distancia_pct: 5.0
+    activar_en_R: 1.0
+    cierre: "15:59"
+  hueco_trailing_t5:            # CONTROL: lo mismo sin mirar si hubo resultados
+    activa: true
+    nombre: "Control: todo hueco ≥ +4 % + trailing 5 %"
+    hueco_min: 0.04
+    solo_resultados: false
+    entrada: "09:35"
+    distancia_pct: 5.0
+    activar_en_R: 1.0
+    cierre: "15:59"
+
 # Filtro «¿entrar o no?» (laboratorio/filtro.py): 8 puntos de varias temporalidades e indicadores -> nota 0-100.
 # En el pasado y en la sombra se apunta la nota de TODAS las señales; en la demo solo se entra si llega al umbral.
 filtro:

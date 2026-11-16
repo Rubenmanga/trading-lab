@@ -157,5 +157,41 @@ def azar(m: pd.DataFrame, ctx: dict, cfg: dict, riesgo: dict, costes: Costes) ->
     return _entrar(r, rnd.choice(pos), rnd.choice(["compra", "venta"]), riesgo, costes)
 
 
+# ---------------------------------------------------------------- 7) Hueco al alza + trailing hasta el cierre
+def hueco_trailing(m: pd.DataFrame, ctx: dict, cfg: dict, riesgo: dict, costes: Costes) -> dict | None:
+    """Idea de Ruben (16-nov): si una acción abre con hueco al alza tras buenos resultados, comprarla y
+    dejarla correr. SIN objetivo fijo: solo stop inicial y trailing; si el trailing sigue subiendo al
+    final del día, se aguanta hasta el cierre (15:59 NY).
+    - `solo_resultados`: solo si hubo 8-K de resultados entre la tarde anterior y las 9:30 (SEC).
+    - `confirmar`: en vez de entrar a las 9:35, entra a la hora `entrada` solo si el precio está por encima
+      de la apertura y del VWAP (la subida «aguanta»)."""
+    if (ctx.get("hueco") or 0) < cfg["hueco_min"]:
+        return None
+    if cfg.get("solo_resultados") and not ctx.get("resultados"):
+        return None
+    r = con_vwap(simular.regular(m))
+    idx = [k for k, h in enumerate(r["hora"]) if h >= T(cfg["entrada"])]
+    if not idx or idx[0] == 0:
+        return None
+    i = idx[0]
+    if cfg.get("confirmar"):
+        prev = r.iloc[i - 1]
+        if not (prev["c"] > float(r["o"].iloc[0]) and prev["c"] > prev["vwap"]):
+            return None
+    entrada = float(r["o"].iloc[i])
+    if entrada <= 0:
+        return None
+    d = float(cfg["distancia_pct"])
+    trailing = {"activo": True, "activar_en_R": cfg.get("activar_en_R", 1.0), "distancia_pct": d}
+    res = simular.gestionar(r.iloc[i:], "compra", entrada, entrada * (1 - d / 100), None,
+                            T(cfg.get("cierre", "15:59")), trailing, costes)
+    res.update(R_alt=res["R"], hora_entrada=r["hora"].iloc[i].strftime("%H:%M"), entrada_bruta=round(entrada, 4),
+               riesgo_pct=round(d, 3), resultados=bool(ctx.get("resultados")), con_cik=bool(ctx.get("con_cik")))
+    return res
+
+
 TODAS = {"orb": orb, "hueco_volumen": hueco_volumen, "vwap": vwap, "corto_hueco": corto_hueco,
-         "rebote": rebote, "azar": azar}
+         "rebote": rebote, "azar": azar,
+         # Variantes de la idea «hueco por resultados + trailing hasta el cierre» (misma función, otros ajustes)
+         "resultados_t3": hueco_trailing, "resultados_t5": hueco_trailing, "resultados_t8": hueco_trailing,
+         "resultados_confirma_t5": hueco_trailing, "hueco_trailing_t5": hueco_trailing}

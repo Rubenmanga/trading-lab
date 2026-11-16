@@ -189,3 +189,64 @@ def test_demo_tamano_y_niveles():
     R = CFG["demo"]["riesgo"]
     assert demo.tamano(100000, 50, 1, R)[0] == 200            # 10 % máx. de la cuenta (sin eso serían 1000)
     assert demo.niveles(100, "venta", 1, 3) == (101.0, 97.0)
+
+
+# ------------------------------------------------------------ idea de Ruben: resultados + trailing hasta el cierre
+def _dia_entero(fecha="2025-03-03", sube=0.1):
+    """De 9:30 a 15:59 sube poco a poco (sin tocar ningún stop)."""
+    return velas([100 + sube * i for i in range(390)], fecha)
+
+
+def test_hueco_trailing_aguanta_hasta_el_cierre():
+    cfg = CFG["estrategias"]["resultados_t5"]
+    ctx = dict(hueco=0.2, resultados=True, con_cik=True)
+    op = E.hueco_trailing(_dia_entero(), ctx, cfg, RIESGO, CERO)
+    assert op["hora_entrada"] == "09:35" and op["lado"] == "compra"
+    assert op["motivo"] == "cierre forzado" and op["hora_salida"].startswith("15:59")
+    assert op["resultados"] is True and op["ret_pct"] > 30
+
+
+def test_hueco_trailing_solo_con_resultados():
+    cfg = CFG["estrategias"]["resultados_t5"]
+    assert E.hueco_trailing(_dia_entero(), dict(hueco=0.2, resultados=False), cfg, RIESGO, CERO) is None
+    ctrl = CFG["estrategias"]["hueco_trailing_t5"]
+    assert E.hueco_trailing(_dia_entero(), dict(hueco=0.2, resultados=False), ctrl, RIESGO, CERO) is not None
+    assert E.hueco_trailing(_dia_entero(), dict(hueco=0.02, resultados=True), cfg, RIESGO, CERO) is None
+
+
+def test_hueco_trailing_salta_el_trailing():
+    cfg = CFG["estrategias"]["resultados_t5"]
+    precios = [100] * 5 + [100 + i for i in range(1, 21)] + [119 - i for i in range(30)] + [90] * 335
+    op = E.hueco_trailing(velas(precios), dict(hueco=0.2, resultados=True), cfg, RIESGO, CERO)
+    assert op["motivo"] == "trailing" and op["ret_pct"] > 10   # máximo 120, trailing 5 % -> sale ~114
+
+
+def test_confirmacion_10h():
+    cfg = CFG["estrategias"]["resultados_confirma_t5"]
+    baja = velas([100 - 0.05 * i for i in range(390)])
+    assert E.hueco_trailing(baja, dict(hueco=0.2, resultados=True), cfg, RIESGO, CERO) is None
+    op = E.hueco_trailing(_dia_entero(), dict(hueco=0.2, resultados=True), cfg, RIESGO, CERO)
+    assert op["hora_entrada"] == "10:00"
+
+
+def test_resultados_sec_ventana_y_zona():
+    from tradinglab.intradia.laboratorio import resultados_sec as R
+    bloque = {"form": ["8-K", "8-K", "10-Q", "8-K"], "items": ["2.02,9.01", "7.01", "", "2.02"],
+              "acceptanceDateTime": ["2026-11-12T16:05:00.000Z", "2026-11-12T10:00:00.000Z",
+                                     "2026-11-12T16:10:00.000Z", "2026-11-13T07:10:00.000Z"]}
+    assert R.filas_8k(bloque) == ["2026-11-12T16:05:00.000Z", "2026-11-13T07:10:00.000Z"]
+    # Horas amontonadas a las 16 y a las 7: ya son de Nueva York
+    assert R.a_hora_ny(pd.Series(R.filas_8k(bloque))).dt.hour.tolist() == [16, 7]
+    # Amontonadas a las 21 y a las 12: son UTC -> 16 y 7 en NY (noviembre, UTC-5)
+    assert R.a_hora_ny(pd.Series(["2026-11-12T21:05:00Z", "2026-11-13T12:10:00Z"])).dt.hour.tolist() == [16, 7]
+    cands = pd.DataFrame({"fecha": ["2026-11-12", "2026-11-13", "2026-11-13", "2026-11-13"],
+                          "simbolo": ["AAA", "AAA", "BBB", "ZZZ"]})
+    ev = pd.DataFrame({"cik": ["1", "2"], "aceptado": ["2026-11-12T16:05:00Z", "2026-11-13T10:15:00Z"]})
+    ev = pd.concat([ev, pd.DataFrame({"cik": ["1"], "aceptado": ["2026-11-11T07:00:00Z"]})])
+    m = R.marcar(cands, ev, {"AAA": "1", "BBB": "2"}).set_index(["fecha", "simbolo"])
+    assert bool(m.loc[("2026-11-13", "AAA"), "resultados"])        # tarde anterior: cuenta
+    assert not bool(m.loc[("2026-11-12", "AAA"), "resultados"])     # el aviso llegó DESPUÉS de las 9:30 del 12
+    assert not bool(m.loc[("2026-11-13", "BBB"), "resultados"])     # a las 10:15: ya era tarde
+    assert not bool(m.loc[("2026-11-13", "ZZZ"), "con_cik"])
+    u = R.unir(cands.assign(hueco=0.1), m.reset_index())
+    assert u["resultados"].tolist() == [False, True, False, False]

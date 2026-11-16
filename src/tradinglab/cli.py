@@ -221,8 +221,14 @@ def _laboratorio(args):
         md = informe.guardar(informe.generar(back, sombra, cfg, hoy), carpeta)
         print(md.read_text(encoding="utf-8"))
         return
-    from .intradia.estudio.alpaca_rest import Alpaca
     from .intradia.estudio.universo import leer_csv
+    from .intradia.laboratorio import resultados_sec
+    if args.accion == "resultados":  # días de resultados de la SEC para todas las candidatas del pasado
+        marcas = resultados_sec.calcular(leer_csv(args.candidatas))
+        Path(args.salida).parent.mkdir(parents=True, exist_ok=True)
+        marcas.to_csv(args.salida, index=False)
+        return
+    from .intradia.estudio.alpaca_rest import Alpaca
     cliente = Alpaca(por_minuto=args.por_minuto)
     if args.accion == "demo":
         from .intradia.laboratorio import demo
@@ -233,7 +239,10 @@ def _laboratorio(args):
                     cache=Path(args.salida), max_simbolos=args.max)
         return
     if args.accion == "tramo":
-        ops = motor.procesar(cliente, leer_csv(args.candidatas), args.desde, args.hasta, cfg)
+        cands = leer_csv(args.candidatas)
+        cands = resultados_sec.unir(cands, resultados_sec.leer(args.resultados) if args.resultados else None)
+        print(f"Días de resultados (SEC) en las candidatas: {int(cands['resultados'].sum())}")
+        ops = motor.procesar(cliente, cands, args.desde, args.hasta, cfg)
         sal = Path(args.salida)
         sal.mkdir(parents=True, exist_ok=True)
         ops.to_csv(sal / f"ops-{args.nombre}.csv.gz", index=False)
@@ -244,6 +253,12 @@ def _laboratorio(args):
         from .intradia.estudio import universo
         fecha = args.fecha or datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
         cands = universo.descargar(cliente, fecha, fecha, config.cargar("estudio_intradia"), max_simbolos=args.max)
+        if len(cands):
+            try:
+                cands = resultados_sec.unir(cands, resultados_sec.calcular(cands))
+            except Exception as e:  # noqa: BLE001 - sin la SEC, el resto de estrategias sigue igual
+                print(f"Aviso: no se pudieron leer los resultados de la SEC ({e})")
+                cands = resultados_sec.unir(cands, None)
         ops = motor.procesar(cliente, cands, fecha, fecha, cfg) if len(cands) else pd.DataFrame()
         print(f"{fecha}: {len(cands)} candidatas, {len(ops)} operaciones en papel · {cliente.llamadas} llamadas")
         if ops.empty:
@@ -349,7 +364,8 @@ def main(argv=None):
     pr.add_argument("--salida", default="partes_radar/parte-1.jsonl")
     pr.add_argument("--entrada", default="partes_radar")
     pl = sub.add_parser("laboratorio", help="Agente A · laboratorio de estrategias en cuenta sombra (solo papel)")
-    pl.add_argument("accion", choices=["tramo", "dia", "informe", "demo"])
+    pl.add_argument("accion", choices=["tramo", "dia", "informe", "demo", "resultados"])
+    pl.add_argument("--resultados", default=None, help="tramo: CSV con los días de resultados (SEC)")
     pl.add_argument("--ensayo", action="store_true", help="demo: todo menos enviar órdenes")
     pl.add_argument("--ahora", help="demo (ensayo): hacer como si fuera esta hora, AAAA-MM-DDTHH:MM-05:00")
     pl.add_argument("--desde")
