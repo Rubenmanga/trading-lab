@@ -18,6 +18,48 @@
    "tipo": "CATALIZADOR CERCA",
    "mensaje": "ORIC: 'Resultados 3.er trimestre y actualización de rinzimetostat' el 2026-11-16 (en 1 días)",
    "precio": 7.860000133514404
+  },
+  {
+   "ticker": "RCAT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 3.53,
+   "seguimiento": true,
+   "mensaje": "RCAT (2026-11-16): resultados: «Red Cat Holdings, Inc. Reports Third Quarter 2026 Financial Results» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "RCAT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 3.53,
+   "seguimiento": true,
+   "mensaje": "RCAT (2026-11-16): resultados: «Top Wall Street Forecasters Revamp Red Cat Expectations Ahead Of Q3 Earnings» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "MSFT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 517.99,
+   "seguimiento": true,
+   "mensaje": "MSFT (2026-11-16): legal, investigación o demanda: «Microsoft Outage Triggers Canada-Wide Class Action Lawsuit» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "MSFT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 517.99,
+   "seguimiento": true,
+   "mensaje": "MSFT (2026-11-16): resultados: «Alithya Group Inc (ALYAF) (Q2 2027) Earnings Call Highlights: Margin Expansion and Bookings ...» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "AEHR",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 50.98,
+   "seguimiento": true,
+   "mensaje": "AEHR (2026-11-16): -10.5 % hoy (1.0x lo normal), volumen 0.8x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "FTH",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 9.28,
+   "seguimiento": true,
+   "mensaje": "FTH (2026-11-16): ensayo clínico, contrato o pedido: «Faeth Therapeutics Enters Into Clinical Trial Collaboration And Supply Agreement With Roche To Evaluate PIKTOR In Combination With Investiga» Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [
