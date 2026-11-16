@@ -28,7 +28,10 @@ from . import motor
 NY = ZoneInfo("America/New_York")
 PREFIJO = "lab"
 CAMPOS = ["fecha_hora_ny", "estrategia", "simbolo", "accion", "lado", "precio", "stop", "objetivo", "acciones",
-          "nota", "filtro", "R", "motivo"]
+          "nota", "filtro", "R", "motivo", "precio_senal", "retraso_s", "relleno", "deslizamiento_pct"]
+
+
+VISTAS: set = set()   # señales ya decididas (descartadas o enviadas) en esta ejecución
 
 
 def carpeta() -> Path:
@@ -153,8 +156,17 @@ def pasada(cfg: dict, cfg_estudio: dict, datos, broker, ahora: datetime | None =
     sims = sorted(set(motor.universo_dia(cands)["simbolo"]) | {motor.INDICE})
     m = velas_hasta_ahora(datos, sims, fecha, ahora)
     por_sim = {s: simular.preparar(g) for s, g in m.groupby("simbolo")}
+    return decidir(cfg, cands, por_sim, broker, ahora, ensayo, D["senal_max_min"])
+
+
+def decidir(cfg: dict, cands: pd.DataFrame, por_sim: dict, broker, ahora: datetime, ensayo: bool, senal_max_min: float,
+            ultimo: dict | None = None) -> list[dict]:
+    """Pasa las estrategias por las velas que hay, filtra, aplica el riesgo y envía las órdenes.
+    `ultimo`: último precio por acción (conexión en directo); si no se da, se usa el cierre de la última vela."""
+    fecha, D = ahora.strftime("%Y-%m-%d"), cfg["demo"]
+    marca = ahora.strftime("%Y-%m-%d %H:%M:%S")
     ops = motor.operaciones_dia(fecha, cands, por_sim, cfg)
-    reciente = (ahora - timedelta(minutes=D["senal_max_min"])).strftime("%H:%M")
+    reciente = (ahora - timedelta(minutes=senal_max_min)).strftime("%H:%M")
     nuevas = [o for o in ops if o["estrategia"] in D["estrategias"] and o["hora_entrada"] >= reciente]
     # 3) Filtro y riesgo
     ya = {o.get("client_order_id") for o in broker.ordenes("all", fecha + "T00:00:00Z")} if not ensayo else set()
@@ -168,11 +180,16 @@ def pasada(cfg: dict, cfg_estudio: dict, datos, broker, ahora: datetime | None =
         cid = id_cliente(fecha, o["estrategia"], o["simbolo"])
         if cid in ya:
             continue
+        clave = (fecha, o["estrategia"], o["simbolo"], o["hora_entrada"])
+        if clave in VISTAS:       # la misma señal se vuelve a ver en las pasadas siguientes: se apunta una sola vez
+            continue
         base = dict(fecha_hora_ny=marca, estrategia=o["estrategia"], simbolo=o["simbolo"], lado=o["lado"],
                     nota=o.get("nota"), filtro=o.get("filtro"))
         stop_pct = cfg["estrategias"][o["estrategia"]].get("stop_pct", cfg["riesgo"]["stop_pct"])
         rr = None if cfg["estrategias"][o["estrategia"]].get("sin_objetivo") else cfg["riesgo"]["rr"]
-        ult = por_sim[o["simbolo"]]["c"].iloc[-1]
+        ult = (ultimo or {}).get(o["simbolo"]) or por_sim[o["simbolo"]]["c"].iloc[-1]
+        hs = datetime.strptime(fecha + " " + o["hora_entrada"], "%Y-%m-%d %H:%M").replace(tzinfo=NY)
+        retraso = int((ahora - hs).total_seconds())
         motivo = ""
         if o["estrategia"] in F["aplicar_a"] and o.get("nota", 0) < F["umbral"]:
             motivo = f"el filtro dice que mejor no entrar (nota {o.get('nota')} < {F['umbral']})"
@@ -196,7 +213,9 @@ def pasada(cfg: dict, cfg_estudio: dict, datos, broker, ahora: datetime | None =
         stop, obj = niveles(float(ult), o["lado"], stop_pct, rr)
         if rr is None:  # sin objetivo (corto del hueco): el bracket necesita uno; se pone muy lejos
             obj = round(float(ult) * (0.5 if o["lado"] == "venta" else 1.5), 2)
-        fila = {**base, "precio": round(float(ult), 4), "stop": stop, "objetivo": obj, "acciones": qty}
+        fila = {**base, "precio": round(float(ult), 4), "stop": stop, "objetivo": obj, "acciones": qty,
+                "precio_senal": o["entrada_bruta"], "retraso_s": retraso}
+        VISTAS.add(clave)
         if motivo:
             filas.append({**fila, "accion": "descartada", "motivo": motivo})
             continue
@@ -291,8 +310,13 @@ def cerrar(cfg: dict, broker, ahora: datetime, ensayo: bool = False) -> list[dic
         stop_pct = cfg["estrategias"].get(estrategia_de(o), {}).get("stop_pct", cfg["riesgo"]["stop_pct"])
         R = round(s * (salida - entrada) / (entrada * stop_pct / 100), 3)
         motivo = {"limit": "objetivo", "stop": "stop", "stop_limit": "stop"}.get(sal.get("type"), "cierre 15:45")
+        cid = str(o.get("client_order_id", ""))
+        env = next((r for r in _registro() if r["accion"] == "abierta" and r["simbolo"] == o["symbol"]
+                    and r["estrategia"] == estrategia_de(o) and r["fecha_hora_ny"].startswith(fecha)), None)
+        ps = float(env["precio_senal"]) if env and env.get("precio_senal") not in (None, "") else None
+        desl = round(s * (entrada - ps) / ps * 100, 3) if ps else None   # + = entramos peor que la señal
         filas.append(dict(fecha_hora_ny=marca, estrategia=estrategia_de(o), simbolo=o["symbol"], accion="cerrada", lado=lado,
-                          precio=salida, acciones=o.get("filled_qty"), R=R,
+                          precio=salida, acciones=o.get("filled_qty"), R=R, relleno=entrada, precio_senal=ps, deslizamiento_pct=desl,
                           motivo=f"{motivo}: entrada {entrada} → salida {salida}"))
     apuntar(filas)
     print(f"Cierre {marca}: {len(filas)} operaciones del laboratorio cerradas.")

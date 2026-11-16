@@ -189,3 +189,31 @@ def test_demo_tamano_y_niveles():
     R = CFG["demo"]["riesgo"]
     assert demo.tamano(100000, 50, 1, R)[0] == 200            # 10 % máx. de la cuenta (sin eso serían 1000)
     assert demo.niveles(100, "venta", 1, 3) == (101.0, 97.0)
+
+
+def test_directo_elegir_y_estado():
+    from tradinglab.intradia.laboratorio import directo
+    cands = pd.DataFrame([dict(fecha="2026-11-16", simbolo=f"S{i}", A=True, B=False, hueco=0.1 + i / 100) for i in range(40)])
+    sims = directo.elegir(cands)
+    assert len(sims) == 30 and sims[-1] == "QQQ" and sims[0] == "S39"
+    e = directo.Estado()
+    base = pd.DataFrame([dict(simbolo="X", t=pd.Timestamp("2026-11-16T14:30:00Z"), o=1, h=1, l=1, c=1, v=10)])
+    e.poner_base(base)
+    e.mensaje([{"T": "b", "S": "X", "t": "2026-11-16T14:31:00Z", "o": 1, "h": 2, "l": 1, "c": 2, "v": 5},
+               {"T": "b", "S": "X", "t": "2026-11-16T14:30:00Z", "o": 9, "h": 9, "l": 9, "c": 9, "v": 9},   # ya está en la base: se ignora
+               {"T": "t", "S": "X", "p": 2.5}], 1.0)
+    m = e.por_sim()["X"]
+    assert len(m) == 2 and float(m["c"].iloc[-1]) == 2 and e.ultimo["X"] == 2.5 and e.sucio
+
+
+def test_directo_vela_de_entrada_sintetica():
+    from tradinglab.intradia.laboratorio import directo
+    e = directo.Estado()
+    e.poner_base(pd.DataFrame([dict(simbolo="X", t=pd.Timestamp("2026-11-16T15:16:00Z"), o=1, h=1, l=1, c=1, v=10)]))
+    e.mensaje([{"T": "b", "S": "X", "t": "2026-11-16T15:17:00Z", "o": 1, "h": 2, "l": 1, "c": 2, "v": 5},
+               {"T": "t", "S": "X", "p": 2.2}], 1.0)
+    # 15:18:01 UTC: la vela de las 15:17 acaba de cerrar -> se añade la de entrada (15:18) al precio último
+    m = e.por_sim(datetime(2026, 11, 16, 10, 18, 1, tzinfo=NY))["X"]
+    assert len(m) == 3 and float(m["c"].iloc[-1]) == 2.2 and m["hora"].iloc[-1].strftime("%H:%M") == "10:18"
+    # si la última vela es vieja (sin operaciones ese minuto) no se inventa nada
+    assert len(e.por_sim(datetime(2026, 11, 16, 10, 25, 1, tzinfo=NY))["X"]) == 2
