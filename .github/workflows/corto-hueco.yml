@@ -6,14 +6,13 @@ name: Corto del hueco
 
 on:
   schedule:
-    - cron: "12 13 * * 1-5"   # apertura (verano: 9:12 NY)
-    - cron: "32 13 * * 1-5"   # apertura (verano: 9:32 NY, por si la anterior se retrasa)
-    - cron: "7 14 * * 1-5"    # apertura (invierno: 9:07 NY)
-    - cron: "27 14 * * 1-5"   # apertura (invierno: 9:27 NY)
-    - cron: "47 19 * * 1-5"   # cierre (verano: 15:47 NY)
-    - cron: "57 19 * * 1-5"   # cierre (verano, repaso)
-    - cron: "47 20 * * 1-5"   # cierre (invierno: 15:47 NY)
-    - cron: "57 20 * * 1-5"   # cierre (invierno, repaso)
+    # GitHub retrasa o se salta a veces las ejecuciones programadas (el 16-nov no llegó ninguna de las 4).
+    # Por eso hay una cada 4 minutos hasta las 9:34 NY: la primera que llega trabaja y las demás salen en segundos.
+    - cron: "2-34/4 13 * * 1-5"    # apertura, horario de verano (9:02-9:34 NY)
+    - cron: "2-34/4 14 * * 1-5"    # apertura, horario de invierno (9:02-9:34 NY)
+    - cron: "47-59/4 19 * * 1-5"   # cierre, verano (15:47-15:59 NY)
+    - cron: "47-59/4 20 * * 1-5"   # cierre, invierno (15:47-15:59 NY) / repaso del de verano
+    - cron: "7-59/13 21 * * 1-5"   # repaso del cierre (por si las anteriores no llegaron)
   workflow_dispatch:
     inputs:
       accion:
@@ -57,7 +56,7 @@ jobs:
       - run: pip install --quiet "pyyaml>=6" "pandas>=2" requests "python-dotenv>=1" tzdata
       - name: Operar o cerrar
         env:
-          ACCION: ${{ github.event_name == 'schedule' && (contains(github.event.schedule, ' 19 ') || contains(github.event.schedule, ' 20 ')) && 'cerrar' || inputs.accion || 'operar' }}
+          ACCION: ${{ github.event_name == 'schedule' && (contains(github.event.schedule, ' 19 ') || contains(github.event.schedule, ' 20 ') || contains(github.event.schedule, ' 21 ')) && 'cerrar' || inputs.accion || 'operar' }}
           ENSAYO: ${{ github.event_name == 'workflow_dispatch' && inputs.ensayo || 'false' }}
           SIMBOLOS: ${{ inputs.simbolos }}
         run: |
