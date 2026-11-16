@@ -29,20 +29,20 @@ en_juego:
 
 estrategias:
   orb:                          # 1) Ruptura del rango de los 5 primeros minutos (largo y corto)
-    activa: true
+    activa: false                # Paso 0 (16-nov): pierde en 10 años, fuera de la cuenta sombra diaria
     nombre: "Ruptura de apertura (ORB)"
     top: 10                     # las 10 más «en juego»
     minutos: 5
     fin_entradas: "11:30"
   hueco_volumen:                # 2) Hueco con mucho volumen (casi siempre hay noticia o resultados detrás)
-    activa: true
+    activa: false                # Paso 0 (16-nov): pierde en 10 años, fuera de la cuenta sombra diaria
     nombre: "Hueco con volumen (catalizador)"
     hueco_min: 0.04             # abre al menos un 4 % arriba o abajo
     rvol5_min: 0.15             # en 5 minutos ya ha negociado el 15 % de un día normal
     minutos_rango: 15           # espera a que rompa el rango de los 15 primeros minutos
     fin_entradas: "11:30"
   vwap:                         # 3) Retroceso al VWAP (precio medio del día) a favor de la tendencia
-    activa: true
+    activa: false                # Paso 0 (16-nov): pierde en 10 años, fuera de la cuenta sombra diaria
     nombre: "Retroceso al VWAP"
     top: 20
     desde: "10:00"
@@ -56,13 +56,13 @@ estrategias:
     sin_objetivo: true
     max_dia: 3                  # como el bot: las 3 de más hueco (las demás se apuntan aparte, puesto > 3)
   rebote:                       # 5) Rebote tras una caída fuerte: compra al recuperar el VWAP
-    activa: true
+    activa: false                # Paso 0 (16-nov): pierde en 10 años, fuera de la cuenta sombra diaria
     nombre: "Rebote tras caída"
     hueco_max: -0.08            # abre un 8 % o más por debajo
     desde: "09:45"
     fin_entradas: "12:00"
   azar:                         # 6) CONTROL: mismas reglas de riesgo, pero entrada y lado al azar
-    activa: true
+    activa: false                # Paso 0 (16-nov): pierde en 10 años, fuera de la cuenta sombra diaria
     nombre: "Azar (control)"
     por_dia: 4
     desde: "09:35"

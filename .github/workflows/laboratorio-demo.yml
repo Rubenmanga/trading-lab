@@ -61,11 +61,19 @@ jobs:
           key: demo-candidatas-${{ steps.d.outputs.fecha }}
       - name: Conexión en directo (y guardar el registro cada 10 min)
         run: |
+          # Paso 0 (revisión 16-nov): si solo cambia el «sigo conectado» (estado-directo.json), se guarda
+          # como mucho una vez por hora; una operación nueva (registro) o el final se guardan siempre.
+          ULTIMO=$(date +%s)
           guardar() {
             git config user.name "laboratorio-demo"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add investigacion/laboratorio/demo 2>/dev/null || true
             git diff --cached --quiet && return 0
+            if [ "$1" != "final" ] && [ $(( $(date +%s) - ULTIMO )) -lt 3600 ] \
+               && [ -z "$(git diff --cached --name-only | grep -v 'estado-directo.json$')" ]; then
+              git reset -q; return 0
+            fi
+            ULTIMO=$(date +%s)
             git commit -q -m "Laboratorio demo: $(TZ=America/New_York date '+%F %H:%M') NY"
             for i in 1 2 3; do git pull --rebase --autostash -q && git push -q && break; sleep 5; done
           }
@@ -78,7 +86,7 @@ jobs:
           done
           wait $PID
           STATUS=$?
-          guardar
+          guardar final
           exit $STATUS
 
   pasada:
