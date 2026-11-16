@@ -35,7 +35,8 @@ ACCIONES_GAAP = ["CommonStockSharesOutstanding"]
 DESDE = "2012-01-01"
 TRIMESTRALES = {n for c in ("ventas", "beneficio_bruto", "coste_ventas", "gastos_generales", "ebit",
                             "flujo_operativo", "caja", "inversiones_cp") for n in CONCEPTOS[c]}
-SEC_FORM345 = "https://www.sec.gov/files/structureddata/data/form-345-data-sets/{a}q{t}_form345.zip"
+SEC_FORM345 = ("https://www.sec.gov/files/structureddata/data/insider-transactions-data-sets/{a}q{t}_form345.zip",
+               "https://www.sec.gov/files/datastandardsinnovation/data/insider-transactions-data-sets/{a}q{t}_form345.zip")
 
 
 def _bajar(url: str, destino: str) -> str:
@@ -199,15 +200,20 @@ def directivos(salida: str, desde: int = 2013) -> dict:
                 if (a, t) >= (hoy.tm_year, (hoy.tm_mon - 1) // 3 + 1):
                     break
                 zp = os.path.join(salida, "f345.zip")
-                try:
-                    _bajar(SEC_FORM345.format(a=a, t=t), zp)
-                    filas = directivos_de_zip(zp)
-                except Exception as e:  # noqa: BLE001
-                    fallos.append(f"{a}q{t}: {type(e).__name__}")
+                filas = None
+                for url in SEC_FORM345:              # la SEC cambió de carpeta en 2026
+                    try:
+                        _bajar(url.format(a=a, t=t), zp)
+                        filas = directivos_de_zip(zp)
+                        break
+                    except Exception as e:  # noqa: BLE001
+                        err = type(e).__name__
+                    finally:
+                        if os.path.exists(zp):
+                            os.remove(zp)
+                if filas is None:
+                    fallos.append(f"{a}q{t}: {err}")
                     continue
-                finally:
-                    if os.path.exists(zp):
-                        os.remove(zp)
                 w.writerows(filas)
                 n_zip += 1
                 n_filas += len(filas)
