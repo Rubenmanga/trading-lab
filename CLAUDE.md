@@ -38,7 +38,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 | A · estudio histórico (ORB + top gainers) | `lab estudio …`, workflow `estudio-intradia.yml`, informes en `investigacion/estrategias/*.md` |
 | **B · Medio plazo 12 meses**: small caps de **todos los sectores** con buenas previsiones. No opera: analiza, vigila, avisa | `src/tradinglab/medio_plazo/`, `config/medio_plazo.yaml`, `investigacion/` |
 | B · **backtest 2014→hoy** (cuentas SEC con fecha + precios Yahoo, misma nota del ranking, frente a IWM) | `src/tradinglab/backtest12m/`, workflow `backtest-12m.yml`, informe en `investigacion/backtest-12m/` |
-| B · **expediente por acción** (hechos con fuente SEC/Yahoo, fecha y reacción 1/5/20 sesiones; solo añade) | `medio_plazo/expediente.py`, workflow `expedientes.yml`, `investigacion/expedientes/TICKER/` (`eventos.csv`, `tesis.md`) |
+| B · **expediente por acción** (hechos con fuente SEC/Yahoo, fecha y reacción 1/5/20 sesiones; solo añade) | `medio_plazo/expediente.py`, workflow `expedientes.yml`, `investigacion/expedientes/TICKER/` (`eventos.csv`, `tesis.md`); en el panel, `#/historia/TICKER` |
 | B · perfiles («¿puede duplicar?», «+500 %») | `src/tradinglab/perfiles/`, `investigacion/duplicar/`, `investigacion/quintuplicar/` |
 | Código común (datos, almacén) | `src/tradinglab/common/` |
 | Diario del agente A | `diario/`, `src/tradinglab/diario.py` |
