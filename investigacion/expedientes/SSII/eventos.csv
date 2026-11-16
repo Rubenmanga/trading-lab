@@ -1,0 +1,68 @@
+fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
+2026-11-16,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026120292/xslF345X06/ownership.xml,2026-11-16,1.66,-17.77,,
+2026-11-13,movimiento,"Sube 25.8 % en un día (3.9 veces lo normal, volumen x7.6 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-11-13,1.32,25.76,,
+2026-11-13,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026119252/ea0311892-8k_ssinno.htm,2026-11-13,1.32,25.76,,
+2026-11-05,movimiento,"Cae 16.3 % en un día (4.8 veces lo normal, volumen x2.5 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-11-05,2.27,-16.3,-33.48,
+2026-10-26,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026112292/ea0309597-8k_ssinno.htm,2026-10-26,2.25,5.33,4.44,
+2026-10-13,contrato,Contrato o acuerdo importante (8-K 1.01),https://www.sec.gov/Archives/edgar/data/1676163/000121390026108624/ea0308062-8k_ssinnova.htm,2026-10-13,2.55,0.0,-3.92,-26.67
+2026-10-13,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026108792/ea0308357-8k_ssinnova.htm,2026-10-13,2.55,0.0,-3.92,-26.67
+2026-10-09,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026108570/xslF345X06/ownership.xml,2026-10-09,2.63,0.57,-1.9,-27.76
+2026-10-09,ampliacion,Colocación de acciones (424B5),https://www.sec.gov/Archives/edgar/data/1676163/000121390026108566/ea0308066-424b5_ssinnova.htm,2026-10-09,2.63,0.57,-1.9,-27.76
+2026-10-05,8k,"Aviso oficial de hecho relevante (8-K 7.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026106654/ea0307579-8k_ssinnova.htm,2026-10-05,2.67,3.75,-0.94,-11.99
+2026-09-10,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026098588/ea0305024-8k_ssinnova.htm,2026-09-10,3.22,2.48,1.55,-14.91
+2026-09-09,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026098544/xslF345X06/ownership.xml,2026-09-09,3.27,-1.53,0.92,-15.6
+2026-08-26,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026093946/ea0303229-8k_ssinnova.htm,2026-08-26,3.55,0.56,-5.92,-12.39
+2026-08-14,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026090052/xslF345X06/ownership.xml,2026-08-14,3.83,1.57,-5.74,-13.58
+2026-08-13,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026088726/ea0301887-8k_ssinnova.htm,2026-08-13,3.69,3.79,-2.44,-10.57
+2026-08-13,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1676163/000121390026088721/ea0299715-10q_ssinnova.htm,2026-08-13,3.69,3.79,-2.44,-10.57
+2026-07-27,movimiento,"Sube 14.0 % en un día (2.6 veces lo normal, volumen x3.1 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-07-27,3.475,13.96,14.53,3.17
+2026-07-17,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026078945/ea0298381-8k_ssinnova.htm,2026-07-17,3.61,0.83,-1.11,6.09
+2026-07-14,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026077784/ea0297601-8k_ssinnova.htm,2026-07-14,3.64,0.82,3.02,3.02
+2026-07-07,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026075763/ea0297211-8k_ssinnovation.htm,2026-07-07,3.73,-4.02,-2.41,5.9
+2026-06-30,movimiento,"Sube 17.6 % en un día (3.7 veces lo normal, volumen x4.0 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-06-30,3.53,17.56,1.42,11.33
+2026-06-30,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026073399/ea0296359-8k_ssinnovat.htm,2026-06-30,3.53,17.56,1.42,11.33
+2026-06-18,contrato,Contrato o acuerdo importante (8-K 1.01),https://www.sec.gov/Archives/edgar/data/1676163/000121390026070101/ea0295213-8k_ssinnovation.htm,2026-06-18,3.29,5.47,10.03,10.64
+2026-06-18,ampliacion,Colocación de acciones (424B5),https://www.sec.gov/Archives/edgar/data/1676163/000121390026070095/ea0294844-424b5_ssinnova.htm,2026-06-18,3.29,5.47,10.03,10.64
+2026-06-15,8k,"Aviso oficial de hecho relevante (8-K 7.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026068479/ea0294544-8k_ssinnovations.htm,2026-06-15,3.36,4.76,0.0,9.23
+2026-06-04,movimiento,"Cae 10.9 % en un día (3.5 veces lo normal, volumen x2.4 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-06-04,4.31,-10.9,-18.33,-12.3
+2026-06-04,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026065378/xslF345X06/ownership.xml,2026-06-04,4.31,-10.9,-18.33,-12.3
+2026-06-04,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026065036/ea0292887-8k_ssinnovations.htm,2026-06-04,4.31,-10.9,-18.33,-12.3
+2026-06-02,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026064311/xslF345X06/ownership.xml,2026-06-02,3.94,1.78,-10.41,5.33
+2026-05-26,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026061027/ea0291683-8k_ssinnovations.htm,2026-05-26,3.89,-4.11,1.29,-12.6
+2026-05-20,ampliacion,Colocación de acciones (424B5),https://www.sec.gov/Archives/edgar/data/1676163/000121390026059643/ea0291604-424b5_ssinnova.htm,2026-05-20,4.0,-1.38,-6.0,-17.75
+2026-05-13,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026055468/ea0290453-8k_ssinnovations.htm,2026-05-13,4.11,-2.92,-2.68,-14.36
+2026-05-13,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026056027/xslF345X06/ownership.xml,2026-05-13,4.11,-2.92,-2.68,-14.36
+2026-05-13,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1676163/000121390026055403/ea0289126-10q_ssinnova.htm,2026-05-13,4.11,-2.92,-2.68,-14.36
+2026-05-07,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026053082/ea0289626-8k_ssinnovations.htm,2026-05-07,4.07,-3.44,-1.97,-5.65
+2026-05-05,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026051915/ea0289125-8k_ssinnovations.htm,2026-05-05,4.05,-3.7,0.74,-0.99
+2026-05-01,ampliacion,Registro para vender acciones nuevas (S-3),https://www.sec.gov/Archives/edgar/data/1676163/000121390026050976/ea0286217-s3_ssinnova.htm,2026-05-01,4.02,-0.75,-2.24,-1.99
+2026-04-23,8k,"Aviso oficial de hecho relevante (8-K 7.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026046888/ea0287440-8k_ssinnova.htm,2026-04-23,4.6,-2.83,-8.91,-14.24
+2026-04-15,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026044067/xslF345X06/ownership.xml,2026-04-15,4.89,0.2,-5.93,-15.95
+2026-04-13,movimiento,"Sube 11.4 % en un día (2.6 veces lo normal, volumen x0.7 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-04-13,4.3,11.4,13.72,-10.0
+2026-04-07,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026040714/ea0285306-8k_ssinnova.htm,2026-04-07,4.81,-0.62,-0.42,-15.8
+2026-04-06,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026040562/xslF345X06/ownership.xml,2026-04-06,5.0,-3.8,-14.0,-20.2
+2026-04-03,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026039716/xslF345X06/ownership.xml,2026-04-03,5.0,-3.8,-14.0,-20.2
+2026-04-01,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026038524/xslF345X06/ownership.xml,2026-04-01,5.0,-3.0,-14.0,-16.2
+2026-03-30,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026036006/ea0283970-8k_ssinnova.htm,2026-03-30,4.91,0.2,-2.04,-11.41
+2026-03-27,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026035167/xslF345X06/ownership.xml,2026-03-27,4.93,-0.41,1.42,-11.56
+2026-03-18,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026029907/ea0282253-8k_ssinnova.htm,2026-03-18,4.75,7.16,1.68,3.16
+2026-03-10,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026025441/ea0280665-8k_ssinnovations.htm,2026-03-10,4.68,-5.56,1.71,2.14
+2026-03-10,directivos_form4,3 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026025795/xslF345X05/ownership.xml,2026-03-10,4.68,-5.56,1.71,2.14
+2026-03-10,cuentas,Cuentas anuales (10-K),https://www.sec.gov/Archives/edgar/data/1676163/000121390026025440/ea0277925-10k_ssinnova.htm,2026-03-10,4.68,-5.56,1.71,2.14
+2026-03-09,ampliacion,Venta de acciones nuevas sin registro (8-K 3.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026024938/ea0280514-8k_ssinno.htm,2026-03-09,4.44,5.41,0.45,8.33
+2026-03-04,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026023657/xslF345X05/ownership.xml,2026-03-04,4.8,-3.96,-7.92,4.17
+2026-02-20,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026018818/xslF345X05/ownership.xml,2026-02-20,4.4,9.77,7.95,13.86
+2026-02-11,movimiento,"Cae 26.7 % en un día (3.4 veces lo normal, volumen x1.8 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-02-11,4.53,-26.71,-2.87,7.06
+2026-02-10,movimiento,"Sube 17.1 % en un día (2.5 veces lo normal, volumen x2.4 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-02-10,3.87,17.05,3.62,14.21
+2026-02-02,movimiento,"Cae 13.5 % en un día (2.8 veces lo normal, volumen x5.0 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-02-02,4.23,-13.48,-10.4,6.38
+2026-02-02,ampliacion,Registro para vender acciones nuevas (S-1),https://www.sec.gov/Archives/edgar/data/1676163/000121390026010551/ea0274122-s1_ssinnovation.htm,2026-02-02,4.23,-13.48,-10.4,6.38
+2026-01-21,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026006205/xslF345X05/ownership.xml,2026-01-21,5.57,-2.15,-17.06,-21.01
+2026-01-20,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026005395/xslF345X05/ownership.xml,2026-01-20,5.93,-6.07,-14.0,-32.38
+2026-01-13,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026003688/ea0272629-8k_ssinno.htm,2026-01-13,5.35,10.84,4.11,-15.33
+2026-01-08,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026002572/ea0272305-8k_ssinno.htm,2026-01-08,5.76,-2.78,-3.99,-40.97
+2026-01-06,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026001594/ea0271902-8k_ssinno.htm,2026-01-06,5.42,6.46,-1.29,-32.66
+2026-01-02,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026000467/xslF345X05/ownership.xml,2026-01-02,5.68,-0.53,-1.41,-25.53
+2025-12-16,8k,Aviso oficial de hecho relevante (8-K 7.01),https://www.sec.gov/Archives/edgar/data/1676163/000121390025122031/ea0269726-8k_ssinno.htm,2025-12-16,5.09,8.06,10.22,8.64
+2025-12-08,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390025118977/ea0268739-8k_ssinno.htm,2025-12-08,6.21,0.64,-11.59,-7.09
+2025-12-01,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390025116664/xslF345X05/ownership.xml,2025-12-01,6.73,-8.62,-7.73,-16.94
+2025-11-17,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390025111286/xslF345X05/ownership.xml,2025-11-17,6.22,1.77,-4.18,-18.17

@@ -1,0 +1,74 @@
+fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
+2026-11-16,movimiento,"Cae 20.9 % en un día (2.8 veces lo normal, volumen x1.3 su media)",https://finance.yahoo.com/quote/TE/history/,2026-11-16,1.91,-20.94,,
+2026-11-16,ampliacion,Colocación de acciones (424B5),https://www.sec.gov/Archives/edgar/data/1992243/000121390026120098/ea0311901-424b5_t1energy.htm,2026-11-16,1.91,-20.94,,
+2026-11-16,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1992243/000121390026120101/ea0312116-8k_t1energy.htm,2026-11-16,1.91,-20.94,,
+2026-11-12,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026118327/ea0311994-8k_t1energy.htm,2026-11-12,2.13,-7.51,,
+2026-11-12,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1992243/000199224326000032/t1-20260930.htm,2026-11-12,2.13,-7.51,,
+2026-11-10,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/1992243/000009375126000729/xslSCHEDULE_13G_X02/primary_doc.xml,2026-11-10,2.29,-9.61,-34.06,
+2026-11-10,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000162828026072936/xslF345X06/wk-form4_1794357319.xml,2026-11-10,2.29,-9.61,-34.06,
+2026-11-06,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000162828026071822/xslF345X06/wk-form4_1794007604.xml,2026-11-06,2.28,3.51,-13.6,
+2026-10-30,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1992243/000121390026114466/ea0310173-8k_t1energy.htm,2026-10-30,2.86,-5.59,-20.28,
+2026-10-27,movimiento,"Sube 16.0 % en un día (3.8 veces lo normal, volumen x1.8 su media)",https://finance.yahoo.com/quote/TE/history/,2026-10-27,2.12,16.04,20.75,
+2026-10-21,ampliacion,Venta de acciones nuevas sin registro (8-K 3.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026111378/ea0309217-8k_t1energy.htm,2026-10-21,2.47,-3.64,-0.4,
+2026-10-06,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1992243/000121390026107289/ea0307775-8k_t1energy.htm,2026-10-06,3.7,2.7,-13.24,-30.81
+2026-09-29,contrato,Contrato o acuerdo importante (8-K 1.01); Venta de acciones nuevas sin registro (8-K 3.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026104291/ea0306948-8k_t1energy.htm,2026-09-29,3.57,5.6,3.64,-40.62
+2026-08-28,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1992243/000121390026095184/ea0303753-8k_t1energy.htm,2026-08-28,4.96,-3.43,-8.47,-23.79
+2026-08-19,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/1992243/000110465926098854/xslSCHEDULE_13G_X02/primary_doc.xml,2026-08-19,4.65,-2.15,0.0,-12.04
+2026-08-12,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026088022/ea0301615-8k_t1energy.htm,2026-08-12,5.47,-10.42,-14.99,-10.24
+2026-08-12,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1992243/000199224326000022/t1-20260630.htm,2026-08-12,5.47,-10.42,-14.99,-10.24
+2026-08-07,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/1992243/000009375126000543/xslSCHEDULE_13G_X02/primary_doc.xml,2026-08-07,5.55,5.41,-13.69,-18.2
+2026-08-07,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1992243/000121390026086689/ea0301011-8k_t1energy.htm,2026-08-07,5.55,5.41,-13.69,-18.2
+2026-08-05,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/1992243/000110465926091194/xslSCHEDULE_13G_X02/primary_doc.xml,2026-08-05,5.43,0.74,0.74,-21.18
+2026-07-31,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390026084009/xslF345X06/marketforms-73648.xml,2026-07-31,4.27,-2.34,29.98,16.16
+2026-07-31,contrato,Contrato o acuerdo importante (8-K 1.01); Venta de acciones nuevas sin registro (8-K 3.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026084067/ea0299867-8k_t1energy.htm,2026-07-31,4.27,-2.34,29.98,16.16
+2026-07-30,contrato,Contrato o acuerdo importante (8-K 1.01); Venta de acciones nuevas sin registro (8-K 3.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026083033/ea0299711-8k_t1energy.htm,2026-07-30,3.72,14.78,47.04,21.24
+2026-07-28,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026081974/ea0299450-8k_t1energy.htm,2026-07-28,4.9,-15.31,0.82,-11.84
+2026-07-28,contrato,Contrato o acuerdo importante (8-K 1.01); Compra o venta de un negocio (8-K 2.01); Venta de acciones nuevas sin registro (8-K 3.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026081970/ea0299400-8k_t1energy.htm,2026-07-28,4.9,-15.31,0.82,-11.84
+2026-07-07,movimiento,"Cae 19.7 % en un día (2.6 veces lo normal, volumen x1.3 su media)",https://finance.yahoo.com/quote/TE/history/,2026-07-07,8.65,-19.65,-24.28,-42.89
+2026-07-06,directivos_form4,6 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390026075584/xslF345X06/marketforms-73550.xml,2026-07-06,8.56,1.05,-19.98,-51.29
+2026-06-29,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1992243/000121390026072832/ea0295645-8k_t1energy.htm,2026-06-29,8.21,8.16,5.36,-40.32
+2026-06-25,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390026072102/xslF345X06/marketforms-73458.xml,2026-06-25,8.53,-0.35,7.62,-33.41
+2026-06-17,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390026069473/xslF345X06/marketforms-73403.xml,2026-06-17,8.63,4.75,-1.16,-31.17
+2026-06-17,8k,"Aviso oficial de hecho relevante (8-K 5.07,8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1992243/000121390026069670/ea0295062-8k_t1energy.htm,2026-06-17,8.63,4.75,-1.16,-31.17
+2026-06-08,ampliacion,Venta de acciones nuevas sin registro (8-K 3.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026065997/ea0293886-8k_t1energy.htm,2026-06-08,9.43,-3.18,-9.86,-26.3
+2026-05-26,movimiento,"Sube 29.3 % en un día (3.1 veces lo normal, volumen x2.3 su media)",https://finance.yahoo.com/quote/TE/history/,2026-05-26,8.08,29.33,28.84,14.36
+2026-05-26,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000091228226000768/xslF345X06/form4.xml,2026-05-26,8.08,29.33,28.84,14.36
+2026-05-20,movimiento,"Sube 26.5 % en un día (3.6 veces lo normal, volumen x4.9 su media)",https://finance.yahoo.com/quote/TE/history/,2026-05-20,6.88,26.45,59.3,31.4
+2026-05-18,movimiento,"Sube 23.5 % en un día (4.3 veces lo normal, volumen x5.7 su media)",https://finance.yahoo.com/quote/TE/history/,2026-05-18,5.67,23.46,42.5,57.32
+2026-05-18,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390026058482/xslF345X06/marketforms-73189.xml,2026-05-18,5.67,23.46,42.5,57.32
+2026-05-12,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026054706/ea0290278-8k_t1energy.htm,2026-05-12,6.04,-3.15,15.89,40.07
+2026-05-12,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390026054694/xslF345X06/marketforms-73159.xml,2026-05-12,6.04,-3.15,15.89,40.07
+2026-05-12,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1992243/000199224326000014/t1-20260331.htm,2026-05-12,6.04,-3.15,15.89,40.07
+2026-05-11,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390026054613/xslF345X06/marketforms-73137.xml,2026-05-11,6.16,-1.95,-7.95,48.21
+2026-05-08,movimiento,"Sube 19.6 % en un día (3.7 veces lo normal, volumen x1.1 su media)",https://finance.yahoo.com/quote/TE/history/,2026-05-08,5.15,19.61,11.26,83.11
+2026-05-08,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390026054036/xslF345X06/marketforms-73081.xml,2026-05-08,5.15,19.61,11.26,83.11
+2026-04-30,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390026050507/xslF345X06/marketforms-73023.xml,2026-04-30,4.89,-1.84,7.77,121.27
+2026-04-27,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/1992243/000201238326001690/xslSCHEDULE_13G_X02/primary_doc.xml,2026-04-27,5.29,0.38,-2.65,52.74
+2026-04-27,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026048030/ea0287442-8k_t1energy.htm,2026-04-27,5.29,0.38,-2.65,52.74
+2026-04-17,contrato,Contrato o acuerdo importante (8-K 1.01),https://www.sec.gov/Archives/edgar/data/1992243/000121390026045173/ea0286610-8k_t1energy.htm,2026-04-17,4.99,0.8,8.02,14.83
+2026-04-16,ampliacion,Colocación de acciones (424B5),https://www.sec.gov/Archives/edgar/data/1992243/000121390026044732/ea0286560-424b5_t1energy.htm,2026-04-16,5.34,-6.55,0.94,5.06
+2026-04-02,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390026039565/xslF345X06/marketforms-71764.xml,2026-04-02,4.48,-6.47,-6.7,7.14
+2026-03-31,resultados,Resultados del trimestre (8-K 2.02); Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026036817/ea0284268-8k_t1energy.htm,2026-03-31,5.62,-21.89,-30.07,-12.81
+2026-03-31,movimiento,"Cae 21.9 % en un día (3.6 veces lo normal, volumen x2.9 su media)",https://finance.yahoo.com/quote/TE/history/,2026-03-31,5.62,-21.89,-30.07,-12.81
+2026-03-31,cuentas,Cuentas anuales (10-K),https://www.sec.gov/Archives/edgar/data/1992243/000199224326000007/t1-20251231.htm,2026-03-31,5.62,-21.89,-30.07,-12.81
+2026-02-18,contrato,Contrato o acuerdo importante (8-K 1.01),https://www.sec.gov/Archives/edgar/data/1992243/000121390026017944/ea0277444-8k_t1energy.htm,2026-02-18,6.44,0.31,10.09,20.96
+2026-02-17,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390026017574/xslF345X05/marketforms-72206.xml,2026-02-17,6.12,5.23,2.78,26.14
+2026-02-06,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026013301/ea0275957-8k_t1energy.htm,2026-02-06,7.27,13.76,-14.58,-7.57
+2026-01-23,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000091228226000113/xslF345X05/form4.xml,2026-01-23,8.37,1.55,6.09,-25.81
+2026-01-21,ampliacion,Registro para vender acciones nuevas (S-3ASR),https://www.sec.gov/Archives/edgar/data/1992243/000121390026006209/ea0272688-s3asr_t1energy.htm,2026-01-21,8.28,-5.56,10.14,-21.98
+2026-01-21,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1992243/000121390026006322/ea0273074-8k_t1energy.htm,2026-01-21,8.28,-5.56,10.14,-21.98
+2026-01-06,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000091228226000019/xslF345X05/form4.xml,2026-01-06,8.2,-6.71,-12.07,10.85
+2025-12-30,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000091228225001474/xslF345X05/form4.xml,2025-12-30,6.42,1.25,19.16,47.82
+2025-12-30,contrato,Contrato o acuerdo importante (8-K 1.01),https://www.sec.gov/Archives/edgar/data/1992243/000121390025126306/ea0271222-8k_t1energy.htm,2025-12-30,6.42,1.25,19.16,47.82
+2025-12-29,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390025126050/xslF345X05/marketforms-71694.xml,2025-12-29,6.8,-5.59,20.59,34.12
+2025-12-16,contrato,Contrato o acuerdo importante (8-K 1.01),https://www.sec.gov/Archives/edgar/data/1992243/000121390025122336/ea0269834-8k_t1energy.htm,2025-12-16,5.06,7.51,44.27,55.34
+2025-12-15,ampliacion,Colocación de acciones (424B5),https://www.sec.gov/Archives/edgar/data/1992243/000121390025121421/ea0269505-424b5_t1energy.htm,2025-12-15,5.35,-5.42,20.19,46.92
+2025-12-15,ampliacion,Colocación de acciones (424B5),https://www.sec.gov/Archives/edgar/data/1992243/000121390025121415/ea0269555-424b5_t1energy.htm,2025-12-15,5.35,-5.42,20.19,46.92
+2025-12-15,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1992243/000121390025121741/ea0269639-8k_t1energy.htm,2025-12-15,5.35,-5.42,20.19,46.92
+2025-12-11,ampliacion,Colocación de acciones (424B5),https://www.sec.gov/Archives/edgar/data/1992243/000121390025120325/ea026888302-424b5_t1energy.htm,2025-12-11,6.15,-4.55,-11.87,12.85
+2025-12-11,ampliacion,Colocación de acciones (424B5),https://www.sec.gov/Archives/edgar/data/1992243/000121390025120323/ea026888301-424b5_t1energy.htm,2025-12-11,6.15,-4.55,-11.87,12.85
+2025-12-05,8k,"Aviso oficial de hecho relevante (8-K 5.03,5.07,8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1992243/000121390025118483/ea0268498-8k_t1energy.htm,2025-12-05,5.11,14.09,14.87,60.47
+2025-12-03,directivos_form4,8 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390025118018/xslF345X05/ownership.xml,2025-12-03,4.74,-4.64,41.98,40.93
+2025-11-25,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000121390025114423/xslF345X05/ownership.xml,2025-11-25,3.14,4.78,50.96,126.43
+2025-11-17,ampliacion,Registro para vender acciones nuevas (S-3),https://www.sec.gov/Archives/edgar/data/1992243/000121390025111622/ea0265741-s3_t1energy.htm,2025-11-17,3.36,-5.36,-19.05,50.6
+2025-11-17,ampliacion,Registro para vender acciones nuevas (S-3),https://www.sec.gov/Archives/edgar/data/1992243/000121390025111621/ea0265740-s3_t1energy.htm,2025-11-17,3.36,-5.36,-19.05,50.6

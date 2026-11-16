@@ -1,0 +1,28 @@
+fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
+2026-11-04,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/880807/000143774926034935/amsc20260818_8k.htm,2026-11-04,27.68,-5.13,-7.98,
+2026-11-04,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/880807/000143774926034936/amsc20260930_10q.htm,2026-11-04,27.68,-5.13,-7.98,
+2026-10-14,movimiento,"Cae 10.7 % en un día (4.2 veces lo normal, volumen x1.7 su media)",https://finance.yahoo.com/quote/AMSC/history/,2026-10-14,28.71,-10.66,-10.48,-11.29
+2026-09-21,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/880807/000119312526396831/xslF345X06/ownership.xml,2026-09-21,30.19,0.17,-0.6,-14.97
+2026-09-21,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/880807/000143774926030822/amsc20260921_8k.htm,2026-09-21,30.19,0.17,-0.6,-14.97
+2026-08-05,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/880807/000143774926025921/amsc20260617_8k.htm,2026-08-05,33.45,-1.52,-3.95,-14.62
+2026-08-05,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/880807/000143774926025922/amsc20260630_10q.htm,2026-08-05,33.45,-1.52,-3.95,-14.62
+2026-07-30,movimiento,"Sube 10.5 % en un día (2.6 veces lo normal, volumen x1.0 su media)",https://finance.yahoo.com/quote/AMSC/history/,2026-07-30,26.64,10.55,23.65,10.7
+2026-06-12,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/880807/000119312526269433/xslF345X06/ownership.xml,2026-06-12,39.51,1.29,9.85,-13.49
+2026-06-11,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/880807/000119312526267677/xslF345X06/ownership.xml,2026-06-11,36.78,7.42,9.11,-2.23
+2026-06-10,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/880807/000119312526265996/xslF345X06/ownership.xml,2026-06-10,40.53,-9.25,-0.17,-8.29
+2026-06-03,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/880807/000119312526255471/xslF345X06/ownership.xml,2026-06-03,51.17,-8.79,-20.79,-21.99
+2026-06-02,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/880807/000143774926019163/amsc20260601_8k.htm,2026-06-02,51.15,0.04,-15.27,-18.85
+2026-05-27,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/880807/000143774926018539/amsc20260211_8k.htm,2026-05-27,53.12,-0.83,-3.67,-23.1
+2026-05-27,cuentas,Cuentas anuales (10-K),https://www.sec.gov/Archives/edgar/data/880807/000143774926018542/amsc20260331_10k.htm,2026-05-27,53.12,-0.83,-3.67,-23.1
+2026-04-30,movimiento,"Sube 12.2 % en un día (2.5 veces lo normal, volumen x1.4 su media)",https://finance.yahoo.com/quote/AMSC/history/,2026-04-30,47.7,12.24,19.64,7.61
+2026-04-29,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/880807/000210011926000109/xslSCHEDULE_13G_X02/primary_doc.xml,2026-04-29,47.5,0.42,15.81,10.91
+2026-04-22,movimiento,"Sube 14.8 % en un día (3.8 veces lo normal, volumen x2.4 su media)",https://finance.yahoo.com/quote/AMSC/history/,2026-04-22,41.93,14.83,13.28,12.31
+2026-04-07,directivos_form4,6 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/880807/000119312526145815/xslF345X06/ownership.xml,2026-04-07,32.62,-3.31,15.91,54.2
+2026-02-26,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/880807/000119312526077349/xslF345X05/ownership.xml,2026-02-26,34.68,-0.12,-8.13,-3.23
+2026-02-10,movimiento,"Sube 10.7 % en un día (2.8 veces lo normal, volumen x3.1 su media)",https://finance.yahoo.com/quote/AMSC/history/,2026-02-10,28.79,10.73,27.34,3.09
+2026-02-06,movimiento,"Sube 8.6 % en un día (2.7 veces lo normal, volumen x2.1 su media)",https://finance.yahoo.com/quote/AMSC/history/,2026-02-06,25.95,8.55,23.12,6.74
+2026-02-04,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/880807/000143774926002977/amsc20251203_8k.htm,2026-02-04,30.0,-7.97,6.27,6.2
+2026-02-04,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/880807/000143774926002978/amsc20251231_10q.htm,2026-02-04,30.0,-7.97,6.27,6.2
+2026-01-02,movimiento,"Sube 9.7 % en un día (3.2 veces lo normal, volumen x1.3 su media)",https://finance.yahoo.com/quote/AMSC/history/,2026-01-02,28.78,9.73,6.25,3.96
+2025-12-23,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/880807/000119312525330930/d36453d8k.htm,2025-12-23,31.86,-0.28,-9.13,3.89
+2025-12-10,contrato,Contrato o acuerdo importante (8-K 1.01); Compra o venta de un negocio (8-K 2.01); Venta de acciones nuevas sin registro (8-K 3.02),https://www.sec.gov/Archives/edgar/data/880807/000119312525314153/d24846d8k.htm,2025-12-10,32.51,2.65,-4.0,-5.94

@@ -1,0 +1,41 @@
+fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
+2026-10-26,movimiento,"Cae 32.0 % en un día (8.1 veces lo normal, volumen x4.8 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-10-26,13.17,-32.0,-29.84,
+2026-10-23,8k,"Aviso oficial de hecho relevante (8-K 7.01,8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1796280/000119312526429465/d152009d8k.htm,2026-10-23,13.63,-3.37,-34.04,
+2026-10-21,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000169502826000012/xslF345X06/form4-10212026_091012.xml,2026-10-21,13.78,0.51,-34.69,
+2026-10-15,movimiento,"Sube 10.2 % en un día (3.6 veces lo normal, volumen x1.0 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-10-15,11.59,10.18,19.5,-22.35
+2026-10-02,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000158475926000017/xslF345X06/form4-10022026_091044.xml,2026-10-02,12.52,-2.52,-3.91,-28.19
+2026-09-29,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000169502826000010/xslF345X06/form4-09292026_110919.xml,2026-09-29,13.27,0.75,-5.88,-32.52
+2026-09-25,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000169502826000008/xslF345X06/form4-09252026_110926.xml,2026-09-25,13.18,-0.15,-5.01,3.41
+2026-08-28,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000169502826000006/xslF345X06/form4-08282026_080834.xml,2026-08-28,13.74,-3.64,-7.28,-4.22
+2026-08-04,movimiento,"Sube 27.1 % en un día (7.1 veces lo normal, volumen x3.1 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-08-04,10.6,27.08,28.49,22.55
+2026-08-03,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1796280/000119312526330568/oric-20260803.htm,2026-08-03,11.07,-4.25,21.95,19.6
+2026-08-03,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1796280/000119312526330631/oric-20260630.htm,2026-08-03,11.07,-4.25,21.95,19.6
+2026-07-30,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1796280/000119312526326309/d169933d8k.htm,2026-07-30,11.28,3.19,14.63,23.32
+2026-07-28,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000158475926000015/xslF345X06/form4-07282026_080709.xml,2026-07-28,12.02,-0.92,-11.81,11.98
+2026-07-24,movimiento,"Sube 11.1 % en un día (3.2 veces lo normal, volumen x2.2 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-07-24,10.89,11.11,6.89,27.46
+2026-07-08,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000158475926000012/xslF345X06/form4-07082026_080727.xml,2026-07-08,10.88,0.18,-3.03,23.81
+2026-06-22,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1796280/000119312526277511/d103876d8k.htm,2026-06-22,8.49,5.18,12.25,22.73
+2026-06-02,movimiento,"Cae 15.1 % en un día (5.5 veces lo normal, volumen x2.7 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-06-02,8.98,-15.14,-16.15,20.6
+2026-05-15,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/1796280/000008025526000420/xslSCHEDULE_13G_X02/primary_doc.xml,2026-05-15,8.34,-2.28,1.44,-0.84
+2026-05-04,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1796280/000119312526203993/oric-20260504.htm,2026-05-04,9.77,-1.43,-9.42,-8.09
+2026-05-04,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1796280/000119312526204047/oric-20260331.htm,2026-05-04,9.77,-1.43,-9.42,-8.09
+2026-04-01,movimiento,"Cae 41.0 % en un día (7.9 veces lo normal, volumen x9.6 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-04-01,12.67,-41.0,-28.57,-25.49
+2026-03-31,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1796280/000119312526134618/d133016d8k.htm,2026-03-31,12.19,3.94,-27.24,-20.84
+2026-03-09,movimiento,"Cae 15.0 % en un día (3.6 veces lo normal, volumen x2.7 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-03-09,13.71,-15.03,-13.2,-35.01
+2026-02-26,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000169502826000004/xslF345X05/form4-02262026_090218.xml,2026-02-26,13.4,0.75,0.82,-12.69
+2026-02-24,movimiento,"Sube 14.6 % en un día (3.2 veces lo normal, volumen x3.5 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-02-24,11.71,14.6,18.53,-4.95
+2026-02-23,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1796280/000119312526063974/oric-20260223.htm,2026-02-23,11.11,5.4,21.06,0.45
+2026-02-23,cuentas,Cuentas anuales (10-K),https://www.sec.gov/Archives/edgar/data/1796280/000119312526064005/oric-20251231.htm,2026-02-23,11.11,5.4,21.06,0.45
+2026-02-23,ampliacion,Colocación de acciones (424B5),https://www.sec.gov/Archives/edgar/data/1796280/000119312526064275/d90798d424b5.htm,2026-02-23,11.11,5.4,21.06,0.45
+2026-02-23,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1796280/000119312526064291/d25338d8k.htm,2026-02-23,11.11,5.4,21.06,0.45
+2026-01-21,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/1796280/000201238326000702/xslSCHEDULE_13G_X01/primary_doc.xml,2026-01-21,11.62,5.42,4.22,-6.8
+2026-01-20,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000158475926000006/xslF345X05/form4-01212026_120124.xml,2026-01-20,12.12,-4.13,1.07,-16.75
+2026-01-14,movimiento,"Sube 10.9 % en un día (2.5 veces lo normal, volumen x3.2 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-01-14,10.14,10.95,20.81,0.59
+2026-01-13,movimiento,"Sube 10.8 % en un día (2.9 veces lo normal, volumen x2.1 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-01-13,9.15,10.82,26.99,15.41
+2026-01-09,movimiento,"Sube 8.3 % en un día (2.6 veces lo normal, volumen x1.2 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-01-09,8.45,8.28,36.33,23.31
+2026-01-06,directivos_form4,8 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000164766426000002/xslF345X05/form4-01062026_090103.xml,2026-01-06,8.15,-0.12,12.27,34.97
+2025-12-17,movimiento,"Cae 9.9 % en un día (3.8 veces lo normal, volumen x1.2 su media)",https://finance.yahoo.com/quote/ORIC/history/,2025-12-17,9.12,-9.87,-9.32,26.32
+2025-12-17,directivos_form4,3 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000158689425000005/xslF345X05/form4-12182025_121256.xml,2025-12-17,9.12,-9.87,-9.32,26.32
+2025-12-09,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000153636825000006/xslF345X05/form4-12092025_101258.xml,2025-12-09,10.52,-3.61,-12.26,-17.49
+2025-12-08,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1796280/000119312525310472/d46273d8k.htm,2025-12-08,11.0,-4.36,-14.73,-26.0
+2025-12-05,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000153636825000004/xslF345X05/form4-12052025_101227.xml,2025-12-05,11.39,-3.42,-14.93,-28.45
