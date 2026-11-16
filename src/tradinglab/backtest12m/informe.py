@@ -22,10 +22,15 @@ def escribir(res: dict, ruta: str) -> str:
     exceso = n["estrategia"]["anual_pct"] - n["universo"]["anual_pct"]
     exceso_iwm = n["estrategia"]["anual_pct"] - n["iwm"]["anual_pct"]
     mejor = max((k for k in c if not k.startswith("nota")), key=lambda k: c[k]["estrategia"]["anual_pct"])
-    veredicto = ("**sí aporta**" if exceso > 2 and (ic.get("nota", {}).get("pct_positivas") or 0) >= 60
-                 else "**aporta poco o nada**" if exceso < 1 else "**aporta algo, pero poco seguro**")
+    veredicto = ("**muestra ventaja histórica en esta muestra, no validación predictiva**"
+                 if exceso > 2 and (ic.get("nota", {}).get("pct_positivas") or 0) >= 60
+                 else "**no muestra ventaja histórica convincente en esta muestra**"
+                 if exceso < 1 else "**muestra ventaja histórica marginal e incierta**")
     L = []
     L.append("# Backtest del agente B (small caps a 12 meses)\n")
+    L.append("**ESTADO: EXPLORATORIO / NO VALIDADO PARA DECIDIR OPERACIONES.** Falta reconstruir el "
+             "universo histórico con empresas excluidas de cotización, sus retornos de salida y pruebas "
+             "fuera de muestra. Estas cifras no son un pronóstico ni una probabilidad de ganancia.\n")
     L.append("**Resumen en 5 líneas**\n")
     L.append(f"1. Desde {res['meta']['fechas'][0]} hasta {res['meta']['ultimo_mes']}, comprar cada trimestre las 20 "
              f"mejores según la nota habría dado **{_p(n['estrategia']['anual_pct'])} al año** (con costes).")
@@ -53,7 +58,7 @@ def escribir(res: dict, ruta: str) -> str:
 
     L.append("## ¿La nota predice los 12 meses siguientes?\n")
     L.append("Correlación de rangos (de -1 a +1) entre la nota y lo que subió cada empresa en los 12 meses siguientes. "
-             "En bolsa, 0,03-0,05 ya es útil; por encima de 0,10 es muy raro.\n")
+             "Su utilidad predictiva no está demostrada con esta muestra histórica.\n")
     L.append("| Qué | Correlación media | % de trimestres positiva |")
     L.append("|---|---|---|")
     for k, v in ic.items():
@@ -67,7 +72,7 @@ def escribir(res: dict, ruta: str) -> str:
         for q in qs:
             L.append(f"| {q['quintil']} | {_p(q['exceso_12m_pct'])} | {q['pct_cohortes_gana']:.0f} % |")
         L.append("\nOjo: las empresas que quebraron (que faltan) habrían caído sobre todo en los quintiles malos, así que "
-                 "la diferencia real entre el 1 y el 5 probablemente es **mayor** que la que se ve aquí.")
+                 "la diferencia real entre el 1 y el 5 puede cambiar en magnitud y dirección. No es verificable con estos datos.")
     co = res["doce_meses"]["cohortes"]
     if co:
         L.append("\n| Fecha | Top 20 a 12 m | Top 50 | Universo | IWM |")
@@ -103,8 +108,9 @@ def escribir(res: dict, ruta: str) -> str:
     L.append("- **PER**: el ranking usa el PER futuro (con previsiones); aquí se usa el pasado.")
     L.append("- **Sector**: sin sector histórico, la calidad y la valoración se comparan con todas las empresas, no solo con las de su sector.")
     L.append("- **Sin mirar al futuro:** cada cuenta se usa desde el día en que se presentó a la SEC y cada precio desde su mes.")
-    L.append("- Unos pocos años buenos pueden explicar todo el resultado. **Rentabilidades pasadas no garantizan las futuras**; "
-             "el siguiente paso es la cartera de práctica en demo.")
+    L.append("- Unos pocos años buenos pueden explicar todo el resultado. **Rentabilidades pasadas no garantizan las futuras**. "
+             "Antes de valorar la estrategia: reconstruir exclusiones, fijar costes y comprobar fuera de muestra "
+             "y en paper. Ninguna cifra de este informe habilita operar.")
     txt = "\n".join(L) + "\n"
     with open(ruta, "w", encoding="utf-8") as fh:
         fh.write(txt)

@@ -57,7 +57,7 @@ def _en(host: str, url: str, lista) -> bool:
 
 
 def nivel_fuente(fuente: str) -> int | None:
-    """1, 2 o 3 según la fuente; None si no hay enlace ni fichero del repo. Web desconocida = 1 (empresa)."""
+    """1, 2 o 3 según la fuente; None si no hay enlace ni fichero del repo. Web desconocida = 3 (sin verificar)."""
     if "investigacion/" in fuente and not _URL.search(fuente):
         return 2
     urls = _URL.findall(fuente)
@@ -67,7 +67,7 @@ def nivel_fuente(fuente: str) -> int | None:
     for u in urls:
         host = (urlparse(u).hostname or "").lower().removeprefix("www.")
         # el orden importa: nasdaq.com/articles es noticia (3), nasdaq.com a secas es mercado (2)
-        n = 3 if _en(host, u, NIVEL3) else 1 if _en(host, u, NIVEL1) else 2 if _en(host, u, NIVEL2) else 1
+        n = 3 if _en(host, u, NIVEL3) else 1 if _en(host, u, NIVEL1) else 2 if _en(host, u, NIVEL2) else 3
         peor = max(peor, n)
     return peor
 
@@ -136,6 +136,13 @@ def revisar(ruta: Path, texto: str | None = None) -> list[str]:
         if not fe:
             fallos.append(f"«{dato}»: sin fecha AAAA-MM-DD")
             continue
+        try:
+            fecha_dato = date.fromisoformat(fe.group())
+        except ValueError:
+            fallos.append(f"«{dato}»: fecha no válida ({fe.group()})")
+            continue
+        if fecha_dato > f_inf:
+            fallos.append(f"«{dato}»: fecha {fecha_dato} posterior al informe ({f_inf})")
         hay_n1 |= n == 1
         dicho = re.search(r"[123]", f.get("nivel", ""))
         if dicho and int(dicho.group()) < n:
@@ -147,11 +154,8 @@ def revisar(ruta: Path, texto: str | None = None) -> list[str]:
             fallos.append(f"«{dato}»: el precio y la caja no pueden salir de una web intermediaria (nivel 3)")
         if es_precio:
             hay_precio = True
-            fd = date.fromisoformat(fe.group())
-            if fd > f_inf:
-                fallos.append(f"«{dato}»: fecha {fd} posterior al informe ({f_inf})")
-            elif dias_bolsa(fd, f_inf) > MAX_DIAS_BOLSA_PRECIO:
-                fallos.append(f"«{dato}»: precio del {fd}, más de {MAX_DIAS_BOLSA_PRECIO} días de bolsa "
+            if fecha_dato <= f_inf and dias_bolsa(fecha_dato, f_inf) > MAX_DIAS_BOLSA_PRECIO:
+                fallos.append(f"«{dato}»: precio del {fecha_dato}, más de {MAX_DIAS_BOLSA_PRECIO} días de bolsa "
                               f"antes del informe ({f_inf})")
     if not hay_precio:
         fallos.append("falta la fila «precio» (con su fecha) en la tabla de fuentes")

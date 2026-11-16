@@ -96,3 +96,4 @@ def test_ejecutar_de_punta_a_punta(tmp_path):
     assert res["supervivencia"]["por_anio"]["2015"]["desaparecen_pct"] == 50.0
     informe = next((tmp_path / "salida").glob("INFORME-*.md")).read_text()
     assert "Resumen en 5 líneas" in informe and "Límites" in informe
+    assert "NO VALIDADO PARA DECIDIR OPERACIONES" in informe
