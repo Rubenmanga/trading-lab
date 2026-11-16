@@ -11,11 +11,7 @@ empresas:
     motivo: Resultados del 3.er trimestre el 16-nov tras el cierre (22:00 en España)
     pares: [ONDS, UMAC, AVAV, KTOS]   # competidores de drones/defensa
     sector: ITA                       # fondo de aeroespacial y defensa
-  POET:
-    nombre: POET Technologies
-    motivo: Resultados del 3.er trimestre el 16-nov a las 13:00 España (antes de abrir la bolsa); aquí se ve la reacción
-    pares: [AAOI, LITE, COHR, CRDO]   # óptica y conectividad para centros de datos
-    sector: SOXX                      # fondo de semiconductores
+  # POET quitada el 16-nov-2026: Ruben la vendió.
 mercado: IWM                          # small caps de EE. UU. (solo referencia)
 umbrales:
   separacion_sigmas: 1.0     # aviso si se separa de sus pares ≥ 1 movimiento diario normal…

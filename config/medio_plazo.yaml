@@ -91,8 +91,7 @@ lista_noticias:
     RCAT: {nombre: "Red Cat Holdings", sector: defensa y drones, referencia: ITA}
     MSFT: {nombre: "Microsoft", sector: tecnología, referencia: QQQ, umbral_movimiento_pct: 4}
     RAPP: {nombre: "Rapport Therapeutics", sector: salud, referencia: XBI}
-    DFTX: {nombre: "Definium Therapeutics", sector: salud, referencia: XBI}
-    POET: {nombre: "POET Technologies", sector: semiconductores, referencia: SOXX}
+    # DFTX y POET: vendidas el 16-nov-2026 (ver config/mi_cartera.csv), ya no se siguen como «tus acciones».
   materias_primas:
     XAU: {nombre: "Oro", yahoo: "GC=F", umbral_movimiento_pct: 3}
     EURUSD: {nombre: "Euro/dólar (para pasar tu oro de dólares a euros)", yahoo: "EURUSD=X", umbral_movimiento_pct: 3}
