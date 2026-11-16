@@ -1,0 +1,69 @@
+# Laboratorio EN DIRECTO en la cuenta DEMO de Alpaca (dinero ficticio, ALPACA_PAPER=true).
+# Cada 10 minutos de 9:35 a 13:05 NY (15:35-19:05 España) busca señales de 5 estrategias, las pasa por el
+# filtro «¿entrar o no?» y por las reglas de riesgo, y envía órdenes con stop y objetivo ya puestos.
+# A las 15:47 NY (21:47 España) cierra todo lo que abrió y apunta el resultado.
+# Registro de cada decisión: investigacion/laboratorio/demo/registro.csv (sale en el panel, página Laboratorio).
+#
+# HORARIO DE INVIERNO (NY = UTC-5). Cuando EE. UU. cambie la hora (14-mar-2027) hay que restar 1 a las horas UTC.
+name: Laboratorio demo (directo)
+
+on:
+  schedule:
+    - cron: "35,45,55 14 * * 1-5"
+    - cron: "5,15,25,35,45,55 15-17 * * 1-5"
+    - cron: "5 18 * * 1-5"
+    - cron: "47 20 * * 1-5"   # cierre 15:47 NY
+    - cron: "57 20 * * 1-5"   # repaso del cierre
+  workflow_dispatch:
+    inputs:
+      ensayo:
+        description: "true = todo menos enviar órdenes"
+        default: "true"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: laboratorio-demo
+  cancel-in-progress: false
+
+env:
+  PYTHONPATH: src
+  PYTHONUTF8: "1"
+  ALPACA_PAPER: "true"
+  ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+  ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+
+jobs:
+  pasada:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: config/laboratorio_intradia.yaml
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" requests "python-dotenv>=1" tzdata
+      - name: Fecha de Nueva York
+        id: d
+        run: echo "fecha=$(TZ=America/New_York date +%F)" >> "$GITHUB_OUTPUT"
+      - name: Acciones del día (se calculan en la primera pasada y se reutilizan)
+        uses: actions/cache@v4
+        with:
+          path: datos_demo
+          key: demo-candidatas-${{ steps.d.outputs.fecha }}
+      - name: Pasada (señales, filtro, riesgo, órdenes, trailing o cierre)
+        run: |
+          python -m tradinglab.cli laboratorio demo --salida datos_demo --por-minuto 180 \
+            ${{ github.event_name == 'workflow_dispatch' && inputs.ensayo == 'true' && '--ensayo' || '' }}
+      - name: Guardar el registro (sale en el panel)
+        run: |
+          git config user.name "laboratorio-demo"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add investigacion/laboratorio/demo 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -q -m "Laboratorio demo: $(TZ=America/New_York date '+%F %H:%M') NY"
+          for i in 1 2 3; do git pull --rebase --autostash -q && git push -q && break; sleep 5; done

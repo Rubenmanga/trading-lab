@@ -618,11 +618,26 @@ function labVista() {
       <p class="sub">${esc(e.explica)}</p>
       ${curva.length >= 2 ? `<div class="mut">Suma de R mes a mes (pasado)</div>${linea([0, ...curva], { base: 0, color: (p.R_total ?? 0) >= 0 ? "var(--ok)" : "var(--bad)", etiquetas: ["inicio", ...e.curva_pasado.map((x) => `${x.f}: ${num(x.R, 1)} R`)] })}` : ""}
       <div class="grid" style="margin-top:8px"><div><div class="k">Margen de error (95 %)</div><div class="n">${p.ic95 ? `${rr(p.ic95[0])} a ${rr(p.ic95[1])}` : "—"}</div></div><div><div class="k">Con objetivo 4R</div><div class="n">${rr(p.R_alt_medio)}</div></div><div><div class="k">Factor de beneficio</div><div class="n">${p.pf == null ? "—" : num(p.pf, 2)}</div></div><div><div class="k">Peor caída</div><div class="n badt">${p.n ? num(p.peor_caida_R, 0) + " R" : "—"}</div></div><div><div class="k">Años en positivo</div><div class="n">${p.anios ? `${p.anios_positivos}/${p.anios}` : "—"}</div></div><div><div class="k">Frente al azar</div><div class="n">${rr(p.vs_azar)}</div></div><div><div class="k">Operaciones al día</div><div class="n">${p.n ? num(p.ops_dia, 1) : "—"}</div></div><div><div class="k">Largos / cortos</div><div class="n">${p.n ? `${p.largos} / ${p.cortos}` : "—"}</div></div></div>
+      ${e.pasado_filtrado?.n ? `<div class="sub" style="margin-top:8px">Con el filtro «¿entrar o no?» (nota ≥ ${num(L.filtro?.umbral ?? 62.5, 1)}): <b>${e.pasado_filtrado.n}</b> ops, <b>${rr(e.pasado_filtrado.R_medio)}</b> de media ${e.filtro_aplica ? "(en la demo se usa)" : "(en esta no se usa)"}.</div>` : ""}
       ${e.pasado_como_bot?.n ? `<div class="sub" style="margin-top:8px">Como el bot de eToro (hueco ≥ +50 %, 3 al día): <b>${e.pasado_como_bot.n}</b> ops, <b>${rr(e.pasado_como_bot.R_medio)}</b> (${pct(e.pasado_como_bot.ret_pct_medio)} por operación).</div>` : ""}
       <div class="sec" style="--c:${cs};margin-top:12px">Cuenta sombra · ${noms}</div>
       ${cs2.length >= 2 ? linea([0, ...cs2], { base: 0, color: (s.R_total ?? 0) >= 0 ? "var(--ok)" : "var(--bad)", etiquetas: ["inicio", ...e.curva_sombra.map((x) => `${x.f}: ${num(x.R, 1)} R`)] }) : ""}
       <div class="sub">${s.n ? `${s.n} operaciones · ${rr(s.R_medio)} de media · ${num(s.aciertos_pct, 0)} % aciertos · total ${num(s.R_total, 1)} R.` : "Aún sin operaciones en sombra."} ${faltan ? `Faltan ~${faltan} para una primera lectura.` : "Ya hay operaciones suficientes para una primera lectura."}</div>
     </details>`;
+  }
+  // Demo en directo (Alpaca paper)
+  const RD = D.lab_demo || [], cer = RD.filter((r) => r.accion === "cerrada" && !vacio(r.R));
+  const ACCD = { abierta: ["var(--warn)", "Orden enviada"], descartada: ["var(--mut)", "No entra"], cerrada: ["var(--ok)", "Cerrada"], trailing: ["var(--ia)", "Sube el stop"], error: ["var(--bad)", "Error"], ensayo: ["var(--ia)", "Ensayo"] };
+  h += `<div class="sec" style="--c:var(--warn)">Demo en directo (Alpaca, dinero ficticio)</div>`;
+  if (!RD.length) h += vacioBox("La demo aún no ha operado", "Cada 10 minutos de 15:35 a 19:05 (España) busca señales; a las 21:47 cierra todo. Solo entra si el filtro y las reglas de riesgo lo permiten.");
+  else {
+    const totR = cer.reduce((s, r) => s + +r.R, 0), por = {};
+    for (const r of cer) (por[r.estrategia] ||= []).push(+r.R);
+    const desc = RD.filter((r) => r.accion === "descartada").length, ab = RD.filter((r) => r.accion === "abierta").length;
+    h += `<div class="kpis"><div class="kpi" style="--c:var(--warn)"><div class="lbl">Órdenes enviadas</div><div class="val">${ab}</div><div class="det">${desc} señales descartadas por filtro o riesgo</div></div>
+      <div class="kpi" style="--c:${totR >= 0 ? "var(--ok)" : "var(--bad)"}"><div class="lbl">Resultado cerradas</div><div class="val ${totR >= 0 ? "okt" : "badt"}">${cer.length ? rr(totR) : "—"}</div><div class="det">${cer.length} operaciones · ${cer.length ? num(cer.filter((r) => +r.R > 0).length / cer.length * 100, 0) + " % aciertos" : ""}</div></div></div>`;
+    if (cer.length) h += `<div class="card scroll"><table class="t"><thead><tr><th>Estrategia</th><th>Cerradas</th><th>R medio</th><th>R total</th></tr></thead><tbody>${Object.entries(por).map(([k, v]) => `<tr><td>${esc(L.estrategias?.[k]?.nombre || k)}</td><td>${v.length}</td><td class="${v.reduce((a, b) => a + b, 0) >= 0 ? "okt" : "badt"}">${rr(v.reduce((a, b) => a + b, 0) / v.length)}</td><td>${rr(v.reduce((a, b) => a + b, 0))}</td></tr>`).join("")}</tbody></table></div>`;
+    h += `<details class="card"><summary><b>Últimas decisiones</b> <span class="sub">· también las que no entran, con su motivo</span></summary><ul class="tl" style="margin-top:12px">${RD.slice(-40).reverse().map((r) => { const [c, nom] = ACCD[r.accion] || ["var(--mut)", r.accion]; return `<li style="--c:${c}"><div class="cuando">${esc((r.fecha_hora_ny || "").slice(5, 16))} NY · ${esc(nom)} · ${esc(L.estrategias?.[r.estrategia]?.nombre || r.estrategia)}${vacio(r.nota) ? "" : ` · nota ${esc(r.nota)}`}${vacio(r.R) ? "" : ` · <b class="${+r.R >= 0 ? "okt" : "badt"}">${rr(r.R)}</b>`}</div><div><b>${esc(r.simbolo)}</b> ${r.lado === "venta" ? "corto" : r.lado === "compra" ? "largo" : ""} · ${esc(r.motivo)}</div></li>`; }).join("")}</ul></details>`;
   }
   const U = (L.ultimas_sombra || []).slice().reverse();
   h += `<div class="sec" style="--c:var(--ia)">Últimas operaciones en papel</div>`;
