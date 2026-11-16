@@ -72,11 +72,11 @@ estrategias:
 # En el pasado y en la sombra se apunta la nota de TODAS las señales; en la demo solo se entra si llega al umbral.
 filtro:
   umbral: 62.5                  # 5 de 8 puntos a favor
-  aplicar_a: [orb, hueco_volumen, vwap, rebote]   # el corto del hueco va contra la tendencia a propósito: sin filtro
+  aplicar_a: []                 # 16-nov: el filtro NO está backtesteado, solo apunta la nota (no bloquea). Antes: [orb, hueco_volumen, vwap, rebote]
 
 # DEMO EN DIRECTO en Alpaca paper (dinero ficticio). Workflow laboratorio-demo.yml cada 10 min.
 demo:
-  estrategias: [orb, hueco_volumen, vwap, rebote, corto_hueco]   # el azar se queda solo en papel
+  estrategias: [corto_hueco]    # 16-nov: en demo SOLO estrategias con R positivo en 10 años (las demás siguen en cuenta sombra)
   desde: "09:35"                # hora NY (15:35 España)
   hasta: "13:05"                # después ya no se abren operaciones (todas las estrategias dejan de entrar a las 13:00)
   senal_max_min_directo: 2     # en la conexión continua solo cuentan señales de los últimos 2 min
