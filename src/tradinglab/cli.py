@@ -24,6 +24,7 @@
   lab medio seguimiento     Seguimiento diario de las empresas en config (momento de entrada + lista de noticias)
   lab medio noticias        Solo la lista de noticias (revisión rápida cada 2 h en horario de bolsa)
   lab medio expediente [T]  Expediente por acción: hechos con fuente, fecha y reacción del precio
+  lab medio propuestas [RUTA]  Investigador diario: valida y apunta sus ideas en el libro de predicciones
   lab medio marcador        Marcador: ¿aciertan los análisis? (libro de predicciones frente a IWM)
   lab radar parte|informe   Radar de resultados: prueba con el pasado (corre en GitHub Actions)
   lab panel                 Abre el panel web
@@ -160,6 +161,10 @@ def _medio(args):
     elif args.accion == "hoy":
         from .medio_plazo import carpeta_dia
         print(carpeta_dia.ejecutar().read_text(encoding="utf-8"))
+    elif args.accion == "propuestas":
+        from .medio_plazo import propuestas
+        if propuestas.main([args.ticker] if args.ticker else []):
+            raise SystemExit(1)
     elif args.accion == "marcador":
         from .medio_plazo import marcador
         r = marcador.ejecutar()
@@ -348,7 +353,7 @@ def main(argv=None):
     pi.add_argument("accion", choices=["demo", "comprobar", "backtest", "sesion", "cerrar-todo"])
     pi.add_argument("--dias", type=int, default=30)
     pm = sub.add_parser("medio", help="Agente B: inversión a 12 meses")
-    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas", "fuentes", "seguimiento", "noticias", "expediente", "marcador", "regla-fuentes", "hoy"])
+    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas", "fuentes", "seguimiento", "noticias", "expediente", "marcador", "regla-fuentes", "hoy", "propuestas"])
     pm.add_argument("ticker", nargs="?")
     pm.add_argument("--max", type=int, default=None, help="máximo de empresas a analizar (para pruebas)")
     pm.add_argument("--parte", type=int, default=1, help="oportunidades: qué trozo del universo descargar (1..N)")

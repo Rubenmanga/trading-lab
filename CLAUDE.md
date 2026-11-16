@@ -41,6 +41,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 | B · **expediente por acción** (hechos con fuente SEC/Yahoo, fecha y reacción 1/5/20 sesiones; solo añade) | `medio_plazo/expediente.py`, workflow `expedientes.yml`, `investigacion/expedientes/TICKER/` (`eventos.csv`, `tesis.md`); en el panel, `#/historia/TICKER` |
 | B · **marcador de aciertos** (libro `investigacion/predicciones.csv` solo-añadir, se llena desde `watchlist.csv`; puntúa frente a IWM) | `medio_plazo/marcador.py`, `lab medio marcador`, workflow `marcador.yml`, `investigacion/marcador/`; en el panel, `#/marcador` |
 | B · **carpeta del día** (`investigacion/hoy.md`, sin IA, < 1 pantalla: avisos, hechos nuevos, zona de entrada, catalizadores 14 d, nuevas del top 10). El investigador diario lee **solo** esto | `medio_plazo/carpeta_dia.py`, `lab medio hoy`, dentro de `agente-12m.yml` |
+| B · **investigador diario** (tarea programada de Claude L-V 8:00 España: lee **solo** `hoy.md`, 3-5 ideas con entrada/stop/objetivo, las apunta en `predicciones.csv`) | skill `investigador-diario`, `medio_plazo/propuestas.py`, `lab medio propuestas`, `investigacion/propuestas/`; en el panel, inicio |
 | B · perfiles («¿puede duplicar?», «+500 %») | `src/tradinglab/perfiles/`, `investigacion/duplicar/`, `investigacion/quintuplicar/` |
 | Código común (datos, almacén) | `src/tradinglab/common/` |
 | Diario del agente A | `diario/`, `src/tradinglab/diario.py` |
@@ -60,7 +61,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 
 ## Comandos
 `lab intradia demo|comprobar|backtest|sesion|cerrar-todo` · `lab corto operar|cerrar [--ensayo]` · `lab estudio universo|tramo|informe` · `lab laboratorio tramo|dia|informe` ·
-`lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|expediente [TICKER]|hoy|regla-fuentes [RUTA]|cribado|ficha TICKER|alertas` · `lab panel`.
+`lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|expediente [TICKER]|hoy|propuestas [RUTA]|regla-fuentes [RUTA]|cribado|ficha TICKER|alertas` · `lab panel`.
 
 ## Workflows de GitHub Actions (no romper sus rutas)
 - `agente-12m.yml`: L-V noche y domingo. Ranking diario, alertas, cribado → `investigacion/` (`ranking.*`,
@@ -78,7 +79,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 
 ## Skills (`.claude/skills/`)
 Propias: `sesion-intradia`, `revisor-senal-intradia`, `investigar-estrategias-intradia`, `diario-operaciones`,
-`oportunidades-12m`, `buscar-small-caps`, `analizar-empresa-12m`, `revisar-cartera-12m`, `duplicar-12m`.
+`oportunidades-12m`, `investigador-diario`, `buscar-small-caps`, `analizar-empresa-12m`, `revisar-cartera-12m`, `duplicar-12m`.
 De tradermonty (MIT): `position-sizer`, `drawdown-circuit-breaker`, `pre-trade-discipline-gate`,
 `market-environment-analysis`, `us-stock-analysis`, `market-news-analyst`, `trader-memory-core`.
 
