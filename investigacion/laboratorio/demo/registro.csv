@@ -1,0 +1,13 @@
+fecha_hora_ny,estrategia,simbolo,accion,lado,precio,stop,objetivo,acciones,nota,filtro,R,motivo
+2026-11-16 09:43,orb,AXTX,descartada,venta,5.685,5.74,5.51,1759,62.5,···11·10,,señal pasada: el precio ya se ha movido más que el stop desde la señal (5.61 → 5.685)
+2026-11-16 09:43,orb,GDS,descartada,venta,17.13,17.3,16.62,583,62.5,···11·10,,señal pasada: el precio ya se ha movido más que el stop desde la señal (15.68 → 17.13)
+2026-11-16 09:43,orb,AMDL,descartada,compra,50.03,49.53,51.53,199,50.0,···01·10,,el filtro dice que mejor no entrar (nota 50.0 < 62.5)
+2026-11-16 09:43,orb,SNDQ,descartada,compra,30.22,29.92,31.13,330,50.0,···11·00,,el filtro dice que mejor no entrar (nota 50.0 < 62.5)
+2026-11-16 09:43,orb,BITU,descartada,compra,8.9,8.81,9.17,1123,37.5,···01·00,,el filtro dice que mejor no entrar (nota 37.5 < 62.5)
+2026-11-16 09:43,orb,BITX,descartada,compra,11.52,11.4,11.87,868,37.5,···01·00,,el filtro dice que mejor no entrar (nota 37.5 < 62.5)
+2026-11-16 09:43,orb,CGON,descartada,venta,82.73,83.56,80.25,120,37.5,···00·10,,el filtro dice que mejor no entrar (nota 37.5 < 62.5)
+2026-11-16 09:43,orb,MSTU,descartada,compra,16.92,16.75,17.43,591,37.5,···01·00,,el filtro dice que mejor no entrar (nota 37.5 < 62.5)
+2026-11-16 09:43,orb,NEBX,descartada,compra,4.5,4.46,4.63,2222,37.5,···01·00,,el filtro dice que mejor no entrar (nota 37.5 < 62.5)
+2026-11-16 09:43,corto_hueco,AKAN,descartada,venta,2.0,2.3,1.0,1666,37.5,···00·10,,Alpaca no deja venderla en corto (no hay acciones para prestar)
+2026-11-16 09:43,corto_hueco,CLRO,descartada,venta,4.94,5.68,2.47,674,37.5,···00·10,,Alpaca no deja venderla en corto (no hay acciones para prestar)
+2026-11-16 09:43,corto_hueco,GP,descartada,venta,1.785,2.05,0.89,1867,37.5,···00·10,,señal pasada: el precio ya se ha movido más que el stop desde la señal (1.46 → 1.785)
