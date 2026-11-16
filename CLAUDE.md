@@ -14,9 +14,15 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 4. Toda decisión del agente A se registra con su motivo (`data/lab.db`).
 5. El código de riesgo no usa IA y siempre manda sobre la IA.
 
+## Verificación y trazabilidad (regla incorporada el 16-11-2026)
+- Para cambios técnicos seguir `MEJORA_CONTINUA.md` y `AGENTS.md`: evidencia → hipótesis → alternativas → decisión → implementación → prueba → revisión.
+- **CI verde no implica estrategia rentable ni integración de mercado comprobada.** Documentar fuentes, fechas, costes, sesgo histórico, y qué no se pudo probar.
+- Los datos de `web/dist/` son copia estática; fecha del build no equivale a frescura de precios. Dominios desconocidos no se consideran oficiales.
+- En esta revisión la cartera personal está **fuera de alcance por solicitud expresa**. No alterar contenido ni publicación.
+- No editar `main` ni fusionar la PR sin consentimiento. La rama de trabajo permite pruebas y cambios reversibles.
+
 ## Ahorro de tokens (obligatorio)
-- **Plan corto primero.** Si la tarea es grande (investigación amplia, muchos tickers, backtest nuevo),
-  propón un plan de 3-5 líneas y espera el OK de Ruben. Trabaja en pasos pequeños.
+- **Plan corto primero.** Si la tarea es grande, propón un plan de 3-5 líneas. Espera aprobación cuando no exista permiso previo; si el usuario ya autorizó explícitamente ejecutar cambios reversibles en rama (como esta auditoría), ejecuta sin pedir otro OK. El permiso no incluye merge a main, despliegue productivo, trading live ni gasto. Trabaja en pasos pequeños.
 - **Lo pesado, a GitHub Actions** (gratis): descargas, rankings, backtests. Tú solo lees el resumen.
 - **No leas a ciegas.** Este mapa te dice dónde está todo: no hagas `ls -R`, `tree` ni leas carpetas enteras.
   Abre solo el archivo que necesitas y, si es largo, solo el trozo (`sed -n`, `head`, `grep`).

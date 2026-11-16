@@ -9,7 +9,12 @@ on:
   push:
     branches-ignore: [main]
     paths:
-      - "src/tradinglab/backtest12m/**"
+      # Solo cuando cambia el cálculo o sus datos. Cambiar la presentación
+      # del informe NO debe descargar de nuevo todo el histórico.
+      - "src/tradinglab/backtest12m/datos.py"
+      - "src/tradinglab/backtest12m/motor.py"
+      - "src/tradinglab/medio_plazo/sec_cuentas.py"
+      - "src/tradinglab/medio_plazo/oportunidades.py"
       - ".github/workflows/backtest-12m.yml"
   workflow_dispatch:
 
@@ -26,6 +31,8 @@ env:
 
 jobs:
   sec:
+    # Permite cambios de mantenimiento sin disparar descargas de horas.
+    if: github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip backtest]')
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -91,7 +98,8 @@ jobs:
 
   motor:
     needs: precios
-    if: always() && needs.precios.result != 'cancelled'
+    # Sin las cuatro partes de precios correctas NO hay informe fiable.
+    if: needs.precios.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:

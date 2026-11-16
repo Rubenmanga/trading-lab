@@ -1,0 +1,47 @@
+name: Verificación de reingeniería
+on:
+  pull_request:
+    paths:
+      - "web/**"
+      - "tests/**"
+      - "src/**"
+      - ".github/workflows/verificacion-reingenieria.yml"
+  push:
+    branches:
+      - "audit/**"
+    paths:
+      - "web/**"
+      - "tests/**"
+      - "src/**"
+      - ".github/workflows/verificacion-reingenieria.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --check web/build.mjs && node --check web/quality.js
+      - run: node --test web/test/*.test.cjs
+      - run: node web/build.mjs
+      - name: Comprobar artefactos
+        run: |
+          test -s web/dist/index.html
+          test -s web/dist/datos.json
+          test -s web/dist/quality.js
+          test -s web/dist/decision-center.css
+  python:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e '.[dev]'
+      - run: python -m pytest -q tests/

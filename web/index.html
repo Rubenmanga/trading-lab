@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#0b0d10">
-<title>Agente de trading</title>
+<title>Trading Lab | Centro de decisiones</title>
 <style>
 /* Colores con significado: verde = bien / entra · ámbar = atento · rojo = peligro · azul = información · morado = IA.
    Oscuro por defecto (como el panel del vídeo); claro si el móvil está en modo claro o si se elige con el botón ◐. */
@@ -150,17 +150,18 @@ details[open]>summary::after{transform:rotate(90deg)}
 #tip.on{opacity:1}
 svg text{font-family:inherit}
 </style>
+<link rel="stylesheet" href="decision-center.css">
 </head>
 <body>
 <header><div class="wrap">
   <div class="top">
     <div class="logo" aria-hidden="true"></div>
-    <div class="marca"><b>Agente de trading</b><span id="sub-cab">Cargando…</span></div>
+    <div class="marca"><b>Trading Lab</b><span id="sub-cab">Cargando…</span></div>
     <span class="pill">DEMO</span>
     <button class="tema" id="tema" title="Cambiar tema (automático / oscuro / claro)" aria-label="Cambiar tema">◐</button>
   </div>
-  <nav class="tabs" id="tabs">
-    <a href="#/">Hoy</a><a href="#/cartera">Mis acciones</a><a href="#/ranking">Ranking</a><a href="#/bot">Bot corto</a><a href="#/lab">Laboratorio</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Vigilancia del agente</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/informes">Informes</a><a href="#/marcador">Marcador</a><a href="#/mas">Más</a>
+  <nav class="tabs" id="tabs" aria-label="Navegación principal">
+    <a href="#/">Centro</a><a href="#/ranking">Radar 12 meses</a><a href="#/lab">Laboratorio</a><a href="#/bot">Bot demo</a><a href="#/cartera">Mi cartera</a><a href="#/seguimiento">Noticias</a><a href="#/fuentes">Fuentes</a><a href="#/mas">Archivo y ayuda</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"><div class="empty">Cargando…</div></main>
@@ -169,12 +170,13 @@ svg text{font-family:inherit}
   <a href="#/"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Hoy</a>
   <a href="#/cartera"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>Mis acciones</a>
   <a href="#/ranking"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Ranking</a>
-  <a href="#/seguimiento"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h8M8 17h5"/></svg>Noticias</a>
+  <a href="#/lab"><svg viewBox="0 0 24 24"><path d="M4 20V6h16v14H4zM8 16l3-4 3 2 3-5"/></svg>Laboratorio</a>
   <a href="#/mas"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg>Más</a>
 </nav>
 <div id="tip"></div>
 <script src="vendor/marked.min.js"></script>
 <script src="vendor/purify.min.js"></script>
+<script src="quality.js"></script>
 <script>
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -440,7 +442,63 @@ function propLista(t) {
   }).join("\n");
 }
 
+/* Centro de decisiones: datos → atención → catalizadores → agentes → detalle.
+   "Actualizado" significa fecha declarada por un archivo, NO comprobación en vivo de una API. */
+function contextoDatos() {
+  const q = TradingLabQuality.resumen(D);
+  const estado = q.sinDatos ? "Faltan fuentes" : q.retrasadas ? "Hay datos retrasados" : "Fechas de fuentes disponibles";
+  return '<aside class="tl-context" role="status"><b>' + esc(estado) +
+    '</b> · Panel compilado ' + esc(fecha(D.construido)) +
+    '. Las cotizaciones no son en directo. <a href="#/fuentes">Consultar fuentes</a></aside>';
+}
+function portada() {
+  const q = TradingLabQuality.resumen(D), F = q.fuentes, at = atencion(), ev = catalizadores();
+  const etiqueta = { reciente: "Fecha disponible", retrasado: "Retrasado", sin_datos: "Sin datos", fecha_invalida: "Revisar fecha" };
+  const fechaVisible = (f) => f.fecha ? f.fecha.slice(0, 16).replace("T", " · ") : "sin fecha";
+  let h = '<section class="tl-hero" aria-labelledby="tl-portada">' +
+    '<div class="tl-eyebrow">Trading Lab / Centro de decisiones / Solo paper trading</div>' +
+    '<h1 class="tl-title" id="tl-portada">Qué merece atención hoy</h1>' +
+    '<p class="tl-lead">Primero el estado de los datos y los riesgos. Después las hipótesis y los resultados simulados. Ningún semáforo equivale a una orden de compra.</p>' +
+    '<div class="tl-quick"><a href="#/vigilancia">Revisar alertas</a><a href="#/ranking">Investigar oportunidades</a>' +
+    '<a href="#/lab">Validar estrategias</a><a href="#/fuentes">Comprobar fuentes</a></div></section>';
+  h += '<div class="tl-section-title"><h2>Calidad de la información</h2><a href="#/fuentes">Detalles y limitaciones</a></div>' +
+    '<div class="tl-source-rail" role="list">' + F.map(f =>
+      '<a class="tl-source" role="listitem" href="' + f.ruta + '">' +
+      '<span class="tl-indicator" data-state="' + f.codigo + '">' + etiqueta[f.codigo] + '</span>' +
+      '<strong>' + esc(f.nombre) + '</strong><small>Fecha declarada: ' + esc(fechaVisible(f)) + '</small></a>'
+    ).join("") + '</div>';
+  const fallos = q.sinDatos + q.retrasadas;
+  if (fallos) h += '<p class="tl-footnote" role="status">' + fallos +
+    ' fuentes sin datos válidos o fuera del margen de actualización estimado. No interpretes la ausencia de alertas como ausencia de riesgo.</p>';
+  h += '<div class="tl-columns"><section class="tl-panel" aria-labelledby="tl-alertas">' +
+    '<div class="tl-section-title"><h2 id="tl-alertas">01 · Requiere revisión</h2><a href="#/vigilancia">Todas las alertas</a></div>';
+  h += at.length ? at.slice(0, 4).map(avisoHtml).join("") : '<p class="sub">No constan alertas en los archivos disponibles. No garantiza que no haya incidencias.</p>';
+  if (at.length > 4) h += '<p class="tl-footnote">Mostrando 4 de ' + at.length + ' avisos. Consulta el detalle para los restantes.</p>';
+  h += '</section><section class="tl-panel" aria-labelledby="tl-catalizadores">' +
+    '<div class="tl-section-title"><h2 id="tl-catalizadores">02 · Próximos eventos</h2><a href="#/vigilancia">Lista completa</a></div>';
+  h += ev.length ? '<ol class="tl-list">' + ev.slice(0, 5).map(e =>
+    '<li><span class="tl-due">' + esc(e.f) + '</span><b>' + esc(e.t) + '</b>' +
+    '<div class="sub">' + esc(e.texto) + ' · fuente de agenda: ' + esc(e.origen) + '</div></li>'
+  ).join("") + '</ol>' : '<p class="sub">No hay próximos catalizadores fechados en los archivos consultados.</p>';
+  h += '<p class="tl-footnote">Una fecha en la agenda no confirma que el evento ocurra ni anticipa su resultado.</p></section></div>';
+  const lab = D.lab, R = D.ranking, estrategias = Object.keys(lab?.estrategias || {}).length;
+  h += '<div class="tl-section-title"><h2>03 · Dos agentes, dos responsabilidades</h2></div>' +
+    '<div class="tl-columns tl-agents">' +
+    '<a class="tl-agent" href="#/lab"><div class="tl-eyebrow">Agente A · Intradía</div><b>Laboratorio y operaciones ficticias</b>' +
+    '<span>' + (lab ? estrategias + ' estrategias registradas; resultados históricos no son rentabilidad futura.' : 'Laboratorio sin resumen disponible.') + '</span>' +
+    '<span>Ver resultados, costes y operaciones en demo →</span></a>' +
+    '<a class="tl-agent" href="#/ranking"><div class="tl-eyebrow">Agente B · 12 meses</div><b>Investigación, no ejecución</b>' +
+    '<span>' + (R ? esc(R.analizadas ?? "—") + ' empresas analizadas por el ranking; la puntuación no es una probabilidad.' : 'No hay ranking disponible.') + '</span>' +
+    '<span>Ver empresas, catalizadores y fuentes →</span></a></div>';
+  h += '<p class="tl-disclosure">El panel se genera a partir de archivos del repositorio. No informa sobre el estado en tiempo real de GitHub Actions, brókeres ni mercados. Consulta cada workflow para conocer su última ejecución.</p>';
+  return h;
+}
 function hoy() {
+  return portada() + '<details class="tl-detail"><summary>Explorar el informe completo, cartera, gráficas y seguimiento</summary>' +
+    '<div class="tl-detail-body">' + hoyDetalle() + '</div></details>';
+}
+
+function hoyDetalle() {
   const E = D.estado, R = D.ranking, L = D.seguimiento?.lista;
   const al = E?.alertas || [];
   const enZona = (E?.precios || []).filter((p) => !vacio(p.distancia_zona_pct) && p.distancia_zona_pct <= 0);
@@ -1037,7 +1095,7 @@ function historiaVista(t) {
 
 /* ---------- Navegación ---------- */
 const TITULO = { "/ranking": "Ranking", "/bot": "Bot corto del hueco", "/lab": "Laboratorio intradía", "/seguimiento": "Seguimiento de noticias", "/vigilancia": "Vigilancia del agente", "/cartera": "Mis acciones", "/duplicar": "¿Puede duplicar?", "/x6": "¿+500 %?", "/informes": "Informes", "/candidatos": "Cribado simple", "/ayuda": "Cómo se usa", "/mas": "Más", "/fuentes": "Salud de las fuentes", "/marcador": "Marcador de aciertos" };
-const EN_MAS = ["/bot", "/lab", "/vigilancia", "/duplicar", "/x6", "/informes", "/candidatos", "/ayuda", "/fuentes", "/marcador"];
+const EN_MAS = ["/bot", "/vigilancia", "/duplicar", "/x6", "/informes", "/candidatos", "/ayuda", "/fuentes", "/marcador"];
 function pintar(mantener) {
   const r = location.hash.replace(/^#/, "") || "/";
   const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/ranking" : r.startsWith("/seguimiento") ? "/seguimiento" : r.startsWith("/cartera") || r.startsWith("/historia/") ? "/cartera" : r;
@@ -1058,7 +1116,7 @@ function pintar(mantener) {
       : r === "/marcador" ? marcadorVista()
       : r === "/mas" ? masVista() : r === "/fuentes" ? fuentesVista() : hoy();
   } catch (e) { console.error(e); cuerpo = vacioBox("Algo ha fallado al dibujar esta parte", esc(e.message)); }
-  app.innerHTML = (r.startsWith("/informe/") || r.startsWith("/empresa/") || r.startsWith("/historia/") ? "" : titulo) + cuerpo;
+  app.innerHTML = (r === "/" ? "" : contextoDatos()) + (r.startsWith("/informe/") || r.startsWith("/empresa/") || r.startsWith("/historia/") ? "" : titulo) + cuerpo;
   const fs = $("#fs");
   if (fs) fs.onchange = () => { filtroSector = fs.value; cuantas = 30; try { localStorage.setItem("fs", filtroSector); } catch {} pintar(true); };
   document.querySelectorAll("[data-carril]").forEach((b) => b.onclick = () => { filtroCarril = b.dataset.carril; cuantas = 30; try { localStorage.setItem("fc", filtroCarril); } catch {} pintar(true); });
@@ -1096,7 +1154,7 @@ $("#tema").onclick = () => { tema = TEMAS[(TEMAS.indexOf(tema) + 1) % 3]; try { 
 
 fetch("datos.json", {cache: "no-store"}).then((r) => r.json()).then((d) => {
   D = d;
-  $("#sub-cab").textContent = `Datos al ${D.estado ? fecha(D.estado.actualizado) : fecha(D.construido)} · solo lectura`;
+  $("#sub-cab").textContent = `Generado ${fecha(D.construido)} · fuentes con fechas distintas`;
   $("#pie").innerHTML = `Nada de esto es una recomendación de compra. El agente B no opera; el bot del agente A solo usa la cuenta demo.<br>Precios: ${D.estado ? esc(fecha(D.estado.actualizado)) : "aún sin calcular"} · Panel generado: ${esc(fecha(D.construido))}`;
   pintar();
 }).catch((e) => { console.error(e); $("#app").innerHTML = vacioBox("No se han podido cargar los datos", "Prueba a recargar la página."); });

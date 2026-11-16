@@ -60,7 +60,9 @@ def test_informes_antiguos_y_otros_nombres_no_se_revisan():
 
 def test_niveles_y_dias():
     assert nivel_fuente("https://www.sec.gov/x") == 1
-    assert nivel_fuente("https://ir.empresa.com/news") == 1
+    # Un subdominio con "ir" no prueba que sea una fuente oficial.
+    assert nivel_fuente("https://ir.empresa.com/news") == 3
+    assert nivel_fuente("https://sec.gov.ejemplo.com/x") == 3
     assert nivel_fuente("https://finance.yahoo.com/quote/ABC") == 2
     assert nivel_fuente("https://www.nasdaq.com/articles/x") == 3
     assert nivel_fuente("sin enlace") is None
@@ -69,3 +71,17 @@ def test_niveles_y_dias():
 
 def test_main_con_informes_del_repo_pasa():
     assert main([]) == 0
+
+def test_fechas_invalidas_y_futuras():
+    malo = BUENA.replace("2026-11-20 |", "2026-99-99 |", 1)
+    assert any("fecha no válida" in f for f in revisar(_r(), malo))
+    futuro = BUENA.replace("2026-11-10 |", "2026-12-10 |", 1)
+    assert any("posterior al informe" in f for f in revisar(_r(), futuro))
+
+
+def test_dominio_no_verificado_no_equivale_a_comunicado_oficial():
+    texto = BUENA.replace("https://www.sec.gov/Archives/edgar/data/1/x.htm",
+                          "https://opinionesdesconocidas.example/noticia")
+    errores = revisar(_r(), texto)
+    assert any("ninguna fuente oficial" in f for f in errores)
+    assert any("caja" in f for f in errores)
