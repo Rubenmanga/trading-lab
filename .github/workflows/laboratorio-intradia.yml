@@ -1,0 +1,193 @@
+# Laboratorio intradía (agente A): 6 estrategias a la vez en CUENTA SOMBRA (solo papel, sin órdenes).
+#  - Cada día laborable tras el cierre (22:15 UTC = 17:15 NY en invierno, 18:15 en verano): baja las velas
+#    de 1 minuto de hoy (Alpaca gratis) y apunta qué habría hecho cada estrategia -> investigacion/laboratorio/
+#  - A mano, modo «pasado»: la misma prueba de 2016 a hoy (un año por máquina, 3 a la vez).
+#  - En un pull request: prueba corta de unos días de 2025 y no guarda nada.
+name: Laboratorio intradía
+
+on:
+  schedule:
+    - cron: "15 22 * * 1-5"
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "sombra (solo hoy) o pasado (backtest)"
+        type: choice
+        options: [sombra, pasado]
+        default: sombra
+      desde:
+        description: "pasado: desde (AAAA-MM-DD)"
+        default: "2016-01-01"
+      hasta:
+        description: "pasado: hasta (AAAA-MM-DD)"
+        default: "2026-11-13"
+      fecha:
+        description: "sombra: día a apuntar (vacío = hoy en Nueva York)"
+        default: ""
+      run_candidatas:
+        description: "pasado: ejecución del «Estudio intradía» cuyas candidatas reutilizar (ahorra 1 h)"
+        default: "43712314618"
+  pull_request:
+    paths:
+      - ".github/workflows/laboratorio-intradia.yml"
+      - "src/tradinglab/intradia/laboratorio/**"
+      - "config/laboratorio_intradia.yaml"
+      - "tests/test_laboratorio.py"
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: laboratorio-intradia
+  cancel-in-progress: false
+
+env:
+  PYTHONPATH: src
+  PYTHONUTF8: "1"
+  ALPACA_PAPER: "true"
+  ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+  ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+
+jobs:
+  # ------------------------------------------------------------------ cuenta sombra (cada día)
+  sombra:
+    if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.modo == 'sombra')
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" requests "python-dotenv>=1" tzdata pytest
+      - name: Pruebas
+        run: python -m pytest -q tests/test_laboratorio.py tests/test_seguridad.py
+      - name: Apuntar el día en papel
+        run: python -m tradinglab.cli laboratorio dia ${{ inputs.fecha && format('--fecha {0}', inputs.fecha) || '' }}
+      - name: Informe
+        run: python -m tradinglab.cli laboratorio informe
+      - name: Guardar en el repo (sale en el panel)
+        run: |
+          git config user.name "laboratorio-intradia"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add investigacion/laboratorio
+          git diff --cached --quiet || git commit -m "Laboratorio intradía: cuenta sombra $(date -u +%F)"
+          git pull --rebase --autostash -q || true
+          git push
+
+  # ------------------------------------------------------------------ pasado (backtest) o prueba corta del PR
+  universo:
+    if: github.event_name == 'pull_request' || (github.event_name == 'workflow_dispatch' && inputs.modo == 'pasado')
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      DESDE: ${{ github.event_name == 'pull_request' && '2025-10-06' || inputs.desde }}
+      HASTA: ${{ github.event_name == 'pull_request' && '2025-10-10' || inputs.hasta }}
+    outputs:
+      anios: ${{ steps.plan.outputs.anios }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" requests "python-dotenv>=1" tzdata pytest
+      - name: Pruebas
+        run: python -m pytest -q tests/test_laboratorio.py tests/test_estudio_intradia.py tests/test_seguridad.py
+      - name: Años a repartir
+        id: plan
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, os
+          a, b = int(os.environ["DESDE"][:4]), int(os.environ["HASTA"][:4])
+          print("anios=" + json.dumps([str(x) for x in range(a, b + 1)]))
+          PY
+      - name: Reutilizar las candidatas del estudio (si siguen guardadas)
+        if: github.event_name == 'workflow_dispatch' && inputs.run_candidatas != ''
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: candidatas
+          path: datos_estudio
+          run-id: ${{ inputs.run_candidatas }}
+          github-token: ${{ github.token }}
+      - name: Velas diarias de todas las acciones -> candidatas (si no se pudieron reutilizar)
+        run: |
+          if [ -f datos_estudio/candidatas.csv.gz ]; then echo "Candidatas reutilizadas"; exit 0; fi
+          python -m tradinglab.cli estudio universo --desde "$DESDE" --hasta "$HASTA" \
+            --salida datos_estudio/candidatas.csv.gz --por-minuto 180 \
+            ${{ github.event_name == 'pull_request' && '--max 800' || '' }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: candidatas-lab
+          path: datos_estudio/candidatas.csv.gz
+          retention-days: 7
+
+  tramos:
+    needs: universo
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      DESDE: ${{ github.event_name == 'pull_request' && '2025-10-06' || inputs.desde }}
+      HASTA: ${{ github.event_name == 'pull_request' && '2025-10-10' || inputs.hasta }}
+    strategy:
+      fail-fast: false
+      max-parallel: 3          # 3 máquinas x 60 llamadas/min = dentro del límite gratis de Alpaca (200/min)
+      matrix:
+        anio: ${{ fromJSON(needs.universo.outputs.anios) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" requests "python-dotenv>=1" tzdata pytest
+      - uses: actions/download-artifact@v4
+        with:
+          name: candidatas-lab
+          path: datos_estudio
+      - name: Velas de 1 minuto del año ${{ matrix.anio }} -> 6 estrategias en papel
+        run: |
+          A=${{ matrix.anio }}
+          D=$(python -c "import os;print(max(os.environ['DESDE'], '$A-01-01'))")
+          H=$(python -c "import os;print(min(os.environ['HASTA'], '$A-12-31'))")
+          python -m tradinglab.cli laboratorio tramo --desde "$D" --hasta "$H" --nombre "$A" \
+            --candidatas datos_estudio/candidatas.csv.gz --salida tramos --por-minuto 60
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lab-${{ matrix.anio }}
+          path: tramos/
+          retention-days: 30
+
+  informe:
+    needs: tramos
+    if: always() && needs.tramos.result != 'skipped'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" requests "python-dotenv>=1" tzdata pytest
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: lab-*
+          path: datos_lab
+          merge-multiple: true
+      - name: Informe
+        run: |
+          ls -la datos_lab
+          python -m tradinglab.cli laboratorio informe --entrada datos_lab
+      - name: Guardar en el repo (sale en el panel)
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name "laboratorio-intradia"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add investigacion/laboratorio
+          git diff --cached --quiet || git commit -m "Laboratorio intradía: pasado ${{ inputs.desde }} a ${{ inputs.hasta }}"
+          git pull --rebase --autostash -q || true
+          git push

@@ -8,6 +8,9 @@
   lab estudio universo      Estudio intradía (Alpaca, solo lectura): velas diarias -> candidatas
   lab estudio tramo         ... velas de 1 min de las candidatas -> top gainers y operaciones ORB
   lab estudio informe       ... junta todo y escribe el informe en investigacion/estrategias/
+  lab laboratorio tramo     Laboratorio intradía: 6 estrategias en papel con el pasado (un tramo de fechas)
+  lab laboratorio dia       ... cuenta sombra: apunta lo que habría hecho cada estrategia hoy
+  lab laboratorio informe   ... compara las estrategias y escribe investigacion/laboratorio/
   lab corto operar          Corto del hueco en eToro DEMO: escanea a las 9:34 NY y vende en corto a las 9:35
   lab corto cerrar          ... cierra las posiciones del bot (a partir de las 15:45 NY)
   lab diario                Escribe el diario del día en diario/
@@ -191,6 +194,59 @@ def _estudio(args):
         print(f"Tramo {args.nombre}: {len(g)} filas gainers, {len(o)} operaciones ORB · {cliente.llamadas} llamadas")
 
 
+def _laboratorio(args):
+    from pathlib import Path
+
+    import pandas as pd
+
+    from .common import config
+    from .intradia.laboratorio import informe, motor
+
+    config.cargar_env()
+    cfg = config.cargar("laboratorio_intradia")
+    carpeta = config.ruta("investigacion", "laboratorio")
+    sombra_csv = carpeta / "sombra" / "operaciones.csv"
+    if args.accion == "informe":
+        back = informe.leer_ops(carpeta / "backtest", "ops-*.csv.gz")
+        if args.entrada and Path(args.entrada).exists():
+            nuevo = informe.leer_ops(Path(args.entrada), "ops-*.csv.gz")
+            if len(nuevo):  # los años recalculados sustituyen a los guardados
+                back = pd.concat([back[~back["fecha"].str[:4].isin(set(nuevo["fecha"].str[:4]))] if len(back) else back, nuevo])
+                (carpeta / "backtest").mkdir(parents=True, exist_ok=True)
+                for anio, g in nuevo.groupby(nuevo["fecha"].str[:4]):
+                    g.to_csv(carpeta / "backtest" / f"ops-{anio}.csv.gz", index=False)
+        sombra = informe.leer_ops(sombra_csv.parent, sombra_csv.name)
+        hoy = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        md = informe.guardar(informe.generar(back, sombra, cfg, hoy), carpeta)
+        print(md.read_text(encoding="utf-8"))
+        return
+    from .intradia.estudio.alpaca_rest import Alpaca
+    from .intradia.estudio.universo import leer_csv
+    cliente = Alpaca(por_minuto=args.por_minuto)
+    if args.accion == "tramo":
+        ops = motor.procesar(cliente, leer_csv(args.candidatas), args.desde, args.hasta, cfg)
+        sal = Path(args.salida)
+        sal.mkdir(parents=True, exist_ok=True)
+        ops.to_csv(sal / f"ops-{args.nombre}.csv.gz", index=False)
+        print(f"Tramo {args.nombre}: {len(ops)} operaciones · {cliente.llamadas} llamadas")
+    else:  # dia: cuenta sombra
+        from zoneinfo import ZoneInfo
+
+        from .intradia.estudio import universo
+        fecha = args.fecha or datetime.now(ZoneInfo("America/New_York")).strftime("%Y-%m-%d")
+        cands = universo.descargar(cliente, fecha, fecha, config.cargar("estudio_intradia"), max_simbolos=args.max)
+        ops = motor.procesar(cliente, cands, fecha, fecha, cfg) if len(cands) else pd.DataFrame()
+        print(f"{fecha}: {len(cands)} candidatas, {len(ops)} operaciones en papel · {cliente.llamadas} llamadas")
+        if ops.empty:
+            print("Sin operaciones (¿festivo o fin de semana?): no se apunta nada.")
+            return
+        viejo = informe.leer_ops(sombra_csv.parent, sombra_csv.name)
+        if len(viejo):
+            viejo = viejo[viejo["fecha"] != fecha]
+        sombra_csv.parent.mkdir(parents=True, exist_ok=True)
+        pd.concat([viejo, ops], ignore_index=True).sort_values(["fecha", "estrategia", "hora_entrada"]).to_csv(sombra_csv, index=False)
+
+
 def _corto(args):
     from .common import config
     from .intradia.corto_hueco import sesion
@@ -283,6 +339,17 @@ def main(argv=None):
     pr.add_argument("--minutos", type=float, default=None)
     pr.add_argument("--salida", default="partes_radar/parte-1.jsonl")
     pr.add_argument("--entrada", default="partes_radar")
+    pl = sub.add_parser("laboratorio", help="Agente A · laboratorio de estrategias en cuenta sombra (solo papel)")
+    pl.add_argument("accion", choices=["tramo", "dia", "informe"])
+    pl.add_argument("--desde")
+    pl.add_argument("--hasta")
+    pl.add_argument("--fecha", help="dia: AAAA-MM-DD (por defecto hoy en Nueva York)")
+    pl.add_argument("--candidatas", default="datos_estudio/candidatas.csv.gz")
+    pl.add_argument("--salida", default="datos_lab")
+    pl.add_argument("--entrada", default=None, help="informe: carpeta con ops-*.csv.gz nuevos")
+    pl.add_argument("--nombre", default="tramo")
+    pl.add_argument("--max", type=int, default=None)
+    pl.add_argument("--por-minuto", type=int, default=None)
     pc = sub.add_parser("corto", help="Agente A · corto del hueco en eToro DEMO")
     pc.add_argument("accion", choices=["operar", "cerrar"])
     pc.add_argument("--ensayo", action="store_true", help="hace todo menos enviar órdenes")
@@ -302,6 +369,8 @@ def main(argv=None):
         _estudio(args)
     elif args.grupo == "corto":
         _corto(args)
+    elif args.grupo == "laboratorio":
+        _laboratorio(args)
     elif args.grupo == "radar":
         _radar(args)
     elif args.grupo == "diario":

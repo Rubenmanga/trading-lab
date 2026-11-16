@@ -1,0 +1,75 @@
+# ============================================================
+#  LABORATORIO INTRADÍA (agente A) · varias estrategias a la vez en CUENTA SOMBRA
+#  Cuenta sombra = las operaciones se apuntan en papel con los precios reales del día.
+#  No se envía NINGUNA orden a ningún bróker. Solo se leen datos (Alpaca, gratis).
+#
+#  Dos usos, mismas reglas y mismo código:
+#   1) Pasado (2016 -> hoy): workflow «Laboratorio intradía» a mano.
+#   2) Cada día laborable tras el cierre: el mismo workflow, solo, apunta lo que habría pasado hoy.
+#  Nada «mira el futuro»: para elegir acciones solo se usa lo que se sabe a la hora de entrar.
+# ============================================================
+
+modo_cuenta: demo               # obligatorio en este proyecto (aquí ni siquiera hay bróker)
+
+# Reglas comunes del agente A (las que pidió Ruben)
+riesgo:
+  stop_pct: 1.0                 # stop a un 1 % de la entrada
+  rr: 3.0                       # objetivo principal 3R (también se apunta qué habría pasado con 4R)
+  rr_alternativo: 4.0
+  trailing: {activo: true, activar_en_R: 1.0, distancia_pct: 1.0}
+  cierre: "15:45"               # todo cerrado a las 15:45 NY (21:45 España)
+
+costes:                         # se cobran en TODAS las operaciones (para no engañarnos)
+  desliz_pct: 0.05              # deslizamiento por lado (precio peor que el visto)
+  por_accion: 0.0035            # $ por acción y lado
+
+# Acciones «en juego»: las de más volumen en los 5 primeros minutos respecto a su media diaria
+en_juego:
+  top: 20
+
+estrategias:
+  orb:                          # 1) Ruptura del rango de los 5 primeros minutos (largo y corto)
+    activa: true
+    nombre: "Ruptura de apertura (ORB)"
+    top: 10                     # las 10 más «en juego»
+    minutos: 5
+    fin_entradas: "11:30"
+  hueco_volumen:                # 2) Hueco con mucho volumen (casi siempre hay noticia o resultados detrás)
+    activa: true
+    nombre: "Hueco con volumen (catalizador)"
+    hueco_min: 0.04             # abre al menos un 4 % arriba o abajo
+    rvol5_min: 0.15             # en 5 minutos ya ha negociado el 15 % de un día normal
+    minutos_rango: 15           # espera a que rompa el rango de los 15 primeros minutos
+    fin_entradas: "11:30"
+  vwap:                         # 3) Retroceso al VWAP (precio medio del día) a favor de la tendencia
+    activa: true
+    nombre: "Retroceso al VWAP"
+    top: 20
+    desde: "10:00"
+    fin_entradas: "13:00"
+  corto_hueco:                  # 4) Corto del hueco (como el bot de eToro, pero desde +25 %)
+    activa: true
+    nombre: "Corto del hueco"
+    hueco_min: 0.25
+    entrada: "09:35"
+    stop_pct: 15                # stop ancho, como el bot (aquí NO se usa el 1 %)
+    sin_objetivo: true
+    max_dia: 3                  # como el bot: las 3 de más hueco (las demás se apuntan aparte, puesto > 3)
+  rebote:                       # 5) Rebote tras una caída fuerte: compra al recuperar el VWAP
+    activa: true
+    nombre: "Rebote tras caída"
+    hueco_max: -0.08            # abre un 8 % o más por debajo
+    desde: "09:45"
+    fin_entradas: "12:00"
+  azar:                         # 6) CONTROL: mismas reglas de riesgo, pero entrada y lado al azar
+    activa: true
+    nombre: "Azar (control)"
+    por_dia: 4
+    desde: "09:35"
+    fin_entradas: "11:30"
+
+# Cuándo una estrategia «aprueba» (semáforo del panel)
+listones:
+  ops_minimas: 100              # menos de 100 operaciones = aún no se puede saber
+  ops_fiables: 200
+  R_medio_min: 0.20             # ganar de media al menos 0,2 R por operación tras costes

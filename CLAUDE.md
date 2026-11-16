@@ -34,6 +34,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 | CLI `lab` (punto de entrada) | `src/tradinglab/cli.py` |
 | **A · Intradía**: reglas → riesgo → revisor IA → ejecución. Stop 1 %, objetivo 3R/4R, trailing. Todo cerrado antes del cierre forzado | `src/tradinglab/intradia/`, `config/intradia.yaml` |
 | A · **corto del hueco** en eToro DEMO (hueco ≥ +50 % → corto 9:35 NY, stop 15 %, cierre 15:45) | `src/tradinglab/intradia/corto_hueco/`, `config/corto_hueco.yaml`, workflow `corto-hueco.yml`, registro en `investigacion/corto-hueco/` |
+| A · **laboratorio**: 6 estrategias en cuenta sombra (papel) + pasado 2016→hoy, mismas reglas | `src/tradinglab/intradia/laboratorio/`, `config/laboratorio_intradia.yaml`, workflow `laboratorio-intradia.yml`, `investigacion/laboratorio/` (`resumen.json`: usa `jq`) |
 | A · estudio histórico (ORB + top gainers) | `lab estudio …`, workflow `estudio-intradia.yml`, informes en `investigacion/estrategias/*.md` |
 | **B · Medio plazo 12 meses**: small caps de **todos los sectores** con buenas previsiones. No opera: analiza, vigila, avisa | `src/tradinglab/medio_plazo/`, `config/medio_plazo.yaml`, `investigacion/` |
 | B · **backtest 2014→hoy** (cuentas SEC con fecha + precios Yahoo, misma nota del ranking, frente a IWM) | `src/tradinglab/backtest12m/`, workflow `backtest-12m.yml`, informe en `investigacion/backtest-12m/` |
@@ -55,7 +56,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 - `README.md` largo: es para personas; este archivo ya resume lo necesario.
 
 ## Comandos
-`lab intradia demo|comprobar|backtest|sesion|cerrar-todo` · `lab corto operar|cerrar [--ensayo]` · `lab estudio universo|tramo|informe` ·
+`lab intradia demo|comprobar|backtest|sesion|cerrar-todo` · `lab corto operar|cerrar [--ensayo]` · `lab estudio universo|tramo|informe` · `lab laboratorio tramo|dia|informe` ·
 `lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|cribado|ficha TICKER|alertas` · `lab panel`.
 
 ## Workflows de GitHub Actions (no romper sus rutas)
@@ -64,6 +65,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 - `seguimiento-noticias.yml`: L-V cada 2 h en bolsa. Lista de noticias de Ruben (`config/medio_plazo.yaml` → `lista_noticias`,
   `lab medio noticias`, módulo `medio_plazo/novedades.py`) → `investigacion/seguimiento/lista.md` + issue si hay aviso nuevo.
 - `corto-hueco.yml`: L-V, apertura (9:00-9:50 NY) y cierre (15:45 NY) del corto del hueco en eToro demo; issue `corto-hueco` como aviso.
+- `laboratorio-intradia.yml`: L-V 22:15 UTC cuenta sombra del día; a mano modo `pasado` (backtest) → `investigacion/laboratorio/`.
 - `estudio-intradia.yml`: backtest histórico → `investigacion/estrategias/`.
 - `perfil-duplicar.yml`: perfil duplicar → `investigacion/duplicar/`.
 - `backtest-12m.yml`: backtest del agente B → `investigacion/backtest-12m/` (`INFORME-*.md`, `resultados.json`: usa `jq`).
