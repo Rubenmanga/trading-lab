@@ -1,0 +1,42 @@
+# Expediente por acción (Paso 1 de la revisión del 16-nov-2026). Archivero SIN IA y gratis.
+# Cada día de bolsa, tras el cierre, añade a investigacion/expedientes/TICKER/eventos.csv los hechos nuevos
+# de cada empresa que sigues (documentos de la SEC + movimientos de precio anómalos) con su fuente, su fecha
+# y la reacción del precio a 1, 5 y 20 sesiones. Solo añade líneas: nunca borra. Un solo commit al día.
+name: Expedientes por acción
+
+on:
+  schedule:
+    - cron: "50 21 * * 1-5"   # 22:50 de Madrid (invierno), tras el cierre de EE. UU.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: datos-investigacion
+  cancel-in-progress: false
+
+jobs:
+  archivar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar lo mínimo
+        run: pip install --quiet "pyyaml>=6" "pandas>=2" "numpy>=1.24" "yfinance>=0.2.50" "python-dotenv>=1" tzdata
+      - name: Actualizar expedientes
+        env:
+          PYTHONPATH: src
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python -m tradinglab.cli medio expediente
+      - name: Guardar (el panel se actualiza solo)
+        run: |
+          git config user.name "agente-12m"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add investigacion/expedientes/ 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Expedientes por acción $(date -u +%F)"
+          git pull --rebase --autostash -q || true
+          git push

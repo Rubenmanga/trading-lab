@@ -38,6 +38,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 | A · estudio histórico (ORB + top gainers) | `lab estudio …`, workflow `estudio-intradia.yml`, informes en `investigacion/estrategias/*.md` |
 | **B · Medio plazo 12 meses**: small caps de **todos los sectores** con buenas previsiones. No opera: analiza, vigila, avisa | `src/tradinglab/medio_plazo/`, `config/medio_plazo.yaml`, `investigacion/` |
 | B · **backtest 2014→hoy** (cuentas SEC con fecha + precios Yahoo, misma nota del ranking, frente a IWM) | `src/tradinglab/backtest12m/`, workflow `backtest-12m.yml`, informe en `investigacion/backtest-12m/` |
+| B · **expediente por acción** (hechos con fuente SEC/Yahoo, fecha y reacción 1/5/20 sesiones; solo añade) | `medio_plazo/expediente.py`, workflow `expedientes.yml`, `investigacion/expedientes/TICKER/` (`eventos.csv`, `tesis.md`) |
 | B · perfiles («¿puede duplicar?», «+500 %») | `src/tradinglab/perfiles/`, `investigacion/duplicar/`, `investigacion/quintuplicar/` |
 | Código común (datos, almacén) | `src/tradinglab/common/` |
 | Diario del agente A | `diario/`, `src/tradinglab/diario.py` |
@@ -57,7 +58,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 
 ## Comandos
 `lab intradia demo|comprobar|backtest|sesion|cerrar-todo` · `lab corto operar|cerrar [--ensayo]` · `lab estudio universo|tramo|informe` · `lab laboratorio tramo|dia|informe` ·
-`lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|cribado|ficha TICKER|alertas` · `lab panel`.
+`lab diario` · `lab medio oportunidades|probar TICKER|fuentes TICKER|expediente [TICKER]|cribado|ficha TICKER|alertas` · `lab panel`.
 
 ## Workflows de GitHub Actions (no romper sus rutas)
 - `agente-12m.yml`: L-V noche y domingo. Ranking diario, alertas, cribado → `investigacion/` (`ranking.*`,
@@ -69,6 +70,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 - `estudio-intradia.yml`: backtest histórico → `investigacion/estrategias/`.
 - `perfil-duplicar.yml`: perfil duplicar → `investigacion/duplicar/`.
 - `backtest-12m.yml`: backtest del agente B → `investigacion/backtest-12m/` (`INFORME-*.md`, `resultados.json`: usa `jq`).
+- `expedientes.yml`: L-V 21:50 UTC. `lab medio expediente` → `investigacion/expedientes/` (un commit al día).
 - `publicar-investigacion.yml`: si un PR toca **solo** `investigacion/`, se fusiona y publica solo en el panel.
 
 ## Skills (`.claude/skills/`)
