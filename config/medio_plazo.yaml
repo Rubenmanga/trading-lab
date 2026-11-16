@@ -95,3 +95,4 @@ lista_noticias:
     POET: {nombre: "POET Technologies", sector: semiconductores, referencia: SOXX}
   materias_primas:
     XAU: {nombre: "Oro", yahoo: "GC=F", umbral_movimiento_pct: 3}
+    EURUSD: {nombre: "Euro/dólar (para pasar tu oro de dólares a euros)", yahoo: "EURUSD=X", umbral_movimiento_pct: 3}
