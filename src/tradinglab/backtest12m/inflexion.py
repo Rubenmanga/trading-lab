@@ -143,7 +143,8 @@ def senales(prep: dict, fecha: date, acciones_hoy: float | None, acciones_hace_1
             r["margen"] = b0 / ven[f0] > ba / ven[fa]
         gg = q["gastos_generales"]
         if gg.get(f0) is not None and _hace(gg, f0, 365) and g0 is not None:
-            r["gastos"] = _crec(gg[f0], _hace(gg, f0, 365)) < g0
+            c = _crec(gg[f0], _hace(gg, f0, 365))
+            r["gastos"] = c is not None and c < g0
         elif q["ebit"].get(f0) is not None and q["ebit"].get(fa) is not None and g0 is not None:
             c = _crec(ven[f0] - q["ebit"][f0], ven[fa] - q["ebit"][fa])
             r["gastos"] = c is not None and c < g0

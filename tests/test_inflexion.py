@@ -86,3 +86,10 @@ def test_estudio_y_informe(tmp_path):
     assert r["pasa"]
     texto = open(inf.informe(r, str(tmp_path / "INFORME-INFLEXION-x.md"), {"ultimo_mes": "2026-10"})).read()
     assert "PASA" in texto and "Límites" in texto and "Resumen en 5 líneas" in texto
+
+
+def test_gastos_del_ano_anterior_a_cero_no_rompe():
+    f = _facts()
+    f["facts"]["us-gaap"]["SellingGeneralAndAdministrativeExpense"]["units"]["USD"][0]["val"] = 0
+    s = inf.senales(inf.preparar(f), date(2023, 9, 30), 105, 100, [])
+    assert s["gastos"] is False
