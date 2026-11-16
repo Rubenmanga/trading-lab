@@ -1,0 +1,149 @@
+{
+ "actualizado": "2026-11-16",
+ "autopsias": [
+  {
+   "ticker": "RCAT",
+   "fecha": "2026-11-16",
+   "hora": "tras_cierre",
+   "trimestre": "T3 2026",
+   "ventas_esperadas": "40.68",
+   "ventas_reales": "11.77",
+   "bpa_esperado": "-0.20",
+   "bpa_real": "-0.26",
+   "guia": "retira",
+   "guia_texto": "Retira la previsión de ventas de 2026 (150-180 M$): los contratos y fondos de Defensa llegan más lentos y el programa Drone Dominance (Gauntlet II) le quita ventas cercanas. Ventas +22 % frente al T3 2025 (9,65 M$); margen bruto 0,6 %; pérdida 40,4 M$; caja 242,7 M$; compra propuesta de Steyr Motors.",
+   "extendido_pct": "-18.5",
+   "fuente_resultados": "https://www.sec.gov/Archives/edgar/data/748268/000162828026074169/rcat-20261116.htm",
+   "fuente_consenso": "TheStreet (consenso de Yahoo, 16-nov-2026; web intermediaria)",
+   "leccion": "Lo que hunde la acción no es el trimestre sino perder la promesa del futuro: retirar la previsión pesa más que crecer un 22 %. Había pista: en 2025 prometió 80-120 M$ y facturó 41 M$. Una empresa que ya falló su previsión una vez merece poca confianza en la siguiente.",
+   "precio_antes": null,
+   "previa_20d": null,
+   "r1": null,
+   "r5": null,
+   "r20": null,
+   "sorpresa_ventas_pct": -71.07,
+   "resultado": "falla",
+   "reaccion": -18.5,
+   "reaccion_medida": "horario extendido",
+   "precio": "cae",
+   "frase": "falla y cae",
+   "prediccion": {
+    "id": "RCAT-2026-11-16",
+    "fecha": "2026-11-16",
+    "veredicto": "vigilar",
+    "precio": "3.80",
+    "stop_tesis": "3.20",
+    "objetivo": "6",
+    "zona_entrada_max": "5.00",
+    "precio_despues": null,
+    "stop_roto": null
+   }
+  },
+  {
+   "ticker": "POET",
+   "fecha": "2026-11-16",
+   "hora": "antes_apertura",
+   "trimestre": "T3 2026",
+   "ventas_esperadas": "1.60",
+   "ventas_reales": "1.03",
+   "bpa_esperado": "-0.07",
+   "bpa_real": "-0.04",
+   "guia": "retrasa",
+   "guia_texto": "Retrasa al T2 2027 los 30.000 motores ópticos que iba a entregar en 2026 (falta de obleas y componentes, nueva técnica de fabricación). Pérdida por acción mejor de lo esperado solo por una ganancia contable de 6,4 M$ (warrants). Caja 774,3 M$. Dice que el T4 2026 entregará más que T1-T3 juntos.",
+   "extendido_pct": "",
+   "fuente_resultados": "https://www.sec.gov/Archives/edgar/data/0001437424/000117184326007469/exh_991.htm",
+   "fuente_consenso": "DailyPolitical/MarketBeat (15-nov-2026; web intermediaria)",
+   "leccion": "Una pérdida por acción «mejor de lo esperado» puede ser contable: mirar de dónde sale. El dato que manda es la fecha de entrega, y se ha ido 6 meses.",
+   "precio_antes": null,
+   "previa_20d": null,
+   "r1": null,
+   "r5": null,
+   "r20": null,
+   "sorpresa_ventas_pct": -35.63,
+   "resultado": "mixto",
+   "reaccion": null,
+   "reaccion_medida": "1 sesión",
+   "precio": "sin reacción aún",
+   "frase": "mixto (reacción pendiente)",
+   "prediccion": {
+    "id": "POET-2026-11-16",
+    "fecha": "2026-11-16",
+    "veredicto": "mantener",
+    "precio": "5.13",
+    "stop_tesis": "",
+    "objetivo": "",
+    "zona_entrada_max": "",
+    "precio_despues": null,
+    "stop_roto": null
+   }
+  }
+ ],
+ "pendientes": [
+  {
+   "ticker": "AEHR",
+   "fecha": "2026-11-02",
+   "resumen": "Resultados del trimestre (8-K 2.02)",
+   "fuente_url": "https://www.sec.gov/Archives/edgar/data/1040470/000165495426009385/aehr_8k.htm"
+  },
+  {
+   "ticker": "ALT",
+   "fecha": "2026-11-12",
+   "resumen": "Resultados del trimestre (8-K 2.02)",
+   "fuente_url": "https://www.sec.gov/Archives/edgar/data/1326190/000132619026000067/alt-20261112x8k.htm"
+  },
+  {
+   "ticker": "AMPX",
+   "fecha": "2026-11-10",
+   "resumen": "Resultados del trimestre (8-K 2.02)",
+   "fuente_url": "https://www.sec.gov/Archives/edgar/data/1899287/000189928726000069/ampx-20261110.htm"
+  },
+  {
+   "ticker": "AMSC",
+   "fecha": "2026-11-04",
+   "resumen": "Resultados del trimestre (8-K 2.02)",
+   "fuente_url": "https://www.sec.gov/Archives/edgar/data/880807/000143774926034935/amsc20260818_8k.htm"
+  },
+  {
+   "ticker": "DCTH",
+   "fecha": "2026-11-09",
+   "resumen": "Resultados del trimestre (8-K 2.02)",
+   "fuente_url": "https://www.sec.gov/Archives/edgar/data/872912/000162828026071894/dcth-20261109.htm"
+  },
+  {
+   "ticker": "FTH",
+   "fecha": "2026-11-03",
+   "resumen": "Resultados del trimestre (8-K 2.02)",
+   "fuente_url": "https://www.sec.gov/Archives/edgar/data/1829802/000119312526444410/d144290d8k.htm"
+  },
+  {
+   "ticker": "MSFT",
+   "fecha": "2026-10-28",
+   "resumen": "Resultados del trimestre (8-K 2.02)",
+   "fuente_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436122/msft-20261028.htm"
+  },
+  {
+   "ticker": "ORIC",
+   "fecha": "2026-11-16",
+   "resumen": "Resultados del trimestre (8-K 2.02)",
+   "fuente_url": "https://www.sec.gov/Archives/edgar/data/1796280/000119312526463506/oric-20261116.htm"
+  },
+  {
+   "ticker": "PGY",
+   "fecha": "2026-10-29",
+   "resumen": "Resultados del trimestre (8-K 2.02)",
+   "fuente_url": "https://www.sec.gov/Archives/edgar/data/1883085/000188308526000062/pgy-20261029.htm"
+  },
+  {
+   "ticker": "RAPP",
+   "fecha": "2026-11-04",
+   "resumen": "Resultados del trimestre (8-K 2.02)",
+   "fuente_url": "https://www.sec.gov/Archives/edgar/data/2012593/000119312526446202/rapp-20261104.htm"
+  },
+  {
+   "ticker": "TE",
+   "fecha": "2026-11-12",
+   "resumen": "Resultados del trimestre (8-K 2.02)",
+   "fuente_url": "https://www.sec.gov/Archives/edgar/data/1992243/000121390026118327/ea0311994-8k_t1energy.htm"
+  }
+ ]
+}

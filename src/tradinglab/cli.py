@@ -27,6 +27,7 @@
   lab medio expediente [T]  Expediente por acción: hechos con fuente, fecha y reacción del precio
   lab medio propuestas [RUTA]  Investigador diario: valida y apunta sus ideas en el libro de predicciones
   lab medio entrada [TICKER]   Calculadora del precio de entrada (3 escenarios, mismo método siempre)
+  lab medio autopsias       Autopsias de resultados: esperado vs. real, previsión y reacción del precio
   lab medio marcador        Marcador: ¿aciertan los análisis? (libro de predicciones frente a IWM)
   lab radar parte|informe   Radar de resultados: prueba con el pasado (corre en GitHub Actions)
   lab panel                 Abre el panel web
@@ -156,6 +157,10 @@ def _medio(args):
         for t, r in res.items():
             print(f"{t}: {r['eventos']} hechos (+{r['añadidas']} nuevos) · {r.get('ultimo') or '-'}"
                   + (f" · AVISO: {r['error']}" if r.get("error") else ""))
+    elif args.accion == "autopsias":
+        from .medio_plazo import autopsia
+        for a in autopsia.ejecutar():
+            print(f"{a['ticker']} {a['fecha']}: {a['frase']}")
     elif args.accion == "regla-fuentes":
         from .medio_plazo import regla_fuentes
         if regla_fuentes.main([args.ticker] if args.ticker else []):
@@ -363,7 +368,7 @@ def main(argv=None):
     pi.add_argument("accion", choices=["demo", "comprobar", "backtest", "sesion", "cerrar-todo"])
     pi.add_argument("--dias", type=int, default=30)
     pm = sub.add_parser("medio", help="Agente B: inversión a 12 meses")
-    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas", "fuentes", "seguimiento", "noticias", "expediente", "marcador", "regla-fuentes", "hoy", "propuestas", "entrada"])
+    pm.add_argument("accion", choices=["oportunidades", "cribado", "ficha", "probar", "alertas", "fuentes", "seguimiento", "noticias", "expediente", "marcador", "regla-fuentes", "hoy", "propuestas", "entrada", "autopsias"])
     pm.add_argument("ticker", nargs="?")
     pm.add_argument("--max", type=int, default=None, help="máximo de empresas a analizar (para pruebas)")
     pm.add_argument("--parte", type=int, default=1, help="oportunidades: qué trozo del universo descargar (1..N)")
