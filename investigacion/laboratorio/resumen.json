@@ -16,11 +16,15 @@
   },
   "cierre": "15:45"
  },
+ "filtro": {
+  "umbral": 62.5,
+  "aplicar_a": []
+ },
  "estrategias": {
   "orb": {
    "nombre": "Ruptura de apertura (ORB)",
    "explica": "Compra si rompe el máximo de los 5 primeros minutos (vela verde) o vende en corto si rompe el mínimo (vela roja). Solo las 10 acciones con más volumen al abrir.",
-   "activa": true,
+   "activa": false,
    "pasado": {
     "n": 21180,
     "R_medio": 0.017,
@@ -619,12 +623,17 @@
      "R": 363.9
     }
    ],
-   "curva_sombra": []
+   "curva_sombra": [],
+   "sombra_filtrada": {
+    "n": 0,
+    "semaforo": "gris"
+   },
+   "filtro_aplica": false
   },
   "hueco_volumen": {
    "nombre": "Hueco con volumen (catalizador)",
    "explica": "Acciones que abren con hueco de ±4 % y mucho volumen (suele haber noticia o resultados). Entra a favor del hueco si rompe el rango de los 15 primeros minutos y está del lado bueno del VWAP.",
-   "activa": true,
+   "activa": false,
    "pasado": {
     "n": 14841,
     "R_medio": -0.172,
@@ -1223,12 +1232,17 @@
      "R": -2551.1
     }
    ],
-   "curva_sombra": []
+   "curva_sombra": [],
+   "sombra_filtrada": {
+    "n": 0,
+    "semaforo": "gris"
+   },
+   "filtro_aplica": false
   },
   "vwap": {
    "nombre": "Retroceso al VWAP",
    "explica": "Si en la primera media hora va claramente al alza (o a la baja), espera a que el precio vuelva al VWAP (precio medio del día) y entra a favor de la tendencia.",
-   "activa": true,
+   "activa": false,
    "pasado": {
     "n": 33329,
     "R_medio": -0.115,
@@ -1827,7 +1841,12 @@
      "R": -3842.0
     }
    ],
-   "curva_sombra": []
+   "curva_sombra": [],
+   "sombra_filtrada": {
+    "n": 0,
+    "semaforo": "gris"
+   },
+   "filtro_aplica": false
   },
   "corto_hueco": {
    "nombre": "Corto del hueco",
@@ -1902,8 +1921,31 @@
     "vs_azar": 0.222
    },
    "sombra": {
-    "n": 0,
-    "semaforo": "gris"
+    "n": 3,
+    "R_medio": -0.744,
+    "ic95": [
+     -1.314,
+     -0.175
+    ],
+    "R_alt_medio": -0.744,
+    "aciertos_pct": 0.0,
+    "pf": 0.0,
+    "R_total": -2.2,
+    "peor_caida_R": -1.2,
+    "peor_racha": 3,
+    "largos": 0,
+    "cortos": 3,
+    "dias": 1,
+    "ops_dia": 3.0,
+    "por_anio": {
+     "2026": {
+      "n": 3,
+      "R": -0.744
+     }
+    },
+    "anios_positivos": 0,
+    "anios": 1,
+    "semaforo": "amarillo"
    },
    "curva_pasado": [
     {
@@ -2431,7 +2473,17 @@
      "R": 800.9
     }
    ],
-   "curva_sombra": [],
+   "curva_sombra": [
+    {
+     "f": "2026-11-16",
+     "R": -2.23
+    }
+   ],
+   "sombra_filtrada": {
+    "n": 0,
+    "semaforo": "gris"
+   },
+   "filtro_aplica": false,
    "pasado_como_bot": {
     "n": 2222,
     "R_medio": 0.245,
@@ -2504,7 +2556,7 @@
   "rebote": {
    "nombre": "Rebote tras caída",
    "explica": "Acciones que abren un 8 % o más abajo: compra cuando el precio vuelve a subir por encima del VWAP.",
-   "activa": true,
+   "activa": false,
    "pasado": {
     "n": 7750,
     "R_medio": -0.085,
@@ -3103,12 +3155,17 @@
      "R": -656.7
     }
    ],
-   "curva_sombra": []
+   "curva_sombra": [],
+   "sombra_filtrada": {
+    "n": 0,
+    "semaforo": "gris"
+   },
+   "filtro_aplica": false
   },
   "azar": {
    "nombre": "Azar (control)",
    "explica": "CONTROL: 4 acciones en juego al azar, lado y hora al azar, mismas reglas de riesgo. Una estrategia que no le gane no aporta nada.",
-   "activa": true,
+   "activa": false,
    "pasado": {
     "n": 10884,
     "R_medio": -0.108,
@@ -3707,13 +3764,61 @@
      "R": -1173.5
     }
    ],
-   "curva_sombra": []
+   "curva_sombra": [],
+   "sombra_filtrada": {
+    "n": 0,
+    "semaforo": "gris"
+   },
+   "filtro_aplica": false
   }
  },
  "periodo_pasado": [
   "2016-01-19",
   "2026-11-13"
  ],
- "dias_sombra": 0,
- "ultimas_sombra": []
+ "dias_sombra": 1,
+ "ultimas_sombra": [
+  {
+   "fecha": "2026-11-16",
+   "estrategia": "corto_hueco",
+   "simbolo": "AKAN",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 1.944,
+   "salida": 2.2379,
+   "motivo": "stop",
+   "hora_salida": "09:37:00",
+   "R": -1.031,
+   "ret_pct": -15.467,
+   "hueco": 0.4118
+  },
+  {
+   "fecha": "2026-11-16",
+   "estrategia": "corto_hueco",
+   "simbolo": "CLRO",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 4.8116,
+   "salida": 4.9225,
+   "motivo": "cierre forzado",
+   "hora_salida": "15:45:00",
+   "R": -0.163,
+   "ret_pct": -2.448,
+   "hueco": 0.368
+  },
+  {
+   "fecha": "2026-11-16",
+   "estrategia": "corto_hueco",
+   "simbolo": "GP",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 1.4493,
+   "salida": 1.6683,
+   "motivo": "stop",
+   "hora_salida": "09:37:00",
+   "R": -1.039,
+   "ret_pct": -15.59,
+   "hueco": 0.3276
+  }
+ ]
 }

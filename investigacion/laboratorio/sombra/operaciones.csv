@@ -1,0 +1,4 @@
+fecha,estrategia,simbolo,hueco,rvol5,puesto,lado,entrada,salida,stop_inicial,motivo,hora_salida,R,R_sin_costes,ret_pct,R_alt,hora_entrada,entrada_bruta,riesgo_pct,nota,filtro
+2026-11-16,corto_hueco,AKAN,0.4118,0.2396,1,venta,1.944,2.2379,2.2368,stop,09:37:00,-1.031,-1.0,-15.467,-1.031,09:35,1.945,15,50.0,···00·11
+2026-11-16,corto_hueco,CLRO,0.368,0.1193,2,venta,4.8116,4.9225,5.5361,cierre forzado,15:45:00,-0.163,-0.147,-2.448,-0.163,09:35,4.814,15,50.0,···00·11
+2026-11-16,corto_hueco,GP,0.3276,0.04,3,venta,1.4493,1.6683,1.6675,stop,09:37:00,-1.039,-1.0,-15.59,-1.039,09:35,1.45,15,50.0,···01·10
