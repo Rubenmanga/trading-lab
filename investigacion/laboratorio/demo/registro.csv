@@ -11,3 +11,5 @@ fecha_hora_ny,estrategia,simbolo,accion,lado,precio,stop,objetivo,acciones,nota,
 2026-11-16 09:43,corto_hueco,AKAN,descartada,venta,2.0,2.3,1.0,1666,37.5,···00·10,,Alpaca no deja venderla en corto (no hay acciones para prestar)
 2026-11-16 09:43,corto_hueco,CLRO,descartada,venta,4.94,5.68,2.47,674,37.5,···00·10,,Alpaca no deja venderla en corto (no hay acciones para prestar)
 2026-11-16 09:43,corto_hueco,GP,descartada,venta,1.785,2.05,0.89,1867,37.5,···00·10,,señal pasada: el precio ya se ha movido más que el stop desde la señal (1.46 → 1.785)
+2026-11-16 10:10:01,rebote,OMH,descartada,compra,4.17,4.13,4.3,2398,37.5,01001100,,el filtro dice que mejor no entrar (nota 37.5 < 62.5),4.17,61,,
+2026-11-16 10:11:01,rebote,OMH,descartada,compra,4.16,4.12,4.28,2403,37.5,01001100,,el filtro dice que mejor no entrar (nota 37.5 < 62.5),4.17,121,,
