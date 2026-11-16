@@ -1,18 +1,18 @@
 {
- "n_eventos": 24997,
+ "n_eventos": 24983,
  "corte_mitades": "2023-08-03",
  "reglas": {
   "TODAS (referencia)": {
    "reaccion": {
-    "n": 24997,
+    "n": 24983,
     "media": 0.15,
     "mediana": -0.08,
     "aciertos": 48.9,
     "peor10": -11.4,
-    "t": 2.2
+    "t": 2.1
    },
    "reaccion_1a_mitad": {
-    "n": 12400,
+    "n": 12391,
     "media": 0.08,
     "mediana": 0.0,
     "aciertos": 49.5,
@@ -20,26 +20,26 @@
     "t": 0.9
    },
    "reaccion_2a_mitad": {
-    "n": 12597,
-    "media": 0.22,
+    "n": 12592,
+    "media": 0.21,
     "mediana": -0.21,
     "aciertos": 48.2,
     "peor10": -12.6,
-    "t": 2.1
+    "t": 2.0
    },
    "trampa_pct": 42.4,
    "deriva_20d_tras_subida": {
-    "n": 4601,
+    "n": 4603,
     "media": 2.05,
     "mediana": 0.47,
     "aciertos": 51.8,
-    "peor10": -16.9,
+    "peor10": -17.0,
     "t": 6.9
    },
    "deriva_20d_tras_trampa": {
-    "n": 6658,
-    "media": 1.28,
-    "mediana": 0.25,
+    "n": 6651,
+    "media": 1.29,
+    "mediana": 0.24,
     "aciertos": 50.8,
     "peor10": -15.3,
     "t": 6.0
@@ -47,15 +47,15 @@
   },
   "No ha subido mucho antes (últimas 4 semanas < +10 %)": {
    "reaccion": {
-    "n": 19588,
+    "n": 19584,
     "media": 0.15,
     "mediana": 0.0,
     "aciertos": 49.3,
     "peor10": -11.1,
-    "t": 2.0
+    "t": 1.9
    },
    "reaccion_1a_mitad": {
-    "n": 9535,
+    "n": 9529,
     "media": 0.1,
     "mediana": 0.04,
     "aciertos": 50.1,
@@ -63,42 +63,42 @@
     "t": 1.0
    },
    "reaccion_2a_mitad": {
-    "n": 10053,
-    "media": 0.21,
+    "n": 10055,
+    "media": 0.19,
     "mediana": -0.13,
     "aciertos": 48.6,
     "peor10": -12.4,
-    "t": 1.8
+    "t": 1.7
    },
    "trampa_pct": 41.6,
    "deriva_20d_tras_subida": {
-    "n": 3536,
-    "media": 1.94,
-    "mediana": 0.57,
+    "n": 3535,
+    "media": 1.95,
+    "mediana": 0.56,
     "aciertos": 52.3,
     "peor10": -16.4,
     "t": 6.2
    },
    "deriva_20d_tras_trampa": {
-    "n": 5098,
-    "media": 1.22,
-    "mediana": 0.35,
+    "n": 5096,
+    "media": 1.2,
+    "mediana": 0.34,
     "aciertos": 51.4,
     "peor10": -14.7,
-    "t": 5.1
+    "t": 5.0
    }
   },
   "Lejos de su máximo de 52 semanas (a más de 10 % por debajo)": {
    "reaccion": {
-    "n": 18777,
-    "media": 0.24,
+    "n": 18768,
+    "media": 0.23,
     "mediana": -0.07,
     "aciertos": 48.9,
     "peor10": -12.2,
-    "t": 2.8
+    "t": 2.7
    },
    "reaccion_1a_mitad": {
-    "n": 9399,
+    "n": 9392,
     "media": 0.1,
     "mediana": 0.0,
     "aciertos": 49.2,
@@ -106,34 +106,34 @@
     "t": 0.9
    },
    "reaccion_2a_mitad": {
-    "n": 9378,
-    "media": 0.38,
+    "n": 9376,
+    "media": 0.36,
     "mediana": -0.18,
     "aciertos": 48.5,
-    "peor10": -13.3,
-    "t": 2.9
+    "peor10": -13.4,
+    "t": 2.8
    },
    "trampa_pct": 42.2,
    "deriva_20d_tras_subida": {
-    "n": 3652,
-    "media": 2.45,
+    "n": 3654,
+    "media": 2.46,
     "mediana": 0.58,
     "aciertos": 52.2,
-    "peor10": -17.6,
+    "peor10": -17.7,
     "t": 6.9
    },
    "deriva_20d_tras_trampa": {
-    "n": 4855,
-    "media": 2.03,
-    "mediana": 0.74,
-    "aciertos": 52.5,
+    "n": 4843,
+    "media": 2.06,
+    "mediana": 0.73,
+    "aciertos": 52.4,
     "peor10": -15.9,
     "t": 7.5
    }
   },
   "Superó previsiones 3 o 4 de las últimas 4 veces": {
    "reaccion": {
-    "n": 11136,
+    "n": 11156,
     "media": 0.01,
     "mediana": -0.15,
     "aciertos": 48.4,
@@ -141,50 +141,50 @@
     "t": 0.1
    },
    "reaccion_1a_mitad": {
-    "n": 4741,
-    "media": -0.16,
-    "mediana": -0.13,
+    "n": 4745,
+    "media": -0.17,
+    "mediana": -0.12,
     "aciertos": 48.4,
     "peor10": -10.2,
-    "t": -1.2
+    "t": -1.3
    },
    "reaccion_2a_mitad": {
-    "n": 6395,
-    "media": 0.13,
+    "n": 6411,
+    "media": 0.14,
     "mediana": -0.18,
-    "aciertos": 48.4,
+    "aciertos": 48.5,
     "peor10": -13.6,
     "t": 0.9
    },
    "trampa_pct": 44.3,
    "deriva_20d_tras_subida": {
-    "n": 2325,
-    "media": 1.88,
-    "mediana": 0.56,
-    "aciertos": 52.6,
+    "n": 2334,
+    "media": 1.84,
+    "mediana": 0.53,
+    "aciertos": 52.4,
     "peor10": -15.2,
     "t": 4.9
    },
    "deriva_20d_tras_trampa": {
-    "n": 3650,
-    "media": 1.27,
+    "n": 3653,
+    "media": 1.3,
     "mediana": 0.2,
     "aciertos": 50.7,
     "peor10": -13.7,
-    "t": 4.9
+    "t": 5.0
    }
   },
   "Suele subir tras resultados (reacción media previa > 0)": {
    "reaccion": {
-    "n": 10392,
-    "media": 0.07,
+    "n": 10379,
+    "media": 0.06,
     "mediana": -0.11,
     "aciertos": 48.6,
     "peor10": -11.4,
-    "t": 0.6
+    "t": 0.5
    },
    "reaccion_1a_mitad": {
-    "n": 4401,
+    "n": 4396,
     "media": 0.03,
     "mediana": 0.0,
     "aciertos": 49.5,
@@ -192,34 +192,34 @@
     "t": 0.2
    },
    "reaccion_2a_mitad": {
-    "n": 5991,
-    "media": 0.09,
-    "mediana": -0.21,
+    "n": 5983,
+    "media": 0.07,
+    "mediana": -0.22,
     "aciertos": 48.0,
-    "peor10": -12.7,
-    "t": 0.6
+    "peor10": -12.8,
+    "t": 0.5
    },
-   "trampa_pct": 42.9,
+   "trampa_pct": 43.0,
    "deriva_20d_tras_subida": {
-    "n": 2015,
-    "media": 2.12,
+    "n": 2011,
+    "media": 2.11,
     "mediana": 0.45,
-    "aciertos": 52.1,
+    "aciertos": 52.0,
     "peor10": -16.2,
-    "t": 5.1
+    "t": 5.0
    },
    "deriva_20d_tras_trampa": {
-    "n": 2994,
-    "media": 1.39,
+    "n": 2995,
+    "media": 1.41,
     "mediana": 0.07,
-    "aciertos": 50.3,
+    "aciertos": 50.4,
     "peor10": -14.3,
     "t": 4.7
    }
   },
   "Volumen reciente normal o bajo (< 1,3x)": {
    "reaccion": {
-    "n": 20686,
+    "n": 20676,
     "media": 0.14,
     "mediana": -0.06,
     "aciertos": 48.9,
@@ -227,7 +227,7 @@
     "t": 2.0
    },
    "reaccion_1a_mitad": {
-    "n": 10382,
+    "n": 10374,
     "media": 0.07,
     "mediana": 0.0,
     "aciertos": 49.7,
@@ -235,26 +235,26 @@
     "t": 0.7
    },
    "reaccion_2a_mitad": {
-    "n": 10304,
-    "media": 0.22,
+    "n": 10302,
+    "media": 0.21,
     "mediana": -0.23,
     "aciertos": 48.1,
     "peor10": -12.2,
-    "t": 2.0
+    "t": 1.9
    },
    "trampa_pct": 42.2,
    "deriva_20d_tras_subida": {
-    "n": 3729,
-    "media": 1.86,
-    "mediana": 0.46,
+    "n": 3731,
+    "media": 1.87,
+    "mediana": 0.47,
     "aciertos": 51.9,
     "peor10": -16.8,
-    "t": 6.3
+    "t": 6.4
    },
    "deriva_20d_tras_trampa": {
-    "n": 5469,
+    "n": 5463,
     "media": 1.37,
-    "mediana": 0.3,
+    "mediana": 0.28,
     "aciertos": 51.1,
     "peor10": -14.8,
     "t": 5.9
@@ -262,15 +262,15 @@
   },
   "Combinada: no ha subido + suele subir tras resultados": {
    "reaccion": {
-    "n": 8211,
-    "media": 0.1,
+    "n": 8202,
+    "media": 0.09,
     "mediana": 0.0,
     "aciertos": 49.2,
     "peor10": -11.0,
     "t": 0.8
    },
    "reaccion_1a_mitad": {
-    "n": 3413,
+    "n": 3409,
     "media": 0.15,
     "mediana": 0.12,
     "aciertos": 50.4,
@@ -278,307 +278,307 @@
     "t": 1.0
    },
    "reaccion_2a_mitad": {
-    "n": 4798,
-    "media": 0.06,
-    "mediana": -0.16,
+    "n": 4793,
+    "media": 0.04,
+    "mediana": -0.17,
     "aciertos": 48.3,
     "peor10": -12.5,
-    "t": 0.3
+    "t": 0.2
    },
    "trampa_pct": 42.1,
    "deriva_20d_tras_subida": {
-    "n": 1564,
-    "media": 2.33,
-    "mediana": 0.82,
-    "aciertos": 53.3,
+    "n": 1560,
+    "media": 2.31,
+    "mediana": 0.76,
+    "aciertos": 53.1,
     "peor10": -15.4,
-    "t": 5.0
+    "t": 4.9
    },
    "deriva_20d_tras_trampa": {
-    "n": 2309,
-    "media": 1.64,
+    "n": 2310,
+    "media": 1.61,
     "mediana": 0.41,
     "aciertos": 51.7,
-    "peor10": -13.4,
-    "t": 4.9
+    "peor10": -13.3,
+    "t": 4.8
    }
   },
   "Combinada: no ha subido + superó 3-4 veces + suele subir": {
    "reaccion": {
-    "n": 5240,
-    "media": -0.01,
-    "mediana": -0.05,
-    "aciertos": 49.0,
+    "n": 5241,
+    "media": -0.0,
+    "mediana": -0.04,
+    "aciertos": 49.1,
     "peor10": -11.8,
-    "t": -0.1
+    "t": -0.0
    },
    "reaccion_1a_mitad": {
-    "n": 2185,
-    "media": 0.06,
-    "mediana": 0.0,
-    "aciertos": 49.8,
+    "n": 2186,
+    "media": 0.1,
+    "mediana": 0.01,
+    "aciertos": 50.0,
     "peor10": -9.4,
-    "t": 0.3
+    "t": 0.5
    },
    "reaccion_2a_mitad": {
     "n": 3055,
-    "media": -0.06,
+    "media": -0.07,
     "mediana": -0.15,
     "aciertos": 48.4,
-    "peor10": -13.3,
+    "peor10": -13.4,
     "t": -0.3
    },
-   "trampa_pct": 43.8,
+   "trampa_pct": 43.7,
    "deriva_20d_tras_subida": {
-    "n": 1098,
-    "media": 2.3,
-    "mediana": 1.06,
-    "aciertos": 53.9,
+    "n": 1101,
+    "media": 2.28,
+    "mediana": 0.93,
+    "aciertos": 53.7,
     "peor10": -14.2,
     "t": 4.9
    },
    "deriva_20d_tras_trampa": {
-    "n": 1725,
-    "media": 1.38,
-    "mediana": 0.34,
-    "aciertos": 51.5,
+    "n": 1723,
+    "media": 1.33,
+    "mediana": 0.39,
+    "aciertos": 51.7,
     "peor10": -13.0,
-    "t": 3.6
+    "t": 3.5
    }
   },
   "Combinada: lejos del máximo + superó 3-4 veces": {
    "reaccion": {
-    "n": 8017,
+    "n": 8034,
     "media": 0.1,
-    "mediana": -0.17,
+    "mediana": -0.15,
     "aciertos": 48.4,
     "peor10": -12.9,
     "t": 0.7
    },
    "reaccion_1a_mitad": {
-    "n": 3368,
-    "media": -0.14,
+    "n": 3374,
+    "media": -0.16,
     "mediana": -0.15,
-    "aciertos": 48.2,
+    "aciertos": 48.3,
     "peor10": -10.8,
-    "t": -0.9
+    "t": -1.0
    },
    "reaccion_2a_mitad": {
-    "n": 4649,
-    "media": 0.27,
-    "mediana": -0.18,
-    "aciertos": 48.5,
+    "n": 4660,
+    "media": 0.28,
+    "mediana": -0.17,
+    "aciertos": 48.6,
     "peor10": -14.2,
-    "t": 1.4
+    "t": 1.5
    },
-   "trampa_pct": 44.3,
+   "trampa_pct": 44.2,
    "deriva_20d_tras_subida": {
-    "n": 1783,
-    "media": 2.33,
-    "mediana": 0.83,
-    "aciertos": 53.5,
+    "n": 1791,
+    "media": 2.3,
+    "mediana": 0.74,
+    "aciertos": 53.3,
     "peor10": -15.8,
-    "t": 5.0
+    "t": 4.9
    },
    "deriva_20d_tras_trampa": {
-    "n": 2582,
-    "media": 1.99,
-    "mediana": 0.69,
+    "n": 2579,
+    "media": 2.04,
+    "mediana": 0.7,
     "aciertos": 52.5,
-    "peor10": -14.2,
-    "t": 5.9
+    "peor10": -14.1,
+    "t": 6.0
    }
   },
   "Combinada de las 4 primeras": {
    "reaccion": {
-    "n": 3743,
-    "media": 0.02,
-    "mediana": -0.1,
-    "aciertos": 48.7,
+    "n": 3747,
+    "media": 0.03,
+    "mediana": -0.09,
+    "aciertos": 48.8,
     "peor10": -12.8,
-    "t": 0.1
-   },
-   "reaccion_1a_mitad": {
-    "n": 1564,
-    "media": 0.05,
-    "mediana": 0.0,
-    "aciertos": 49.6,
-    "peor10": -10.2,
     "t": 0.2
    },
-   "reaccion_2a_mitad": {
-    "n": 2179,
-    "media": 0.0,
-    "mediana": -0.3,
-    "aciertos": 48.1,
-    "peor10": -14.1,
-    "t": 0.0
+   "reaccion_1a_mitad": {
+    "n": 1565,
+    "media": 0.1,
+    "mediana": 0.0,
+    "aciertos": 49.8,
+    "peor10": -10.1,
+    "t": 0.4
    },
-   "trampa_pct": 44.3,
+   "reaccion_2a_mitad": {
+    "n": 2182,
+    "media": -0.02,
+    "mediana": -0.31,
+    "aciertos": 48.1,
+    "peor10": -14.2,
+    "t": -0.1
+   },
+   "trampa_pct": 44.1,
    "deriva_20d_tras_subida": {
-    "n": 850,
-    "media": 2.65,
-    "mediana": 1.08,
-    "aciertos": 53.8,
+    "n": 852,
+    "media": 2.66,
+    "mediana": 1.0,
+    "aciertos": 53.5,
     "peor10": -15.2,
     "t": 4.7
    },
    "deriva_20d_tras_trampa": {
-    "n": 1233,
-    "media": 2.03,
-    "mediana": 0.77,
-    "aciertos": 52.7,
+    "n": 1230,
+    "media": 1.96,
+    "mediana": 0.78,
+    "aciertos": 52.8,
     "peor10": -13.7,
-    "t": 4.0
+    "t": 3.8
    }
   }
  },
  "por_sorpresa": {
   "No superó las previsiones": {
    "reaccion": {
-    "n": 9297,
-    "media": -2.84,
-    "mediana": -2.11,
-    "aciertos": 35.4,
+    "n": 9284,
+    "media": -2.87,
+    "mediana": -2.13,
+    "aciertos": 35.3,
     "peor10": -14.4,
-    "t": -27.4
+    "t": -27.6
    },
    "deriva_20d": {
-    "n": 9297,
+    "n": 9284,
     "media": 1.6,
-    "mediana": 0.02,
-    "aciertos": 50.0,
+    "mediana": 0.06,
+    "aciertos": 50.1,
     "peor10": -16.9,
     "t": 7.6
    }
   },
   "Superó por poco (0 a 5 %)": {
    "reaccion": {
-    "n": 2173,
-    "media": -0.62,
+    "n": 2184,
+    "media": -0.59,
     "mediana": -0.46,
     "aciertos": 45.7,
     "peor10": -9.3,
-    "t": -3.2
+    "t": -3.1
    },
    "deriva_20d": {
-    "n": 2173,
+    "n": 2184,
     "media": 0.72,
-    "mediana": -0.05,
+    "mediana": -0.06,
     "aciertos": 49.2,
-    "peor10": -14.4,
+    "peor10": -14.3,
     "t": 1.9
    }
   },
   "Superó bastante (5 a 20 %)": {
    "reaccion": {
-    "n": 4955,
-    "media": 0.76,
+    "n": 4954,
+    "media": 0.77,
     "mediana": 0.6,
     "aciertos": 54.4,
     "peor10": -9.3,
-    "t": 5.7
+    "t": 5.8
    },
    "deriva_20d": {
-    "n": 4955,
-    "media": 0.79,
-    "mediana": 0.22,
-    "aciertos": 50.9,
-    "peor10": -14.7,
+    "n": 4954,
+    "media": 0.78,
+    "mediana": 0.2,
+    "aciertos": 50.8,
+    "peor10": -14.8,
     "t": 3.2
    }
   },
   "Superó muchísimo (más de 20 %)": {
    "reaccion": {
-    "n": 8572,
+    "n": 8561,
     "media": 3.24,
-    "mediana": 2.03,
+    "mediana": 2.04,
     "aciertos": 61.1,
     "peor10": -8.6,
-    "t": 24.4
+    "t": 24.3
    },
    "deriva_20d": {
-    "n": 8572,
-    "media": 1.96,
-    "mediana": 0.65,
+    "n": 8561,
+    "media": 1.99,
+    "mediana": 0.67,
     "aciertos": 52.4,
     "peor10": -15.7,
-    "t": 10.3
+    "t": 10.4
    }
   }
  },
  "deriva_base": {
   "Todas las presentaciones (referencia)": {
-   "n": 24997,
+   "n": 24983,
    "media": 1.49,
    "mediana": 0.26,
-   "aciertos": 50.9,
+   "aciertos": 51.0,
    "peor10": -15.8,
-   "t": 12.6
+   "t": 12.7
   },
   "Superó y cayó más de 5 %": {
-   "n": 2933,
-   "media": 0.98,
+   "n": 2929,
+   "media": 1.03,
    "mediana": 0.0,
-   "aciertos": 50.0,
+   "aciertos": 49.9,
    "peor10": -17.4,
-   "t": 2.9
+   "t": 3.0
   },
   "Superó y cayó entre 0 y 5 %": {
-   "n": 3725,
-   "media": 1.52,
-   "mediana": 0.35,
+   "n": 3722,
+   "media": 1.5,
+   "mediana": 0.34,
    "aciertos": 51.5,
    "peor10": -13.6,
    "t": 5.5
   },
   "Superó y subió entre 0 y 5 %": {
-   "n": 4441,
-   "media": 0.97,
-   "mediana": 0.43,
+   "n": 4445,
+   "media": 0.99,
+   "mediana": 0.44,
    "aciertos": 52.2,
    "peor10": -13.2,
-   "t": 4.5
+   "t": 4.6
   },
   "Superó y subió 5 % o más": {
-   "n": 4601,
+   "n": 4603,
    "media": 2.05,
    "mediana": 0.47,
    "aciertos": 51.8,
-   "peor10": -16.9,
+   "peor10": -17.0,
    "t": 6.9
   },
   "No superó y cayó más de 5 %": {
-   "n": 3178,
-   "media": 1.62,
-   "mediana": 0.15,
-   "aciertos": 50.3,
-   "peor10": -18.2,
+   "n": 3183,
+   "media": 1.63,
+   "mediana": 0.17,
+   "aciertos": 50.5,
+   "peor10": -18.1,
    "t": 4.4
   },
   "No superó y cayó entre 0 y 5 %": {
-   "n": 2729,
-   "media": 0.87,
-   "mediana": 0.0,
-   "aciertos": 49.9,
+   "n": 2723,
+   "media": 0.92,
+   "mediana": 0.06,
+   "aciertos": 50.1,
    "peor10": -15.5,
-   "t": 2.6
+   "t": 2.7
   },
   "No superó y subió entre 0 y 5 %": {
-   "n": 2115,
-   "media": 1.9,
-   "mediana": 0.07,
+   "n": 2112,
+   "media": 1.87,
+   "mediana": 0.08,
    "aciertos": 50.2,
    "peor10": -15.3,
-   "t": 4.3
+   "t": 4.2
   },
   "No superó y subió 5 % o más": {
-   "n": 1275,
-   "media": 2.59,
+   "n": 1266,
+   "media": 2.54,
    "mediana": -0.19,
-   "aciertos": 49.1,
-   "peor10": -19.7,
-   "t": 4.0
+   "aciertos": 49.0,
+   "peor10": -19.6,
+   "t": 3.9
   }
  }
 }
