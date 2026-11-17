@@ -15,6 +15,7 @@ from zoneinfo import ZoneInfo
 
 PIP = 0.0001
 NY = ZoneInfo("America/New_York")
+LONDON = ZoneInfo("Europe/London")
 STRATEGIES = (
     "ema_pullback", "donchian_breakout", "bollinger_reversion",
     "rsi2_rebound", "squeeze_breakout",
@@ -66,6 +67,22 @@ def market_entry_allowed(ts: datetime, *, minutes_to_exit: int = 120) -> bool:
     minutes = local.hour * 60 + local.minute
     # Salir antes del rollover de las 16:45 NY incluso si salta el time stop.
     return not (16 * 60 + 45 - minutes_to_exit - 10 <= minutes < 18 * 60 + 15)
+
+
+
+def session_for(ts: datetime) -> str:
+    """Clasificación sin desfase de hora estacional London/NY."""
+    london = ts.astimezone(LONDON)
+    new_york = ts.astimezone(NY)
+    london_open = 8 <= london.hour < 17
+    ny_open = 8 <= new_york.hour < 17
+    if london_open and ny_open:
+        return "Londres_NY_solape"
+    if london_open:
+        return "Londres"
+    if ny_open:
+        return "Nueva_York"
+    return "Asia_o_baja_actividad"
 
 
 def ema(values: list[float], span: int) -> float:
@@ -250,7 +267,7 @@ def backtest(bars: list[Bar], *, strategy: str, slippage_pips: float = 0.15,
             "strategy": strategy, "side": signal.side, "start": b.timestamp.isoformat(),
             "end": bars[j].timestamp.isoformat(), "reason": reason,
             "R": round(net_pips / signal.stop_pips, 5), "pips_net": round(net_pips, 3),
-            "utc_hour": b.timestamp.hour,
+            "utc_hour": b.timestamp.hour, "session": session_for(b.timestamp),
         })
         i = j + 1  # sin reentrar en la vela usada para salir
     rets = [t["R"] for t in trades]
@@ -262,12 +279,9 @@ def backtest(bars: list[Bar], *, strategy: str, slippage_pips: float = 0.15,
         peak = max(peak, equity)
         dd = max(dd, peak - equity)
     slices = {}
-    for hour_label, hours in {"Asia_UTC_00_07": range(0, 7),
-                              "Europa_UTC_07_12": range(7, 12),
-                              "Solape_UTC_12_17": range(12, 17),
-                              "America_UTC_17_24": range(17, 24)}.items():
-        vals = [t["R"] for t in trades if t["utc_hour"] in hours]
-        slices[hour_label] = {"operations": len(vals), "expectancy_R": round(mean(vals), 4) if vals else None}
+    for label in ("Londres_NY_solape", "Londres", "Nueva_York", "Asia_o_baja_actividad"):
+        vals = [t["R"] for t in trades if t["session"] == label]
+        slices[label] = {"operations": len(vals), "expectancy_R": round(mean(vals), 4) if vals else None}
     return {
         "strategy": strategy, "source": "CSV histórico REAL del bróker; spread por vela",
         "operations": len(trades), "win_rate": round(len(wins) / len(rets), 4) if rets else None,
@@ -289,13 +303,11 @@ def summarize_trades(strategy: str, trades: list[dict]) -> dict:
         peak = max(peak, equity)
         dd = max(dd, peak-equity)
     slices = {}
-    for name, hours in {"Asia_UTC_00_07": range(0, 7),
-                        "Europa_UTC_07_12": range(7, 12),
-                        "Solape_UTC_12_17": range(12, 17),
-                        "America_UTC_17_24": range(17, 24)}.items():
-        vals = [float(t["R"]) for t in trades if t["utc_hour"] in hours]
-        slices[name] = {"operations": len(vals),
-                        "expectancy_R": round(mean(vals), 4) if vals else None}
+    for label in ("Londres_NY_solape", "Londres", "Nueva_York", "Asia_o_baja_actividad"):
+        vals = [float(t["R"]) for t in trades if t.get("session",
+                session_for(datetime.fromisoformat(t["start"]))) == label]
+        slices[label] = {"operations": len(vals),
+                         "expectancy_R": round(mean(vals), 4) if vals else None}
     return {"strategy": strategy, "operations": len(trades),
             "win_rate": round(len(wins)/len(rets), 4) if rets else None,
             "expectancy_R": round(mean(rets), 4) if rets else None,
