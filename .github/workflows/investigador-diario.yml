@@ -1,6 +1,7 @@
-# Investigador diario autónomo: no consume tokens de Claude ni APIs de pago.
-# Sólo usa los archivos que ya ha generado el agente B; nunca ejecuta órdenes.
-name: Investigador diario sin Claude
+# Investigador diario con IA, fuentes de hoy y descubrimiento de empresas nuevas.
+# GEMINI_API_KEY debe estar en Settings > Secrets and variables > Actions.
+# Si no hay clave o la IA falla: error visible, no se publica análisis sin IA.
+name: Investigador diario IA
 
 on:
   schedule:
@@ -10,22 +11,22 @@ on:
   pull_request:
     paths:
       - ".github/workflows/investigador-diario.yml"
-      - "src/tradinglab/medio_plazo/investigador_auto.py"
+      - "src/tradinglab/medio_plazo/investigador_ia.py"
+      - "src/tradinglab/medio_plazo/investigador_fuentes.py"
+      - "tests/test_investigador_ia.py"
       - "src/tradinglab/medio_plazo/propuestas.py"
-      - "tests/test_investigador_auto.py"
-      - "tests/test_propuestas.py"
 
 permissions:
   contents: write
 
 concurrency:
-  group: investigador-diario
+  group: investigador-diario-ia
   cancel-in-progress: false
 
 jobs:
   investigar:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     env:
       PYTHONPATH: src
       PYTHONUTF8: "1"
@@ -33,41 +34,36 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Instalar dependencias de prueba
+      - name: Instalar pytest
         run: python -m pip install --quiet pytest
-      - name: Comprobar reglas, fechas, duplicados y riesgo
-        run: python -m pytest -q tests/test_propuestas.py tests/test_investigador_auto.py
-      - name: Previsualizar con los datos del repo (PR, sin publicar)
-        if: github.event_name == 'pull_request'
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          from tradinglab.medio_plazo.investigador_auto import _fecha_carpeta, ejecutar
-          dia = _fecha_carpeta(Path("investigacion/hoy.md").read_text(encoding="utf-8"))
-          resultado = ejecutar(dia)
-          print(resultado)
-          ruta = Path("investigacion/propuestas") / f"{dia.isoformat()}.md"
-          if ruta.exists():
-              print(ruta.read_text(encoding="utf-8"))
-          PY
-      - name: Generar el informe y añadir predicciones (solo rama principal)
+      - name: Tests de actualidad, fuentes, IA y memoria de evitar
+        run: python -m pytest -q tests/test_propuestas.py tests/test_investigador_ia.py
+      - name: Investigación diaria con IA
         if: github.event_name != 'pull_request'
-        run: python -m tradinglab.medio_plazo.investigador_auto
-      - name: Publicar nuevos datos (sin modificar código)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+          INVESTIGADOR_GEMINI_MODELO: gemini-2.5-flash-lite
+        run: |
+          if [ -z "$GEMINI_API_KEY" ]; then
+            echo "::error::Falta GEMINI_API_KEY. Configura un secreto en GitHub Actions."
+            exit 1
+          fi
+          python -m tradinglab.medio_plazo.investigador_ia
+      - name: Publicar investigación y memoria del radar
         if: github.event_name != 'pull_request'
         run: |
-          git config user.name "investigador-diario"
+          git config user.name "investigador-diario-ia"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add investigacion/propuestas/ investigacion/predicciones.csv
+          git add investigacion/investigador/ investigacion/propuestas/ investigacion/predicciones.csv
           if git diff --cached --quiet; then
-            echo "Sin cambios: ya existía el informe o no hay suficientes ideas verificables."
+            echo "Sin cambios: informe ya generado."
             exit 0
           fi
-          git commit -m "Investigador diario: vigilancias $(TZ=Europe/Madrid date +%F)"
-          # No ocultar conflictos: si otra tarea modificó el libro, la ejecución falla
-          # y Github Actions informa. No usar push --force.
+          git commit -m "Investigador IA: análisis diario $(TZ=Europe/Madrid date +%F)"
           git pull --rebase origin main
           git push origin HEAD:main
