@@ -128,3 +128,41 @@ def test_ensayo_no_envia_ordenes(carpeta_tmp):
     d = sesion.operar(CFG, AlpacaFalsa(), et, ensayo=True, simbolos=["AAA"],
                       reloj=lambda: datetime(2026, 11, 16, 9, 34, tzinfo=NY), dormir=lambda s: None)
     assert et.ordenes == [] and any(f["accion"] == "ensayo" for f in d.filas)
+
+
+class AlpacaDosHuecos(AlpacaFalsa):
+    def _get(self, url, params):
+        if url.endswith("/v2/clock"):
+            return {"is_open": True}
+        barra = {"prevDailyBar": {"c": 2.0}, "dailyBar": {"o": 3.4, "t": "2026-11-16T05:00:00Z"}, "latestTrade": {"p": 3.2}}
+        return {"AAA": barra, "BBB": barra}
+
+
+class EToroFallaEnLaSegunda(EToroFalso):
+    def instrumento(self, s):
+        if s == "AAA":
+            return 77
+        raise ValueError("respuesta rara de eToro")
+
+
+def test_un_fallo_no_pierde_la_posicion_ya_abierta(carpeta_tmp):
+    """Auditoría 17-nov (D2): si eToro falla con la 2.ª candidata, la 1.ª ya abierta queda apuntada para cerrarla."""
+    et = EToroFallaEnLaSegunda()
+    ahora = datetime(2026, 11, 16, 9, 36, tzinfo=NY)
+    d = sesion.operar(CFG, AlpacaDosHuecos(), et, reloj=lambda: ahora, dormir=lambda s: None)
+    assert len(et.ordenes) == 1
+    assert [a["simbolo"] for a in sesion.leer_estado()["abiertas"]] == ["AAA"]
+    assert any(f["accion"] == "error" and f["simbolo"] == "BBB" for f in d.filas)
+    assert (carpeta_tmp / "registro.csv").exists() and "BBB" in (carpeta_tmp / "aviso.md").read_text(encoding="utf-8")
+    sesion.cerrar(CFG, et, reloj=lambda: datetime(2026, 11, 16, 15, 47, tzinfo=NY))
+    assert et.cierres == [999]
+
+
+def test_sin_cartera_no_abre_y_lo_apunta(carpeta_tmp):
+    class SinCartera(EToroFalso):
+        def cartera(self):
+            raise RuntimeError("eToro no responde")
+
+    et = SinCartera()
+    d = sesion.operar(CFG, AlpacaFalsa(), et, reloj=lambda: datetime(2026, 11, 16, 9, 36, tzinfo=NY), dormir=lambda s: None)
+    assert et.ordenes == [] and any(f["accion"] == "error" for f in d.filas) and (carpeta_tmp / "aviso.md").exists()

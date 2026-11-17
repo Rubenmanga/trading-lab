@@ -46,3 +46,14 @@ def test_sin_datos_no_falla(tmp_path):
 
 def test_recorta():
     assert cd._recorta([f"- {i}" for i in range(9)])[-1] == "- … y 3 más"
+
+
+def test_avisa_si_los_precios_son_viejos(tmp_path):
+    """Auditoría 17-nov (D3): con precios de hace más de un día de bolsa, la carpeta lo dice y no confirma zonas."""
+    _prep(tmp_path)
+    fresco = cd.construir(date(2026, 11, 17), tmp_path, tickers={"AAA": "a"})
+    assert "PRECIOS VIEJOS" not in fresco
+    viejo = cd.construir(date(2026, 11, 19), tmp_path, tickers={"AAA": "a"})
+    assert "PRECIOS VIEJOS" in viejo and "SIN CONFIRMAR" in viejo
+    assert cd.dias_bolsa_de_retraso("2026-11-13T22:00:00+00:00", date(2026, 11, 16)) == 1   # viernes -> lunes
+    assert cd.dias_bolsa_de_retraso("", date(2026, 11, 16)) is None
