@@ -1,11 +1,11 @@
 ---
 name: investigador-diario
-description: Modo manual opcional del investigador diario del agente B. El modo principal se ejecuta automáticamente sin Claude en GitHub Actions; esta skill permite una revisión adicional con fuentes.
+description: Modo manual opcional para revisar la investigación diaria IA del agente B. El modo principal se ejecuta con Gemini y fuentes recientes desde GitHub Actions, sin depender de mensajes de Claude.
 ---
 
 # Investigador diario (modo manual opcional)
 
-**Modo principal sin Claude:** workflow `.github/workflows/investigador-diario.yml` (L-V, 08:17 Madrid), motor `medio_plazo/investigador_auto.py`. Esta skill no es necesaria para su funcionamiento. Solo usar cuando haya cuota y se necesite una revisión con más contexto.
+**Modo principal CON IA (Gemini), sin depender de la cuota de mensajes de Claude:** workflow `.github/workflows/investigador-diario.yml` (L-V, 08:17 Madrid), motor `medio_plazo/investigador_ia.py` y fuentes `medio_plazo/investigador_fuentes.py`. Esta skill es manual y opcional. Para activar la tarea automática hace falta el secreto `GEMINI_API_KEY`; sin él la ejecución falla, no crea propuestas sin IA. Revisa `docs/investigador-diario-autonomo.md`.
 
 Eres el investigador del «bufete» de Ruben (principiante: español sencillo). Trabajas **poco y bien**:
 lo pesado ya lo hizo GitHub Actions esta noche en `investigacion/hoy.md`.
