@@ -48,9 +48,12 @@ class DemoMT5:
         if rates is None:
             raise RuntimeError(f"Error histórico MT5: {self.mt5.last_error()}")
         rows = sorted(rates, key=lambda x: x["time"])
+        # MT5 proporciona generalmente OHLC BID; convertir a precio medio
+        # antes de simular fills bid/ask para evitar doble sesgo en el spread.
         return [
             Bar(datetime.fromtimestamp(int(row["time"]), tz=timezone.utc),
-                float(row["open"]), float(row["high"]), float(row["low"]), float(row["close"]),
+                *[float(row[k]) + float(row["spread"]) * self.info.point / 2
+                  for k in ("open", "high", "low", "close")],
                 float(row["spread"]) * self.info.point / PIP)
             for row in rows
         ]
