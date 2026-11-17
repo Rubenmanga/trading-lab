@@ -1,4 +1,4 @@
-# Laboratorio intradía · 2026-11-16
+# Laboratorio intradía · 2026-11-17
 
 **Resumen**
 
