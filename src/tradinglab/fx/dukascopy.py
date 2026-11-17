@@ -42,6 +42,7 @@ def merge(bid_csv: str, ask_csv: str, target: str) -> dict:
     dest.parent.mkdir(parents=True, exist_ok=True)
     count = 0
     max_spread = 0.0
+    invalid_spreads = 0
     with dest.open("w", newline="", encoding="utf-8") as out:
         writer = csv.writer(out)
         writer.writerow(["timestamp", "open", "high", "low", "close", "spread_pips"])
@@ -53,8 +54,11 @@ def merge(bid_csv: str, ask_csv: str, target: str) -> dict:
             # diferencial de los extremos observados, aproximación conservadora.
             mids = {k: (bid[k]+ask[k])/2 for k in ("open", "high", "low", "close")}
             spread = max((ask[k]-bid[k])/PIP for k in mids)
-            if not 0 <= spread < 100:
-                raise ValueError("Spread fuera de límites")
+            if not 0 < spread < 100:
+                # Spread cero o anómalo no es cotización negociable.
+                # Excluir barra sin interpolar ni fabricar costes bajos.
+                invalid_spreads += 1
+                continue
             bar = Bar(datetime.fromtimestamp(ts/1000, timezone.utc),
                       mids["open"], max(mids["high"], mids["open"], mids["close"]),
                       min(mids["low"], mids["open"], mids["close"]), mids["close"], spread)
@@ -62,7 +66,12 @@ def merge(bid_csv: str, ask_csv: str, target: str) -> dict:
                              bar.low, bar.close, round(spread, 4)])
             count += 1
             max_spread = max(max_spread, spread)
-    return {"written": target, "bars": count, "unmatched_ratio": unmatched,
+    if invalid_spreads / len(timestamps) > 0.02:
+        dest.unlink(missing_ok=True)
+        raise ValueError(f"Calidad BID/ASK insuficiente, spreads inválidos {invalid_spreads}/{len(timestamps)}")
+    return {"written": target, "bars": count, "invalid_spreads_skipped": invalid_spreads,
+            "invalid_spread_ratio": round(invalid_spreads / len(timestamps), 5),
+            "unmatched_ratio": unmatched,
             "max_spread_pips": round(max_spread, 3),
             "note": "M5 bid/ask; spread máximo entre OHLC, no microestructura exacta de ticks"}
 
