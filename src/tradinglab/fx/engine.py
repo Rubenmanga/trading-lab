@@ -182,6 +182,8 @@ def load_csv(path: str | Path) -> list[Bar]:
             raise ValueError(f"Faltan columnas: {required}")
         for row in reader:
             stamp = datetime.fromisoformat(row["timestamp"].replace("Z", "+00:00"))
+            if stamp.tzinfo is None:
+                raise ValueError("CSV requiere timestamp con zona UTC explícita")
             bars.append(Bar(stamp.astimezone(timezone.utc), *(float(row[k]) for k in
                          ("open", "high", "low", "close", "spread_pips"))))
     for a, b in zip(bars[:-1], bars[1:]):
