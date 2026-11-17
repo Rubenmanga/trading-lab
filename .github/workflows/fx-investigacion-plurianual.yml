@@ -5,6 +5,7 @@ on:
     branches: [feature/agente-c-forex-eurusd-demo-20261117]
     paths:
       - "src/tradinglab/fx/research2.py"
+      - "src/tradinglab/fx/dukascopy.py"
       - "tests/test_fx_research2.py"
       - ".github/workflows/fx-investigacion-plurianual.yml"
   workflow_dispatch:
