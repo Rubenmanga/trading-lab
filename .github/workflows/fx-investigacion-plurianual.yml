@@ -70,9 +70,13 @@ jobs:
           python -m tradinglab.fx.research2 data/fx-processed/eurusd_m5_bidask.csv \
             --cost-multiplier 2 --start-valid "$TEST_YEAR-01-01" \
             --output "investigacion/fx/v2-$TEST_YEAR-coste2.json"
+      - name: Guardar precios historicos bid ask comprimidos para auditoria
+        run: gzip -k data/fx-processed/eurusd_m5_bidask.csv
       - uses: actions/upload-artifact@v4
         with:
           name: fx-12-hipotesis-${{ matrix.year }}-${{ matrix.label }}
-          path: investigacion/fx/v2-*.json
+          path: |
+            investigacion/fx/v2-*.json
+            data/fx-processed/eurusd_m5_bidask.csv.gz
           if-no-files-found: error
           retention-days: 30
