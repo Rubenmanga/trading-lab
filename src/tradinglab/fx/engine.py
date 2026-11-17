@@ -63,10 +63,9 @@ def market_entry_allowed(ts: datetime, *, minutes_to_exit: int = 120) -> bool:
         return False
     if local.weekday() == 6 and (local.hour, local.minute) < (18, 15):
         return False
-    if local.weekday() == 4 and local.hour * 60 + local.minute > 17 * 60 - minutes_to_exit - 15:
-        return False
     minutes = local.hour * 60 + local.minute
-    return not (16 * 60 + 45 <= minutes < 18 * 60 + 15)
+    # Salir antes del rollover de las 16:45 NY incluso si salta el time stop.
+    return not (16 * 60 + 45 - minutes_to_exit - 10 <= minutes < 18 * 60 + 15)
 
 
 def ema(values: list[float], span: int) -> float:
