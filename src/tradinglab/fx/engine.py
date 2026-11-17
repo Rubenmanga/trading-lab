@@ -275,3 +275,29 @@ def backtest(bars: list[Bar], *, strategy: str, slippage_pips: float = 0.15,
         "max_drawdown_R": round(dd, 4), "session_slices": slices, "trades": trades,
         "disclaimer": "Hipótesis sin validación OOS ni prueba de ejecución real; gastos estimados.",
     }
+
+
+def summarize_trades(strategy: str, trades: list[dict]) -> dict:
+    """Recalcula estadísticas sobre cualquier partición cronológica real."""
+    rets = [float(t["R"]) for t in trades]
+    wins = [r for r in rets if r > 0]
+    losses = [r for r in rets if r < 0]
+    equity, peak, dd = 0.0, 0.0, 0.0
+    for r in rets:
+        equity += r
+        peak = max(peak, equity)
+        dd = max(dd, peak-equity)
+    slices = {}
+    for name, hours in {"Asia_UTC_00_07": range(0, 7),
+                        "Europa_UTC_07_12": range(7, 12),
+                        "Solape_UTC_12_17": range(12, 17),
+                        "America_UTC_17_24": range(17, 24)}.items():
+        vals = [float(t["R"]) for t in trades if t["utc_hour"] in hours]
+        slices[name] = {"operations": len(vals),
+                        "expectancy_R": round(mean(vals), 4) if vals else None}
+    return {"strategy": strategy, "operations": len(trades),
+            "win_rate": round(len(wins)/len(rets), 4) if rets else None,
+            "expectancy_R": round(mean(rets), 4) if rets else None,
+            "profit_factor": round(sum(wins)/-sum(losses), 4) if losses else None,
+            "max_drawdown_R": round(dd, 4), "session_slices": slices,
+            "trades": trades}
