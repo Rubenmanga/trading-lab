@@ -7,6 +7,10 @@ on:
       - "src/tradinglab/fx/**"
       - ".github/workflows/fx-historico.yml"
 
+concurrency:
+  group: fx-historico-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
