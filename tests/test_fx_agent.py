@@ -91,3 +91,45 @@ def test_news_valid_only_when_fresh_and_all_sources(tmp_path):
       "reason": "LOW", "headlines": [], "sources": ["BCE", "FED", "BLS"]}))
     assert load_news(path, now=now).allow_entries
     assert not load_news(path, now=now+timedelta(minutes=25)).allow_entries
+
+
+def test_convert_bid_ask_realistic_spread(tmp_path):
+    """Contrato de formato del proveedor; números sintéticos, jamás retorno."""
+    import csv
+    from tradinglab.fx.dukascopy import merge
+    first = datetime(2026, 11, 18, 0, tzinfo=timezone.utc)
+    bid = tmp_path / "bid.csv"
+    ask = tmp_path / "ask.csv"
+    for path, shift in ((bid, 0.0), (ask, 0.00009)):
+        with path.open("w", newline="", encoding="utf-8") as file:
+            w = csv.writer(file)
+            w.writerow(["timestamp", "open", "high", "low", "close"])
+            for i in range(305):
+                ts = first + timedelta(minutes=5*i)
+                mid = 1.1 + 0.00002*i + shift
+                w.writerow([int(ts.timestamp()*1000), mid, mid+.00011,
+                            mid-.00011, mid])
+    dest = tmp_path / "mid.csv"
+    result = merge(str(bid), str(ask), str(dest))
+    rows = load_csv(dest)
+    assert result["bars"] == len(rows) == 305
+    assert rows[0].spread_pips == pytest.approx(0.9)
+    assert rows[0].open == pytest.approx(1.100045)
+
+
+def test_reject_zero_spread():
+    with pytest.raises(ValueError, match="Spread"):
+        Bar(datetime(2026, 11, 18, tzinfo=timezone.utc), 1.1, 1.101, 1.099, 1.1, 0)
+
+
+def test_only_eurusd_is_valid_symbol():
+    class FakeMT5:
+        def initialize(self):
+            return True
+    # El bloqueo se comprueba en __init__ antes de intentar conectar con MT5.
+    # No importar librería MetaTrader5 real para esta prueba en Linux.
+    import sys
+    from unittest.mock import patch
+    with patch.dict(sys.modules, {"MetaTrader5": FakeMT5()}):
+        with pytest.raises(ValueError, match="EURUSD"):
+            DemoMT5(symbol="GBPUSD")
