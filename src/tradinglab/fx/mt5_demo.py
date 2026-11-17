@@ -20,6 +20,8 @@ class DemoMT5:
             import MetaTrader5 as mt5
         except ImportError as exc:
             raise RuntimeError("Instala MetaTrader5 en Windows con terminal abierto") from exc
+        if not symbol.upper().startswith("EURUSD"):
+            raise ValueError("Agente C restringido exclusivamente a EURUSD")
         self.mt5 = mt5
         self.symbol = symbol
         if not mt5.initialize():
