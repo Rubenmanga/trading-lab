@@ -10,7 +10,7 @@ import os
 import re
 import sys
 import urllib.request
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -132,7 +132,7 @@ def evaluar_respuesta(respuesta, candidatos, watch, entradas, dia):
         con_escenarios = bool(e and stop and objetivo and 0 < stop < e < objetivo)
         riesgo_retorno = ((objetivo - e) / (e - stop)) if con_escenarios else 0
         # NUNCA elevar a compra una nueva idea sin tesis/escenarios. El modelo no manda.
-        fuente_primaria = any(x["primaria"] and x["fecha"] >= dia.fromordinal(dia.toordinal()-7).isoformat()
+        fuente_primaria = any(x["primaria"] and x["fecha"] >= (dia - timedelta(days=7)).isoformat()
                               and x["tipo"].startswith("SEC ") for x in validas)
         binaria = bool((entradas.get(t) or {}).get("binaria"))
         red_flags = any("diluci" in str(x).lower() or "quiebra" in str(x).lower()
@@ -161,16 +161,17 @@ def evaluar_respuesta(respuesta, candidatos, watch, entradas, dia):
     return analizados[:8], rechazados
 
 
-def actualizar_estado(anterior, analizados, dia):
+def actualizar_estado(anterior, analizados, dia, candidatos=None):
     """Evitar sale del radar prioritario hasta un nuevo hecho primario MATERIAL."""
     nuevo = dict(anterior)
+    todas = {c['ticker']: c['fuentes'] for c in (candidatos or [])}
     for a in analizados:
         t = a["ticker"]
         prev = nuevo.get(t, {})
         ver = a["estado"]
         nuevo[t] = {"estado": ver, "desde": dia.isoformat() if ver == "evitar" else prev.get("desde", dia.isoformat()),
                     "ultima_revision": dia.isoformat(), "motivo": a["razon_estado"],
-                    "vistas": [f["id"] for f in a["fuentes"]] if ver == "evitar" else []}
+                    "vistas": [f["id"] for f in todas.get(t, a["fuentes"])] if ver == "evitar" else []}
     return nuevo
 
 
@@ -251,8 +252,11 @@ def ejecutar(hoy=None, raiz=ROOT, *, modelo_llamar=gemini,
     watch = cargar_csv(inv / "watchlist.csv")
     entradas = cargar_json(inv / "entradas.json")
     rss, errores = rss_llamar(dia)
-    candidatos = fuentes.candidatos(rank, watch, memoria, rss, dia)
-    sec, fallos = sec_llamar([x["ticker"] for x in candidatos], dia)
+    candidatos = fuentes.candidatos(rank, watch, memoria, rss, dia, incluir_dormidos=True)
+    # Consultar las dormidas antes de excluirlas: un nuevo documento SEC puede despertarlas.
+    dormidas = [x['ticker'] for x in candidatos if memoria.get(x['ticker'], {}).get('estado') == 'evitar']
+    otras = [x['ticker'] for x in candidatos if x['ticker'] not in dormidas]
+    sec, fallos = sec_llamar((dormidas + otras)[:16], dia)
     errores.extend(fallos)
     candidatos = fuentes.candidatos(rank, watch, memoria, rss, dia, sec)
     if not candidatos:
@@ -265,7 +269,7 @@ def ejecutar(hoy=None, raiz=ROOT, *, modelo_llamar=gemini,
     archivo.parent.mkdir(parents=True, exist_ok=True)
     # Primero el registro completo, después memorias y ficha corta de panel.
     archivo.write_text(texto, encoding="utf-8")
-    estado = actualizar_estado(memoria, analizados, dia)
+    estado = actualizar_estado(memoria, analizados, dia, candidatos)
     memoria_path.write_text(json.dumps(estado, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     plantilla = propuesta_panel(dia, analizados)
     apuntadas = 0
