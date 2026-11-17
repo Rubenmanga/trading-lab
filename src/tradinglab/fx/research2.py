@@ -204,9 +204,9 @@ def evaluate(csv_path: str, *, cost_multiplier: float = 1.0,
     trades=simulate(f,z,cost_multiplier=cost_multiplier)
     for name,t in trades.items():
         if start_valid is not None:
-            t=t[t.start>=np.datetime64(start_valid)]
+            t=t[t.start>=pd.to_datetime(start_valid,utc=True)]
         if end_valid is not None:
-            t=t[t.start<np.datetime64(end_valid)]
+            t=t[t.start<pd.to_datetime(end_valid,utc=True)]
         out[name]=summarize(t)
     return {"source":str(csv_path),"bars":len(f),"date_start":str(f.timestamp.iloc[0]),
             "date_end":str(f.timestamp.iloc[-1]),"cost_multiplier":cost_multiplier,
