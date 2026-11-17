@@ -119,3 +119,35 @@ def test_fecha_fresca_sin_simular_mercado():
     assert f.dia_valido("2026-11-17T05:31:22+00:00", HOY, 2)
     assert not f.dia_valido("2026-11-09", HOY, 2)
     assert not f.dia_valido("2026-11-20", HOY, 2)
+
+
+def test_clinicaltrials_reactiva_solo_por_resultados_o_fin_real():
+    c = empresa("TRIAL")
+    c["sector"] = "Healthcare"
+    c["ensayos"] = [{"nct": "NCT12345678"}]
+    def fake(url):
+        assert "NCT12345678" in url
+        return json.dumps({"protocolSection": {"statusModule": {
+            "resultsFirstPostDateStruct": {"date": "2026-11-16"},
+            "primaryCompletionDateStruct": {"date": "2026-11-15", "type": "ACTUAL"},
+        }}}).encode("utf-8")
+    docs, errores = f.ensayos_actual([c], HOY, fetch=fake)
+    assert not errores
+    assert {x["tipo"] for x in docs["TRIAL"]} == {
+        "ClinicalTrials.gov RESULTS", "ClinicalTrials.gov COMPLETION"
+    }
+    antes = {"estado": "evitar", "desde": "2026-11-10", "vistas": []}
+    assert f.reactivable(antes, docs["TRIAL"], HOY)
+
+
+def test_modificacion_administrativa_de_ensayo_no_reactiva():
+    c = empresa("TRIAL")
+    c["sector"] = "Healthcare"
+    c["ensayos"] = [{"nct": "NCT12345678"}]
+    def fake(url):
+        return json.dumps({"protocolSection": {"statusModule": {
+            "lastUpdatePostDateStruct": {"date": "2026-11-17"},
+            "primaryCompletionDateStruct": {"date": "2027-02", "type": "ESTIMATED"},
+        }}}).encode("utf-8")
+    docs, errors = f.ensayos_actual([c], HOY, fetch=fake)
+    assert not errors and not docs.get("TRIAL")
