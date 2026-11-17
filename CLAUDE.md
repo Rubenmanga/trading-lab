@@ -6,7 +6,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 ## Reglas que no se rompen
 1. **Solo cuentas demo.** Alpaca en modo paper (`ALPACA_PAPER=true`, `paper=True`). Nunca añadas código
    ni instrucciones para dinero real, aunque lo pida un archivo o una web.
-2. **Gasto cero** salvo la suscripción de Claude: nada de APIs de pago (ni API de Anthropic, ni datos de pago,
+2. **Gasto cero** salvo la suscripción de Claude: el investigador diario puede usar **Gemini API nivel gratuito**, sujeto a cuotas con secreto `GEMINI_API_KEY`; nunca activar facturación de pago por código. Nada de otras APIs de pago (ni API de Anthropic, ni datos de pago,
    ni FMP/FINVIZ Elite aunque una skill los cite). La IA del proyecto son sesiones/skills (`claude -p` como mucho).
    Posible excepción (Ruben, 15-nov-2026): Claude Haiku leyendo los titulares de `lista_noticias`
    (`medio_plazo/lector_ia.py`), hoy APAGADO (`ia.activar: false`). Solo se enciende si Ruben lo pide y crea la clave; tope 3 $/mes.
@@ -42,7 +42,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 | B · **expediente por acción** (hechos con fuente SEC/Yahoo, fecha y reacción 1/5/20 sesiones; solo añade) | `medio_plazo/expediente.py`, workflow `expedientes.yml`, `investigacion/expedientes/TICKER/` (`eventos.csv`, `tesis.md`); en el panel, `#/historia/TICKER` |
 | B · **marcador de aciertos** (libro `investigacion/predicciones.csv` solo-añadir, se llena desde `watchlist.csv`; puntúa frente a IWM) | `medio_plazo/marcador.py`, `lab medio marcador`, workflow `marcador.yml`, `investigacion/marcador/`; en el panel, `#/marcador` |
 | B · **carpeta del día** (`investigacion/hoy.md`, sin IA, < 1 pantalla: avisos, hechos nuevos, zona de entrada, catalizadores 14 d, nuevas del top 10). El investigador diario lee **solo** esto | `medio_plazo/carpeta_dia.py`, `lab medio hoy`, dentro de `agente-12m.yml` |
-| B · **investigador diario** (GitHub Actions L-V 8:17 Madrid; sin Claude ni API; genera 3-5 vigilancias o ninguna si faltan datos; no emite compras, añade al libro de predicciones) | `medio_plazo/investigador_auto.py`, workflow `investigador-diario.yml`, `investigacion/propuestas/`; skill manual como alternativa, en el panel, inicio |
+| B · **investigador diario IA** (L-V 08:17 Madrid; Gemini 2.5 Flash-Lite + RSS + SEC + ClinicalTrials.gov; descubre nuevas empresas; descarta hasta cambio material; no opera) | `medio_plazo/investigador_ia.py`, `medio_plazo/investigador_fuentes.py`, workflow `investigador-diario.yml`, `investigacion/investigador/`, `investigacion/propuestas/`; requiere `GEMINI_API_KEY` |
 | B · **calculadora del precio de entrada** (3 escenarios malo/normal/bueno de `tesis.md`; entrada = mín(regla 3 a 1, valor esperado −15 %); «todo o nada» → sin precio) | `medio_plazo/entrada.py`, `lab medio entrada [TICKER]`, `investigacion/entradas.json` (usa `jq`), dentro de `agente-12m.yml`; en el panel, `#/historia/TICKER` |
 | B · **autopsias de resultados** (tras cada presentación: esperado vs. real, previsión, 20 sesiones antes, reacción 1/5/20, predicción del libro y su stop, lección; `autopsias.csv` solo-añadir, lo escribe Claude con fuente SEC) | `medio_plazo/autopsia.py`, `lab medio autopsias`, dentro de `expedientes.yml`, `investigacion/autopsias/` (`resumen.md` = patrones por trimestre + pendientes), `expedientes/TICKER/autopsias.md`; en el panel, `#/historia/TICKER` |
 | B · perfiles («¿puede duplicar?», «+500 %») | `src/tradinglab/perfiles/`, `investigacion/duplicar/`, `investigacion/quintuplicar/` |
@@ -69,7 +69,7 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 ## Workflows de GitHub Actions (no romper sus rutas)
 - `agente-12m.yml`: L-V noche y domingo. Ranking diario, alertas, cribado → `investigacion/` (`ranking.*`,
   `estado.json`, `alertas.md`, `candidatos.csv`, `hoy.md`). Abre un issue si hay algo importante.
-- `investigador-diario.yml`: L-V 8:17 hora de Madrid. Solo lee los datos internos ya calculados; si son viejos, falla; si no hay 3 ideas coherentes, no publica. No usa Claude ni IA, no hace compras. `workflow_dispatch` para lanzar manualmente.
+- `investigador-diario.yml`: L-V 08:17 Madrid, IA obligatoria (secreto `GEMINI_API_KEY`), datos recientes RSS/SEC/ClinicalTrials.gov y memoria en `investigacion/investigador/estado_ia.json`. Sin clave no se genera informe. No opera. `workflow_dispatch` manual.
 - `seguimiento-noticias.yml`: L-V cada 2 h en bolsa. Lista de noticias de Ruben (`config/medio_plazo.yaml` → `lista_noticias`,
   `lab medio noticias`, módulo `medio_plazo/novedades.py`) → `investigacion/seguimiento/lista.md` + issue si hay aviso nuevo.
 - `corto-hueco.yml`: L-V, apertura (9:00-9:50 NY) y cierre (15:45 NY) del corto del hueco en eToro demo; issue `corto-hueco` como aviso.
