@@ -107,6 +107,39 @@ class NewsDecision:
             return False
 
 
+def _charge_budget(payload: dict, request_result: dict | None = None) -> None:
+    """Estimación protectora local de gasto, máximo programado 3 USD/mes.
+
+    El tope contractual se debe configurar TAMBIÉN en Anthropic Console.
+    Este archivo no se puede compartir entre procesos sin un sistema transaccional.
+    """
+    path = Path(os.environ.get("FX_HAIKU_BUDGET_FILE", "data/fx-demo/haiku_budget.json"))
+    month = _utc().strftime("%Y-%m")
+    try:
+        data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+        if data.get("month") != month:
+            data = {"month": month, "spent_usd_estimated": 0.0}
+        spent = float(data["spent_usd_estimated"])
+        if spent < 0 or spent > 100:
+            raise ValueError("Presupuesto inconsistente")
+        if request_result is None:
+            # Reservamos ANTES de llamar para que un fallo no genere llamadas infinitas.
+            # Coste máximo bajo tarifa de entrada <100k: caracteres usados como proxy prudente de tokens.
+            conservative_input = len(json.dumps(payload, ensure_ascii=False))
+            estimate = conservative_input * 0.10 / 1_000_000 + 240 * 0.50 / 1_000_000
+            estimate *= 1.5
+        else:
+            estimate = 0.0  # No devolvemos una reserva si el servidor cae.
+        if spent + estimate > 3.0:
+            raise RuntimeError("Tope local Haiku 3 USD/mes superado")
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({"month": month,
+                                    "spent_usd_estimated": round(spent + estimate, 8)},
+                                   indent=2), encoding="utf-8")
+    except (OSError, ValueError, TypeError) as exc:
+        raise RuntimeError("Estado de presupuesto Haiku no fiable; entradas vetadas") from exc
+
+
 def classify_haiku(headlines: list[dict], now: datetime) -> tuple[bool, str]:
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
     if not key:
@@ -127,6 +160,7 @@ def classify_haiku(headlines: list[dict], now: datetime) -> tuple[bool, str]:
             {"now_utc": now.isoformat(), "official_headlines": headlines},
             ensure_ascii=False)}],
     }
+    _charge_budget(payload)
     req = Request(
         "https://api.anthropic.com/v1/messages",
         data=json.dumps(payload).encode("utf-8"),
