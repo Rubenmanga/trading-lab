@@ -19,11 +19,12 @@ import gzip
 import json
 import os
 from calendar import monthrange
-from datetime import date
+from datetime import date, timedelta
 from statistics import mean, median
 
 from ..medio_plazo import oportunidades as op
 from ..medio_plazo import sec_cuentas as sc
+from . import inflexion as inf
 
 CAP_MIN, CAP_MAX, PRECIO_MIN, DOLARES_MIN = 300e6, 2000e6, 3.0, 1e6
 TOP, COSTE = 20, 0.005
@@ -156,6 +157,7 @@ def construir_cohortes(carpeta: str) -> tuple[dict[str, list[dict]], dict, dict]
     with open(os.path.join(carpeta, "tickers.csv"), encoding="utf-8") as fh:
         tick = {r["cik"]: r["ticker"] for r in csv.DictReader(fh)}
     cohortes: dict[str, list[dict]] = {m: [] for m in fechas}
+    directivos = inf.cargar_directivos(carpeta)
     with gzip.open(os.path.join(carpeta, "cuentas.jsonl.gz"), "rt", encoding="utf-8") as fh:
         for linea in fh:
             x = json.loads(linea)
@@ -164,6 +166,7 @@ def construir_cohortes(carpeta: str) -> tuple[dict[str, list[dict]], dict, dict]
             if not t or not serie:
                 continue
             facts = {"facts": x["facts"]}
+            prep = None
             for m in fechas:
                 p = serie.get(m)
                 if not p or p[1] < PRECIO_MIN or p[2] < DOLARES_MIN:
@@ -180,6 +183,9 @@ def construir_cohortes(carpeta: str) -> tuple[dict[str, list[dict]], dict, dict]
                     continue
                 f = {"ticker": t, "precio": p[1], "capitalizacion": cap, "sector": None, "analistas": 10} | cu
                 f |= rasgos_precio(serie, m, iwm)
+                prep = prep or inf.preparar(facts)
+                f["inflexion"] = inf.senales(prep, fecha, acc, acciones_en(facts, fecha - timedelta(days=365)),
+                                             directivos.get(x["cik"]))
                 cohortes[m].append(f)
     return cohortes, pre, {"ultimo_mes": ultimo, "fechas": fechas}
 
@@ -355,11 +361,13 @@ def ejecutar(carpeta: str, salida: str) -> dict:
     res["doce_meses"] = estudio_12m(cohortes, pre, ultimo)
     res["pelotazos"] = estudio_pelotazos(cohortes, pre, ultimo)
     res["supervivencia"] = supervivencia(carpeta)
+    res["inflexion"] = inf.estudio(cohortes, pre, ultimo)
     os.makedirs(salida, exist_ok=True)
     with open(os.path.join(salida, "resultados.json"), "w", encoding="utf-8") as fh:
         json.dump(res, fh, ensure_ascii=False, indent=1, default=str)
     from .informe import escribir
     escribir(res, os.path.join(salida, f"INFORME-{date.today().isoformat()}.md"))
+    inf.informe(res["inflexion"], os.path.join(salida, f"INFORME-INFLEXION-{date.today().isoformat()}.md"), meta)
     return res
 
 

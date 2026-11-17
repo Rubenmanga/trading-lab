@@ -33,6 +33,10 @@ BOLSAS = {"Nasdaq", "NYSE"}            # sin OTC (chicharros fuera de bolsa)
 ACCIONES_DEI = ["EntityCommonStockSharesOutstanding"]
 ACCIONES_GAAP = ["CommonStockSharesOutstanding"]
 DESDE = "2012-01-01"
+TRIMESTRALES = {n for c in ("ventas", "beneficio_bruto", "coste_ventas", "gastos_generales", "ebit",
+                            "flujo_operativo", "caja", "inversiones_cp") for n in CONCEPTOS[c]}
+SEC_FORM345 = ("https://www.sec.gov/files/structureddata/data/insider-transactions-data-sets/{a}q{t}_form345.zip",
+               "https://www.sec.gov/files/datastandardsinnovation/data/insider-transactions-data-sets/{a}q{t}_form345.zip")
 
 
 def _bajar(url: str, destino: str) -> str:
@@ -74,7 +78,8 @@ def compactar(facts: dict) -> dict:
         unidades = {}
         for u, filas in (gaap[n].get("units") or {}).items():
             keep = [{k: x[k] for k in ("start", "end", "val", "form", "filed") if k in x} for x in filas
-                    if (x.get("form") in FORMULARIOS_ANUALES or n in ACCIONES_GAAP) and x.get("filed")]
+                    if (x.get("form") in FORMULARIOS_ANUALES or n in ACCIONES_GAAP
+                        or (n in TRIMESTRALES and x.get("form") in ("10-Q", "10-Q/A"))) and x.get("filed")]
             if keep:
                 unidades[u] = keep
         if unidades:
@@ -135,6 +140,85 @@ def sec(salida: str, zip_local: str | None = None) -> dict:
     if not zip_local:
         os.remove(zp)
     r = {"empresas_zip": n_tot, "empresas_cotizan_hoy": len(lista), "cuentas_guardadas": n_act}
+    print(r)
+    return r
+
+
+# ------------------------------------------------------------------ directivos (Form 4)
+def _fecha_sec(s: str) -> str | None:
+    """'31-MAR-2014' o '2014-03-31' -> '2014-03-31'."""
+    s = (s or "").strip()
+    for fmt, n in (("%d-%b-%Y", 11), ("%Y-%m-%d", 10)):
+        try:
+            return time.strftime("%Y-%m-%d", time.strptime(s[:n].title() if n == 11 else s[:n], fmt))
+        except ValueError:
+            continue
+    return None
+
+
+def _tsv(z: zipfile.ZipFile, nombre: str):
+    import io
+    real = next((n for n in z.namelist() if n.upper().endswith(nombre)), None)
+    if not real:
+        return
+    with z.open(real) as fh:
+        yield from csv.DictReader(io.TextIOWrapper(fh, encoding="utf-8", errors="replace"), delimiter="\t")
+
+
+def directivos_de_zip(zp: str) -> list[dict]:
+    """Compras en el mercado (código P) de directivos: [{cik, presentado, fecha_op, dueno}]."""
+    with zipfile.ZipFile(zp) as z:
+        compras = {}
+        for r in _tsv(z, "NONDERIV_TRANS.TSV"):
+            if (r.get("TRANS_CODE") or "").strip() == "P":
+                compras.setdefault(r["ACCESSION_NUMBER"], _fecha_sec(r.get("TRANS_DATE")))
+        sub = {}
+        for r in _tsv(z, "SUBMISSION.TSV"):
+            a = r["ACCESSION_NUMBER"]
+            if a in compras and (r.get("DOCUMENT_TYPE") or "").startswith("4"):
+                sub[a] = (str(r.get("ISSUERCIK") or "").strip().zfill(10), _fecha_sec(r.get("FILING_DATE")))
+        out = []
+        for r in _tsv(z, "REPORTINGOWNER.TSV"):
+            a = r["ACCESSION_NUMBER"]
+            if a in sub and sub[a][1] and compras[a]:
+                out.append({"cik": sub[a][0], "presentado": sub[a][1], "fecha_op": compras[a],
+                            "dueno": (r.get("RPTOWNERCIK") or "").strip()})
+    return out
+
+
+def directivos(salida: str, desde: int = 2013) -> dict:
+    """Descarga los «Insider Transactions Data Sets» trimestrales de la SEC (gratis) → directivos.csv.gz."""
+    os.makedirs(salida, exist_ok=True)
+    hoy = time.gmtime()
+    n_zip = n_filas = 0
+    fallos = []
+    with gzip.open(os.path.join(salida, "directivos.csv.gz"), "wt", encoding="utf-8", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=["cik", "presentado", "fecha_op", "dueno"])
+        w.writeheader()
+        for a in range(desde, hoy.tm_year + 1):
+            for t in range(1, 5):
+                if (a, t) >= (hoy.tm_year, (hoy.tm_mon - 1) // 3 + 1):
+                    break
+                zp = os.path.join(salida, "f345.zip")
+                filas = None
+                for url in SEC_FORM345:              # la SEC cambió de carpeta en 2026
+                    try:
+                        _bajar(url.format(a=a, t=t), zp)
+                        filas = directivos_de_zip(zp)
+                        break
+                    except Exception as e:  # noqa: BLE001
+                        err = type(e).__name__
+                    finally:
+                        if os.path.exists(zp):
+                            os.remove(zp)
+                if filas is None:
+                    fallos.append(f"{a}q{t}: {err}")
+                    continue
+                w.writerows(filas)
+                n_zip += 1
+                n_filas += len(filas)
+                time.sleep(0.5)
+    r = {"trimestres": n_zip, "compras": n_filas, "fallos": fallos}
     print(r)
     return r
 
@@ -220,7 +304,7 @@ def precios(salida: str, parte: int = 1, de: int = 1, lote: int = 80, extra: tup
 
 def main(argv=None):
     ap = argparse.ArgumentParser()
-    ap.add_argument("que", choices=["sec", "precios"])
+    ap.add_argument("que", choices=["sec", "precios", "directivos"])
     ap.add_argument("--salida", default="datos_bt")
     ap.add_argument("--parte", type=int, default=1)
     ap.add_argument("--de", type=int, default=1)
@@ -228,6 +312,8 @@ def main(argv=None):
     a = ap.parse_args(argv)
     if a.que == "sec":
         sec(a.salida, a.zip)
+    elif a.que == "directivos":
+        directivos(a.salida)
     else:
         precios(a.salida, a.parte, a.de)
 
