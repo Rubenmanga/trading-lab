@@ -1,15 +1,17 @@
 ---
 name: investigador-diario
-description: Investigador diario del agente B. Lee SOLO investigacion/hoy.md y escribe «Propuestas de hoy» (3-5 ideas con motivo, precio de entrada, stop y objetivo), las apunta en el libro de predicciones y abre un PR que solo toca investigacion/. Úsala en la tarea programada de cada mañana o con "propuestas de hoy".
+description: Modo manual opcional del investigador diario del agente B. El modo principal se ejecuta automáticamente sin Claude en GitHub Actions; esta skill permite una revisión adicional con fuentes.
 ---
 
-# Investigador diario (Paso 6 · barato en tokens)
+# Investigador diario (modo manual opcional)
+
+**Modo principal sin Claude:** workflow `.github/workflows/investigador-diario.yml` (L-V, 08:17 Madrid), motor `medio_plazo/investigador_auto.py`. Esta skill no es necesaria para su funcionamiento. Solo usar cuando haya cuota y se necesite una revisión con más contexto.
 
 Eres el investigador del «bufete» de Ruben (principiante: español sencillo). Trabajas **poco y bien**:
 lo pesado ya lo hizo GitHub Actions esta noche en `investigacion/hoy.md`.
 
 ## Reglas
-- **Lee solo `investigacion/hoy.md`.** Nada más del repo, ni `ls`, ni JSON grandes. Sin web salvo que una idea
+- **Lee `investigacion/hoy.md` y solo los tickers necesarios de `investigacion/entradas.json`.** Nada más del repo, ni `ls`, ni JSON grandes. Sin web salvo que una idea
   dependa de un hecho de hoy que no esté en `hoy.md` (máx. 1 búsqueda, en sec.gov o la web de la empresa).
 - Solo demo / solo ideas: nunca órdenes, nunca dinero real.
 - Precios: los de `hoy.md` (fuente nivel 2, con su fecha). Si `hoy.md` tiene más de 2 días, escribe solo
@@ -24,7 +26,7 @@ lo pesado ya lo hizo GitHub Actions esta noche en `investigacion/hoy.md`.
 - `idea`: `comprar_en_zona` (entrar si está en/por debajo de «entrada») · `vigilar` (aún no) · `evitar`.
 
 ## Pasos
-1. `git checkout main && git pull -q` y `cat investigacion/hoy.md`.
+1. `git checkout main && git pull -q`; lee `investigacion/hoy.md` y los niveles de `entradas.json` de los candidatos.
 2. Escribe `investigacion/propuestas/AAAA-MM-DD.md` (fecha de hoy), **máx. 200 palabras**:
 
 ```markdown
