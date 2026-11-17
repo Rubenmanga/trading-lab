@@ -24,6 +24,55 @@
    "tipo": "CATALIZADOR CERCA",
    "mensaje": "SVRA: 'Decisión FDA de MOLBREEVI (apuesta binaria; puede llegar el 20 o el 23)' el 2026-11-22 (en 5 días)",
    "precio": 4.465000152587891
+  },
+  {
+   "ticker": "RCAT",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 2.41,
+   "seguimiento": true,
+   "mensaje": "RCAT (2026-11-17): -31.7 % hoy (4.1x lo normal), volumen 4.9x. Causa probable: «Red Cat Stock Tanks After Q3 Earnings Miss Estimates, Revenue Guidance Withdrawn» (resultados, 2026-11-16). Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "RCAT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 2.41,
+   "seguimiento": true,
+   "mensaje": "RCAT (2026-11-17): resultados: «Red Cat Holdings Reports Q3 2026 Financial Results, Withdraws Full-Year Revenue Target, and Announces Acquisition of Steyr Motors AG» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "RCAT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 2.41,
+   "seguimiento": true,
+   "mensaje": "RCAT (2026-11-17): resultados: «Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Trade Mixed Ahead of Nvidia’s Q3 Earnings— CBRS, AMZN, RCAT in Focus (UPDATED)» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "MSFT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 506.24,
+   "seguimiento": true,
+   "mensaje": "MSFT (2026-11-17): resultados: «Nvidia’s Q3 earnings show its advantage as the bank of the AI boom» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "MSFT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 506.24,
+   "seguimiento": true,
+   "mensaje": "MSFT (2026-11-17): resultados: «Workhorse (WKHS) Q3 2026 Earnings Call Transcript» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "TE",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 1.33,
+   "seguimiento": true,
+   "mensaje": "TE (2026-11-17): -10.7 % hoy (1.2x lo normal), volumen 1.4x. Causa probable: «T1 Energy Files $100 Million At-the-Market Stock Offering» (ampliación de capital, 2026-11-17). Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "TE",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 1.33,
+   "seguimiento": true,
+   "mensaje": "TE (2026-11-17): ampliación de capital, ampliación de capital: «T1 Energy Files $100 Million At-the-Market Stock Offering» Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [
