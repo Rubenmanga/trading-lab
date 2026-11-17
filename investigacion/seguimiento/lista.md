@@ -3,8 +3,8 @@
 ## Resumen (5 líneas)
 1. Mercado (S&P 500, SPY): -1.9 % hoy.
 2. Movimientos grandes: AEHR -10.5 %, AMPX -10.2 %, SSII -18.7 %, TE -22.0 %.
-3. Noticias importantes nuevas: RCAT, MSFT, FTH, TE, SVRA.
-4. Resultados en los próximos 14 días: RCAT (2026-11-16), ORIC (2026-11-16).
+3. Noticias importantes nuevas: RCAT, MSFT, FTH, ORIC, TE, SVRA.
+4. Resultados en los próximos 14 días: ninguno.
 5. Datos: todas las empresas se leyeron bien.
 
 > Información, no recomendación de compra o venta. Lo calcula un programa con reglas fijas (sin IA).
@@ -14,30 +14,33 @@
 ## ALT · Altimmune — ▼ -5.2 % · volumen 1.6x lo normal
 Cierre 1.56 (2026-11-16) · 5 días -26.4 % · lo normal en un día: ±4.99 %.
 - **Por qué:** Causa probable: «ALT Q3 Earnings Miss, Stock Sinks on Higher Costs & Funding Concerns» (resultados, 2026-11-13). Se movió en línea con su sector (XBI -3.1 %).
-- **Qué cambió:** 1 titular nuevo.
+- **Qué cambió:** 2 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-03-03 (tras el cierre); Ensayo F2 «RESTORE TRIAL: Study of the Efficacy and Safety of Pemvidutide in the Treatment »: resultado principal previsto 2027-09-30.
 - Analistas que dicen comprar: 87 % de 15.
+  - 2026-11-16 · [Should You Trim Or Add To Your Viking Therapeutics Position?](https://finnhub.io/api/news?id=9efa0185f1fa56f37424709066efd2f687389bf2455a466c27656c4199776a46)
   - 2026-11-16 · [Evercore ISI Group Maintains Outperform on Altimmune, Lowers Price Target to $14](https://finnhub.io/api/news?id=d9e22876533ba4ccbfbbcbe0e13c3da25528ee3e7838a1f92137004deed7668e) [analistas]
 
-## RCAT · Red Cat Holdings — ▼ -7.1 % · volumen 1.4x lo normal ⚠️
+## RCAT · Red Cat Holdings — ▼ -7.1 % · volumen 1.6x lo normal ⚠️
 Cierre 3.53 (2026-11-16) · 5 días -21.6 % · lo normal en un día: ±7.62 %.
-- **Por qué:** Causa probable: «Red Cat Holdings, Inc. Reports Third Quarter 2026 Financial Results» (resultados, 2026-11-16).
-- **Qué cambió:** 3 titulares nuevos; resultados del 2026-11-16: BPA -0.26 (esperado -0.2074), ventas 11.8 M (esperadas 40.3 M).
+- **Por qué:** Causa probable: «What Red Cat (RCAT) Said on Its Q3 Earnings Call» (resultados, 2026-11-17).
+- **Qué cambió:** 8 titulares nuevos; fecha de resultados cambiada: 2027-03-17; resultados del 2026-11-16: BPA -0.26 (esperado -0.2074), ventas 11.8 M (esperadas 40.3 M).
+- **Próximos catalizadores:** Resultados el 2027-03-17.
 - Analistas que dicen comprar: 86 % de 14.
+  - 2026-11-17 · [What Red Cat (RCAT) Said on Its Q3 Earnings Call](https://finnhub.io/api/news?id=ccd3d8cb6bb5b4a4b798255f0b01a3e80c9c619ffaed6628591ea757d4e2b406) [resultados]
   - 2026-11-16 · [Red Cat Holdings, Inc. Reports Third Quarter 2026 Financial Results](https://www.globenewswire.com/news-release/2026/11/16/3404120/0/en/red-cat-reports-q3-2026-revenue-growth-of-22-y-y-ytd-q3-2026-revenue-growth-of-227-y-y-announced-public-purchase-to-acquire-steyr-motors-ag-and-advancement-to-dow-swarm-forge-cruci.html) [resultados]
-  - 2026-11-16 · [After-Hours Market Movers: Microcaps and Small Caps Post Sharp Gains and Losses](https://finnhub.io/api/news?id=cfaf744597260bc77922fdb61e6eaf497fbe89b46b9bf033fbaad1220a4a6288)
-  - 2026-11-16 · [Top Wall Street Forecasters Revamp Red Cat Expectations Ahead Of Q3 Earnings](https://finnhub.io/api/news?id=5686af5ce4eae384be91493afaa7938059aade28abc187830d39abbc2f954af9) [resultados]
+  - 2026-11-16 · [Red Cat Q3 2026 Earnings Call: Recap of $RCAT Earnings, Stock Forecast](https://finnhub.io/api/news?id=85eb57d801dbb4d4d76d2f6fcbc52ca6acaa3c0a983e8de2b8ebfb8b9062af2e) [resultados]
+  - 2026-11-16 · [Red Cat Holdings, Inc. (RCAT) Reports Q3 Loss, Lags Revenue Estimates](https://finnhub.io/api/news?id=ddf0ad0275ef7738a5eaf20908784edd7e80d7116922e7bce0b7b47e348b117d)
 
-## MSFT · Microsoft — ▼ -1.1 % · volumen 1.1x lo normal ⚠️
+## MSFT · Microsoft — ▼ -1.1 % · volumen 1.2x lo normal ⚠️
 Cierre 517.99 (2026-11-16) · 5 días -5.0 % · lo normal en un día: ±2.27 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 49 titulares nuevos.
+- **Qué cambió:** 50 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
+  - 2026-11-17 · [Microsoft Releases Preliminary Report on Recent 365 Service Outage](https://www.newswire.ca/news-releases/microsoft-outage-triggers-canada-wide-class-action-lawsuit-852582849.html)
+  - 2026-11-17 · [Bill Ackman Adds More To Netflix In Q3; Exits Hertz, Cuts Microsoft](https://finnhub.io/api/news?id=20e89db6e669806b510a276ead872a1aa1934ad209b88a093ba569a56c409b20)
   - 2026-11-16 · [Thread AI Joins Microsoft for Startups Pegasus Program](https://www.prnewswire.com/news-releases/thread-ai-joins-the-microsoft-for-startups-pegasus-program-to-deliver-its-ai-workflow-orchestration-platform-on-microsoft-marketplace-302940646.html)
   - 2026-11-16 · [Microsoft Addresses Recent 365 Service Disruption](https://businesschief.com/news/microsoft-outage-loss-could-total-us-700m-analysts-say)
-  - 2026-11-16 · [Microsoft Authorizes Parallels Desktop for Windows on Apple Silicon](https://www.prnewswire.com/news-releases/best-windows-software-for-mac-2026-parallels-named-top-pick-for-easy-setup-and-mac-integration-by-software-experts-302939773.html)
-  - 2026-11-16 · [Microsoft Verifies InTouch123 Inc. in Partner Center](https://natlawreview.com/press-releases/microsoft-verifies-referna-partner-center)
 
 ## RAPP · Rapport Therapeutics — ▼ -5.1 % · volumen 0.3x lo normal
 Cierre 24.82 (2026-11-16) · 5 días -4.8 % · lo normal en un día: ±6.82 %.
@@ -61,7 +64,7 @@ Cierre 50.98 (2026-11-16) · 5 días -14.8 % · lo normal en un día: ±10.2 %.
 - **Próximos catalizadores:** Resultados el 2027-01-06.
 - Analistas que dicen comprar: 92 % de 12.
 
-## REPX · Riley Exploration Permian — ▼ -1.9 % · volumen 0.6x lo normal
+## REPX · Riley Exploration Permian — ▼ -1.9 % · volumen 0.7x lo normal
 Cierre 43.56 (2026-11-16) · 5 días +7.7 % · lo normal en un día: ±4.19 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
@@ -84,18 +87,20 @@ Cierre 19.87 (2026-11-16) · 5 días -2.0 % · lo normal en un día: ±8.18 %.
 
 ## FTH · Faeth Therapeutics — ▼ -7.5 % · volumen 1.1x lo normal ⚠️
 Cierre 9.28 (2026-11-16) · 5 días -26.8 % · lo normal en un día: ±11.79 %.
-- **Por qué:** Causa probable: «Faeth Therapeutics Enters Into Clinical Trial Collaboration And Supply Agreement With Roche To Evaluate PIKTOR In Combination With Investiga» (ensayo clínico, contrato o pedido, 2026-11-16).
-- **Qué cambió:** 2 titulares nuevos; SEC 2026-11-16: Fondo grande >5 % (13G).
+- **Por qué:** Causa probable: «Faeth Therapeutics Announces Clinical Trial Collaboration and Supply Agreement with Roche to Evaluate PIKTOR in Combination with a Selective» (ensayo clínico, contrato o pedido, 2026-11-16).
+- **Qué cambió:** 3 titulares nuevos; SEC 2026-11-16: Fondo grande >5 % (13G).
 - Analistas que dicen comprar: 95 % de 19.
+  - 2026-11-16 · [Faeth Therapeutics Announces Clinical Trial Collaboration and Supply Agreement with Roche to Evaluate PIKTOR in Combination with a Selective Estrogen Receptor Degrader in HR+/HER2- Advanced Breast Cancer](https://finnhub.io/api/news?id=abd79914dc543db38d9a05c31c42819c4d86dc4f0204c9cfd07baf526c34143f) [ensayo clínico, contrato o pedido]
   - 2026-11-16 · [HC Wainwright & Co. Reiterates Buy on Faeth Therapeutics, Maintains $60 Price Target](https://finnhub.io/api/news?id=6796a57fc72175209d4eeb6d057a976af48afce1e6b4fae5ab58e97eae6b94f5) [analistas]
   - 2026-11-16 · [Faeth Therapeutics Enters Into Clinical Trial Collaboration And Supply Agreement With Roche To Evaluate PIKTOR In Combination With Investigational Medicine Giredestrant In Patients With HR+/HER2- Advanced Breast Cancer](https://finnhub.io/api/news?id=b5499832696f6664da2c6ae85871b1b9239c30d0b952a26f48553a455dd86520) [ensayo clínico, contrato o pedido]
 
-## ORIC · ORIC Pharmaceuticals — ▼ -4.3 % · volumen 0.6x lo normal
+## ORIC · ORIC Pharmaceuticals — ▼ -4.3 % · volumen 0.6x lo normal ⚠️
 Cierre 7.52 (2026-11-16) · 5 días -18.5 % · lo normal en un día: ±8.19 %.
-- **Por qué:** Se movió en línea con su sector (XBI -3.1 %).
-- **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2026-11-16; Ensayo F1/F2 «Study of ORIC-114 in Patients With Advanced Solid Tumors Harboring an EGFR or HE»: resultado principal previsto 2027-06.
+- **Por qué:** Causa probable: «ORIC® Pharmaceuticals Reports Third Quarter 2026 Financial Results and Provides Operational and Rinzimetostat Program Updates» (resultados, 2026-11-16). Se movió en línea con su sector (XBI -3.1 %).
+- **Qué cambió:** 1 titular nuevo; resultados del 2026-11-16: BPA -0.44 (esperado -0.3966).
+- **Próximos catalizadores:** Resultados el 2027-02-22 (tras el cierre); Ensayo F1/F2 «Study of ORIC-114 in Patients With Advanced Solid Tumors Harboring an EGFR or HE»: resultado principal previsto 2027-06.
 - Analistas que dicen comprar: 91 % de 22.
+  - 2026-11-16 · [ORIC® Pharmaceuticals Reports Third Quarter 2026 Financial Results and Provides Operational and Rinzimetostat Program Updates](https://finnhub.io/api/news?id=aea8747553237cba38eec8e79cf5fc0e9c2452be79a7472e39eb361af25e3eeb) [resultados]
 
 ## AMPX · Amprius Technologies — ▼ -10.2 % · volumen 1.1x lo normal ⚠️
 Cierre 7.12 (2026-11-16) · 5 días -25.2 % · lo normal en un día: ±6.42 %.
@@ -121,7 +126,7 @@ Cierre 1.35 (2026-11-16) · 5 días -27.8 % · lo normal en un día: ±9.15 %.
 ## TE · T1 Energy — ▼ -22.0 % · volumen 1.6x lo normal ⚠️
 Cierre 1.49 (2026-11-16) · 5 días -34.9 % · lo normal en un día: ±7.36 %.
 - **Por qué:** Causa probable: «T1 Energy Discloses SEC Investigation into Accounting and Tax Credit Disclosures» (legal, 2026-11-13).
-- **Qué cambió:** 9 titulares nuevos; resultados del 2026-11-12: BPA -0.14 (esperado -0.1083), ventas 196.6 M (esperadas 281.6 M); SEC 2026-11-16: Colocación de acciones (424B5).
+- **Qué cambió:** 9 titulares nuevos; SEC 2026-11-16: Colocación de acciones (424B5).
 - Analistas que dicen comprar: 76 % de 17.
   - 2026-11-16 · [Holzer & Holzer, LLC Investigates T1 Energy Inc. for Potential Securities Law Violations](https://www.globenewswire.com/news-release/2026/11/16/3403334/0/en/te-investor-alert-investigation-of-t1-energy-inc-announced-by-holzer-holzer-llc.html)
   - 2026-11-16 · [Aclaris Therapeutics, Summit Therapeutics And Other Big Stocks Moving Lower In Monday’s Pre-Market Session](https://finnhub.io/api/news?id=69db7cc128b829bce57f0e1edc1912d0e1432c7f95586237392b746da368d68b)
@@ -131,13 +136,13 @@ Cierre 1.49 (2026-11-16) · 5 días -34.9 % · lo normal en un día: ±7.36 %.
 ## SVRA · Savara — ▼ -3.8 % · volumen 0.9x lo normal ⚠️
 Cierre 4.47 (2026-11-16) · 5 días -11.6 % · lo normal en un día: ±4.59 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 3 titulares nuevos; SEC 2026-11-16: Fondo grande >5 % (13G).
+- **Qué cambió:** 4 titulares nuevos; SEC 2026-11-16: Fondo grande >5 % (13G).
 - **Próximos catalizadores:** Resultados el 2027-03-11 (tras el cierre); Ensayo F3 «Inhaled Molgramostim in Pediatric Participants With Autoimmune Pulmonary Alveola»: resultado principal previsto 2027-06; Fecha regulatoria citada en titular: «Biotech ETFs Brace for FDA Showdown: Two Drug Decisions Could Test Investor Sentiment».
 - Analistas que dicen comprar: 93 % de 15.
   - 2026-11-16 · [Biotech ETFs Brace for FDA Showdown: Two Drug Decisions Could Test Investor Sentiment](https://finnhub.io/api/news?id=b2ae8a3f7d5c9a343c535c9cb6f77ccc11970d4af21455656a3b91de51059a6a) [FDA / regulador]
+  - 2026-11-16 · [FDA Decision Watch: Capricor’s DMD Therapy Faces Make-Or-Break Decision, Savara’s Lung Disease Drug In The Spotlight This Week](https://finnhub.io/api/news?id=f77ab381251aad6c5366c6a92ed6ba5d53d63fe33b24f7966800f6f013929991) [FDA / regulador]
   - 2026-11-16 · [Three FDA Decisions Loom After Summit’s Rejection — Capricor, Savara, Alzheimer’s Data Top Biotech’s Watchlist](https://finnhub.io/api/news?id=94dd83d34af8ddf265aa741881b441772a801e9f9a646d967338d0499125a6ef) [FDA / regulador]
   - 2026-11-13 · [H.C. Wainwright Initiates Coverage of Savara Inc. with Buy Rating](https://www.moomoo.com/hans/news/post/1004431127/hc-wainwright-initiates-savara-svraus-with-buy-rating-announces-target) [analistas]
-  - 2026-11-12 · [Savara Announces New Employment Inducement Grant](https://www.businesswire.com/newsroom/industry/health/pharmaceutical)
 
 # Mejores ideas del buscador
 
@@ -171,9 +176,10 @@ Cierre 28.31 (2026-11-16) · 5 días +2.0 % · lo normal en un día: ±2.7 %.
 ## DFIN · Donnelley Financial Solutions,  — ▲ +2.8 % · volumen 1.0x lo normal
 Cierre 70.06 (2026-11-16) · 5 días +3.7 % · lo normal en un día: ±4.12 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-02-15 (antes de abrir).
 - Analistas que dicen comprar: 89 % de 9.
+  - 2026-11-16 · [3 Stocks to Watch as Proxy Voting Demand Puts Broadridge Stock in Focus](https://finnhub.io/api/news?id=081976c617038e8bcf8b0f3f1898fd210699ec08af779a6bf42aec0fa4711526)
 
 ## HRTG · Heritage Insurance Holdings, In — ▲ +0.5 % · volumen 0.6x lo normal
 Cierre 33.83 (2026-11-16) · 5 días +2.6 % · lo normal en un día: ±2.2 %.
@@ -190,13 +196,13 @@ Cierre 42.82 (2026-11-16) · 5 días -0.1 % · lo normal en un día: ±4.35 %.
 
 # Materias primas
 
-## XAU · Oro — ▼ -0.7 %
-Cierre 3857.8 (2026-11-16) · 5 días -6.2 % · lo normal en un día: ±1.55 %.
+## XAU · Oro — ▼ -0.3 % · volumen 0.1x lo normal
+Cierre 3875.5 (2026-11-16) · 5 días -5.8 % · lo normal en un día: ±1.55 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
-## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.4 %
-Cierre 1.1 (2026-11-16) · 5 días -1.3 % · lo normal en un día: ±0.35 %.
+## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.1 %
+Cierre 1.1 (2026-11-17) · 5 días -1.9 % · lo normal en un día: ±0.35 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
