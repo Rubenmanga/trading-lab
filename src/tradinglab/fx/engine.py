@@ -35,7 +35,7 @@ class Bar:
             raise ValueError("Timestamp UTC obligatorio")
         if not 0 < self.low <= min(self.open, self.close) <= max(self.open, self.close) <= self.high:
             raise ValueError("OHLC no válido")
-        if not 0 <= self.spread_pips < 100:
+        if not 0 < self.spread_pips < 100:
             raise ValueError("Spread inválido")
 
 
