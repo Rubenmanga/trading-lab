@@ -157,7 +157,7 @@ def evaluar_respuesta(respuesta, candidatos, watch, entradas, dia):
         })
         ya.add(t)
     if respuesta["analisis"] and not analizados:
-        raise ValueError("La IA no pudo fundamentar ninguna idea con IDs de fuentes válidos")
+        raise ValueError("La IA no pudo aportar evidencia verificable: IDs de fuentes inválidos")
     return analizados[:8], rechazados
 
 
