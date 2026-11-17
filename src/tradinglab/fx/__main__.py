@@ -115,9 +115,24 @@ def runtime(args):
         while True:
             now = datetime.now(timezone.utc)
             # Gestionar posiciones incluso si noticias/API están caídas.
-            closed = broker.close_expired()
-            for item in closed:
-                _record(log_path, {"utc": now.isoformat(), "event": "close_expired", **item})
+            # Ante fallo de cierre: NO abrir; insistir cada 5 segundos y registrar incidencia.
+            try:
+                closed = broker.close_expired()
+                for item in closed:
+                    _record(log_path, {"utc": now.isoformat(), "event": "close_expired", **item})
+                if any(not event["closed"] for event in closed):
+                    _record(log_path, {"utc": now.isoformat(), "event": "CLOSE_FAILURE", "action": "RETRY"})
+                    if args.once:
+                        raise RuntimeError("Una orden de cierre demo fue rechazada")
+                    time.sleep(5)
+                    continue
+            except Exception as exc:
+                _record(log_path, {"utc": now.isoformat(), "event": "CLOSE_ERROR",
+                                   "error_type": type(exc).__name__, "action": "RETRY"})
+                if args.once:
+                    raise
+                time.sleep(5)
+                continue
             if last_news is None or (now-last_news).total_seconds() >= 600:
                 decision = update_news(news_path, now=now)
                 last_news = now
