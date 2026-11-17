@@ -145,7 +145,7 @@ def classify_haiku(headlines: list[dict], now: datetime) -> tuple[bool, str]:
     if not key:
         raise RuntimeError("Falta ANTHROPIC_API_KEY; no se autorizan nuevas entradas")
     payload = {
-        "model": os.environ.get("FX_HAIKU_MODEL", "claude-haiku-5-5"),
+        "model": "claude-haiku-5-5",  # fijado para mantener el tope de gasto
         "max_tokens": 240,
         "temperature": 0,
         "system": ("Clasifica SOLO si estos titulares OFICIALES de BCE/Fed/BLS pueden causar "
