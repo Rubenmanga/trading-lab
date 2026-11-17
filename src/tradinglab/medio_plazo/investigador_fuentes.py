@@ -134,14 +134,57 @@ def fuentes_ranking(row, hoy):
     return salida
 
 
+
+
+def ensayos_actual(candidatos, hoy, fetch=descargar):
+    """Novedades registradas oficialmente en ClinicalTrials.gov (no rumores).
+
+    Sólo se activa por resultados publicados o fin principal REAL y reciente.
+    Una modificación administrativa del registro nunca desbloquea una acción.
+    """
+    out, errores, usados = {}, [], set()
+    for c in candidatos:
+        if str(c.get("sector", "")).lower() != "healthcare":
+            continue
+        t = c["ticker"]
+        for estudio in (c.get("ensayos") or [])[:2]:
+            nct = estudio.get("nct", "")
+            if not re.fullmatch(r"NCT[0-9]{8}", str(nct)) or nct in usados:
+                continue
+            usados.add(nct)
+            if len(usados) > 12:
+                break
+            try:
+                url = "https://clinicaltrials.gov/api/v2/studies/" + nct
+                obj = json.loads(fetch(url))
+                estado = obj.get("protocolSection", {}).get("statusModule", {})
+                fin = estado.get("primaryCompletionDateStruct") or {}
+                pub = estado.get("resultsFirstPostDateStruct") or {}
+                final = estado.get("completionDateStruct") or {}
+                found = []
+                if pub.get("date") and dia_valido(pub["date"], hoy, 14):
+                    found.append(fuente(t, pub["date"], "ClinicalTrials.gov RESULTS",
+                                        "https://clinicaltrials.gov/study/" + nct,
+                                        nct + ": resultados publicados oficialmente", True))
+                # El fin ACTUAL del objetivo principal es un cambio relevante,
+                # pero NO supone resultado positivo.
+                if fin.get("type") == "ACTUAL" and dia_valido(fin.get("date"), hoy, 14):
+                    found.append(fuente(t, fin["date"], "ClinicalTrials.gov COMPLETION",
+                                        "https://clinicaltrials.gov/study/" + nct,
+                                        nct + ": fin principal real, sin inferir eficacia", True))
+                out.setdefault(t, []).extend([x for x in found if x])
+            except (OSError, ValueError, TypeError, KeyError) as exc:
+                errores.append("ClinicalTrials " + nct + ": " + type(exc).__name__)
+    return out, errores
+
 def reactivable(previo, fuentes, hoy):
     if previo.get("estado") != "evitar":
         return True
     desde = previo.get("desde", hoy.isoformat())
     ya = set(previo.get("vistas", []))
     return any(
-        f["primaria"] and f["tipo"].startswith("SEC ")
-        and f["tipo"][4:] in MATERIALES
+        f["primaria"] and ((f["tipo"].startswith("SEC ") and f["tipo"][4:] in MATERIALES)
+        or f["tipo"] in {"ClinicalTrials.gov RESULTS", "ClinicalTrials.gov COMPLETION"})
         and f["fecha"] >= desde and f["id"] not in ya
         for f in fuentes
     )
@@ -182,6 +225,7 @@ def candidatos(ranking, watchlist, memoria, noticias, hoy, sec=None, incluir_dor
             "nota": row.get("nota"), "factores": row.get("factores", {}),
             "banderas": row.get("banderas", []), "proximos_resultados": row.get("proximos_resultados"),
             "capitalizacion": row.get("capitalizacion"), "meses_de_caja": row.get("meses_de_caja"),
+            "ensayos": (row.get("ensayos") or [])[:2],
             "dilucion_1a_pct": row.get("dilucion_1a_pct"), "fuentes": fuentes,
             "nueva": nueva, "reactivada": anterior.get("estado") == "evitar",
             "prioridad": prioridad, "pos": pos,
