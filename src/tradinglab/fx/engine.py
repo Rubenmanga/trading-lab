@@ -116,7 +116,7 @@ def _make(strategy: str, side: str, atr_value: float, rr: float, ts: datetime) -
     return Signal(strategy, side, round(stop, 3), round(stop * rr, 3), ts)
 
 
-def candidates(bars: list[Bar]) -> list[Signal]:
+def candidates(bars: list[Bar], *, strategy: str | None = None) -> list[Signal]:
     """Cinco sistemas sin dependencia de una hora de entrada concreta.
     Solo acepta velas de M5 COMPLETAS, con la última barra cerrada.
     """
@@ -136,54 +136,59 @@ def candidates(bars: list[Bar]) -> list[Signal]:
     e20, e50, e200 = ema(closes, 20), ema(closes, 50), ema(closes, 200)
     prev20 = ema(closes[:-1], 20)
 
-    # 1. Retroceso a EMA20 a favor de EMA50; evita entrada en el cruce de medias.
-    if e20 > e50 and prev.close <= prev20 and now.close > e20 and now.close > prev.close:
-        out.append(_make("ema_pullback", "buy", volatility, 1.5, now.timestamp))
-    if e20 < e50 and prev.close >= prev20 and now.close < e20 and now.close < prev.close:
-        out.append(_make("ema_pullback", "sell", volatility, 1.5, now.timestamp))
+    if strategy in (None, "ema_pullback"):
+            # 1. Retroceso a EMA20 a favor de EMA50; evita entrada en el cruce de medias.
+        if e20 > e50 and prev.close <= prev20 and now.close > e20 and now.close > prev.close:
+            out.append(_make("ema_pullback", "buy", volatility, 1.5, now.timestamp))
+        if e20 < e50 and prev.close >= prev20 and now.close < e20 and now.close < prev.close:
+            out.append(_make("ema_pullback", "sell", volatility, 1.5, now.timestamp))
 
-    # 2. Donchian de 24 velas + filtro de volatilidad, sin mirar la vela actual.
-    if atr(bars, 14) > 0.85 * atr(bars, 60):
-        high24 = max(b.high for b in bars[-25:-1])
-        low24 = min(b.low for b in bars[-25:-1])
-        if now.close > high24 and prev.close <= high24:
-            out.append(_make("donchian_breakout", "buy", volatility, 1.8, now.timestamp))
-        if now.close < low24 and prev.close >= low24:
-            out.append(_make("donchian_breakout", "sell", volatility, 1.8, now.timestamp))
+    if strategy in (None, "donchian_breakout"):
+            # 2. Donchian de 24 velas + filtro de volatilidad, sin mirar la vela actual.
+        if atr(bars, 14) > 0.85 * atr(bars, 60):
+            high24 = max(b.high for b in bars[-25:-1])
+            low24 = min(b.low for b in bars[-25:-1])
+            if now.close > high24 and prev.close <= high24:
+                out.append(_make("donchian_breakout", "buy", volatility, 1.8, now.timestamp))
+            if now.close < low24 and prev.close >= low24:
+                out.append(_make("donchian_breakout", "sell", volatility, 1.8, now.timestamp))
 
-    # 3. Regresión a la media en rango: z-score + RSI14 + eficiencia de trayectoria.
-    sample = closes[-20:]
-    std = pstdev(sample)
-    path = sum(abs(x-y) for x,y in zip(closes[-21:-1], closes[-20:]))
-    efficiency = abs(closes[-1] - closes[-21]) / path if path else 1
-    z = (now.close - mean(sample)) / std if std > 0 else 0
-    if efficiency < 0.37 and z < -1.8 and rsi(closes, 14) < 35:
-        out.append(_make("bollinger_reversion", "buy", volatility, 1.25, now.timestamp))
-    if efficiency < 0.37 and z > 1.8 and rsi(closes, 14) > 65:
-        out.append(_make("bollinger_reversion", "sell", volatility, 1.25, now.timestamp))
+    if strategy in (None, "bollinger_reversion"):
+            # 3. Regresión a la media en rango: z-score + RSI14 + eficiencia de trayectoria.
+        sample = closes[-20:]
+        std = pstdev(sample)
+        path = sum(abs(x-y) for x,y in zip(closes[-21:-1], closes[-20:]))
+        efficiency = abs(closes[-1] - closes[-21]) / path if path else 1
+        z = (now.close - mean(sample)) / std if std > 0 else 0
+        if efficiency < 0.37 and z < -1.8 and rsi(closes, 14) < 35:
+            out.append(_make("bollinger_reversion", "buy", volatility, 1.25, now.timestamp))
+        if efficiency < 0.37 and z > 1.8 and rsi(closes, 14) > 65:
+            out.append(_make("bollinger_reversion", "sell", volatility, 1.25, now.timestamp))
 
-    # 4. Reversión RSI(2) en tendencia EMA200; no confundir con momentum intradía acreditado.
-    two = rsi(closes, 2)
-    if now.close > e200 and two < 8 and now.close < prev.close:
-        out.append(_make("rsi2_rebound", "buy", volatility, 1.3, now.timestamp))
-    if now.close < e200 and two > 92 and now.close > prev.close:
-        out.append(_make("rsi2_rebound", "sell", volatility, 1.3, now.timestamp))
+    if strategy in (None, "rsi2_rebound"):
+            # 4. Reversión RSI(2) en tendencia EMA200; no confundir con momentum intradía acreditado.
+        two = rsi(closes, 2)
+        if now.close > e200 and two < 8 and now.close < prev.close:
+            out.append(_make("rsi2_rebound", "buy", volatility, 1.3, now.timestamp))
+        if now.close < e200 and two > 92 and now.close > prev.close:
+            out.append(_make("rsi2_rebound", "sell", volatility, 1.3, now.timestamp))
 
-    # 5. Ruptura tras compresión de Bollinger20, comparada con 100 barras previas.
-    widths = []
-    for i in range(20, len(closes)):
-        block = closes[i-20:i]
-        widths.append(4 * pstdev(block) / mean(block))
-    previous_width = widths[-2]
-    baseline = sorted(widths[-101:-2])
-    squeeze_threshold = baseline[int(len(baseline) * 0.2)]
-    if previous_width < squeeze_threshold:
-        high20 = max(b.high for b in bars[-21:-1])
-        low20 = min(b.low for b in bars[-21:-1])
-        if now.close > high20 and now.close > prev.close:
-            out.append(_make("squeeze_breakout", "buy", volatility, 1.8, now.timestamp))
-        if now.close < low20 and now.close < prev.close:
-            out.append(_make("squeeze_breakout", "sell", volatility, 1.8, now.timestamp))
+    if strategy in (None, "squeeze_breakout"):
+            # 5. Ruptura tras compresión de Bollinger20, comparada con 100 barras previas.
+        widths = []
+        for i in range(20, len(closes)):
+            block = closes[i-20:i]
+            widths.append(4 * pstdev(block) / mean(block))
+        previous_width = widths[-2]
+        baseline = sorted(widths[-101:-2])
+        squeeze_threshold = baseline[int(len(baseline) * 0.2)]
+        if previous_width < squeeze_threshold:
+            high20 = max(b.high for b in bars[-21:-1])
+            low20 = min(b.low for b in bars[-21:-1])
+            if now.close > high20 and now.close > prev.close:
+                out.append(_make("squeeze_breakout", "buy", volatility, 1.8, now.timestamp))
+            if now.close < low20 and now.close < prev.close:
+                out.append(_make("squeeze_breakout", "sell", volatility, 1.8, now.timestamp))
     return out
 
 
@@ -222,7 +227,7 @@ def backtest(bars: list[Bar], *, strategy: str, slippage_pips: float = 0.15,
     trades = []
     i = 220
     while i < len(bars) - 1:
-        signal = next((s for s in candidates(bars[max(0, i-239):i+1]) if s.strategy == strategy), None)
+        signal = next((s for s in candidates(bars[max(0, i-239):i+1], strategy=strategy) if s.strategy == strategy), None)
         b = bars[i + 1]
         if (signal is None or b.timestamp - bars[i].timestamp > timedelta(minutes=5)
                 or b.spread_pips > spread_max_pips or
