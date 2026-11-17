@@ -1,6 +1,6 @@
 # Carpeta del día · 17/11/2026
 
-_Resumen automático, sin IA. Precios y avisos del 2026-11-17 05:00 UTC. Sigues 16 acciones._
+_Resumen automático, sin IA. Precios y avisos del 2026-11-17 05:16 UTC. Sigues 16 acciones._
 
 ## 🔔 Avisos de hoy
 - **ZONA DE ENTRADA** · REPX a 43.56 $ está en su zona de entrada (≤ 46.0), potencial 33% hasta objetivo
@@ -30,7 +30,7 @@ _Resumen automático, sin IA. Precios y avisos del 2026-11-17 05:00 UTC. Sigues 
 
 ## 🆕 Nuevas en el top 10 del ranking
 - #8 **CRCT** · nota 68.3 · Líder en tendencia
-- #9 **JAKK** · nota 68.2 · GARP (crecimiento a buen precio)
-- #10 **IBEX** · nota 68.1 · Líder en tendencia
+- #9 **JAKK** · nota 68.0 · GARP (crecimiento a buen precio)
+- #10 **IBEX** · nota 67.9 · Líder en tendencia
 
 _Detector de inflexión x3-x4: llegará en el Paso 8._

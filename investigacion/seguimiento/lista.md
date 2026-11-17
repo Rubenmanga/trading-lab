@@ -146,12 +146,11 @@ Cierre 4.47 (2026-11-16) · 5 días -11.6 % · lo normal en un día: ±4.59 %.
 
 # Mejores ideas del buscador
 
-## IRWD · Ironwood Pharmaceuticals, Inc. — ▲ +0.4 % · volumen 1.3x lo normal
-Cierre 4.85 (2026-11-16) · 5 días +3.6 % · lo normal en un día: ±3.38 %.
+## AII · American Integrity Insurance Gr — ▲ +1.4 % · volumen 1.1x lo normal
+Cierre 28.31 (2026-11-16) · 5 días +2.0 % · lo normal en un día: ±2.7 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-23 (tras el cierre).
-- Analistas que dicen comprar: 70 % de 10.
+- Analistas que dicen comprar: 80 % de 10.
 
 ## ASC · Ardmore Shipping Corporation — ▼ -3.3 % · volumen 0.8x lo normal
 Cierre 18.87 (2026-11-16) · 5 días +9.2 % · lo normal en un día: ±3.37 %.
@@ -167,12 +166,6 @@ Cierre 11.43 (2026-11-16) · 5 días -1.6 % · lo normal en un día: ±7.09 %.
 - **Próximos catalizadores:** Resultados el 2027-02-24.
 - Analistas que dicen comprar: 64 % de 11.
 
-## AII · American Integrity Insurance Gr — ▲ +1.4 % · volumen 1.1x lo normal
-Cierre 28.31 (2026-11-16) · 5 días +2.0 % · lo normal en un día: ±2.7 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- Analistas que dicen comprar: 80 % de 10.
-
 ## DFIN · Donnelley Financial Solutions,  — ▲ +2.8 % · volumen 1.0x lo normal
 Cierre 70.06 (2026-11-16) · 5 días +3.7 % · lo normal en un día: ±4.12 %.
 - **Por qué:** Movimiento normal para esta acción.
@@ -181,27 +174,40 @@ Cierre 70.06 (2026-11-16) · 5 días +3.7 % · lo normal en un día: ±4.12 %.
 - Analistas que dicen comprar: 89 % de 9.
   - 2026-11-16 · [3 Stocks to Watch as Proxy Voting Demand Puts Broadridge Stock in Focus](https://finnhub.io/api/news?id=081976c617038e8bcf8b0f3f1898fd210699ec08af779a6bf42aec0fa4711526)
 
-## HRTG · Heritage Insurance Holdings, In — ▲ +0.5 % · volumen 0.6x lo normal
-Cierre 33.83 (2026-11-16) · 5 días +2.6 % · lo normal en un día: ±2.2 %.
+## CRCT · Cricut, Inc. — = +0.0 % · volumen 0.7x lo normal
+Cierre 8.65 (2026-11-16) · 5 días -1.6 % · lo normal en un día: ±10.97 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-03-08.
-- Analistas que dicen comprar: 70 % de 10.
+- **Qué cambió:** 1 titular nuevo.
+- **Próximos catalizadores:** Resultados el 2027-03-01 (tras el cierre).
+- Analistas que dicen comprar: 0 % de 8.
+  - 2026-11-15 · [Morgan Stanley Maintains Sell Rating on Cricut](https://www.moomoo.com/hant/news/post/69460508/morgan-stanley-maintains-cricut-crctus-with-sell-rating-maintains-target) [analistas]
 
-## CCSI · Consensus Cloud Solutions, Inc. — ▲ +0.1 % · volumen 0.9x lo normal
-Cierre 42.82 (2026-11-16) · 5 días -0.1 % · lo normal en un día: ±4.35 %.
+## JAKK · JAKKS Pacific, Inc. — ▼ -0.9 % · volumen 0.7x lo normal
+Cierre 35.62 (2026-11-16) · 5 días +0.2 % · lo normal en un día: ±2.62 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
-- Analistas que dicen comprar: 90 % de 10.
+- **Próximos catalizadores:** Resultados el 2027-02-17.
+- Analistas que dicen comprar: 88 % de 8.
+  - 2026-11-12 · [JAKKS Pacific Secures Global Master Toy License for Skydance's 'K-Pop: The Debut'](https://www.globenewswire.com/news-release/2026/11/12/3401681/0/en/skydance-and-jakks-pacific-strike-global-master-toy-agreement-for-paramount-pictures-k-pop-the-debut.html) [contrato o pedido]
+  - 2026-11-12 · [Skydance and JAKKS Pacific Strike Global Master Toy Agreement For Paramount Pictures’ K-Pop: The Debut](https://finnhub.io/api/news?id=a548f69bc97c9802c8677b5f83fce2f999c9a06a453030202453e8b3e0840267) [contrato o pedido]
+  - 2026-11-12 · [Hasbro's 2027 Magic Pipeline: Can New Sets Extend the Growth Run?](https://finnhub.io/api/news?id=98914b208282b543bb07aae0cc37401abd774cf56f6a0d5c2874fa8683be9267)
+
+## IBEX · IBEX Limited — ▼ -0.9 % · volumen 1.4x lo normal
+Cierre 56.38 (2026-11-16) · 5 días +12.1 % · lo normal en un día: ±3.86 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** 1 titular nuevo; SEC 2026-11-16: Fondo grande >5 % (13G).
+- **Próximos catalizadores:** Resultados el 2027-02-03.
+- Analistas que dicen comprar: 0 % de 7.
+  - 2026-11-16 · [Insider Selling by IBEX Limited Executive](https://www.moomoo.com/news/post/1004679284/don-t-ignore-the-insider-selling-in-ibex)
 
 # Materias primas
 
-## XAU · Oro — ▼ -0.9 % · volumen 0.9x lo normal
-Cierre 3853.0 (2026-11-16) · 5 días -6.4 % · lo normal en un día: ±1.55 %.
+## XAU · Oro — ▲ +0.6 % · volumen 0.1x lo normal
+Cierre 3877.7 (2026-11-17) · 5 días -3.8 % · lo normal en un día: ±1.55 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
-## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.2 %
+## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.1 %
 Cierre 1.1 (2026-11-17) · 5 días -1.9 % · lo normal en un día: ±0.35 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
