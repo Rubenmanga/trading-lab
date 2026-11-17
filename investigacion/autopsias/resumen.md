@@ -1,9 +1,9 @@
-# Autopsias de resultados · 2026-11-16
+# Autopsias de resultados · 2026-11-17
 
-1. **2 autopsias** (1 con reacción medida). Con tan pocas, los patrones son pistas, no reglas.
-2. Previsión recortada, retirada o retrasada: reacción media **-18,5 %** (1 casos); mantenida o subida: **—** (0).
+1. **2 autopsias** (2 con reacción medida). Con tan pocas, los patrones son pistas, no reglas.
+2. Previsión recortada, retirada o retrasada: reacción media **-13,8 %** (2 casos); mantenida o subida: **—** (0).
 3. «Supera y cae»: 0 de 0 que superaron (el radar ya vio un 42 %).
-4. Stops de tesis rotos tras resultados: 0.
+4. Stops de tesis rotos tras resultados: 1.
 5. Pendientes de autopsia: 11.
 
 Qué es: tras cada presentación de resultados se apunta qué se esperaba, qué salió, qué dijo la empresa del futuro y cómo reaccionó el precio. Sirve para entender **por qué unas acciones caen con buenos resultados y otras suben**.
@@ -12,8 +12,8 @@ Qué es: tras cada presentación de resultados se apunta qué se esperaba, qué 
 
 | Acción | Fecha | Resultado | Previsión | Antes 20 s. | Reacción | Lección |
 |---|---|---|---|---|---|---|
-| RCAT | 2026-11-16 | falla y cae | la retira | — % | -18,5 % (horario extendido) | Lo que hunde la acción no es el trimestre sino perder la promesa del futuro |
-| POET | 2026-11-16 | mixto (reacción pendiente) | retrasa entregas o fechas | — % | — % (1 sesión) | Una pérdida por acción «mejor de lo esperado» puede ser contable |
+| RCAT | 2026-11-16 | falla y cae | la retira | -24,6 % | -18,5 % (horario extendido) | Lo que hunde la acción no es el trimestre sino perder la promesa del futuro |
+| POET | 2026-11-16 | mixto y cae | retrasa entregas o fechas | -5,5 % | -9,2 % (1 sesión) | Una pérdida por acción «mejor de lo esperado» puede ser contable |
 
 ## Pendientes (resultados del expediente sin autopsia)
 

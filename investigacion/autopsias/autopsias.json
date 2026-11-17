@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-16",
+ "actualizado": "2026-11-17",
  "autopsias": [
   {
    "ticker": "RCAT",
@@ -16,8 +16,8 @@
    "fuente_resultados": "https://www.sec.gov/Archives/edgar/data/748268/000162828026074169/rcat-20261116.htm",
    "fuente_consenso": "TheStreet (consenso de Yahoo, 16-nov-2026; web intermediaria)",
    "leccion": "Lo que hunde la acción no es el trimestre sino perder la promesa del futuro: retirar la previsión pesa más que crecer un 22 %. Había pista: en 2025 prometió 80-120 M$ y facturó 41 M$. Una empresa que ya falló su previsión una vez merece poca confianza en la siguiente.",
-   "precio_antes": null,
-   "previa_20d": null,
+   "precio_antes": 3.53,
+   "previa_20d": -24.57,
    "r1": null,
    "r5": null,
    "r20": null,
@@ -35,8 +35,8 @@
     "stop_tesis": "3.20",
     "objetivo": "6",
     "zona_entrada_max": "5.00",
-    "precio_despues": null,
-    "stop_roto": null
+    "precio_despues": 2.8769,
+    "stop_roto": true
    }
   },
   {
@@ -54,17 +54,17 @@
    "fuente_resultados": "https://www.sec.gov/Archives/edgar/data/0001437424/000117184326007469/exh_991.htm",
    "fuente_consenso": "DailyPolitical/MarketBeat (15-nov-2026; web intermediaria)",
    "leccion": "Una pérdida por acción «mejor de lo esperado» puede ser contable: mirar de dónde sale. El dato que manda es la fecha de entrega, y se ha ido 6 meses.",
-   "precio_antes": null,
-   "previa_20d": null,
-   "r1": null,
+   "precio_antes": 5.13,
+   "previa_20d": -5.52,
+   "r1": -9.16,
    "r5": null,
    "r20": null,
    "sorpresa_ventas_pct": -35.63,
    "resultado": "mixto",
-   "reaccion": null,
+   "reaccion": -9.16,
    "reaccion_medida": "1 sesión",
-   "precio": "sin reacción aún",
-   "frase": "mixto (reacción pendiente)",
+   "precio": "cae",
+   "frase": "mixto y cae",
    "prediccion": {
     "id": "POET-2026-11-16",
     "fecha": "2026-11-16",
@@ -73,7 +73,7 @@
     "stop_tesis": "",
     "objetivo": "",
     "zona_entrada_max": "",
-    "precio_despues": null,
+    "precio_despues": 4.6601,
     "stop_roto": null
    }
   }

@@ -1,7 +1,7 @@
-# Expedientes por acción (2026-11-16)
+# Expedientes por acción (2026-11-17)
 
-1. 15 empresas seguidas, 793 hechos guardados en total.
-2. Hoy se han añadido 6 hechos nuevos.
+1. 15 empresas seguidas, 794 hechos guardados en total.
+2. Hoy se han añadido 1 hechos nuevos.
 3. Cada hecho trae su fuente (SEC o Yahoo), su fecha y cómo reaccionó el precio a 1, 5 y 20 sesiones.
 4. Sin datos hoy: ninguna.
 5. Los expedientes solo crecen: nada se borra. Es información, no una recomendación.
@@ -14,7 +14,7 @@
 | [AMSC](AMSC/eventos.csv) | vigilancia | 27 | 2026-11-04 · Resultados del trimestre (8-K 2.02) |
 | [DCTH](DCTH/eventos.csv) | vigilancia | 27 | 2026-11-13 · 1 aviso de compra/venta de directivos (Form 4) |
 | [FTH](FTH/eventos.csv) | vigilancia | 65 | 2026-11-16 · Fondo grande pasa del 5 % (13G) |
-| [MSFT](MSFT/eventos.csv) | cartera | 59 | 2026-11-12 · 1 aviso de compra/venta de directivos (Form 4) |
+| [MSFT](MSFT/eventos.csv) | cartera | 60 | 2026-11-16 · 1 aviso de compra/venta de directivos (Form 4) |
 | [ORIC](ORIC/eventos.csv) | vigilancia | 42 | 2026-11-16 · Resultados del trimestre (8-K 2.02) |
 | [PGY](PGY/eventos.csv) | cartera | 49 | 2026-11-16 · Fondo grande pasa del 5 % (13G) |
 | [RAPP](RAPP/eventos.csv) | cartera | 62 | 2026-11-04 · Resultados del trimestre (8-K 2.02) |
