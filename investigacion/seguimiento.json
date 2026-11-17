@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-17T03:52:02+00:00",
+ "actualizado": "2026-11-17T05:00:28+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -14,40 +14,51 @@
     "tamano_max": "2 %",
     "informe": "investigacion/analisis/ORIC-2026-11-14.md"
    },
-   "fecha": "2026-11-13",
-   "cierre": 7.86,
-   "cambio_dia_pct": -7.5,
-   "ema9": 8.85,
-   "ma50": 11.56,
-   "ma200": 11.0,
-   "rsi": 31.4,
-   "volumen_rel": 0.51,
+   "fecha": "2026-11-16",
+   "cierre": 7.52,
+   "cambio_dia_pct": -4.3,
+   "ema9": 8.58,
+   "ma50": 11.45,
+   "ma200": 10.98,
+   "rsi": 29.7,
+   "volumen_rel": 0.6,
    "minimo_52s": 7.23,
    "maximo_52s": 14.68,
    "divergencia": false,
-   "toca_soporte": false,
+   "toca_soporte": true,
    "vela_giro": false,
-   "estado": "ESPERAR",
+   "estado": "ATENTO",
    "senales": [],
    "avisos": [],
    "pistas": [
     "sigue por debajo de la EMA 9 (la caída no ha frenado)",
-    "baja con poco volumen (la venta se está secando)"
+    "está en la zona de soporte 7.2-7.5 $",
+    "baja con poco volumen (la venta se está secando)",
+    "RSI en sobreventa (< 30)"
    ],
-   "distancia_entrada_pct": -7.5,
-   "distancia_stop_pct": 20.9,
-   "distancia_confirmacion_pct": -15.5,
-   "potencial_pct": 65.4,
+   "distancia_entrada_pct": -11.5,
+   "distancia_stop_pct": 15.7,
+   "distancia_confirmacion_pct": -19.1,
+   "potencial_pct": 72.9,
    "proximos_resultados": null,
    "historial": [
     {
      "fecha": "2026-11-13",
-     "cierre": 7.86,
-     "rsi": 31.4,
-     "ema9": 8.85,
-     "ma50": 11.56,
-     "volumen_rel": 0.51,
+     "cierre": "7.86",
+     "rsi": "31.4",
+     "ema9": "8.85",
+     "ma50": "11.56",
+     "volumen_rel": "0.51",
      "estado": "ESPERAR"
+    },
+    {
+     "fecha": "2026-11-16",
+     "cierre": 7.52,
+     "rsi": 29.7,
+     "ema9": 8.58,
+     "ma50": 11.45,
+     "volumen_rel": 0.6,
+     "estado": "ATENTO"
     }
    ]
   }
@@ -363,12 +374,7 @@
       "texto": "resultados: «Red Cat Holdings, Inc. Reports Third Quarter 2026 Financial Results»"
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "NOTICIA IMPORTANTE",
-      "texto": "resultados: «What Red Cat (RCAT) Said on Its Q3 Earnings Call»"
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "NOTICIA IMPORTANTE|resultados: «Red Cat Holdings, Inc. Reports Third ",
      "NOTICIA IMPORTANTE|resultados: «Top Wall Street Forecasters Revamp Re",
@@ -701,6 +707,15 @@
      },
      {
       "fecha": "2026-11-16",
+      "titulo": "Alphabet: The Funding Scare Is The Bull Case",
+      "fuente": "SeekingAlpha",
+      "url": "https://finnhub.io/api/news?id=30ac8273974d2a2a815fc4269a23770f7d627c90f8c3b606fb67f1c32943ff52",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
       "titulo": "Learn Why The Bull Case For IBM Stock Could Change Following Quantum Computing Expansion",
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=4758815dc6bcf930aae572906d5e0bf884e22e433ff3c787980e753e7b941a7a",
@@ -770,21 +785,13 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-16",
-      "titulo": "Microsoft (MSFT) Is One of NVIDIA’s Biggest Customers, and a Growing Rival",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=ecc47e00860152fcc0487cce1a5392a80ae72118d6606f87f45d372012eb2e4e",
-      "causas": [],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
      "a third outage strikes this time at chase big banks the stocks are fal",
      "ai spending accelerates 3 hyperscaler stocks for strong 2027 returns",
      "alithya group inc alyaf q2 2027 earnings call highlights margin expans",
+     "alphabet the funding scare is the bull case",
      "altimeter capital to invest 5 billion in anthropic ipo  report",
      "amd benefits from nvidias troubles smart money sells nvidia cooler ppi",
      "amd sinks 105 as chip rally unwinds nasdaq 100 falls 17 stock market t",
@@ -822,7 +829,6 @@
      "faa microsoft outages show the perils of system upgrades",
      "faa resumes flights after nationwide ground stop says no link to micro",
      "founderz ai wins 2026 microsoft partner of the year award in training",
-     "global govtech dualuse defense platform market report 2026 size and fo",
      "global joint alldomain command and control jadc2 systems market report",
      "harvard cut nvidia by a third and bought amd",
      "has microsoft stock become a different bet",
@@ -832,6 +838,7 @@
      "is an equalweight sp 500 fund safer right now than the one you own",
      "it now costs more to insure chip debt than big techs bond markets say",
      "jim cramer anthropics next 100 billion in revenue might be cybersecuri",
+     "jpmorgan slashes iren price target on microsoft site delays",
      "kno2 collaborates with microsoft to connect healthcare data to azure",
      "learn why the bull case for ibm stock could change following quantum c",
      "market chatter nvidia amazon microsoft openai and anthropic to be name",
@@ -873,7 +880,6 @@
      "openai disbands its robotics team as its general models start running",
      "openai hit with lawsuit by california ag over alleged inadequate safeg",
      "openai introduces chatgpt wallet built in partnership with american ex",
-     "pltr raises 2026 guidance as q3 ai demand drives 96 revenue growth",
      "prgs or msft which is the better value stock right now",
      "rigetti computing vs soundhound ai which technology stock is a better",
      "servicenow stocks now historic selloff may have gone too far",
@@ -2958,12 +2964,12 @@
     "sector": "materia prima",
     "fecha": "2026-11-16",
     "fecha_anterior": "2026-11-13",
-    "cierre": 3875.5,
-    "cambio_pct": -0.28,
-    "cambio_5d_pct": -5.8,
+    "cierre": 3853.0,
+    "cambio_pct": -0.86,
+    "cambio_5d_pct": -6.4,
     "sigma_pct": 1.55,
-    "veces_normal": 0.2,
-    "volumen_rel": 0.1,
+    "veces_normal": 0.6,
+    "volumen_rel": 0.9,
     "grande": false,
     "porque": "Movimiento normal.",
     "resumen": "Movimiento normal.",
@@ -2980,10 +2986,10 @@
     "fecha": "2026-11-17",
     "fecha_anterior": "2026-11-16",
     "cierre": 1.1,
-    "cambio_pct": -0.14,
+    "cambio_pct": -0.16,
     "cambio_5d_pct": -1.9,
     "sigma_pct": 0.35,
-    "veces_normal": 0.4,
+    "veces_normal": 0.5,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",

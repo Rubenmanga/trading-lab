@@ -1,81 +1,115 @@
 {
- "actualizado": "2026-11-15T16:27:42+00:00",
+ "actualizado": "2026-11-17T05:00:28+00:00",
  "alertas": [
   {
    "ticker": "REPX",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "REPX a 44.40 $ está en su zona de entrada (≤ 46.0), potencial 31% hasta objetivo",
-   "precio": 44.400001525878906
+   "mensaje": "REPX a 43.56 $ está en su zona de entrada (≤ 46.0), potencial 33% hasta objetivo",
+   "precio": 43.560001373291016
   },
   {
    "ticker": "PGY",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "PGY a 16.87 $ está en su zona de entrada (≤ 17.5), potencial 48% hasta objetivo",
-   "precio": 16.8700008392334
+   "mensaje": "PGY a 16.02 $ está en su zona de entrada (≤ 17.5), potencial 56% hasta objetivo",
+   "precio": 16.020000457763672
   },
   {
-   "ticker": "ORIC",
+   "ticker": "SSII",
    "tipo": "CATALIZADOR CERCA",
-   "mensaje": "ORIC: 'Resultados 3.er trimestre y actualización de rinzimetostat' el 2026-11-16 (en 1 días)",
-   "precio": 7.860000133514404
+   "mensaje": "SSII: 'Resultados 3.er trim. (10-Q con retraso) y después decisión FDA 510(k) fin 1T 2027' el 2026-11-23 (en 6 días)",
+   "precio": 1.350000023841858
   },
   {
-   "ticker": "RCAT",
-   "tipo": "NOTICIA IMPORTANTE",
-   "precio": 3.53,
-   "seguimiento": true,
-   "mensaje": "RCAT (2026-11-16): resultados: «What Red Cat (RCAT) Said on Its Q3 Earnings Call» Ver pestaña Seguimiento del panel."
+   "ticker": "SVRA",
+   "tipo": "CATALIZADOR CERCA",
+   "mensaje": "SVRA: 'Decisión FDA de MOLBREEVI (apuesta binaria; puede llegar el 20 o el 23)' el 2026-11-22 (en 5 días)",
+   "precio": 4.465000152587891
   }
  ],
  "precios": [
   {
    "ticker": "AMSC",
-   "precio": 24.1299991607666,
-   "distancia_zona_pct": 9.7,
-   "potencial_pct": 32.6,
-   "distancia_stop_pct": 41.9
+   "precio": 22.790000915527344,
+   "distancia_zona_pct": 3.6,
+   "potencial_pct": 40.4,
+   "distancia_stop_pct": 34.1
   },
   {
    "ticker": "AEHR",
-   "precio": 56.97999954223633,
-   "distancia_zona_pct": 21.2,
-   "potencial_pct": 14.1,
-   "distancia_stop_pct": 49.9
+   "precio": 50.97999954223633,
+   "distancia_zona_pct": 8.5,
+   "potencial_pct": 27.5,
+   "distancia_stop_pct": 34.2
   },
   {
    "ticker": "REPX",
-   "precio": 44.400001525878906,
-   "distancia_zona_pct": -3.5,
-   "potencial_pct": 30.6,
-   "distancia_stop_pct": 23.3
+   "precio": 43.560001373291016,
+   "distancia_zona_pct": -5.3,
+   "potencial_pct": 33.1,
+   "distancia_stop_pct": 21.0
   },
   {
    "ticker": "PGY",
-   "precio": 16.8700008392334,
-   "distancia_zona_pct": -3.6,
-   "potencial_pct": 48.2,
-   "distancia_stop_pct": 35.0
+   "precio": 16.020000457763672,
+   "distancia_zona_pct": -8.5,
+   "potencial_pct": 56.1,
+   "distancia_stop_pct": 28.2
   },
   {
    "ticker": "DCTH",
-   "precio": 20.549999237060547,
-   "distancia_zona_pct": 20.9,
-   "potencial_pct": 31.4,
-   "distancia_stop_pct": 58.1
+   "precio": 19.8700008392334,
+   "distancia_zona_pct": 16.9,
+   "potencial_pct": 35.9,
+   "distancia_stop_pct": 52.8
   },
   {
    "ticker": "FTH",
-   "precio": 10.029999732971191,
-   "distancia_zona_pct": -4.5,
-   "potencial_pct": 99.4,
-   "distancia_stop_pct": 54.3
+   "precio": 9.279999732971191,
+   "distancia_zona_pct": -11.6,
+   "potencial_pct": 115.5,
+   "distancia_stop_pct": 42.8
   },
   {
    "ticker": "ORIC",
-   "precio": 7.860000133514404,
-   "distancia_zona_pct": -7.5,
-   "potencial_pct": 65.4,
-   "distancia_stop_pct": 20.9
+   "precio": 7.519999980926514,
+   "distancia_zona_pct": -11.5,
+   "potencial_pct": 72.9,
+   "distancia_stop_pct": 15.7
+  },
+  {
+   "ticker": "RCAT",
+   "precio": 3.5299999713897705,
+   "distancia_zona_pct": -29.4,
+   "potencial_pct": 70.0,
+   "distancia_stop_pct": 10.3
+  },
+  {
+   "ticker": "AMPX",
+   "precio": 7.119999885559082,
+   "distancia_zona_pct": -25.1,
+   "potencial_pct": 61.5,
+   "distancia_stop_pct": 4.7
+  },
+  {
+   "ticker": "SSII",
+   "precio": 1.350000023841858,
+   "distancia_zona_pct": -48.1,
+   "potencial_pct": 63.0,
+   "distancia_stop_pct": 12.5
+  },
+  {
+   "ticker": "TE",
+   "precio": 1.4900000095367432,
+   "distancia_zona_pct": -29.0,
+   "potencial_pct": 61.1,
+   "distancia_stop_pct": 10.4
+  },
+  {
+   "ticker": "SVRA",
+   "precio": 4.465000152587891,
+   "distancia_zona_pct": -7.0,
+   "potencial_pct": 79.2,
+   "distancia_stop_pct": 8.9
   }
  ]
 }

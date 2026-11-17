@@ -1,7 +1,8 @@
 # Alertas de medio plazo
 
-_Actualizado: 2026-11-15T16:27:42+00:00_
+_Actualizado: 2026-11-17T05:00:28+00:00_
 
-- **ZONA DE ENTRADA** · REPX a 44.40 $ está en su zona de entrada (≤ 46.0), potencial 31% hasta objetivo
-- **ZONA DE ENTRADA** · PGY a 16.87 $ está en su zona de entrada (≤ 17.5), potencial 48% hasta objetivo
-- **CATALIZADOR CERCA** · ORIC: 'Resultados 3.er trimestre y actualización de rinzimetostat' el 2026-11-16 (en 1 días)
+- **ZONA DE ENTRADA** · REPX a 43.56 $ está en su zona de entrada (≤ 46.0), potencial 33% hasta objetivo
+- **ZONA DE ENTRADA** · PGY a 16.02 $ está en su zona de entrada (≤ 17.5), potencial 56% hasta objetivo
+- **CATALIZADOR CERCA** · SSII: 'Resultados 3.er trim. (10-Q con retraso) y después decisión FDA 510(k) fin 1T 2027' el 2026-11-23 (en 6 días)
+- **CATALIZADOR CERCA** · SVRA: 'Decisión FDA de MOLBREEVI (apuesta binaria; puede llegar el 20 o el 23)' el 2026-11-22 (en 5 días)
