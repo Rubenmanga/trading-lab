@@ -40,6 +40,19 @@ jobs:
         run: python -m pip install --quiet pytest
       - name: Comprobar reglas, fechas, duplicados y riesgo
         run: python -m pytest -q tests/test_propuestas.py tests/test_investigador_auto.py
+      - name: Previsualizar con los datos del repo (PR, sin publicar)
+        if: github.event_name == 'pull_request'
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from tradinglab.medio_plazo.investigador_auto import _fecha_carpeta, ejecutar
+          dia = _fecha_carpeta(Path("investigacion/hoy.md").read_text(encoding="utf-8"))
+          resultado = ejecutar(dia)
+          print(resultado)
+          ruta = Path("investigacion/propuestas") / f"{dia.isoformat()}.md"
+          if ruta.exists():
+              print(ruta.read_text(encoding="utf-8"))
+          PY
       - name: Generar el informe y añadir predicciones (solo rama principal)
         if: github.event_name != 'pull_request'
         run: python -m tradinglab.medio_plazo.investigador_auto
