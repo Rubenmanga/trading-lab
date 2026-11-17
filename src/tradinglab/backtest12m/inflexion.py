@@ -264,10 +264,10 @@ def informe(res: dict, ruta: str, meta: dict) -> str:
                  "No se usa para elegir acciones; queda solo como dato informativo.")
     L = ["# Detector de punto de inflexión: ¿encuentra las x3?\n", "**Resumen en 5 líneas**\n",
          f"1. Veredicto: {veredicto}",
-         f"2. Comprobación ({res['corte_entreno'][:4]}+1 en adelante): del 10 % con más señales, **{f(pr['decil_pct'])}** "
+         f"2. Comprobación ({int(res['corte_entreno'][:4]) + 1} en adelante): del 10 % con más señales, **{f(pr['decil_pct'])}** "
          f"multiplicó x3 en 3 años; la media de todas fue {f(pr['base_pct'])}. Listón: {res['liston_pct']:.0f} % y el doble de la media.",
          f"3. Ajuste (2014-{res['corte_entreno'][:4]}): {f(tr['decil_pct'])} frente a {f(tr['base_pct'])} de media "
-         f"(variante elegida: «{e.replace('_', ' ')}»).",
+         f"(variante elegida: «{e.replace('_', ' ').replace('senales', 'señales')}»).",
          f"4. Riesgo: del 10 % elegido, {f(pr['decil_hunden_pct'])} perdió la mitad o más. Mediana a 3 años: "
          f"{f(pr['mediana_decil_pct'])} (todas: {f(pr['mediana_todas_pct'])}).",
          "5. Aun cuando funcione, la mayoría de las elegidas NO triplica: se juega con una cesta de 10-15 posiciones pequeñas.\n",

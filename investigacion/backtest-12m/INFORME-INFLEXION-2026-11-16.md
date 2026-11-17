@@ -3,10 +3,11 @@
 **Resumen en 5 líneas**
 
 1. Veredicto: **NO PASA el listón**: en los años de comprobación no encontró el doble de x3 que la media. No se usa para elegir acciones; queda solo como dato informativo.
-2. Comprobación (2020+1 en adelante): del 10 % con más señales, **9.8 %** multiplicó x3 en 3 años; la media de todas fue 7.7 %. Listón: 12 % y el doble de la media.
-3. Ajuste (2014-2020): 8.1 % frente a 6.9 % de media (variante elegida: «seis senales»).
+2. Comprobación (2021 en adelante): del 10 % con más señales, **9.8 %** multiplicó x3 en 3 años; la media de todas fue 7.7 %. Listón: 12 % y el doble de la media.
+3. Ajuste (2014-2020): 8.1 % frente a 6.9 % de media (variante elegida: «seis señales»).
 4. Riesgo: del 10 % elegido, 20.4 % perdió la mitad o más. Mediana a 3 años: 3.8 % (todas: -2.2 %).
-5. Aun cuando funcione, la mayoría de las elegidas NO triplica: se juega con una cesta de 10-15 posiciones pequeñas.
+5. Lectura sencilla: el detector da una ventaja pequeña (9,8 % frente a 7,7 %), pero NO llega al doble que exigíamos, y arriesga más (1 de cada 5 elegidas pierde la mitad). Solo la señal «directivos comprando» destaca algo (8,3 % frente a 7,0 %).
+6. Aun cuando funcione, la mayoría de las elegidas NO triplica: se juega con una cesta de 10-15 posiciones pequeñas.
 
 ## Qué mira el detector (6 señales, con datos oficiales de la SEC de aquel día)
 
@@ -23,7 +24,7 @@
 
 | Variante | Ajuste 2014-2020 | Comprobación 2021+ | Base comprobación |
 |---|---|---|---|
-| seis senales (elegida) | 8.1 % | 9.8 % | 7.7 % |
+| seis señales (elegida) | 8.1 % | 9.8 % | 7.7 % |
 | solo cuentas | 7.4 % | 9.3 % | 7.7 % |
 | ventas y margen doble | 7.4 % | 10.1 % | 7.7 % |
 
