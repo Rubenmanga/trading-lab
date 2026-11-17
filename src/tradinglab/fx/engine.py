@@ -175,10 +175,17 @@ def candidates(bars: list[Bar], *, strategy: str | None = None) -> list[Signal]:
 
     if strategy in (None, "squeeze_breakout"):
             # 5. Ruptura tras compresión de Bollinger20, comparada con 100 barras previas.
+        # Media y varianza móviles O(n) mediante sumas prefix (evita 220 pstdev
+        # y vuelve viable probar varios años M5 sin reducir el dataset).
+        sums, squares = [0.0], [0.0]
+        for price in closes[:-1]:
+            sums.append(sums[-1] + price)
+            squares.append(squares[-1] + price * price)
         widths = []
-        for i in range(20, len(closes)):
-            block = closes[i-20:i]
-            widths.append(4 * pstdev(block) / mean(block))
+        for end in range(20, len(closes)):
+            ave = (sums[end] - sums[end-20]) / 20
+            variance = max(0.0, (squares[end] - squares[end-20]) / 20 - ave * ave)
+            widths.append(4 * math.sqrt(variance) / ave)
         previous_width = widths[-2]
         baseline = sorted(widths[-101:-2])
         squeeze_threshold = baseline[int(len(baseline) * 0.2)]
