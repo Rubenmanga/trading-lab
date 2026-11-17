@@ -1,77 +1,100 @@
-# Investigador diario del agente B: modo autónomo
+# Investigador diario con IA: descubrimiento y memoria de riesgo
 
-## Qué quedó terminado
+## Objetivo
 
-La primera versión (PR #63) tenía un validador y una skill de Claude, pero
-dependía de una **tarea programada de Claude** para redactar las 3-5 ideas.
-Esa tarea no puede ejecutarse cuando se agota la cuota de Claude.
+El prototipo sin IA fue descartado: no investigaba realmente la jornada y
+simplemente reordenaba los datos. Se sustituye por un flujo con IA **obligatoria**.
+La tarea solo puede publicarse si una petición de IA ha respondido correctamente.
 
-Esta versión añade un motor **determinista y sin IA**:
+No se depende del límite semanal de mensajes de Claude. Para ejecutar la IA
+desde GitHub Actions se usa **Gemini 2.5 Flash-Lite**, con posibilidad de usar
+otro modelo de Gemini configurándolo mediante INVESTIGADOR_GEMINI_MODELO.
 
-- GitHub Actions: .github/workflows/investigador-diario.yml, laborables a las
-  **08:17, Europe/Madrid** (la hora se ajusta sola al horario de verano).
-- Lee investigacion/hoy.md, estado.json, watchlist.csv, entradas.json y
-  el libro de predicciones existente. Todos son archivos que ya produce el
-  proyecto. **No descarga cotizaciones ni consulta webs externas.**
-- Usa los precios publicados en estado.json y marca su hora UTC en el informe.
-  Si la carpeta o los precios tienen más de dos días o fecha futura, **falla**
-  sin publicar nada. Las ejecuciones fallidas se ven en Actions.
-- Elige hasta cinco valores **mencionados en hoy.md**, únicamente cuando
-  existen precio, entrada, stop y objetivo coherentes.
-- **No inventa niveles**: la calculadora (entradas.json) prevalece sobre el
-  límite de la watchlist. Si falta calculadora, usa como **referencia teórica**
-  el menor entre el precio observado y el límite de la watchlist, nunca como
-  orden de compra. Stop y objetivo deben existir previamente en la watchlist.
-- Considera binarios los catalizadores FDA/510(k) cercanos, los avisos de
-  riesgos graves y los stops alcanzados. Son «evitar» o «vigilar».
-- El modo autónomo **jamás produce «comprar_en_zona»**. No confirma noticias,
-  valoraciones ni probabilidades de acierto; por tanto, no puede dar luz verde
-  a una operación. El paso final es una revisión humana con fuentes primarias.
-- Nunca fuerza tres ideas solo por rellenar una tabla. Si no hay al menos tres
-  con datos y niveles válidos, **no escribe informe**.
-- Excluye valores que ya aparecieron como PROP- en los últimos 30 días,
-  escribe investigacion/propuestas/AAAA-MM-DD.md y usa el validador de
-  medio_plazo/propuestas.py para añadirlos **una vez** a predicciones.csv.
-- Solo modifica investigacion/propuestas/ y investigacion/predicciones.csv
-  cuando se ejecuta desde la rama principal. En los PR ejecuta **solo tests**.
+## Cómo funciona
 
-## Cómo usarlo
+Cada laborable a las **08:17 Europe/Madrid**:
 
-Tras aprobar y fusionar esta rama en main, GitHub programará la acción
-automáticamente los días laborables. Para probarla manualmente:
-**GitHub → Actions → Investigador diario sin Claude → Run workflow**.
+1. Verifica que la carpeta del día, los precios y el ranking tengan fecha reciente.
+   Si están desactualizados se detiene, sin presentar precios antiguos como actuales.
+2. Examina hasta 150 compañías del ranking, no solo la watchlist. Reserva
+   prioridad a nombres nuevos, fuera de las acciones conocidas.
+3. Consulta noticias RSS recientes en varios sectores, con la fuente, título
+   y fecha, para detectar cambios que todavía no han llegado al seguimiento.
+4. Consulta la SEC EDGAR (hasta 16 empresas) para identificar formularios
+   recientes. La existencia del formulario es un hecho; su contenido NO se
+   considera confirmado por el mero título. Si EDGAR falla, queda registrado.
+5. En biotecnológicas, consulta ClinicalTrials.gov para los NCT disponibles
+   en el ranking. Se consideran cambios materiales un nuevo resultado
+   publicado o una fecha principal REAL de terminación. Una modificación
+   administrativa no cuenta.
+6. Envía un dossier compacto, con sus fechas, riesgos, indicadores y URLs,
+   al modelo de IA para que seleccione 0-8 casos. El modelo debe diferenciar
+   oportunidades reales, pruebas incompletas y riesgos que desaconsejan comprar.
+7. Valida cada ticker y cada ID de fuente: ninguna fuente inventada entra
+   en el informe. Compara precio, escenarios y riesgos del proyecto; la IA
+   NO puede aprobar una compra sin regla 2,5 a 1, entrada calculada y evidencia
+   oficial reciente. Las entradas de nuevas acciones sin tesis pasan a vigilar.
+8. Publica el informe largo en investigacion/investigador/AAAA-MM-DD.md.
+   Si hay al menos tres casos con entrada, stop y objetivo válidos, también
+   prepara investigacion/propuestas/AAAA-MM-DD.md y apunta esas predicciones
+   en predicciones.csv sin repeticiones. No rellena la lista por obligación.
 
-Para reproducirlo localmente, desde la raíz del repositorio:
+## Qué ocurre cuando dice evitar
+
+investigacion/investigador/estado_ia.json conserva los tickers descartados.
+
+- Una empresa marcada **evitar** sale de la selección prioritaria diaria.
+- Ni una mejor nota, ni un nuevo titular, ni una subida del precio la
+  reactivan automáticamente.
+- Solo vuelve a la evaluación al observar un hecho primario **nuevo**
+  y material: formulario SEC relevante (8-K, 10-Q, 10-K, 6-K, 20-F,
+  ampliación S-3/424B5, 13D) o una novedad clínica importante en
+  ClinicalTrials.gov (resultados o fin principal real).
+- La reactivación significa **reabrir su expediente**, no pasar a comprar.
+- La memoria se conserva entre días y se versiona en GitHub.
+
+Este primer clasificador de cambios materiales se basa en metadatos de
+formularios y ensayos. Un anuncio regulatorio que no aparezca en estas
+fuentes podría necesitar una revisión manual adicional: la cobertura
+automática no es exhaustiva.
+
+## Configuración mínima (acción del propietario)
+
+1. Crear una API key de Gemini en Google AI Studio:
+   https://aistudio.google.com/app/apikey
+2. En el repositorio GitHub: Settings > Secrets and variables > Actions >
+   New repository secret. Nombre exacto: GEMINI_API_KEY. Introducir allí
+   la clave; **nunca** en el chat ni en un commit.
+3. Para una identificación apropiada ante SEC, configurar el secreto
+   SEC_USER_AGENT con organización y correo de contacto válido.
+4. Aprobar y fusionar la PR para activar la tarea programada.
+5. Verificar en GitHub > Actions > Investigador diario IA >
+   Run workflow para la primera ejecución real.
+
+La API de Gemini dispone de nivel gratuito para modelos elegibles sujeto
+a cuotas y disponibilidad. No se habilita facturación de pago por código.
+Si falta la clave, se alcanza el límite, la API falla o la respuesta no
+cumple las reglas, **GitHub Actions marca error y no publica análisis
+falso**. No se puede verificar una respuesta Gemini real sin configurar
+el secreto en el repositorio.
+
+## Pruebas
+
+En la raíz del proyecto:
 
 ~~~bash
-PYTHONPATH=src python -m pytest -q tests/test_propuestas.py tests/test_investigador_auto.py
-PYTHONPATH=src python -m tradinglab.medio_plazo.investigador_auto
+PYTHONPATH=src python -m pytest -q tests/test_propuestas.py tests/test_investigador_ia.py
 ~~~
 
-**Importante:** el generador no sustituye una investigación real, no conoce
-la actualidad fuera de los archivos ni garantiza 3-5 candidatos diarios.
-Los precios pueden corresponder al último cierre, no ser cotizaciones en
-tiempo real. No ejecuta órdenes ni tiene acceso al bróker.
+Las pruebas emulan las llamadas al modelo y las fuentes. Cubren novedades,
+fuentes fabricadas, estados evitar, reactivación por SEC/ClinicalTrials.gov,
+prevención de compra sin escenarios, frescura e idempotencia.
 
-La skill .claude/skills/investigador-diario/SKILL.md sigue disponible como
-alternativa manual cuando haya cuota de Claude. Si esa skill genera un informe,
-se deben verificar sus datos y ejecutar el validador antes de publicarlo.
+## Límites de calidad
 
-## Comprobaciones de aceptación
-
-1. Se ejecutan tests/test_propuestas.py y tests/test_investigador_auto.py.
-2. Con hoy.md antiguo se detiene sin tocar el libro.
-3. Con menos de tres candidatos elegibles no inventa propuestas.
-4. Ante FDA binaria/alerta crítica no propone comprar.
-5. El precio de la calculadora prevalece sobre zonas antiguas.
-6. Ejecutado dos veces el mismo día no duplica una predicción.
-7. Una PR de código no cambia datos ni fusiona en main automáticamente.
-
-## Límite explícito
-
-Esta implementación finaliza **la automatización diaria sin dependencia de
-Claude**, pero no transforma las reglas en un analista fundamental autónomo.
-Para redactar una tesis nueva contrastada con SEC, FDA, resultados y noticias
-en tiempo real se necesitaría otra fase, con un motor de investigación y sus
-fuentes verificables. Evitamos simular esa investigación con un algoritmo
-que solo lee datos históricos del proyecto.
+La IA NO sustituye una due diligence profunda. Debe distinguir lo que está
+documentado de los rumores o de un simple título, contrastar la rentabilidad
+frente a la pérdida y marcar incertidumbre. El modelo no tiene por sí solo
+acceso garantizado al texto completo del 10-Q, nota de prensa o ensayo;
+una oportunidad destacada requiere análisis oficial más profundo antes de
+cualquier operación. El sistema es solo demo y no manda órdenes al bróker.
