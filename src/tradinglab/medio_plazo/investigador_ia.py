@@ -229,7 +229,8 @@ def propuesta_panel(dia, analizados):
 
 
 def ejecutar(hoy=None, raiz=ROOT, *, modelo_llamar=gemini,
-            rss_llamar=fuentes.rss_actual, sec_llamar=fuentes.sec_actual):
+            rss_llamar=fuentes.rss_actual, sec_llamar=fuentes.sec_actual,
+            ensayos_llamar=fuentes.ensayos_actual):
     dia = hoy or datetime.now(ZoneInfo("Europe/Madrid")).date()
     clave = os.environ.get("GEMINI_API_KEY", "")
     if not clave:
@@ -258,7 +259,10 @@ def ejecutar(hoy=None, raiz=ROOT, *, modelo_llamar=gemini,
     otras = [x['ticker'] for x in candidatos if x['ticker'] not in dormidas]
     sec, fallos = sec_llamar((dormidas + otras)[:16], dia)
     errores.extend(fallos)
-    candidatos = fuentes.candidatos(rank, watch, memoria, rss, dia, sec)
+    trials, fallos_ct = ensayos_llamar(candidatos, dia)
+    errores.extend(fallos_ct)
+    oficiales = {t: sec.get(t, []) + trials.get(t, []) for t in set(sec) | set(trials)}
+    candidatos = fuentes.candidatos(rank, watch, memoria, rss, dia, oficiales)
     if not candidatos:
         raise ValueError("Radar vacío; sin datos no se inventan oportunidades")
     respuesta = modelo_llamar(prompt(dia, candidatos), clave)
