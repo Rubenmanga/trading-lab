@@ -11,8 +11,21 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
    Posible excepción (Ruben, 15-nov-2026): Claude Haiku leyendo los titulares de `lista_noticias`
    (`medio_plazo/lector_ia.py`), hoy APAGADO (`ia.activar: false`). Solo se enciende si Ruben lo pide y crea la clave; tope 3 $/mes.
 3. **Dos agentes separados, no se mezclan** (ver mapa).
-4. Toda decisión del agente A se registra con su motivo (`data/lab.db`).
+4. Toda decisión del agente A se registra con su motivo (`investigacion/corto-hueco/registro.csv`; `data/lab.db` era del agente A original).
 5. El código de riesgo no usa IA y siempre manda sobre la IA.
+
+## Cómo se trabaja (resumen de `MEJORA_CONTINUA.md`, obligatorio)
+- **«Funciona» solo con una prueba ejecutada.** Si no se pudo probar, se escribe «no verificado». Comprobar el efecto
+  (¿se ejecutó el workflow?, ¿de qué fecha es el dato?), no solo el código.
+- **Hecho / estimación / propuesta / pasado**: distínguelos siempre al escribir a Ruben y en los informes.
+- **Precio con más de 1 día de bolsa = viejo**: se avisa y no se propone entrada con él.
+- **Nada nuevo sin responder**: ¿qué decisión mejora y con qué número sabremos que no sirve? Hasta nuevo aviso se
+  prioriza acumular datos reales, no construir piezas.
+- **Estrategias**: listón de validación de `MEJORA_CONTINUA.md` (comprobación fuera de muestra, costes realistas, listón y
+  fecha de apagado escritos antes). Lo que no pasa queda «informativo».
+- **Código o panel**: rama + PR con `ci.yml` en verde y OK de Ruben. Solo los PR que tocan **solo** `investigacion/` se publican solos.
+- Tras tocar el panel: `node web/build.mjs && node web/test/humo.mjs` (el build imprime la última fecha de cada automatismo).
+- Si Ruben pregunta «¿va todo?»: panel `#/sistema`. Si algo está parado: lanzar su workflow a mano y comprobar la fecha.
 
 ## Ahorro de tokens (obligatorio)
 - **Plan corto primero.** Si la tarea es grande (investigación amplia, muchos tickers, backtest nuevo),
@@ -48,9 +61,10 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 | B · perfiles («¿puede duplicar?», «+500 %») | `src/tradinglab/perfiles/`, `investigacion/duplicar/`, `investigacion/quintuplicar/` |
 | Código común (datos, almacén) | `src/tradinglab/common/` |
 | Diario del agente A | `diario/`, `src/tradinglab/diario.py` |
-| Panel web (Vercel) | `web/build.mjs` lee `investigacion/` → `web/dist/` |
+| Panel web (Vercel) | `web/build.mjs` lee `investigacion/` → `web/dist/`; todo el panel en `web/index.html` (5 secciones: `#/`, `#/cartera`, `#/ideas`, `#/agente-a`, `#/mas`; **estado del sistema** en `#/sistema`, datos en `salud` de `build.mjs`); prueba `web/test/humo.mjs` |
+| Auditoría del 17-nov-2026 y decisiones | `AUDITORIA_COMPLETA.md`, `DECISIONES_ARQUITECTURA.md`, `REDISENO_UX_UI.md`, `MEJORA_CONTINUA.md`, `CAMBIOS_REALIZADOS.md` (lo hecho y lo pendiente) |
 | Workflows | `.github/workflows/` (ver abajo) |
-| Scripts de Windows para el PC | `scripts/*.bat` |
+| Histórico sin uso en la nube (no borrar, no ampliar) | `scripts/*.bat`, `dashboard/app.py` (Streamlit), agente A original `intradia/sesion.py` |
 | Tests | `tests/test_*.py` (uno por módulo) |
 
 ## No leer salvo que se pida (datos, cachés, copias)
@@ -78,6 +92,11 @@ la primera vez. Escribe desde el móvil y su límite semanal de Claude es peque�
 - `backtest-12m.yml`: backtest del agente B → `investigacion/backtest-12m/` (`INFORME-*.md`, `resultados.json`: usa `jq`).
 - `expedientes.yml`: L-V 21:50 UTC. `lab medio expediente` → `investigacion/expedientes/` (un commit al día).
 - `marcador.yml`: viernes 22:30 UTC y al cambiar `watchlist.csv`. Apunta predicciones nuevas y puntúa → `investigacion/marcador/`.
+- `laboratorio-demo.yml`: L-V, la estrategia activa del laboratorio en Alpaca paper (hoy solo informativo).
+- `vigilante-intradia.yml`: L-V cada 10 min en bolsa, vigila «Mis acciones» → `investigacion/vigilante/` + issue.
+- `radar-resultados.yml`: a mano; prueba con el pasado del radar de resultados → `investigacion/radar/`.
+- `ci.yml`: en cada PR de código/config/panel/workflows: `pytest` completo + construir el panel + `web/test/humo.mjs`.
+- OJO (auditoría 17-nov): el cron de GitHub se ha saltado ejecuciones. No des por hecho que algo se ejecutó: mira `#/sistema`.
 - `publicar-investigacion.yml`: si un PR toca **solo** `investigacion/`, se fusiona (sale en el panel en la próxima publicación).
 - `publicar-panel.yml`: publica el panel en Vercel 7:30 y 15:00 (España). Vercel gratis = 100 despliegues/día: los commits de
   datos NO despliegan (`scripts/vercel-decidir.sh`); sí lo hacen `[panel]` en el mensaje, cambios en `web/`, `vercel.json`,

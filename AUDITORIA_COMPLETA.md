@@ -14,7 +14,7 @@
 ## Cómo se hizo (qué miré y qué no)
 
 - **Sí:** estructura completa, los 14 workflows (disparadores, permisos, secretos), el código del bot y su riesgo, los clientes de eToro y Alpaca, el marcador, los informes de los tres backtests, la carpeta del día, el generador del panel y el panel en móvil (capturas a 390 px), el historial de ejecuciones de GitHub Actions y los PR abiertos.
-- **Pruebas iniciales:** `pytest` → **139 pasan** en 69 s. `node web/build.mjs` → construye (150 empresas, 31 informes, 937 hechos). Panel a 390 px: 10 pantallas sin desbordar a lo ancho y sin errores de JavaScript.
+- **Pruebas iniciales:** `pytest` → **139 pasan** en 69 s (146 tras traer el Paso 8 de `main`). `node web/build.mjs` → construye (150 empresas, 31 informes, 937 hechos). Panel a 390 px: 10 pantallas sin desbordar a lo ancho y sin errores de JavaScript.
 - **No:** no leí línea a línea los módulos de puntuación del ranking (`oportunidades.py`, `metricas.py`), ni los datos crudos, ni las skills de terceros. No puedo probar eToro ni Alpaca con claves reales desde aquí. Donde no hay prueba, lo marco como **E · no verificable**.
 
 ## Lo que pediste frente a lo que hay de verdad
@@ -39,7 +39,7 @@ Clases: **A** correcto · **B** funciona pero mejorable · **C** mal diseñado o
 - *Por qué pasa:* el repo fue privado con el límite de gasto agotado hasta las 23:20 del 16-nov; además GitHub retrasa o se salta ejecuciones programadas. Desde que es público debería mejorar, pero **no está comprobado** (E).
 - *Consecuencia:* datos viejos sin aviso, bot que no opera, y la decisión del 15-feb-2027 puede llegar con menos de 40 operaciones solo porque el bot no arrancó.
 - *Alternativas:* (1) confiar y mirar a mano; (2) un vigía que mida la edad de cada dato y la enseñe arriba del todo en el panel; (3) un disparador externo de pago o con tu token.
-- *Elegida:* la 2. Hecho en este PR: `lab salud` + «Estado del sistema» en la portada del panel, que calcula la edad al abrirlo (funciona aunque GitHub no ejecute nada). La 3 queda descartada por coste y por seguridad.
+- *Elegida:* la 2. Hecho en este PR: «Estado del sistema» arriba del todo en la portada del panel. Lee la última fecha real de cada automatismo y calcula el retraso **al abrir la página** (funciona aunque GitHub no ejecute nada). `node web/build.mjs` imprime las mismas fechas para las sesiones de Claude. La 3 queda descartada por coste y por seguridad.
 
 **D2 · El bot podía dejar una posición abierta sin apuntarla.**
 - *Dónde:* `src/tradinglab/intradia/corto_hueco/sesion.py`, función `operar`.
@@ -56,7 +56,7 @@ Clases: **A** correcto · **B** funciona pero mejorable · **C** mal diseñado o
 **D4 · Ninguna prueba se ejecutaba antes de fusionar.**
 - *Dónde:* no existía ningún workflow de pruebas generales (solo dos parciales dentro de backtests).
 - *Consecuencia:* 12 PR fusionados en una noche sin comprobación automática. Un error en `cli.py` rompería a la vez el bot, el ranking y las noticias.
-- *Elegida:* `ci.yml`: en cada PR pasa las 142 pruebas, construye el panel y comprueba que arranca sin errores. Gratis (repo público). Hecho en este PR.
+- *Elegida:* `ci.yml`: en cada PR pasa las 149 pruebas, construye el panel y comprueba que arranca sin errores. Gratis (repo público). Hecho en este PR.
 
 ### C · Mal diseñado o complejo de más
 
