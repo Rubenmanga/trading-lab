@@ -12,6 +12,7 @@ from dataclasses import asdict, dataclass
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 from urllib.request import Request, urlopen
 from xml.etree import ElementTree as ET
 
@@ -70,10 +71,12 @@ def scheduled_blackouts(now: datetime) -> list[dict]:
         elif line == "END:VEVENT":
             name = event.get("SUMMARY", "").lower()
             start = event.get("DTSTART", "")
+            zone = event.get("ZONE", "UTC")
             if any(word in name for word in HIGH_IMPACT) and start:
                 value = start.rstrip("Z")
                 try:
-                    dt = datetime.strptime(value[:15], "%Y%m%dT%H%M%S").replace(tzinfo=timezone.utc)
+                    tz = timezone.utc if start.endswith("Z") else ZoneInfo(zone)
+                    dt = datetime.strptime(value[:15], "%Y%m%dT%H%M%S").replace(tzinfo=tz).astimezone(timezone.utc)
                     if -timedelta(minutes=20) <= now-dt <= timedelta(minutes=20):
                         events.append({"name": event.get("SUMMARY", ""), "at_utc": dt.isoformat()})
                 except ValueError:
@@ -83,6 +86,8 @@ def scheduled_blackouts(now: datetime) -> list[dict]:
             key = key.split(";")[0]
             if key in ("SUMMARY", "DTSTART"):
                 event[key] = value
+                if key == "DTSTART" and "TZID=" in line.partition(":")[0]:
+                    event["ZONE"] = line.partition(":")[0].split("TZID=")[1].split(";")[0]
     return events
 
 
