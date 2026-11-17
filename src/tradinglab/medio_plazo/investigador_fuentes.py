@@ -147,7 +147,7 @@ def reactivable(previo, fuentes, hoy):
     )
 
 
-def candidatos(ranking, watchlist, memoria, noticias, hoy, sec=None):
+def candidatos(ranking, watchlist, memoria, noticias, hoy, sec=None, incluir_dormidos=False):
     sec = sec or {}
     seguidas = {w.get("ticker", "").upper() for w in watchlist}
     encontrados = []
@@ -171,7 +171,7 @@ def candidatos(ranking, watchlist, memoria, noticias, hoy, sec=None):
         fuentes.sort(key=lambda x: (x["fecha"], x["primaria"]), reverse=True)
         fuentes = fuentes[:10]
         anterior = memoria.get(t, {})
-        if not reactivable(anterior, fuentes, hoy):
+        if not incluir_dormidos and not reactivable(anterior, fuentes, hoy):
             continue
         nueva = t not in seguidas and t not in memoria
         reciente = sum(f["fecha"] >= (hoy - timedelta(days=2)).isoformat() for f in fuentes)
@@ -187,7 +187,7 @@ def candidatos(ranking, watchlist, memoria, noticias, hoy, sec=None):
             "prioridad": prioridad, "pos": pos,
         })
     encontrados.sort(key=lambda x: (-x["prioridad"], x["pos"]))
-    # El radar debe DESUBRIR: hasta 20 no seguidas y 10 conocidas con tesis relevantes.
+    # El radar debe DESCUBRIR: hasta 20 no seguidas y 10 conocidas con tesis relevantes.
     nuevas = [x for x in encontrados if x["nueva"]][:20]
     conocidas = [x for x in encontrados if not x["nueva"]][:10]
     reactivadas = [x for x in encontrados if x["reactivada"]][:4]
