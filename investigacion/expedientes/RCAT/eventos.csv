@@ -1,4 +1,6 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
+2026-11-17,movimiento,"Cae 31.7 % en un día (4.1 veces lo normal, volumen x5.0 su media)",https://finance.yahoo.com/quote/RCAT/history/,2026-11-17,3.53,-31.73,,
+2026-11-17,directivos_form4,4 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/748268/000149315226052952/xslF345X06/ownership.xml,2026-11-17,3.53,-31.73,,
 2026-11-16,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/748268/000162828026074169/rcat-20261116.htm,2026-11-16,3.8,-7.11,,
 2026-11-16,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/748268/000162828026074175/rcat-20260930.htm,2026-11-16,3.8,-7.11,,
 2026-11-10,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/748268/000009375126000712/xslSCHEDULE_13G_X02/primary_doc.xml,2026-11-10,4.5,-6.44,-21.56,

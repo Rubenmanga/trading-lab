@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-17",
+ "actualizado": "2026-11-18",
  "autopsias": [
   {
    "ticker": "RCAT",
@@ -18,13 +18,13 @@
    "leccion": "Lo que hunde la acción no es el trimestre sino perder la promesa del futuro: retirar la previsión pesa más que crecer un 22 %. Había pista: en 2025 prometió 80-120 M$ y facturó 41 M$. Una empresa que ya falló su previsión una vez merece poca confianza en la siguiente.",
    "precio_antes": 3.53,
    "previa_20d": -24.57,
-   "r1": null,
+   "r1": -31.73,
    "r5": null,
    "r20": null,
    "sorpresa_ventas_pct": -71.07,
    "resultado": "falla",
-   "reaccion": -18.5,
-   "reaccion_medida": "horario extendido",
+   "reaccion": -31.73,
+   "reaccion_medida": "1 sesión",
    "precio": "cae",
    "frase": "falla y cae",
    "prediccion": {
@@ -35,7 +35,7 @@
     "stop_tesis": "3.20",
     "objetivo": "6",
     "zona_entrada_max": "5.00",
-    "precio_despues": 2.8769,
+    "precio_despues": 2.4099,
     "stop_roto": true
    }
   },

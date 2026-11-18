@@ -1,8 +1,9 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
+2026-11-17,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1899287/000147622026000036/xslF345X06/wk-form4_1794956703.xml,2026-11-17,7.12,-4.92,,
 2026-11-12,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1899287/000189928726000071/ampx-20260930.htm,2026-11-12,8.55,-2.34,,
 2026-11-10,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1899287/000189928726000069/ampx-20261110.htm,2026-11-10,9.52,-3.68,-25.26,
 2026-11-06,movimiento,"Sube 16.0 % en un día (3.0 veces lo normal, volumen x1.1 su media)",https://finance.yahoo.com/quote/AMPX/history/,2026-11-06,7.52,15.96,11.04,
-2026-10-21,movimiento,"Sube 9.6 % en un día (3.3 veces lo normal, volumen x1.0 su media)",https://finance.yahoo.com/quote/AMPX/history/,2026-10-21,7.58,9.63,17.15,
+2026-10-21,movimiento,"Sube 9.6 % en un día (3.3 veces lo normal, volumen x1.0 su media)",https://finance.yahoo.com/quote/AMPX/history/,2026-10-21,7.58,9.63,17.15,-10.69
 2026-10-16,movimiento,"Cae 8.2 % en un día (3.0 veces lo normal, volumen x0.9 su media)",https://finance.yahoo.com/quote/AMPX/history/,2026-10-16,8.4,-8.21,-5.83,-0.6
 2026-10-09,ampliacion,Registro para vender acciones nuevas (S-3ASR),https://www.sec.gov/Archives/edgar/data/1899287/000110465926115105/tm2626736d1_s3asr.htm,2026-10-09,9.39,0.53,-10.54,-19.91
 2026-09-28,contrato,Contrato o acuerdo importante (8-K 1.01),https://www.sec.gov/Archives/edgar/data/1899287/000189928726000065/ampx-20260923.htm,2026-09-28,9.75,-1.54,-0.82,-16.1

@@ -1,4 +1,6 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
+2026-11-17,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026121405/xslF345X06/ownership.xml,2026-11-17,1.35,-1.48,,
+2026-11-17,ampliacion,Venta de acciones nuevas sin registro (8-K 3.02); Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026121401/ea0312635-8k_ssinnova.htm,2026-11-17,1.35,-1.48,,
 2026-11-16,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026120292/xslF345X06/ownership.xml,2026-11-16,1.66,-17.77,,
 2026-11-16,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1676163/000121390026120633/ea0309946-10q_ssinnova.htm,2026-11-16,1.66,-18.67,,
 2026-11-13,movimiento,"Sube 25.8 % en un día (3.9 veces lo normal, volumen x7.6 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-11-13,1.32,25.76,,
