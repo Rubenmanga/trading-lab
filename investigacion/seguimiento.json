@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-18T04:06:05+00:00",
+ "actualizado": "2026-11-18T04:42:52+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -592,11 +592,21 @@
      {
       "tipo": "NOTICIA IMPORTANTE",
       "texto": "resultados: «Nvidia’s Q3 earnings show its advantage as the bank of the AI boom»"
+     },
+     {
+      "tipo": "NOTICIA IMPORTANTE",
+      "texto": "resultados: «What It Will Take for Cerebras Stock to Stage a Real Revival After Q3 Earnings Rally»"
      }
     ],
-    "avisos_nuevos": [],
+    "avisos_nuevos": [
+     {
+      "tipo": "NOTICIA IMPORTANTE",
+      "texto": "resultados: «What It Will Take for Cerebras Stock to Stage a Real Revival After Q3 Earnings Rally»"
+     }
+    ],
     "avisados": [
      "NOTICIA IMPORTANTE|resultados: «Nvidia’s Q3 earnings show its advanta",
+     "NOTICIA IMPORTANTE|resultados: «What It Will Take for Cerebras Stock ",
      "NOTICIA IMPORTANTE|resultados: «Workhorse (WKHS) Q3 2026 Earnings Cal"
     ],
     "problemas": [],
@@ -617,6 +627,15 @@
      "volumen_rel": 1.1
     },
     "titulares": [
+     {
+      "fecha": "2026-11-18",
+      "titulo": "Microsoft Stock Hits Seven-Week Low: Is a Bigger Drop Coming?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=8965640b75382e4da1687e0d034a4eee0cf356f1c4a10353907c75c8cac39357",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-18",
       "titulo": "Amazon.com (AMZN) Set For White House AI National Champion Status",
@@ -738,21 +757,14 @@
      },
      {
       "fecha": "2026-11-17",
-      "titulo": "Microsoft's AI pitch at Ignite: Cheaper models as business 'token spend is going through the roof'",
+      "titulo": "What It Will Take for Cerebras Stock to Stage a Real Revival After Q3 Earnings Rally",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=8383d4e48d8f61bfcda99a31350ce1bb1d5577dfa69723cb71aa52bab406ebb3",
-      "causas": [],
+      "url": "https://finnhub.io/api/news?id=33082623cba6f9166e830c992444a0771ca83a0a690570b2c22f3f1500e11ef6",
+      "causas": [
+       "resultados"
+      ],
       "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-17",
-      "titulo": "Microsoft’s “Next Leg” Is Charging 500 Million Office Users More, Says RBC Analyst",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=b4531ff851128717ddfb816042371b1a0d9b3643792ffa89dc431b35058572b0",
-      "causas": [],
-      "nueva": true,
-      "importante": false
+      "importante": true
      }
     ],
     "vistos": [
@@ -836,7 +848,6 @@
      "microsoft ai chief says compute isnt a bottleneck  for now",
      "microsoft aims to challenge openai anthropic with cheaper specialized",
      "microsoft and organizations across industries launch ai transparency i",
-     "microsoft anthropic is moving into its most profitable territory",
      "microsoft authorizes parallels desktop for windows on apple silicon",
      "microsoft commences ignite 2026 conference",
      "microsoft expands use of haivision live video ecosystem",
@@ -854,6 +865,7 @@
      "microsoft restores services following global outage",
      "microsoft reveals hidden bug behind massive global outage",
      "microsoft says infrastructure stabilizes as queued messages drain and",
+     "microsoft stock hits sevenweek low is a bigger drop coming",
      "microsoft stock in focus as massive 365 outage hits outlook teams and",
      "microsoft stocks move lower as 1 billion anthropic bet precedes ignite",
      "microsoft stocks move lower before ignite as anthropic discloses 472 b",
@@ -887,7 +899,6 @@
      "prgs or msft which is the better value stock right now",
      "rigetti computing vs soundhound ai which technology stock is a better",
      "risks loom over nvidias fastgrowing data center segment",
-     "salesforce leads wall street software selloff as investors brace for a",
      "servicenow stocks now historic selloff may have gone too far",
      "software stocks retreat amid inflation worries new openai model",
      "soross fund sold a quarter of its berkshire shares today berkshire rev",
@@ -903,6 +914,7 @@
      "wall street and main street agree its time to tame the ai trade",
      "want to invest in top growth stocks like amazon apple and microsoft bu",
      "we are not immune nebius is still up 38 in 2026 take profits or buy mo",
+     "what it will take for cerebras stock to stage a real revival after q3",
      "whats dragging down the sp 500 apple in focus",
      "why apple is down in a week of outages from microsoft to chase",
      "why the microsoft outage came at the worst possible time for the stock",
@@ -2382,6 +2394,130 @@
      "resultados_recientes": null
     }
    },
+   "AII": {
+    "nombre": "American Integrity Insurance Gr",
+    "sector": "Financial Services",
+    "grupo": "ideas",
+    "fecha": "2026-11-17",
+    "fecha_anterior": "2026-11-16",
+    "cierre": 28.98,
+    "cambio_pct": 2.37,
+    "cambio_5d_pct": 3.0,
+    "sigma_pct": 2.69,
+    "veces_normal": 0.9,
+    "volumen_rel": 1.1,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
+    "catalizadores": [],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "American Integrity Insurance Group Inc",
+    "recs_pct_compra": 80.0,
+    "recs_n": 10,
+    "proximos_resultados": null,
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLF",
+     "fecha": "2026-11-17",
+     "fecha_anterior": "2026-11-16",
+     "cierre": 57.07,
+     "cambio_pct": -1.91,
+     "cambio_5d_pct": -2.1,
+     "sigma_pct": 1.33,
+     "veces_normal": 1.4,
+     "volumen_rel": 1.6
+    },
+    "titulares": [],
+    "vistos": [
+     "american integrity aii q3 2026 earnings call transcript",
+     "american integrity insurance group inc aii q3 2026 earnings call highl",
+     "american integrity insurance group inc aii q3 2026 earnings call trans",
+     "american integrity insurance group inc q3 2026 earnings call summary",
+     "best momentum stocks to buy for november 11th",
+     "best value stocks to buy for november 11th",
+     "citizens maintains market outperform on american integrity raises pric",
+     "new strong buy stocks for november 11th",
+     "what american integrity insurance group aii said on its q3 earnings ca"
+    ],
+    "sec_vistos": [
+     "2026-10-02Registro para vender acciones (S-3)"
+    ],
+    "anterior": {
+     "fecha": "2026-11-16",
+     "vistos": [
+      "american integrity aii q3 2026 earnings call transcript",
+      "american integrity insurance group inc aii q3 2026 earnings call highl",
+      "american integrity insurance group inc aii q3 2026 earnings call trans",
+      "american integrity insurance group inc q3 2026 earnings call summary",
+      "best momentum stocks to buy for november 11th",
+      "best value stocks to buy for november 11th",
+      "citizens maintains market outperform on american integrity raises pric",
+      "new strong buy stocks for november 11th",
+      "what american integrity insurance group aii said on its q3 earnings ca"
+     ],
+     "sec_vistos": [
+      "2026-10-02Registro para vender acciones (S-3)"
+     ],
+     "recs_pct_compra": 80.0,
+     "proximos_resultados": null,
+     "resultados_recientes": null
+    }
+   },
+   "LPG": {
+    "nombre": "Dorian LPG Ltd.",
+    "sector": "Energy",
+    "grupo": "ideas",
+    "fecha": "2026-11-17",
+    "fecha_anterior": "2026-11-16",
+    "cierre": 45.3,
+    "cambio_pct": -3.23,
+    "cambio_5d_pct": -2.5,
+    "sigma_pct": 2.82,
+    "veces_normal": 1.1,
+    "volumen_rel": 0.7,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
+    "catalizadores": [
+     "Resultados el 2027-02-03"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "Dorian LPG Ltd.",
+    "recs_pct_compra": 72.7,
+    "recs_n": 11,
+    "proximos_resultados": "2027-02-03",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLE",
+     "fecha": "2026-11-17",
+     "fecha_anterior": "2026-11-16",
+     "cierre": 63.36,
+     "cambio_pct": -0.52,
+     "cambio_5d_pct": 1.8,
+     "sigma_pct": 1.91,
+     "veces_normal": 0.3,
+     "volumen_rel": 0.6
+    },
+    "titulares": [],
+    "vistos": [],
+    "sec_vistos": [],
+    "anterior": {
+     "fecha": null,
+     "vistos": null,
+     "sec_vistos": null,
+     "recs_pct_compra": null,
+     "proximos_resultados": null,
+     "resultados_recientes": null
+    }
+   },
    "ASC": {
     "nombre": "Ardmore Shipping Corporation",
     "sector": "Industrials",
@@ -2486,79 +2622,6 @@
       "2026-07-27Fondo grande >5 % (13G)"
      ],
      "recs_pct_compra": 85.7,
-     "proximos_resultados": null,
-     "resultados_recientes": null
-    }
-   },
-   "AII": {
-    "nombre": "American Integrity Insurance Gr",
-    "sector": "Financial Services",
-    "grupo": "ideas",
-    "fecha": "2026-11-17",
-    "fecha_anterior": "2026-11-16",
-    "cierre": 28.98,
-    "cambio_pct": 2.37,
-    "cambio_5d_pct": 3.0,
-    "sigma_pct": 2.69,
-    "veces_normal": 0.9,
-    "volumen_rel": 1.1,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
-    "catalizadores": [],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "American Integrity Insurance Group Inc",
-    "recs_pct_compra": 80.0,
-    "recs_n": 10,
-    "proximos_resultados": null,
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "XLF",
-     "fecha": "2026-11-17",
-     "fecha_anterior": "2026-11-16",
-     "cierre": 57.07,
-     "cambio_pct": -1.91,
-     "cambio_5d_pct": -2.1,
-     "sigma_pct": 1.33,
-     "veces_normal": 1.4,
-     "volumen_rel": 1.6
-    },
-    "titulares": [],
-    "vistos": [
-     "american integrity aii q3 2026 earnings call transcript",
-     "american integrity insurance group inc aii q3 2026 earnings call highl",
-     "american integrity insurance group inc aii q3 2026 earnings call trans",
-     "american integrity insurance group inc q3 2026 earnings call summary",
-     "best momentum stocks to buy for november 11th",
-     "best value stocks to buy for november 11th",
-     "citizens maintains market outperform on american integrity raises pric",
-     "new strong buy stocks for november 11th",
-     "what american integrity insurance group aii said on its q3 earnings ca"
-    ],
-    "sec_vistos": [
-     "2026-10-02Registro para vender acciones (S-3)"
-    ],
-    "anterior": {
-     "fecha": "2026-11-16",
-     "vistos": [
-      "american integrity aii q3 2026 earnings call transcript",
-      "american integrity insurance group inc aii q3 2026 earnings call highl",
-      "american integrity insurance group inc aii q3 2026 earnings call trans",
-      "american integrity insurance group inc q3 2026 earnings call summary",
-      "best momentum stocks to buy for november 11th",
-      "best value stocks to buy for november 11th",
-      "citizens maintains market outperform on american integrity raises pric",
-      "new strong buy stocks for november 11th",
-      "what american integrity insurance group aii said on its q3 earnings ca"
-     ],
-     "sec_vistos": [
-      "2026-10-02Registro para vender acciones (S-3)"
-     ],
-     "recs_pct_compra": 80.0,
      "proximos_resultados": null,
      "resultados_recientes": null
     }
@@ -2805,94 +2868,6 @@
      "resultados_recientes": null
     }
    },
-   "JAKK": {
-    "nombre": "JAKKS Pacific, Inc.",
-    "sector": "Consumer Cyclical",
-    "grupo": "ideas",
-    "fecha": "2026-11-17",
-    "fecha_anterior": "2026-11-16",
-    "cierre": 35.39,
-    "cambio_pct": -0.65,
-    "cambio_5d_pct": -2.7,
-    "sigma_pct": 2.63,
-    "veces_normal": 0.2,
-    "volumen_rel": 0.9,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "2 titulares nuevos"
-    ],
-    "catalizadores": [
-     "Resultados el 2027-02-17"
-    ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "JAKKS Pacific Inc",
-    "recs_pct_compra": 87.5,
-    "recs_n": 8,
-    "proximos_resultados": "2027-02-17",
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "XLY",
-     "fecha": "2026-11-17",
-     "fecha_anterior": "2026-11-16",
-     "cierre": 117.1,
-     "cambio_pct": -0.89,
-     "cambio_5d_pct": -3.3,
-     "sigma_pct": 1.68,
-     "veces_normal": 0.5,
-     "volumen_rel": 1.0
-    },
-    "titulares": [
-     {
-      "fecha": "2026-11-17",
-      "titulo": "JAKKS Pacific Insider Executes Significant Share Sale",
-      "fuente": "fiscal.ai",
-      "url": "https://www.marketscreener.com/news/jakks-pacific-insider-sold-shares-worth-2-392-771-according-to-a-recent-sec-filing-ce785edcd881f527",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-17",
-      "titulo": "Will Lower Digital Gaming Spend Improve Hasbro's Future Cash Flow?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=919bd2da24ed2f94123d16c97fcdca161a4f9e4f3b7742c83ed08b70b05b62de",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "hasbros 2027 magic pipeline can new sets extend the growth run",
-     "jakks pacific insider executes significant share sale",
-     "jakks pacific secures global master toy license for skydances kpop the",
-     "skydance and jakks pacific strike global master toy agreement for para",
-     "will lower digital gaming spend improve hasbros future cash flow"
-    ],
-    "sec_vistos": [
-     "2026-07-14Fondo grande >5 % (13G)",
-     "2026-07-28Fondo grande >5 % (13G)"
-    ],
-    "anterior": {
-     "fecha": "2026-11-16",
-     "vistos": [
-      "hasbros 2027 magic pipeline can new sets extend the growth run",
-      "jakks pacific secures global master toy license for skydances kpop the",
-      "skydance and jakks pacific strike global master toy agreement for para"
-     ],
-     "sec_vistos": [
-      "2026-07-14Fondo grande >5 % (13G)",
-      "2026-07-28Fondo grande >5 % (13G)"
-     ],
-     "recs_pct_compra": 87.5,
-     "proximos_resultados": "2027-02-17",
-     "resultados_recientes": null
-    }
-   },
    "IBEX": {
     "nombre": "IBEX Limited",
     "sector": "Technology",
@@ -2969,11 +2944,11 @@
     "sector": "materia prima",
     "fecha": "2026-11-17",
     "fecha_anterior": "2026-11-16",
-    "cierre": 3790.8,
-    "cambio_pct": -1.61,
-    "cambio_5d_pct": -5.9,
+    "cierre": 3786.8,
+    "cambio_pct": -1.72,
+    "cambio_5d_pct": -6.0,
     "sigma_pct": 1.55,
-    "veces_normal": 1.0,
+    "veces_normal": 1.1,
     "volumen_rel": 0.3,
     "grande": false,
     "porque": "Movimiento normal.",
@@ -2991,7 +2966,7 @@
     "fecha": "2026-11-18",
     "fecha_anterior": "2026-11-17",
     "cierre": 1.1,
-    "cambio_pct": -0.06,
+    "cambio_pct": -0.07,
     "cambio_5d_pct": -1.6,
     "sigma_pct": 0.35,
     "veces_normal": 0.2,

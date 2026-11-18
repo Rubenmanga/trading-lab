@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-18T04:06:04+00:00",
+ "actualizado": "2026-11-18T04:42:52+00:00",
  "alertas": [
   {
    "ticker": "REPX",
@@ -49,6 +49,13 @@
    "precio": 8.0,
    "seguimiento": true,
    "mensaje": "ORIC (2026-11-17, 8.0 $): señal A: suelo en soporte: vela de giro con volumen con RSI bajo. Ver investigacion/seguimiento/ORIC.md"
+  },
+  {
+   "ticker": "MSFT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 506.24,
+   "seguimiento": true,
+   "mensaje": "MSFT (2026-11-17): resultados: «What It Will Take for Cerebras Stock to Stage a Real Revival After Q3 Earnings Rally» Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [

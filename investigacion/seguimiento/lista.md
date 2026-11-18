@@ -36,10 +36,10 @@ Cierre 506.24 (2026-11-17) · 5 días -5.0 % · lo normal en un día: ±2.27 %.
 - **Qué cambió:** 43 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
+  - 2026-11-18 · [Microsoft Stock Hits Seven-Week Low: Is a Bigger Drop Coming?](https://finnhub.io/api/news?id=8965640b75382e4da1687e0d034a4eee0cf356f1c4a10353907c75c8cac39357)
   - 2026-11-18 · [Amazon.com (AMZN) Set For White House AI National Champion Status](https://finnhub.io/api/news?id=96bc37868cd7e1c1ba8b347d98c49aa0fa5f7e6c8e0d49896cd8ee94ae2604d6)
   - 2026-11-17 · [Microsoft Launches AI Transparency Initiative](https://stockhouse.com/news/newswire/2026/11/17/microsoft-launches-ai-transparency-initiative-with-40-organisations)
   - 2026-11-17 · [Microsoft Commences Ignite 2026 Conference](https://www.globenewswire.com/news-release/2026/11/17/3404380/0/en/microsoft-selects-haivision-video-contribution-ecosystem-and-makito-one-video-transport-platform-to-power-global-live-event-productions.html)
-  - 2026-11-17 · [Microsoft Expands Use of Haivision Live Video Ecosystem](https://www.moomoo.com/news/post/1004882664/microsoft-selects-haivision-video-contribution-ecosystem-and-makito-one-video)
 
 ## RAPP · Rapport Therapeutics — ▼ -4.3 % · volumen 0.3x lo normal
 Cierre 23.76 (2026-11-17) · 5 días -8.5 % · lo normal en un día: ±6.85 %.
@@ -137,17 +137,24 @@ Cierre 4.48 (2026-11-17) · 5 días -8.9 % · lo normal en un día: ±4.58 %.
 
 # Mejores ideas del buscador
 
-## ASC · Ardmore Shipping Corporation — ▼ -4.5 % · volumen 1.1x lo normal
-Cierre 18.02 (2026-11-17) · 5 días +0.7 % · lo normal en un día: ±3.41 %.
-- **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
-- **Qué cambió:** nada nuevo.
-- Analistas que dicen comprar: 86 % de 7.
-
 ## AII · American Integrity Insurance Gr — ▲ +2.4 % · volumen 1.1x lo normal
 Cierre 28.98 (2026-11-17) · 5 días +3.0 % · lo normal en un día: ±2.69 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
 - Analistas que dicen comprar: 80 % de 10.
+
+## LPG · Dorian LPG Ltd. — ▼ -3.2 % · volumen 0.7x lo normal
+Cierre 45.3 (2026-11-17) · 5 días -2.5 % · lo normal en un día: ±2.82 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** nada nuevo.
+- **Próximos catalizadores:** Resultados el 2027-02-03.
+- Analistas que dicen comprar: 73 % de 11.
+
+## ASC · Ardmore Shipping Corporation — ▼ -4.5 % · volumen 1.1x lo normal
+Cierre 18.02 (2026-11-17) · 5 días +0.7 % · lo normal en un día: ±3.41 %.
+- **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
+- **Qué cambió:** nada nuevo.
+- Analistas que dicen comprar: 86 % de 7.
 
 ## OPRT · Oportun Financial Corporation — ▲ +0.3 % · volumen 0.9x lo normal
 Cierre 11.47 (2026-11-17) · 5 días -1.5 % · lo normal en un día: ±7.09 %.
@@ -170,15 +177,6 @@ Cierre 8.5 (2026-11-17) · 5 días -2.0 % · lo normal en un día: ±10.98 %.
 - **Próximos catalizadores:** Resultados el 2027-03-01 (tras el cierre).
 - Analistas que dicen comprar: 0 % de 8.
 
-## JAKK · JAKKS Pacific, Inc. — ▼ -0.7 % · volumen 0.9x lo normal
-Cierre 35.39 (2026-11-17) · 5 días -2.7 % · lo normal en un día: ±2.63 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 2 titulares nuevos.
-- **Próximos catalizadores:** Resultados el 2027-02-17.
-- Analistas que dicen comprar: 88 % de 8.
-  - 2026-11-17 · [JAKKS Pacific Insider Executes Significant Share Sale](https://www.marketscreener.com/news/jakks-pacific-insider-sold-shares-worth-2-392-771-according-to-a-recent-sec-filing-ce785edcd881f527)
-  - 2026-11-17 · [Will Lower Digital Gaming Spend Improve Hasbro's Future Cash Flow?](https://finnhub.io/api/news?id=919bd2da24ed2f94123d16c97fcdca161a4f9e4f3b7742c83ed08b70b05b62de)
-
 ## IBEX · IBEX Limited — ▼ -1.6 % · volumen 0.9x lo normal
 Cierre 55.5 (2026-11-17) · 5 días +6.3 % · lo normal en un día: ±3.88 %.
 - **Por qué:** Movimiento normal para esta acción.
@@ -188,8 +186,8 @@ Cierre 55.5 (2026-11-17) · 5 días +6.3 % · lo normal en un día: ±3.88 %.
 
 # Materias primas
 
-## XAU · Oro — ▼ -1.6 % · volumen 0.3x lo normal
-Cierre 3790.8 (2026-11-17) · 5 días -5.9 % · lo normal en un día: ±1.55 %.
+## XAU · Oro — ▼ -1.7 % · volumen 0.3x lo normal
+Cierre 3786.8 (2026-11-17) · 5 días -6.0 % · lo normal en un día: ±1.55 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 

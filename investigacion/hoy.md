@@ -1,6 +1,6 @@
 # Carpeta del día · 18/11/2026
 
-_Resumen automático, sin IA. Precios y avisos del 2026-11-18 04:06 UTC. Sigues 16 acciones._
+_Resumen automático, sin IA. Precios y avisos del 2026-11-18 04:42 UTC. Sigues 16 acciones._
 
 ## 🔔 Avisos de hoy
 - **ZONA DE ENTRADA** · REPX a 42.75 $ está en su zona de entrada (≤ 46.0), potencial 36% hasta objetivo
@@ -9,7 +9,7 @@ _Resumen automático, sin IA. Precios y avisos del 2026-11-18 04:06 UTC. Sigues 
 - **TESIS EN PELIGRO** · AMPX a 6.77 $ ha caído bajo el stop de tesis (6.8). Revisar.
 - **CATALIZADOR CERCA** · SSII: 'Resultados 3.er trim. (10-Q con retraso) y después decisión FDA 510(k) fin 1T 2027' el 2026-11-23 (en 5 días)
 - **TESIS EN PELIGRO** · TE a 1.33 $ ha caído bajo el stop de tesis (1.35). Revisar.
-- … y 2 más
+- … y 3 más
 
 ## 📰 Hechos nuevos en tus expedientes (últimos 4 días)
 - 17/11 **RCAT** · Cae 31.7 % en un día (4.1 veces lo normal, volumen x5.0 su media) (1 día: -31.73 %)
@@ -32,6 +32,6 @@ _Resumen automático, sin IA. Precios y avisos del 2026-11-18 04:06 UTC. Sigues 
 - 23/11 **SSII** · Resultados 3.er trim. (10-Q con retraso) y después decisión FDA 510(k) fin 1T 2027
 
 ## 🆕 Nuevas en el top 10 del ranking
-- #4 **LPG** · nota 69.6 · Calidad barata
+- #5 **LPG** · nota 69.8 · Calidad barata
 
 _Detector de inflexión x3-x4: llegará en el Paso 8._
