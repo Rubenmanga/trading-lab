@@ -14,20 +14,21 @@
 ## ALT · Altimmune — ▼ -1.9 % · volumen 1.1x lo normal
 Cierre 1.53 (2026-11-17) · 5 días -21.1 % · lo normal en un día: ±5.02 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-03 (tras el cierre); Ensayo F2 «RESTORE TRIAL: Study of the Efficacy and Safety of Pemvidutide in the Treatment »: resultado principal previsto 2027-09-30.
 - Analistas que dicen comprar: 87 % de 15.
+  - 2026-11-16 · [Why Did Viking Therapeutics Stock Jump?](https://finnhub.io/api/news?id=a52318d6983e7187f7ef789db44ace6ef1fd02972cc9b6518a3b05c1b5b17f1e)
 
-## RCAT · Red Cat Holdings — ▼ -31.7 % · volumen 4.9x lo normal ⚠️
+## RCAT · Red Cat Holdings — ▼ -31.7 % · volumen 5.0x lo normal ⚠️
 Cierre 2.41 (2026-11-17) · 5 días -42.8 % · lo normal en un día: ±7.75 %.
 - **Por qué:** Causa probable: «Red Cat Stock Tanks After Q3 Earnings Miss Estimates, Revenue Guidance Withdrawn» (resultados, 2026-11-16).
-- **Qué cambió:** 14 titulares nuevos.
+- **Qué cambió:** 28 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-03-17.
 - Analistas que dicen comprar: 86 % de 14.
   - 2026-11-17 · [Red Cat Holdings Reports Q3 2026 Financial Results, Withdraws Full-Year Revenue Target, and Announces Acquisition of Steyr Motors AG](https://www.globenewswire.com/news-release/2026/11/16/3404120/0/en/red-cat-reports-q3-2026-revenue-growth-of-22-y-y-ytd-q3-2026-revenue-growth-of-227-y-y-announced-public-purchase-to-acquire-steyr-motors-ag-and-advancement-to-dow-swarm-forge-cruci.html) [resultados]
-  - 2026-11-17 · [Premarket Movers: Low-Priced Stocks Swing Before Nov. 17, 2026 Open](https://finnhub.io/api/news?id=5fccf53ff247a766c46257866eccd847cfcec4136a3d3302ef2dfc564ebc025b)
-  - 2026-11-17 · [United Natural Foods To Rally Around 24%? Here Are 10 Top Analyst Forecasts For Tuesday](https://finnhub.io/api/news?id=f63c863f0988cf46b0d36f646a713329f52abf49ef0593a23eac20157c833d86)
-  - 2026-11-17 · [Stock Market Today: Dow Jones, S&P 500, Nasdaq 100 Futures Trade Mixed Ahead of Nvidia’s Q3 Earnings— CBRS, AMZN, RCAT in Focus (UPDATED)](https://finnhub.io/api/news?id=d26de029fe02a97ea745094b67fc6ff4cef2bd1318e3b7ccd087f1e6746e6a47) [resultados]
+  - 2026-11-17 · [Red Cat (RCAT) Stock Price Sinks As Q3 Results Expose Heavy Losses](https://finnhub.io/api/news?id=5eb4a36a513de05f822d0260150cdd1867513ece4c85c27abc4110b1d85c7412) [resultados]
+  - 2026-11-17 · [US Session Top Movers: Gainers and Decliners](https://finnhub.io/api/news?id=cd8002821b58c16e8eae9d9066685c39ffdfccbf30a60a3a180e143ff00189c9)
+  - 2026-11-17 · [Can Draganfly's Canadian Defense Selection Drive Its Growth Prospects?](https://finnhub.io/api/news?id=58750215b5a3bd8ad7e866fa7e5fc869c41fad8be9e2cba2996032e96a23d967)
 
 ## MSFT · Microsoft — ▼ -2.3 % · volumen 1.0x lo normal ⚠️
 Cierre 506.24 (2026-11-17) · 5 días -5.0 % · lo normal en un día: ±2.27 %.
@@ -35,10 +36,10 @@ Cierre 506.24 (2026-11-17) · 5 días -5.0 % · lo normal en un día: ±2.27 %.
 - **Qué cambió:** 43 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
+  - 2026-11-18 · [Amazon.com (AMZN) Set For White House AI National Champion Status](https://finnhub.io/api/news?id=96bc37868cd7e1c1ba8b347d98c49aa0fa5f7e6c8e0d49896cd8ee94ae2604d6)
   - 2026-11-17 · [Microsoft Launches AI Transparency Initiative](https://stockhouse.com/news/newswire/2026/11/17/microsoft-launches-ai-transparency-initiative-with-40-organisations)
   - 2026-11-17 · [Microsoft Commences Ignite 2026 Conference](https://www.globenewswire.com/news-release/2026/11/17/3404380/0/en/microsoft-selects-haivision-video-contribution-ecosystem-and-makito-one-video-transport-platform-to-power-global-live-event-productions.html)
   - 2026-11-17 · [Microsoft Expands Use of Haivision Live Video Ecosystem](https://www.moomoo.com/news/post/1004882664/microsoft-selects-haivision-video-contribution-ecosystem-and-makito-one-video)
-  - 2026-11-17 · [Nvidia’s Q3 earnings show its advantage as the bank of the AI boom](https://finnhub.io/api/news?id=52105c2cd32f02dd910d74eec8cf577b21b0ed4a49a4335bedd27c326dd029ce) [resultados]
 
 ## RAPP · Rapport Therapeutics — ▼ -4.3 % · volumen 0.3x lo normal
 Cierre 23.76 (2026-11-17) · 5 días -8.5 % · lo normal en un día: ±6.85 %.
@@ -65,17 +66,19 @@ Cierre 49.74 (2026-11-17) · 5 días -16.5 % · lo normal en un día: ±10.41 %.
 ## REPX · Riley Exploration Permian — ▼ -1.9 % · volumen 0.5x lo normal
 Cierre 42.75 (2026-11-17) · 5 días +3.6 % · lo normal en un día: ±4.18 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-02 (tras el cierre).
 - Analistas que dicen comprar: 91 % de 11.
+  - 2026-11-17 · [3 Reasons Growth Investors Will Love Riley Exploration Permian (REPX)](https://finnhub.io/api/news?id=42ad5b2a2ff254016126f0c13256941176c86882485172b0c668b0c7990826a4)
 
 ## PGY · Pagaya Technologies — ▼ -3.8 % · volumen 0.8x lo normal
 Cierre 15.42 (2026-11-17) · 5 días -10.4 % · lo normal en un día: ±4.38 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 1 titular nuevo.
+- **Qué cambió:** 2 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-02-03 (tras el cierre).
 - Analistas que dicen comprar: 94 % de 16.
   - 2026-11-17 · [Splash Financial Partners With Pagaya to Expand Credit Access](https://www.prnewswire.com/news-releases/splash-financial-partners-with-pagaya-to-expand-access-to-personal-loans-302941545.html)
+  - 2026-11-17 · [Splash Financial Partners with Pagaya to Expand Access to Personal Loans](https://finnhub.io/api/news?id=788245a29d3de7917cbabbb720b90648ccddb66bbd543f36b69f4030a102bb8d)
 
 ## DCTH · Delcath Systems — ▼ -2.5 % · volumen 0.7x lo normal
 Cierre 19.37 (2026-11-17) · 5 días -3.6 % · lo normal en un día: ±8.27 %.
@@ -170,10 +173,11 @@ Cierre 8.5 (2026-11-17) · 5 días -2.0 % · lo normal en un día: ±10.98 %.
 ## JAKK · JAKKS Pacific, Inc. — ▼ -0.7 % · volumen 0.9x lo normal
 Cierre 35.39 (2026-11-17) · 5 días -2.7 % · lo normal en un día: ±2.63 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 1 titular nuevo.
+- **Qué cambió:** 2 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-02-17.
 - Analistas que dicen comprar: 88 % de 8.
   - 2026-11-17 · [JAKKS Pacific Insider Executes Significant Share Sale](https://www.marketscreener.com/news/jakks-pacific-insider-sold-shares-worth-2-392-771-according-to-a-recent-sec-filing-ce785edcd881f527)
+  - 2026-11-17 · [Will Lower Digital Gaming Spend Improve Hasbro's Future Cash Flow?](https://finnhub.io/api/news?id=919bd2da24ed2f94123d16c97fcdca161a4f9e4f3b7742c83ed08b70b05b62de)
 
 ## IBEX · IBEX Limited — ▼ -1.6 % · volumen 0.9x lo normal
 Cierre 55.5 (2026-11-17) · 5 días +6.3 % · lo normal en un día: ±3.88 %.
@@ -184,13 +188,13 @@ Cierre 55.5 (2026-11-17) · 5 días +6.3 % · lo normal en un día: ±3.88 %.
 
 # Materias primas
 
-## XAU · Oro — ▼ -0.0 % · volumen 0.9x lo normal
-Cierre 3851.9 (2026-11-17) · 5 días -4.4 % · lo normal en un día: ±1.55 %.
+## XAU · Oro — ▼ -1.4 % · volumen 0.2x lo normal
+Cierre 3801.1 (2026-11-17) · 5 días -5.7 % · lo normal en un día: ±1.55 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
-## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.2 %
-Cierre 1.1 (2026-11-17) · 5 días -2.0 % · lo normal en un día: ±0.35 %.
+## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.0 %
+Cierre 1.1 (2026-11-18) · 5 días -1.6 % · lo normal en un día: ±0.35 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
