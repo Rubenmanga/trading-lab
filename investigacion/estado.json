@@ -51,11 +51,46 @@
    "mensaje": "ORIC (2026-11-17, 8.0 $): señal A: suelo en soporte: vela de giro con volumen con RSI bajo. Ver investigacion/seguimiento/ORIC.md"
   },
   {
+   "ticker": "ALT",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 1.39,
+   "seguimiento": true,
+   "mensaje": "ALT (2026-11-18): -9.2 % hoy (1.9x lo normal), volumen 1.1x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "RCAT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 2.25,
+   "seguimiento": true,
+   "mensaje": "RCAT (2026-11-18): resultados: «Is Red Cat Stock a Buy After Its Nov. 16 Earnings Report?» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "RCAT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 2.25,
+   "seguimiento": true,
+   "mensaje": "RCAT (2026-11-18): resultados: «These Analysts Slash Their Forecasts On Red Cat After Weak Q3 Results» Ver pestaña Seguimiento del panel."
+  },
+  {
    "ticker": "MSFT",
    "tipo": "NOTICIA IMPORTANTE",
-   "precio": 506.24,
+   "precio": 508.29,
    "seguimiento": true,
-   "mensaje": "MSFT (2026-11-17): resultados: «What It Will Take for Cerebras Stock to Stage a Real Revival After Q3 Earnings Rally» Ver pestaña Seguimiento del panel."
+   "mensaje": "MSFT (2026-11-18): FDA / regulador: «Ema Launches AI Employees for HR, IT, and Finance on Microsoft Marketplace» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "SSII",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 1.31,
+   "seguimiento": true,
+   "mensaje": "SSII (2026-11-18): resultados: «SS Innovations International Reports Third Quarter 2026 Financial Results» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "XAU",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 3727.8,
+   "seguimiento": true,
+   "mensaje": "XAU (2026-11-18): -3.5 % hoy Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [
