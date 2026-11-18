@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-17",
+ "actualizado": "2026-11-18",
  "listones": {
   "ops_minimas": 100,
   "ops_fiables": 200,
@@ -1921,29 +1921,29 @@
     "vs_azar": 0.222
    },
    "sombra": {
-    "n": 3,
-    "R_medio": -0.744,
+    "n": 7,
+    "R_medio": 0.013,
     "ic95": [
-     -1.314,
-     -0.175
+     -0.668,
+     0.694
     ],
-    "R_alt_medio": -0.744,
-    "aciertos_pct": 0.0,
-    "pf": 0.0,
-    "R_total": -2.2,
+    "R_alt_medio": 0.013,
+    "aciertos_pct": 42.9,
+    "pf": 1.04,
+    "R_total": 0.1,
     "peor_caida_R": -1.2,
-    "peor_racha": 3,
+    "peor_racha": 4,
     "largos": 0,
-    "cortos": 3,
-    "dias": 1,
-    "ops_dia": 3.0,
+    "cortos": 7,
+    "dias": 2,
+    "ops_dia": 3.5,
     "por_anio": {
      "2026": {
-      "n": 3,
-      "R": -0.744
+      "n": 7,
+      "R": 0.013
      }
     },
-    "anios_positivos": 0,
+    "anios_positivos": 1,
     "anios": 1,
     "semaforo": "amarillo"
    },
@@ -2477,11 +2477,35 @@
     {
      "f": "2026-11-16",
      "R": -2.23
+    },
+    {
+     "f": "2026-11-17",
+     "R": 0.09
     }
    ],
    "sombra_filtrada": {
-    "n": 0,
-    "semaforo": "gris"
+    "n": 1,
+    "R_medio": 0.745,
+    "ic95": null,
+    "R_alt_medio": 0.745,
+    "aciertos_pct": 100.0,
+    "pf": null,
+    "R_total": 0.7,
+    "peor_caida_R": 0.0,
+    "peor_racha": 0,
+    "largos": 0,
+    "cortos": 1,
+    "dias": 1,
+    "ops_dia": 1.0,
+    "por_anio": {
+     "2026": {
+      "n": 1,
+      "R": 0.745
+     }
+    },
+    "anios_positivos": 1,
+    "anios": 1,
+    "semaforo": "amarillo"
    },
    "filtro_aplica": false,
    "pasado_como_bot": {
@@ -3776,7 +3800,7 @@
   "2016-01-19",
   "2026-11-13"
  ],
- "dias_sombra": 1,
+ "dias_sombra": 2,
  "ultimas_sombra": [
   {
    "fecha": "2026-11-16",
@@ -3819,6 +3843,62 @@
    "R": -1.039,
    "ret_pct": -15.59,
    "hueco": 0.3276
+  },
+  {
+   "fecha": "2026-11-17",
+   "estrategia": "corto_hueco",
+   "simbolo": "AYTU",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 2.6587,
+   "salida": 2.6599,
+   "motivo": "cierre forzado",
+   "hora_salida": "15:45:00",
+   "R": -0.021,
+   "ret_pct": -0.31,
+   "hueco": 0.4615
+  },
+  {
+   "fecha": "2026-11-17",
+   "estrategia": "corto_hueco",
+   "simbolo": "GP",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 3.1884,
+   "salida": 2.45,
+   "motivo": "cierre forzado",
+   "hora_salida": "15:45:00",
+   "R": 1.528,
+   "ret_pct": 22.927,
+   "hueco": 0.922
+  },
+  {
+   "fecha": "2026-11-17",
+   "estrategia": "corto_hueco",
+   "simbolo": "SLS",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 21.4393,
+   "salida": 19.0345,
+   "motivo": "cierre forzado",
+   "hora_salida": "15:45:00",
+   "R": 0.745,
+   "ret_pct": 11.178,
+   "hueco": 2.2269
+  },
+  {
+   "fecha": "2026-11-17",
+   "estrategia": "corto_hueco",
+   "simbolo": "TCX",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 14.7026,
+   "salida": 14.5373,
+   "motivo": "cierre forzado",
+   "hora_salida": "15:46:00",
+   "R": 0.072,
+   "ret_pct": 1.077,
+   "hueco": 0.2699
   }
  ]
 }
