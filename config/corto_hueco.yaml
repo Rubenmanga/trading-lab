@@ -24,7 +24,7 @@ apalancamiento: 1            # sin apalancamiento
 importe_min_usd: 50          # eToro no acepta órdenes muy pequeñas
 
 # Horario (hora de Nueva York; en España suma 6 h)
-hora_ventana_desde: "09:00"  # si el programa arranca antes, sale (lo vuelve a lanzar GitHub más tarde)
+hora_ventana_desde: "08:30"  # si el programa arranca antes, sale (lo vuelve a lanzar GitHub más tarde)
 hora_escaneo: "09:34:00"
 hora_entrada: "09:35:00"
 hora_limite_entrada: "09:50" # si por retrasos llega tarde, no abre nada ese día
