@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-18T02:55:37+00:00",
+ "actualizado": "2026-11-18T04:06:05+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -14,32 +14,40 @@
     "tamano_max": "2 %",
     "informe": "investigacion/analisis/ORIC-2026-11-14.md"
    },
-   "fecha": "2026-11-16",
-   "cierre": 7.52,
-   "cambio_dia_pct": -4.3,
-   "ema9": 8.58,
-   "ma50": 11.45,
-   "ma200": 10.98,
-   "rsi": 29.7,
-   "volumen_rel": 0.6,
+   "fecha": "2026-11-17",
+   "cierre": 8.0,
+   "cambio_dia_pct": 6.4,
+   "ema9": 8.47,
+   "ma50": 11.36,
+   "ma200": 10.97,
+   "rsi": 34.9,
+   "volumen_rel": 1.01,
    "minimo_52s": 7.23,
    "maximo_52s": 14.68,
    "divergencia": false,
    "toca_soporte": true,
-   "vela_giro": false,
-   "estado": "ATENTO",
-   "senales": [],
-   "avisos": [],
+   "vela_giro": true,
+   "estado": "SEÑAL DE ENTRADA",
+   "senales": [
+    {
+     "tipo": "A",
+     "texto": "suelo en soporte: vela de giro con volumen con RSI bajo"
+    }
+   ],
+   "avisos": [
+    {
+     "tipo": "SEÑAL DE ENTRADA",
+     "texto": "señal A: suelo en soporte: vela de giro con volumen con RSI bajo"
+    }
+   ],
    "pistas": [
     "sigue por debajo de la EMA 9 (la caída no ha frenado)",
-    "está en la zona de soporte 7.2-7.5 $",
-    "baja con poco volumen (la venta se está secando)",
-    "RSI en sobreventa (< 30)"
+    "está en la zona de soporte 7.2-7.5 $"
    ],
-   "distancia_entrada_pct": -11.5,
-   "distancia_stop_pct": 15.7,
-   "distancia_confirmacion_pct": -19.1,
-   "potencial_pct": 72.9,
+   "distancia_entrada_pct": -5.9,
+   "distancia_stop_pct": 23.1,
+   "distancia_confirmacion_pct": -14.0,
+   "potencial_pct": 62.5,
    "proximos_resultados": null,
    "historial": [
     {
@@ -53,12 +61,21 @@
     },
     {
      "fecha": "2026-11-16",
-     "cierre": 7.52,
-     "rsi": 29.7,
-     "ema9": 8.58,
-     "ma50": 11.45,
-     "volumen_rel": 0.6,
+     "cierre": "7.52",
+     "rsi": "29.7",
+     "ema9": "8.58",
+     "ma50": "11.45",
+     "volumen_rel": "0.6",
      "estado": "ATENTO"
+    },
+    {
+     "fecha": "2026-11-17",
+     "cierre": 8.0,
+     "rsi": 34.9,
+     "ema9": 8.47,
+     "ma50": 11.36,
+     "volumen_rel": 1.01,
+     "estado": "SEÑAL DE ENTRADA"
     }
    ]
   }
@@ -291,12 +308,7 @@
       "texto": "resultados: «Red Cat (RCAT) Stock Price Sinks As Q3 Results Expose Heavy Losses»"
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "NOTICIA IMPORTANTE",
-      "texto": "resultados: «Red Cat (RCAT) Stock Price Sinks As Q3 Results Expose Heavy Losses»"
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "MOVIMIENTO GRANDE|-31.7 % hoy (4.1x lo normal), volumen 4.9x. Causa ",
      "MOVIMIENTO GRANDE|-31.7 % hoy (4.1x lo normal), volumen 5.0x. Causa ",
@@ -2957,12 +2969,12 @@
     "sector": "materia prima",
     "fecha": "2026-11-17",
     "fecha_anterior": "2026-11-16",
-    "cierre": 3801.1,
-    "cambio_pct": -1.35,
-    "cambio_5d_pct": -5.7,
+    "cierre": 3790.8,
+    "cambio_pct": -1.61,
+    "cambio_5d_pct": -5.9,
     "sigma_pct": 1.55,
-    "veces_normal": 0.9,
-    "volumen_rel": 0.2,
+    "veces_normal": 1.0,
+    "volumen_rel": 0.3,
     "grande": false,
     "porque": "Movimiento normal.",
     "resumen": "Movimiento normal.",
@@ -2979,10 +2991,10 @@
     "fecha": "2026-11-18",
     "fecha_anterior": "2026-11-17",
     "cierre": 1.1,
-    "cambio_pct": -0.03,
+    "cambio_pct": -0.06,
     "cambio_5d_pct": -1.6,
     "sigma_pct": 0.35,
-    "veces_normal": 0.1,
+    "veces_normal": 0.2,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",
