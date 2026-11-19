@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-19T04:03:35+00:00",
+ "actualizado": "2026-11-19T04:29:50+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -614,6 +614,33 @@
     "titulares": [
      {
       "fecha": "2026-11-19",
+      "titulo": "Costco sees surge in panic buying after tech outages, report says",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=0a799c1d92dfafbb1ed5ea29b68f6485997ccc9b3c162c41356b2c2ccc032527",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-19",
+      "titulo": "Coatue Builds $1.8 Billion Salesforce Stake, Its Biggest New Bet, as the Stock Sinks 17%",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=efc8fcb7612d69170aa037335bfc738f7cd9ef45d0cad9a0bd9aac0d6b4e6b1c",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-19",
+      "titulo": "What NICE (TASE:NICE)'s Microsoft AI Tie Up Means For Shareholders",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=d7822f86c4fe11d805fec72f8a37ee3f950cd238c75d67c4dc785c83245f6deb",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-19",
       "titulo": "Microsoft CEO Satya Nadella explains why he asked 60K employees to quit",
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=f58dfe94d051cb584e139c07802e8ca67ae02df6fc766dbbc10e0d145f9a4131",
@@ -727,35 +754,6 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-18",
-      "titulo": "Billionaire Bill Ackman Sold 2 Million Shares of Microsoft Stock. But Here's Why He Says He's Still Bullish",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=3bd04d6db63407cccc770274b77fde394dba230e41c15bf3efa2e7c29ca87fbf",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-18",
-      "titulo": "Anthropic prices IPO at $83 in historic $1 trillion offering",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=46255629e6c70c1535faa32f3c0791693c4a7e2834296b00ec3abb9c96043d9f",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-18",
-      "titulo": "SCD: Dividend-Growth Stocks Help This Fund Provide Investors With Real Income Growth (Upgrade)",
-      "fuente": "SeekingAlpha",
-      "url": "https://finnhub.io/api/news?id=eeb9e42c9990579c3ad28b3d6a538025f4bdce621e844bfdb1a821c7fe21aafa",
-      "causas": [
-       "analistas"
-      ],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
@@ -784,7 +782,7 @@
      "anthropic prices ipo at 83 a share",
      "anthropic prices ipo at 83 in historic 1 trillion offering",
      "anthropic proving the ai monetization case fear is opportunity",
-     "anthropic valuation is 85 times next years sales multiples more like m",
+     "anthropic to debut amid security worries and spacex to finance gpu ren",
      "anthropics 813b haul makes it the largest tech ipo ever",
      "anthropics record ipo faces some big questions",
      "arctera announces model context protocol connectivity for microsoft 36",
@@ -809,10 +807,12 @@
      "charles schwab resolves brief web issue following wider bank outages",
      "chase bank of america other banks hit by online service outages",
      "class action lawsuit filed against microsoft following global 365 outa",
+     "coatue builds 18 billion salesforce stake its biggest new bet as the s",
      "cohesity expands data resilience capabilities for microsoft ecosystem",
      "consumer tech nov 913 jensen resigns from nvidia amid affair controver",
      "coreweave jumped 20 and pulled oracle higher is it time to sell or loa",
      "costco generators sell out as tech outages spark panic buying",
+     "costco sees surge in panic buying after tech outages report says",
      "could nvidia stock fall 50 follow the cash",
      "credo technology group vs marvell technology which technology stock is",
      "customer reports of bank app outages surge",
@@ -838,7 +838,6 @@
      "founderz ai wins 2026 microsoft partner of the year award in training",
      "harvard cut nvidia by a third and bought amd",
      "has microsoft stock become a different bet",
-     "how to find ai winners beyond nvidia  the mag7",
      "how to make the most of microsofts triedandtrue workflows",
      "ibm is down 21 this year what will it take to get ibm stock back to 25",
      "insight enterprises inc nsit q3 2026 earnings call highlights aidriven",
@@ -869,7 +868,6 @@
      "microsoft expands use of haivision live video ecosystem",
      "microsoft experiences widespread global service outage",
      "microsoft ignite starts nov 17 will microsoft update its paid copilot",
-     "microsoft intel deepen azure partnership amid increasing ai cloud dema",
      "microsoft is the only tech giant not highly reliant on advertising as",
      "microsoft just relived the crowdstrike nightmare but theres one crucia",
      "microsoft launches ai transparency initiative",
@@ -934,7 +932,6 @@
      "splashtop joins microsoft virus initiative",
      "stackgen launches shipyard on microsoft marketplace",
      "temporal cloud enters public preview on microsoft azure",
-     "the nasdaq is in a correction and traders are pricing in a december fe",
      "this critical energy bill is a key priority for the lame duck gop cong",
      "thread ai joins microsoft for startups pegasus program",
      "thread ai joins the microsoft for startups pegasus program to deliver",
@@ -948,6 +945,7 @@
      "want to play defense with your stock portfolio here are pros picks",
      "we are not immune nebius is still up 38 in 2026 take profits or buy mo",
      "what it will take for cerebras stock to stage a real revival after q3",
+     "what nice tasenices microsoft ai tie up means for shareholders",
      "whats dragging down the sp 500 apple in focus",
      "who really pays for nvidias 12 trillion",
      "why anthropic says cybersecurity is one of its most important opportun",
@@ -2507,194 +2505,6 @@
      "resultados_recientes": null
     }
    },
-   "ASC": {
-    "nombre": "Ardmore Shipping Corporation",
-    "sector": "Industrials",
-    "grupo": "ideas",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 17.57,
-    "cambio_pct": -2.5,
-    "cambio_5d_pct": -4.3,
-    "sigma_pct": 3.53,
-    "veces_normal": 0.7,
-    "volumen_rel": 1.2,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "2 titulares nuevos"
-    ],
-    "catalizadores": [],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "Ardmore Shipping Corp",
-    "recs_pct_compra": 85.7,
-    "recs_n": 7,
-    "proximos_resultados": null,
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "XLI",
-     "fecha": "2026-11-18",
-     "fecha_anterior": "2026-11-17",
-     "cierre": 164.66,
-     "cambio_pct": -0.05,
-     "cambio_5d_pct": -3.7,
-     "sigma_pct": 1.6,
-     "veces_normal": 0.0,
-     "volumen_rel": 1.0
-    },
-    "titulares": [
-     {
-      "fecha": "2026-11-18",
-      "titulo": "UBS Adjusts ASOS Price Target Following Capital Structure Improvements",
-      "fuente": "fiscal.ai",
-      "url": "https://www.finanzen.ch/analyse/asos-neutral-1121841",
-      "causas": [
-       "analistas"
-      ],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-18",
-      "titulo": "ASOS plc Completes Repurchase of £90m in Convertible Bonds",
-      "fuente": "fiscal.ai",
-      "url": "https://www.investegate.co.uk/announcement/rns/asos--asc/settlement-of-convertible-bond-repurchase-/9880400",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-16",
-      "titulo": "Frasers Group Reports Change in Voting Rights in ASOS plc",
-      "fuente": "fiscal.ai",
-      "url": "https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9877846",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "ASOS PLC Announces Repurchase of £90 Million of 2028 Convertible Bonds",
-      "fuente": "fiscal.ai",
-      "url": "https://www.tradegatebsx.com/finanz-nachrichten-detail.php?id=20261113007932",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "Peel Hunt Upgrades ASOS to Buy Rating",
-      "fuente": "fiscal.ai",
-      "url": "https://www.marketscreener.com/news/peel-hunt-upgrades-asos-to-buy-rating-boosts-pt-ce785ed9de8ef52c",
-      "causas": [
-       "analistas"
-      ],
-      "nueva": false,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "asos plc announces repurchase of 90 million of 2028 convertible bonds",
-     "asos plc completes repurchase of 90m in convertible bonds",
-     "energy shippers report their quarters amid ongoing tightness in the gl",
-     "frasers group reports change in voting rights in asos plc",
-     "intesa sanpaolo lowers ascopiave target price",
-     "investec upgrades asos to buy rating",
-     "peel hunt maintains buy recommendation for asos plc",
-     "peel hunt upgrades asos to buy rating",
-     "ubs adjusts asos price target following capital structure improvements"
-    ],
-    "sec_vistos": [
-     "2026-07-27Fondo grande >5 % (13G)"
-    ],
-    "anterior": {
-     "fecha": "2026-11-17",
-     "vistos": [
-      "asos plc announces repurchase of 90 million of 2028 convertible bonds",
-      "energy shippers report their quarters amid ongoing tightness in the gl",
-      "frasers group reports change in voting rights in asos plc",
-      "intesa sanpaolo lowers ascopiave target price",
-      "investec upgrades asos to buy rating",
-      "peel hunt maintains buy recommendation for asos plc",
-      "peel hunt upgrades asos to buy rating"
-     ],
-     "sec_vistos": [
-      "2026-07-27Fondo grande >5 % (13G)"
-     ],
-     "recs_pct_compra": 85.7,
-     "proximos_resultados": null,
-     "resultados_recientes": null
-    }
-   },
-   "LPG": {
-    "nombre": "Dorian LPG Ltd.",
-    "sector": "Energy",
-    "grupo": "ideas",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 45.09,
-    "cambio_pct": -0.46,
-    "cambio_5d_pct": -4.9,
-    "sigma_pct": 2.88,
-    "veces_normal": 0.2,
-    "volumen_rel": 1.3,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "1 titular nuevo"
-    ],
-    "catalizadores": [
-     "Resultados el 2027-02-03"
-    ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "Dorian LPG Ltd.",
-    "recs_pct_compra": 72.7,
-    "recs_n": 11,
-    "proximos_resultados": "2027-02-03",
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "XLE",
-     "fecha": "2026-11-18",
-     "fecha_anterior": "2026-11-17",
-     "cierre": 61.29,
-     "cambio_pct": -3.27,
-     "cambio_5d_pct": -3.3,
-     "sigma_pct": 1.91,
-     "veces_normal": 1.7,
-     "volumen_rel": 1.5
-    },
-    "titulares": [
-     {
-      "fecha": "2026-11-17",
-      "titulo": "10 Energy Stocks Moving In Tuesday's After-Market Session",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=5a62411834610795150e7ebf5e3a9a8c3ee2a2081787c1b816bbbce3ce8a941a",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "10 energy stocks moving in tuesdays aftermarket session"
-    ],
-    "sec_vistos": [],
-    "anterior": {
-     "fecha": "2026-11-17",
-     "vistos": [],
-     "sec_vistos": [],
-     "recs_pct_compra": 72.7,
-     "proximos_resultados": "2027-02-03",
-     "resultados_recientes": null
-    }
-   },
    "OPRT": {
     "nombre": "Oportun Financial Corporation",
     "sector": "Financial Services",
@@ -2862,6 +2672,272 @@
      "resultados_recientes": null
     }
    },
+   "ASC": {
+    "nombre": "Ardmore Shipping Corporation",
+    "sector": "Industrials",
+    "grupo": "ideas",
+    "fecha": "2026-11-18",
+    "fecha_anterior": "2026-11-17",
+    "cierre": 17.57,
+    "cambio_pct": -2.5,
+    "cambio_5d_pct": -4.3,
+    "sigma_pct": 3.53,
+    "veces_normal": 0.7,
+    "volumen_rel": 1.2,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "2 titulares nuevos"
+    ],
+    "catalizadores": [],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "Ardmore Shipping Corp",
+    "recs_pct_compra": 85.7,
+    "recs_n": 7,
+    "proximos_resultados": null,
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLI",
+     "fecha": "2026-11-18",
+     "fecha_anterior": "2026-11-17",
+     "cierre": 164.66,
+     "cambio_pct": -0.05,
+     "cambio_5d_pct": -3.7,
+     "sigma_pct": 1.6,
+     "veces_normal": 0.0,
+     "volumen_rel": 1.0
+    },
+    "titulares": [
+     {
+      "fecha": "2026-11-18",
+      "titulo": "UBS Adjusts ASOS Price Target Following Capital Structure Improvements",
+      "fuente": "fiscal.ai",
+      "url": "https://www.finanzen.ch/analyse/asos-neutral-1121841",
+      "causas": [
+       "analistas"
+      ],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-18",
+      "titulo": "ASOS plc Completes Repurchase of £90m in Convertible Bonds",
+      "fuente": "fiscal.ai",
+      "url": "https://www.investegate.co.uk/announcement/rns/asos--asc/settlement-of-convertible-bond-repurchase-/9880400",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-16",
+      "titulo": "Frasers Group Reports Change in Voting Rights in ASOS plc",
+      "fuente": "fiscal.ai",
+      "url": "https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9877846",
+      "causas": [],
+      "nueva": false,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-14",
+      "titulo": "ASOS PLC Announces Repurchase of £90 Million of 2028 Convertible Bonds",
+      "fuente": "fiscal.ai",
+      "url": "https://www.tradegatebsx.com/finanz-nachrichten-detail.php?id=20261113007932",
+      "causas": [],
+      "nueva": false,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-14",
+      "titulo": "Peel Hunt Upgrades ASOS to Buy Rating",
+      "fuente": "fiscal.ai",
+      "url": "https://www.marketscreener.com/news/peel-hunt-upgrades-asos-to-buy-rating-boosts-pt-ce785ed9de8ef52c",
+      "causas": [
+       "analistas"
+      ],
+      "nueva": false,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "asos plc announces repurchase of 90 million of 2028 convertible bonds",
+     "asos plc completes repurchase of 90m in convertible bonds",
+     "energy shippers report their quarters amid ongoing tightness in the gl",
+     "frasers group reports change in voting rights in asos plc",
+     "intesa sanpaolo lowers ascopiave target price",
+     "investec upgrades asos to buy rating",
+     "peel hunt maintains buy recommendation for asos plc",
+     "peel hunt upgrades asos to buy rating",
+     "ubs adjusts asos price target following capital structure improvements"
+    ],
+    "sec_vistos": [
+     "2026-07-27Fondo grande >5 % (13G)"
+    ],
+    "anterior": {
+     "fecha": "2026-11-17",
+     "vistos": [
+      "asos plc announces repurchase of 90 million of 2028 convertible bonds",
+      "energy shippers report their quarters amid ongoing tightness in the gl",
+      "frasers group reports change in voting rights in asos plc",
+      "intesa sanpaolo lowers ascopiave target price",
+      "investec upgrades asos to buy rating",
+      "peel hunt maintains buy recommendation for asos plc",
+      "peel hunt upgrades asos to buy rating"
+     ],
+     "sec_vistos": [
+      "2026-07-27Fondo grande >5 % (13G)"
+     ],
+     "recs_pct_compra": 85.7,
+     "proximos_resultados": null,
+     "resultados_recientes": null
+    }
+   },
+   "JAKK": {
+    "nombre": "JAKKS Pacific, Inc.",
+    "sector": "Consumer Cyclical",
+    "grupo": "ideas",
+    "fecha": "2026-11-18",
+    "fecha_anterior": "2026-11-17",
+    "cierre": 35.87,
+    "cambio_pct": 1.36,
+    "cambio_5d_pct": -2.4,
+    "sigma_pct": 2.63,
+    "veces_normal": 0.5,
+    "volumen_rel": 0.5,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "2 titulares nuevos"
+    ],
+    "catalizadores": [
+     "Resultados el 2027-02-17"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "JAKKS Pacific Inc",
+    "recs_pct_compra": 87.5,
+    "recs_n": 8,
+    "proximos_resultados": "2027-02-17",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLY",
+     "fecha": "2026-11-18",
+     "fecha_anterior": "2026-11-17",
+     "cierre": 119.2,
+     "cambio_pct": 1.79,
+     "cambio_5d_pct": -1.5,
+     "sigma_pct": 1.69,
+     "veces_normal": 1.1,
+     "volumen_rel": 0.8
+    },
+    "titulares": [
+     {
+      "fecha": "2026-11-17",
+      "titulo": "JAKKS Pacific Insider Executes Significant Share Sale",
+      "fuente": "fiscal.ai",
+      "url": "https://www.marketscreener.com/news/jakks-pacific-insider-sold-shares-worth-2-392-771-according-to-a-recent-sec-filing-ce785edcd881f527",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-17",
+      "titulo": "Will Lower Digital Gaming Spend Improve Hasbro's Future Cash Flow?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=919bd2da24ed2f94123d16c97fcdca161a4f9e4f3b7742c83ed08b70b05b62de",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "jakks pacific insider executes significant share sale",
+     "will lower digital gaming spend improve hasbros future cash flow"
+    ],
+    "sec_vistos": [
+     "2026-07-14Fondo grande >5 % (13G)",
+     "2026-07-28Fondo grande >5 % (13G)"
+    ],
+    "anterior": {
+     "fecha": null,
+     "vistos": null,
+     "sec_vistos": null,
+     "recs_pct_compra": null,
+     "proximos_resultados": null,
+     "resultados_recientes": null
+    }
+   },
+   "LPG": {
+    "nombre": "Dorian LPG Ltd.",
+    "sector": "Energy",
+    "grupo": "ideas",
+    "fecha": "2026-11-18",
+    "fecha_anterior": "2026-11-17",
+    "cierre": 45.09,
+    "cambio_pct": -0.46,
+    "cambio_5d_pct": -4.9,
+    "sigma_pct": 2.88,
+    "veces_normal": 0.2,
+    "volumen_rel": 1.3,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "1 titular nuevo"
+    ],
+    "catalizadores": [
+     "Resultados el 2027-02-03"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "Dorian LPG Ltd.",
+    "recs_pct_compra": 72.7,
+    "recs_n": 11,
+    "proximos_resultados": "2027-02-03",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLE",
+     "fecha": "2026-11-18",
+     "fecha_anterior": "2026-11-17",
+     "cierre": 61.29,
+     "cambio_pct": -3.27,
+     "cambio_5d_pct": -3.3,
+     "sigma_pct": 1.91,
+     "veces_normal": 1.7,
+     "volumen_rel": 1.5
+    },
+    "titulares": [
+     {
+      "fecha": "2026-11-17",
+      "titulo": "10 Energy Stocks Moving In Tuesday's After-Market Session",
+      "fuente": "Benzinga",
+      "url": "https://finnhub.io/api/news?id=5a62411834610795150e7ebf5e3a9a8c3ee2a2081787c1b816bbbce3ce8a941a",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "10 energy stocks moving in tuesdays aftermarket session"
+    ],
+    "sec_vistos": [],
+    "anterior": {
+     "fecha": "2026-11-17",
+     "vistos": [],
+     "sec_vistos": [],
+     "recs_pct_compra": 72.7,
+     "proximos_resultados": "2027-02-03",
+     "resultados_recientes": null
+    }
+   },
    "CRCT": {
     "nombre": "Cricut, Inc.",
     "sector": "Technology",
@@ -2932,89 +3008,6 @@
      "proximos_resultados": "2027-03-01",
      "resultados_recientes": null
     }
-   },
-   "IBEX": {
-    "nombre": "IBEX Limited",
-    "sector": "Technology",
-    "grupo": "ideas",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 55.77,
-    "cambio_pct": 0.49,
-    "cambio_5d_pct": 0.8,
-    "sigma_pct": 3.92,
-    "veces_normal": 0.1,
-    "volumen_rel": 1.3,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "1 titular nuevo"
-    ],
-    "catalizadores": [
-     "Resultados el 2027-02-03"
-    ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "Ibex Ltd",
-    "recs_pct_compra": 0.0,
-    "recs_n": 7,
-    "proximos_resultados": "2027-02-03",
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "QQQ",
-     "fecha": "2026-11-18",
-     "fecha_anterior": "2026-11-17",
-     "cierre": 659.51,
-     "cambio_pct": 0.39,
-     "cambio_5d_pct": -4.5,
-     "sigma_pct": 2.21,
-     "veces_normal": 0.2,
-     "volumen_rel": 0.9
-    },
-    "titulares": [
-     {
-      "fecha": "2026-11-18",
-      "titulo": "IBEX Chief Operating Officer David Martin Afdahl Sells Shares",
-      "fuente": "fiscal.ai",
-      "url": "https://www.moomoo.com/news/post/1005011987/ibex-insider-sold-shares-worth-1595883-according-to-a-recent",
-      "causas": [
-       "directivos"
-      ],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-16",
-      "titulo": "Insider Selling by IBEX Limited Executive",
-      "fuente": "fiscal.ai",
-      "url": "https://www.moomoo.com/news/post/1004679284/don-t-ignore-the-insider-selling-in-ibex",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "ibex chief operating officer david martin afdahl sells shares",
-     "insider selling by ibex limited executive"
-    ],
-    "sec_vistos": [
-     "2026-11-16Fondo grande >5 % (13G)"
-    ],
-    "anterior": {
-     "fecha": "2026-11-17",
-     "vistos": [
-      "insider selling by ibex limited executive"
-     ],
-     "sec_vistos": [
-      "2026-11-16Fondo grande >5 % (13G)"
-     ],
-     "recs_pct_compra": 0.0,
-     "proximos_resultados": "2027-02-03",
-     "resultados_recientes": null
-    }
    }
   },
   "materias_primas": {
@@ -3023,11 +3016,11 @@
     "sector": "materia prima",
     "fecha": "2026-11-18",
     "fecha_anterior": "2026-11-17",
-    "cierre": 3719.4,
-    "cambio_pct": -3.75,
-    "cambio_5d_pct": -7.0,
+    "cierre": 3726.0,
+    "cambio_pct": -3.58,
+    "cambio_5d_pct": -6.9,
     "sigma_pct": 1.56,
-    "veces_normal": 2.4,
+    "veces_normal": 2.3,
     "volumen_rel": 0.2,
     "grande": true,
     "porque": "Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.",
@@ -3039,7 +3032,7 @@
     "avisos": [
      {
       "tipo": "MOVIMIENTO GRANDE",
-      "texto": "-3.8 % hoy"
+      "texto": "-3.6 % hoy"
      }
     ],
     "avisos_nuevos": []
@@ -3050,10 +3043,10 @@
     "fecha": "2026-11-19",
     "fecha_anterior": "2026-11-18",
     "cierre": 1.1,
-    "cambio_pct": -0.28,
+    "cambio_pct": -0.25,
     "cambio_5d_pct": -1.2,
     "sigma_pct": 0.34,
-    "veces_normal": 0.8,
+    "veces_normal": 0.7,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",

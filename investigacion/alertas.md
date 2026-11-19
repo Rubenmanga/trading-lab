@@ -1,6 +1,6 @@
 # Alertas de medio plazo
 
-_Actualizado: 2026-11-19T04:03:35+00:00_
+_Actualizado: 2026-11-19T04:29:50+00:00_
 
 - **ZONA DE ENTRADA** · REPX a 40.96 $ está en su zona de entrada (≤ 46.0), potencial 42% hasta objetivo
 - **ZONA DE ENTRADA** · PGY a 15.57 $ está en su zona de entrada (≤ 17.5), potencial 61% hasta objetivo

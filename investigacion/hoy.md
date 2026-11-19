@@ -1,6 +1,6 @@
 # Carpeta del día · 19/11/2026
 
-_Resumen automático, sin IA. Precios y avisos del 2026-11-19 04:03 UTC. Sigues 16 acciones._
+_Resumen automático, sin IA. Precios y avisos del 2026-11-19 04:29 UTC. Sigues 16 acciones._
 
 ## 🔔 Avisos de hoy
 - **ZONA DE ENTRADA** · REPX a 40.96 $ está en su zona de entrada (≤ 46.0), potencial 42% hasta objetivo
@@ -29,6 +29,6 @@ _Resumen automático, sin IA. Precios y avisos del 2026-11-19 04:03 UTC. Sigues 
 - 23/11 **SSII** · Resultados 3.er trim. (10-Q con retraso) y después decisión FDA 510(k) fin 1T 2027
 
 ## 🆕 Nuevas en el top 10 del ranking
-- #8 **JAKK** · nota 68.9 · Líder en tendencia
+- #7 **JAKK** · nota 69.1 · GARP (crecimiento a buen precio)
 
 _Detector de inflexión x3-x4: llegará en el Paso 8._

@@ -2,7 +2,7 @@
 
 ## Resumen (5 líneas)
 1. Mercado (S&P 500, SPY): -0.3 % hoy.
-2. Movimientos grandes: ALT -9.2 %, XAU -3.8 %.
+2. Movimientos grandes: ALT -9.2 %, XAU -3.6 %.
 3. Noticias importantes nuevas: RCAT, MSFT, SSII.
 4. Resultados en los próximos 14 días: ninguno.
 5. Datos: todas las empresas se leyeron bien.
@@ -35,10 +35,10 @@ Cierre 508.29 (2026-11-18) · 5 días -2.5 % · lo normal en un día: ±2.32 %.
 - **Qué cambió:** 46 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
+  - 2026-11-19 · [Costco sees surge in panic buying after tech outages, report says](https://finnhub.io/api/news?id=0a799c1d92dfafbb1ed5ea29b68f6485997ccc9b3c162c41356b2c2ccc032527)
+  - 2026-11-19 · [Coatue Builds $1.8 Billion Salesforce Stake, Its Biggest New Bet, as the Stock Sinks 17%](https://finnhub.io/api/news?id=efc8fcb7612d69170aa037335bfc738f7cd9ef45d0cad9a0bd9aac0d6b4e6b1c)
+  - 2026-11-19 · [What NICE (TASE:NICE)'s Microsoft AI Tie Up Means For Shareholders](https://finnhub.io/api/news?id=d7822f86c4fe11d805fec72f8a37ee3f950cd238c75d67c4dc785c83245f6deb)
   - 2026-11-19 · [Microsoft CEO Satya Nadella explains why he asked 60K employees to quit](https://finnhub.io/api/news?id=f58dfe94d051cb584e139c07802e8ca67ae02df6fc766dbbc10e0d145f9a4131) [directivos]
-  - 2026-11-19 · [Anthropic's $81.3B haul makes it the largest tech IPO ever](https://finnhub.io/api/news?id=ecf23638270aa1d33da7b27ad695f52c3ba5561800240bd5a02dffc26a516250)
-  - 2026-11-18 · [Splashtop Joins Microsoft Virus Initiative](https://www.globenewswire.com/news-release/2026/11/18/3406049/0/en/splashtop-joins-microsoft-virus-initiative-strengthening-protection-for-microsoft-environments.html)
-  - 2026-11-18 · [Microsoft and Intel Announce Joint Infrastructure Investments](https://stockhouse.com/news/newswire/2026/11/18/microsoft-and-intel-expand-azure-infrastructure-agreement)
 
 ## RAPP · Rapport Therapeutics — ▼ -1.5 % · volumen 0.6x lo normal
 Cierre 23.4 (2026-11-18) · 5 días -13.4 % · lo normal en un día: ±6.86 %.
@@ -145,22 +145,6 @@ Cierre 29.58 (2026-11-18) · 5 días +0.6 % · lo normal en un día: ±2.63 %.
   - 2026-11-18 · [Three Puppies. One Powerful Purpose: American Integrity and America’s VetDogs Continue Their Life-Changing Partnership](https://finnhub.io/api/news?id=b5f6bc7c8a42fa2821653363a753798f3e3dd8b5f00c54ce7e4e8f35f590d1cb) [contrato o pedido]
   - 2026-11-17 · [Keefe, Bruyette & Woods Reiterates Outperform on American Integrity, Raises Price Target to $34](https://finnhub.io/api/news?id=8fa9f527536a2fc28d68e991ee4df35f80fe1b4b26b7bcca36dca0e750f16a68) [analistas]
 
-## ASC · Ardmore Shipping Corporation — ▼ -2.5 % · volumen 1.2x lo normal
-Cierre 17.57 (2026-11-18) · 5 días -4.3 % · lo normal en un día: ±3.53 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 2 titulares nuevos.
-- Analistas que dicen comprar: 86 % de 7.
-  - 2026-11-18 · [UBS Adjusts ASOS Price Target Following Capital Structure Improvements](https://www.finanzen.ch/analyse/asos-neutral-1121841) [analistas]
-  - 2026-11-18 · [ASOS plc Completes Repurchase of £90m in Convertible Bonds](https://www.investegate.co.uk/announcement/rns/asos--asc/settlement-of-convertible-bond-repurchase-/9880400)
-
-## LPG · Dorian LPG Ltd. — ▼ -0.5 % · volumen 1.3x lo normal
-Cierre 45.09 (2026-11-18) · 5 días -4.9 % · lo normal en un día: ±2.88 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 1 titular nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-03.
-- Analistas que dicen comprar: 73 % de 11.
-  - 2026-11-17 · [10 Energy Stocks Moving In Tuesday's After-Market Session](https://finnhub.io/api/news?id=5a62411834610795150e7ebf5e3a9a8c3ee2a2081787c1b816bbbce3ce8a941a)
-
 ## OPRT · Oportun Financial Corporation — ▼ -0.1 % · volumen 0.8x lo normal
 Cierre 11.46 (2026-11-18) · 5 días -2.9 % · lo normal en un día: ±7.08 %.
 - **Por qué:** Movimiento normal para esta acción.
@@ -176,6 +160,31 @@ Cierre 66.61 (2026-11-18) · 5 días -3.0 % · lo normal en un día: ±4.34 %.
 - Analistas que dicen comprar: 89 % de 9.
   - 2026-11-18 · [Donnelley Financial CEO Daniel Leib Sells $3M As Stock Cools Near 52-Week High](https://finnhub.io/api/news?id=826b6dc6fbc35d5bfb582785a6a46aafa207d32247a2880184653149cf39d556) [directivos]
 
+## ASC · Ardmore Shipping Corporation — ▼ -2.5 % · volumen 1.2x lo normal
+Cierre 17.57 (2026-11-18) · 5 días -4.3 % · lo normal en un día: ±3.53 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** 2 titulares nuevos.
+- Analistas que dicen comprar: 86 % de 7.
+  - 2026-11-18 · [UBS Adjusts ASOS Price Target Following Capital Structure Improvements](https://www.finanzen.ch/analyse/asos-neutral-1121841) [analistas]
+  - 2026-11-18 · [ASOS plc Completes Repurchase of £90m in Convertible Bonds](https://www.investegate.co.uk/announcement/rns/asos--asc/settlement-of-convertible-bond-repurchase-/9880400)
+
+## JAKK · JAKKS Pacific, Inc. — ▲ +1.4 % · volumen 0.5x lo normal
+Cierre 35.87 (2026-11-18) · 5 días -2.4 % · lo normal en un día: ±2.63 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** 2 titulares nuevos.
+- **Próximos catalizadores:** Resultados el 2027-02-17.
+- Analistas que dicen comprar: 88 % de 8.
+  - 2026-11-17 · [JAKKS Pacific Insider Executes Significant Share Sale](https://www.marketscreener.com/news/jakks-pacific-insider-sold-shares-worth-2-392-771-according-to-a-recent-sec-filing-ce785edcd881f527)
+  - 2026-11-17 · [Will Lower Digital Gaming Spend Improve Hasbro's Future Cash Flow?](https://finnhub.io/api/news?id=919bd2da24ed2f94123d16c97fcdca161a4f9e4f3b7742c83ed08b70b05b62de)
+
+## LPG · Dorian LPG Ltd. — ▼ -0.5 % · volumen 1.3x lo normal
+Cierre 45.09 (2026-11-18) · 5 días -4.9 % · lo normal en un día: ±2.88 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** 1 titular nuevo.
+- **Próximos catalizadores:** Resultados el 2027-02-03.
+- Analistas que dicen comprar: 73 % de 11.
+  - 2026-11-17 · [10 Energy Stocks Moving In Tuesday's After-Market Session](https://finnhub.io/api/news?id=5a62411834610795150e7ebf5e3a9a8c3ee2a2081787c1b816bbbce3ce8a941a)
+
 ## CRCT · Cricut, Inc. — ▲ +0.7 % · volumen 0.9x lo normal
 Cierre 8.56 (2026-11-18) · 5 días -3.7 % · lo normal en un día: ±10.99 %.
 - **Por qué:** Movimiento normal para esta acción.
@@ -183,22 +192,14 @@ Cierre 8.56 (2026-11-18) · 5 días -3.7 % · lo normal en un día: ±10.99 %.
 - **Próximos catalizadores:** Resultados el 2027-03-01 (tras el cierre).
 - Analistas que dicen comprar: 0 % de 8.
 
-## IBEX · IBEX Limited — ▲ +0.5 % · volumen 1.3x lo normal
-Cierre 55.77 (2026-11-18) · 5 días +0.8 % · lo normal en un día: ±3.92 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 1 titular nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-03.
-- Analistas que dicen comprar: 0 % de 7.
-  - 2026-11-18 · [IBEX Chief Operating Officer David Martin Afdahl Sells Shares](https://www.moomoo.com/news/post/1005011987/ibex-insider-sold-shares-worth-1595883-according-to-a-recent) [directivos]
-
 # Materias primas
 
-## XAU · Oro — ▼ -3.8 % · volumen 0.2x lo normal ⚠️
-Cierre 3719.4 (2026-11-18) · 5 días -7.0 % · lo normal en un día: ±1.56 %.
+## XAU · Oro — ▼ -3.6 % · volumen 0.2x lo normal ⚠️
+Cierre 3726.0 (2026-11-18) · 5 días -6.9 % · lo normal en un día: ±1.56 %.
 - **Por qué:** Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.
 - **Qué cambió:** nada nuevo.
 
-## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.3 %
+## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.2 %
 Cierre 1.1 (2026-11-19) · 5 días -1.2 % · lo normal en un día: ±0.34 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
