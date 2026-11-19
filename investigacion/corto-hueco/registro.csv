@@ -8,3 +8,5 @@ fecha_hora_ny,simbolo,accion,motivo,hueco,precio,importe_usd,stop,order_id,posit
 2026-11-15 09:50:09,PGY,ensayo,"vendería en corto 6,667 $ a ~16.86 $ con stop 19.4005 $ (15 %); precio realtime",,16.86,6666.67,19.4005,,,
 2026-11-15 09:50:09,REPX,descartada,ya hay 3 operaciones hoy (máximo),,,,,,,
 2026-11-15 09:55:10,,nada,ninguna acción abre con hueco ≥ 50% y liquidez suficiente,,,,,,,
+2026-11-19 09:34:09,SEAT,candidata,"hueco +94%, cierre ayer 1.28 $, se negocian 260,217 $/día",0.9375,,,,,,
+2026-11-19 09:35:02,SEAT,descartada,eToro no permite corto en esta acción,,,,,,,
