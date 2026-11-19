@@ -96,3 +96,4 @@ fecha,ticker,cierre,cambio_pct,volumen_rel,grande,porque
 2026-11-18,SVRA,4.72,5.36,1.8,0,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
 2026-11-18,TE,1.39,4.51,0.8,0,"Hay noticia («T1 Energy Files $100 Million At-the-Market Stock Offering», ampliación de capital) pero su tono no cuadra con la dirección del precio: la causa puede ser otra."
 2026-11-18,XAU,3727.8,-3.53,1.4,1,"Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas."
+2026-11-19,EURUSD,1.1,-0.21,,0,Movimiento normal.

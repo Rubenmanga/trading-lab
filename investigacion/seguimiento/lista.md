@@ -2,7 +2,7 @@
 
 ## Resumen (5 líneas)
 1. Mercado (S&P 500, SPY): -0.3 % hoy.
-2. Movimientos grandes: ALT -9.2 %, XAU -3.5 %.
+2. Movimientos grandes: ALT -9.2 %, XAU -3.0 %.
 3. Noticias importantes nuevas: RCAT, MSFT, SSII.
 4. Resultados en los próximos 14 días: ninguno.
 5. Datos: todas las empresas se leyeron bien.
@@ -21,12 +21,13 @@ Cierre 1.39 (2026-11-18) · 5 días -28.0 % · lo normal en un día: ±4.9 %.
 ## RCAT · Red Cat Holdings — ▼ -6.6 % · volumen 1.6x lo normal ⚠️
 Cierre 2.25 (2026-11-18) · 5 días -47.6 % · lo normal en un día: ±10.23 %.
 - **Por qué:** Causa probable: «Is Red Cat Stock a Buy After Its Nov. 16 Earnings Report?» (resultados, 2026-11-18).
-- **Qué cambió:** 8 titulares nuevos.
+- **Qué cambió:** 11 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-03-17.
 - Analistas que dicen comprar: 86 % de 14.
+  - 2026-11-18 · [5 Best Drone Stocks to Buy According to Wall Street Analysts](https://finnhub.io/api/news?id=2ce468944c0bdd211094caa8db014dc321c71de236c356df5bde05a7f72c5d34)
+  - 2026-11-18 · [AeroVironment Is Near Its 52-Week Low. Will AVAV Stock Hit $50 or $150 First?](https://finnhub.io/api/news?id=a1b9188686898a7e1b4a6c75c7628d02e4a71c2eb134470e3661802b2010c924)
+  - 2026-11-18 · [Red Cat Falls 6% as Post-Earnings Selloff Extends; Unusual Machines Slides 3%, AeroVironment Drops 2%](https://finnhub.io/api/news?id=670abb28597a0035a9ae63a9057ce2437995f69c4582e1465a44457916f400b5)
   - 2026-11-18 · [Is Red Cat Stock a Buy After Its Nov. 16 Earnings Report?](https://finnhub.io/api/news?id=6fba0c952e3d392327ebaa7a7137b5857578b588aa31f377d9b3035b3f08c331) [resultados]
-  - 2026-11-18 · [Why Did ASTS, NFLX, RCAT Stocks Plunge To 52-Week Lows Today?](https://finnhub.io/api/news?id=affd88a0368472d6f9f7004fe8cf11e77cc80b86979abc7e6819d474c1df632c)
-  - 2026-11-17 · [Red Cat Q3 Revenue Contracts 42% in Q3, Analysts Cut Price Targets](https://finnhub.io/api/news?id=2b11fa925338eb876e7cfa13341ed241ce124de6433020e8f3b5e43794b6783a)
 
 ## MSFT · Microsoft — ▲ +0.4 % · volumen 0.8x lo normal ⚠️
 Cierre 508.29 (2026-11-18) · 5 días -2.5 % · lo normal en un día: ±2.32 %.
@@ -34,10 +35,10 @@ Cierre 508.29 (2026-11-18) · 5 días -2.5 % · lo normal en un día: ±2.32 %.
 - **Qué cambió:** 46 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
+  - 2026-11-19 · [Microsoft CEO Satya Nadella explains why he asked 60K employees to quit](https://finnhub.io/api/news?id=f58dfe94d051cb584e139c07802e8ca67ae02df6fc766dbbc10e0d145f9a4131) [directivos]
+  - 2026-11-19 · [Anthropic's $81.3B haul makes it the largest tech IPO ever](https://finnhub.io/api/news?id=ecf23638270aa1d33da7b27ad695f52c3ba5561800240bd5a02dffc26a516250)
   - 2026-11-18 · [Splashtop Joins Microsoft Virus Initiative](https://www.globenewswire.com/news-release/2026/11/18/3406049/0/en/splashtop-joins-microsoft-virus-initiative-strengthening-protection-for-microsoft-environments.html)
   - 2026-11-18 · [Microsoft and Intel Announce Joint Infrastructure Investments](https://stockhouse.com/news/newswire/2026/11/18/microsoft-and-intel-expand-azure-infrastructure-agreement)
-  - 2026-11-18 · [Ema Launches AI Employees for HR, IT, and Finance on Microsoft Marketplace](https://www.globenewswire.com/news-release/2026/11/18/3405850/0/en/ema-ai-employees-for-hr-it-and-finance-now-available-in-microsoft-marketplace.html) [FDA / regulador]
-  - 2026-11-18 · [BCG and Microsoft Expand Collaboration for AI-Powered Business Reimagination](https://www.prnewswire.com/news-releases/bcg-and-microsoft-expand-collaboration-with-new-model-for-ai-powered-business-reimagination-302943516.html) [contrato o pedido]
 
 ## RAPP · Rapport Therapeutics — ▼ -1.5 % · volumen 0.6x lo normal
 Cierre 23.4 (2026-11-18) · 5 días -13.4 % · lo normal en un día: ±6.86 %.
@@ -48,7 +49,7 @@ Cierre 23.4 (2026-11-18) · 5 días -13.4 % · lo normal en un día: ±6.86 %.
 
 # Tu lista de vigilancia
 
-## AMSC · American Superconductor — ▲ +1.7 % · volumen 0.6x lo normal
+## AMSC · American Superconductor — ▲ +1.8 % · volumen 0.6x lo normal
 Cierre 22.55 (2026-11-18) · 5 días -12.5 % · lo normal en un día: ±4.52 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
@@ -71,9 +72,10 @@ Cierre 40.96 (2026-11-18) · 5 días -4.4 % · lo normal en un día: ±4.19 %.
 ## PGY · Pagaya Technologies — ▲ +1.0 % · volumen 0.7x lo normal
 Cierre 15.57 (2026-11-18) · 5 días -9.7 % · lo normal en un día: ±4.25 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-02-03 (tras el cierre).
 - Analistas que dicen comprar: 94 % de 16.
+  - 2026-11-17 · [Banking on AI: Can Upstart's New Bank Plan Turn Its Stock Around?](https://finnhub.io/api/news?id=e3a31f049216cf28102b49f8030c23e737d22c82141b82eaf0945f2f630a7503)
 
 ## DCTH · Delcath Systems — ▲ +1.7 % · volumen 0.7x lo normal
 Cierre 19.7 (2026-11-18) · 5 días -9.5 % · lo normal en un día: ±8.32 %.
@@ -109,11 +111,12 @@ Cierre 6.73 (2026-11-18) · 5 días -21.3 % · lo normal en un día: ±6.89 %.
 ## SSII · SS Innovations International — ▼ -1.5 % · volumen 0.6x lo normal ⚠️
 Cierre 1.31 (2026-11-18) · 5 días -13.2 % · lo normal en un día: ±9.78 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 2 titulares nuevos.
+- **Qué cambió:** 3 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-03-08.
 - Analistas que dicen comprar: 86 % de 7.
   - 2026-11-18 · [SS Innovations International Reports Third Quarter 2026 Financial Results](https://www.finanzen.ch/nachrichten/aktien/ss-innovations-international-so-viel-setzte-das-unternehmen-zuletzt-um-1036777493) [resultados]
   - 2026-11-18 · [SS Innovations' SSi Mantra 3.0 System Used in Philippines' First Inter-Regional Robotic Surgery](https://www.manilatimes.net/2026/11/18/business/top-business/globe-links-two-hospitals-for-1st-robotic-surgery-in-ph/2472576)
+  - 2026-11-18 · [SS Innovations: Expensive While Seeking A U.S. Foothold](https://finnhub.io/api/news?id=9e3277e77681e86e24aec3728eecc3bef9a36628f54b9991c4d4ffb7d67cec28)
 
 ## TE · T1 Energy — ▲ +4.5 % · volumen 0.8x lo normal
 Cierre 1.39 (2026-11-18) · 5 días -34.7 % · lo normal en un día: ±8.83 %.
@@ -136,8 +139,10 @@ Cierre 4.72 (2026-11-18) · 5 días -5.4 % · lo normal en un día: ±4.54 %.
 ## AII · American Integrity Insurance Gr — ▲ +2.1 % · volumen 1.2x lo normal
 Cierre 29.58 (2026-11-18) · 5 días +0.6 % · lo normal en un día: ±2.63 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 1 titular nuevo.
+- **Qué cambió:** 3 titulares nuevos.
 - Analistas que dicen comprar: 80 % de 10.
+  - 2026-11-18 · [American Integrity Insurance Group Partners with America's VetDogs to Raise Service Dog](https://www.businesswire.com/newsroom/industry/professional-services/insurance)
+  - 2026-11-18 · [Three Puppies. One Powerful Purpose: American Integrity and America’s VetDogs Continue Their Life-Changing Partnership](https://finnhub.io/api/news?id=b5f6bc7c8a42fa2821653363a753798f3e3dd8b5f00c54ce7e4e8f35f590d1cb) [contrato o pedido]
   - 2026-11-17 · [Keefe, Bruyette & Woods Reiterates Outperform on American Integrity, Raises Price Target to $34](https://finnhub.io/api/news?id=8fa9f527536a2fc28d68e991ee4df35f80fe1b4b26b7bcca36dca0e750f16a68) [analistas]
 
 ## ASC · Ardmore Shipping Corporation — ▼ -2.5 % · volumen 1.2x lo normal
@@ -188,13 +193,13 @@ Cierre 55.77 (2026-11-18) · 5 días +0.8 % · lo normal en un día: ±3.92 %.
 
 # Materias primas
 
-## XAU · Oro — ▼ -3.5 % · volumen 1.4x lo normal ⚠️
-Cierre 3727.8 (2026-11-18) · 5 días -6.8 % · lo normal en un día: ±1.56 %.
+## XAU · Oro — ▼ -3.0 % · volumen 0.1x lo normal ⚠️
+Cierre 3748.1 (2026-11-18) · 5 días -6.3 % · lo normal en un día: ±1.56 %.
 - **Por qué:** Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.
 - **Qué cambió:** nada nuevo.
 
 ## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.2 %
-Cierre 1.1 (2026-11-18) · 5 días -1.7 % · lo normal en un día: ±0.35 %.
+Cierre 1.1 (2026-11-19) · 5 días -1.1 % · lo normal en un día: ±0.34 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
