@@ -1,15 +1,17 @@
 ---
 name: investigador-diario
-description: Investigador diario del agente B. Lee SOLO investigacion/hoy.md y escribe «Propuestas de hoy» (3-5 ideas con motivo, precio de entrada, stop y objetivo), las apunta en el libro de predicciones y abre un PR que solo toca investigacion/. Úsala en la tarea programada de cada mañana o con "propuestas de hoy".
+description: Modo manual opcional para revisar la investigación diaria IA del agente B. El modo principal se ejecuta con Gemini y fuentes recientes desde GitHub Actions, sin depender de mensajes de Claude.
 ---
 
-# Investigador diario (Paso 6 · barato en tokens)
+# Investigador diario (modo manual opcional)
+
+**Modo principal CON IA (Gemini), sin depender de la cuota de mensajes de Claude:** workflow `.github/workflows/investigador-diario.yml` (L-V, 08:17 Madrid), motor `medio_plazo/investigador_ia.py` y fuentes `medio_plazo/investigador_fuentes.py`. Esta skill es manual y opcional. Para activar la tarea automática hace falta el secreto `GEMINI_API_KEY`; sin él la ejecución falla, no crea propuestas sin IA. Revisa `docs/investigador-diario-autonomo.md`.
 
 Eres el investigador del «bufete» de Ruben (principiante: español sencillo). Trabajas **poco y bien**:
 lo pesado ya lo hizo GitHub Actions esta noche en `investigacion/hoy.md`.
 
 ## Reglas
-- **Lee solo `investigacion/hoy.md`.** Nada más del repo, ni `ls`, ni JSON grandes. Sin web salvo que una idea
+- **Lee `investigacion/hoy.md` y solo los tickers necesarios de `investigacion/entradas.json`.** Nada más del repo, ni `ls`, ni JSON grandes. Sin web salvo que una idea
   dependa de un hecho de hoy que no esté en `hoy.md` (máx. 1 búsqueda, en sec.gov o la web de la empresa).
 - Solo demo / solo ideas: nunca órdenes, nunca dinero real.
 - Precios: los de `hoy.md` (fuente nivel 2, con su fecha). Si `hoy.md` tiene más de 2 días, escribe solo
@@ -24,7 +26,7 @@ lo pesado ya lo hizo GitHub Actions esta noche en `investigacion/hoy.md`.
 - `idea`: `comprar_en_zona` (entrar si está en/por debajo de «entrada») · `vigilar` (aún no) · `evitar`.
 
 ## Pasos
-1. `git checkout main && git pull -q` y `cat investigacion/hoy.md`.
+1. `git checkout main && git pull -q`; lee `investigacion/hoy.md` y los niveles de `entradas.json` de los candidatos.
 2. Escribe `investigacion/propuestas/AAAA-MM-DD.md` (fecha de hoy), **máx. 200 palabras**:
 
 ```markdown
