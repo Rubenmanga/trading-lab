@@ -1,5 +1,5 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
-2026-11-12,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1001614/000162828026073180/xslF345X06/wk-form4_1794493542.xml,2026-11-12,42.83,3.08,,
+2026-11-12,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1001614/000162828026073180/xslF345X06/wk-form4_1794493542.xml,2026-11-12,42.83,3.08,-4.37,
 2026-11-04,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1001614/000100161426000063/rep-20260930.htm,2026-11-04,46.93,-8.63,-12.1,
 2026-11-04,contrato,Contrato o acuerdo importante (8-K 1.01); Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1001614/000100161426000061/repx-20261029.htm,2026-11-04,46.93,-8.63,-12.1,
 2026-11-02,movimiento,"Cae 10.5 % en un día (4.5 veces lo normal, volumen x1.8 su media)",https://finance.yahoo.com/quote/REPX/history/,2026-11-02,53.27,-10.53,-22.6,

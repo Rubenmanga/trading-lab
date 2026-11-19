@@ -1,8 +1,9 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
+2026-11-18,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1326190/000215682026000008/xslF345X06/form4-11182026_091120.xml,2026-11-18,1.53,-9.15,,
 2026-11-13,directivos_form4,4 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1326190/000125177926000017/xslF345X06/form4-11132026_091145.xml,2026-11-13,1.61,2.17,,
-2026-11-12,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1326190/000132619026000067/alt-20261112x8k.htm,2026-11-12,1.93,-16.58,,
-2026-11-12,movimiento,"Cae 16.6 % en un día (4.3 veces lo normal, volumen x3.6 su media)",https://finance.yahoo.com/quote/ALT/history/,2026-11-12,1.93,-16.58,,
-2026-11-12,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1326190/000132619026000070/alt-20260930x10q.htm,2026-11-12,1.93,-16.58,,
+2026-11-12,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1326190/000132619026000067/alt-20261112x8k.htm,2026-11-12,1.93,-16.58,-27.98,
+2026-11-12,movimiento,"Cae 16.6 % en un día (4.3 veces lo normal, volumen x3.6 su media)",https://finance.yahoo.com/quote/ALT/history/,2026-11-12,1.93,-16.58,-27.98,
+2026-11-12,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1326190/000132619026000070/alt-20260930x10q.htm,2026-11-12,1.93,-16.58,-27.98,
 2026-11-10,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/1326190/000009375126000611/xslSCHEDULE_13G_X02/primary_doc.xml,2026-11-10,2.12,-8.49,-27.14,
 2026-11-04,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1326190/000136368326000009/xslF345X06/form4-11042026_091140.xml,2026-11-04,2.04,3.92,-4.9,
 2026-10-29,8k,Aviso oficial de hecho relevante (8-K 2.03),https://www.sec.gov/Archives/edgar/data/1326190/000132619026000060/alt-20261027x8k.htm,2026-10-29,2.1,1.9,0.95,
