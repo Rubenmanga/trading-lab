@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-18",
+ "actualizado": "2026-11-19",
  "stop_pct": 15.0,
  "bot": {
   "n": 0,
@@ -35,7 +35,7 @@
   "estado": "pronto",
   "texto": "Aún no hay operaciones cerradas. Se decide el 15-02-2027.",
   "fecha": "2027-02-15",
-  "dias": 89,
+  "dias": 88,
   "ops_min": 40,
   "R_min": 0.1
  },
