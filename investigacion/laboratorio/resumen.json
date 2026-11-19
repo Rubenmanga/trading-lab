@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-18",
+ "actualizado": "2026-11-19",
  "listones": {
   "ops_minimas": 100,
   "ops_fiables": 200,
@@ -1921,26 +1921,26 @@
     "vs_azar": 0.222
    },
    "sombra": {
-    "n": 7,
-    "R_medio": 0.013,
+    "n": 8,
+    "R_medio": 0.1,
     "ic95": [
-     -0.668,
-     0.694
+     -0.514,
+     0.713
     ],
-    "R_alt_medio": 0.013,
-    "aciertos_pct": 42.9,
-    "pf": 1.04,
-    "R_total": 0.1,
+    "R_alt_medio": 0.1,
+    "aciertos_pct": 50.0,
+    "pf": 1.35,
+    "R_total": 0.8,
     "peor_caida_R": -1.2,
     "peor_racha": 4,
     "largos": 0,
-    "cortos": 7,
-    "dias": 2,
-    "ops_dia": 3.5,
+    "cortos": 8,
+    "dias": 3,
+    "ops_dia": 2.67,
     "por_anio": {
      "2026": {
-      "n": 7,
-      "R": 0.013
+      "n": 8,
+      "R": 0.1
      }
     },
     "anios_positivos": 1,
@@ -2481,26 +2481,33 @@
     {
      "f": "2026-11-17",
      "R": 0.09
+    },
+    {
+     "f": "2026-11-18",
+     "R": 0.8
     }
    ],
    "sombra_filtrada": {
-    "n": 1,
-    "R_medio": 0.745,
-    "ic95": null,
-    "R_alt_medio": 0.745,
+    "n": 2,
+    "R_medio": 0.726,
+    "ic95": [
+     0.689,
+     0.763
+    ],
+    "R_alt_medio": 0.726,
     "aciertos_pct": 100.0,
     "pf": null,
-    "R_total": 0.7,
+    "R_total": 1.5,
     "peor_caida_R": 0.0,
     "peor_racha": 0,
     "largos": 0,
-    "cortos": 1,
-    "dias": 1,
+    "cortos": 2,
+    "dias": 2,
     "ops_dia": 1.0,
     "por_anio": {
      "2026": {
-      "n": 1,
-      "R": 0.745
+      "n": 2,
+      "R": 0.726
      }
     },
     "anios_positivos": 1,
@@ -3800,7 +3807,7 @@
   "2016-01-19",
   "2026-11-13"
  ],
- "dias_sombra": 2,
+ "dias_sombra": 3,
  "ultimas_sombra": [
   {
    "fecha": "2026-11-16",
@@ -3899,6 +3906,20 @@
    "R": 0.072,
    "ret_pct": 1.077,
    "hueco": 0.2699
+  },
+  {
+   "fecha": "2026-11-18",
+   "estrategia": "corto_hueco",
+   "simbolo": "HIHO",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 1.7203,
+   "salida": 1.5308,
+   "motivo": "cierre forzado",
+   "hora_salida": "15:45:00",
+   "R": 0.707,
+   "ret_pct": 10.607,
+   "hueco": 0.5407
   }
  ]
 }
