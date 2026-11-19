@@ -1,140 +1,121 @@
 {
- "actualizado": "2026-11-18T04:42:52+00:00",
+ "actualizado": "2026-11-19T04:03:35+00:00",
  "alertas": [
   {
    "ticker": "REPX",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "REPX a 42.75 $ está en su zona de entrada (≤ 46.0), potencial 36% hasta objetivo",
-   "precio": 42.75
+   "mensaje": "REPX a 40.96 $ está en su zona de entrada (≤ 46.0), potencial 42% hasta objetivo",
+   "precio": 40.959999084472656
   },
   {
    "ticker": "PGY",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "PGY a 15.42 $ está en su zona de entrada (≤ 17.5), potencial 62% hasta objetivo",
-   "precio": 15.420000076293945
-  },
-  {
-   "ticker": "RCAT",
-   "tipo": "TESIS EN PELIGRO",
-   "mensaje": "RCAT a 2.41 $ ha caído bajo el stop de tesis (3.2). Revisar.",
-   "precio": 2.4100000858306885
+   "mensaje": "PGY a 15.57 $ está en su zona de entrada (≤ 17.5), potencial 61% hasta objetivo",
+   "precio": 15.569999694824219
   },
   {
    "ticker": "AMPX",
    "tipo": "TESIS EN PELIGRO",
-   "mensaje": "AMPX a 6.77 $ ha caído bajo el stop de tesis (6.8). Revisar.",
-   "precio": 6.769999980926514
+   "mensaje": "AMPX a 6.73 $ ha caído bajo el stop de tesis (6.8). Revisar.",
+   "precio": 6.730000019073486
   },
   {
    "ticker": "SSII",
    "tipo": "CATALIZADOR CERCA",
-   "mensaje": "SSII: 'Resultados 3.er trim. (10-Q con retraso) y después decisión FDA 510(k) fin 1T 2027' el 2026-11-23 (en 5 días)",
-   "precio": 1.3300000429153442
-  },
-  {
-   "ticker": "TE",
-   "tipo": "TESIS EN PELIGRO",
-   "mensaje": "TE a 1.33 $ ha caído bajo el stop de tesis (1.35). Revisar.",
-   "precio": 1.3300000429153442
+   "mensaje": "SSII: 'Resultados 3.er trim. (10-Q con retraso) y después decisión FDA 510(k) fin 1T 2027' el 2026-11-23 (en 4 días)",
+   "precio": 1.309999942779541
   },
   {
    "ticker": "SVRA",
    "tipo": "CATALIZADOR CERCA",
-   "mensaje": "SVRA: 'Decisión FDA de MOLBREEVI (apuesta binaria; puede llegar el 20 o el 23)' el 2026-11-22 (en 4 días)",
-   "precio": 4.480000019073486
-  },
-  {
-   "ticker": "ORIC",
-   "tipo": "SEÑAL DE ENTRADA",
-   "precio": 8.0,
-   "seguimiento": true,
-   "mensaje": "ORIC (2026-11-17, 8.0 $): señal A: suelo en soporte: vela de giro con volumen con RSI bajo. Ver investigacion/seguimiento/ORIC.md"
+   "mensaje": "SVRA: 'Decisión FDA de MOLBREEVI (apuesta binaria; puede llegar el 20 o el 23)' el 2026-11-22 (en 3 días)",
+   "precio": 4.71999979019165
   }
  ],
  "precios": [
   {
    "ticker": "AMSC",
-   "precio": 22.15999984741211,
-   "distancia_zona_pct": 0.7,
-   "potencial_pct": 44.4,
-   "distancia_stop_pct": 30.4
+   "precio": 22.549999237060547,
+   "distancia_zona_pct": 2.5,
+   "potencial_pct": 41.9,
+   "distancia_stop_pct": 32.6
   },
   {
    "ticker": "AEHR",
-   "precio": 49.7400016784668,
-   "distancia_zona_pct": 5.8,
-   "potencial_pct": 30.7,
-   "distancia_stop_pct": 30.9
+   "precio": 49.47999954223633,
+   "distancia_zona_pct": 5.3,
+   "potencial_pct": 31.4,
+   "distancia_stop_pct": 30.2
   },
   {
    "ticker": "REPX",
-   "precio": 42.75,
-   "distancia_zona_pct": -7.1,
-   "potencial_pct": 35.7,
-   "distancia_stop_pct": 18.8
+   "precio": 40.959999084472656,
+   "distancia_zona_pct": -11.0,
+   "potencial_pct": 41.6,
+   "distancia_stop_pct": 13.8
   },
   {
    "ticker": "PGY",
-   "precio": 15.420000076293945,
-   "distancia_zona_pct": -11.9,
-   "potencial_pct": 62.1,
-   "distancia_stop_pct": 23.4
+   "precio": 15.569999694824219,
+   "distancia_zona_pct": -11.0,
+   "potencial_pct": 60.6,
+   "distancia_stop_pct": 24.6
   },
   {
    "ticker": "DCTH",
-   "precio": 19.3700008392334,
-   "distancia_zona_pct": 13.9,
-   "potencial_pct": 39.4,
-   "distancia_stop_pct": 49.0
+   "precio": 19.700000762939453,
+   "distancia_zona_pct": 15.9,
+   "potencial_pct": 37.1,
+   "distancia_stop_pct": 51.5
   },
   {
    "ticker": "FTH",
-   "precio": 9.039999961853027,
-   "distancia_zona_pct": -13.9,
-   "potencial_pct": 121.2,
-   "distancia_stop_pct": 39.1
+   "precio": 8.720000267028809,
+   "distancia_zona_pct": -17.0,
+   "potencial_pct": 129.4,
+   "distancia_stop_pct": 34.2
   },
   {
    "ticker": "ORIC",
-   "precio": 8.0,
-   "distancia_zona_pct": -5.9,
-   "potencial_pct": 62.5,
-   "distancia_stop_pct": 23.1
+   "precio": 7.650000095367432,
+   "distancia_zona_pct": -10.0,
+   "potencial_pct": 69.9,
+   "distancia_stop_pct": 17.7
   },
   {
    "ticker": "RCAT",
-   "precio": 2.4100000858306885,
-   "distancia_zona_pct": -51.8,
-   "potencial_pct": 149.0,
-   "distancia_stop_pct": -24.7
+   "precio": 2.25,
+   "distancia_zona_pct": null,
+   "potencial_pct": null,
+   "distancia_stop_pct": 12.5
   },
   {
    "ticker": "AMPX",
-   "precio": 6.769999980926514,
-   "distancia_zona_pct": -28.7,
-   "potencial_pct": 69.9,
-   "distancia_stop_pct": -0.4
+   "precio": 6.730000019073486,
+   "distancia_zona_pct": -29.2,
+   "potencial_pct": 70.9,
+   "distancia_stop_pct": -1.0
   },
   {
    "ticker": "SSII",
-   "precio": 1.3300000429153442,
-   "distancia_zona_pct": -48.8,
-   "potencial_pct": 65.4,
-   "distancia_stop_pct": 10.8
+   "precio": 1.309999942779541,
+   "distancia_zona_pct": -49.6,
+   "potencial_pct": 67.9,
+   "distancia_stop_pct": 9.2
   },
   {
    "ticker": "TE",
-   "precio": 1.3300000429153442,
-   "distancia_zona_pct": -36.7,
-   "potencial_pct": 80.5,
-   "distancia_stop_pct": -1.5
+   "precio": 1.3899999856948853,
+   "distancia_zona_pct": -33.8,
+   "potencial_pct": 72.7,
+   "distancia_stop_pct": 3.0
   },
   {
    "ticker": "SVRA",
-   "precio": 4.480000019073486,
-   "distancia_zona_pct": -6.7,
-   "potencial_pct": 78.6,
-   "distancia_stop_pct": 9.3
+   "precio": 4.71999979019165,
+   "distancia_zona_pct": -1.7,
+   "potencial_pct": 69.5,
+   "distancia_stop_pct": 15.1
   }
  ]
 }

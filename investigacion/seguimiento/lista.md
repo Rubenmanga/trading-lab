@@ -2,7 +2,7 @@
 
 ## Resumen (5 líneas)
 1. Mercado (S&P 500, SPY): -0.3 % hoy.
-2. Movimientos grandes: ALT -9.2 %, XAU -3.0 %.
+2. Movimientos grandes: ALT -9.2 %, XAU -3.8 %.
 3. Noticias importantes nuevas: RCAT, MSFT, SSII.
 4. Resultados en los próximos 14 días: ninguno.
 5. Datos: todas las empresas se leyeron bien.
@@ -193,13 +193,13 @@ Cierre 55.77 (2026-11-18) · 5 días +0.8 % · lo normal en un día: ±3.92 %.
 
 # Materias primas
 
-## XAU · Oro — ▼ -3.0 % · volumen 0.1x lo normal ⚠️
-Cierre 3748.1 (2026-11-18) · 5 días -6.3 % · lo normal en un día: ±1.56 %.
+## XAU · Oro — ▼ -3.8 % · volumen 0.2x lo normal ⚠️
+Cierre 3719.4 (2026-11-18) · 5 días -7.0 % · lo normal en un día: ±1.56 %.
 - **Por qué:** Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.
 - **Qué cambió:** nada nuevo.
 
-## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.2 %
-Cierre 1.1 (2026-11-19) · 5 días -1.1 % · lo normal en un día: ±0.34 %.
+## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.3 %
+Cierre 1.1 (2026-11-19) · 5 días -1.2 % · lo normal en un día: ±0.34 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 

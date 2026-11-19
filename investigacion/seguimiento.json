@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-19T02:34:53+00:00",
+ "actualizado": "2026-11-19T04:03:35+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -14,40 +14,30 @@
     "tamano_max": "2 %",
     "informe": "investigacion/analisis/ORIC-2026-11-14.md"
    },
-   "fecha": "2026-11-17",
-   "cierre": 8.0,
-   "cambio_dia_pct": 6.4,
-   "ema9": 8.47,
-   "ma50": 11.36,
-   "ma200": 10.97,
-   "rsi": 34.9,
-   "volumen_rel": 1.01,
+   "fecha": "2026-11-18",
+   "cierre": 7.65,
+   "cambio_dia_pct": -4.4,
+   "ema9": 8.3,
+   "ma50": 11.26,
+   "ma200": 10.95,
+   "rsi": 33.0,
+   "volumen_rel": 0.7,
    "minimo_52s": 7.23,
    "maximo_52s": 14.68,
    "divergencia": false,
    "toca_soporte": true,
-   "vela_giro": true,
-   "estado": "SEÑAL DE ENTRADA",
-   "senales": [
-    {
-     "tipo": "A",
-     "texto": "suelo en soporte: vela de giro con volumen con RSI bajo"
-    }
-   ],
-   "avisos": [
-    {
-     "tipo": "SEÑAL DE ENTRADA",
-     "texto": "señal A: suelo en soporte: vela de giro con volumen con RSI bajo"
-    }
-   ],
+   "vela_giro": false,
+   "estado": "ATENTO",
+   "senales": [],
+   "avisos": [],
    "pistas": [
     "sigue por debajo de la EMA 9 (la caída no ha frenado)",
     "está en la zona de soporte 7.2-7.5 $"
    ],
-   "distancia_entrada_pct": -5.9,
-   "distancia_stop_pct": 23.1,
-   "distancia_confirmacion_pct": -14.0,
-   "potencial_pct": 62.5,
+   "distancia_entrada_pct": -10.0,
+   "distancia_stop_pct": 17.7,
+   "distancia_confirmacion_pct": -17.7,
+   "potencial_pct": 69.9,
    "proximos_resultados": null,
    "historial": [
     {
@@ -70,12 +60,21 @@
     },
     {
      "fecha": "2026-11-17",
-     "cierre": 8.0,
-     "rsi": 34.9,
-     "ema9": 8.47,
-     "ma50": 11.36,
-     "volumen_rel": 1.01,
+     "cierre": "8.0",
+     "rsi": "34.9",
+     "ema9": "8.47",
+     "ma50": "11.36",
+     "volumen_rel": "1.01",
      "estado": "SEÑAL DE ENTRADA"
+    },
+    {
+     "fecha": "2026-11-18",
+     "cierre": 7.65,
+     "rsi": 33.0,
+     "ema9": 8.3,
+     "ma50": 11.26,
+     "volumen_rel": 0.7,
+     "estado": "ATENTO"
     }
    ]
   }
@@ -749,10 +748,12 @@
      },
      {
       "fecha": "2026-11-18",
-      "titulo": "Arrow Electronics (ARW) Launches ArrowSphere Cloud Portal, Is The 16% Undervaluation Case Convincing?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=fae3640ec0e770565a171de72664586261733710b13cf6f18a30eb5b77eb28e1",
-      "causas": [],
+      "titulo": "SCD: Dividend-Growth Stocks Help This Fund Provide Investors With Real Income Growth (Upgrade)",
+      "fuente": "SeekingAlpha",
+      "url": "https://finnhub.io/api/news?id=eeb9e42c9990579c3ad28b3d6a538025f4bdce621e844bfdb1a821c7fe21aafa",
+      "causas": [
+       "analistas"
+      ],
       "nueva": true,
       "importante": false
      }
@@ -782,6 +783,7 @@
      "anthropic launches claude sheets is microsofts stock in trouble",
      "anthropic prices ipo at 83 a share",
      "anthropic prices ipo at 83 in historic 1 trillion offering",
+     "anthropic proving the ai monetization case fear is opportunity",
      "anthropic valuation is 85 times next years sales multiples more like m",
      "anthropics 813b haul makes it the largest tech ipo ever",
      "anthropics record ipo faces some big questions",
@@ -843,7 +845,6 @@
      "iren is down 63 in a year is it time to sell or load up",
      "is ai to blame for basic it gaps in big tech airlines and more",
      "is an equalweight sp 500 fund safer right now than the one you own",
-     "is salesforces ai selloff a cash bargain",
      "it now costs more to insure chip debt than big techs bond markets say",
      "jim cramer anthropics next 100 billion in revenue might be cybersecuri",
      "jpmorgan slashes iren price target on microsoft site delays",
@@ -905,7 +906,6 @@
      "nvidia had no succession plan when jensen huang quit former fortune 50",
      "nvidia highlights open models amid leadership shakeup",
      "nvidia is not considering rehiring jensen huang and amazons data cente",
-     "nvidia stock at 155 cheaper than its 2018 low",
      "nvidia the most important earnings chart this week",
      "nvidia why jensen huangs departure can be good for ai",
      "nvidia with a positive q3 despite sec probing nvidia amid huang scanda",
@@ -924,6 +924,7 @@
      "rigetti computing vs soundhound ai which technology stock is a better",
      "risks loom over nvidias fastgrowing data center segment",
      "satya nadella predicts ai agents will reshuffle the economics of the w",
+     "scd dividendgrowth stocks help this fund provide investors with real i",
      "sector update tech stocks retreat late afternoon",
      "servicenow stocks now historic selloff may have gone too far",
      "software stocks retreat amid inflation worries new openai model",
@@ -2079,15 +2080,6 @@
       "causas": [],
       "nueva": false,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-14",
-      "titulo": "SS Innovations International Strengthens Management Team with Executive Promotions and Appointments",
-      "fuente": "fiscal.ai",
-      "url": "https://www.newmediawire.com/news/ss-innovations-international-ssii-promotes-vishwa-srivastava-to-president-appoints-gary-lo-cfo-7091328",
-      "causas": [],
-      "nueva": false,
-      "importante": false
      }
     ],
     "vistos": [
@@ -3031,12 +3023,12 @@
     "sector": "materia prima",
     "fecha": "2026-11-18",
     "fecha_anterior": "2026-11-17",
-    "cierre": 3748.1,
-    "cambio_pct": -3.0,
-    "cambio_5d_pct": -6.3,
+    "cierre": 3719.4,
+    "cambio_pct": -3.75,
+    "cambio_5d_pct": -7.0,
     "sigma_pct": 1.56,
-    "veces_normal": 1.9,
-    "volumen_rel": 0.1,
+    "veces_normal": 2.4,
+    "volumen_rel": 0.2,
     "grande": true,
     "porque": "Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.",
     "resumen": "Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.",
@@ -3047,7 +3039,7 @@
     "avisos": [
      {
       "tipo": "MOVIMIENTO GRANDE",
-      "texto": "-3.0 % hoy"
+      "texto": "-3.8 % hoy"
      }
     ],
     "avisos_nuevos": []
@@ -3058,10 +3050,10 @@
     "fecha": "2026-11-19",
     "fecha_anterior": "2026-11-18",
     "cierre": 1.1,
-    "cambio_pct": -0.21,
-    "cambio_5d_pct": -1.1,
+    "cambio_pct": -0.28,
+    "cambio_5d_pct": -1.2,
     "sigma_pct": 0.34,
-    "veces_normal": 0.6,
+    "veces_normal": 0.8,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",
