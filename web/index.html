@@ -4,18 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#0b0d10">
-<title>Agente de trading</title>
+<meta name="theme-color" content="#0b0e12">
+<title>Trading Lab</title>
 <style>
-/* Colores con significado: verde = bien / entra · ámbar = atento · rojo = peligro · azul = información · morado = IA.
-   Oscuro por defecto (como el panel del vídeo); claro si el móvil está en modo claro o si se elige con el botón ◐. */
-:root{color-scheme:dark;--bg:#0b0d10;--card:#14171c;--card2:#1b1f26;--line:#262c35;--txt:#eef0f3;--sub:#a3abb8;--mut:#7d8592;
-  --acc:#3987e5;--ok:#0ca30c;--okt:#3ccb5a;--warn:#fab219;--warnt:#fab219;--bad:#d03b3b;--badt:#f07171;--ia:#9085e9;
-  --hm-hi:#3987e5;--hm-lo:#e66767;--hm-mid:#2c2f33;--s1:#3987e5;--s2:#d95926;--s3:#199e70;--s4:#c98500;--s5:#d55181;--shadow:0 1px 0 rgba(255,255,255,.03) inset}
-@media (prefers-color-scheme:light){:root:not([data-theme=dark]){color-scheme:light;--bg:#f3f4f6;--card:#fff;--card2:#f4f5f7;--line:#e2e5ea;--txt:#111418;--sub:#4f5662;--mut:#7b828e;
-  --acc:#2a78d6;--okt:#006300;--warnt:#8a5a00;--badt:#b42318;--ia:#6250d6;--hm-hi:#2a78d6;--hm-lo:#e34948;--hm-mid:#f0efec;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--shadow:0 1px 2px rgba(0,0,0,.04)}}
-:root[data-theme=light]{color-scheme:light;--bg:#f3f4f6;--card:#fff;--card2:#f4f5f7;--line:#e2e5ea;--txt:#111418;--sub:#4f5662;--mut:#7b828e;
-  --acc:#2a78d6;--okt:#006300;--warnt:#8a5a00;--badt:#b42318;--ia:#6250d6;--hm-hi:#2a78d6;--hm-lo:#e34948;--hm-mid:#f0efec;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--shadow:0 1px 2px rgba(0,0,0,.04)}
+/* Sistema de diseño «Trading Lab» (rediseño 17-nov-2026, ver REDISENO_UX_UI.md).
+   Sobrio y denso, pensado para el móvil. El color solo se usa cuando SIGNIFICA algo:
+   verde = bien / a favor · ámbar = atento / con retraso · rojo = peligro / parado · azul = enlace o dato · violeta = lo propone la IA.
+   Las cifras van en letra de ancho fijo (--num) para que se alineen y se lean como en una tabla de bolsa. */
+:root{color-scheme:dark;--bg:#0b0e12;--card:#12161c;--card2:#1a2028;--line:#232a34;--txt:#e8ecf1;--sub:#9ba6b4;--mut:#7a8594;
+  --acc:#5b9bff;--ok:#23a55a;--okt:#3fcf7c;--warn:#e0a020;--warnt:#f0b93a;--bad:#dc4a42;--badt:#ff7b72;--ia:#a394f5;
+  --hm-hi:#3987e5;--hm-lo:#e66767;--hm-mid:#262b33;--s1:#5b9bff;--s2:#e0703c;--s3:#2bb58a;--s4:#d99a1c;--s5:#d96a96;--shadow:none;
+  --num:ui-monospace,"SF Mono","Roboto Mono","Cascadia Mono",Menlo,Consolas,monospace;--r:10px}
+@media (prefers-color-scheme:light){:root:not([data-theme=dark]){color-scheme:light;--bg:#f4f5f7;--card:#fff;--card2:#eef0f4;--line:#dde1e7;--txt:#12161c;--sub:#4a5463;--mut:#727c8a;--acc:#1f6fd6;--ok:#1a8f4c;--okt:#0f7a3d;--warn:#c98500;--warnt:#8a5a00;--bad:#cf3a33;--badt:#b42318;--ia:#6250d6;--hm-hi:#2a78d6;--hm-lo:#e34948;--hm-mid:#f0efec;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--shadow:0 1px 2px rgba(16,24,40,.05)}}
+:root[data-theme=light]{color-scheme:light;--bg:#f4f5f7;--card:#fff;--card2:#eef0f4;--line:#dde1e7;--txt:#12161c;--sub:#4a5463;--mut:#727c8a;--acc:#1f6fd6;--ok:#1a8f4c;--okt:#0f7a3d;--warn:#c98500;--warnt:#8a5a00;--bad:#cf3a33;--badt:#b42318;--ia:#6250d6;--hm-hi:#2a78d6;--hm-lo:#e34948;--hm-mid:#f0efec;--s1:#2a78d6;--s2:#eb6834;--s3:#1baf7a;--s4:#eda100;--s5:#e87ba4;--shadow:0 1px 2px rgba(16,24,40,.05)}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
@@ -149,28 +150,105 @@ details[open]>summary::after{transform:rotate(90deg)}
 #tip{position:fixed;z-index:20;pointer-events:none;background:var(--txt);color:var(--bg);font-size:.76rem;padding:5px 8px;border-radius:7px;max-width:240px;opacity:0;transition:opacity .1s}
 #tip.on{opacity:1}
 svg text{font-family:inherit}
+/* ===== Rediseño 17-nov: forma general ===== */
+body{font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+.card,.kpi,.paso{border-radius:var(--r)}
+.card{padding:13px 14px}
+.logo{width:30px;height:30px;border-radius:8px;background:var(--txt);color:var(--bg);display:grid;place-items:center;font:800 .78rem/1 var(--num);letter-spacing:-.02em}
+.marca span.viejo{color:var(--warnt)}
+.pill{border-color:color-mix(in srgb,var(--warn) 45%,var(--line));font-family:var(--num)}
+.n,.kpi .val,.num,table.t td,.hm .c,.hm .nt,.div .v,.tl .cuando{font-family:var(--num);letter-spacing:-.02em}
+.kpi .val{font-size:1.6rem;font-weight:700}
+.tk{font-family:var(--num);font-weight:700;letter-spacing:0}
+.sec{margin:26px 0 10px;gap:10px;color:var(--sub);letter-spacing:.09em}
+.sec::before{display:none}
+.sec::after{content:"";flex:1;height:1px;background:var(--line);order:1}
+.sec .mas{order:2;margin-left:0}
+h1.titulo{font-size:1.2rem;line-height:1.25;margin:2px 0 4px;letter-spacing:-.01em}
+.lead{color:var(--sub);font-size:.9rem;margin:0 0 12px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:6px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+nav.abajo a{font-size:.66rem;min-height:48px;justify-content:center}
+nav.abajo a.on{color:var(--txt);font-weight:650}
+nav.abajo a .pto{position:absolute;margin:-2px 0 0 22px;width:8px;height:8px;border-radius:50%;background:var(--c);box-shadow:0 0 0 2px var(--card)}
+/* Estado del sistema (lo primero que se ve) */
+.estado{display:flex;gap:12px;align-items:center;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:var(--r);padding:11px 14px;margin:0 0 10px}
+.estado .luz{width:10px;height:10px;border-radius:50%;background:var(--c);flex:none;box-shadow:0 0 0 4px color-mix(in srgb,var(--c) 22%,transparent)}
+.estado b{display:block;line-height:1.25}
+.estado small{display:block;color:var(--sub);font-size:.8rem;line-height:1.35}
+.estado .ir{margin-left:auto;color:var(--mut);flex:none}
+/* Tres cifras del día */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin:0 0 10px}
+.stats a{padding:10px 12px;text-decoration:none;color:inherit;min-width:0;border-left:1px solid var(--line)}
+.stats a:first-child{border-left:none}
+.stats .l{font-size:.64rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--sub);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stats .v{font:700 1.35rem/1.2 var(--num);letter-spacing:-.03em;margin-top:2px;white-space:nowrap}
+.stats .d{font-size:.72rem;color:var(--sub);line-height:1.3;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+/* Etiquetas de evidencia: qué clase de información es cada cosa */
+.ev{display:inline-block;font:700 .6rem/1 var(--num);letter-spacing:.06em;text-transform:uppercase;padding:3px 6px;border-radius:4px;border:1px solid color-mix(in srgb,var(--c) 55%,transparent);color:var(--c);vertical-align:middle;white-space:nowrap}
+.ev.hecho{--c:var(--acc)} .ev.estim{--c:var(--warnt)} .ev.ia{--c:var(--ia)} .ev.pasado{--c:var(--sub)} .ev.demo{--c:var(--okt)}
+.ctx{display:flex;gap:10px;align-items:flex-start;font-size:.84rem;color:var(--sub);background:var(--card2);border-radius:var(--r);padding:10px 12px;margin:0 0 12px;line-height:1.45}
+.ctx .ev{margin-top:2px;flex:none}
+/* Listas densas dentro de una sola tarjeta */
+.lista{background:var(--card);border:1px solid var(--line);border-radius:var(--r);margin:0 0 10px;overflow:hidden}
+.lista>.fila,.lista>a.fila{display:flex;gap:11px;align-items:flex-start;padding:11px 14px;border-top:1px solid var(--line);text-decoration:none;color:inherit}
+.lista>.fila:first-child,.lista>a.fila:first-child{border-top:none}
+.fila .ico{flex:none;width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-size:.8rem;font-weight:800;background:color-mix(in srgb,var(--c) 16%,transparent);color:var(--c);margin-top:1px}
+.fila .cu{min-width:0;flex:1}
+.fila .t{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sub)}
+.fila .tx{font-size:.9rem;line-height:1.4;overflow-wrap:anywhere}
+a.fila .tx{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.fila .der{flex:none;text-align:right;font:600 .78rem/1.3 var(--num);color:var(--sub);white-space:nowrap}
+.lista details{border-top:1px solid var(--line)}
+.lista details>summary{padding:10px 14px;color:var(--sub);font-size:.86rem}
+/* Propuestas del investigador: una tarjeta por idea */
+.idea{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;margin:0 0 8px}
+.idea.viejo{opacity:.72}
+.idea .cab{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.idea .que{font-size:.74rem;font-weight:700;padding:2px 8px;border-radius:999px;background:color-mix(in srgb,var(--c) 15%,transparent);color:var(--c)}
+.idea .cifras{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:10px 0 8px}
+.idea .cifras div{background:var(--card2);border-radius:7px;padding:6px 8px;min-width:0}
+.idea .cifras small{display:block;font-size:.62rem;color:var(--sub);text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+.idea .cifras b{font:700 .95rem/1.25 var(--num);letter-spacing:-.02em;white-space:nowrap}
+.idea .mot{font-size:.86rem;color:var(--sub);line-height:1.4}
+/* Subnavegación por secciones */
+.seg{display:flex;gap:4px;overflow-x:auto;margin:0 -16px 12px;padding:0 16px 2px;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.seg a{flex:none;padding:7px 13px;border-radius:999px;font-size:.84rem;text-decoration:none;color:var(--sub);border:1px solid var(--line);background:var(--card);white-space:nowrap}
+.seg a.on{background:var(--txt);color:var(--bg);border-color:var(--txt);font-weight:650}
+/* Barra de progreso y tarjetas de agente */
+.prog{height:6px;border-radius:3px;background:var(--card2);overflow:hidden;margin:8px 0 6px}
+.prog i{display:block;height:100%;border-radius:3px;background:var(--c,var(--acc))}
+.agente{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.agente .letra{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--txt);color:var(--bg);font:800 .78rem/1 var(--num);margin-right:8px}
+.agente dl{display:grid;grid-template-columns:1fr auto;gap:4px 10px;margin:10px 0 0;font-size:.84rem}
+.agente dt{color:var(--sub)} .agente dd{margin:0;font-family:var(--num);font-weight:650;text-align:right}
+.grupo-t{font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--sub);margin:20px 0 8px}
+.menu a.card{padding:11px 14px;margin-bottom:8px}
+.menu .ic{width:32px;height:32px;border-radius:8px;font-family:var(--num);font-size:.82rem}
+@media (min-width:860px){.seg{margin:0 0 14px;padding:0}.estado{padding:13px 16px}}
 </style>
 </head>
 <body>
 <header><div class="wrap">
   <div class="top">
-    <div class="logo" aria-hidden="true"></div>
-    <div class="marca"><b>Agente de trading</b><span id="sub-cab">Cargando…</span></div>
-    <span class="pill">DEMO</span>
+    <a class="logo" href="#/" aria-label="Inicio" style="text-decoration:none">TL</a>
+    <div class="marca"><b>Trading Lab</b><span id="sub-cab">Cargando…</span></div>
+    <span class="pill" title="Todo funciona con cuentas de prueba. Nunca dinero real.">SOLO DEMO</span>
     <button class="tema" id="tema" title="Cambiar tema (automático / oscuro / claro)" aria-label="Cambiar tema">◐</button>
   </div>
-  <nav class="tabs" id="tabs">
-    <a href="#/">Hoy</a><a href="#/cartera">Mis acciones</a><a href="#/ranking">Ranking</a><a href="#/bot">Bot corto</a><a href="#/lab">Laboratorio</a><a href="#/seguimiento">Seguimiento</a><a href="#/vigilancia">Vigilancia del agente</a><a href="#/duplicar">¿Puede duplicar?</a><a href="#/x6">¿+500 %?</a><a href="#/informes">Informes</a><a href="#/marcador">Marcador</a><a href="#/mas">Más</a>
+  <nav class="tabs" id="tabs" aria-label="Secciones">
+    <a href="#/">Hoy</a><a href="#/cartera">Mis acciones</a><a href="#/ideas">Ideas (agente B)</a><a href="#/agente-a">Bot (agente A)</a><a href="#/mas">Más</a>
   </nav>
 </div></header>
 <main class="wrap" id="app"><div class="empty">Cargando…</div></main>
 <footer id="pie"></footer>
-<nav class="abajo" id="abajo">
+<nav class="abajo" id="abajo" aria-label="Secciones">
   <a href="#/"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg>Hoy</a>
   <a href="#/cartera"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg>Mis acciones</a>
-  <a href="#/ranking"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Ranking</a>
-  <a href="#/seguimiento"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h8M8 17h5"/></svg>Noticias</a>
-  <a href="#/mas"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg>Más</a>
+  <a href="#/ideas"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.7.7 1 1.5 1 2.5h6c0-1 .3-1.800 1-2.500A6 6 0 0 0 12 3z"/></svg>Ideas</a>
+  <a href="#/agente-a"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 3 8-9M15 6h5v5"/></svg>Bot</a>
+  <a href="#/mas"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.300"/><circle cx="12" cy="12" r="1.300"/><circle cx="19" cy="12" r="1.300"/></svg>Más</a>
 </nav>
 <div id="tip"></div>
 <script src="vendor/marked.min.js"></script>
@@ -281,8 +359,20 @@ function atencion() {
   for (const [t, e] of Object.entries(D.seguimiento?.empresas || {})) if (e.estado === "SEÑAL DE ENTRADA" || e.estado === "PELIGRO") out.push({ tipo: e.estado, ticker: t, texto: `Plan de entrada de ${t}: ${e.estado.toLowerCase()} (cierre ${e.cierre} $)`, href: "#/seguimiento" });
   const dia = cortoDias()[0];
   if (dia && dia.fecha === HOY()) for (const r of dia.filas.filter((r) => r.accion === "abierta" || r.accion === "error" || r.accion === "cerrada")) out.push({ tipo: "BOT", ticker: r.simbolo, texto: `${r.accion}: ${r.motivo}`, href: "#/bot" });
-  for (const f of fuentes().filter((f) => f.estado === "mal")) out.push({ tipo: "FUENTE", ticker: "", texto: `${f.nombre}: ${f.det}`, href: "#/fuentes" });
-  return out.sort((a, b) => (miTicker(b.ticker) ? 1 : 0) - (miTicker(a.ticker) ? 1 : 0));
+  // Orden: primero lo que afecta a tus acciones, luego peligros, luego el resto.
+  const peso = (a) => (miTicker(a.ticker) ? 0 : 10) + ({ "TESIS EN PELIGRO": 0, "PELIGRO": 0, "BOT": 1, "OBJETIVO ALCANZADO": 2, "MOVIMIENTO GRANDE": 3, "NOTICIA IMPORTANTE": 4, "SEÑAL DE ENTRADA": 5, "ZONA DE ENTRADA": 5, "CATALIZADOR CERCA": 6 }[a.tipo] ?? 7);
+  // Un aviso por empresa y tipo (si hay varios iguales, se cuenta cuántos) y sin coletillas.
+  const vistos = new Map();
+  for (const a of out.splice(0)) {
+    a.texto = String(a.texto || "").replace(/\s*Ver pestaña Seguimiento del panel\.?/g, "").replace(/^[A-Z.]+ \(\d{4}-\d{2}-\d{2}\):\s*/, "");
+    const k = a.ticker + "|" + a.tipo, prev = vistos.get(k);
+    if (prev) prev.mas = (prev.mas || 0) + 1; else { vistos.set(k, a); out.push(a); }
+  }
+  return out.map((a, i) => [a, i]).sort((x, y) => peso(x[0]) - peso(y[0]) || x[1] - y[1]).map(([a]) => a);
+}
+function avisoFila(a) {
+  const [c, ico, nom] = TIPO_AVISO[a.tipo] || ["var(--acc)", "i", a.tipo];
+  return `<a class="fila" style="--c:${c}" href="${a.href}"><span class="ico">${ico}</span><span class="cu"><span class="t">${esc(nom)}${a.ticker ? ` · ${esc(a.ticker)}` : ""}${a.ticker && miTicker(a.ticker) ? ` · <span style="color:var(--acc)">tuya</span>` : ""}</span><div class="tx">${esc(a.texto)}${a.mas ? ` <span class="mut">y ${a.mas} más</span>` : ""}</div></span></a>`;
 }
 function avisoHtml(a) {
   const [c, ico, nom] = TIPO_AVISO[a.tipo] || ["var(--acc)", "i", a.tipo];
@@ -306,6 +396,34 @@ function cortoDias() {
 }
 function cortoCerradas() { return (D.corto?.registro || []).filter((r) => r.accion === "cerrada" && !vacio(r.resultado_pct)); }
 function edadH(iso) { if (!iso) return null; const t = new Date(iso.length === 10 ? iso + "T22:00:00Z" : iso); return (Date.now() - t) / 36e5; }
+/* ---------- Estado del sistema: ¿se ha ejecutado cada automatismo cuando tocaba? ----------
+   Se calcula al abrir el panel, con la última fecha real de cada archivo (D.salud, de web/build.mjs).
+   «cita» = la última vez que debería haber dato nuevo. Si falta una cita: retraso. Si faltan dos: parado.
+   No conoce los festivos de EE. UU.: ese día puede salir «retraso» sin que pase nada. */
+function citas(s, ahora = Date.now()) {
+  const out = [], hoy0 = new Date(new Date(ahora).toISOString().slice(0, 10) + "T00:00:00Z").getTime();
+  for (let i = 0; i < 21 && out.length < 2; i++) {
+    const d = new Date(hoy0 - i * 864e5);
+    if (s.dias.includes(d.getUTCDay()) && d.getTime() + s.hora * 36e5 <= ahora) out.push(d.toISOString().slice(0, 10));
+  }
+  return out;
+}
+const SALUD = { ok: ["var(--ok)", "Al día"], retraso: ["var(--warn)", "Con retraso"], parado: ["var(--bad)", "Parado"], sin: ["var(--mut)", "Sin datos aún"] };
+function salud() {
+  return (D.salud || []).map((s) => {
+    const u = (s.ultimo || "").slice(0, 10), [c1, c2] = citas(s);
+    const estado = !u ? "sin" : !c1 || u >= c1 ? "ok" : !c2 || u >= c2 ? "retraso" : "parado";
+    return { ...s, u, esperado: c1, estado };
+  });
+}
+function saludGlobal() {
+  const S = salud(), mal = S.filter((s) => s.estado === "parado" || (s.estado === "sin" && s.critico)), reg = S.filter((s) => s.estado === "retraso");
+  const estado = mal.some((s) => s.critico) ? "parado" : mal.length || reg.length ? "retraso" : "ok";
+  return { S, mal, reg, estado };
+}
+const saludDe = (id) => salud().find((s) => s.id === id)?.estado || "sin";
+const preciosViejos = () => saludDe("ranking") !== "ok";
+
 function fuentes() {
   const R = D.ranking, X = R?.fuentes_extra || {}, L = D.seguimiento?.lista, out = [];
   const porEdad = (nombre, iso, que, horas = 80) => { const h = edadH(iso); out.push({ nombre, que, estado: h == null ? "mal" : h <= 36 ? "bien" : h <= horas ? "regular" : "mal", det: iso ? `datos del ${fecha(iso)}` : "sin datos todavía" }); };
@@ -440,52 +558,74 @@ function propLista(t) {
   }).join("\n");
 }
 
-function hoy() {
-  const E = D.estado, R = D.ranking, L = D.seguimiento?.lista;
-  const al = E?.alertas || [];
-  const enZona = (E?.precios || []).filter((p) => !vacio(p.distancia_zona_pct) && p.distancia_zona_pct <= 0);
-  const M = R?.macro, MC = { verde: ["var(--ok)", "Verde", "okt"], ambar: ["var(--warn)", "Ámbar", "warnt"], rojo: ["var(--bad)", "Rojo", "badt"] }[M?.estado] || ["var(--mut)", "—", ""];
-  const dia = cortoDias()[0], abiertas = dia ? dia.filas.filter((r) => r.accion === "abierta").length : 0, cand = dia ? dia.filas.filter((r) => r.accion === "candidata").length : 0;
-  const ensayo = dia && dia.filas.some((r) => r.accion.startsWith("ensayo"));
-  const tipos = al.reduce((o, a) => (o[a.tipo] = (o[a.tipo] || 0) + 1, o), {});
-  let h = `<div class="kpis">
-    <a class="kpi" href="#/vigilancia" style="--c:var(--warn)"><div class="lbl">Avisos de hoy</div><div class="val ${al.length ? "warnt" : ""}">${E ? al.length : "—"}</div><div class="det">${Object.entries(tipos).map(([t, n]) => `${n} ${esc(CORTO_AV[t] || t.toLowerCase())}`).join(" · ") || (E ? "nada que mirar" : "aún sin calcular")}</div></a>
-    <a class="kpi" href="#/vigilancia" style="--c:var(--ok)"><div class="lbl">En zona</div><div class="val okt">${E ? enZona.length : "—"}<span class="mut" style="font-size:1rem;font-weight:600"> / ${D.watchlist.length}</span></div><div class="det">de tu lista: ${enZona.map((p) => esc(p.ticker)).join(", ") || "ninguna"}</div></a>
-    <a class="kpi" href="#/ranking" style="--c:${MC[0]}"><div class="lbl">Semáforo macro</div><div class="val ${MC[2]}"><span class="dot" style="--c:${MC[0]};width:14px;height:14px"></span>${MC[1]}</div><div class="det">${esc(M?.resumen || "sin datos")}</div></a>
-    <a class="kpi" href="#/bot" style="--c:var(--ia)"><div class="lbl">Bot del hueco</div><div class="val">${dia ? abiertas : "—"}<span class="mut" style="font-size:1rem;font-weight:600"> cortos</span></div><div class="det">${dia ? `${diaCorto(dia.fecha)} · ${cand} candidatas${ensayo ? " · ensayo" : ""}` : "aún sin decisiones"}</div></a>
-  </div>`;
-  const P = (D.propuestas || [])[0];
-  h += `<div class="sec" style="--c:var(--ia)">Propuestas de hoy <span class="mas">investigador diario</span></div>`;
-  h += P ? `<div class="card"><div class="mut">${esc(diaCorto(P.fecha))}${P.fecha < HOY() ? " · aún no hay las de hoy" : ""} · cada idea queda apuntada en el <a href="#/marcador">Marcador</a></div><article class="md">${md(propLista(P.texto))}</article></div>`
-    : vacioBox("Aún sin propuestas", "Cada mañana de lunes a viernes el investigador diario lee la carpeta del día y deja aquí 3-5 ideas con precio de entrada y stop.");
-  const at = atencion();
-  h += `<div class="sec" style="--c:var(--warn)">Requiere atención <span class="mas">${at.length}</span></div>`;
-  h += at.length ? at.slice(0, 6).map(avisoHtml).join("") + (at.length > 6 ? `<details><summary class="sub" style="padding:4px 2px 10px">Ver ${at.length - 6} más</summary>${at.slice(6).map(avisoHtml).join("")}</details>` : "") : vacioBox("Todo tranquilo", "No hay avisos ni problemas hoy.");
-  // Mis acciones
-  const mp = (D.cartera || []).map(posicion).filter((p) => p.estado === "abierta");
-  if (mp.length) {
-    const calc = mp.filter((p) => p.pl != null).map((p) => ({ t: p.ticker, v: p.pl, href: `#/cartera/${p.ticker}` })).sort((a, b) => b.v - a.v);
-    const cs = mp.map((p) => ({ p, c: proxCat(p.ticker) })).filter((x) => x.c && dias(x.c.f) <= 7).sort((a, b) => a.c.f.localeCompare(b.c.f));
-    h += `<div class="sec" style="--c:var(--acc)">Mis acciones <a class="mas" href="#/cartera">Abrir →</a></div><div class="card">${cs.length ? `<div style="margin-bottom:10px">${cs.map(({ p, c }) => `<a class="chip" style="color:var(--warnt);text-decoration:none;margin:0 6px 6px 0;display:inline-block" href="#/cartera/${esc(p.ticker)}">⏰ ${esc(p.ticker)} · ${esc(c.texto.slice(0, 28))} · ${cuenta(c.f)}</a>`).join("")}</div>` : ""}${calc.length ? `<div class="mut" style="margin-bottom:6px">Resultado desde tu compra</div>${divergentes(calc)}` : `<div class="sub">Sin precios para calcular el resultado.</div>`}</div>`;
+function propIdeas(t) {
+  // Lee la tabla del investigador diario (ticker | idea | precio | entrada | stop | objetivo | motivo).
+  const ideas = [], texto = [];
+  for (const l of t.replace(/^#\s+.+$/m, "").split("\n")) {
+    const x = l.trim();
+    if (x.startsWith("|")) {
+      const c = x.replace(/^\||\|$/g, "").split("|").map((y) => y.trim());
+      if (c[0].toLowerCase() !== "ticker" && !/^[-: ]+$/.test(c.join("")) && c.length >= 6) ideas.push({ tk: c[0], idea: c[1], precio: c[2], ent: c[3], stop: c[4], obj: c[5], motivo: c[6] || "" });
+    } else if (x && !x.startsWith("_") && !x.startsWith("**Qué haría")) texto.push(x);
   }
-  // Tu lista de un vistazo
-  const precios = Object.fromEntries((E?.precios || []).map((p) => [p.ticker, p]));
-  h += `<div class="sec" style="--c:var(--ok)">Vigilancia del agente <a class="mas" href="#/vigilancia">Ver todo →</a></div>`;
-  h += D.watchlist.length ? `<div class="dos">${D.watchlist.map((w) => wlMini(w, precios[w.ticker])).join("")}</div>` : vacioBox("Lista vacía", "Todavía no hay empresas analizadas.");
-  // Movimientos del día
-  const mov = Object.entries({ ...(L?.empresas || {}), ...(L?.materias_primas || {}) }).filter(([, e]) => !vacio(e.cambio_pct)).map(([t, e]) => ({ t, v: +e.cambio_pct, href: `#/seguimiento/${encodeURIComponent(t)}`, tip: `${e.nombre}: cierre ${e.cierre}` })).sort((a, b) => b.v - a.v);
-  h += `<div class="sec" style="--c:var(--acc)">Cómo se movió tu seguimiento${L?.fecha ? ` · ${esc(diaCorto(L.fecha))}` : ""}<a class="mas" href="#/seguimiento">Noticias →</a></div>`;
-  h += mov.length ? `<div class="card">${L?.mercado ? `<div class="sub" style="margin-bottom:8px">Mercado (${esc(L.mercado.ticker)}): <b class="${L.mercado.cambio_pct >= 0 ? "okt" : "badt"}">${pct(L.mercado.cambio_pct)}</b></div>` : ""}${divergentes(mov)}</div>` : vacioBox("Sin datos", "El seguimiento de noticias aún no ha corrido.");
-  // Calendario
-  const ev = catalizadores();
-  h += `<div class="sec" style="--c:var(--warn)">Próximos catalizadores y resultados</div>`;
-  h += ev.length ? `<div class="card"><ul class="tl">${ev.slice(0, 10).map((e) => `<li style="--c:${e.col}"><div class="cuando">${esc(diaCorto(e.f))} · ${dias(e.f) === 0 ? "hoy" : dias(e.f) === 1 ? "mañana" : `en ${dias(e.f)} días`} · ${esc(e.origen)}</div><div><b>${esc(e.t)}</b> ${esc(e.texto)}</div></li>`).join("")}</ul>${ev.length > 10 ? `<details><summary class="sub">Ver ${ev.length - 10} más</summary><ul class="tl" style="margin-top:10px">${ev.slice(10).map((e) => `<li style="--c:${e.col}"><div class="cuando">${esc(diaCorto(e.f))} · en ${dias(e.f)} días · ${esc(e.origen)}</div><div><b>${esc(e.t)}</b> ${esc(e.texto)}</div></li>`).join("")}</ul></details>` : ""}</div>` : vacioBox("Sin fechas", "No hay catalizadores con fecha próxima.");
-  // Los dos agentes
+  const pro = (t.match(/\*\*Qué haría un profesional hoy:\*\*\s*(.+)/) || [])[1] || "";
+  return { ideas, intro: texto.join(" "), pro };
+}
+const IDEA_COL = { comprar_en_zona: ["var(--okt)", "Comprar si está en zona"], vigilar: ["var(--warnt)", "Vigilar, aún no"], evitar: ["var(--badt)", "Evitar"] };
+function ideaCard(i, viejo) {
+  const [c, nom] = IDEA_COL[i.idea] || ["var(--sub)", i.idea];
+  const enZona = !vacio(i.precio) && !vacio(i.ent) && +i.precio <= +i.ent;
+  return `<div class="idea${viejo ? " viejo" : ""}"><div class="cab"><a class="tk" style="color:inherit;text-decoration:none" href="#/historia/${encodeURIComponent(i.tk)}">${esc(i.tk)}</a><span class="que" style="--c:${c}">${esc(nom)}</span>${i.idea === "comprar_en_zona" ? `<span class="mut" style="margin-left:auto">${viejo ? "zona sin confirmar" : enZona ? "✓ en zona" : "fuera de zona"}</span>` : ""}</div>
+    <div class="cifras"><div><small>Precio</small><b>${esc(i.precio)}</b></div><div><small>Entrada ≤</small><b>${esc(i.ent)}</b></div><div><small>Stop</small><b class="badt">${esc(i.stop)}</b></div><div><small>Objetivo</small><b class="okt">${esc(i.obj)}</b></div></div>
+    <div class="mot">${esc(i.motivo)}</div></div>`;
+}
+function agendaFila(e) {
+  const d = dias(e.f);
+  return `<a class="fila" style="--c:${e.col}" href="#/historia/${encodeURIComponent(e.t)}"><span class="cu"><div class="tx"><span class="tk">${esc(e.t)}</span> ${esc(e.texto)}</div><span class="mut">${esc(e.origen)}</span></span><span class="der" style="${d <= 1 ? "color:var(--warnt)" : ""}">${d === 0 ? "HOY" : d === 1 ? "mañana" : `${d} días`}<br><span style="font-weight:500">${esc(diaCorto(e.f).replace(/^\w+\.?,?\s*/, ""))}</span></span></a>`;
+}
+function hoy() {
+  const E = D.estado, R = D.ranking, L = D.seguimiento?.lista, G = saludGlobal(), viejo = preciosViejos();
+  // 1 · Estado del sistema: lo primero. Si los datos son viejos, todo lo demás hay que leerlo con cuidado.
+  const [gc] = SALUD[G.estado], prob = [...G.mal, ...G.reg];
+  let h = `<a class="estado" href="#/sistema" style="--c:${gc}"><span class="luz"></span><span style="min-width:0"><b>${G.estado === "ok" ? "Sistema al día" : G.estado === "parado" ? "Hay automatismos parados" : `${prob.length} automatismo${prob.length > 1 ? "s" : ""} con retraso`}</b><small>${G.estado === "ok" ? `Los ${G.S.length} automatismos han dejado datos cuando tocaba.` : esc(prob.slice(0, 3).map((s) => `${s.nombre.split(" (")[0]}: ${s.u ? "datos del " + diaCorto(s.u) : "sin datos"}`).join(" · "))}</small></span><span class="ir">›</span></a>`;
+  // 2 · Tres cifras
+  const al = E?.alertas || [], enZona = (E?.precios || []).filter((p) => !vacio(p.distancia_zona_pct) && p.distancia_zona_pct <= 0);
+  const mp = (D.cartera || []).map(posicion).filter((p) => p.estado === "abierta"), hoyUsd = mp.reduce((a, p) => a + (p.hoyUsd || 0), 0), hayHoy = mp.some((p) => p.hoyUsd != null);
+  const M = L?.mercado;
+  h += `<div class="stats">
+    <a href="#/cartera"><div class="l">Tus acciones</div><div class="v ${!hayHoy ? "" : hoyUsd >= 0 ? "okt" : "badt"}">${hayHoy ? dineroS(hoyUsd, "USD") : "—"}</div><div class="d">hoy · ${mp.length} posiciones${L?.fecha ? ` · ${esc(diaCorto(L.fecha))}` : ""}</div></a>
+    <a href="#/vigilancia"><div class="l">En zona</div><div class="v">${E ? enZona.length : "—"}<span class="mut" style="font-size:.8rem;font-weight:500"> de ${D.watchlist.length}</span></div><div class="d">${viejo ? `<span class="warnt">sin confirmar: precios viejos</span>` : esc(enZona.map((p) => p.ticker).join(", ") || "ninguna")}</div></a>
+    <a href="#/seguimiento"><div class="l">Bolsa EE. UU.</div><div class="v ${M && !vacio(M.cambio_pct) ? (M.cambio_pct >= 0 ? "okt" : "badt") : ""}">${M ? pct(M.cambio_pct) : "—"}</div><div class="d">${M ? `${esc(M.ticker)} · ${esc(diaCorto(M.fecha))}` : "sin datos"}</div></a>
+  </div>`;
+  // 3 · Requiere tu atención (máx. 5; primero lo de tus acciones)
+  const at = atencion();
+  h += `<div class="sec">Requiere tu atención <span class="mas">${at.length || ""}</span></div>`;
+  h += at.length ? `<div class="lista">${at.slice(0, 4).map(avisoFila).join("")}${at.length > 4 ? `<details><summary>Ver ${at.length - 4} más</summary>${at.slice(4).map(avisoFila).join("")}</details>` : ""}</div>${viejo ? `<p class="mut" style="margin:-4px 2px 0">Los avisos de zona y catalizador se calcularon con precios del ${esc(diaCorto((E?.actualizado || "").slice(0, 10)))}.</p>` : ""}` : vacioBox("Nada urgente", "No hay avisos sobre tus acciones ni sobre la lista vigilada.");
+  // 4 · Propuestas del investigador (IA): una tarjeta por idea, marcadas como propuesta
+  const P = (D.propuestas || [])[0];
+  h += `<div class="sec">Ideas del investigador <span class="mas"><span class="ev ia">Propuesta IA</span></span></div>`;
+  if (P) {
+    const X = propIdeas(P.texto), deHoy = P.fecha === HOY(), pv = !deHoy || viejo;
+    h += `<div class="ctx"><span>${deHoy ? "" : `<b class="warnt">No hay ideas nuevas hoy.</b> Estas son del ${esc(diaCorto(P.fecha))}. `}${esc(X.intro)} <span class="mut">Son ideas para estudiar, no órdenes. Cada una queda apuntada en <a href="#/marcador">Aciertos</a> para comprobar después si acertó.</span></span></div>`;
+    h += X.ideas.length ? X.ideas.map((i) => ideaCard(i, pv)).join("") : `<div class="card"><article class="md">${md(propLista(P.texto))}</article></div>`;
+    if (X.pro) h += `<p class="sub" style="margin:4px 2px 0"><b>Qué haría un profesional:</b> ${esc(X.pro)}</p>`;
+  } else h += vacioBox("Aún sin ideas", "De lunes a viernes por la mañana el investigador lee la carpeta del día y deja aquí 3-5 ideas con precio de entrada, stop y objetivo.");
+  // 5 · Agenda: próximos 14 días
+  const ev = catalizadores().filter((e) => dias(e.f) <= 14);
+  h += `<div class="sec">Agenda · próximos 14 días</div>`;
+  h += ev.length ? `<div class="lista">${ev.slice(0, 6).map(agendaFila).join("")}${ev.length > 6 ? `<details><summary>Ver ${ev.length - 6} más</summary>${ev.slice(6).map(agendaFila).join("")}</details>` : ""}</div>` : vacioBox("Sin fechas cerca", "Ninguna de tus empresas tiene resultados ni decisiones en los próximos 14 días.");
+  // 6 · Los dos agentes, con su prueba pendiente
+  const MB = D.corto?.marcador, dec = MB?.decision, nb = MB?.bot?.n ?? 0, MA = D.marcador?.resumen;
   h += `<div class="sec">Los dos agentes</div><div class="dos">
-    <a class="card" href="#/bot" style="text-decoration:none;color:inherit;border-top:2px solid var(--ia)"><div class="row"><b>A · Intradía</b><span class="chip">eToro demo</span></div><div class="sub">Corto del hueco: vende en corto las acciones que abren ≥ +${num((D.corto?.config?.hueco_min ?? 0.5) * 100, 0)} %, con stop y cierre el mismo día.</div><div class="mut" style="margin-top:6px">Reglas → riesgo → orden → cierre · ver decisiones →${D.corto?.marcador?.decision ? ` · se decide si sigue el ${esc(diaCorto(D.corto.marcador.decision.fecha))}` : ""}</div></a>
-    <a class="card" href="#/ranking" style="text-decoration:none;color:inherit;border-top:2px solid var(--acc)"><div class="row"><b>B · Medio plazo (12 meses)</b><span class="chip">no opera</span></div><div class="sub">Puntúa ${R ? R.analizadas : "las"} small caps en 8 factores, vigila tu lista y avisa. Tú decides.</div><div class="mut" style="margin-top:6px">Ranking → análisis → vigilancia → aviso · ver ranking →</div></a></div>`;
-  const F = fuentes(), mal = F.filter((f) => f.estado === "mal").length, reg = F.filter((f) => f.estado === "regular").length;
-  h += `<a class="card" href="#/fuentes" style="display:flex;gap:10px;align-items:center;text-decoration:none;color:inherit;margin-top:14px"><span><span class="dot" style="--c:var(--ok)"></span>${F.length - mal - reg} bien</span><span><span class="dot" style="--c:var(--warn)"></span>${reg} regular</span><span><span class="dot" style="--c:var(--bad)"></span>${mal} mal</span><span class="sub" style="margin-left:auto">Salud de las fuentes →</span></a>`;
+    <a class="agente" href="#/bot"><div class="row"><b><span class="letra">A</span>Bot intradía</b><span class="ev demo">eToro demo</span></div>
+      <div class="sub" style="margin-top:6px">Vende en corto acciones que abren ≥ +${num((D.corto?.config?.hueco_min ?? 0.5) * 100, 0)} % y cierra el mismo día. Reglas fijas, sin IA.</div>
+      ${dec ? `<div class="prog" style="--c:var(--ia)"><i style="width:${Math.min(100, 100 * nb / dec.ops_min)}%"></i></div><dl><dt>Operaciones cerradas</dt><dd>${nb} de ${dec.ops_min}</dd><dt>Media real / en el pasado</dt><dd>${MB.bot.R_medio == null ? "—" : num(MB.bot.R_medio) + " R"} / ${MB.backtest?.R_medio == null ? "—" : num(MB.backtest.R_medio) + " R"}</dd><dt>Se decide si sigue</dt><dd>en ${dec.dias} días</dd></dl>` : `<div class="mut" style="margin-top:8px">Aún sin marcador.</div>`}</a>
+    <a class="agente" href="#/ideas"><div class="row"><b><span class="letra">B</span>Investigación 12 meses</b><span class="ev pasado">no opera</span></div>
+      <div class="sub" style="margin-top:6px">Ordena ${R ? R.analizadas : "las"} small caps, vigila ${D.watchlist.length} y avisa. Tú decides.</div>
+      <dl><dt>Predicciones apuntadas</dt><dd>${MA ? MA.total : (D.predicciones || []).length}</dd><dt>Ya puntuadas</dt><dd>${MA ? MA.puntuadas : 0}</dd><dt>Aciertos</dt><dd>${MA?.aciertos_pct == null ? "aún pronto" : MA.aciertos_pct + " %"}</dd></dl></a></div>`;
+  // 7 · Detalle (plegado): cómo van tus posiciones y la lista vigilada
+  const calc = mp.filter((p) => p.pl != null).map((p) => ({ t: p.ticker, v: p.pl, href: `#/cartera/${p.ticker}` })).sort((a, b) => b.v - a.v);
+  if (calc.length) h += `<div class="sec">Tus acciones desde la compra <a class="mas" href="#/cartera">Abrir →</a></div><div class="card">${divergentes(calc)}</div>`;
   return h;
 }
 function wlMini(w, p) {
@@ -882,12 +1022,6 @@ function quintuplicar() {
   return `<div class="card aviso" style="--c:var(--s5)"><span class="ico">×6</span><span class="sub">Small y mid caps de EE. UU. con un objetivo medio de analistas de +500 % o más: por qué se lo dan y si es realista. Informe del ${esc(d.fecha)}.</span></div>
   <article class="card md">${md(d.texto)}</article>`;
 }
-function fuentesVista() {
-  const F = fuentes(), C = { bien: ["var(--ok)", "Bien"], regular: ["var(--warn)", "Regular"], mal: ["var(--bad)", "Mal"] };
-  return `<p class="sub" style="margin-top:0">De dónde saca el agente cada dato y si ha llegado a tiempo. Verde: al día. Ámbar: con retraso (normal en fin de semana) o incompleto. Rojo: no llega.</p>` +
-    F.map((f) => `<div class="card" style="display:flex;gap:12px;align-items:flex-start;border-left:3px solid ${C[f.estado][0]}"><span style="min-width:0;flex:1"><div class="row"><b>${esc(f.nombre)}</b><span class="chip" style="color:${C[f.estado][0]}">${C[f.estado][1]}</span></div><div class="sub">${esc(f.que)}</div><div class="mut">${esc(f.det)}</div></span></div>`).join("") +
-    (F.some((f) => f.nombre.startsWith("SEC") && f.estado === "mal") ? `<div class="card sub">La SEC pide identificarse para dar datos. Se arregla creando en GitHub el secreto <b>SEC_USER_AGENT</b> con «Nombre email». Pídeselo a Claude en el chat si quieres ayuda.</div>` : "");
-}
 function marcadorVista() {
   const M = D.marcador, libro = D.predicciones || [];
   const inf = (ruta) => (D.informes || []).find((i) => i.id === ruta);
@@ -912,17 +1046,31 @@ function marcadorVista() {
   return h;
 }
 function masVista() {
-  const it = [["#/marcador", "◎", "var(--acc)", "Marcador de aciertos", "¿Aciertan los análisis? Cada predicción frente al índice de small caps."],
-    ["#/bot", "⚡", "var(--ia)", "Bot corto del hueco", "Agente A en eToro demo: cómo decide y qué hizo cada día."],
-    ["#/lab", "⚗", "var(--ia)", "Laboratorio intradía", "Agente A: 6 estrategias a la vez en papel, con el pasado y cada día."],
-    ["#/vigilancia", "✓", "var(--ok)", "Vigilancia del agente", "Empresas que el agente analiza y vigila por su cuenta, con zona de entrada, objetivo y stop."],
-    ["#/duplicar", "×2", "var(--ok)", "¿Puede duplicar?", "Perfil con tus criterios para buscar acciones que puedan doblar."],
-    ["#/x6", "×6", "var(--s5)", "¿+500 %?", "Objetivos de analistas de +500 %: por qué y si es realista."],
-    ["#/informes", "▤", "var(--acc)", "Informes", "Análisis de empresas, buscador, sectores, diario y bot."],
-    ["#/candidatos", "≡", "var(--mut)", "Cribado simple", "La primera criba de cada domingo, en tabla."],
-    ["#/fuentes", "●", "var(--warn)", "Salud de las fuentes", "Qué datos llegan, de cuándo y cuáles fallan."],
-    ["#/ayuda", "?", "var(--ia)", "Cómo se usa", "Qué hace cada parte y qué significan las palabras."]];
-  return `<div class="menu">${it.map(([h, ic, c, t, d]) => `<a class="card" href="${h}" style="--c:${c}"><span class="ic">${ic}</span><span><b>${t}</b><div class="sub">${d}</div></span></a>`).join("")}</div>`;
+  const G = saludGlobal();
+  const grupo = (t, it) => `<div class="grupo-t">${t}</div><div class="menu">${it.map(([h, ic, c, n, d]) => `<a class="card" href="${h}" style="--c:${c}"><span class="ic">${ic}</span><span style="min-width:0"><b>${n}</b><div class="sub">${d}</div></span></a>`).join("")}</div>`;
+  return grupo("Sistema", [["#/sistema", "●", SALUD[G.estado][0], "Estado del sistema", `${SALUD[G.estado][1]} · qué automatismos se han ejecutado y cuáles no.`],
+      ["#/informes", "▤", "var(--acc)", "Informes", "Todos los análisis, repasos y diarios, por tipo."],
+      ["#/ayuda", "?", "var(--acc)", "Cómo se usa", "Qué hace cada parte y qué significan las palabras."]])
+    + grupo("Agente B · investigación", [["#/vigilancia", "✓", "var(--ok)", "Lista vigilada", "Empresas analizadas, con zona de entrada, objetivo y stop."],
+      ["#/ranking", "≡", "var(--acc)", "Ranking", "Las small caps ordenadas por nota (8 factores)."],
+      ["#/marcador", "◎", "var(--acc)", "Aciertos", "¿Aciertan los análisis? Cada predicción frente al índice."],
+      ["#/seguimiento", "N", "var(--warn)", "Noticias", "Titulares y movimientos de lo que sigues."]])
+    + grupo("Agente A · intradía", [["#/bot", "↗", "var(--ia)", "Bot en demo", "Qué decidió cada día y cómo va frente al pasado."],
+      ["#/lab", "⚗", "var(--ia)", "Laboratorio", "6 estrategias probadas con 10 años de datos y en papel."]])
+    + grupo("Archivo · estudios ya cerrados", [["#/duplicar", "×2", "var(--mut)", "¿Puede duplicar?", "Perfil del 14-nov. No se actualiza cada día."],
+      ["#/x6", "×6", "var(--mut)", "¿+500 %?", "Estudio del 15-nov sobre objetivos de analistas extremos."],
+      ["#/candidatos", "≡", "var(--mut)", "Cribado simple", "La primera criba de cada domingo, en tabla."]]);
+}
+function sistemaVista() {
+  const G = saludGlobal(), F = fuentes(), C = { bien: ["var(--ok)", "Bien"], regular: ["var(--warn)", "Regular"], mal: ["var(--bad)", "Mal"] };
+  const fila = (s) => { const [c, nom] = SALUD[s.estado]; return `<div class="fila" style="--c:${c}"><span class="ico">${s.estado === "ok" ? "✓" : s.estado === "retraso" ? "!" : s.estado === "parado" ? "×" : "?"}</span><span class="cu"><div class="tx"><b>${esc(s.nombre)}</b></div><div class="sub">${esc(s.que)}</div><div class="mut">${s.u ? `Último dato: ${esc(diaCorto(s.u))}` : "Todavía no ha dejado ningún dato"}${s.estado !== "ok" && s.esperado ? ` · se esperaba el del ${esc(diaCorto(s.esperado))}` : ""}${s.nota ? ` · ${esc(s.nota)}` : ""}</div>${s.estado !== "ok" && s.workflow ? `<a class="mut" href="https://github.com/Rubenmanga/trading-lab/actions/workflows/${esc(s.workflow)}" target="_blank" rel="noopener">Ver o lanzar a mano en GitHub (${esc(s.workflow)}) ↗</a>` : ""}</span><span class="der" style="color:${c}">${nom}</span></div>`; };
+  let h = `<p class="lead">Cada automatismo deja una fecha en sus archivos. Aquí se compara con la fecha en que debería haber dato nuevo. El cálculo se hace <b>al abrir esta página</b>, así que avisa aunque GitHub no haya ejecutado nada.</p>`;
+  h += `<div class="estado" style="--c:${SALUD[G.estado][0]}"><span class="luz"></span><span><b>${G.estado === "ok" ? "Todo al día" : G.estado === "parado" ? "Algo importante está parado" : "Hay retrasos"}</b><small>${G.S.filter((s) => s.estado === "ok").length} de ${G.S.length} al día · panel generado el ${esc(fecha(D.construido))}</small></span></div>`;
+  for (const [ag, t] of [["A", "Agente A · intradía"], ["B", "Agente B · investigación"]]) h += `<div class="sec">${t}</div><div class="lista">${G.S.filter((s) => s.agente === ag).map(fila).join("")}</div>`;
+  if (G.estado !== "ok") h += `<div class="ctx"><span><b>Qué hacer.</b> Un retraso de un día suele arreglarse solo en la siguiente pasada (y los festivos de EE. UU. salen como retraso sin serlo). Si algo sale <b>parado</b>, escribe a Claude: «lanza a mano el automatismo que está parado». No hace falta que toques GitHub.</span></div>`;
+  h += `<div class="sec">Fuentes de datos del ranking</div><div class="lista">${F.map((f) => `<div class="fila" style="--c:${C[f.estado][0]}"><span class="ico">${f.estado === "bien" ? "✓" : f.estado === "regular" ? "!" : "×"}</span><span class="cu"><div class="tx"><b>${esc(f.nombre)}</b></div><div class="sub">${esc(f.que)}</div><div class="mut">${esc(f.det)}</div></span><span class="der" style="color:${C[f.estado][0]}">${C[f.estado][1]}</span></div>`).join("")}</div>`;
+  if (F.some((f) => f.nombre.startsWith("SEC") && f.estado === "mal")) h += `<div class="card sub">La SEC pide identificarse para dar datos. Se arregla creando en GitHub el secreto <b>SEC_USER_AGENT</b> con «Nombre email». Pídeselo a Claude si quieres ayuda.</div>`;
+  return h;
 }
 function ayuda() {
   return `<div class="card md">
@@ -1036,16 +1184,33 @@ function historiaVista(t) {
 }
 
 /* ---------- Navegación ---------- */
-const TITULO = { "/ranking": "Ranking", "/bot": "Bot corto del hueco", "/lab": "Laboratorio intradía", "/seguimiento": "Seguimiento de noticias", "/vigilancia": "Vigilancia del agente", "/cartera": "Mis acciones", "/duplicar": "¿Puede duplicar?", "/x6": "¿+500 %?", "/informes": "Informes", "/candidatos": "Cribado simple", "/ayuda": "Cómo se usa", "/mas": "Más", "/fuentes": "Salud de las fuentes", "/marcador": "Marcador de aciertos" };
-const EN_MAS = ["/bot", "/lab", "/vigilancia", "/duplicar", "/x6", "/informes", "/candidatos", "/ayuda", "/fuentes", "/marcador"];
+const TITULO = { "/ranking": "Ranking", "/bot": "Bot corto del hueco", "/lab": "Laboratorio intradía", "/seguimiento": "Noticias", "/vigilancia": "Lista vigilada", "/cartera": "Mis acciones", "/duplicar": "¿Puede duplicar?", "/x6": "¿+500 %?", "/informes": "Informes", "/candidatos": "Cribado simple", "/ayuda": "Cómo se usa", "/mas": "Más", "/sistema": "Estado del sistema", "/marcador": "Aciertos" };
+// Cinco secciones. Cada ruta pertenece a una; las de «ideas» y «agente-a» comparten una fila de pestañas.
+const ALIAS = { "/ideas": "/vigilancia", "/agente-a": "/bot", "/fuentes": "/sistema" };
+const GRUPOS = { "/ideas": [["/vigilancia", "Lista vigilada"], ["/ranking", "Ranking"], ["/marcador", "Aciertos"], ["/seguimiento", "Noticias"]], "/agente-a": [["/bot", "Bot en demo"], ["/lab", "Laboratorio"]] };
+const grupoDe = (p) => p === "/" || p === "/cartera" ? p : Object.keys(GRUPOS).find((g) => GRUPOS[g].some(([r]) => r === p)) || "/mas";
+// Qué clase de información es cada pantalla: hecho comprobable, cálculo con supuestos, propuesta de la IA o resultado del pasado.
+const CONTEXTO = {
+  "/vigilancia": ["estim", "Estimación", "La zona de entrada, el objetivo y el stop salen de cada análisis: son un cálculo con supuestos, no un hecho. El precio sí es un dato (con su fecha)."],
+  "/ranking": ["estim", "Estimación", "La nota ordena qué mirar primero; no dice qué comprar. En la prueba con 12 años de datos, elegir por nota ganó solo +0,4 % al año frente a comprar todas."],
+  "/marcador": ["hecho", "Hecho", "Predicciones apuntadas con fecha y comparadas con el índice. No se pueden cambiar después. Con pocas, el porcentaje aún no significa nada."],
+  "/seguimiento": ["hecho", "Hecho", "Titulares y precios con su fuente y fecha. La explicación de «por qué se movió» es una interpretación automática."],
+  "/bot": ["demo", "Demo", "Operaciones en la cuenta de prueba de eToro. El resultado del pasado (backtest) no incluye toda la diferencia de precio real al entrar: por eso manda lo que pase aquí."],
+  "/lab": ["pasado", "Pasado", "Resultados simulados con datos de 2016 a hoy. Que algo funcionara en el pasado no asegura que funcione mañana."],
+  "/duplicar": ["pasado", "Archivo", "Estudio cerrado del 14-nov-2026. Los precios y objetivos son de aquel día."],
+  "/x6": ["pasado", "Archivo", "Estudio cerrado del 15-nov-2026. Los objetivos de analistas son opiniones, no previsiones fiables."],
+};
 function pintar(mantener) {
-  const r = location.hash.replace(/^#/, "") || "/";
-  const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/ranking" : r.startsWith("/seguimiento") ? "/seguimiento" : r.startsWith("/cartera") || r.startsWith("/historia/") ? "/cartera" : r;
-  document.querySelectorAll("#tabs a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + pest || (pest !== "/" && !TITULO[pest] && a.getAttribute("href") === "#/mas")));
-  document.querySelectorAll("#abajo a").forEach((a) => a.classList.toggle("on", a.getAttribute("href") === "#" + (EN_MAS.includes(pest) ? "/mas" : pest)));
+  const r0 = location.hash.replace(/^#/, "") || "/", r = ALIAS[r0] || r0;
+  const pest = r.startsWith("/informe/") ? "/informes" : r.startsWith("/empresa/") ? "/ranking" : r.startsWith("/seguimiento") ? "/seguimiento" : r.startsWith("/cartera") ? "/cartera" : r.startsWith("/historia/") ? (miTicker(decodeURIComponent(r.slice(10))) ? "/cartera" : "/vigilancia") : r;
+  const g = grupoDe(pest);
+  for (const id of ["#tabs a", "#abajo a"]) document.querySelectorAll(id).forEach((a) => { const on = a.getAttribute("href") === "#" + g; a.classList.toggle("on", on); on ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current"); });
   const app = $("#app");
   if (!D) return;
-  const titulo = TITULO[pest] && pest !== "/" ? `<h1 style="font-size:1.25rem;margin:4px 0 12px">${TITULO[pest]}</h1>` : "";
+  const detalle = r.startsWith("/informe/") || r.startsWith("/empresa/") || r.startsWith("/historia/");
+  const seg = GRUPOS[g] && !detalle ? `<nav class="seg" aria-label="Apartados">${GRUPOS[g].map(([h, n]) => `<a href="#${h}"${h === pest ? ' class="on" aria-current="page"' : ""}>${n}</a>`).join("")}</nav>` : "";
+  const cx = CONTEXTO[pest] && !detalle ? `<div class="ctx"><span class="ev ${CONTEXTO[pest][0]}">${CONTEXTO[pest][1]}</span><span>${CONTEXTO[pest][2]}</span></div>` : "";
+  const titulo = seg + (TITULO[pest] && pest !== "/" ? `<h1 class="titulo" style="margin-bottom:12px">${TITULO[pest]}</h1>` : "") + cx;
   let cuerpo;
   try {
     cuerpo = r.startsWith("/informe/") ? informe(decodeURIComponent(r.slice(9)))
@@ -1056,9 +1221,9 @@ function pintar(mantener) {
       : r === "/ranking" ? oportunidades() : r === "/bot" ? bot() : r === "/lab" ? labVista() : r === "/informes" ? informes() : r === "/candidatos" ? candidatos()
       : r === "/ayuda" ? ayuda() : r === "/vigilancia" ? resumen() : r === "/duplicar" ? duplicar() : r === "/x6" ? quintuplicar()
       : r === "/marcador" ? marcadorVista()
-      : r === "/mas" ? masVista() : r === "/fuentes" ? fuentesVista() : hoy();
+      : r === "/mas" ? masVista() : r === "/sistema" ? sistemaVista() : hoy();
   } catch (e) { console.error(e); cuerpo = vacioBox("Algo ha fallado al dibujar esta parte", esc(e.message)); }
-  app.innerHTML = (r.startsWith("/informe/") || r.startsWith("/empresa/") || r.startsWith("/historia/") ? "" : titulo) + cuerpo;
+  app.innerHTML = (detalle ? "" : titulo) + cuerpo;
   const fs = $("#fs");
   if (fs) fs.onchange = () => { filtroSector = fs.value; cuantas = 30; try { localStorage.setItem("fs", filtroSector); } catch {} pintar(true); };
   document.querySelectorAll("[data-carril]").forEach((b) => b.onclick = () => { filtroCarril = b.dataset.carril; cuantas = 30; try { localStorage.setItem("fc", filtroCarril); } catch {} pintar(true); });
@@ -1096,8 +1261,12 @@ $("#tema").onclick = () => { tema = TEMAS[(TEMAS.indexOf(tema) + 1) % 3]; try { 
 
 fetch("datos.json", {cache: "no-store"}).then((r) => r.json()).then((d) => {
   D = d;
-  $("#sub-cab").textContent = `Datos al ${D.estado ? fecha(D.estado.actualizado) : fecha(D.construido)} · solo lectura`;
-  $("#pie").innerHTML = `Nada de esto es una recomendación de compra. El agente B no opera; el bot del agente A solo usa la cuenta demo.<br>Precios: ${D.estado ? esc(fecha(D.estado.actualizado)) : "aún sin calcular"} · Panel generado: ${esc(fecha(D.construido))}`;
+  const G0 = saludGlobal(), cab = $("#sub-cab");
+  cab.textContent = G0.estado === "ok" ? `Datos al día · ${fecha(D.construido)}` : (G0.estado === "parado" ? "Hay automatismos parados" : "Algún dato llega con retraso");
+  cab.classList.toggle("viejo", G0.estado !== "ok");
+  const hoyTab = document.querySelector('#abajo a[href="#/"]');
+  if (hoyTab && G0.estado !== "ok") hoyTab.insertAdjacentHTML("afterbegin", `<i class="pto" style="--c:${SALUD[G0.estado][0]}"></i>`);
+  $("#pie").innerHTML = `Herramienta de aprendizaje. Nada de esto es una recomendación de compra. El agente B no opera; el bot del agente A solo usa la cuenta demo.<br>Precios: ${D.estado ? esc(fecha(D.estado.actualizado)) : "aún sin calcular"} · Panel generado: ${esc(fecha(D.construido))}`;
   pintar();
 }).catch((e) => { console.error(e); $("#app").innerHTML = vacioBox("No se han podido cargar los datos", "Prueba a recargar la página."); });
 addEventListener("hashchange", () => pintar());

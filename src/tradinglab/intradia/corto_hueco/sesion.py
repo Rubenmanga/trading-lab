@@ -126,7 +126,13 @@ def operar(cfg: dict, alpaca, etoro, ensayo: bool = False, simbolos: list[str] |
     if not ensayo:
         _esperar(_en(reloj(), cfg["hora_entrada"]), reloj, dormir)
 
-    credito, posiciones = etoro.cartera()
+    try:
+        credito, posiciones = etoro.cartera()
+    except Exception as e:  # noqa: BLE001 - sin cartera no se puede medir el riesgo: hoy no se abre nada, pero queda apuntado
+        diario.apuntar("", "error", f"eToro no devuelve la cartera demo ({type(e).__name__}): hoy no se abre nada")
+        diario.avisos.append("El bot no pudo leer la cuenta demo de eToro: hoy no abrió nada.")
+        diario.guardar("Apertura")
+        return diario
     cap = riesgo.capital(credito, posiciones)
     estado.setdefault("capital_inicial", round(cap, 2))
     if riesgo.freno_activado(cap, estado["capital_inicial"], cfg):
@@ -140,57 +146,64 @@ def operar(cfg: dict, alpaca, etoro, ensayo: bool = False, simbolos: list[str] |
     abiertas = estado.get("abiertas", [])
     hechas = 0
     for c in cands:
-        if hechas >= cfg["max_operaciones_dia"]:
-            diario.apuntar(c["simbolo"], "descartada", f"ya hay {hechas} operaciones hoy (máximo)")
-            continue
-        iid = etoro.instrumento(c["simbolo"])
-        if not iid:
-            diario.apuntar(c["simbolo"], "descartada", "no está en eToro")
-            continue
-        el = etoro.corto_permitido(iid)
-        if not el.get("ok"):
-            diario.apuntar(c["simbolo"], "descartada", el.get("motivo", "eToro no deja corto"))
-            continue
-        if ensayo:
-            print(f"  elegibilidad {c['simbolo']}: apalancamientos {el.get('apalancamientos')}, stop {el.get('stop_min')}-"
-                  f"{el.get('stop_max')}, campos {el.get('forma')}")
-        tasa = etoro.precios([iid]).get(iid) or {}
-        bid, ask = tasa.get("bid"), tasa.get("ask")
-        if not bid or not ask:
-            diario.apuntar(c["simbolo"], "descartada", "eToro no da precio ahora mismo")
-            continue
-        if bid / c["cierre_ant"] - 1 < cfg["hueco_min"] / 2 and not simbolos:
-            diario.apuntar(c["simbolo"], "descartada", f"ya ha bajado mucho antes de entrar ({bid / c['cierre_ant'] - 1:+.0%})")
-            continue
-        stop_pct = riesgo.stop_ajustado(cfg["stop_pct"], el.get("stop_min"), el.get("stop_max"))
-        levs = el.get("apalancamientos") or []
-        lev = 1 if (not levs or 1 in levs) else min(levs)       # sin apalancamiento si eToro lo permite
-        cfg_op = {**cfg, "apalancamiento": lev,
-                  "importe_min_usd": max(cfg.get("importe_min_usd", 50), float(el.get("importe_min") or 0))}
-        importe, motivo = riesgo.tamano(cap, credito, expuesto, stop_pct, cfg_op)
-        if not importe:
-            diario.apuntar(c["simbolo"], "descartada", motivo)
-            continue
-        stop = riesgo.precio_stop(ask, stop_pct)
-        if ensayo:
-            diario.apuntar(c["simbolo"], "ensayo", f"vendería en corto {importe:,.0f} $ a ~{bid} $ con stop {stop} $ "
-                           f"({stop_pct:g} %); precio {tasa.get('quoteType', '?')}", precio=bid, importe_usd=importe, stop=stop)
+        try:
+            if hechas >= cfg["max_operaciones_dia"]:
+                diario.apuntar(c["simbolo"], "descartada", f"ya hay {hechas} operaciones hoy (máximo)")
+                continue
+            iid = etoro.instrumento(c["simbolo"])
+            if not iid:
+                diario.apuntar(c["simbolo"], "descartada", "no está en eToro")
+                continue
+            el = etoro.corto_permitido(iid)
+            if not el.get("ok"):
+                diario.apuntar(c["simbolo"], "descartada", el.get("motivo", "eToro no deja corto"))
+                continue
+            if ensayo:
+                print(f"  elegibilidad {c['simbolo']}: apalancamientos {el.get('apalancamientos')}, stop {el.get('stop_min')}-"
+                      f"{el.get('stop_max')}, campos {el.get('forma')}")
+            tasa = etoro.precios([iid]).get(iid) or {}
+            bid, ask = tasa.get("bid"), tasa.get("ask")
+            if not bid or not ask:
+                diario.apuntar(c["simbolo"], "descartada", "eToro no da precio ahora mismo")
+                continue
+            if bid / c["cierre_ant"] - 1 < cfg["hueco_min"] / 2 and not simbolos:
+                diario.apuntar(c["simbolo"], "descartada", f"ya ha bajado mucho antes de entrar ({bid / c['cierre_ant'] - 1:+.0%})")
+                continue
+            stop_pct = riesgo.stop_ajustado(cfg["stop_pct"], el.get("stop_min"), el.get("stop_max"))
+            levs = el.get("apalancamientos") or []
+            lev = 1 if (not levs or 1 in levs) else min(levs)       # sin apalancamiento si eToro lo permite
+            cfg_op = {**cfg, "apalancamiento": lev,
+                      "importe_min_usd": max(cfg.get("importe_min_usd", 50), float(el.get("importe_min") or 0))}
+            importe, motivo = riesgo.tamano(cap, credito, expuesto, stop_pct, cfg_op)
+            if not importe:
+                diario.apuntar(c["simbolo"], "descartada", motivo)
+                continue
+            stop = riesgo.precio_stop(ask, stop_pct)
+            if ensayo:
+                diario.apuntar(c["simbolo"], "ensayo", f"vendería en corto {importe:,.0f} $ a ~{bid} $ con stop {stop} $ "
+                               f"({stop_pct:g} %); precio {tasa.get('quoteType', '?')}", precio=bid, importe_usd=importe, stop=stop)
+                hechas += 1
+                continue
+            r = etoro.abrir_corto(iid, importe, stop, lev)
+            if not r.get("ok"):
+                diario.apuntar(c["simbolo"], "error", r.get("motivo", "orden rechazada"))
+                diario.avisos.append(f"{c['simbolo']}: eToro rechazó la orden ({r.get('motivo', '')[:120]})")
+                continue
             hechas += 1
-            continue
-        r = etoro.abrir_corto(iid, importe, stop, lev)
-        if not r.get("ok"):
-            diario.apuntar(c["simbolo"], "error", r.get("motivo", "orden rechazada"))
-            diario.avisos.append(f"{c['simbolo']}: eToro rechazó la orden ({r.get('motivo', '')[:120]})")
-            continue
-        hechas += 1
-        expuesto += importe * lev
-        credito -= importe
-        abiertas.append({"simbolo": c["simbolo"], "instrumentId": iid, "orderId": r.get("orderId"), "dia": hoy,
-                         "precio_aprox": bid, "importe": importe, "stop": stop})
-        diario.apuntar(c["simbolo"], "abierta", f"corto de {importe:,.0f} $ a ~{bid} $ (hueco {c['hueco']:+.0%}), stop {stop} $",
-                       hueco=c["hueco"], precio=bid, importe_usd=importe, stop=stop, order_id=r.get("orderId"))
-        diario.avisos.append(f"Abierto corto DEMO en {c['simbolo']}: {importe:,.0f} $ a ~{bid} $, stop {stop} $ "
-                             f"(hueco {c['hueco']:+.0%}). Se cierra a las 15:45 NY (21:45 en España).")
+            expuesto += importe * lev
+            credito -= importe
+            abiertas.append({"simbolo": c["simbolo"], "instrumentId": iid, "orderId": r.get("orderId"), "dia": hoy,
+                             "precio_aprox": bid, "importe": importe, "stop": stop})
+            # Se guarda YA: si algo falla con la siguiente candidata, el cierre de las 15:45 sabe que esta existe.
+            estado["abiertas"] = abiertas
+            guardar_estado(estado)
+            diario.apuntar(c["simbolo"], "abierta", f"corto de {importe:,.0f} $ a ~{bid} $ (hueco {c['hueco']:+.0%}), stop {stop} $",
+                           hueco=c["hueco"], precio=bid, importe_usd=importe, stop=stop, order_id=r.get("orderId"))
+            diario.avisos.append(f"Abierto corto DEMO en {c['simbolo']}: {importe:,.0f} $ a ~{bid} $, stop {stop} $ "
+                                 f"(hueco {c['hueco']:+.0%}). Se cierra a las 15:45 NY (21:45 en España).")
+        except Exception as e:  # noqa: BLE001 - un fallo con una candidata no puede tumbar el día ni perder lo ya abierto
+            diario.apuntar(c["simbolo"], "error", f"fallo inesperado con esta candidata: {type(e).__name__}: {str(e)[:150]}")
+            diario.avisos.append(f"{c['simbolo']}: fallo inesperado ({type(e).__name__}). Mira en la demo de eToro si quedó algo abierto.")
     if not ensayo:
         estado["abiertas"] = abiertas
         guardar_estado(estado)

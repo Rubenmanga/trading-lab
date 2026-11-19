@@ -12,8 +12,10 @@ lo pesado ya lo hizo GitHub Actions esta noche en `investigacion/hoy.md`.
 - **Lee solo `investigacion/hoy.md`.** Nada más del repo, ni `ls`, ni JSON grandes. Sin web salvo que una idea
   dependa de un hecho de hoy que no esté en `hoy.md` (máx. 1 búsqueda, en sec.gov o la web de la empresa).
 - Solo demo / solo ideas: nunca órdenes, nunca dinero real.
-- Precios: los de `hoy.md` (fuente nivel 2, con su fecha). Si `hoy.md` tiene más de 2 días, escribe solo
-  «Sin propuestas: la carpeta del día está vieja» y termina (no apuntes nada).
+- Precios: los de `hoy.md` (fuente nivel 2, con su fecha). Mira **dos fechas**: la del título y la de
+  «Precios y avisos del …». Si el título tiene más de 2 días, o si aparece el aviso «PRECIOS VIEJOS», escribe solo
+  «Sin propuestas: la carpeta del día está vieja (precios del …)» y termina (no apuntes nada). Un precio viejo
+  no sirve para decir «está en zona de entrada».
 - Cada idea dice **por qué** con un dato de `hoy.md` (aviso, hecho del expediente, zona, catalizador).
 - **Entrada = la de la calculadora** (Paso 7, mismo método siempre), nunca a ojo:
   `jq '.TICKER | {entrada,binaria,valor_esperado}' investigacion/entradas.json`. Si `binaria` es true → `evitar`

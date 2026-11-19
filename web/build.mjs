@@ -111,8 +111,29 @@ function expedientes() {
   return out;
 }
 
+// Estado del sistema (auditoría 17-nov, D1): la última fecha REAL de cada automatismo, sacada de sus propios archivos.
+// El panel calcula el retraso al abrirse (web/index.html → salud()), así avisa aunque GitHub no ejecute nada.
+// `hora` = hora UTC a la que debería haber dato nuevo (con margen por los retrasos de GitHub); `dias` 1-5 = lunes-viernes.
+const ultimaFila = (filas, campo) => (filas.length ? (filas[filas.length - 1][campo] || "").slice(0, 10) : null) || null;
+const propuestasMd = markdowns("investigacion/propuestas");
+const marcadorBot = (() => { try { return JSON.parse(leer("investigacion/corto-hueco", "marcador.json") || "null"); } catch { return null; } })();
+const hoyMd = leer("investigacion", "hoy.md") || "";
+const fechaHoyMd = (hoyMd.match(/^# Carpeta del día · (\d{2})\/(\d{2})\/(\d{4})/m) || []).slice(1);
+const salud = [
+  { id: "ranking", agente: "B", nombre: "Ranking y precios de tu lista", que: "Puntúa las small caps y comprueba zonas de entrada, stops y catalizadores", ultimo: estado?.actualizado || ranking?.actualizado || null, hora: 25.5, dias: [1, 2, 3, 4, 5], workflow: "agente-12m.yml", critico: true },
+  { id: "carpeta", agente: "B", nombre: "Carpeta del día", que: "El resumen que lee el investigador cada mañana", ultimo: fechaHoyMd.length ? `${fechaHoyMd[2]}-${fechaHoyMd[1]}-${fechaHoyMd[0]}` : null, hora: 25.5, dias: [1, 2, 3, 4, 5], workflow: "agente-12m.yml" },
+  { id: "propuestas", agente: "B", nombre: "Investigador diario", que: "3-5 ideas cada mañana (sesión de Claude, no GitHub)", ultimo: propuestasMd[0]?.fecha || null, hora: 9, dias: [1, 2, 3, 4, 5], workflow: null },
+  { id: "noticias", agente: "B", nombre: "Noticias y precios de tus acciones", que: "Titulares y movimientos, cada 2 h con la bolsa abierta", ultimo: seguimiento?.lista?.fecha || null, hora: 24, dias: [1, 2, 3, 4, 5], workflow: "seguimiento-noticias.yml", critico: true },
+  { id: "bot", agente: "A", nombre: "Bot corto del hueco (eToro demo)", que: "Escanea a las 15:34 y cierra a las 21:45 (hora de España)", ultimo: ultimaFila(csv(leer("investigacion/corto-hueco", "registro.csv")), "fecha_hora_ny"), hora: 17, dias: [1, 2, 3, 4, 5], workflow: "corto-hueco.yml", critico: true,
+    nota: "cuenta la última decisión apuntada en el registro (aunque sea «hoy no hay candidatas»)" },
+  { id: "lab", agente: "A", nombre: "Cuenta sombra del laboratorio", que: "Simula en papel la estrategia activa cada noche", ultimo: lab?.actualizado || null, hora: 25.5, dias: [1, 2, 3, 4, 5], workflow: "laboratorio-intradia.yml" },
+  { id: "marcador", agente: "B", nombre: "Marcador de aciertos", que: "Puntúa cada predicción frente al índice, los viernes", ultimo: (() => { try { return JSON.parse(leer("investigacion/marcador", "marcador.json") || "{}").actualizado || null; } catch { return null; } })(), hora: 25.5, dias: [5], workflow: "marcador.yml" },
+];
+
 const datos = {
+  esquema: 2,
   construido: new Date().toISOString(),
+  salud,
   watchlist: csv(leer("investigacion", "watchlist.csv")),
   candidatos: csv(leer("investigacion", "candidatos.csv")),
   estado,
@@ -160,5 +181,6 @@ fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
 fs.writeFileSync(path.join(DIST, "datos.json"), JSON.stringify(datos));
 fs.copyFileSync(path.join(RAIZ, "web", "index.html"), path.join(DIST, "index.html"));
+console.log("Última fecha de cada automatismo: " + salud.map((x) => `${x.id}=${(x.ultimo || "sin datos").slice(0, 10)}`).join(" · "));
 fs.cpSync(path.join(RAIZ, "web", "vendor"), path.join(DIST, "vendor"), { recursive: true });
 console.log(`Panel listo: ${datos.ranking ? datos.ranking.filas.length : 0} en ranking, ${datos.watchlist.length} en vigilancia, ${datos.candidatos.length} candidatos, ${datos.informes.length} informes, ${Object.values(datos.expedientes).flat().length} hechos en ${Object.keys(datos.expedientes).length} expedientes.`);
