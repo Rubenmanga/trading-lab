@@ -97,4 +97,27 @@ fecha,ticker,cierre,cambio_pct,volumen_rel,grande,porque
 2026-11-18,SVRA,4.72,5.36,1.8,0,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
 2026-11-18,TE,1.39,4.51,0.8,0,"Hay noticia («T1 Energy Files $100 Million At-the-Market Stock Offering», ampliación de capital) pero su tono no cuadra con la dirección del precio: la causa puede ser otra."
 2026-11-18,XAU,3727.8,-3.53,1.4,1,"Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas."
+2026-11-19,AEHR,47.94,-3.11,0.7,0,Movimiento normal para esta acción.
+2026-11-19,AII,29.12,-1.56,0.7,0,Movimiento normal para esta acción.
+2026-11-19,ALT,1.41,1.44,1.0,0,Movimiento normal para esta acción.
+2026-11-19,AMPX,6.4,-4.9,0.8,0,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+2026-11-19,AMSC,22.09,-2.04,0.8,0,Movimiento normal para esta acción.
+2026-11-19,ASC,17.35,-1.25,0.8,0,Movimiento normal para esta acción.
+2026-11-19,CRCT,8.3,-2.98,1.0,0,Movimiento normal para esta acción.
+2026-11-19,DCTH,19.24,-2.34,0.6,0,Movimiento normal para esta acción.
+2026-11-19,DFIN,65.41,-1.8,0.7,0,Movimiento normal para esta acción.
 2026-11-19,EURUSD,1.1,-0.21,,0,Movimiento normal.
+2026-11-19,FTH,8.69,-0.34,0.6,0,Movimiento normal para esta acción.
+2026-11-19,JAKK,34.92,-2.65,0.6,0,Movimiento normal para esta acción.
+2026-11-19,LPG,44.98,-0.24,0.9,0,Movimiento normal para esta acción.
+2026-11-19,MSFT,498.3,-1.97,1.0,0,Movimiento normal para esta acción.
+2026-11-19,OPRT,10.93,-4.62,0.5,0,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+2026-11-19,ORIC,7.7,0.65,0.5,0,Movimiento normal para esta acción.
+2026-11-19,PGY,14.62,-6.1,0.8,0,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+2026-11-19,RAPP,23.59,0.81,0.3,0,Movimiento normal para esta acción.
+2026-11-19,RCAT,1.94,-13.78,2.0,1,"Causa probable: «Red Cat Holdings, Inc. (RCAT) Q3 2026 Earnings Call Transcript» (resultados, 2026-11-19)."
+2026-11-19,REPX,41.11,0.37,0.4,0,Movimiento normal para esta acción.
+2026-11-19,SSII,1.28,-2.29,0.6,0,Movimiento normal para esta acción.
+2026-11-19,SVRA,5.21,10.38,3.9,1,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+2026-11-19,TE,1.29,-7.19,0.9,0,"Causa probable: «T1 Energy Inc. 2026 Q3 - Results - Earnings Call Presentation» (resultados, 2026-11-19)."
+2026-11-19,XAU,3627.9,-3.05,1.1,1,"Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas."

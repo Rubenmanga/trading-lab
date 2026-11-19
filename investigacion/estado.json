@@ -30,6 +30,48 @@
    "tipo": "CATALIZADOR CERCA",
    "mensaje": "SVRA: 'Decisión FDA de MOLBREEVI (apuesta binaria; puede llegar el 20 o el 23)' el 2026-11-22 (en 3 días)",
    "precio": 4.71999979019165
+  },
+  {
+   "ticker": "RCAT",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 1.94,
+   "seguimiento": true,
+   "mensaje": "RCAT (2026-11-19): -13.8 % hoy (1.3x lo normal), volumen 2.0x. Causa probable: «Red Cat Holdings, Inc. (RCAT) Q3 2026 Earnings Call Transcript» (resultados, 2026-11-19). Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "RCAT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 1.94,
+   "seguimiento": true,
+   "mensaje": "RCAT (2026-11-19): resultados: «Red Cat Holdings, Inc. (RCAT) Q3 2026 Earnings Call Transcript» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "MSFT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 498.3,
+   "seguimiento": true,
+   "mensaje": "MSFT (2026-11-19): resultados: «Intuit Stock Tumbles After Earnings Beat. It’s Selling Mailchimp.» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "TE",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 1.29,
+   "seguimiento": true,
+   "mensaje": "TE (2026-11-19): resultados: «T1 Energy Inc. 2026 Q3 - Results - Earnings Call Presentation» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "SVRA",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 5.21,
+   "seguimiento": true,
+   "mensaje": "SVRA (2026-11-19): +10.4 % hoy (2.2x lo normal), volumen 3.9x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "XAU",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 3627.9,
+   "seguimiento": true,
+   "mensaje": "XAU (2026-11-19): -3.0 % hoy Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [
