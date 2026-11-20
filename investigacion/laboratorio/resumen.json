@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-19",
+ "actualizado": "2026-11-20",
  "listones": {
   "ops_minimas": 100,
   "ops_fiables": 200,
@@ -1921,26 +1921,26 @@
     "vs_azar": 0.222
    },
    "sombra": {
-    "n": 8,
-    "R_medio": 0.1,
+    "n": 10,
+    "R_medio": 0.054,
     "ic95": [
-     -0.514,
-     0.713
+     -0.499,
+     0.608
     ],
-    "R_alt_medio": 0.1,
+    "R_alt_medio": 0.054,
     "aciertos_pct": 50.0,
-    "pf": 1.35,
-    "R_total": 0.8,
+    "pf": 1.17,
+    "R_total": 0.5,
     "peor_caida_R": -1.2,
     "peor_racha": 4,
     "largos": 0,
-    "cortos": 8,
-    "dias": 3,
-    "ops_dia": 2.67,
+    "cortos": 10,
+    "dias": 4,
+    "ops_dia": 2.5,
     "por_anio": {
      "2026": {
-      "n": 8,
-      "R": 0.1
+      "n": 10,
+      "R": 0.054
      }
     },
     "anios_positivos": 1,
@@ -2485,6 +2485,10 @@
     {
      "f": "2026-11-18",
      "R": 0.8
+    },
+    {
+     "f": "2026-11-19",
+     "R": 0.54
     }
    ],
    "sombra_filtrada": {
@@ -3807,7 +3811,7 @@
   "2016-01-19",
   "2026-11-13"
  ],
- "dias_sombra": 3,
+ "dias_sombra": 4,
  "ultimas_sombra": [
   {
    "fecha": "2026-11-16",
@@ -3920,6 +3924,34 @@
    "R": 0.707,
    "ret_pct": 10.607,
    "hueco": 0.5407
+  },
+  {
+   "fecha": "2026-11-19",
+   "estrategia": "corto_hueco",
+   "simbolo": "INHD",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 2.9665,
+   "salida": 3.4149,
+   "motivo": "stop",
+   "hora_salida": "09:41:00",
+   "R": -1.023,
+   "ret_pct": -15.343,
+   "hueco": 0.3739
+  },
+  {
+   "fecha": "2026-11-19",
+   "estrategia": "corto_hueco",
+   "simbolo": "SEAT",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 2.3488,
+   "salida": 2.0709,
+   "motivo": "cierre forzado",
+   "hora_salida": "15:45:00",
+   "R": 0.768,
+   "ret_pct": 11.527,
+   "hueco": 0.9648
   }
  ]
 }
