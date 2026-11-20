@@ -1,0 +1,51 @@
+name: Agente C - datos EURUSD 2021 2022 verificacion independiente
+
+on:
+  push:
+    branches: [feature/agente-c-forex-eurusd-demo-20261117]
+    paths:
+      - ".github/workflows/fx-datos-2021-2022.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  forex-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {year: "2021", from: "2020-12-15", to: "2022-01-01"}
+          - {year: "2022", from: "2021-12-15", to: "2023-01-01"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - uses: actions/setup-node@v4
+        with: {node-version: "22"}
+      - name: Descargar BID ASK EURUSD de proveedor historico
+        env:
+          RANGE_FROM: ${{ matrix.from }}
+          RANGE_TO: ${{ matrix.to }}
+        run: |
+          npx -y dukascopy-node@1.51.1 -i eurusd -from "$RANGE_FROM" -to "$RANGE_TO" \
+            -t m5 -p bid -f csv -dir data/fx-download -fn eurusd_bid \
+            -r 3 --cache --batch-size 7 --batch-pause 900
+          npx -y dukascopy-node@1.51.1 -i eurusd -from "$RANGE_FROM" -to "$RANGE_TO" \
+            -t m5 -p ask -f csv -dir data/fx-download -fn eurusd_ask \
+            -r 3 --cache --batch-size 7 --batch-pause 900
+      - name: Reconstruir bid ask historico sin imputar spread cero
+        env: {PYTHONPATH: src}
+        run: |
+          python -m tradinglab.fx.dukascopy data/fx-download/eurusd_bid.csv \
+            data/fx-download/eurusd_ask.csv data/fx-processed/eurusd_m5_bidask.csv
+          gzip data/fx-processed/eurusd_m5_bidask.csv
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fx-historico-${{ matrix.year }}
+          path: data/fx-processed/eurusd_m5_bidask.csv.gz
+          if-no-files-found: error
+          retention-days: 30
