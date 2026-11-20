@@ -32,46 +32,18 @@
    "precio": 4.71999979019165
   },
   {
-   "ticker": "RCAT",
+   "ticker": "ALT",
    "tipo": "MOVIMIENTO GRANDE",
-   "precio": 1.94,
+   "precio": 1.39,
    "seguimiento": true,
-   "mensaje": "RCAT (2026-11-19): -13.8 % hoy (1.3x lo normal), volumen 2.0x. Causa probable: «Red Cat Holdings, Inc. (RCAT) Q3 2026 Earnings Call Transcript» (resultados, 2026-11-19). Ver pestaña Seguimiento del panel."
+   "mensaje": "ALT (2026-11-18): -9.2 % hoy (1.9x lo normal), volumen 1.1x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
   },
   {
-   "ticker": "RCAT",
+   "ticker": "JAKK",
    "tipo": "NOTICIA IMPORTANTE",
-   "precio": 1.94,
+   "precio": 35.87,
    "seguimiento": true,
-   "mensaje": "RCAT (2026-11-19): resultados: «Red Cat Holdings, Inc. (RCAT) Q3 2026 Earnings Call Transcript» Ver pestaña Seguimiento del panel."
-  },
-  {
-   "ticker": "MSFT",
-   "tipo": "NOTICIA IMPORTANTE",
-   "precio": 498.3,
-   "seguimiento": true,
-   "mensaje": "MSFT (2026-11-19): resultados: «Intuit Stock Tumbles After Earnings Beat. It’s Selling Mailchimp.» Ver pestaña Seguimiento del panel."
-  },
-  {
-   "ticker": "TE",
-   "tipo": "NOTICIA IMPORTANTE",
-   "precio": 1.29,
-   "seguimiento": true,
-   "mensaje": "TE (2026-11-19): resultados: «T1 Energy Inc. 2026 Q3 - Results - Earnings Call Presentation» Ver pestaña Seguimiento del panel."
-  },
-  {
-   "ticker": "SVRA",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 5.21,
-   "seguimiento": true,
-   "mensaje": "SVRA (2026-11-19): +10.4 % hoy (2.2x lo normal), volumen 3.9x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
-  },
-  {
-   "ticker": "XAU",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 3627.9,
-   "seguimiento": true,
-   "mensaje": "XAU (2026-11-19): -3.0 % hoy Ver pestaña Seguimiento del panel."
+   "mensaje": "JAKK (2026-11-18): compra o fusión: «Skydance (SKYD) Just Closed Its $111 Billion Merger» Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [
