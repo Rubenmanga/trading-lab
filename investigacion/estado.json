@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-20T03:57:43+00:00",
+ "actualizado": "2026-11-20T04:16:37+00:00",
  "alertas": [
   {
    "ticker": "REPX",
@@ -36,13 +36,6 @@
    "tipo": "CATALIZADOR CERCA",
    "mensaje": "SVRA: 'Decisión FDA de MOLBREEVI (apuesta binaria; puede llegar el 20 o el 23)' el 2026-11-22 (en 2 días)",
    "precio": 5.21
-  },
-  {
-   "ticker": "RCAT",
-   "tipo": "NOTICIA IMPORTANTE",
-   "precio": 2.25,
-   "seguimiento": true,
-   "mensaje": "RCAT (2026-11-18): resultados: «Red Cat Holdings (RCAT) Q3 2026 Earnings Call Transcript» Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [

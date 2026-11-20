@@ -2,7 +2,7 @@
 
 ## Resumen (5 líneas)
 1. Mercado (S&P 500, SPY): -2.0 % hoy.
-2. Movimientos grandes: ALT -9.2 %, XAU -5.0 %.
+2. Movimientos grandes: ALT -9.2 %, XAU -5.3 %.
 3. Noticias importantes nuevas: RCAT.
 4. Resultados en los próximos 14 días: ninguno.
 5. Datos: todas las empresas se leyeron bien.
@@ -30,9 +30,13 @@ Cierre 2.25 (2026-11-18) · 5 días -47.6 % · lo normal en un día: ±10.23 %.
 ## MSFT · Microsoft — ▼ -2.0 % · volumen 1.0x lo normal
 Cierre 498.3 (2026-11-19) · 5 días -4.7 % · lo normal en un día: ±2.32 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 5 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
+  - 2026-11-20 · [Microsoft CEO Nadella faces uncomfortable reality after outage](https://finnhub.io/api/news?id=1a012ab702ee1615ee21bf68513a11c942746bfaf5b9522649bed16b905ea14b) [directivos]
+  - 2026-11-20 · [Akamai Technologies (AKAM) Expands Mobile Enterprise Browser Security](https://finnhub.io/api/news?id=3df078be1f0c0bb888d0eafb1364b8b5ba0cd47c3fa12f2eb8719facc00076b0)
+  - 2026-11-20 · [Tech takes a beating as AI trade comes unstuck despite Anthropic surge](https://finnhub.io/api/news?id=072f02f894dda6fdda0cf11cbe0670c8d323d9bf0ff7bcd9cfdd0d5943c9feb1)
+  - 2026-11-20 · [How High Can ANT Stock Go? Wall Street Debut Sparks Valuation Debate – One Analyst Sees Amazon-Google Scale Opportunity In Anthropic](https://finnhub.io/api/news?id=0b444deb956e3539dd1fef6e6045135e63d56e729af95d8b18d954e81d8b166a)
 
 ## RAPP · Rapport Therapeutics — ▼ -1.5 % · volumen 0.6x lo normal
 Cierre 23.4 (2026-11-18) · 5 días -13.4 % · lo normal en un día: ±6.86 %.
@@ -124,31 +128,13 @@ Cierre 4.72 (2026-11-18) · 5 días -5.4 % · lo normal en un día: ±4.54 %.
 
 # Mejores ideas del buscador
 
-## AII · American Integrity Insurance Gr — ▲ +2.1 % · volumen 1.2x lo normal
-Cierre 29.58 (2026-11-18) · 5 días +0.6 % · lo normal en un día: ±2.63 %.
+## HRTG · Heritage Insurance Holdings, In — ▼ -2.2 % · volumen 1.0x lo normal
+Cierre 32.73 (2026-11-18) · 5 días -2.6 % · lo normal en un día: ±2.07 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- Analistas que dicen comprar: 80 % de 10.
-
-## ASC · Ardmore Shipping Corporation — ▼ -2.5 % · volumen 1.2x lo normal
-Cierre 17.57 (2026-11-18) · 5 días -4.3 % · lo normal en un día: ±3.53 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- Analistas que dicen comprar: 86 % de 7.
-
-## OPRT · Oportun Financial Corporation — ▼ -0.1 % · volumen 0.8x lo normal
-Cierre 11.46 (2026-11-18) · 5 días -2.9 % · lo normal en un día: ±7.08 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-24.
-- Analistas que dicen comprar: 64 % de 11.
-
-## JAKK · JAKKS Pacific, Inc. — ▼ -2.6 % · volumen 0.6x lo normal
-Cierre 34.92 (2026-11-19) · 5 días -3.3 % · lo normal en un día: ±2.63 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-17.
-- Analistas que dicen comprar: 88 % de 8.
+- **Qué cambió:** 1 titular nuevo.
+- **Próximos catalizadores:** Resultados el 2027-03-08.
+- Analistas que dicen comprar: 70 % de 10.
+  - 2026-11-17 · [How Reinsurance Strengthens Heritage Insurance's Financial Resilience](https://finnhub.io/api/news?id=001062e2cf9b20facef6494010f7df944290a5db33e42eeff4f11bbddba3f265)
 
 ## LPG · Dorian LPG Ltd. — ▼ -0.5 % · volumen 1.3x lo normal
 Cierre 45.09 (2026-11-18) · 5 días -4.9 % · lo normal en un día: ±2.88 %.
@@ -165,23 +151,51 @@ Cierre 66.61 (2026-11-18) · 5 días -3.0 % · lo normal en un día: ±4.34 %.
 - Analistas que dicen comprar: 89 % de 9.
   - 2026-11-19 · [Donnelley Financial Solutions Named to 2026 America's Top 100 Most Loved Workplaces List](https://partners.wsj.com/most-loved-workplace/most-loved-workplaces/2026-americas-top-100-most-loved-workplaces/)
 
-## CRCT · Cricut, Inc. — ▲ +0.7 % · volumen 0.9x lo normal
-Cierre 8.56 (2026-11-18) · 5 días -3.7 % · lo normal en un día: ±10.99 %.
+## HCSG · Healthcare Services Group, Inc. — ▼ -1.3 % · volumen 0.9x lo normal
+Cierre 24.77 (2026-11-19) · 5 días -1.0 % · lo normal en un día: ±3.9 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 1 titular nuevo.
-- **Próximos catalizadores:** Resultados el 2027-03-01 (tras el cierre).
-- Analistas que dicen comprar: 0 % de 8.
-  - 2026-11-19 · [CRCT Stock Rises 58% in 3 Months: Here's What Investors Should Know](https://finnhub.io/api/news?id=ba288da6c802afec332b62708ef1f20b82fb0f7ecb046c8d0e158fc105680445)
+- **Qué cambió:** nada nuevo.
+- **Próximos catalizadores:** Resultados el 2027-02-09 (antes de abrir).
+- Analistas que dicen comprar: 69 % de 13.
+
+## IBEX · IBEX Limited — ▲ +0.5 % · volumen 1.3x lo normal
+Cierre 55.77 (2026-11-18) · 5 días +0.8 % · lo normal en un día: ±3.92 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** 1 titular nuevo; SEC 2026-11-16: Fondo grande >5 % (13G).
+- **Próximos catalizadores:** Resultados el 2027-02-03.
+- Analistas que dicen comprar: 0 % de 7.
+  - 2026-11-18 · [IBEX Chief Operating Officer David Martin Afdahl Sells Shares](https://www.moomoo.com/news/post/1005011987/ibex-insider-sold-shares-worth-1595883-according-to-a-recent) [directivos]
+  - 2026-11-16 · [Insider Selling by IBEX Limited Executive](https://www.moomoo.com/news/post/1004679284/don-t-ignore-the-insider-selling-in-ibex)
+
+## NEXA · Nexa Resources S.A. — ▼ -5.7 % · volumen 1.9x lo normal
+Cierre 10.17 (2026-11-18) · 5 días -15.1 % · lo normal en un día: ±3.67 %.
+- **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
+- **Qué cambió:** 6 titulares nuevos.
+- **Próximos catalizadores:** Resultados el 2027-02-24 (tras el cierre).
+- Analistas que dicen comprar: 54 % de 11.
+  - 2026-11-19 · [Zacks.com featured highlights include Concentrix, Hewlett Packard, Nexa Resources, Avnet and Shinhan Financial](https://finnhub.io/api/news?id=4cc19e894a019f7b930532445c797ec258d3f6c92e6bf0d7fe234ccc89eec7e5)
+  - 2026-11-19 · [NEXA Lending Welcomes $100 Million VA Loan Producer Michael Lindsay to Its Growing National Network](https://finnhub.io/api/news?id=c4b314d85b72a3294359ffeb76095597eeaccbb6f5a51d72d9601c8124eea5f8)
+  - 2026-11-18 · [Are Basic Materials Stocks Lagging  Nexa Resources (NEXA) This Year?](https://finnhub.io/api/news?id=024f5f5b7d267871c7d34a7f2547c2599a31341e63bd24f222a284f66d2ecc3e)
+  - 2026-11-18 · [Buy These 5 Undervalued Stocks With Attractive Price-to-Book Ratios](https://finnhub.io/api/news?id=5615a97fac49f12cbdf312a9ea4c44ca964db58fc3bd4cec33ac7607227d82b3)
+
+## NRDS · NerdWallet, Inc. — ▼ -1.3 % · volumen 0.7x lo normal
+Cierre 6.98 (2026-11-18) · 5 días -9.4 % · lo normal en un día: ±7.7 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** 2 titulares nuevos.
+- **Próximos catalizadores:** Resultados el 2027-02-23 (tras el cierre).
+- Analistas que dicen comprar: 75 % de 12.
+  - 2026-11-17 · [Americans’ Reliance on Credit to Manage Monthly Expenses Rises 6 Percentage Points Since September, NerdWallet’s Consumer Financial Resilience Index Finds](https://finnhub.io/api/news?id=1e3acebda05a3441a59752eb521cfb28175f0bc1d8b54bda0cc7277dd3de7354)
+  - 2026-11-17 · [Just 39% of Americans Earning Under $50,000 Can Cover a $1,000 Emergency With Cash](https://finnhub.io/api/news?id=6bb8b70aa78096d21f0509b7c6bb7d0f978cdaef57a3ddab0327401cc76dab14)
 
 # Materias primas
 
-## XAU · Oro — ▼ -5.0 % · volumen 0.5x lo normal ⚠️
-Cierre 3555.7 (2026-11-19) · 5 días -8.5 % · lo normal en un día: ±1.67 %.
+## XAU · Oro — ▼ -5.3 % · volumen 0.5x lo normal ⚠️
+Cierre 3542.0 (2026-11-19) · 5 días -8.8 % · lo normal en un día: ±1.67 %.
 - **Por qué:** Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.
 - **Qué cambió:** nada nuevo.
 
 ## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▲ +0.1 %
-Cierre 1.1 (2026-11-20) · 5 días -0.7 % · lo normal en un día: ±0.34 %.
+Cierre 1.1 (2026-11-20) · 5 días -0.6 % · lo normal en un día: ±0.34 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
