@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-20T04:16:37+00:00",
+ "actualizado": "2026-11-20T22:02:34+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -80,49 +80,42 @@
   }
  },
  "lista": {
-  "fecha": "2026-11-19",
+  "fecha": "2026-11-20",
   "mercado": {
    "ticker": "SPY",
-   "fecha": "2026-11-19",
-   "fecha_anterior": "2026-11-18",
-   "cierre": 715.87,
-   "cambio_pct": -1.96,
-   "cambio_5d_pct": -5.4,
-   "sigma_pct": 1.4,
-   "veces_normal": 1.4,
-   "volumen_rel": 1.5
+   "fecha": "2026-11-20",
+   "fecha_anterior": "2026-11-19",
+   "cierre": 689.81,
+   "cambio_pct": -3.64,
+   "cambio_5d_pct": -8.6,
+   "sigma_pct": 1.44,
+   "veces_normal": 2.5,
+   "volumen_rel": 2.8
   },
   "empresas": {
    "ALT": {
     "nombre": "Altimmune",
     "sector": "salud",
     "grupo": "cartera",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 1.39,
-    "cambio_pct": -9.15,
-    "cambio_5d_pct": -28.0,
-    "sigma_pct": 4.9,
-    "veces_normal": 1.9,
-    "volumen_rel": 1.1,
-    "grande": true,
-    "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 1.33,
+    "cambio_pct": -5.67,
+    "cambio_5d_pct": -19.1,
+    "sigma_pct": 5.21,
+    "veces_normal": 1.1,
+    "volumen_rel": 1.0,
+    "grande": false,
+    "porque": "Se movió en línea con el mercado (SPY -3.6 %).",
+    "resumen": "Se movió en línea con el mercado (SPY -3.6 %).",
     "cambios": [],
     "catalizadores": [
      "Resultados el 2027-03-03 (tras el cierre)",
      "Ensayo F2 «RESTORE TRIAL: Study of the Efficacy and Safety of Pemvidutide in the Treatment »: resultado principal previsto 2027-09-30"
     ],
-    "avisos": [
-     {
-      "tipo": "MOVIMIENTO GRANDE",
-      "texto": "-9.2 % hoy (1.9x lo normal), volumen 1.1x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
-     }
-    ],
+    "avisos": [],
     "avisos_nuevos": [],
-    "avisados": [
-     "MOVIMIENTO GRANDE|-9.2 % hoy (1.9x lo normal), volumen 1.1x. No hay "
-    ],
+    "avisados": [],
     "problemas": [],
     "nombre_fuente": "Altimmune, Inc.",
     "recs_pct_compra": 86.7,
@@ -137,14 +130,14 @@
     },
     "referencia": {
      "ticker": "XBI",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 144.12,
-     "cambio_pct": -0.63,
-     "cambio_5d_pct": -4.7,
-     "sigma_pct": 2.41,
-     "veces_normal": 0.3,
-     "volumen_rel": 1.5
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 140.18,
+     "cambio_pct": -2.73,
+     "cambio_5d_pct": -6.9,
+     "sigma_pct": 2.4,
+     "veces_normal": 1.1,
+     "volumen_rel": 1.1
     },
     "titulares": [
      {
@@ -211,7 +204,7 @@
      "2026-11-10Fondo grande >5 % (13G)"
     ],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "alt q3 earnings miss stock sinks on higher costs  funding concerns",
       "altimmune alt q3 2026 earnings call transcript",
@@ -251,33 +244,26 @@
     "nombre": "Red Cat Holdings",
     "sector": "defensa y drones",
     "grupo": "cartera",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 2.25,
-    "cambio_pct": -6.64,
-    "cambio_5d_pct": -47.6,
-    "sigma_pct": 10.23,
-    "veces_normal": 0.6,
-    "volumen_rel": 1.6,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 1.79,
+    "cambio_pct": -7.47,
+    "cambio_5d_pct": -52.8,
+    "sigma_pct": 10.49,
+    "veces_normal": 0.7,
+    "volumen_rel": 1.2,
     "grande": false,
     "porque": "Causa probable: «Red Cat Holdings (RCAT) Q3 2026 Earnings Call Transcript» (resultados, 2026-11-20).",
     "resumen": "Causa probable: «Red Cat Holdings (RCAT) Q3 2026 Earnings Call Transcript» (resultados, 2026-11-20).",
     "cambios": [
-     "2 titulares nuevos"
+     "1 titular nuevo"
     ],
     "catalizadores": [
      "Resultados el 2027-03-17"
     ],
-    "avisos": [
-     {
-      "tipo": "NOTICIA IMPORTANTE",
-      "texto": "resultados: «Red Cat Holdings (RCAT) Q3 2026 Earnings Call Transcript»"
-     }
-    ],
+    "avisos": [],
     "avisos_nuevos": [],
-    "avisados": [
-     "NOTICIA IMPORTANTE|resultados: «Red Cat Holdings (RCAT) Q3 2026 Earni"
-    ],
+    "avisados": [],
     "problemas": [],
     "nombre_fuente": "Red Cat Holdings Inc",
     "recs_pct_compra": 85.7,
@@ -292,16 +278,25 @@
     },
     "referencia": {
      "ticker": "ITA",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 68.2,
-     "cambio_pct": -1.71,
-     "cambio_5d_pct": -4.9,
-     "sigma_pct": 1.96,
-     "veces_normal": 0.9,
-     "volumen_rel": 1.0
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 66.17,
+     "cambio_pct": -2.98,
+     "cambio_5d_pct": -7.5,
+     "sigma_pct": 1.99,
+     "veces_normal": 1.5,
+     "volumen_rel": 1.1
     },
     "titulares": [
+     {
+      "fecha": "2026-11-20",
+      "titulo": "DRNZ Vs. JEDI: The Pure Drone Play Is Still The Buy",
+      "fuente": "SeekingAlpha",
+      "url": "https://finnhub.io/api/news?id=5bf7418dead2384242bc853c10ce42c2b2861623d7ee5dea3a9bb5117f8f5c85",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-20",
       "titulo": "Red Cat Holdings (RCAT) Q3 2026 Earnings Call Transcript",
@@ -310,7 +305,7 @@
       "causas": [
        "resultados"
       ],
-      "nueva": true,
+      "nueva": false,
       "importante": true
      },
      {
@@ -341,7 +336,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=9a1d8d2a19e10387193f958393958169139899ddc22b3484e44b793caa11c2b2",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -439,15 +434,6 @@
       "causas": [],
       "nueva": false,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-17",
-      "titulo": "Red Cat Q3 Revenue Contracts 42% in Q3, Analysts Cut Price Targets",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=2b11fa925338eb876e7cfa13341ed241ce124de6433020e8f3b5e43794b6783a",
-      "causas": [],
-      "nueva": false,
-      "importante": false
      }
     ],
     "vistos": [
@@ -459,6 +445,7 @@
      "can draganflys canadian defense selection drive its growth prospects",
      "ceo jeffrey m thompson sells 150000 shares of red cat holdings",
      "disney up on adjusted eps beat home depot down on guidance  stock move",
+     "drnz vs jedi the pure drone play is still the buy",
      "drone maker red cat stock plunges 35 on trouble getting sales off the",
      "fluent flnt reports q3 loss beats revenue estimates",
      "hc wainwright  co maintains buy on red cat holdings lowers price targe",
@@ -517,7 +504,7 @@
      "2026-11-10Fondo grande >5 % (13G)"
     ],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "12 industrials stocks moving in tuesdays intraday session",
       "12 industrials stocks moving in tuesdays premarket session",
@@ -552,6 +539,7 @@
       "red cat holdings inc rcat reports q3 loss lags revenue estimates",
       "red cat holdings inc reports third quarter 2026 financial results",
       "red cat holdings q3 eps 026 misses 021 estimate sales 11769m miss 3950",
+      "red cat holdings rcat q3 2026 earnings call transcript",
       "red cat holdings reports q3 2026 financial results withdraws fullyear",
       "red cat plunges 34 after revenue miss pulled guidance and needham targ",
       "red cat q3 2026 earnings call recap of rcat earnings stock forecast",
@@ -569,6 +557,7 @@
       "these analysts slash their forecasts on red cat after weak q3 results",
       "top wall street forecasters revamp red cat expectations ahead of q3 ea",
       "united natural foods to rally around 24 here are 10 top analyst foreca",
+      "unusual machines rallies 7 on oppenheimers 30 target red cat falls 7 i",
       "us session top movers gainers and decliners",
       "what red cat rcat said on its q3 earnings call",
       "why aytu biopharma shares are trading higher by 43 here are 20 stocks",
@@ -597,19 +586,19 @@
     "nombre": "Microsoft",
     "sector": "tecnología",
     "grupo": "cartera",
-    "fecha": "2026-11-19",
-    "fecha_anterior": "2026-11-18",
-    "cierre": 498.3,
-    "cambio_pct": -1.97,
-    "cambio_5d_pct": -4.7,
-    "sigma_pct": 2.32,
-    "veces_normal": 0.8,
-    "volumen_rel": 1.0,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 484.52,
+    "cambio_pct": -2.77,
+    "cambio_5d_pct": -7.5,
+    "sigma_pct": 2.31,
+    "veces_normal": 1.2,
+    "volumen_rel": 1.6,
     "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
+    "porque": "Hay noticia («Microsoft Announces AI Innovations and Salesforce Partnership at Ignite», contrato o pedido) pero su tono no cuadra con la dirección del precio: la causa puede ser otra. Se movió en línea con el mercado (SPY -3.6 %).",
+    "resumen": "Hay noticia («Microsoft Announces AI Innovations and Salesforce Partnership at Ignite», contrato o pedido) pero su tono no cuadra con la dirección del precio: la causa puede ser otra. Se movió en línea con el mercado (SPY -3.6 %).",
     "cambios": [
-     "5 titulares nuevos"
+     "41 titulares nuevos"
     ],
     "catalizadores": [
      "Resultados el 2027-01-26"
@@ -625,21 +614,129 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "QQQ",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 645.04,
-     "cambio_pct": -2.19,
-     "cambio_5d_pct": -6.3,
-     "sigma_pct": 2.2,
-     "veces_normal": 1.0,
-     "volumen_rel": 1.4
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 608.45,
+     "cambio_pct": -5.67,
+     "cambio_5d_pct": -10.5,
+     "sigma_pct": 2.16,
+     "veces_normal": 2.6,
+     "volumen_rel": 2.6
     },
     "titulares": [
      {
       "fecha": "2026-11-20",
-      "titulo": "Microsoft CEO Nadella faces uncomfortable reality after outage",
+      "titulo": "Danaher Collaborates with Microsoft to Advance AI-Powered Scientific Instrument Connectivity",
+      "fuente": "fiscal.ai",
+      "url": "https://www.prnewswire.com/news-releases/danaher-collaborates-with-microsoft-to-make-scientific-instruments-agentically-connected-and-laboratories-more-intelligent-302946263.html",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Take-Two Smashes Sales Records With 'Grand Theft Auto 6'",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=1a012ab702ee1615ee21bf68513a11c942746bfaf5b9522649bed16b905ea14b",
+      "url": "https://finnhub.io/api/news?id=cd36eb91463868449e0e1ffe73ced6cf09729252933c52cffea6121f5ec0b526",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Trump vows tax on U.S. firms building data centers abroad",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=c6b8a2e8e768012994234b248ead6ebf05a84aa3daa1f4cda2bf2b0b631e2f28",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Should Anthropic Thank Ilya Sutskever?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=0310f764460a96a804a8cc8c28fc0ca118212426ace0ff1d708c727933c025c2",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "How Microsoft’s (MSFT) Valuation Crashed From 75x to 10x – Even as Earnings Kept Growing",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=84b60d70d68f71074a55b84bc4737bf49e56a2970236fa7539f0f735ff83cf5d",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Could a handful of tech giants control the future of AI?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=c1632eaea856a65a1cdb5d2eb5064b7529eaa7047b63a223d1bcb7cc31482b35",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Microsoft (MSFT) and Its Rivals Are Making a Huge AI Bet – Here’s What Investors Should Know",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=a896ebc7f8153f7b54940a333476d900713d615e00b0bbff91950b67b8b9c3d4",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Wedbush: Microsoft May Give Intel a Crucial AI Chip Win",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=9571b1cc4cb7dbdbda2a2418b6b483b35f5f5b8d9070a8ef4693ac9ff9e2dc8f",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "The AI Boom Math In Five Lines",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=11b42ab861cfe1225207ed36e57df1809e266ee2a4144da088d40ced941a470b",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "What Could Stall Microsoft Stock's Run?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=c02d3c456328997614f3a8d78763870b3317341663bb0a8365e90e750fbfd411",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Microsoft Stocks Fall 1.97% as Anthropic Debut Spotlights $47.2 Billion Azure Pact",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=b506c8fc9759608c252ec605872d95ac7b8cd89eb06fb8f2d959badda9508189",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Microsoft's Copilot strategy offers path to enterprise AI growth, says Bank of America",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=f3c047ee481712f7514d1abe0c8de51e14cb72773208c2584da495321104d7bf",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Palo Alto CEO says last week’s outages had an unlikely culprit",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=d99d19be3973e5ac9c22a7f44b30ec09b13473490569f8cb6fad934a626fdd5a",
       "causas": [
        "directivos"
       ],
@@ -648,139 +745,27 @@
      },
      {
       "fecha": "2026-11-20",
-      "titulo": "Akamai Technologies (AKAM) Expands Mobile Enterprise Browser Security",
+      "titulo": "Satya Nadella Once Told Bill Gates 'Founders Also Die,' Says Jensen Huang Built Nvidia's 'Institutional Strength' to Thrive Beyond Him",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=3df078be1f0c0bb888d0eafb1364b8b5ba0cd47c3fa12f2eb8719facc00076b0",
+      "url": "https://finnhub.io/api/news?id=24738a7264622f83e539141eba7bd5aaf621d008ab4dab5e3eab18e4431e470d",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
       "fecha": "2026-11-20",
-      "titulo": "Tech takes a beating as AI trade comes unstuck despite Anthropic surge",
+      "titulo": "Intel Wins Microsoft AI Chip Business as Foundry Turnaround Faces New Test",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=072f02f894dda6fdda0cf11cbe0670c8d323d9bf0ff7bcd9cfdd0d5943c9feb1",
+      "url": "https://finnhub.io/api/news?id=6901ba33d16b199b3cb1a35e1bb4d632e11d25c3ab21c1438f0cab7267b449b1",
       "causas": [],
       "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "How High Can ANT Stock Go? Wall Street Debut Sparks Valuation Debate – One Analyst Sees Amazon-Google Scale Opportunity In Anthropic",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=0b444deb956e3539dd1fef6e6045135e63d56e729af95d8b18d954e81d8b166a",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Nvidia Backed AI Data Center Demand Puts Schneider Electric Stock In Focus",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=6eb61559029685f5d53ec19588d290644998b371b835605b796bc0e613c3cbff",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Is Your VOO Fund Secretly An AI Bet?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=a84cb0af38b4db0b1a93b068ca3f457cf4b052302ff50dd4a9e7bb392c639711",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "IBM (IBM) Stock May Be 27% Below Fair Value On Quantum Platform News",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=8a9be27bad3b2776432131fc7b3c08d1f9748bbaa6a5f7c51d1e1bb67ef9395e",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Anthropic’s Margins Will Be “Probably Better Than a Hyperscaler,” Says Its Most Bullish Analyst. Here’s What That Takes",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=0899efafce23e477b15f3b3113b90c761654443a76e14ad6798ea3b3f14c2066",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-19",
-      "titulo": "Profound Launches Integrations for Microsoft Teams and Microsoft 365",
-      "fuente": "fiscal.ai",
-      "url": "https://www.globenewswire.com/news-release/2026/11/19/3406573/0/en/profound-brings-your-ai-marketer-into-microsoft-teams-and-microsoft-365.html",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-19",
-      "titulo": "Microsoft Integrates IDEMIA Mobile Driver's License Verification into Entra",
-      "fuente": "fiscal.ai",
-      "url": "https://www.prnewswire.com/news-releases/idemia-public-security-to-bring-mobile-drivers-license-verification-to-the-microsoft-entra-verified-id-ecosystem-302945574.html",
-      "causas": [
-       "contrato o pedido"
-      ],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-19",
-      "titulo": "Microsoft Announces AI Innovations and Salesforce Partnership at Ignite",
-      "fuente": "fiscal.ai",
-      "url": "https://aimagazine.com/news/microsoft-unveils-copilot-workspaces-and-salesforce-deal",
-      "causas": [
-       "contrato o pedido"
-      ],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-19",
-      "titulo": "Microsoft reveals 80% server failure behind global outage",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=114544199ae83790949084ed5bb219114620f7c8fc010ae5510bc0fb9737272f",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-19",
-      "titulo": "Anthropic Closes Up 17% While Nasdaq Falls; Mohamed El-Erian Calls It ‘Making Room’ For AI",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=708616c2239321ce5029db74ffcc10c19d34de688eff181f1e7d5e13821cf3c3",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-19",
-      "titulo": "Intuit Stock Tumbles After Earnings Beat. It’s Selling Mailchimp.",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=37ba5922a099995f39e17d7f9b5dec87195afcc3c65077c8c79b6015feadf48f",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": false,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-19",
-      "titulo": "Bridgewater Warns of AI Security Risk as Anthropic Shares Rise in Debut",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=86f0f70b3dbbb031578c60d23282f67ec43d96a75a29fe7bcd2b4d1b99d5d3d3",
-      "causas": [],
-      "nueva": false,
       "importante": false
      }
     ],
     "vistos": [
+     "1 million in microsoft 10 years ago worth it",
      "1 million in nvidia five years ago what is it worth now",
+     "5 potential multibagger stocks to research for longterm growth",
      "a 13 billion hedge fund just bought these 3 stocks",
      "a 24 billion fund dumps these 3 stocks",
      "a 93 billion hedge fund just bought these 3 stocks",
@@ -791,6 +776,7 @@
      "ai industry still needs to be extremely careful microsoft exec says",
      "ai risks lift cyber stocks as software looks to shrug off slump",
      "ai spending accelerates 3 hyperscaler stocks for strong 2027 returns",
+     "ai stocks wild ride gets bumpier as nvidia chaos blue tsunami spook in",
      "akamai integrates enterprise security with microsoft edge for business",
      "akamai technologies akam expands mobile enterprise browser security",
      "alger ai enablers  adopters etf q3 2026 portfolio update",
@@ -800,15 +786,18 @@
      "altimeter capital to invest 5 billion in anthropic ipo  report",
      "amazon and google have a stake",
      "amazon beat qqq but the ride was much harder",
+     "amazon stock what wall streets latest forecasts say about its next mov",
      "amazon stocks edge higher as anthropic ipo reveals 110 billion compute",
      "amazoncom amzn set for white house ai national champion status",
      "amd benefits from nvidias troubles smart money sells nvidia cooler ppi",
      "amd sinks 105 as chip rally unwinds nasdaq 100 falls 17 stock market t",
      "americans fear the worst after pentagon doomsday prepping black octobe",
      "analyst shrugs off nebius data center delay as slight blemish on stron",
+     "anthropic 41 million to 33 billion why",
      "anthropic a strange time to be sensible",
      "anthropic closes up 17 while nasdaq falls mohamed elerian calls it mak",
      "anthropic has a 17fold revenue growth hurdle to tackle a closer look",
+     "anthropic ipo heres what its spending commitments mean to microsoft sp",
      "anthropic ipo to test wall streets faith in ai as skepticism mounts",
      "anthropic launches claude sheets is microsofts stock in trouble",
      "anthropic prices ipo at 83 a share",
@@ -826,10 +815,13 @@
      "arrow electronics arw launches arrowsphere cloud portal is the 16 unde",
      "as tech crashes mount how can banks respond",
      "atlan and microsoft collaborate to extend onelake governance across th",
+     "banks race to patch vulnerabilities amid amplified tech outage risk",
      "baseten brings highperformance inference for open models to microsoft",
      "bcg and microsoft expand collaboration for aipowered business reimagin",
      "best blue chip stocks 21 hedge fund top picks",
      "betterup announces collaboration with microsoft to support managers",
+     "between iren and coreweave heres who has the cleaner path to a sustain",
+     "big tech earned 607 billion where did it go",
      "big tech will spend well over 1 trillion in 2027 says applied material",
      "big techs anthropic spending is distorting its books",
      "bill ackman adds more to netflix in q3 exits hertz cuts microsoft",
@@ -839,9 +831,11 @@
      "bill gates issues grim warning that many jobs will disappear forever d",
      "billionaire bill ackman says theres a huge disconnect in wall streets",
      "billionaire bill ackman sold 2 million shares of microsoft stock but h",
+     "billionaire dan loeb exited amazon and opened 1 billion in meta nvidia",
      "bny and microsoft complete first ai agentnegotiated treasury trade",
      "bridgewater warns of ai security risk as anthropic shares rise in debu",
      "c3ai vs sentinelone which technology stock is a better buy for 2027",
+     "can crwv turn its 1325b backlog into durable profitable ai growth",
      "can google borrow another 100 billion",
      "cerebras q3 results how much more proof does wall street need",
      "chamath palihapitiya says nvidia oversight would be a disaster after j",
@@ -855,18 +849,22 @@
      "coreweave jumped 20 and pulled oracle higher is it time to sell or loa",
      "costco generators sell out as tech outages spark panic buying",
      "costco sees surge in panic buying after tech outages report says",
+     "could a handful of tech giants control the future of ai",
      "could nvidia stock fall 50 follow the cash",
      "credo technology group vs marvell technology which technology stock is",
+     "crwv rises 145 in a week as ai demand tests the rebounds durability",
      "customer reports of bank app outages surge",
      "customers of at least 4 major us banks report outages days after micro",
      "customers report difficulty accessing online services at major us bank",
      "dan ives sends a strong signal ahead of the anthropic ipo",
      "dan ives top 5 ai revolution stock picks",
+     "danaher collaborates with microsoft to advance aipowered scientific in",
      "daniel loebs meta stock bet stands out as tiger global trims",
      "daniel loebs third point returned to nvidia stock just before its fall",
      "das technology gives retailers a competitive advantage during microsof",
      "days after microsoft and the faa went dark chase and wells fargo custo",
      "do nvidia alphabet meta drops hurt your index fund",
+     "does huangs exit sink nvidia stock history is split",
      "doomsday deals mizuho hikes its costco stock price target as panicbuyi",
      "dow jones losers in todays us session",
      "dow jones losers salesforce leads todays steepest declines",
@@ -881,19 +879,26 @@
      "factory expands collaboration with microsoft to bring autonomous softw",
      "forget market crashes these dow jones giants have recessionproof divid",
      "founderz ai wins 2026 microsoft partner of the year award in training",
+     "global bias monitors for targeting market report 2026  capitalize on 2",
+     "global data protection and replication solutions market report 2026  c",
+     "global throughchannel marketing software market 2026  capitalize on ai",
      "harvard cut nvidia by a third and bought amd",
      "has microsoft stock become a different bet",
      "how anthropic investments warp big tech bottom lines",
      "how high can ant stock go wall street debut sparks valuation debate  o",
+     "how microsofts msft valuation crashed from 75x to 10x  even as earning",
      "how to make the most of microsofts triedandtrue workflows",
      "ibm ibm stock may be 27 below fair value on quantum platform news",
      "ibm is down 21 this year what will it take to get ibm stock back to 25",
      "insight enterprises inc nsit q3 2026 earnings call highlights aidriven",
      "intel stocks jump 787 after foundry signs first outside 18a customer",
+     "intel wins microsoft ai chip business as foundry turnaround faces new",
      "intuit stock tumbles after earnings beat its selling mailchimp",
+     "investors might be making a big mistake by overlooking this growth sto",
      "iren is down 63 in a year is it time to sell or load up",
      "is ai to blame for basic it gaps in big tech airlines and more",
      "is an equalweight sp 500 fund safer right now than the one you own",
+     "is crwv worth buying as ai growth collides with heavy debt and losses",
      "is your voo fund secretly an ai bet",
      "it now costs more to insure chip debt than big techs bond markets say",
      "jim cramer anthropics next 100 billion in revenue might be cybersecuri",
@@ -903,6 +908,7 @@
      "kno2 collaborates with microsoft to connect healthcare data to azure",
      "learn why the bull case for ibm stock could change following quantum c",
      "market chatter nvidia amazon microsoft openai and anthropic to be name",
+     "meta and microsoft arent cutting server cpu orders  why amd and intel",
      "meta stock down 21 too much ai spending",
      "meta trades at 21x pe yet shareholders face a massive new bill",
      "michael burry warned ai chips would lose value fast new data suggests",
@@ -929,6 +935,7 @@
      "microsoft is the only tech giant not highly reliant on advertising as",
      "microsoft just relived the crowdstrike nightmare but theres one crucia",
      "microsoft launches ai transparency initiative",
+     "microsoft msft and its rivals are making a huge ai bet  heres what inv",
      "microsoft msft is one of nvidias biggest customers and a growing rival",
      "microsoft msft strikes ai deal that broadens its chip supplier base",
      "microsoft outage hit more than outlook even its cybersecurity defenses",
@@ -942,6 +949,7 @@
      "microsoft stock hits sevenweek low is a bigger drop coming",
      "microsoft stock in focus as massive 365 outage hits outlook teams and",
      "microsoft stock msft forecast  mizuho stays bullish on strong revenue",
+     "microsoft stocks fall 197 as anthropic debut spotlights 472 billion az",
      "microsoft stocks fall 227 on day ignite unveils maia 300 and copilot w",
      "microsoft stocks move lower as 1 billion anthropic bet precedes ignite",
      "microsoft stocks move lower before ignite as anthropic discloses 472 b",
@@ -949,6 +957,7 @@
      "microsoft verifies intouch123 inc in partner center",
      "microsoft well positioned to weather ai slowdown says jefferies after",
      "microsofts ai pitch at ignite cheaper models as business token spend i",
+     "microsofts copilot strategy offers path to enterprise ai growth says b",
      "microsofts next ai revenue test goes beyond copilot",
      "microsofts next leg is charging 500 million office users more says rbc",
      "microsofts satya nadella praises jensen huang says return as ceo is up",
@@ -957,9 +966,11 @@
      "morgan stanley midterms push 20 of the 2028 pipeline to 2029 microsoft",
      "morgan stanley says these 4 companies will spend 16 trillion on ai inf",
      "national security outage is just one reason for todays software stock",
+     "nebius drops 7 as michael burry takes a victory lap on neocloud rout i",
      "nebius stock falls nearly 17 weak outlook nvidia turmoil and nscales w",
      "nebius stocks nbis q3 selloff looks like an opportunity",
      "nebius stocks sink 8 as nvidias financing retreat hits neocloud builde",
+     "network infrastructure and software market report 2026 global size tre",
      "november 2026 cash flow stocks like nvidia stock",
      "nscale reports ballooning debt and need for more as ipo approaches",
      "nvidia alphabet microsoft and micron are all buying anthropics ipo sho",
@@ -982,27 +993,35 @@
      "openai hit with lawsuit by california ag over alleged inadequate safeg",
      "openai introduces chatgpt wallet built in partnership with american ex",
      "oracles 40 6 month slide continues this analyst maintains his buy rati",
+     "palo alto ceo says last weeks outages had an unlikely culprit",
      "palo alto soars 7 okta up 11 as dhs chief warns of a severe cyber thre",
      "prediction spacex will be the largest company in the world by 2040",
      "prgs or msft which is the better value stock right now",
      "profound launches integrations for microsoft teams and microsoft 365",
      "qualcomm lays off 100s amid global restructuring raises 4 billion",
+     "ray dalios bridgewater puts 1in3 odds on an ai cyberattack destabilizi",
      "rigetti computing vs soundhound ai which technology stock is a better",
      "risks loom over nvidias fastgrowing data center segment",
      "roi training named to training industrys 2026 top it  technical traini",
+     "satya nadella once told bill gates founders also die says jensen huang",
      "satya nadella predicts ai agents will reshuffle the economics of the w",
      "scd dividendgrowth stocks help this fund provide investors with real i",
      "sector update tech stocks retreat late afternoon",
      "servicenow stocks now historic selloff may have gone too far",
      "servicenow vs uipath which technology stock is a better buy for 2027",
+     "should anthropic thank ilya sutskever",
+     "should you buy coreweave stock now or wait",
      "software stocks retreat amid inflation worries new openai model",
      "soross fund sold a quarter of its berkshire shares today berkshire rev",
      "spacex hollows out its ai video division elon musk now has different p",
      "spcx stock in focus spacex to reportedly launch 4b bond sale this week",
      "splashtop joins microsoft virus initiative",
      "stackgen launches shipyard on microsoft marketplace",
+     "taketwo smashes sales records with grand theft auto 6",
+     "tech outages spur emergency buying costcoheavy etfs in focus",
      "tech takes a beating as ai trade comes unstuck despite anthropic surge",
      "temporal cloud enters public preview on microsoft azure",
+     "the ai boom math in five lines",
      "the link between patchmageddon and recent tech outages",
      "the short seller who called out nvidia has a new target",
      "this critical energy bill is a key priority for the lame duck gop cong",
@@ -1012,13 +1031,17 @@
      "trump administration to name nvidia among ai national champions  wsj e",
      "trump and xi to discuss trade at apec summit what isnt said may matter",
      "trump to name nvidia amazon and microsoft ai national champions as bes",
+     "trump vows tax on us firms building data centers abroad",
      "us plans to name nvidia among ai national champions wsj reports",
+     "virtualization software  global strategic business report capitalize o",
      "wall street analyst picks a winner between coreweave and nebius after",
      "wall street and main street agree its time to tame the ai trade",
      "walmart costco see some panicbuying after tech outages",
      "want to invest in top growth stocks like amazon apple and microsoft bu",
      "want to play defense with your stock portfolio here are pros picks",
      "we are not immune nebius is still up 38 in 2026 take profits or buy mo",
+     "wedbush microsoft may give intel a crucial ai chip win",
+     "what could stall microsoft stocks run",
      "what it will take for cerebras stock to stage a real revival after q3",
      "what nice tasenices microsoft ai tie up means for shareholders",
      "whats dragging down the sp 500 apple in focus",
@@ -1030,13 +1053,14 @@
      "why do nvidias customers owe it 81 billion",
      "why is oracle spending 161 for every cash dollar",
      "why the microsoft outage came at the worst possible time for the stock",
+     "will anthropic stay on top half of tech leaders didnt",
      "will apollos 40 billion for spacex to rent gpus pay off",
      "with nvidia floundering ai bulls need more than spending watch revenue",
      "zenity expands ai agent security coverage across the microsoft ecosyst"
     ],
     "sec_vistos": [],
     "anterior": {
-     "fecha": "2026-11-18",
+     "fecha": "2026-11-19",
      "vistos": [
       "1 million in nvidia five years ago what is it worth now",
       "a 13 billion hedge fund just bought these 3 stocks",
@@ -1050,6 +1074,7 @@
       "ai risks lift cyber stocks as software looks to shrug off slump",
       "ai spending accelerates 3 hyperscaler stocks for strong 2027 returns",
       "akamai integrates enterprise security with microsoft edge for business",
+      "akamai technologies akam expands mobile enterprise browser security",
       "alger ai enablers  adopters etf q3 2026 portfolio update",
       "alithya group inc alyaf q2 2027 earnings call highlights margin expans",
       "alphabet stocks move lower as anthropic ipo filing shows 1213 billion",
@@ -1141,6 +1166,7 @@
       "harvard cut nvidia by a third and bought amd",
       "has microsoft stock become a different bet",
       "how anthropic investments warp big tech bottom lines",
+      "how high can ant stock go wall street debut sparks valuation debate  o",
       "how to make the most of microsofts triedandtrue workflows",
       "ibm ibm stock may be 27 below fair value on quantum platform news",
       "ibm is down 21 this year what will it take to get ibm stock back to 25",
@@ -1171,6 +1197,7 @@
       "microsoft and organizations across industries launch ai transparency i",
       "microsoft announces ai innovations and salesforce partnership at ignit",
       "microsoft authorizes parallels desktop for windows on apple silicon",
+      "microsoft ceo nadella faces uncomfortable reality after outage",
       "microsoft ceo satya nadella explains why he asked 60k employees to qui",
       "microsoft ceo satya nadella remains confident in nvidia after huangs e",
       "microsoft ceo sounds alarm on ai software risks after major outlook ou",
@@ -1219,6 +1246,7 @@
       "nscale reports ballooning debt and need for more as ipo approaches",
       "nvidia alphabet microsoft and micron are all buying anthropics ipo sho",
       "nvidia and openai are the new defense contractors says scott galloway",
+      "nvidia backed ai data center demand puts schneider electric stock in f",
       "nvidia had no succession plan when jensen huang quit former fortune 50",
       "nvidia highlights open models amid leadership shakeup",
       "nvidia holders real risk sits with its neocloud buyers",
@@ -1255,6 +1283,7 @@
       "spcx stock in focus spacex to reportedly launch 4b bond sale this week",
       "splashtop joins microsoft virus initiative",
       "stackgen launches shipyard on microsoft marketplace",
+      "tech takes a beating as ai trade comes unstuck despite anthropic surge",
       "temporal cloud enters public preview on microsoft azure",
       "the link between patchmageddon and recent tech outages",
       "the short seller who called out nvidia has a new target",
@@ -1297,14 +1326,14 @@
     "nombre": "Rapport Therapeutics",
     "sector": "salud",
     "grupo": "cartera",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 23.4,
-    "cambio_pct": -1.52,
-    "cambio_5d_pct": -13.4,
-    "sigma_pct": 6.86,
-    "veces_normal": 0.2,
-    "volumen_rel": 0.6,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 23.16,
+    "cambio_pct": -1.82,
+    "cambio_5d_pct": -11.4,
+    "sigma_pct": 5.93,
+    "veces_normal": 0.3,
+    "volumen_rel": 0.4,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Sin cambios: movimiento normal y nada nuevo.",
@@ -1323,14 +1352,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XBI",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 144.12,
-     "cambio_pct": -0.63,
-     "cambio_5d_pct": -4.7,
-     "sigma_pct": 2.41,
-     "veces_normal": 0.3,
-     "volumen_rel": 1.5
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 140.18,
+     "cambio_pct": -2.73,
+     "cambio_5d_pct": -6.9,
+     "sigma_pct": 2.4,
+     "veces_normal": 1.1,
+     "volumen_rel": 1.1
     },
     "titulares": [],
     "vistos": [
@@ -1342,7 +1371,7 @@
      "2026-10-30Colocación de acciones (424B5)"
     ],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "jonestrading maintains buy rating and 82 price target for rapport ther",
       "stifel maintains buy rating and 56 price target for rapport therapeuti"
@@ -1360,22 +1389,34 @@
     "nombre": "American Superconductor",
     "sector": "Industrials",
     "grupo": "vigilancia",
-    "fecha": "2026-11-19",
-    "fecha_anterior": "2026-11-18",
-    "cierre": 22.09,
-    "cambio_pct": -2.04,
-    "cambio_5d_pct": -11.8,
-    "sigma_pct": 4.45,
-    "veces_normal": 0.5,
-    "volumen_rel": 0.8,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 19.28,
+    "cambio_pct": -12.72,
+    "cambio_5d_pct": -20.1,
+    "sigma_pct": 4.29,
+    "veces_normal": 3.0,
+    "volumen_rel": 1.3,
+    "grande": true,
+    "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
+    "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
     "cambios": [],
     "catalizadores": [],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
+    "avisos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-12.7 % hoy (3.0x lo normal), volumen 1.3x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+     }
+    ],
+    "avisos_nuevos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-12.7 % hoy (3.0x lo normal), volumen 1.3x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+     }
+    ],
+    "avisados": [
+     "MOVIMIENTO GRANDE|-12.7 % hoy (3.0x lo normal), volumen 1.3x. No hay"
+    ],
     "problemas": [],
     "nombre_fuente": "American Superconductor Corp",
     "recs_pct_compra": 90.9,
@@ -1384,14 +1425,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XLI",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 161.36,
-     "cambio_pct": -2.0,
-     "cambio_5d_pct": -4.8,
-     "sigma_pct": 1.59,
-     "veces_normal": 1.3,
-     "volumen_rel": 1.3
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 156.37,
+     "cambio_pct": -3.09,
+     "cambio_5d_pct": -7.4,
+     "sigma_pct": 1.63,
+     "veces_normal": 1.9,
+     "volumen_rel": 1.5
     },
     "titulares": [],
     "vistos": [
@@ -1401,7 +1442,7 @@
     ],
     "sec_vistos": [],
     "anterior": {
-     "fecha": "2026-11-18",
+     "fecha": "2026-11-19",
      "vistos": [
       "5 best renewable  clean energy stocks to buy according to analysts",
       "american superconductor amsc stock could be 35 undervalued after grid",
@@ -1417,24 +1458,38 @@
     "nombre": "Aehr Test Systems",
     "sector": "Technology",
     "grupo": "vigilancia",
-    "fecha": "2026-11-19",
-    "fecha_anterior": "2026-11-18",
-    "cierre": 47.94,
-    "cambio_pct": -3.11,
-    "cambio_5d_pct": -21.5,
-    "sigma_pct": 10.38,
-    "veces_normal": 0.3,
-    "volumen_rel": 0.7,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 39.84,
+    "cambio_pct": -16.9,
+    "cambio_5d_pct": -30.1,
+    "sigma_pct": 10.02,
+    "veces_normal": 1.7,
+    "volumen_rel": 1.3,
+    "grande": true,
+    "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
+    "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-01-06"
     ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
+    "avisos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-16.9 % hoy (1.7x lo normal), volumen 1.3x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+     }
+    ],
+    "avisos_nuevos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-16.9 % hoy (1.7x lo normal), volumen 1.3x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+     }
+    ],
+    "avisados": [
+     "MOVIMIENTO GRANDE|-16.9 % hoy (1.7x lo normal), volumen 1.3x. No hay"
+    ],
     "problemas": [],
     "nombre_fuente": "Aehr Test Systems",
     "recs_pct_compra": 91.7,
@@ -1443,16 +1498,25 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "QQQ",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 645.04,
-     "cambio_pct": -2.19,
-     "cambio_5d_pct": -6.3,
-     "sigma_pct": 2.2,
-     "veces_normal": 1.0,
-     "volumen_rel": 1.4
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 608.45,
+     "cambio_pct": -5.67,
+     "cambio_5d_pct": -10.5,
+     "sigma_pct": 2.16,
+     "veces_normal": 2.6,
+     "volumen_rel": 2.6
     },
     "titulares": [
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Ross Stores, Intuit, Anthropic And Other Big Stocks Moving Lower In Friday’s Pre-Market Session",
+      "fuente": "Benzinga",
+      "url": "https://finnhub.io/api/news?id=53495c45ed24cd3b0c4e75e22ab035a6e4843a10cb87bfcd036b3b42c24b30b0",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-15",
       "titulo": "3 AI Chip Stocks With Lower China Exposure After Nvidia Stock Fell 28%",
@@ -1467,7 +1531,8 @@
      "3 ai chip stocks with lower china exposure after nvidia stock fell 28",
      "aehr test systems notches another postearnings win as sales triple on",
      "aehr test systems pops 30 after earnings",
-     "marketbeat week in review  119  1113"
+     "marketbeat week in review  119  1113",
+     "ross stores intuit anthropic and other big stocks moving lower in frid"
     ],
     "sec_vistos": [
      "2026-07-27Registro para vender acciones (S-3ASR)",
@@ -1475,7 +1540,7 @@
      "2026-11-10Fondo grande >5 % (13G)"
     ],
     "anterior": {
-     "fecha": "2026-11-18",
+     "fecha": "2026-11-19",
      "vistos": [
       "3 ai chip stocks with lower china exposure after nvidia stock fell 28",
       "aehr test systems notches another postearnings win as sales triple on",
@@ -1496,19 +1561,19 @@
     "nombre": "Riley Exploration Permian",
     "sector": "Energy",
     "grupo": "vigilancia",
-    "fecha": "2026-11-19",
-    "fecha_anterior": "2026-11-18",
-    "cierre": 41.11,
-    "cambio_pct": 0.37,
-    "cambio_5d_pct": -6.9,
-    "sigma_pct": 4.26,
-    "veces_normal": 0.1,
-    "volumen_rel": 0.4,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 41.04,
+    "cambio_pct": -0.17,
+    "cambio_5d_pct": -7.6,
+    "sigma_pct": 4.01,
+    "veces_normal": 0.0,
+    "volumen_rel": 0.6,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Movimiento normal para esta acción.",
     "cambios": [
-     "SEC 2026-11-19: Inversor activista >5 % (13D)"
+     "1 titular nuevo"
     ],
     "catalizadores": [
      "Resultados el 2027-03-02 (tras el cierre)"
@@ -1524,16 +1589,25 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XLE",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 60.89,
-     "cambio_pct": -0.65,
-     "cambio_5d_pct": -5.3,
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 60.51,
+     "cambio_pct": -0.62,
+     "cambio_5d_pct": -6.9,
      "sigma_pct": 2.0,
      "veces_normal": 0.3,
-     "volumen_rel": 0.8
+     "volumen_rel": 1.3
     },
     "titulares": [
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Riley Exploration Permian: Delivers 20% Oil Production Growth In Q3 2026",
+      "fuente": "SeekingAlpha",
+      "url": "https://finnhub.io/api/news?id=fe68c0623f5ccd6f5330deee79fccc82860feabaadfab456d692f35dbe3c43b5",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-17",
       "titulo": "3 Reasons Growth Investors Will Love Riley Exploration Permian (REPX)",
@@ -1548,6 +1622,7 @@
      "3 reasons growth investors will love riley exploration permian repx",
      "3 stocks with rising cash flows to fortify your portfolio",
      "3 us energy stocks with pricing power as inflation keeps rates higher",
+     "riley exploration permian delivers 20 oil production growth in q3 2026",
      "truist securities lowers price target for riley exploration permian in",
      "zackscom featured highlights include jabil vista energy and riley expl"
     ],
@@ -1556,7 +1631,7 @@
      "2026-11-19Inversor activista >5 % (13D)"
     ],
     "anterior": {
-     "fecha": "2026-11-18",
+     "fecha": "2026-11-19",
      "vistos": [
       "3 reasons growth investors will love riley exploration permian repx",
       "3 stocks with rising cash flows to fortify your portfolio",
@@ -1565,7 +1640,8 @@
       "zackscom featured highlights include jabil vista energy and riley expl"
      ],
      "sec_vistos": [
-      "2026-07-29Fondo grande >5 % (13G)"
+      "2026-07-29Fondo grande >5 % (13G)",
+      "2026-11-19Inversor activista >5 % (13D)"
      ],
      "recs_pct_compra": 90.9,
      "proximos_resultados": "2027-03-02",
@@ -1576,20 +1652,18 @@
     "nombre": "Pagaya Technologies",
     "sector": "Technology",
     "grupo": "vigilancia",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 15.57,
-    "cambio_pct": 0.97,
-    "cambio_5d_pct": -9.7,
-    "sigma_pct": 4.25,
-    "veces_normal": 0.2,
-    "volumen_rel": 0.7,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 13.5,
+    "cambio_pct": -7.66,
+    "cambio_5d_pct": -20.0,
+    "sigma_pct": 4.26,
+    "veces_normal": 1.8,
+    "volumen_rel": 1.9,
     "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "1 titular nuevo"
-    ],
+    "porque": "Se movió en línea con su sector (QQQ -5.7 %).",
+    "resumen": "Se movió en línea con su sector (QQQ -5.7 %).",
+    "cambios": [],
     "catalizadores": [
      "Resultados el 2027-02-03 (tras el cierre)"
     ],
@@ -1604,14 +1678,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "QQQ",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 645.04,
-     "cambio_pct": -2.19,
-     "cambio_5d_pct": -6.3,
-     "sigma_pct": 2.2,
-     "veces_normal": 1.0,
-     "volumen_rel": 1.4
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 608.45,
+     "cambio_pct": -5.67,
+     "cambio_5d_pct": -10.5,
+     "sigma_pct": 2.16,
+     "veces_normal": 2.6,
+     "volumen_rel": 2.6
     },
     "titulares": [
      {
@@ -1620,7 +1694,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=b7b779da28dd6f3bb8eb9df4c05d0049e58e94f352dd855119d92715d0f03d5e",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -1672,10 +1746,11 @@
      "2026-11-16Fondo grande >5 % (13G)"
     ],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "ai economy signals could matter more than earnings calls for zeta glob",
       "banking on ai can upstarts new bank plan turn its stock around",
+      "pagaya pgy stock could be below fair value despite an 88 slump",
       "pagaya technologies targets major auto and bank partners as new deals",
       "splash financial partners with pagaya to expand access to personal loa",
       "splash financial partners with pagaya to expand credit access"
@@ -1692,13 +1767,13 @@
     "nombre": "Delcath Systems",
     "sector": "salud",
     "grupo": "vigilancia",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 19.7,
-    "cambio_pct": 1.7,
-    "cambio_5d_pct": -9.5,
-    "sigma_pct": 8.32,
-    "veces_normal": 0.2,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 18.79,
+    "cambio_pct": -2.34,
+    "cambio_5d_pct": -8.6,
+    "sigma_pct": 8.35,
+    "veces_normal": 0.3,
     "volumen_rel": 0.7,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
@@ -1719,14 +1794,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XBI",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 144.12,
-     "cambio_pct": -0.63,
-     "cambio_5d_pct": -4.7,
-     "sigma_pct": 2.41,
-     "veces_normal": 0.3,
-     "volumen_rel": 1.5
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 140.18,
+     "cambio_pct": -2.73,
+     "cambio_5d_pct": -6.9,
+     "sigma_pct": 2.4,
+     "veces_normal": 1.1,
+     "volumen_rel": 1.1
     },
     "titulares": [
      {
@@ -1766,7 +1841,7 @@
      "2026-10-27Fondo grande >5 % (13G)"
     ],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "btig reiterates buy on delcath systems maintains 25 price target",
       "ccorf maintains delcath systems dcthus with buy rating raises target p",
@@ -1791,22 +1866,34 @@
     "nombre": "Faeth Therapeutics",
     "sector": "salud",
     "grupo": "vigilancia",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 8.72,
-    "cambio_pct": -3.54,
-    "cambio_5d_pct": -34.7,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 7.88,
+    "cambio_pct": -9.32,
+    "cambio_5d_pct": -21.4,
     "sigma_pct": 11.56,
-    "veces_normal": 0.3,
-    "volumen_rel": 0.4,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "veces_normal": 0.8,
+    "volumen_rel": 0.6,
+    "grande": true,
+    "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
+    "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
     "cambios": [],
     "catalizadores": [],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
+    "avisos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-9.3 % hoy (0.8x lo normal), volumen 0.6x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+     }
+    ],
+    "avisos_nuevos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-9.3 % hoy (0.8x lo normal), volumen 0.6x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+     }
+    ],
+    "avisados": [
+     "MOVIMIENTO GRANDE|-9.3 % hoy (0.8x lo normal), volumen 0.6x. No hay "
+    ],
     "problemas": [],
     "nombre_fuente": "Faeth Therapeutics, Inc",
     "recs_pct_compra": 94.7,
@@ -1815,14 +1902,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XBI",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 144.12,
-     "cambio_pct": -0.63,
-     "cambio_5d_pct": -4.7,
-     "sigma_pct": 2.41,
-     "veces_normal": 0.3,
-     "volumen_rel": 1.5
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 140.18,
+     "cambio_pct": -2.73,
+     "cambio_5d_pct": -6.9,
+     "sigma_pct": 2.4,
+     "veces_normal": 1.1,
+     "volumen_rel": 1.1
     },
     "titulares": [
      {
@@ -1899,7 +1986,7 @@
      "2026-11-17Fondo grande >5 % (13G)"
     ],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "12 health care stocks moving in wednesdays premarket session",
       "faeth therapeutics announces clinical trial collaboration and supply a",
@@ -1926,18 +2013,20 @@
     "nombre": "ORIC Pharmaceuticals",
     "sector": "salud",
     "grupo": "vigilancia",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 7.65,
-    "cambio_pct": -4.37,
-    "cambio_5d_pct": -15.0,
-    "sigma_pct": 8.02,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 7.36,
+    "cambio_pct": -4.42,
+    "cambio_5d_pct": -6.4,
+    "sigma_pct": 8.03,
     "veces_normal": 0.5,
     "volumen_rel": 0.7,
     "grande": false,
-    "porque": "Causa probable: «ORIC Pharmaceuticals Reports Third Quarter 2026 Financial Results and Operational Updates» (resultados, 2026-11-17).",
-    "resumen": "Causa probable: «ORIC Pharmaceuticals Reports Third Quarter 2026 Financial Results and Operational Updates» (resultados, 2026-11-17).",
-    "cambios": [],
+    "porque": "Causa probable: «HC Wainwright & Co. Maintains Buy on ORIC Pharmaceuticals, Lowers Price Target to $20» (analistas, 2026-11-19). Se movió en línea con su sector (XBI -2.7 %).",
+    "resumen": "Causa probable: «HC Wainwright & Co. Maintains Buy on ORIC Pharmaceuticals, Lowers Price Target to $20» (analistas, 2026-11-19). Se movió en línea con su sector (XBI -2.7 %).",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-02-22 (tras el cierre)",
      "Ensayo F1/F2 «Study of ORIC-114 in Patients With Advanced Solid Tumors Harboring an EGFR or HE»: resultado principal previsto 2027-06"
@@ -1959,16 +2048,27 @@
     },
     "referencia": {
      "ticker": "XBI",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 144.12,
-     "cambio_pct": -0.63,
-     "cambio_5d_pct": -4.7,
-     "sigma_pct": 2.41,
-     "veces_normal": 0.3,
-     "volumen_rel": 1.5
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 140.18,
+     "cambio_pct": -2.73,
+     "cambio_5d_pct": -6.9,
+     "sigma_pct": 2.4,
+     "veces_normal": 1.1,
+     "volumen_rel": 1.1
     },
     "titulares": [
+     {
+      "fecha": "2026-11-20",
+      "titulo": "H.C. Wainwright Maintains Buy Rating on ORIC Pharmaceuticals",
+      "fuente": "fiscal.ai",
+      "url": "https://www.moomoo.com/hans/news/post/1005183134/hc-wainwright-maintains-oric-pharmaceuticals-oricus-with-buy-rating-cuts",
+      "causas": [
+       "analistas"
+      ],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-19",
       "titulo": "HC Wainwright & Co. Maintains Buy on ORIC Pharmaceuticals, Lowers Price Target to $20",
@@ -2038,13 +2138,14 @@
      "btig reiterates buy on oric pharmaceuticals maintains 26 price target",
      "citigroup maintains buy on oric pharmaceuticals raises price target to",
      "hc wainwright  co maintains buy on oric pharmaceuticals lowers price t",
+     "hc wainwright maintains buy rating on oric pharmaceuticals",
      "oric pharmaceuticals q3 eps 044 misses 039 estimate",
      "oric pharmaceuticals reports third quarter 2026 financial results and",
      "wells fargo maintains overweight on oric pharmaceuticals lowers price"
     ],
     "sec_vistos": [],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "btig reiterates buy on oric pharmaceuticals maintains 26 price target",
       "citigroup maintains buy on oric pharmaceuticals raises price target to",
@@ -2069,24 +2170,36 @@
     "nombre": "Amprius Technologies",
     "sector": "Industrials",
     "grupo": "vigilancia",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 6.73,
-    "cambio_pct": -0.59,
-    "cambio_5d_pct": -21.3,
-    "sigma_pct": 6.89,
-    "veces_normal": 0.1,
-    "volumen_rel": 1.1,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 5.77,
+    "cambio_pct": -9.84,
+    "cambio_5d_pct": -27.2,
+    "sigma_pct": 6.51,
+    "veces_normal": 1.5,
+    "volumen_rel": 1.2,
+    "grande": true,
+    "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
+    "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
     "cambios": [],
     "catalizadores": [
      "Resultados el 2027-03-02 (tras el cierre)"
     ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
+    "avisos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-9.8 % hoy (1.5x lo normal), volumen 1.2x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+     }
+    ],
+    "avisos_nuevos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-9.8 % hoy (1.5x lo normal), volumen 1.2x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+     }
+    ],
+    "avisados": [
+     "MOVIMIENTO GRANDE|-9.8 % hoy (1.5x lo normal), volumen 1.2x. No hay "
+    ],
     "problemas": [],
     "nombre_fuente": "Amprius Technologies Inc",
     "recs_pct_compra": 94.7,
@@ -2095,14 +2208,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XLI",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 161.36,
-     "cambio_pct": -2.0,
-     "cambio_5d_pct": -4.8,
-     "sigma_pct": 1.59,
-     "veces_normal": 1.3,
-     "volumen_rel": 1.3
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 156.37,
+     "cambio_pct": -3.09,
+     "cambio_5d_pct": -7.4,
+     "sigma_pct": 1.63,
+     "veces_normal": 1.9,
+     "volumen_rel": 1.5
     },
     "titulares": [
      {
@@ -2131,7 +2244,7 @@
      "2026-10-09Registro para vender acciones (S-3ASR)"
     ],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "ameriprise financial cfo outlines adviser growth strategy as talent co",
       "amprius q3 earnings call highlights margin push and us expansion",
@@ -2156,20 +2269,18 @@
     "nombre": "SS Innovations International",
     "sector": "salud",
     "grupo": "vigilancia",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 1.31,
-    "cambio_pct": -1.5,
-    "cambio_5d_pct": -13.2,
-    "sigma_pct": 9.78,
-    "veces_normal": 0.2,
-    "volumen_rel": 0.6,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 1.27,
+    "cambio_pct": -0.78,
+    "cambio_5d_pct": -23.5,
+    "sigma_pct": 9.76,
+    "veces_normal": 0.1,
+    "volumen_rel": 0.7,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "3 titulares nuevos"
-    ],
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
     "catalizadores": [
      "Resultados el 2027-03-08"
     ],
@@ -2184,14 +2295,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XBI",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 144.12,
-     "cambio_pct": -0.63,
-     "cambio_5d_pct": -4.7,
-     "sigma_pct": 2.41,
-     "veces_normal": 0.3,
-     "volumen_rel": 1.5
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 140.18,
+     "cambio_pct": -2.73,
+     "cambio_5d_pct": -6.9,
+     "sigma_pct": 2.4,
+     "veces_normal": 1.1,
+     "volumen_rel": 1.1
     },
     "titulares": [
      {
@@ -2200,7 +2311,7 @@
       "fuente": "fiscal.ai",
       "url": "https://www.globenewswire.com/news-release/2026/11/19/3406575/0/en/ss-innovations-announces-world-s-first-dual-console-beating-heart-tecab-surgery-utilizing-all-five-arms-of-the-ssi-mantra-surgical-robotic-system.html",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -2220,7 +2331,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=0746191f3b1c755a655eadbd38f37fb419cf0ec17165126e1108f292bce229cd",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -2229,7 +2340,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=8fb26e62594366fe0915b74545311021692a80bc77df24e5231ae35e0d69a6af",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -2288,12 +2399,15 @@
      "2026-10-09Colocación de acciones (424B5)"
     ],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "12 health care stocks moving in tuesdays premarket session",
       "lucid capital initiates coverage of ss innovations international with",
+      "ss innovations announces worlds first dualconsole beatingheart tecab s",
+      "ss innovations completes worlds first dualconsole fivearm beatingheart",
       "ss innovations expensive while seeking a us foothold",
       "ss innovations international reports third quarter 2026 financial resu",
+      "ss innovations international ssii announces first dualconsole fivearm",
       "ss innovations international ssii promotes vishwa srivastava to presid",
       "ss innovations international strengthens management team with executiv",
       "ss innovations ssi mantra 30 system used in philippines first interreg",
@@ -2311,24 +2425,36 @@
     "nombre": "T1 Energy",
     "sector": "Energy",
     "grupo": "vigilancia",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 1.39,
-    "cambio_pct": 4.51,
-    "cambio_5d_pct": -34.7,
-    "sigma_pct": 8.83,
-    "veces_normal": 0.5,
-    "volumen_rel": 0.8,
-    "grande": false,
-    "porque": "Hay noticia («T1 Energy Files $100 Million At-the-Market Stock Offering», ampliación de capital) pero su tono no cuadra con la dirección del precio: la causa puede ser otra.",
-    "resumen": "Hay noticia («T1 Energy Files $100 Million At-the-Market Stock Offering», ampliación de capital) pero su tono no cuadra con la dirección del precio: la causa puede ser otra.",
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 1.1,
+    "cambio_pct": -14.73,
+    "cambio_5d_pct": -42.4,
+    "sigma_pct": 9.03,
+    "veces_normal": 1.6,
+    "volumen_rel": 0.9,
+    "grande": true,
+    "porque": "Causa probable: «T1 Energy Inc. 2026 Q3 - Results - Earnings Call Presentation» (resultados, 2026-11-19).",
+    "resumen": "Causa probable: «T1 Energy Inc. 2026 Q3 - Results - Earnings Call Presentation» (resultados, 2026-11-19).",
     "cambios": [
      "1 titular nuevo"
     ],
     "catalizadores": [],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
+    "avisos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-14.7 % hoy (1.6x lo normal), volumen 0.9x. Causa probable: «T1 Energy Inc. 2026 Q3 - Results - Earnings Call Presentation» (resultados, 2026-11-19)."
+     }
+    ],
+    "avisos_nuevos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-14.7 % hoy (1.6x lo normal), volumen 0.9x. Causa probable: «T1 Energy Inc. 2026 Q3 - Results - Earnings Call Presentation» (resultados, 2026-11-19)."
+     }
+    ],
+    "avisados": [
+     "MOVIMIENTO GRANDE|-14.7 % hoy (1.6x lo normal), volumen 0.9x. Causa "
+    ],
     "problemas": [],
     "nombre_fuente": "T1 Energy Inc.",
     "recs_pct_compra": 76.5,
@@ -2337,16 +2463,25 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XLE",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 60.89,
-     "cambio_pct": -0.65,
-     "cambio_5d_pct": -5.3,
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 60.51,
+     "cambio_pct": -0.62,
+     "cambio_5d_pct": -6.9,
      "sigma_pct": 2.0,
      "veces_normal": 0.3,
-     "volumen_rel": 0.8
+     "volumen_rel": 1.3
     },
     "titulares": [
+     {
+      "fecha": "2026-11-19",
+      "titulo": "Datavault AI shares are trading higher after the company announced that the first sites of its new high-performance computing GPU network are now online in New York and Philadelphia",
+      "fuente": "Benzinga",
+      "url": "https://finnhub.io/api/news?id=9fa1002443ff78d1df165f64ce07757136e214cacaa61538f35d5bd2f24eff7d",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-19",
       "titulo": "Can T1 Energy's Growing Order Book Drive US Solar Expansion?",
@@ -2355,7 +2490,7 @@
       "causas": [
        "contrato o pedido"
       ],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -2441,6 +2576,7 @@
      "aclaris therapeutics summit therapeutics and other big stocks moving l",
      "btig maintains buy on t1 energy lowers price target to 7",
      "can t1 energys growing order book drive us solar expansion",
+     "datavault ai shares are trading higher after the company announced tha",
      "holzer  holzer llc investigates t1 energy inc for potential securities",
      "jp morgan maintains hold rating on t1 energy",
      "short seller flagged nvidia china worries months ago heres how much st",
@@ -2474,12 +2610,13 @@
      "2026-11-16Colocación de acciones (424B5)"
     ],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "12 information technology stocks moving in mondays intraday session",
       "5 best renewable  clean energy stocks to buy according to analysts",
       "aclaris therapeutics summit therapeutics and other big stocks moving l",
       "btig maintains buy on t1 energy lowers price target to 7",
+      "can t1 energys growing order book drive us solar expansion",
       "holzer  holzer llc investigates t1 energy inc for potential securities",
       "jp morgan maintains hold rating on t1 energy",
       "short seller flagged nvidia china worries months ago heres how much st",
@@ -2521,26 +2658,49 @@
     "nombre": "Savara",
     "sector": "salud",
     "grupo": "vigilancia",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 4.72,
-    "cambio_pct": 5.36,
-    "cambio_5d_pct": -5.4,
-    "sigma_pct": 4.54,
-    "veces_normal": 1.2,
-    "volumen_rel": 1.9,
-    "grande": false,
-    "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "cambios": [],
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 4.26,
+    "cambio_pct": -18.23,
+    "cambio_5d_pct": -8.2,
+    "sigma_pct": 5.12,
+    "veces_normal": 3.6,
+    "volumen_rel": 4.7,
+    "grande": true,
+    "porque": "Causa probable: «Savara Says FDA Will Not Meet PDUFA Target Action Date Of November 22 For Molgramostim Inhalation Solution BLA For Treatment Of Autoimmune P» (FDA / regulador, 2026-11-20).",
+    "resumen": "Causa probable: «Savara Says FDA Will Not Meet PDUFA Target Action Date Of November 22 For Molgramostim Inhalation Solution BLA For Treatment Of Autoimmune P» (FDA / regulador, 2026-11-20).",
+    "cambios": [
+     "3 titulares nuevos"
+    ],
     "catalizadores": [
      "Resultados el 2027-03-11 (tras el cierre)",
      "Ensayo F3 «Inhaled Molgramostim in Pediatric Participants With Autoimmune Pulmonary Alveola»: resultado principal previsto 2027-06",
-     "Fecha regulatoria citada en titular: «Biotech ETFs Brace for FDA Showdown: Two Drug Decisions Could Test Investor Sentiment»"
+     "Fecha regulatoria citada en titular: «Savara Says FDA Will Not Meet PDUFA Target Action Date Of November 22 For Molgramostim Inhalation So»"
     ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
+    "avisos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-18.2 % hoy (3.6x lo normal), volumen 4.7x. Causa probable: «Savara Says FDA Will Not Meet PDUFA Target Action Date Of November 22 For Molgramostim Inhalation Solution BLA For Treatment Of Autoimmune P» (FDA / regulador, 2026-11-20)."
+     },
+     {
+      "tipo": "NOTICIA IMPORTANTE",
+      "texto": "FDA / regulador: «Savara Says FDA Will Not Meet PDUFA Target Action Date Of November 22 For Molgramostim Inhalation Solution BLA For Treatment Of Autoimmune P»"
+     }
+    ],
+    "avisos_nuevos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-18.2 % hoy (3.6x lo normal), volumen 4.7x. Causa probable: «Savara Says FDA Will Not Meet PDUFA Target Action Date Of November 22 For Molgramostim Inhalation Solution BLA For Treatment Of Autoimmune P» (FDA / regulador, 2026-11-20)."
+     },
+     {
+      "tipo": "NOTICIA IMPORTANTE",
+      "texto": "FDA / regulador: «Savara Says FDA Will Not Meet PDUFA Target Action Date Of November 22 For Molgramostim Inhalation Solution BLA For Treatment Of Autoimmune P»"
+     }
+    ],
+    "avisados": [
+     "MOVIMIENTO GRANDE|-18.2 % hoy (3.6x lo normal), volumen 4.7x. Causa ",
+     "NOTICIA IMPORTANTE|FDA / regulador: «Savara Says FDA Will Not Meet PD"
+    ],
     "problemas": [],
     "nombre_fuente": "Savara Inc.",
     "recs_pct_compra": 93.3,
@@ -2549,16 +2709,45 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XBI",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 144.12,
-     "cambio_pct": -0.63,
-     "cambio_5d_pct": -4.7,
-     "sigma_pct": 2.41,
-     "veces_normal": 0.3,
-     "volumen_rel": 1.5
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 140.18,
+     "cambio_pct": -2.73,
+     "cambio_5d_pct": -6.9,
+     "sigma_pct": 2.4,
+     "veces_normal": 1.1,
+     "volumen_rel": 1.1
     },
     "titulares": [
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Savara Says FDA Will Not Meet PDUFA Target Action Date Of November 22 For Molgramostim Inhalation Solution BLA For Treatment Of Autoimmune PAP; No Revised Action Date Communicated By The FDA",
+      "fuente": "Benzinga",
+      "url": "https://finnhub.io/api/news?id=303bb114800e61dbc8e44572de56ae9759138e6d0e3fd7e96f3ddc13b52d3301",
+      "causas": [
+       "FDA / regulador"
+      ],
+      "nueva": true,
+      "importante": true
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Savara (SVRA) Stock Looks Stretched As Its 338% Five Year Run Continues",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=d55f3f8c37d07394e5f785948e0c04ffea672b02e0a2f224901ddb2f23e00ac6",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-20",
+      "titulo": "Savara Inc. (SVRA) Shares Are Taking Off. Here’s What’s Coming",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=fb65018a5cbe2d799c4616d982a169c4b8df9565cc549789726931c8710a573e",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-16",
       "titulo": "Biotech ETFs Brace for FDA Showdown: Two Drug Decisions Could Test Investor Sentiment",
@@ -2599,13 +2788,16 @@
      "hc wainwright  co assumes savara at buy announces price target of 10",
      "hc wainwright initiates coverage of savara inc with buy rating",
      "savara announces new employment inducement grant",
+     "savara inc svra shares are taking off heres whats coming",
+     "savara says fda will not meet pdufa target action date of november 22",
+     "savara svra stock looks stretched as its 338 five year run continues",
      "three fda decisions loom after summits rejection  capricor savara alzh"
     ],
     "sec_vistos": [
      "2026-11-16Fondo grande >5 % (13G)"
     ],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "biotech etfs brace for fda showdown two drug decisions could test inve",
       "fda decision watch capricors dmd therapy faces makeorbreak decision sa",
@@ -2626,20 +2818,18 @@
     "nombre": "Heritage Insurance Holdings, In",
     "sector": "Financial Services",
     "grupo": "ideas",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 32.73,
-    "cambio_pct": -2.18,
-    "cambio_5d_pct": -2.6,
-    "sigma_pct": 2.07,
-    "veces_normal": 1.1,
-    "volumen_rel": 1.0,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 32.36,
+    "cambio_pct": -0.15,
+    "cambio_5d_pct": -3.9,
+    "sigma_pct": 2.03,
+    "veces_normal": 0.1,
+    "volumen_rel": 1.4,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "1 titular nuevo"
-    ],
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
     "catalizadores": [
      "Resultados el 2027-03-08"
     ],
@@ -2654,14 +2844,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XLF",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 55.58,
-     "cambio_pct": -1.49,
-     "cambio_5d_pct": -4.5,
-     "sigma_pct": 1.42,
-     "veces_normal": 1.0,
-     "volumen_rel": 1.6
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 54.57,
+     "cambio_pct": -1.82,
+     "cambio_5d_pct": -7.0,
+     "sigma_pct": 1.43,
+     "veces_normal": 1.3,
+     "volumen_rel": 2.2
     },
     "titulares": [
      {
@@ -2670,7 +2860,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=001062e2cf9b20facef6494010f7df944290a5db33e42eeff4f11bbddba3f265",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      }
     ],
@@ -2679,76 +2869,13 @@
     ],
     "sec_vistos": [],
     "anterior": {
-     "fecha": null,
-     "vistos": null,
-     "sec_vistos": null,
-     "recs_pct_compra": null,
-     "proximos_resultados": null,
-     "resultados_recientes": null
-    }
-   },
-   "LPG": {
-    "nombre": "Dorian LPG Ltd.",
-    "sector": "Energy",
-    "grupo": "ideas",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 45.09,
-    "cambio_pct": -0.46,
-    "cambio_5d_pct": -4.9,
-    "sigma_pct": 2.88,
-    "veces_normal": 0.2,
-    "volumen_rel": 1.3,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
-    "catalizadores": [
-     "Resultados el 2027-02-03"
-    ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "Dorian LPG Ltd.",
-    "recs_pct_compra": 72.7,
-    "recs_n": 11,
-    "proximos_resultados": "2027-02-03",
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "XLE",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 60.89,
-     "cambio_pct": -0.65,
-     "cambio_5d_pct": -5.3,
-     "sigma_pct": 2.0,
-     "veces_normal": 0.3,
-     "volumen_rel": 0.8
-    },
-    "titulares": [
-     {
-      "fecha": "2026-11-17",
-      "titulo": "10 Energy Stocks Moving In Tuesday's After-Market Session",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=5a62411834610795150e7ebf5e3a9a8c3ee2a2081787c1b816bbbce3ce8a941a",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "10 energy stocks moving in tuesdays aftermarket session"
-    ],
-    "sec_vistos": [],
-    "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
-      "10 energy stocks moving in tuesdays aftermarket session"
+      "how reinsurance strengthens heritage insurances financial resilience"
      ],
      "sec_vistos": [],
-     "recs_pct_compra": 72.7,
-     "proximos_resultados": "2027-02-03",
+     "recs_pct_compra": 70.0,
+     "proximos_resultados": "2027-03-08",
      "resultados_recientes": null
     }
    },
@@ -2756,20 +2883,18 @@
     "nombre": "Donnelley Financial Solutions, ",
     "sector": "Technology",
     "grupo": "ideas",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 66.61,
-    "cambio_pct": -0.39,
-    "cambio_5d_pct": -3.0,
-    "sigma_pct": 4.34,
-    "veces_normal": 0.1,
-    "volumen_rel": 0.9,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 64.53,
+    "cambio_pct": -1.35,
+    "cambio_5d_pct": -5.3,
+    "sigma_pct": 4.25,
+    "veces_normal": 0.3,
+    "volumen_rel": 0.6,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "1 titular nuevo"
-    ],
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
     "catalizadores": [
      "Resultados el 2027-02-15 (antes de abrir)"
     ],
@@ -2784,14 +2909,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "QQQ",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 645.04,
-     "cambio_pct": -2.19,
-     "cambio_5d_pct": -6.3,
-     "sigma_pct": 2.2,
-     "veces_normal": 1.0,
-     "volumen_rel": 1.4
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 608.45,
+     "cambio_pct": -5.67,
+     "cambio_5d_pct": -10.5,
+     "sigma_pct": 2.16,
+     "veces_normal": 2.6,
+     "volumen_rel": 2.6
     },
     "titulares": [
      {
@@ -2800,7 +2925,7 @@
       "fuente": "fiscal.ai",
       "url": "https://partners.wsj.com/most-loved-workplace/most-loved-workplaces/2026-americas-top-100-most-loved-workplaces/",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -2837,14 +2962,15 @@
      "2026-10-30Fondo grande >5 % (13G)"
     ],
     "anterior": {
-     "fecha": "2026-11-19",
+     "fecha": "2026-11-18",
      "vistos": [
       "3 stocks to watch as proxy voting demand puts broadridge stock in focu",
       "dfin ceo files form 144 for proposed sale of common stock",
       "dfin named 1 technology company on best practice institutes most loved",
       "donnelley financial ceo daniel leib sells 3m as stock cools near 52wee",
       "donnelley financial nysedfin screens well on growth at a reasonable pr",
-      "donnelley financial solutions named 1 technology company on bpis most"
+      "donnelley financial solutions named 1 technology company on bpis most",
+      "donnelley financial solutions named to 2026 americas top 100 most love"
      ],
      "sec_vistos": [
       "2026-10-30Fondo grande >5 % (13G)"
@@ -2854,18 +2980,83 @@
      "resultados_recientes": null
     }
    },
+   "LPG": {
+    "nombre": "Dorian LPG Ltd.",
+    "sector": "Energy",
+    "grupo": "ideas",
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 44.2,
+    "cambio_pct": -1.73,
+    "cambio_5d_pct": -8.2,
+    "sigma_pct": 2.86,
+    "veces_normal": 0.6,
+    "volumen_rel": 1.0,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
+    "catalizadores": [
+     "Resultados el 2027-02-03"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "Dorian LPG Ltd.",
+    "recs_pct_compra": 72.7,
+    "recs_n": 11,
+    "proximos_resultados": "2027-02-03",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLE",
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 60.51,
+     "cambio_pct": -0.62,
+     "cambio_5d_pct": -6.9,
+     "sigma_pct": 2.0,
+     "veces_normal": 0.3,
+     "volumen_rel": 1.3
+    },
+    "titulares": [
+     {
+      "fecha": "2026-11-17",
+      "titulo": "10 Energy Stocks Moving In Tuesday's After-Market Session",
+      "fuente": "Benzinga",
+      "url": "https://finnhub.io/api/news?id=5a62411834610795150e7ebf5e3a9a8c3ee2a2081787c1b816bbbce3ce8a941a",
+      "causas": [],
+      "nueva": false,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "10 energy stocks moving in tuesdays aftermarket session"
+    ],
+    "sec_vistos": [],
+    "anterior": {
+     "fecha": "2026-11-18",
+     "vistos": [
+      "10 energy stocks moving in tuesdays aftermarket session"
+     ],
+     "sec_vistos": [],
+     "recs_pct_compra": 72.7,
+     "proximos_resultados": "2027-02-03",
+     "resultados_recientes": null
+    }
+   },
    "HCSG": {
     "nombre": "Healthcare Services Group, Inc.",
     "sector": "salud",
     "grupo": "ideas",
-    "fecha": "2026-11-19",
-    "fecha_anterior": "2026-11-18",
-    "cierre": 24.77,
-    "cambio_pct": -1.31,
-    "cambio_5d_pct": -1.0,
-    "sigma_pct": 3.9,
-    "veces_normal": 0.3,
-    "volumen_rel": 0.9,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 24.72,
+    "cambio_pct": -0.2,
+    "cambio_5d_pct": -0.7,
+    "sigma_pct": 2.42,
+    "veces_normal": 0.1,
+    "volumen_rel": 0.8,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Sin cambios: movimiento normal y nada nuevo.",
@@ -2884,24 +3075,24 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XBI",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 144.12,
-     "cambio_pct": -0.63,
-     "cambio_5d_pct": -4.7,
-     "sigma_pct": 2.41,
-     "veces_normal": 0.3,
-     "volumen_rel": 1.5
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 140.18,
+     "cambio_pct": -2.73,
+     "cambio_5d_pct": -6.9,
+     "sigma_pct": 2.4,
+     "veces_normal": 1.1,
+     "volumen_rel": 1.1
     },
     "titulares": [],
     "vistos": [],
     "sec_vistos": [],
     "anterior": {
-     "fecha": null,
-     "vistos": null,
-     "sec_vistos": null,
-     "recs_pct_compra": null,
-     "proximos_resultados": null,
+     "fecha": "2026-11-19",
+     "vistos": [],
+     "sec_vistos": [],
+     "recs_pct_compra": 69.2,
+     "proximos_resultados": "2027-02-09",
      "resultados_recientes": null
     }
    },
@@ -2909,21 +3100,18 @@
     "nombre": "IBEX Limited",
     "sector": "Technology",
     "grupo": "ideas",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 55.77,
-    "cambio_pct": 0.49,
-    "cambio_5d_pct": 0.8,
-    "sigma_pct": 3.92,
-    "veces_normal": 0.1,
-    "volumen_rel": 1.3,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 54.01,
+    "cambio_pct": 0.04,
+    "cambio_5d_pct": -5.1,
+    "sigma_pct": 4.02,
+    "veces_normal": 0.0,
+    "volumen_rel": 0.6,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "1 titular nuevo",
-     "SEC 2026-11-16: Fondo grande >5 % (13G)"
-    ],
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
     "catalizadores": [
      "Resultados el 2027-02-03"
     ],
@@ -2938,14 +3126,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "QQQ",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 645.04,
-     "cambio_pct": -2.19,
-     "cambio_5d_pct": -6.3,
-     "sigma_pct": 2.2,
-     "veces_normal": 1.0,
-     "volumen_rel": 1.4
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 608.45,
+     "cambio_pct": -5.67,
+     "cambio_5d_pct": -10.5,
+     "sigma_pct": 2.16,
+     "veces_normal": 2.6,
+     "volumen_rel": 2.6
     },
     "titulares": [
      {
@@ -2956,7 +3144,7 @@
       "causas": [
        "directivos"
       ],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -2965,7 +3153,7 @@
       "fuente": "fiscal.ai",
       "url": "https://www.moomoo.com/news/post/1004679284/don-t-ignore-the-insider-selling-in-ibex",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      }
     ],
@@ -2977,11 +3165,16 @@
      "2026-11-16Fondo grande >5 % (13G)"
     ],
     "anterior": {
-     "fecha": null,
-     "vistos": null,
-     "sec_vistos": null,
-     "recs_pct_compra": null,
-     "proximos_resultados": null,
+     "fecha": "2026-11-18",
+     "vistos": [
+      "ibex chief operating officer david martin afdahl sells shares",
+      "insider selling by ibex limited executive"
+     ],
+     "sec_vistos": [
+      "2026-11-16Fondo grande >5 % (13G)"
+     ],
+     "recs_pct_compra": 0.0,
+     "proximos_resultados": "2027-02-03",
      "resultados_recientes": null
     }
    },
@@ -2989,20 +3182,18 @@
     "nombre": "Nexa Resources S.A.",
     "sector": "Basic Materials",
     "grupo": "ideas",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 10.17,
-    "cambio_pct": -5.66,
-    "cambio_5d_pct": -15.1,
-    "sigma_pct": 3.67,
-    "veces_normal": 1.5,
-    "volumen_rel": 1.9,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 9.48,
+    "cambio_pct": -4.82,
+    "cambio_5d_pct": -15.2,
+    "sigma_pct": 3.49,
+    "veces_normal": 1.4,
+    "volumen_rel": 2.0,
     "grande": false,
-    "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "cambios": [
-     "6 titulares nuevos"
-    ],
+    "porque": "Se movió en línea con el mercado (SPY -3.6 %).",
+    "resumen": "Se movió en línea con el mercado (SPY -3.6 %).",
+    "cambios": [],
     "catalizadores": [
      "Resultados el 2027-02-24 (tras el cierre)"
     ],
@@ -3017,14 +3208,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XLB",
-     "fecha": "2026-11-19",
-     "fecha_anterior": "2026-11-18",
-     "cierre": 49.42,
-     "cambio_pct": -2.06,
-     "cambio_5d_pct": -5.6,
-     "sigma_pct": 1.33,
-     "veces_normal": 1.5,
-     "volumen_rel": 1.1
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 48.34,
+     "cambio_pct": -2.19,
+     "cambio_5d_pct": -7.4,
+     "sigma_pct": 1.38,
+     "veces_normal": 1.6,
+     "volumen_rel": 1.5
     },
     "titulares": [
      {
@@ -3033,7 +3224,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=4cc19e894a019f7b930532445c797ec258d3f6c92e6bf0d7fe234ccc89eec7e5",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -3042,7 +3233,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=c4b314d85b72a3294359ffeb76095597eeaccbb6f5a51d72d9601c8124eea5f8",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -3051,7 +3242,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=024f5f5b7d267871c7d34a7f2547c2599a31341e63bd24f222a284f66d2ecc3e",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -3060,7 +3251,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=5615a97fac49f12cbdf312a9ea4c44ca964db58fc3bd4cec33ac7607227d82b3",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -3069,7 +3260,7 @@
       "fuente": "fiscal.ai",
       "url": "https://www.newsfilecorp.com/release/324328/Nexa-Resources-Announces-Redemption-of-Its-6.500-Notes-Due-2028",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -3078,7 +3269,7 @@
       "fuente": "ChartMill",
       "url": "https://finnhub.io/api/news?id=6ed1008299abaf841f27043a609397245756664ffb8b6c63052b3dca308785d8",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -3087,7 +3278,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=7f5bb93eddaba7f3d055fe595c294844fd0631ea89fd6392bd72e7bf0d3cec02",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      }
     ],
@@ -3102,11 +3293,19 @@
     ],
     "sec_vistos": [],
     "anterior": {
-     "fecha": null,
-     "vistos": null,
-     "sec_vistos": null,
-     "recs_pct_compra": null,
-     "proximos_resultados": null,
+     "fecha": "2026-11-18",
+     "vistos": [
+      "are basic materials stocks lagging  nexa resources nexa this year",
+      "buy these 5 undervalued stocks with attractive pricetobook ratios",
+      "can nexa resources sustain its strong adjusted ebitda growth",
+      "nexa lending welcomes 100 million va loan producer michael lindsay to",
+      "nexa resources announces redemption of its 6500 notes due 2028",
+      "nexa resources nysenexa delivers high growth and improving fundamental",
+      "zackscom featured highlights include concentrix hewlett packard nexa r"
+     ],
+     "sec_vistos": [],
+     "recs_pct_compra": 54.5,
+     "proximos_resultados": "2027-02-24",
      "resultados_recientes": null
     }
    },
@@ -3114,20 +3313,18 @@
     "nombre": "NerdWallet, Inc.",
     "sector": "Communication Services",
     "grupo": "ideas",
-    "fecha": "2026-11-18",
-    "fecha_anterior": "2026-11-17",
-    "cierre": 6.98,
-    "cambio_pct": -1.27,
-    "cambio_5d_pct": -9.4,
-    "sigma_pct": 7.7,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 7.14,
+    "cambio_pct": 1.71,
+    "cambio_5d_pct": -4.3,
+    "sigma_pct": 7.48,
     "veces_normal": 0.2,
-    "volumen_rel": 0.7,
+    "volumen_rel": 1.0,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "2 titulares nuevos"
-    ],
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
     "catalizadores": [
      "Resultados el 2027-02-23 (tras el cierre)"
     ],
@@ -3142,14 +3339,14 @@
     "resultados_recientes": null,
     "referencia": {
      "ticker": "XLC",
-     "fecha": "2026-11-18",
-     "fecha_anterior": "2026-11-17",
-     "cierre": 105.58,
-     "cambio_pct": 0.3,
-     "cambio_5d_pct": -2.8,
-     "sigma_pct": 1.44,
-     "veces_normal": 0.2,
-     "volumen_rel": 0.7
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 100.03,
+     "cambio_pct": -2.66,
+     "cambio_5d_pct": -8.0,
+     "sigma_pct": 1.51,
+     "veces_normal": 1.8,
+     "volumen_rel": 1.2
     },
     "titulares": [
      {
@@ -3158,7 +3355,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=1e3acebda05a3441a59752eb521cfb28175f0bc1d8b54bda0cc7277dd3de7354",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      },
      {
@@ -3167,7 +3364,7 @@
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=6bb8b70aa78096d21f0509b7c6bb7d0f978cdaef57a3ddab0327401cc76dab14",
       "causas": [],
-      "nueva": true,
+      "nueva": false,
       "importante": false
      }
     ],
@@ -3177,6 +3374,86 @@
     ],
     "sec_vistos": [
      "2026-10-30Fondo grande >5 % (13G)"
+    ],
+    "anterior": {
+     "fecha": "2026-11-18",
+     "vistos": [
+      "americans reliance on credit to manage monthly expenses rises 6 percen",
+      "just 39 of americans earning under 50000 can cover a 1000 emergency wi"
+     ],
+     "sec_vistos": [
+      "2026-10-30Fondo grande >5 % (13G)"
+     ],
+     "recs_pct_compra": 75.0,
+     "proximos_resultados": "2027-02-23",
+     "resultados_recientes": null
+    }
+   },
+   "SIBN": {
+    "nombre": "SI-BONE, Inc.",
+    "sector": "salud",
+    "grupo": "ideas",
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 23.73,
+    "cambio_pct": -0.08,
+    "cambio_5d_pct": 1.2,
+    "sigma_pct": 4.77,
+    "veces_normal": 0.0,
+    "volumen_rel": 0.8,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "2 titulares nuevos"
+    ],
+    "catalizadores": [],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "SI-BONE, Inc.",
+    "recs_pct_compra": 93.3,
+    "recs_n": 15,
+    "proximos_resultados": null,
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XBI",
+     "fecha": "2026-11-20",
+     "fecha_anterior": "2026-11-19",
+     "cierre": 140.18,
+     "cambio_pct": -2.73,
+     "cambio_5d_pct": -6.9,
+     "sigma_pct": 2.4,
+     "veces_normal": 1.1,
+     "volumen_rel": 1.1
+    },
+    "titulares": [
+     {
+      "fecha": "2026-11-19",
+      "titulo": "SI-BONE, Inc. to Participate in the Piper Sandler 38th Annual Healthcare Conference",
+      "fuente": "fiscal.ai",
+      "url": "https://www.globenewswire.com/news-release/2026/11/19/3407119/0/en/si-bone-to-present-at-piper-sandler-38th-annual-healthcare-conference-on-december-1-2026.html",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-19",
+      "titulo": "SI-BONE To Present at Piper Sandler 38th Annual Healthcare Conference on December 1, 2026",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=48efe5d90926d33d4344fadcf25429cbfeb03dff367a0c1f51972a5859b0bdf7",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "sibone inc to participate in the piper sandler 38th annual healthcare",
+     "sibone to present at piper sandler 38th annual healthcare conference o"
+    ],
+    "sec_vistos": [
+     "2026-08-14Fondo grande >5 % (13G)"
     ],
     "anterior": {
      "fecha": null,
@@ -3192,14 +3469,14 @@
    "XAU": {
     "nombre": "Oro",
     "sector": "materia prima",
-    "fecha": "2026-11-19",
-    "fecha_anterior": "2026-11-18",
-    "cierre": 3542.0,
-    "cambio_pct": -5.34,
-    "cambio_5d_pct": -8.8,
-    "sigma_pct": 1.67,
-    "veces_normal": 3.2,
-    "volumen_rel": 0.5,
+    "fecha": "2026-11-20",
+    "fecha_anterior": "2026-11-19",
+    "cierre": 3535.3,
+    "cambio_pct": -4.08,
+    "cambio_5d_pct": -9.0,
+    "sigma_pct": 1.65,
+    "veces_normal": 2.5,
+    "volumen_rel": 1.8,
     "grande": true,
     "porque": "Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.",
     "resumen": "Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.",
@@ -3210,10 +3487,15 @@
     "avisos": [
      {
       "tipo": "MOVIMIENTO GRANDE",
-      "texto": "-5.3 % hoy"
+      "texto": "-4.1 % hoy"
      }
     ],
-    "avisos_nuevos": []
+    "avisos_nuevos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "-4.1 % hoy"
+     }
+    ]
    },
    "EURUSD": {
     "nombre": "Euro/dólar (para pasar tu oro de dólares a euros)",
@@ -3221,10 +3503,10 @@
     "fecha": "2026-11-20",
     "fecha_anterior": "2026-11-19",
     "cierre": 1.1,
-    "cambio_pct": 0.08,
-    "cambio_5d_pct": -0.6,
+    "cambio_pct": 0.02,
+    "cambio_5d_pct": -0.7,
     "sigma_pct": 0.34,
-    "veces_normal": 0.2,
+    "veces_normal": 0.1,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",
