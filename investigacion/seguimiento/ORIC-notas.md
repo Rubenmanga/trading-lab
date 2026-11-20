@@ -1,11 +1,36 @@
 # ORIC · notas del repaso diario (agente B)
 
 ## Resumen (5 líneas)
-1. **Estado: ATENTO.** Sigue en la zona de soporte, pero aún sin señal: el 18-nov volvió a caer (−4,4 %) y la señal A del 17-nov se ha deshecho.
-2. Último cierre conocido: **7,65 $** (18-nov), con poco volumen (0,7 veces su media) y RSI 33 (cerca de «sobrevendida»). Mínimo del año: 7,23 $.
-3. Analistas: Wells Fargo sigue en «sobreponderar» pero baja su objetivo a 23 $; Citi sube a 17 $; BTIG mantiene 26 $. Todos muy por encima del precio.
+1. **Estado: ATENTO.** Sigue en la zona de soporte (7,2-7,5 $) sin señal de entrada. El informe nocturno aún no trae el cierre del 19-nov.
+2. Último cierre conocido: **7,65 $** (18-nov), RSI 33 (cerca de «sobrevendida»), por debajo de la EMA 9 (8,3 $). Mínimo del año: 7,23 $.
+3. Analistas: HC Wainwright mantiene «comprar» y baja objetivo a 20 $ (19-nov); Wells Fargo 23 $, Citi 17 $, BTIG 26 $. Todos muy por encima del precio.
 4. Sin noticias nuevas de rinzimetostat, enozertinib, ampliaciones de capital ni del rival JNJ-6143 de J&J. La tesis no cambia.
 5. Qué hacer en la demo: esperar un cierre por encima de la EMA 9 (≈ 8,3 $) y ≤ 8,5 $ para la primera mitad; si cierra bajo 7,2 $, PELIGRO y no entrar. Stop 6,5 $, objetivo 13 $.
+
+---
+
+## 20-nov-2026 · ATENTO (sin cambios)
+
+**Qué ha pasado**
+- 19-nov: HC Wainwright mantiene «comprar» y baja su precio objetivo a 20 $ (antes más alto). Es el tercer banco que ajusta su objetivo tras los resultados; todos siguen recomendando comprar.
+- El informe nocturno de hoy sigue mostrando el cierre del **18-nov (7,65 $)**: el dato del 19-nov no ha llegado todavía. No sé si ayer subió o bajó.
+- Nada nuevo de los fármacos, ni ventas de acciones nuevas, ni del rival JNJ-6143 de J&J.
+
+**Qué significa**
+- Los bancos bajan un poco el objetivo (ajuste normal tras resultados), pero 20 $ sigue siendo más del doble del precio. La tesis sigue igual.
+- Técnicamente nada ha cambiado: precio en soporte, por debajo de la EMA 9 (la media rápida de 9 días), sin vela de giro. Falta que los compradores vuelvan.
+
+**Qué haría hoy en la demo**
+- **No comprar todavía.** Primera mitad (≤ 1 % de la cartera) solo con un cierre por encima de la EMA 9 (≈ 8,3 $) y sin pasar de 8,5 $. Segunda mitad con la señal B (dos cierres > 9,3 $).
+- Si cierra por debajo de **7,2 $** → PELIGRO, no entrar. Stop de tesis 6,5 $.
+- **Niveles del plan: sin cambios.**
+
+**Fuentes**
+| dato | valor | fuente | fecha |
+|---|---|---|---|
+| Precio, RSI, EMA 9 | 7,65 $ · 33,0 · 8,3 $ | investigacion/seguimiento/ORIC.md (Yahoo) | 18-nov-2026 |
+| HC Wainwright | Comprar, objetivo 20 $ | investigacion/seguimiento/ORIC.md (Finnhub, intermediaria) | 19-nov-2026 |
+| Noticias fármacos / J&J | sin novedades | búsqueda web (sin resultados nuevos) | 20-nov-2026 |
 
 ---
 
