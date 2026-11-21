@@ -1,6 +1,6 @@
 # Ranking de oportunidades (small caps EE. UU.)
 
-_Actualizado: 2026-11-21T03:56:39+00:00 · universo 1167 · analizadas 899_
+_Actualizado: 2026-11-21T04:30:51+00:00 · universo 1165 · analizadas 1161_
 
 **Semáforo macro para small caps: 🟡 Ambiente mixto: ir con cuidado y escalonar las compras.**
 
@@ -13,33 +13,33 @@ Nota 0-100 = suma ponderada de 8 factores comparando cada empresa con las demás
 
 | # | Ticker | Sector | Nota | Tipo | Calidad | Crec. | Valor. | Revis. | Momentum | Solidez | Banderas |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | REPX | Energy | **74** | GARP (crecimiento a buen precio) | 79 | 86 | 76 | 78 | 79 | 62 | 0 |
-| 2 | DCTH | Healthcare | **71** | Crecimiento fuerte | 84 | 86 | 32 | 78 | 91 | 64 | 0 |
-| 3 | ASC | Industrials | **70** | Calidad barata | 81 | 43 | 81 | 83 | 71 | 60 | 0 |
-| 4 | AII | Financial Services | **70** | GARP (crecimiento a buen precio) | 77 | 60 | 87 | 76 | 91 | 63 | 1 |
-| 5 | LPG | Energy | **70** | Calidad barata | 90 | 56 | 65 | 76 | 74 | 68 | 0 |
-| 6 | DFIN | Technology | **69** | Líder en tendencia | 76 | 50 | 65 | 74 | 88 | 71 | 0 |
-| 7 | JAKK | Consumer Cyclical | **69** | Líder en tendencia | 49 | 72 | 57 | 79 | 94 | 67 | 0 |
-| 8 | PGY | Technology | **69** | Calidad barata | 83 | 56 | 96 | 72 | 47 | 50 | 0 |
-| 9 | OPRT | Financial Services | **69** | GARP (crecimiento a buen precio) | 57 | 61 | 83 | 75 | 91 | 52 | 0 |
-| 10 | CRCT | Technology | **68** | Líder en tendencia | 82 | 40 | 50 | 82 | 92 | 62 | 0 |
-| 11 | IBEX | Technology | **68** | Líder en tendencia | 69 | 55 | 63 | 77 | 92 | 62 | 0 |
-| 12 | HRTG | Financial Services | **68** | Calidad barata | 69 | 27 | 91 | 75 | 84 | 76 | 0 |
-| 13 | HCSG | Healthcare | **67** | Líder en tendencia | 78 | 49 | 64 | 66 | 85 | 74 | 0 |
-| 14 | HIPO | Financial Services | **67** | Crecimiento fuerte | 42 | 82 | 42 | 79 | 84 | 71 | 0 |
-| 15 | CSTL | Healthcare | **67** | GARP (crecimiento a buen precio) | 65 | 63 | 66 | 86 | 75 | 53 | 0 |
-| 16 | CCSI | Technology | **66** | Calidad barata | 91 | 38 | 74 | 67 | 87 | 50 | 0 |
-| 17 | EVTC | Technology | **65** | Calidad barata | 78 | 60 | 68 | 66 | 76 | 54 | 0 |
-| 18 | PAYS | Technology | **64** | Líder en tendencia | 70 | 79 | 48 | 64 | 82 | 52 | 0 |
-| 19 | AMN | Healthcare | **64** | Calidad barata | 75 | 44 | 68 | 75 | 84 | 44 | 0 |
-| 20 | DCOM | Financial Services | **64** | GARP (crecimiento a buen precio) | 52 | 69 | 72 | 65 | 79 | 66 | 0 |
-| 21 | HSTM | Healthcare | **64** | Mixta | 80 | 50 | 47 | 68 | 73 | 68 | 0 |
-| 22 | RDVT | Technology | **64** | Líder en tendencia | 76 | 64 | 19 | 77 | 84 | 70 | 0 |
-| 23 | ACEL | Consumer Cyclical | **64** | Mixta | 70 | 47 | 64 | 58 | 80 | 66 | 0 |
-| 24 | RLGT | Industrials | **64** | Líder en tendencia | 41 | 56 | 57 | 83 | 81 | 69 | 0 |
-| 25 | GDYN | Technology | **64** | Líder en tendencia | 48 | 58 | 37 | 84 | 86 | 69 | 0 |
-| 26 | CRON | Healthcare | **64** | GARP (crecimiento a buen precio) | 69 | 78 | 64 | 70 | 76 | 76 | 1 |
-| 27 | JMSB | Financial Services | **64** | Mixta | 50 | 72 | 54 | 70 | 77 | 73 | 0 |
-| 28 | GSL | Industrials | **64** | Calidad barata | 89 | 27 | 81 | 60 | 72 | 72 | 0 |
-| 29 | MOV | Consumer Cyclical | **63** | Mixta | 69 | 54 | 62 | 64 | 71 | 70 | 0 |
-| 30 | MTW | Industrials | **63** | Líder en tendencia | 44 | 65 | 68 | 84 | 90 | 49 | 0 |
+| 1 | REPX | Energy | **74** | GARP (crecimiento a buen precio) | 80 | 86 | 77 | 78 | 78 | 62 | 0 |
+| 2 | DCTH | Healthcare | **71** | Crecimiento fuerte | 84 | 86 | 32 | 78 | 90 | 65 | 0 |
+| 3 | ASC | Industrials | **70** | Calidad barata | 82 | 42 | 81 | 83 | 70 | 60 | 0 |
+| 4 | AII | Financial Services | **70** | Calidad barata | 76 | 60 | 88 | 76 | 91 | 64 | 1 |
+| 5 | LPG | Energy | **70** | Calidad barata | 91 | 56 | 65 | 75 | 73 | 68 | 0 |
+| 6 | JAKK | Consumer Cyclical | **69** | Líder en tendencia | 50 | 71 | 59 | 78 | 93 | 67 | 0 |
+| 7 | DFIN | Technology | **69** | Líder en tendencia | 77 | 48 | 64 | 74 | 88 | 71 | 0 |
+| 8 | PGY | Technology | **69** | Calidad barata | 83 | 54 | 96 | 71 | 46 | 51 | 0 |
+| 9 | OPRT | Financial Services | **68** | GARP (crecimiento a buen precio) | 57 | 60 | 82 | 75 | 90 | 53 | 0 |
+| 10 | CRCT | Technology | **68** | Líder en tendencia | 82 | 39 | 49 | 81 | 91 | 63 | 0 |
+| 11 | IBEX | Technology | **68** | Líder en tendencia | 70 | 54 | 63 | 77 | 92 | 62 | 0 |
+| 12 | HRTG | Financial Services | **68** | Calidad barata | 69 | 26 | 91 | 75 | 83 | 76 | 0 |
+| 13 | HCSG | Healthcare | **68** | Calidad barata | 78 | 48 | 67 | 66 | 85 | 75 | 0 |
+| 14 | HIPO | Financial Services | **67** | Crecimiento fuerte | 42 | 81 | 44 | 79 | 83 | 72 | 0 |
+| 15 | CSTL | Healthcare | **67** | GARP (crecimiento a buen precio) | 66 | 63 | 67 | 86 | 74 | 53 | 0 |
+| 16 | SIBN | Healthcare | **66** | GARP (crecimiento a buen precio) | 66 | 62 | 58 | 80 | 87 | 52 | 0 |
+| 17 | CCSI | Technology | **66** | Calidad barata | 91 | 38 | 73 | 67 | 86 | 51 | 0 |
+| 18 | SBC | Industrials | **66** | Líder en tendencia | 82 | 61 | 52 | 68 | 86 | 69 | 0 |
+| 19 | RSKD | Technology | **66** | Líder en tendencia | 51 | 78 | 36 | 74 | 93 | 78 | 0 |
+| 20 | TASK | Technology | **65** | Calidad barata | 79 | 38 | 87 | 63 | 85 | 50 | 0 |
+| 21 | EVTC | Technology | **65** | Calidad barata | 78 | 59 | 67 | 66 | 76 | 55 | 0 |
+| 22 | AMN | Healthcare | **65** | Calidad barata | 76 | 44 | 70 | 74 | 84 | 44 | 0 |
+| 23 | SWBI | Industrials | **64** | Mixta | 62 | 59 | 49 | 72 | 78 | 70 | 0 |
+| 24 | PUBM | Technology | **64** | Líder en tendencia | 53 | 69 | 34 | 84 | 92 | 53 | 0 |
+| 25 | DCOM | Financial Services | **64** | GARP (crecimiento a buen precio) | 52 | 68 | 74 | 64 | 79 | 67 | 0 |
+| 26 | PAYS | Technology | **64** | Líder en tendencia | 70 | 78 | 48 | 64 | 81 | 53 | 0 |
+| 27 | HSTM | Healthcare | **64** | Mixta | 81 | 49 | 48 | 68 | 72 | 69 | 0 |
+| 28 | RDVT | Technology | **64** | Líder en tendencia | 77 | 63 | 20 | 77 | 84 | 70 | 0 |
+| 29 | RLGT | Industrials | **64** | Líder en tendencia | 43 | 55 | 58 | 83 | 80 | 70 | 0 |
+| 30 | GDYN | Technology | **64** | Líder en tendencia | 50 | 57 | 38 | 83 | 86 | 69 | 0 |

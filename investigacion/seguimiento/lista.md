@@ -3,7 +3,7 @@
 ## Resumen (5 líneas)
 1. Mercado (S&P 500, SPY): -3.6 % hoy.
 2. Movimientos grandes: AMSC -12.7 %, AEHR -16.9 %, FTH -9.3 %, AMPX -9.8 %, TE -14.7 %, SVRA -18.2 %, XAU -4.0 %.
-3. Noticias importantes nuevas: ninguna.
+3. Noticias importantes nuevas: JAKK.
 4. Resultados en los próximos 14 días: ninguno.
 5. Datos: todas las empresas se leyeron bien.
 
@@ -119,19 +119,24 @@ Cierre 4.26 (2026-11-20) · 5 días -8.2 % · lo normal en un día: ±5.12 %.
 
 # Mejores ideas del buscador
 
-## HRTG · Heritage Insurance Holdings, In — ▼ -0.1 % · volumen 1.4x lo normal
-Cierre 32.36 (2026-11-20) · 5 días -3.9 % · lo normal en un día: ±2.03 %.
+## ASC · Ardmore Shipping Corporation — ▼ -1.5 % · volumen 0.7x lo normal
+Cierre 17.09 (2026-11-20) · 5 días -12.4 % · lo normal en un día: ±3.43 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-03-08.
-- Analistas que dicen comprar: 70 % de 10.
+- **Qué cambió:** 6 titulares nuevos.
+- Analistas que dicen comprar: 86 % de 7.
+  - 2026-11-20 · [Frasers Group Reduces Stake in ASOS plc](https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9886596)
+  - 2026-11-20 · [The Goldman Sachs Group Inc. Discloses Major Holding in ASOS plc](https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9884093)
+  - 2026-11-19 · [Independent Director Kirsi Kyllikki Tikka Divests Shares in Ardmore Shipping](https://www.moomoo.com/hans/news/post/1005170792/independent-director-kirsi-kyllikki-tikka-sold-a-bunch-of-shares)
+  - 2026-11-19 · [All Options International B.V. Decreases Voting Position in ASOS](https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9884099)
 
-## DFIN · Donnelley Financial Solutions,  — ▼ -1.4 % · volumen 0.6x lo normal
-Cierre 64.53 (2026-11-20) · 5 días -5.3 % · lo normal en un día: ±4.25 %.
+## AII · American Integrity Insurance Gr — ▼ -1.8 % · volumen 1.1x lo normal
+Cierre 28.6 (2026-11-20) · 5 días +2.4 % · lo normal en un día: ±2.67 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-15 (antes de abrir).
-- Analistas que dicen comprar: 89 % de 9.
+- Analistas que dicen comprar: 80 % de 10.
+  - 2026-11-18 · [American Integrity Insurance Group Partners with America's VetDogs to Raise Service Dog](https://www.businesswire.com/newsroom/industry/professional-services/insurance)
+  - 2026-11-18 · [Three Puppies. One Powerful Purpose: American Integrity and America’s VetDogs Continue Their Life-Changing Partnership](https://finnhub.io/api/news?id=b5f6bc7c8a42fa2821653363a753798f3e3dd8b5f00c54ce7e4e8f35f590d1cb) [contrato o pedido]
+  - 2026-11-17 · [Keefe, Bruyette & Woods Reiterates Outperform on American Integrity, Raises Price Target to $34](https://finnhub.io/api/news?id=8fa9f527536a2fc28d68e991ee4df35f80fe1b4b26b7bcca36dca0e750f16a68) [analistas]
 
 ## LPG · Dorian LPG Ltd. — ▼ -1.7 % · volumen 1.0x lo normal
 Cierre 44.2 (2026-11-20) · 5 días -8.2 % · lo normal en un día: ±2.86 %.
@@ -140,39 +145,37 @@ Cierre 44.2 (2026-11-20) · 5 días -8.2 % · lo normal en un día: ±2.86 %.
 - **Próximos catalizadores:** Resultados el 2027-02-03.
 - Analistas que dicen comprar: 73 % de 11.
 
-## HCSG · Healthcare Services Group, Inc. — ▼ -0.2 % · volumen 0.8x lo normal
-Cierre 24.72 (2026-11-20) · 5 días -0.7 % · lo normal en un día: ±2.42 %.
+## DFIN · Donnelley Financial Solutions,  — ▼ -1.4 % · volumen 0.6x lo normal
+Cierre 64.53 (2026-11-20) · 5 días -5.3 % · lo normal en un día: ±4.25 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-09 (antes de abrir).
-- Analistas que dicen comprar: 69 % de 13.
+- **Próximos catalizadores:** Resultados el 2027-02-15 (antes de abrir).
+- Analistas que dicen comprar: 89 % de 9.
 
-## IBEX · IBEX Limited — ▲ +0.0 % · volumen 0.6x lo normal
-Cierre 54.01 (2026-11-20) · 5 días -5.1 % · lo normal en un día: ±4.02 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-03.
-- Analistas que dicen comprar: 0 % de 7.
+## JAKK · JAKKS Pacific, Inc. — ▼ -4.2 % · volumen 1.4x lo normal ⚠️
+Cierre 33.44 (2026-11-20) · 5 días -6.9 % · lo normal en un día: ±2.75 %.
+- **Por qué:** Causa probable: «Skydance (SKYD) Just Closed Its $111 Billion Merger» (compra o fusión, 2026-11-19). Se movió en línea con su sector (XLY -3.0 %).
+- **Qué cambió:** 1 titular nuevo.
+- **Próximos catalizadores:** Resultados el 2027-02-17.
+- Analistas que dicen comprar: 88 % de 8.
+  - 2026-11-19 · [Skydance (SKYD) Just Closed Its $111 Billion Merger](https://finnhub.io/api/news?id=32667de697175aed1c0069118090032de0f7f17234ed8b41bc931de7588fa45e) [compra o fusión]
+  - 2026-11-17 · [JAKKS Pacific Insider Executes Significant Share Sale](https://www.marketscreener.com/news/jakks-pacific-insider-sold-shares-worth-2-392-771-according-to-a-recent-sec-filing-ce785edcd881f527)
+  - 2026-11-17 · [Will Lower Digital Gaming Spend Improve Hasbro's Future Cash Flow?](https://finnhub.io/api/news?id=919bd2da24ed2f94123d16c97fcdca161a4f9e4f3b7742c83ed08b70b05b62de)
 
-## NEXA · Nexa Resources S.A. — ▼ -4.8 % · volumen 2.0x lo normal
-Cierre 9.48 (2026-11-20) · 5 días -15.2 % · lo normal en un día: ±3.49 %.
+## OPRT · Oportun Financial Corporation — ▼ -5.8 % · volumen 1.0x lo normal
+Cierre 10.3 (2026-11-20) · 5 días -12.2 % · lo normal en un día: ±7.2 %.
 - **Por qué:** Se movió en línea con el mercado (SPY -3.6 %).
 - **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-24 (tras el cierre).
-- Analistas que dicen comprar: 54 % de 11.
+- **Próximos catalizadores:** Resultados el 2027-02-24.
+- Analistas que dicen comprar: 64 % de 11.
 
-## NRDS · NerdWallet, Inc. — ▲ +1.7 % · volumen 1.0x lo normal
-Cierre 7.14 (2026-11-20) · 5 días -4.3 % · lo normal en un día: ±7.48 %.
+## CRCT · Cricut, Inc. — ▲ +0.6 % · volumen 0.9x lo normal
+Cierre 8.35 (2026-11-20) · 5 días -3.5 % · lo normal en un día: ±11.01 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-23 (tras el cierre).
-- Analistas que dicen comprar: 75 % de 12.
-
-## SIBN · SI-BONE, Inc. — ▼ -0.1 % · volumen 0.8x lo normal
-Cierre 23.73 (2026-11-20) · 5 días +1.2 % · lo normal en un día: ±4.77 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- Analistas que dicen comprar: 93 % de 15.
+- **Qué cambió:** 1 titular nuevo.
+- **Próximos catalizadores:** Resultados el 2027-03-01 (tras el cierre).
+- Analistas que dicen comprar: 0 % de 8.
+  - 2026-11-19 · [CRCT Stock Rises 58% in 3 Months: Here's What Investors Should Know](https://finnhub.io/api/news?id=ba288da6c802afec332b62708ef1f20b82fb0f7ecb046c8d0e158fc105680445)
 
 # Materias primas
 
