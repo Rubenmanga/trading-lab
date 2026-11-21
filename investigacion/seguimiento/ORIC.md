@@ -1,21 +1,21 @@
-# Seguimiento diario de ORIC · 2026-11-18
+# Seguimiento diario de ORIC · 2026-11-20
 
 ## Resumen (5 líneas)
 1. **Estado: ATENTO.** Se acerca el momento: está en soporte o empieza a frenar. Aún falta la señal; mirar cada día.
-2. Cierre 7.65 $ (-4.4 % en el día). RSI 33.0 · EMA 9 8.3 $ · media 50 11.26 $.
-3. Señales del plan: A = suelo en 7.2-7.5 $ con vela de giro y volumen · B = dos cierres por encima de 9.3 $ (ahora a -17.7 %).
+2. Cierre 7.36 $ (-4.4 % en el día). RSI 31.6 · EMA 9 8.02 $ · media 50 11.08 $.
+3. Señales del plan: A = suelo en 7.2-7.5 $ con vela de giro y volumen · B = dos cierres por encima de 9.3 $ (ahora a -20.9 %).
 4. Pistas de hoy: sigue por debajo de la EMA 9 (la caída no ha frenado); está en la zona de soporte 7.2-7.5 $.
-5. Comprar como mucho hasta 8.5 $ · stop de tesis 6.5 $ (a 17.7 %) · objetivo 13 $ (potencial 69.9 %).
+5. Comprar como mucho hasta 8.5 $ · stop de tesis 6.5 $ (a 13.2 %) · objetivo 13 $ (potencial 76.6 %).
 
 ## Indicadores de hoy
 | Indicador | Valor |
 |---|---|
-| Cierre ($) | 7.65 |
-| EMA 9 | 8.3 |
-| Media 50 | 11.26 |
-| Media 200 | 10.95 |
-| RSI 14 | 33.0 |
-| Volumen frente a su media de 20 días | 0.7 |
+| Cierre ($) | 7.36 |
+| EMA 9 | 8.02 |
+| Media 50 | 11.08 |
+| Media 200 | 10.92 |
+| RSI 14 | 31.6 |
+| Volumen frente a su media de 20 días | 0.74 |
 | Mínimo 52 semanas | 7.23 |
 | Máximo 52 semanas | 14.68 |
 | ¿En zona de soporte? | sí |
@@ -25,6 +25,7 @@
 ## Noticias y analistas (últimos días)
 - Analistas que dicen comprar: 90.9 % (cambio en 3 meses: 0.4 puntos)
 - Sentimiento de directivos (MSPR 3 meses): -34.6
+- 2026-11-20 · [H.C. Wainwright Maintains Buy Rating on ORIC Pharmaceuticals](https://www.moomoo.com/hans/news/post/1005183134/hc-wainwright-maintains-oric-pharmaceuticals-oricus-with-buy-rating-cuts)
 - 2026-11-19 · [HC Wainwright & Co. Maintains Buy on ORIC Pharmaceuticals, Lowers Price Target to $20](https://finnhub.io/api/news?id=f4760bbbbdb8e6da05da1f113b12bc6852d611b17ae849ace4be7d312e4b35eb)
 - 2026-11-18 · [Wells Fargo Maintains Overweight on ORIC Pharmaceuticals, Lowers Price Target to $23](https://finnhub.io/api/news?id=53c6b1dde765dfa5453cb483297ac324f13bd50f1d7e7197663987dc317b1a65)
 - 2026-11-17 · [ORIC Pharmaceuticals Reports Third Quarter 2026 Financial Results and Operational Updates](https://www.streetinsider.com/Press+Releases?before_id=27354470)
@@ -36,6 +37,7 @@
 ## Últimos días
 | Fecha | Cierre | RSI | EMA 9 | Vol. rel. | Estado |
 |---|---|---|---|---|---|
+| 2026-11-20 | 7.36 | 31.6 | 8.02 | 0.74 | ATENTO |
 | 2026-11-18 | 7.65 | 33.0 | 8.3 | 0.7 | ATENTO |
 | 2026-11-17 | 8.0 | 34.9 | 8.47 | 1.01 | SEÑAL DE ENTRADA |
 | 2026-11-16 | 7.52 | 29.7 | 8.58 | 0.6 | ATENTO |
