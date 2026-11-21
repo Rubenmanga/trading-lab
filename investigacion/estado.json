@@ -38,60 +38,46 @@
    "precio": 5.21
   },
   {
-   "ticker": "AMSC",
+   "ticker": "RCAT",
    "tipo": "MOVIMIENTO GRANDE",
-   "precio": 19.28,
+   "precio": 1.94,
    "seguimiento": true,
-   "mensaje": "AMSC (2026-11-20): -12.7 % hoy (3.0x lo normal), volumen 1.3x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+   "mensaje": "RCAT (2026-11-19): -13.8 % hoy (1.3x lo normal), volumen 2.1x. Causa probable: «Red Cat Holdings Q3 Earnings Call Withdraws Sales Target for 2026» (resultados, 2026-11-20). Ver pestaña Seguimiento del panel."
   },
   {
-   "ticker": "AEHR",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 39.84,
+   "ticker": "RCAT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 1.94,
    "seguimiento": true,
-   "mensaje": "AEHR (2026-11-20): -16.9 % hoy (1.7x lo normal), volumen 1.3x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+   "mensaje": "RCAT (2026-11-19): resultados: «Red Cat Holdings Q3 Earnings Call Withdraws Sales Target for 2026» Ver pestaña Seguimiento del panel."
   },
   {
-   "ticker": "FTH",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 7.88,
+   "ticker": "MSFT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 498.3,
    "seguimiento": true,
-   "mensaje": "FTH (2026-11-20): -9.3 % hoy (0.8x lo normal), volumen 0.6x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
-  },
-  {
-   "ticker": "AMPX",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 5.77,
-   "seguimiento": true,
-   "mensaje": "AMPX (2026-11-20): -9.8 % hoy (1.5x lo normal), volumen 1.2x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
-  },
-  {
-   "ticker": "TE",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 1.1,
-   "seguimiento": true,
-   "mensaje": "TE (2026-11-20): -14.7 % hoy (1.6x lo normal), volumen 0.9x. Causa probable: «T1 Energy Inc. 2026 Q3 - Results - Earnings Call Presentation» (resultados, 2026-11-19). Ver pestaña Seguimiento del panel."
+   "mensaje": "MSFT (2026-11-19): compra o fusión: «CrowdStrike, Zscaler Merger Would Create Cybersecurity Giant» Ver pestaña Seguimiento del panel."
   },
   {
    "ticker": "SVRA",
    "tipo": "MOVIMIENTO GRANDE",
-   "precio": 4.26,
+   "precio": 5.21,
    "seguimiento": true,
-   "mensaje": "SVRA (2026-11-20): -18.2 % hoy (3.6x lo normal), volumen 4.7x. Causa probable: «Savara Says FDA Will Not Meet PDUFA Target Action Date Of November 22 For Molgramostim Inhalation Solution BLA For Treatment Of Autoimmune P» (FDA / regulador, 2026-11-20). Ver pestaña Seguimiento del panel."
+   "mensaje": "SVRA (2026-11-19): +10.4 % hoy (2.2x lo normal), volumen 3.9x. Hay noticia («Savara shares fall 20% as FDA says it will miss Molgramostim review deadline», FDA / regulador) pero su tono no cuadra con la dirección del precio: la causa puede ser otra. Ver pestaña Seguimiento del panel."
   },
   {
    "ticker": "SVRA",
    "tipo": "NOTICIA IMPORTANTE",
-   "precio": 4.26,
+   "precio": 5.21,
    "seguimiento": true,
-   "mensaje": "SVRA (2026-11-20): FDA / regulador: «Savara Says FDA Will Not Meet PDUFA Target Action Date Of November 22 For Molgramostim Inhalation Solution BLA For Treatment Of Autoimmune P» Ver pestaña Seguimiento del panel."
+   "mensaje": "SVRA (2026-11-19): FDA / regulador: «Savara Informed That FDA Will Not Take Action on the Molgramostim BLA by the PDUFA Date» Ver pestaña Seguimiento del panel."
   },
   {
-   "ticker": "XAU",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 3535.3,
+   "ticker": "SVRA",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 5.21,
    "seguimiento": true,
-   "mensaje": "XAU (2026-11-20): -4.1 % hoy Ver pestaña Seguimiento del panel."
+   "mensaje": "SVRA (2026-11-19): FDA / regulador: «SVRA Stock Hits 52-Week Low After FDA Delays Decision On Lung Disease Drug Application» Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [
