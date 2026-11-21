@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-20",
+ "actualizado": "2026-11-21",
  "autopsias": [
   {
    "ticker": "RCAT",
@@ -57,7 +57,7 @@
    "precio_antes": 5.13,
    "previa_20d": -5.52,
    "r1": -9.16,
-   "r5": null,
+   "r5": -33.33,
    "r20": null,
    "sorpresa_ventas_pct": -35.63,
    "resultado": "mixto",

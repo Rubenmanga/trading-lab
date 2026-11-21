@@ -1,5 +1,5 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
-2026-11-13,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/872912/000162962726000006/xslF345X06/form4-11132026_041101.xml,2026-11-13,21.38,-3.88,,
+2026-11-13,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/872912/000162962726000006/xslF345X06/form4-11132026_041101.xml,2026-11-13,21.38,-3.88,-10.01,
 2026-11-09,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/872912/000162828026071894/dcth-20261109.htm,2026-11-09,14.93,35.77,37.64,
 2026-11-09,movimiento,"Sube 35.8 % en un día (14.9 veces lo normal, volumen x10.2 su media)",https://finance.yahoo.com/quote/DCTH/history/,2026-11-09,14.93,35.77,37.64,
 2026-11-09,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/872912/000162828026071915/dcth-20260930.htm,2026-11-09,14.93,35.77,37.64,

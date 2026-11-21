@@ -1,8 +1,8 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
-2026-11-16,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1796280/000119312526463506/oric-20261116.htm,2026-11-16,7.86,-4.33,,
-2026-11-16,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1796280/000119312526463577/oric-20260930.htm,2026-11-16,7.86,-4.33,,
-2026-10-26,movimiento,"Cae 32.0 % en un día (8.1 veces lo normal, volumen x4.8 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-10-26,13.17,-32.0,-29.84,
-2026-10-23,8k,"Aviso oficial de hecho relevante (8-K 7.01,8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1796280/000119312526429465/d152009d8k.htm,2026-10-23,13.63,-3.37,-34.04,
+2026-11-16,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1796280/000119312526463506/oric-20261116.htm,2026-11-16,7.86,-4.33,-6.36,
+2026-11-16,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1796280/000119312526463577/oric-20260930.htm,2026-11-16,7.86,-4.33,-6.36,
+2026-10-26,movimiento,"Cae 32.0 % en un día (8.1 veces lo normal, volumen x4.8 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-10-26,13.17,-32.0,-29.84,-44.12
+2026-10-23,8k,"Aviso oficial de hecho relevante (8-K 7.01,8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1796280/000119312526429465/d152009d8k.htm,2026-10-23,13.63,-3.37,-34.04,-43.51
 2026-10-21,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000169502826000012/xslF345X06/form4-10212026_091012.xml,2026-10-21,13.78,0.51,-34.69,-41.94
 2026-10-15,movimiento,"Sube 10.2 % en un día (3.6 veces lo normal, volumen x1.0 su media)",https://finance.yahoo.com/quote/ORIC/history/,2026-10-15,11.59,10.18,19.5,-22.35
 2026-10-02,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1796280/000158475926000017/xslF345X06/form4-10022026_091044.xml,2026-10-02,12.52,-2.52,-3.91,-28.19

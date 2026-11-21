@@ -1,13 +1,13 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
-2026-11-19,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026122026/ea0312833-8k_ssinnovations.htm,2026-11-19,,,,
+2026-11-19,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026122026/ea0312833-8k_ssinnovations.htm,2026-11-19,1.31,-2.29,,
 2026-11-17,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026121405/xslF345X06/ownership.xml,2026-11-17,1.35,-1.48,,
 2026-11-17,ampliacion,Venta de acciones nuevas sin registro (8-K 3.02); Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026121401/ea0312635-8k_ssinnova.htm,2026-11-17,1.35,-1.48,,
-2026-11-16,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026120292/xslF345X06/ownership.xml,2026-11-16,1.66,-17.77,,
-2026-11-16,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1676163/000121390026120633/ea0309946-10q_ssinnova.htm,2026-11-16,1.66,-18.67,,
-2026-11-13,movimiento,"Sube 25.8 % en un día (3.9 veces lo normal, volumen x7.6 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-11-13,1.32,25.76,,
-2026-11-13,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026119252/ea0311892-8k_ssinno.htm,2026-11-13,1.32,25.76,,
+2026-11-16,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026120292/xslF345X06/ownership.xml,2026-11-16,1.66,-17.77,-23.49,
+2026-11-16,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1676163/000121390026120633/ea0309946-10q_ssinnova.htm,2026-11-16,1.66,-18.67,-23.49,
+2026-11-13,movimiento,"Sube 25.8 % en un día (3.9 veces lo normal, volumen x7.6 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-11-13,1.32,25.76,-3.03,
+2026-11-13,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1676163/000121390026119252/ea0311892-8k_ssinno.htm,2026-11-13,1.32,25.76,-3.03,
 2026-11-05,movimiento,"Cae 16.3 % en un día (4.8 veces lo normal, volumen x2.5 su media)",https://finance.yahoo.com/quote/SSII/history/,2026-11-05,2.27,-16.3,-33.48,
-2026-10-26,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026112292/ea0309597-8k_ssinno.htm,2026-10-26,2.25,5.33,4.44,
+2026-10-26,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026112292/ea0309597-8k_ssinno.htm,2026-10-26,2.25,5.33,4.44,-43.56
 2026-10-13,contrato,Contrato o acuerdo importante (8-K 1.01),https://www.sec.gov/Archives/edgar/data/1676163/000121390026108624/ea0308062-8k_ssinnova.htm,2026-10-13,2.55,0.0,-3.92,-26.67
 2026-10-13,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1676163/000121390026108792/ea0308357-8k_ssinnova.htm,2026-10-13,2.55,0.0,-3.92,-26.67
 2026-10-09,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1676163/000121390026108570/xslF345X06/ownership.xml,2026-10-09,2.63,0.57,-1.9,-27.76

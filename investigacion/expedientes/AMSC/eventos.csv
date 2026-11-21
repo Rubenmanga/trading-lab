@@ -1,4 +1,5 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
+2026-11-20,movimiento,"Cae 12.7 % en un día (3.0 veces lo normal, volumen x1.3 su media)",https://finance.yahoo.com/quote/AMSC/history/,2026-11-20,22.09,-12.72,,
 2026-11-04,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/880807/000143774926034935/amsc20260818_8k.htm,2026-11-04,27.68,-5.13,-7.98,
 2026-11-04,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/880807/000143774926034936/amsc20260930_10q.htm,2026-11-04,27.68,-5.13,-7.98,
 2026-10-14,movimiento,"Cae 10.7 % en un día (4.2 veces lo normal, volumen x1.7 su media)",https://finance.yahoo.com/quote/AMSC/history/,2026-10-14,28.71,-10.66,-10.48,-11.29
