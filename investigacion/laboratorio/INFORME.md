@@ -1,11 +1,11 @@
-# Laboratorio intradía · 2026-11-20
+# Laboratorio intradía · 2026-11-21
 
 **Resumen**
 
 1. Se prueban 6 estrategias a la vez con las mismas reglas de riesgo (stop 1 %, objetivo 3R, trailing, todo cerrado a las 15:45 NY), con costes.
 2. Pasado: 2016-01-19 a 2026-11-13. Mejor por R medio: **Corto del hueco** (+0,11 R).
 3. Aprueban el listón (≥ 100 operaciones, ≥ +0,20 R de media y margen de error por encima de 0): **ninguna**.
-4. Cuenta sombra: 4 días apuntados desde el 16-nov-2026. Hacen falta ~100 operaciones por estrategia para una primera lectura.
+4. Cuenta sombra: 5 días apuntados desde el 16-nov-2026. Hacen falta ~100 operaciones por estrategia para una primera lectura.
 5. Todo es papel: no se envía ninguna orden. R = lo que se arriesga en una operación.
 
 ## Pasado (backtest)
@@ -25,7 +25,7 @@ Corto del hueco **como el bot de eToro** (hueco ≥ +50 %, 3 al día): 2222 oper
 
 | | Estrategia | Ops | R medio | Aciertos | R total | Vs azar |
 |---|---|---|---|---|---|---|
-| 🟡 | Corto del hueco | 10 | +0,05 | 50 % | +0,5 | — |
+| 🟡 | Corto del hueco | 11 | +0,18 | 54 % | +1,9 | — |
 | ⚪ | Ruptura de apertura (ORB) | 0 | — | — | — | — |
 | ⚪ | Rebote tras caída | 0 | — | — | — | — |
 | ⚪ | Azar (control) | 0 | — | — | — | — |

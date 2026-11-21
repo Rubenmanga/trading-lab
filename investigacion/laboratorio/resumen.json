@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-20",
+ "actualizado": "2026-11-21",
  "listones": {
   "ops_minimas": 100,
   "ops_fiables": 200,
@@ -1921,26 +1921,26 @@
     "vs_azar": 0.222
    },
    "sombra": {
-    "n": 10,
-    "R_medio": 0.054,
+    "n": 11,
+    "R_medio": 0.177,
     "ic95": [
-     -0.499,
-     0.608
+     -0.378,
+     0.731
     ],
-    "R_alt_medio": 0.054,
-    "aciertos_pct": 50.0,
-    "pf": 1.17,
-    "R_total": 0.5,
+    "R_alt_medio": 0.177,
+    "aciertos_pct": 54.5,
+    "pf": 1.59,
+    "R_total": 1.9,
     "peor_caida_R": -1.2,
     "peor_racha": 4,
     "largos": 0,
-    "cortos": 10,
-    "dias": 4,
-    "ops_dia": 2.5,
+    "cortos": 11,
+    "dias": 5,
+    "ops_dia": 2.2,
     "por_anio": {
      "2026": {
-      "n": 10,
-      "R": 0.054
+      "n": 11,
+      "R": 0.177
      }
     },
     "anios_positivos": 1,
@@ -2489,6 +2489,10 @@
     {
      "f": "2026-11-19",
      "R": 0.54
+    },
+    {
+     "f": "2026-11-20",
+     "R": 1.94
     }
    ],
    "sombra_filtrada": {
@@ -3811,7 +3815,7 @@
   "2016-01-19",
   "2026-11-13"
  ],
- "dias_sombra": 4,
+ "dias_sombra": 5,
  "ultimas_sombra": [
   {
    "fecha": "2026-11-16",
@@ -3952,6 +3956,20 @@
    "R": 0.768,
    "ret_pct": 11.527,
    "hueco": 0.9648
+  },
+  {
+   "fecha": "2026-11-20",
+   "estrategia": "corto_hueco",
+   "simbolo": "AKAN",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 5.1374,
+   "salida": 4.052,
+   "motivo": "cierre forzado",
+   "hora_salida": "15:45:00",
+   "R": 1.399,
+   "ret_pct": 20.981,
+   "hueco": 0.4184
   }
  ]
 }
