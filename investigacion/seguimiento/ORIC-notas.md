@@ -1,11 +1,36 @@
 # ORIC · notas del repaso diario (agente B)
 
 ## Resumen (5 líneas)
-1. **Estado: ATENTO.** Sigue en la zona de soporte (7,2-7,5 $) sin señal de entrada. El informe nocturno aún no trae el cierre del 19-nov.
-2. Último cierre conocido: **7,65 $** (18-nov), RSI 33 (cerca de «sobrevendida»), por debajo de la EMA 9 (8,3 $). Mínimo del año: 7,23 $.
-3. Analistas: HC Wainwright mantiene «comprar» y baja objetivo a 20 $ (19-nov); Wells Fargo 23 $, Citi 17 $, BTIG 26 $. Todos muy por encima del precio.
+1. **Estado: ATENTO.** Cierre del viernes 20-nov en **7,36 $** (−4,4 %): sigue dentro del soporte 7,2-7,5 $, pero pegado al mínimo del año (7,23 $).
+2. RSI 31,6 (casi «sobrevendida», es decir, ha caído mucho y rápido), por debajo de la EMA 9 (8,02 $). Volumen bajo (0,74×): cae sin ventas fuertes.
+3. Analistas: todos siguen en «comprar» (HC Wainwright 20 $, Wells Fargo 23 $, Citi 17 $, BTIG 26 $).
 4. Sin noticias nuevas de rinzimetostat, enozertinib, ampliaciones de capital ni del rival JNJ-6143 de J&J. La tesis no cambia.
-5. Qué hacer en la demo: esperar un cierre por encima de la EMA 9 (≈ 8,3 $) y ≤ 8,5 $ para la primera mitad; si cierra bajo 7,2 $, PELIGRO y no entrar. Stop 6,5 $, objetivo 13 $.
+5. Demo: no comprar aún. Primera mitad con un cierre > EMA 9 (≈ 8,0 $) y ≤ 8,5 $; si cierra < 7,2 $ → PELIGRO. Stop 6,5 $, objetivo 13 $.
+
+## 21-nov-2026 · ATENTO
+
+**Qué ha pasado**
+- Viernes 20-nov: la acción cae −4,4 % hasta **7,36 $**, con poco volumen (0,74 veces su media). Ya ha llegado el dato que faltaba ayer.
+- Queda a solo 0,13 $ del mínimo del año (7,23 $) y a 0,16 $ de la línea de peligro (7,2 $).
+- Noticias: solo avisos rutinarios (acciones regaladas a empleados nuevos y presencia en conferencias para inversores). Nada de los fármacos, ni ventas de acciones nuevas, ni del rival JNJ-6143 de J&J.
+
+**Qué significa**
+- Bajar con poco volumen = faltan compradores, no hay pánico. Pero el soporte se está probando de verdad: el lunes es un día clave.
+- Si aguanta 7,2 $ y sale una vela verde de giro con volumen, sería la **señal A** del plan. Si cierra por debajo, el soporte ha fallado.
+- La tesis (fase 3 de rinzimetostat y caja hasta 2028) sigue igual.
+
+**Qué haría hoy en la demo**
+- **No comprar todavía** (hoy es sábado, bolsa cerrada).
+- Primera mitad (≤ 1 % de la cartera) solo con un cierre por encima de la EMA 9 (ahora ≈ 8,0 $) y sin pasar de 8,5 $. Segunda mitad con la señal B (dos cierres > 9,3 $).
+- Si cierra por debajo de **7,2 $** → PELIGRO, no entrar. Stop de tesis 6,5 $.
+- **Niveles del plan: sin cambios.**
+
+**Fuentes**
+| dato | valor | fuente | fecha |
+|---|---|---|---|
+| Precio, RSI, EMA 9, volumen | 7,36 $ · 31,6 · 8,02 $ · 0,74× | investigacion/seguimiento/ORIC.md (Yahoo) | 20-nov-2026 |
+| Avisos de la empresa | ayudas a empleados nuevos, conferencias | [finviz](https://finviz.com/news/418644/oric-pharmaceuticals-reports-inducement-grants-under-nasdaq-listing-rule-5635c4) (intermediaria) | nov-2026 |
+| Fármacos / J&J | sin novedades | búsqueda web | 21-nov-2026 |
 
 ---
 
