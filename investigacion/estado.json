@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-21T04:16:23+00:00",
+ "actualizado": "2026-11-22T17:19:15+00:00",
  "alertas": [
   {
    "ticker": "AMSC",
@@ -28,7 +28,7 @@
   {
    "ticker": "SSII",
    "tipo": "CATALIZADOR CERCA",
-   "mensaje": "SSII: 'Resultados 3.er trim. (10-Q con retraso) y después decisión FDA 510(k) fin 1T 2027' el 2026-11-23 (en 2 días)",
+   "mensaje": "SSII: 'Resultados 3.er trim. (10-Q con retraso) y después decisión FDA 510(k) fin 1T 2027' el 2026-11-23 (en 1 días)",
    "precio": 1.2699999809265137
   },
   {
@@ -40,8 +40,15 @@
   {
    "ticker": "SVRA",
    "tipo": "CATALIZADOR CERCA",
-   "mensaje": "SVRA: 'Decisión FDA de MOLBREEVI (apuesta binaria; puede llegar el 20 o el 23)' el 2026-11-22 (en 1 días)",
+   "mensaje": "SVRA: 'Decisión FDA de MOLBREEVI (apuesta binaria; puede llegar el 20 o el 23)' el 2026-11-22 (en 0 días)",
    "precio": 4.260000228881836
+  },
+  {
+   "ticker": "SVRA",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 4.26,
+   "seguimiento": true,
+   "mensaje": "SVRA (2026-11-20): FDA / regulador: «Savara Craters as FDA Delays Decision for Lung Disease» Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [
