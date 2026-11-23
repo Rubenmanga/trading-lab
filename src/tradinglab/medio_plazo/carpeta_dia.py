@@ -19,6 +19,7 @@ DIAS_HECHOS = 4        # hechos de los expedientes de los últimos 4 días (cubr
 DIAS_CATALIZADOR = 14
 MAX_POR_SECCION = 6
 TOP = 10
+MAX_RETRASO_BOLSA = 1   # precios de ayer (un día de bolsa) valen; más viejos, aviso
 IMPORTANTES = ("ZONA DE ENTRADA", "TESIS EN PELIGRO", "OBJETIVO ALCANZADO", "CATALIZADOR CERCA",
                "SEÑAL DE ENTRADA", "SOPORTE PERDIDO", "MOVIMIENTO GRANDE", "NOTICIA IMPORTANTE")
 
@@ -50,6 +51,18 @@ def _fecha(x) -> date | None:
         return date.fromisoformat(str(x)[:10])
     except ValueError:
         return None
+
+
+def dias_bolsa_de_retraso(actualizado: str, hoy: date) -> int | None:
+    """Días de bolsa (L-V) entre la fecha de los precios y hoy. None si no se sabe la fecha."""
+    f = _fecha(actualizado)
+    if not f:
+        return None
+    n, d = 0, f
+    while d < hoy:
+        d += timedelta(days=1)
+        n += d.weekday() < 5
+    return n
 
 
 def _recorta(filas: list[str]) -> list[str]:
@@ -159,9 +172,18 @@ def construir(hoy: date | None = None, base: Path | None = None, tickers: dict[s
     lineas = [f"# Carpeta del día · {hoy:%d/%m/%Y}", "",
               f"_Resumen automático, sin IA. Precios y avisos del {act or '¿?'} UTC. "
               f"Sigues {len(tickers)} acciones._"]
+    # Auditoría 17-nov (D3): si el ranking no se ha actualizado, los precios son viejos y hay que decirlo arriba.
+    retraso = dias_bolsa_de_retraso(estado.get("actualizado") or "", hoy)
+    viejo = retraso is None or retraso > MAX_RETRASO_BOLSA
+    if viejo:
+        cuanto = "no se sabe de cuándo son" if retraso is None else f"tienen {retraso} días de bolsa"
+        lineas += ["", f"> ⚠️ **PRECIOS VIEJOS:** {cuanto} (el ranking nocturno no se ha actualizado). "
+                       "Las zonas de entrada de abajo están **sin confirmar**: no propongas precio de entrada con ellas."]
     for titulo, filas in secciones:
+        if viejo and titulo.startswith("🎯"):
+            titulo += " (SIN CONFIRMAR: precios viejos)"
         lineas += ["", f"## {titulo}"] + (_recorta(filas) or ["- Nada."])
-    lineas += ["", "_Detector de inflexión x3-x4: llegará en el Paso 8._", ""]
+    lineas += [""]
     return "\n".join(lineas)
 
 
