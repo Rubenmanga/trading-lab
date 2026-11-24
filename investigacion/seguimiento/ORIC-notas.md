@@ -1,11 +1,40 @@
 # ORIC · notas del repaso diario (agente B)
 
 ## Resumen (5 líneas)
-1. **Estado: ATENTO.** Cierre del viernes 20-nov en **7,36 $** (−4,4 %): sigue dentro del soporte 7,2-7,5 $, pero pegado al mínimo del año (7,23 $).
-2. RSI 31,6 (casi «sobrevendida», es decir, ha caído mucho y rápido), por debajo de la EMA 9 (8,02 $). Volumen bajo (0,74×): cae sin ventas fuertes.
-3. Analistas: todos siguen en «comprar» (HC Wainwright 20 $, Wells Fargo 23 $, Citi 17 $, BTIG 26 $).
-4. Sin noticias nuevas de rinzimetostat, enozertinib, ampliaciones de capital ni del rival JNJ-6143 de J&J. La tesis no cambia.
-5. Demo: no comprar aún. Primera mitad con un cierre > EMA 9 (≈ 8,0 $) y ≤ 8,5 $; si cierra < 7,2 $ → PELIGRO. Stop 6,5 $, objetivo 13 $.
+1. **Estado: ATENTO.** El lunes 23-nov rebotó a **7,54 $** (+2,4 %) desde la zona de soporte 7,2-7,5 $: el soporte aguanta por ahora.
+2. RSI 33,8 (cerca de «sobrevendida»: ha caído mucho y rápido). Sigue por debajo de la EMA 9 (7,92 $), así que la caída aún no ha frenado del todo. Volumen normal (1,05×).
+3. Analistas: todos siguen en «comprar» (HC Wainwright 20 $, Wells Fargo 23 $, Citi 17 $, BTIG 26 $). HC Wainwright espera algo más de pérdida en 2026 (normal en una biotecnológica que gasta en ensayos).
+4. Sin noticias de rinzimetostat, enozertinib, ampliaciones de capital ni del rival JNJ-6143 de J&J. Solo un aviso de conferencias para inversores. La tesis no cambia.
+5. Demo: no comprar aún. Primera mitad con un cierre > EMA 9 (≈ 7,9 $) y ≤ 8,5 $; si cierra < 7,2 $ → PELIGRO. Stop 6,5 $, objetivo 13 $.
+
+## 24-nov-2026 · ATENTO
+
+**Qué ha pasado**
+- Lunes 23-nov: sube +2,4 % hasta **7,54 $**, con un volumen normal (1,05 veces su media), algo más que los días de caída (0,7×).
+- El viernes había tocado 7,36 $, a un paso del mínimo del año (7,23 $). El lunes no lo perdió y rebotó.
+- Noticias: la empresa anuncia que estará en conferencias para inversores (23-nov). HC Wainwright rebaja su previsión de beneficio de 2026 (espera más pérdida), sin cambiar su «comprar».
+- Nada nuevo de los fármacos, ni venta de acciones nuevas (lo que diluiría a los accionistas), ni del rival JNJ-6143 de J&J.
+
+**Qué significa**
+- Primera pista de que el soporte funciona: rebote con más compradores que los días anteriores. Pero el programa no ve todavía una «vela de giro» clara ni divergencia en el RSI, así que **aún no es la señal A**.
+- La prueba de verdad es superar la EMA 9 (≈ 7,9 $): si cierra por encima, la caída habría frenado.
+- La tesis (fase 3 de rinzimetostat y caja hasta 2028) sigue igual.
+
+**Qué haría hoy en la demo**
+- **No comprar todavía.**
+- Primera mitad (≤ 1 % de la cartera) solo con un cierre por encima de la EMA 9 (≈ 7,9 $) y sin pasar de 8,5 $. Segunda mitad con la señal B (dos cierres > 9,3 $).
+- Si cierra por debajo de **7,2 $** → PELIGRO, no entrar. Stop de tesis 6,5 $.
+- **Niveles del plan: sin cambios.**
+
+**Fuentes**
+| dato | valor | fuente | fecha |
+|---|---|---|---|
+| Precio, RSI, EMA 9, volumen | 7,54 $ · 33,8 · 7,92 $ · 1,05× | investigacion/seguimiento/ORIC.md (Yahoo) | 23-nov-2026 |
+| Conferencias para inversores | aviso de la empresa | [GlobeNewswire](https://www.globenewswire.com/news-release/2026/11/23/3408865/0/en/oric-pharmaceuticals-to-participate-in-upcoming-investor-conferences.html) | 23-nov-2026 |
+| Previsión HC Wainwright 2026 | más pérdida, sigue «comprar» 20 $ | [MarketBeat](https://www.marketbeat.com/instant-alerts/estimates-fy2026-earnings-forecast-for-oric-issued-by-hc-wainwright-2026-11-23/) (intermediaria) | 23-nov-2026 |
+| Fármacos / J&J / ampliación | sin novedades | búsqueda web | 24-nov-2026 |
+
+---
 
 ## 21-nov-2026 · ATENTO
 
