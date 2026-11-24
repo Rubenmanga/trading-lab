@@ -28,10 +28,13 @@ Cierre 1.89 (2026-11-23) · 5 días -46.5 % · lo normal en un día: ±10.47 %.
 ## MSFT · Microsoft — ▲ +1.6 % · volumen 1.0x lo normal
 Cierre 492.5 (2026-11-23) · 5 días -4.9 % · lo normal en un día: ±2.36 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 3 titulares nuevos.
+- **Qué cambió:** 8 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
-  - 2026-11-24 · [Microsoft CEO Satya Nadella Offered 60,000 Employees Buyouts So Everyone 'Felt Like They Had Agency' — Yet Insists Software Engineering Is 'Very Much Alive'](https://finnhub.io/api/news?id=75459d02e78aae7755381d1837d3dc7e1b07feab2bde4f595117d249c5eda08f) [directivos]
+  - 2026-11-24 · [Why Did Palo Alto Networks Stock Fall?](https://finnhub.io/api/news?id=a65a2ac9a333c5ab64800d02ce935f76076f683e429df9696e35fa53201c9c05)
+  - 2026-11-24 · [The Inflation Math, Updated: The Fed Is Fighting Oil](https://finnhub.io/api/news?id=d723b4358993a0d1f7fbb205851c99471a3ac0436074243f0b66ed511959842e)
+  - 2026-11-24 · [1966 Or 1995: Which Way Does America's $2.1 Trillion Deficit Go?](https://finnhub.io/api/news?id=d2f5e0f1080f764261771fb55eaef1c5d30e36c03aa23e26c58804454e770519)
+  - 2026-11-24 · [Stocks Opened Up, Then Fell 3% By The Close. What Happened The Last 45 Times?](https://finnhub.io/api/news?id=252f91b8239af29d88420cd507fbeabe2424ff9d283e495721c60de00d07f925)
 
 ## RAPP · Rapport Therapeutics — ▲ +3.0 % · volumen 0.3x lo normal
 Cierre 23.85 (2026-11-23) · 5 días -3.9 % · lo normal en un día: ±5.93 %.
@@ -122,9 +125,10 @@ Cierre 4.24 (2026-11-23) · 5 días -5.0 % · lo normal en un día: ±6.4 %.
 
 ## AII · American Integrity Insurance Gr — ▲ +4.3 % · volumen 0.7x lo normal
 Cierre 29.82 (2026-11-23) · 5 días +5.3 % · lo normal en un día: ±2.69 %.
-- **Por qué:** Se movió en línea con el mercado (SPY +4.7 %).
-- **Qué cambió:** nada nuevo.
+- **Por qué:** Causa probable: «American Integrity Insurance Group Consensus Price Target Raised 11.50% to $32.13» (analistas, 2026-11-24). Se movió en línea con el mercado (SPY +4.7 %).
+- **Qué cambió:** 1 titular nuevo.
 - Analistas que dicen comprar: 80 % de 10.
+  - 2026-11-24 · [American Integrity Insurance Group Consensus Price Target Raised 11.50% to $32.13](https://finnhub.io/api/news?id=05cdd397cae2ddaf7486e7c1f4950a046e8beeed0bf55a45b719c6a4c1face63) [analistas]
 
 ## ASC · Ardmore Shipping Corporation — ▲ +3.5 % · volumen 0.5x lo normal
 Cierre 17.69 (2026-11-23) · 5 días -6.3 % · lo normal en un día: ±3.31 %.
@@ -171,8 +175,8 @@ Cierre 8.74 (2026-11-23) · 5 días +1.0 % · lo normal en un día: ±10.97 %.
 
 # Materias primas
 
-## XAU · Oro — ▼ -0.5 % · volumen 0.2x lo normal
-Cierre 3634.5 (2026-11-24) · 5 días -5.9 % · lo normal en un día: ±2.1 %.
+## XAU · Oro — ▼ -0.9 % · volumen 0.2x lo normal
+Cierre 3616.6 (2026-11-24) · 5 días -6.4 % · lo normal en un día: ±2.1 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 

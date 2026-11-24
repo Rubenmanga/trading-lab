@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-24T05:20:48+00:00",
+ "actualizado": "2026-11-24T06:36:58+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -14,14 +14,14 @@
     "tamano_max": "2 %",
     "informe": "investigacion/analisis/ORIC-2026-11-14.md"
    },
-   "fecha": "2026-11-20",
-   "cierre": 7.36,
-   "cambio_dia_pct": -4.4,
-   "ema9": 8.02,
-   "ma50": 11.08,
-   "ma200": 10.92,
-   "rsi": 31.6,
-   "volumen_rel": 0.74,
+   "fecha": "2026-11-23",
+   "cierre": 7.54,
+   "cambio_dia_pct": 2.4,
+   "ema9": 7.92,
+   "ma50": 10.98,
+   "ma200": 10.91,
+   "rsi": 33.8,
+   "volumen_rel": 1.05,
    "minimo_52s": 7.23,
    "maximo_52s": 14.68,
    "divergencia": false,
@@ -34,10 +34,10 @@
     "sigue por debajo de la EMA 9 (la caída no ha frenado)",
     "está en la zona de soporte 7.2-7.5 $"
    ],
-   "distancia_entrada_pct": -13.4,
-   "distancia_stop_pct": 13.2,
-   "distancia_confirmacion_pct": -20.9,
-   "potencial_pct": 76.6,
+   "distancia_entrada_pct": -11.3,
+   "distancia_stop_pct": 16.0,
+   "distancia_confirmacion_pct": -18.9,
+   "potencial_pct": 72.4,
    "proximos_resultados": null,
    "historial": [
     {
@@ -78,11 +78,20 @@
     },
     {
      "fecha": "2026-11-20",
-     "cierre": 7.36,
-     "rsi": 31.6,
-     "ema9": 8.02,
-     "ma50": 11.08,
-     "volumen_rel": 0.74,
+     "cierre": "7.36",
+     "rsi": "31.6",
+     "ema9": "8.02",
+     "ma50": "11.08",
+     "volumen_rel": "0.74",
+     "estado": "ATENTO"
+    },
+    {
+     "fecha": "2026-11-23",
+     "cierre": 7.54,
+     "rsi": 33.8,
+     "ema9": 7.92,
+     "ma50": 10.98,
+     "volumen_rel": 1.05,
      "estado": "ATENTO"
     }
    ]
@@ -531,7 +540,7 @@
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Movimiento normal para esta acción.",
     "cambios": [
-     "3 titulares nuevos"
+     "8 titulares nuevos"
     ],
     "catalizadores": [
      "Resultados el 2027-01-26"
@@ -557,6 +566,51 @@
      "volumen_rel": 1.5
     },
     "titulares": [
+     {
+      "fecha": "2026-11-24",
+      "titulo": "Why Did Palo Alto Networks Stock Fall?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=a65a2ac9a333c5ab64800d02ce935f76076f683e429df9696e35fa53201c9c05",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-24",
+      "titulo": "The Inflation Math, Updated: The Fed Is Fighting Oil",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=d723b4358993a0d1f7fbb205851c99471a3ac0436074243f0b66ed511959842e",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-24",
+      "titulo": "1966 Or 1995: Which Way Does America's $2.1 Trillion Deficit Go?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=d2f5e0f1080f764261771fb55eaef1c5d30e36c03aa23e26c58804454e770519",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-24",
+      "titulo": "Stocks Opened Up, Then Fell 3% By The Close. What Happened The Last 45 Times?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=252f91b8239af29d88420cd507fbeabe2424ff9d283e495721c60de00d07f925",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-24",
+      "titulo": "The 10-Year Topped 5% For The First Time Since 2007. What Happened Next?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=79500cb910afa122744a8008c708814f33fbfeaf638a9e24e0e6c0fb56327b4e",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-24",
       "titulo": "Microsoft CEO Satya Nadella Offered 60,000 Employees Buyouts So Everyone 'Felt Like They Had Agency' — Yet Insists Software Engineering Is 'Very Much Alive'",
@@ -650,61 +704,9 @@
       "causas": [],
       "nueva": false,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-23",
-      "titulo": "It's not over for Jensen Huang",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=3a56e647ab0a784ceec16368952f194531c0c93e39a4c015e56e8ae5d061b77b",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-23",
-      "titulo": "China Is “Only 12 Hours” Behind US AI Labs. ByteDance’s Reported Azure Deal Puts Microsoft in the Middle",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=f8dbebf4e131a0ffd18695dd13f5c7af6438756832dcc8b07c1f555b7226d20f",
-      "causas": [
-       "contrato o pedido"
-      ],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-23",
-      "titulo": "Leading CHROs and Business Executives to Convene at i4cp's 2027 Next Practices Now Conference",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=31cec952cc3b46ba393864bdabcccdc1ff667f0665c65ba675b34c1657ac898e",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-23",
-      "titulo": "Don't Chase After the Market's Big AI Gains",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=e2ce0c229e3d869f0c103a08908f8f2187119342279859a88e274b53c95f3ba4",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-23",
-      "titulo": "Billionaire Andreas Halvorsen Exited Microsoft and Made TSMC His Top Holding at $1.8 Billion",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=c2592fdda67ab8bdce4316f7cbf1833bea67d19e89e9d6b861eb29dfeb62a04f",
-      "causas": [],
-      "nueva": false,
-      "importante": false
      }
     ],
     "vistos": [
-     "best blue chip stocks 21 hedge fund top picks",
-     "betterup announces collaboration with microsoft to support managers",
-     "between iren and coreweave heres who has the cleaner path to a sustain",
-     "big tech earned 607 billion where did it go",
-     "big tech will spend well over 1 trillion in 2027 says applied material",
      "big techs anthropic spending is distorting its books",
      "bill ackman adds more to netflix in q3 exits hertz cuts microsoft",
      "bill ackmans 14 billion bet beyond the magnificent 7",
@@ -927,6 +929,7 @@
      "palantir rips 10 to lead software stocks cloudflare and servicenow als",
      "palo alto ceo says last weeks outages had an unlikely culprit",
      "palo alto soars 7 okta up 11 as dhs chief warns of a severe cyber thre",
+     "pinterest announces partnership with microsoft ads",
      "prediction spacex will be the largest company in the world by 2040",
      "prediction this ai hardware stock could surprise investors over the ne",
      "pretty bizarre microsoft is worth more than alphabet which makes no se",
@@ -953,13 +956,16 @@
      "splashtop joins microsoft virus initiative",
      "stackgen launches shipyard on microsoft marketplace",
      "steve eisman says stock picking is back now that ai is no longer one t",
+     "stocks opened up then fell 3 by the close what happened the last 45 ti",
      "strategically building a 75000 dividend portfolio with novembers top h",
      "taketwo smashes sales records with grand theft auto 6",
      "tech outages spur emergency buying costcoheavy etfs in focus",
      "tech sees huge selloff as anthropic ipo fails to lift the market",
      "tech takes a beating as ai trade comes unstuck despite anthropic surge",
      "temporal cloud enters public preview on microsoft azure",
+     "the 10year topped 5 for the first time since 2007 what happened next",
      "the ai boom math in five lines",
+     "the inflation math updated the fed is fighting oil",
      "the link between patchmageddon and recent tech outages",
      "the short seller who called out nvidia has a new target",
      "the sp 500 just fell into a correction your 3 million retirement portf",
@@ -993,6 +999,7 @@
      "why anthropic says cybersecurity is one of its most important opportun",
      "why apple is down in a week of outages from microsoft to chase",
      "why coreweave cant pay down debt from its cash",
+     "why did palo alto networks stock fall",
      "why do nvidias customers owe it 81 billion",
      "why is oracle spending 161 for every cash dollar",
      "why the microsoft outage came at the worst possible time for the stock",
@@ -1410,12 +1417,7 @@
       "texto": "+10.4 % hoy (2.1x lo normal), volumen 0.9x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "MOVIMIENTO GRANDE",
-      "texto": "+10.4 % hoy (2.1x lo normal), volumen 0.9x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "MOVIMIENTO GRANDE|+10.4 % hoy (2.1x lo normal), volumen 0.9x. No hay"
     ],
@@ -1493,12 +1495,7 @@
       "texto": "+21.8 % hoy (2.0x lo normal), volumen 1.0x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "MOVIMIENTO GRANDE",
-      "texto": "+21.8 % hoy (2.0x lo normal), volumen 1.0x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "MOVIMIENTO GRANDE|+21.8 % hoy (2.0x lo normal), volumen 1.0x. No hay"
     ],
@@ -1667,12 +1664,7 @@
       "texto": "+8.2 % hoy (1.8x lo normal), volumen 0.9x. Causa probable: «On June 30, ClearOne Declared A One-time Special Stock Dividend To Provide Its Legacy Stockholders With A 100% Stake In The Proceeds From An» (directivos, 2026-11-20). Se movió en línea con su sector (QQQ +7.0 %)."
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "MOVIMIENTO GRANDE",
-      "texto": "+8.2 % hoy (1.8x lo normal), volumen 0.9x. Causa probable: «On June 30, ClearOne Declared A One-time Special Stock Dividend To Provide Its Legacy Stockholders With A 100% Stake In The Proceeds From An» (directivos, 2026-11-20). Se movió en línea con su sector (QQQ +7.0 %)."
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "MOVIMIENTO GRANDE|+8.2 % hoy (1.8x lo normal), volumen 0.9x. Causa p"
     ],
@@ -2332,12 +2324,7 @@
       "texto": "+9.1 % hoy (1.0x lo normal), volumen 0.7x. Se movió en línea con el mercado (SPY +4.7 %)."
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "MOVIMIENTO GRANDE",
-      "texto": "+9.1 % hoy (1.0x lo normal), volumen 0.7x. Se movió en línea con el mercado (SPY +4.7 %)."
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "MOVIMIENTO GRANDE|+9.1 % hoy (1.0x lo normal), volumen 0.7x. Se movi"
     ],
@@ -2720,9 +2707,11 @@
     "veces_normal": 1.6,
     "volumen_rel": 0.7,
     "grande": false,
-    "porque": "Se movió en línea con el mercado (SPY +4.7 %).",
-    "resumen": "Se movió en línea con el mercado (SPY +4.7 %).",
-    "cambios": [],
+    "porque": "Causa probable: «American Integrity Insurance Group Consensus Price Target Raised 11.50% to $32.13» (analistas, 2026-11-24). Se movió en línea con el mercado (SPY +4.7 %).",
+    "resumen": "Causa probable: «American Integrity Insurance Group Consensus Price Target Raised 11.50% to $32.13» (analistas, 2026-11-24). Se movió en línea con el mercado (SPY +4.7 %).",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [],
     "avisos": [],
     "avisos_nuevos": [],
@@ -2744,8 +2733,22 @@
      "veces_normal": 1.4,
      "volumen_rel": 1.5
     },
-    "titulares": [],
-    "vistos": [],
+    "titulares": [
+     {
+      "fecha": "2026-11-24",
+      "titulo": "American Integrity Insurance Group Consensus Price Target Raised 11.50% to $32.13",
+      "fuente": "Fintel",
+      "url": "https://finnhub.io/api/news?id=05cdd397cae2ddaf7486e7c1f4950a046e8beeed0bf55a45b719c6a4c1face63",
+      "causas": [
+       "analistas"
+      ],
+      "nueva": true,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "american integrity insurance group consensus price target raised 1150"
+    ],
     "sec_vistos": [
      "2026-10-02Registro para vender acciones (S-3)"
     ],
@@ -3291,11 +3294,11 @@
     "sector": "materia prima",
     "fecha": "2026-11-24",
     "fecha_anterior": "2026-11-23",
-    "cierre": 3634.5,
-    "cambio_pct": -0.46,
-    "cambio_5d_pct": -5.9,
+    "cierre": 3616.6,
+    "cambio_pct": -0.95,
+    "cambio_5d_pct": -6.4,
     "sigma_pct": 2.1,
-    "veces_normal": 0.2,
+    "veces_normal": 0.5,
     "volumen_rel": 0.2,
     "grande": false,
     "porque": "Movimiento normal.",

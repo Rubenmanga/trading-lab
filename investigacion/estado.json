@@ -1,161 +1,121 @@
 {
- "actualizado": "2026-11-22T17:19:15+00:00",
+ "actualizado": "2026-11-24T06:36:58+00:00",
  "alertas": [
   {
    "ticker": "AMSC",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "AMSC a 19.28 $ está en su zona de entrada (≤ 22.0), potencial 66% hasta objetivo",
-   "precio": 19.280000686645508
+   "mensaje": "AMSC a 21.29 $ está en su zona de entrada (≤ 22.0), potencial 50% hasta objetivo",
+   "precio": 21.290000915527344
   },
   {
    "ticker": "REPX",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "REPX a 41.04 $ está en su zona de entrada (≤ 46.0), potencial 41% hasta objetivo",
-   "precio": 41.040000915527344
+   "mensaje": "REPX a 39.70 $ está en su zona de entrada (≤ 46.0), potencial 46% hasta objetivo",
+   "precio": 39.70000076293945
   },
   {
    "ticker": "PGY",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "PGY a 13.50 $ está en su zona de entrada (≤ 17.5), potencial 85% hasta objetivo",
-   "precio": 13.5
+   "mensaje": "PGY a 14.61 $ está en su zona de entrada (≤ 17.5), potencial 71% hasta objetivo",
+   "precio": 14.609999656677246
   },
   {
    "ticker": "AMPX",
    "tipo": "TESIS EN PELIGRO",
-   "mensaje": "AMPX a 5.77 $ ha caído bajo el stop de tesis (6.8). Revisar.",
-   "precio": 5.769999980926514
-  },
-  {
-   "ticker": "SSII",
-   "tipo": "CATALIZADOR CERCA",
-   "mensaje": "SSII: 'Resultados 3.er trim. (10-Q con retraso) y después decisión FDA 510(k) fin 1T 2027' el 2026-11-23 (en 1 días)",
-   "precio": 1.2699999809265137
+   "mensaje": "AMPX a 6.15 $ ha caído bajo el stop de tesis (6.8). Revisar.",
+   "precio": 6.150000095367432
   },
   {
    "ticker": "TE",
    "tipo": "TESIS EN PELIGRO",
-   "mensaje": "TE a 1.10 $ ha caído bajo el stop de tesis (1.35). Revisar.",
-   "precio": 1.100000023841858
-  },
-  {
-   "ticker": "SVRA",
-   "tipo": "CATALIZADOR CERCA",
-   "mensaje": "SVRA: 'Decisión FDA de MOLBREEVI (apuesta binaria; puede llegar el 20 o el 23)' el 2026-11-22 (en 0 días)",
-   "precio": 4.260000228881836
-  },
-  {
-   "ticker": "AMSC",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 21.29,
-   "seguimiento": true,
-   "mensaje": "AMSC (2026-11-23): +10.4 % hoy (2.1x lo normal), volumen 0.9x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
-  },
-  {
-   "ticker": "AEHR",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 48.51,
-   "seguimiento": true,
-   "mensaje": "AEHR (2026-11-23): +21.8 % hoy (2.0x lo normal), volumen 1.0x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
-  },
-  {
-   "ticker": "PGY",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 14.61,
-   "seguimiento": true,
-   "mensaje": "PGY (2026-11-23): +8.2 % hoy (1.8x lo normal), volumen 0.9x. Causa probable: «On June 30, ClearOne Declared A One-time Special Stock Dividend To Provide Its Legacy Stockholders With A 100% Stake In The Proceeds From An» (directivos, 2026-11-20). Se movió en línea con su sector (QQQ +7.0 %). Ver pestaña Seguimiento del panel."
-  },
-  {
-   "ticker": "TE",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 1.2,
-   "seguimiento": true,
-   "mensaje": "TE (2026-11-23): +9.1 % hoy (1.0x lo normal), volumen 0.7x. Se movió en línea con el mercado (SPY +4.7 %). Ver pestaña Seguimiento del panel."
+   "mensaje": "TE a 1.20 $ ha caído bajo el stop de tesis (1.35). Revisar.",
+   "precio": 1.2000000476837158
   }
  ],
  "precios": [
   {
    "ticker": "AMSC",
-   "precio": 19.280000686645508,
-   "distancia_zona_pct": -12.4,
-   "potencial_pct": 66.0,
-   "distancia_stop_pct": 13.4
+   "precio": 21.290000915527344,
+   "distancia_zona_pct": -3.2,
+   "potencial_pct": 50.3,
+   "distancia_stop_pct": 25.2
   },
   {
    "ticker": "AEHR",
-   "precio": 39.84000015258789,
-   "distancia_zona_pct": -15.2,
-   "potencial_pct": 63.2,
-   "distancia_stop_pct": 4.8
+   "precio": 48.5099983215332,
+   "distancia_zona_pct": 3.2,
+   "potencial_pct": 34.0,
+   "distancia_stop_pct": 27.7
   },
   {
    "ticker": "REPX",
-   "precio": 41.040000915527344,
-   "distancia_zona_pct": -10.8,
-   "potencial_pct": 41.3,
-   "distancia_stop_pct": 14.0
+   "precio": 39.70000076293945,
+   "distancia_zona_pct": -13.7,
+   "potencial_pct": 46.1,
+   "distancia_stop_pct": 10.3
   },
   {
    "ticker": "PGY",
-   "precio": 13.5,
-   "distancia_zona_pct": -22.9,
-   "potencial_pct": 85.2,
-   "distancia_stop_pct": 8.0
+   "precio": 14.609999656677246,
+   "distancia_zona_pct": -16.5,
+   "potencial_pct": 71.1,
+   "distancia_stop_pct": 16.9
   },
   {
    "ticker": "DCTH",
-   "precio": 18.790000915527344,
-   "distancia_zona_pct": 10.5,
-   "potencial_pct": 43.7,
-   "distancia_stop_pct": 44.5
+   "precio": 19.68000030517578,
+   "distancia_zona_pct": 15.8,
+   "potencial_pct": 37.2,
+   "distancia_stop_pct": 51.4
   },
   {
    "ticker": "FTH",
-   "precio": 7.880000114440918,
-   "distancia_zona_pct": -25.0,
-   "potencial_pct": 153.8,
-   "distancia_stop_pct": 21.2
+   "precio": 8.210000038146973,
+   "distancia_zona_pct": -21.8,
+   "potencial_pct": 143.6,
+   "distancia_stop_pct": 26.3
   },
   {
    "ticker": "ORIC",
-   "precio": 7.360000133514404,
-   "distancia_zona_pct": -13.4,
-   "potencial_pct": 76.6,
-   "distancia_stop_pct": 13.2
+   "precio": 7.539999961853027,
+   "distancia_zona_pct": -11.3,
+   "potencial_pct": 72.4,
+   "distancia_stop_pct": 16.0
   },
   {
    "ticker": "RCAT",
-   "precio": 1.7949999570846558,
+   "precio": 1.8899999856948853,
    "distancia_zona_pct": null,
    "potencial_pct": null,
-   "distancia_stop_pct": -10.3
+   "distancia_stop_pct": -5.5
   },
   {
    "ticker": "AMPX",
-   "precio": 5.769999980926514,
-   "distancia_zona_pct": -39.3,
-   "potencial_pct": 99.3,
-   "distancia_stop_pct": -15.1
+   "precio": 6.150000095367432,
+   "distancia_zona_pct": -35.3,
+   "potencial_pct": 87.0,
+   "distancia_stop_pct": -9.6
   },
   {
    "ticker": "SSII",
-   "precio": 1.2699999809265137,
-   "distancia_zona_pct": -51.2,
-   "potencial_pct": 73.2,
-   "distancia_stop_pct": 5.8
+   "precio": 1.2400000095367432,
+   "distancia_zona_pct": -52.3,
+   "potencial_pct": 77.4,
+   "distancia_stop_pct": 3.3
   },
   {
    "ticker": "TE",
-   "precio": 1.100000023841858,
-   "distancia_zona_pct": -47.6,
-   "potencial_pct": 118.2,
-   "distancia_stop_pct": -18.5
+   "precio": 1.2000000476837158,
+   "distancia_zona_pct": -42.9,
+   "potencial_pct": 100.0,
+   "distancia_stop_pct": -11.1
   },
   {
    "ticker": "SVRA",
-   "precio": 4.260000228881836,
-   "distancia_zona_pct": -11.2,
-   "potencial_pct": 87.8,
-   "distancia_stop_pct": 3.9
+   "precio": 4.239999771118164,
+   "distancia_zona_pct": -11.7,
+   "potencial_pct": 88.7,
+   "distancia_stop_pct": 3.4
   }
  ]
 }

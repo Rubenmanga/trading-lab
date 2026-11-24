@@ -2,15 +2,15 @@
 
 _Comprobación automática del buscador de oportunidades. Se actualiza cada día._
 
-- **Plazo más largo medido: 1 semana** (desde la foto del 2026-11-15).
-- Las 20 mejores de entonces: **-5.9 %** frente a -7.4 % de la empresa mediana (ventaja +1.5 puntos).
-- 12 de las 20 lo hicieron mejor que la mediana.
-- Empresas de la foto que ya no tienen precio (no cuentan en la media, pueden haber caído mucho): **156**.
-- Correlación nota-rentabilidad: 0.158 (0 = la nota no predice nada; 0,05-0,10 ya es útil en bolsa).
+- **Plazo más largo medido: 1 semana** (desde la foto del 2026-11-17).
+- Las 20 mejores de entonces: **-3.2 %** frente a -3.0 % de la empresa mediana (ventaja -0.2 puntos).
+- 7 de las 20 lo hicieron mejor que la mediana.
+- Empresas de la foto que ya no tienen precio (no cuentan en la media, pueden haber caído mucho): **257**.
+- Correlación nota-rentabilidad: 0.065 (0 = la nota no predice nada; 0,05-0,10 ya es útil en bolsa).
 - **Ojo:** con menos de 3-6 meses de historia esto es casi todo azar. No cambies pesos por una semana mala.
 
 | Plazo | Desde | Empresas | Top 20 | Top 50 | Mediana | Ventaja top 20 | Aciertos top 20 | Correlación |
 |---|---|---|---|---|---|---|---|---|
-| 1 semana | 2026-11-15 | 868 | -5.9 % | -7.0 % | -7.4 % | +1.5 | 12/20 | 0.158 |
+| 1 semana | 2026-11-17 | 871 | -3.2 % | -2.7 % | -3.0 % | -0.2 | 7/20 | 0.065 |
 
 Las empresas que ya no cotizan o salen del rango no se cuentan (puede inflar un poco el resultado).
