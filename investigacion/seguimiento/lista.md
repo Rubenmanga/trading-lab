@@ -1,9 +1,9 @@
-# Tu lista de seguimiento · 2026-11-20
+# Tu lista de seguimiento · 2026-11-23
 
 ## Resumen (5 líneas)
-1. Mercado (S&P 500, SPY): -3.6 % hoy.
-2. Movimientos grandes: AMSC -12.7 %, AEHR -16.9 %, FTH -9.3 %, AMPX -9.8 %, TE -14.7 %, SVRA -18.2 %, XAU +4.3 %.
-3. Noticias importantes nuevas: SVRA.
+1. Mercado (S&P 500, SPY): +4.7 % hoy.
+2. Movimientos grandes: AMSC +10.4 %, AEHR +21.8 %, PGY +8.2 %, TE +9.1 %.
+3. Noticias importantes nuevas: ninguna.
 4. Resultados en los próximos 14 días: ninguno.
 5. Datos: todas las empresas se leyeron bien.
 
@@ -11,36 +11,30 @@
 
 # Tus acciones
 
-## ALT · Altimmune — ▼ -5.7 % · volumen 1.0x lo normal
-Cierre 1.33 (2026-11-20) · 5 días -19.1 % · lo normal en un día: ±5.21 %.
-- **Por qué:** Se movió en línea con el mercado (SPY -3.6 %).
+## ALT · Altimmune — ▲ +2.3 % · volumen 0.9x lo normal
+Cierre 1.36 (2026-11-23) · 5 días -12.8 % · lo normal en un día: ±5.27 %.
+- **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-03 (tras el cierre); Ensayo F2 «RESTORE TRIAL: Study of the Efficacy and Safety of Pemvidutide in the Treatment »: resultado principal previsto 2027-09-30.
 - Analistas que dicen comprar: 87 % de 15.
 
-## RCAT · Red Cat Holdings — ▼ -7.5 % · volumen 1.2x lo normal
-Cierre 1.79 (2026-11-20) · 5 días -52.8 % · lo normal en un día: ±10.49 %.
-- **Por qué:** Causa probable: «Red Cat Holdings Q3 Earnings Call Withdraws Sales Target for 2026» (resultados, 2026-11-20).
-- **Qué cambió:** 3 titulares nuevos.
+## RCAT · Red Cat Holdings — ▲ +5.3 % · volumen 1.3x lo normal
+Cierre 1.89 (2026-11-23) · 5 días -46.5 % · lo normal en un día: ±10.47 %.
+- **Por qué:** Causa probable: «Red Cat Holdings Q3 Earnings Call Withdraws Sales Target for 2026» (resultados, 2026-11-20). Se movió en línea con su sector (ITA +3.5 %).
+- **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-17.
 - Analistas que dicen comprar: 86 % de 14.
-  - 2026-11-22 · [Red Cat Holdings Receives Army Innovation Award](https://world.einnews.com/pr_news/958237127/testing-emerging-sustainment-systems-for-the-modern-battlefield-at-kinetic-reach) [contrato o pedido]
-  - 2026-11-21 · [Red Cat Holdings: 3 Key Takeaways for Long-Term Investors](https://finnhub.io/api/news?id=919b009816051a9948f4327ceff2dccc9e57b3ffb33836c4a4d988c613da62b4)
-  - 2026-11-21 · [Benzinga Bulls and Bears: Nvidia, Credo, Red Cat](https://finnhub.io/api/news?id=908e2dc7ba1e06f80e8c8a480429da8386d57d3638da4020aff4f3e3f74f5373)
 
-## MSFT · Microsoft — ▼ -2.8 % · volumen 1.7x lo normal
-Cierre 484.52 (2026-11-20) · 5 días -7.5 % · lo normal en un día: ±2.31 %.
-- **Por qué:** Hay noticia («V2X Expands Collaboration with Microsoft to Advance AI-Powered Mission Operations», contrato o pedido) pero su tono no cuadra con la dirección del precio: la causa puede ser otra. Se movió en línea con el mercado (SPY -3.6 %).
-- **Qué cambió:** 44 titulares nuevos.
+## MSFT · Microsoft — ▲ +1.6 % · volumen 1.0x lo normal
+Cierre 492.5 (2026-11-23) · 5 días -4.9 % · lo normal en un día: ±2.36 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** 3 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
-  - 2026-11-24 · [Is Amazon's Profit Riskier Than It Looks?](https://finnhub.io/api/news?id=3ab430afc44d1ae5ba6304d2610bb5a7795a1cb493dcd1e1b465663bfea1ae2f)
-  - 2026-11-24 · [What Microsoft (MSFT)'s Enterprise AI Partnerships Mean For Shareholders](https://finnhub.io/api/news?id=a0bf40cb2c71ceebbbe64eb60b060782227959c745b969a95336ac9adf0a8cdc)
-  - 2026-11-23 · [V2X Expands Collaboration with Microsoft to Advance AI-Powered Mission Operations](https://www.prnewswire.com/news-releases/v2x-expands-collaboration-with-microsoft-to-advance-the-next-generation-of-ai-powered-mission-operations-302947723.html) [contrato o pedido]
-  - 2026-11-23 · [Microsoft UAE and Space42 Release Report on Geospatial Agentic AI](https://www.globenewswire.com/news-release/2026/11/23/3408140/0/en/from-data-to-decisions-space42-and-microsoft-uae-release-report-on-geospatial-agentic-ai-s-potential-to-help-governments-better-serve-society.html)
+  - 2026-11-24 · [Microsoft CEO Satya Nadella Offered 60,000 Employees Buyouts So Everyone 'Felt Like They Had Agency' — Yet Insists Software Engineering Is 'Very Much Alive'](https://finnhub.io/api/news?id=75459d02e78aae7755381d1837d3dc7e1b07feab2bde4f595117d249c5eda08f) [directivos]
 
-## RAPP · Rapport Therapeutics — ▼ -1.8 % · volumen 0.4x lo normal
-Cierre 23.16 (2026-11-20) · 5 días -11.4 % · lo normal en un día: ±5.93 %.
+## RAPP · Rapport Therapeutics — ▲ +3.0 % · volumen 0.3x lo normal
+Cierre 23.85 (2026-11-23) · 5 días -3.9 % · lo normal en un día: ±5.93 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-08.
@@ -48,156 +42,142 @@ Cierre 23.16 (2026-11-20) · 5 días -11.4 % · lo normal en un día: ±5.93 %.
 
 # Tu lista de vigilancia
 
-## AMSC · American Superconductor — ▼ -12.7 % · volumen 1.3x lo normal ⚠️
-Cierre 19.28 (2026-11-20) · 5 días -20.1 % · lo normal en un día: ±4.29 %.
+## AMSC · American Superconductor — ▲ +10.4 % · volumen 0.9x lo normal ⚠️
+Cierre 21.29 (2026-11-23) · 5 días -6.6 % · lo normal en un día: ±5.03 %.
 - **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
-- **Qué cambió:** 1 titular nuevo.
+- **Qué cambió:** nada nuevo.
 - Analistas que dicen comprar: 91 % de 11.
-  - 2026-11-20 · [Shares of solar, wind and clean energy stocks are trading lower following reports suggesting President Trump may cancel an additional $12 billion of funding for clean energy projects.](https://finnhub.io/api/news?id=a08adb95b687167f02bdfead5fc5b8de442c42111643ca57c93c2a1d3d307ffc)
 
-## AEHR · Aehr Test Systems — ▼ -16.9 % · volumen 1.3x lo normal ⚠️
-Cierre 39.84 (2026-11-20) · 5 días -30.1 % · lo normal en un día: ±10.02 %.
+## AEHR · Aehr Test Systems — ▲ +21.8 % · volumen 1.0x lo normal ⚠️
+Cierre 48.51 (2026-11-23) · 5 días -4.8 % · lo normal en un día: ±10.66 %.
 - **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
 - **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-01-06.
 - Analistas que dicen comprar: 92 % de 12.
 
-## REPX · Riley Exploration Permian — ▼ -0.2 % · volumen 0.6x lo normal
-Cierre 41.04 (2026-11-20) · 5 días -7.6 % · lo normal en un día: ±4.01 %.
+## REPX · Riley Exploration Permian — ▼ -3.3 % · volumen 0.7x lo normal
+Cierre 39.7 (2026-11-23) · 5 días -8.9 % · lo normal en un día: ±3.68 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-02 (tras el cierre).
 - Analistas que dicen comprar: 91 % de 11.
 
-## PGY · Pagaya Technologies — ▼ -7.7 % · volumen 1.9x lo normal
-Cierre 13.5 (2026-11-20) · 5 días -20.0 % · lo normal en un día: ±4.26 %.
-- **Por qué:** Causa probable: «On June 30, ClearOne Declared A One-time Special Stock Dividend To Provide Its Legacy Stockholders With A 100% Stake In The Proceeds From An» (directivos, 2026-11-20). Se movió en línea con su sector (QQQ -5.7 %).
-- **Qué cambió:** 3 titulares nuevos.
+## PGY · Pagaya Technologies — ▲ +8.2 % · volumen 0.9x lo normal ⚠️
+Cierre 14.61 (2026-11-23) · 5 días -8.8 % · lo normal en un día: ±4.48 %.
+- **Por qué:** Causa probable: «On June 30, ClearOne Declared A One-time Special Stock Dividend To Provide Its Legacy Stockholders With A 100% Stake In The Proceeds From An» (directivos, 2026-11-20). Se movió en línea con su sector (QQQ +7.0 %).
+- **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-02-03 (tras el cierre).
 - Analistas que dicen comprar: 94 % de 16.
-  - 2026-11-23 · [What's in the Offing for CleanSpark Stock This Earnings Season?](https://finnhub.io/api/news?id=eef0e9e3bc243956e763b3d72364223f5ab47e3bc7d28a8f01fd97b06f862b10)
-  - 2026-11-20 · [Pagaya’s (PGY) AI Underwriting Machine Is Quietly Powering the Next Wave of Consumer Lending – Here’s Why Wall Street Is Watching](https://finnhub.io/api/news?id=172ee08f04999723f1d86cb7f75c0af21ab3698a84ade31699588a2811555be1)
-  - 2026-11-20 · [On June 30, ClearOne Declared A One-time Special Stock Dividend To Provide Its Legacy Stockholders With A 100% Stake In The Proceeds From An Eventual Sale, The Board Of Directors Fixed July 11, 2025 As The Record Date For The Special Stock Dividend, And Will Be Payable On July 18, 2025](https://finnhub.io/api/news?id=60ace17f87a81cfaebed9f22dfdef47c76e3335e320f0f9f19e3983120d26a8f) [directivos]
 
-## DCTH · Delcath Systems — ▼ -2.3 % · volumen 0.7x lo normal
-Cierre 18.79 (2026-11-20) · 5 días -8.6 % · lo normal en un día: ±8.35 %.
-- **Por qué:** Movimiento normal para esta acción.
+## DCTH · Delcath Systems — ▲ +4.7 % · volumen 0.5x lo normal
+Cierre 19.68 (2026-11-23) · 5 días -1.0 % · lo normal en un día: ±8.35 %.
+- **Por qué:** Causa probable: «Craig-Hallum Maintains Delcath Systems With Buy Rating and Raises Price Target» (analistas, 2026-11-20). Se movió en línea con su sector (XBI +5.0 %).
 - **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-02-22 (tras el cierre); Ensayo F2 «Evaluation of the Safety and Efficacy of Treatment w/High Dose Melphalan Given D»: resultado principal previsto 2026-12.
 - Analistas que dicen comprar: 92 % de 12.
 
-## FTH · Faeth Therapeutics — ▼ -9.3 % · volumen 0.6x lo normal ⚠️
-Cierre 7.88 (2026-11-20) · 5 días -21.4 % · lo normal en un día: ±11.56 %.
-- **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
-- **Qué cambió:** nada nuevo.
-- Analistas que dicen comprar: 95 % de 19.
-
-## ORIC · ORIC Pharmaceuticals — ▼ -4.4 % · volumen 0.7x lo normal
-Cierre 7.36 (2026-11-20) · 5 días -6.4 % · lo normal en un día: ±8.03 %.
-- **Por qué:** Causa probable: «HC Wainwright & Co. Maintains Buy on ORIC Pharmaceuticals, Lowers Price Target to $20» (analistas, 2026-11-19). Se movió en línea con su sector (XBI -2.7 %).
+## FTH · Faeth Therapeutics — ▲ +4.2 % · volumen 0.9x lo normal
+Cierre 8.21 (2026-11-23) · 5 días -11.5 % · lo normal en un día: ±11.34 %.
+- **Por qué:** Se movió en línea con su sector (XBI +5.0 %).
 - **Qué cambió:** 1 titular nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-22 (tras el cierre); Ensayo F1/F2 «Study of ORIC-114 in Patients With Advanced Solid Tumors Harboring an EGFR or HE»: resultado principal previsto 2027-06.
-- Analistas que dicen comprar: 91 % de 22.
-  - 2026-11-23 · [ORIC Pharmaceuticals to Participate in Upcoming Investor Conferences](https://www.morningstar.com/news/globe-newswire/9883631/oric-pharmaceuticals-to-participate-in-upcoming-investor-conferences)
-
-## AMPX · Amprius Technologies — ▼ -9.8 % · volumen 1.2x lo normal ⚠️
-Cierre 5.77 (2026-11-20) · 5 días -27.2 % · lo normal en un día: ±6.51 %.
-- **Por qué:** Causa probable: «Clear Street Maintains Buy Rating on Amprius Technologies, Adjusts Price Target» (analistas, 2026-11-20).
-- **Qué cambió:** 1 titular nuevo.
-- **Próximos catalizadores:** Resultados el 2027-03-02 (tras el cierre).
 - Analistas que dicen comprar: 95 % de 19.
-  - 2026-11-20 · [Shares of solar, wind and clean energy stocks are trading lower following reports suggesting President Trump may cancel an additional $12 billion of funding for clean energy projects.](https://finnhub.io/api/news?id=a08adb95b687167f02bdfead5fc5b8de442c42111643ca57c93c2a1d3d307ffc)
+  - 2026-11-23 · [Faeth Therapeutics to Participate in Upcoming December Investor Conferences](https://finnhub.io/api/news?id=6982cf3cbc98f8b86722200a4ac742728be568d0137ae32932f43005a2bf97b9)
 
-## SSII · SS Innovations International — ▼ -0.8 % · volumen 0.7x lo normal
-Cierre 1.27 (2026-11-20) · 5 días -23.5 % · lo normal en un día: ±9.76 %.
+## ORIC · ORIC Pharmaceuticals — ▲ +2.5 % · volumen 0.9x lo normal
+Cierre 7.54 (2026-11-23) · 5 días +0.3 % · lo normal en un día: ±8.04 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
+- **Próximos catalizadores:** Resultados el 2027-02-22 (tras el cierre); Ensayo F1/F2 «Study of ORIC-114 in Patients With Advanced Solid Tumors Harboring an EGFR or HE»: resultado principal previsto 2027-06.
+- Analistas que dicen comprar: 91 % de 22.
+
+## AMPX · Amprius Technologies — ▲ +6.6 % · volumen 1.0x lo normal
+Cierre 6.15 (2026-11-23) · 5 días -13.6 % · lo normal en un día: ±6.71 %.
+- **Por qué:** Causa probable: «Clear Street Maintains Buy Rating on Amprius Technologies, Adjusts Price Target» (analistas, 2026-11-20). Se movió en línea con su sector (XLI +3.9 %).
+- **Qué cambió:** nada nuevo.
+- **Próximos catalizadores:** Resultados el 2027-03-02 (tras el cierre).
+- Analistas que dicen comprar: 95 % de 19.
+
+## SSII · SS Innovations International — ▼ -2.4 % · volumen 1.3x lo normal
+Cierre 1.24 (2026-11-23) · 5 días -8.1 % · lo normal en un día: ±9.75 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-08.
 - Analistas que dicen comprar: 86 % de 7.
+  - 2026-11-23 · [SSi Stock Declines 24% as Q3 Loss Widens Year Over Year](https://finnhub.io/api/news?id=c0ff664186eca4f24aafd9190366d7623b885ac792a6b826c803aa26b430ef94)
 
-## TE · T1 Energy — ▼ -14.7 % · volumen 0.9x lo normal ⚠️
-Cierre 1.1 (2026-11-20) · 5 días -42.4 % · lo normal en un día: ±9.03 %.
-- **Por qué:** Causa probable: «T1 Energy Inc. 2026 Q3 - Results - Earnings Call Presentation» (resultados, 2026-11-19).
+## TE · T1 Energy — ▲ +9.1 % · volumen 0.7x lo normal ⚠️
+Cierre 1.2 (2026-11-23) · 5 días -19.5 % · lo normal en un día: ±9.4 %.
+- **Por qué:** Se movió en línea con el mercado (SPY +4.7 %).
 - **Qué cambió:** nada nuevo.
 - Analistas que dicen comprar: 76 % de 17.
 
-## SVRA · Savara — ▼ -18.2 % · volumen 4.7x lo normal ⚠️
-Cierre 4.26 (2026-11-20) · 5 días -8.2 % · lo normal en un día: ±5.12 %.
-- **Por qué:** Causa probable: «Savara shares fall 20% as FDA says it will miss Molgramostim review deadline» (FDA / regulador, 2026-11-20).
-- **Qué cambió:** 4 titulares nuevos.
+## SVRA · Savara — ▼ -0.5 % · volumen 1.3x lo normal
+Cierre 4.24 (2026-11-23) · 5 días -5.0 % · lo normal en un día: ±6.4 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-11 (tras el cierre); Ensayo F3 «Inhaled Molgramostim in Pediatric Participants With Autoimmune Pulmonary Alveola»: resultado principal previsto 2027-06; Fecha regulatoria citada en titular: «Savara Informed That FDA Will Not Take Action on the Molgramostim BLA by the PDUFA Date».
 - Analistas que dicen comprar: 93 % de 15.
-  - 2026-11-23 · [Savara: The FDA Delay Doesn't Break My Thesis](https://finnhub.io/api/news?id=97e158f1ac97b66e03b028e825cd4e728acd9dc480885090ebf81d6349288bd3) [FDA / regulador]
-  - 2026-11-20 · [HC Wainwright & Co. Maintains Buy on Savara, Lowers Price Target to $9](https://finnhub.io/api/news?id=71ea65a34b55ff8bc436e1116ac2f80e150943201217a23e5e6c8023e6953918) [analistas]
-  - 2026-11-20 · [Gold Falls Sharply; US Consumer Sentiment Rises In November](https://finnhub.io/api/news?id=65cff58ba1a7fc7b1ecb384d1e6241dbfc902a7f42bed63198c90e4bfee1e970)
-  - 2026-11-20 · [Savara Craters as FDA Delays Decision for Lung Disease](https://finnhub.io/api/news?id=74db748dec23f44d3d79a66a903a0aea578aaacf668f6dde640148bc420f01dd) [FDA / regulador]
 
 # Mejores ideas del buscador
 
-## AII · American Integrity Insurance Gr — ▼ -1.8 % · volumen 1.1x lo normal
-Cierre 28.6 (2026-11-20) · 5 días +2.4 % · lo normal en un día: ±2.67 %.
-- **Por qué:** Movimiento normal para esta acción.
+## AII · American Integrity Insurance Gr — ▲ +4.3 % · volumen 0.7x lo normal
+Cierre 29.82 (2026-11-23) · 5 días +5.3 % · lo normal en un día: ±2.69 %.
+- **Por qué:** Se movió en línea con el mercado (SPY +4.7 %).
 - **Qué cambió:** nada nuevo.
 - Analistas que dicen comprar: 80 % de 10.
 
-## ASC · Ardmore Shipping Corporation — ▼ -1.5 % · volumen 0.7x lo normal
-Cierre 17.09 (2026-11-20) · 5 días -12.4 % · lo normal en un día: ±3.43 %.
+## ASC · Ardmore Shipping Corporation — ▲ +3.5 % · volumen 0.5x lo normal
+Cierre 17.69 (2026-11-23) · 5 días -6.3 % · lo normal en un día: ±3.31 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 8 titulares nuevos.
+- **Qué cambió:** nada nuevo.
 - Analistas que dicen comprar: 86 % de 7.
-  - 2026-11-23 · [Frasers Group PLC Files Notification of Major Holdings in ASOS plc](https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9889634)
-  - 2026-11-21 · [Goldman Sachs Group Inc. Discloses Reduction in ASOS PLC Holding](https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9887228)
-  - 2026-11-20 · [Frasers Group Reduces Stake in ASOS plc](https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9886596)
-  - 2026-11-20 · [The Goldman Sachs Group Inc. Discloses Major Holding in ASOS plc](https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9884093)
 
-## LPG · Dorian LPG Ltd. — ▼ -1.7 % · volumen 1.0x lo normal
-Cierre 44.2 (2026-11-20) · 5 días -8.2 % · lo normal en un día: ±2.86 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 1 titular nuevo.
+## LPG · Dorian LPG Ltd. — ▲ +3.7 % · volumen 0.9x lo normal
+Cierre 45.84 (2026-11-23) · 5 días -2.1 % · lo normal en un día: ±2.54 %.
+- **Por qué:** Se movió en línea con el mercado (SPY +4.7 %).
+- **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-02-03.
 - Analistas que dicen comprar: 73 % de 11.
-  - 2026-11-21 · [Dorian LPG Chairman John Hadjipateras Purchases Shares](https://www.moomoo.com/hans/news/post/1005318112/john-hadjipateras-buys-handful-of-shares-in-doriang)
 
-## DFIN · Donnelley Financial Solutions,  — ▼ -1.4 % · volumen 0.6x lo normal
-Cierre 64.53 (2026-11-20) · 5 días -5.3 % · lo normal en un día: ±4.25 %.
+## DFIN · Donnelley Financial Solutions,  — ▲ +1.6 % · volumen 0.5x lo normal
+Cierre 65.53 (2026-11-23) · 5 días -6.5 % · lo normal en un día: ±4.26 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-02-15 (antes de abrir).
 - Analistas que dicen comprar: 89 % de 9.
+  - 2026-11-23 · [DFIN or TYL: Which Is the Better Value Stock Right Now?](https://finnhub.io/api/news?id=975d0b8d02b3a3101bddbe101bbab53ae01ba19e40b10b8ae46a5c2404cb82b3)
 
-## JAKK · JAKKS Pacific, Inc. — ▼ -4.2 % · volumen 1.4x lo normal
-Cierre 33.44 (2026-11-20) · 5 días -6.9 % · lo normal en un día: ±2.75 %.
-- **Por qué:** Causa probable: «Skydance (SKYD) Just Closed Its $111 Billion Merger» (compra o fusión, 2026-11-19). Se movió en línea con su sector (XLY -3.0 %).
-- **Qué cambió:** 1 titular nuevo.
+## JAKK · JAKKS Pacific, Inc. — ▲ +3.0 % · volumen 0.9x lo normal
+Cierre 34.44 (2026-11-23) · 5 días -3.3 % · lo normal en un día: ±2.9 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-02-17.
 - Analistas que dicen comprar: 88 % de 8.
-  - 2026-11-19 · [Skydance (SKYD) Just Closed Its $111 Billion Merger](https://finnhub.io/api/news?id=32667de697175aed1c0069118090032de0f7f17234ed8b41bc931de7588fa45e) [compra o fusión]
 
-## OPRT · Oportun Financial Corporation — ▼ -5.8 % · volumen 1.0x lo normal
-Cierre 10.3 (2026-11-20) · 5 días -12.2 % · lo normal en un día: ±7.2 %.
-- **Por qué:** Se movió en línea con el mercado (SPY -3.6 %).
-- **Qué cambió:** nada nuevo.
+## OPRT · Oportun Financial Corporation — ▲ +5.2 % · volumen 0.8x lo normal
+Cierre 10.83 (2026-11-23) · 5 días -5.2 % · lo normal en un día: ±7.34 %.
+- **Por qué:** Se movió en línea con el mercado (SPY +4.7 %).
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-02-24.
 - Analistas que dicen comprar: 64 % de 11.
+  - 2026-11-23 · [Wall Street Analysts Predict a 31.07% Upside in Oportun Financial (OPRT): Here's  What You Should Know](https://finnhub.io/api/news?id=25c90136077377606221fe593ea5b33794656c0fcc0966588e6ab0bbc0fbbb70)
 
-## CRCT · Cricut, Inc. — ▲ +0.6 % · volumen 0.9x lo normal
-Cierre 8.35 (2026-11-20) · 5 días -3.5 % · lo normal en un día: ±11.01 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 2 titulares nuevos.
+## CRCT · Cricut, Inc. — ▲ +4.7 % · volumen 0.7x lo normal
+Cierre 8.74 (2026-11-23) · 5 días +1.0 % · lo normal en un día: ±10.97 %.
+- **Por qué:** Causa probable: «Cricut CEO Ashish Arora Sells $1.76 Million in Shares» (directivos, 2026-11-21). Se movió en línea con su sector (QQQ +7.0 %).
+- **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-01 (tras el cierre).
 - Analistas que dicen comprar: 0 % de 8.
-  - 2026-11-21 · [Cricut CEO Ashish Arora Sells $1.76 Million in Shares](https://www.marketscreener.com/news/cricut-insider-sold-shares-worth-1-763-510-according-to-a-recent-sec-filing-ce785ed3dc8ef725) [directivos]
-  - 2026-11-19 · [CRCT Stock Rises 58% in 3 Months: Here's What Investors Should Know](https://finnhub.io/api/news?id=ba288da6c802afec332b62708ef1f20b82fb0f7ecb046c8d0e158fc105680445)
 
 # Materias primas
 
-## XAU · Oro — ▲ +4.3 % · volumen 0.1x lo normal ⚠️
-Cierre 3666.8 (2026-11-23) · 5 días -4.8 % · lo normal en un día: ±1.87 %.
-- **Por qué:** Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.
+## XAU · Oro — ▼ -0.5 % · volumen 0.2x lo normal
+Cierre 3634.5 (2026-11-24) · 5 días -5.9 % · lo normal en un día: ±2.1 %.
+- **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
-## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.5 %
-Cierre 1.09 (2026-11-24) · 5 días -0.7 % · lo normal en un día: ±0.34 %.
+## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.6 %
+Cierre 1.09 (2026-11-24) · 5 días -0.8 % · lo normal en un día: ±0.34 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 

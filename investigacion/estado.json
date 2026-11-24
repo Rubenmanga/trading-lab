@@ -44,18 +44,32 @@
    "precio": 4.260000228881836
   },
   {
-   "ticker": "SVRA",
-   "tipo": "NOTICIA IMPORTANTE",
-   "precio": 4.26,
+   "ticker": "AMSC",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 21.29,
    "seguimiento": true,
-   "mensaje": "SVRA (2026-11-20): FDA / regulador: «Savara: The FDA Delay Doesn't Break My Thesis» Ver pestaña Seguimiento del panel."
+   "mensaje": "AMSC (2026-11-23): +10.4 % hoy (2.1x lo normal), volumen 0.9x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
   },
   {
-   "ticker": "XAU",
+   "ticker": "AEHR",
    "tipo": "MOVIMIENTO GRANDE",
-   "precio": 3666.8,
+   "precio": 48.51,
    "seguimiento": true,
-   "mensaje": "XAU (2026-11-23): +4.3 % hoy Ver pestaña Seguimiento del panel."
+   "mensaje": "AEHR (2026-11-23): +21.8 % hoy (2.0x lo normal), volumen 1.0x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "PGY",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 14.61,
+   "seguimiento": true,
+   "mensaje": "PGY (2026-11-23): +8.2 % hoy (1.8x lo normal), volumen 0.9x. Causa probable: «On June 30, ClearOne Declared A One-time Special Stock Dividend To Provide Its Legacy Stockholders With A 100% Stake In The Proceeds From An» (directivos, 2026-11-20). Se movió en línea con su sector (QQQ +7.0 %). Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "TE",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 1.2,
+   "seguimiento": true,
+   "mensaje": "TE (2026-11-23): +9.1 % hoy (1.0x lo normal), volumen 0.7x. Se movió en línea con el mercado (SPY +4.7 %). Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [
