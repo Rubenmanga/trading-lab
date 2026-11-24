@@ -175,13 +175,13 @@ Cierre 8.74 (2026-11-23) · 5 días +1.0 % · lo normal en un día: ±10.97 %.
 
 # Materias primas
 
-## XAU · Oro — ▼ -0.9 % · volumen 0.2x lo normal
-Cierre 3616.6 (2026-11-24) · 5 días -6.4 % · lo normal en un día: ±2.1 %.
+## XAU · Oro — ▼ -0.7 % · volumen 0.2x lo normal
+Cierre 3625.8 (2026-11-24) · 5 días -6.2 % · lo normal en un día: ±2.1 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
 ## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▼ -0.6 %
-Cierre 1.09 (2026-11-24) · 5 días -0.8 % · lo normal en un día: ±0.34 %.
+Cierre 1.09 (2026-11-24) · 5 días -0.9 % · lo normal en un día: ±0.34 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 

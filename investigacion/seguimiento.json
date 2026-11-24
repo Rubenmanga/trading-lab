@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-24T06:36:58+00:00",
+ "actualizado": "2026-11-24T07:05:49+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -624,6 +624,15 @@
      },
      {
       "fecha": "2026-11-24",
+      "titulo": "Allspring Premier Large Company Growth Fund Q3 2026 Contributors And Detractors",
+      "fuente": "SeekingAlpha",
+      "url": "https://finnhub.io/api/news?id=076090d4ca4a0bd9312d14d2b32f7a072f4d390f3d72cde6555c5c651f666ef2",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-24",
       "titulo": "Is Amazon's Profit Riskier Than It Looks?",
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=3ab430afc44d1ae5ba6304d2610bb5a7795a1cb493dcd1e1b465663bfea1ae2f",
@@ -692,15 +701,6 @@
       "titulo": "Crypto traders saw Anthropic's 34% debut pop coming",
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=2e9867823f7e68e4507d79f97fa8e399b291159effcc42fc1df92c74d323bb66",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-23",
-      "titulo": "Steve Eisman Says “Stock Picking Is Back” Now That AI Is “No Longer One Trade”",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=298ca49f3d03ed48354ee2566932230843837433061006224edb8e3d81d503d9",
       "causas": [],
       "nueva": false,
       "importante": false
@@ -3294,11 +3294,11 @@
     "sector": "materia prima",
     "fecha": "2026-11-24",
     "fecha_anterior": "2026-11-23",
-    "cierre": 3616.6,
-    "cambio_pct": -0.95,
-    "cambio_5d_pct": -6.4,
+    "cierre": 3625.8,
+    "cambio_pct": -0.7,
+    "cambio_5d_pct": -6.2,
     "sigma_pct": 2.1,
-    "veces_normal": 0.5,
+    "veces_normal": 0.3,
     "volumen_rel": 0.2,
     "grande": false,
     "porque": "Movimiento normal.",
@@ -3316,10 +3316,10 @@
     "fecha": "2026-11-24",
     "fecha_anterior": "2026-11-23",
     "cierre": 1.09,
-    "cambio_pct": -0.56,
-    "cambio_5d_pct": -0.8,
+    "cambio_pct": -0.64,
+    "cambio_5d_pct": -0.9,
     "sigma_pct": 0.34,
-    "veces_normal": 1.6,
+    "veces_normal": 1.9,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",

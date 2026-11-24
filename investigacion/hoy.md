@@ -1,6 +1,6 @@
 # Carpeta del día · 24/11/2026
 
-_Resumen automático, sin IA. Precios y avisos del 2026-11-24 06:36 UTC. Sigues 16 acciones._
+_Resumen automático, sin IA. Precios y avisos del 2026-11-24 07:05 UTC. Sigues 16 acciones._
 
 ## 🔔 Avisos de hoy
 - **ZONA DE ENTRADA** · AMSC a 21.29 $ está en su zona de entrada (≤ 22.0), potencial 50% hasta objetivo
