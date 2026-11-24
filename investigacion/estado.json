@@ -48,7 +48,14 @@
    "tipo": "NOTICIA IMPORTANTE",
    "precio": 4.26,
    "seguimiento": true,
-   "mensaje": "SVRA (2026-11-20): FDA / regulador: «Savara Craters as FDA Delays Decision for Lung Disease» Ver pestaña Seguimiento del panel."
+   "mensaje": "SVRA (2026-11-20): FDA / regulador: «Savara: The FDA Delay Doesn't Break My Thesis» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "XAU",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 3666.8,
+   "seguimiento": true,
+   "mensaje": "XAU (2026-11-23): +4.3 % hoy Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [
