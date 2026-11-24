@@ -30,6 +30,62 @@
    "tipo": "TESIS EN PELIGRO",
    "mensaje": "TE a 1.20 $ ha caído bajo el stop de tesis (1.35). Revisar.",
    "precio": 1.2000000476837158
+  },
+  {
+   "ticker": "RCAT",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 1.73,
+   "seguimiento": true,
+   "mensaje": "RCAT (2026-11-24): -8.7 % hoy (0.8x lo normal), volumen 1.2x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "MSFT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 496.13,
+   "seguimiento": true,
+   "mensaje": "MSFT (2026-11-24): compra o fusión: «Pinterest Soars 11% as Executive Pay Overhaul Sparks Takeover Speculation» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "RAPP",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 25.29,
+   "seguimiento": true,
+   "mensaje": "RAPP (2026-11-24): ensayo clínico: «Rapport Therapeutics to Present New Clinical Data at 2026 AES Annual Meeting» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "RAPP",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 25.29,
+   "seguimiento": true,
+   "mensaje": "RAPP (2026-11-24): ensayo clínico: «Rapport Therapeutics To Present New Data From Long-Term Open-Label Safety Trial Of RAP-219 In Adults With Focal Onset Seizures, At 2026 AES » Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "AEHR",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 41.89,
+   "seguimiento": true,
+   "mensaje": "AEHR (2026-11-24): -13.7 % hoy (1.2x lo normal), volumen 0.7x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "FTH",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 9.71,
+   "seguimiento": true,
+   "mensaje": "FTH (2026-11-24): +18.3 % hoy (1.6x lo normal), volumen 1.2x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "ORIC",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 8.4,
+   "seguimiento": true,
+   "mensaje": "ORIC (2026-11-24): +11.4 % hoy (2.6x lo normal), volumen 1.3x. Se movió en línea con su sector (XBI +6.6 %). Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "TE",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 1.09,
+   "seguimiento": true,
+   "mensaje": "TE (2026-11-24): -9.2 % hoy (0.9x lo normal), volumen 0.9x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [
