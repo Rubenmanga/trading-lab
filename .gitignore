@@ -15,3 +15,9 @@ data/cache/
 Thumbs.db
 # Panel web generado
 web/dist/
+
+# Agente C FX: datos y decisiones locales, nunca subir a GitHub
+data/fx-demo/
+data/fx-download/
+data/fx-processed/
+.dukascopy-cache/

@@ -1,0 +1,82 @@
+name: Agente C - backtest EURUSD 2023-2026
+
+on:
+  push:
+    branches: [feature/agente-c-forex-eurusd-demo-20261117]
+    paths:
+      - "src/tradinglab/fx/research2.py"
+      - "src/tradinglab/fx/dukascopy.py"
+      - "tests/test_fx_research2.py"
+      - ".github/workflows/fx-investigacion-plurianual.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fx-multiyear-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-backtest:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {year: "2023", from: "2022-12-15", to: "2024-01-01", label: "diseno"}
+          - {year: "2024", from: "2023-12-15", to: "2025-01-01", label: "diseno"}
+          - {year: "2025", from: "2024-12-15", to: "2026-01-01", label: "validacion_intacta"}
+          - {year: "2026", from: "2025-12-15", to: "2026-11-17", label: "diagnostico"}
+    runs-on: ubuntu-latest
+    timeout-minutes: 85
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Instalar dependencias
+        run: python -m pip install --quiet pytest pandas numpy
+      - name: Tests de seguridad y ausencia de lookahead
+        env:
+          PYTHONPATH: src
+        run: |
+          python -m compileall -q src/tradinglab/fx
+          pytest -q tests/test_fx_research2.py tests/test_fx_agent.py
+      - name: Descargar BID y ASK EURUSD M5 de Dukascopy
+        env:
+          RANGE_FROM: ${{ matrix.from }}
+          RANGE_TO: ${{ matrix.to }}
+        run: |
+          npx -y dukascopy-node@1.51.1 -i eurusd -from "$RANGE_FROM" -to "$RANGE_TO" \
+            -t m5 -p bid -f csv -dir data/fx-download -fn eurusd_bid \
+            -r 3 --cache --batch-size 7 --batch-pause 900
+          npx -y dukascopy-node@1.51.1 -i eurusd -from "$RANGE_FROM" -to "$RANGE_TO" \
+            -t m5 -p ask -f csv -dir data/fx-download -fn eurusd_ask \
+            -r 3 --cache --batch-size 7 --batch-pause 900
+      - name: Combinar BID ASK y 12 estrategias a costes normales y dobles
+        env:
+          PYTHONPATH: src
+          TEST_YEAR: ${{ matrix.year }}
+        run: |
+          python -m tradinglab.fx.dukascopy \
+            data/fx-download/eurusd_bid.csv data/fx-download/eurusd_ask.csv \
+            data/fx-processed/eurusd_m5_bidask.csv
+          python -m tradinglab.fx.research2 data/fx-processed/eurusd_m5_bidask.csv \
+            --start-valid "$TEST_YEAR-01-01" \
+            --output "investigacion/fx/v2-$TEST_YEAR-coste1.json"
+          python -m tradinglab.fx.research2 data/fx-processed/eurusd_m5_bidask.csv \
+            --cost-multiplier 2 --start-valid "$TEST_YEAR-01-01" \
+            --output "investigacion/fx/v2-$TEST_YEAR-coste2.json"
+      - name: Guardar precios historicos bid ask comprimidos para auditoria
+        run: gzip -k data/fx-processed/eurusd_m5_bidask.csv
+      - uses: actions/upload-artifact@v4
+        with:
+          name: fx-12-hipotesis-${{ matrix.year }}-${{ matrix.label }}
+          path: |
+            investigacion/fx/v2-*.json
+            data/fx-processed/eurusd_m5_bidask.csv.gz
+          if-no-files-found: error
+          retention-days: 30
