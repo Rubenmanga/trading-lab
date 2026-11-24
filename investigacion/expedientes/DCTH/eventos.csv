@@ -3,7 +3,7 @@ fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,
 2026-11-09,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/872912/000162828026071894/dcth-20261109.htm,2026-11-09,14.93,35.77,37.64,
 2026-11-09,movimiento,"Sube 35.8 % en un día (14.9 veces lo normal, volumen x10.2 su media)",https://finance.yahoo.com/quote/DCTH/history/,2026-11-09,14.93,35.77,37.64,
 2026-11-09,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/872912/000162828026071915/dcth-20260930.htm,2026-11-09,14.93,35.77,37.64,
-2026-10-27,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/872912/000205211326001072/xslSCHEDULE_13G_X02/primary_doc.xml,2026-10-27,14.51,1.65,-1.52,
+2026-10-27,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/872912/000205211326001072/xslSCHEDULE_13G_X02/primary_doc.xml,2026-10-27,14.51,1.65,-1.52,35.63
 2026-10-14,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/872912/000162262726000026/xslF345X06/primary_doc.xml,2026-10-14,15.32,-3.92,-3.66,31.2
 2026-08-14,8k,"Aviso oficial de hecho relevante (8-K 5.03,9.01)",https://www.sec.gov/Archives/edgar/data/872912/000119312526350536/d177016d8k.htm,2026-08-14,17.36,-3.63,-3.51,-8.35
 2026-08-06,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/872912/000162828026053902/dcth-20260806.htm,2026-08-06,12.63,22.49,35.47,31.27

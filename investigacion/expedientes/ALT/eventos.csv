@@ -7,7 +7,7 @@ fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,
 2026-11-10,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/1326190/000009375126000611/xslSCHEDULE_13G_X02/primary_doc.xml,2026-11-10,2.12,-8.49,-27.14,
 2026-11-04,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1326190/000136368326000009/xslF345X06/form4-11042026_091140.xml,2026-11-04,2.04,3.92,-4.9,
 2026-10-29,8k,Aviso oficial de hecho relevante (8-K 2.03),https://www.sec.gov/Archives/edgar/data/1326190/000132619026000060/alt-20261027x8k.htm,2026-10-29,2.1,1.9,0.95,
-2026-10-27,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1326190/000110465926118991/tm2628339d1_8k.htm,2026-10-27,2.05,-0.49,-1.46,
+2026-10-27,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1326190/000110465926118991/tm2628339d1_8k.htm,2026-10-27,2.05,-0.49,-1.46,-33.66
 2026-10-05,directivos_form4,2 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1326190/000180261526000002/xslF345X06/form4-10052026_041009.xml,2026-10-05,2.735,-2.38,-4.57,-25.41
 2026-10-02,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1326190/000215682026000004/xslF345X06/form4-10022026_081031.xml,2026-10-02,2.76,-0.91,-5.8,-22.46
 2026-09-29,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1326190/000132619026000056/alt-20260924x8k.htm,2026-09-29,2.96,0.34,-9.8,-30.74

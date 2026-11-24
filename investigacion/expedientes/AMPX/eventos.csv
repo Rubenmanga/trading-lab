@@ -1,5 +1,5 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
-2026-11-17,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1899287/000147622026000036/xslF345X06/wk-form4_1794956703.xml,2026-11-17,7.12,-4.92,,
+2026-11-17,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1899287/000147622026000036/xslF345X06/wk-form4_1794956703.xml,2026-11-17,7.12,-4.92,-13.62,
 2026-11-12,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1899287/000189928726000071/ampx-20260930.htm,2026-11-12,8.55,-2.34,-21.29,
 2026-11-10,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1899287/000189928726000069/ampx-20261110.htm,2026-11-10,9.52,-3.68,-25.26,
 2026-11-06,movimiento,"Sube 16.0 % en un día (3.0 veces lo normal, volumen x1.1 su media)",https://finance.yahoo.com/quote/AMPX/history/,2026-11-06,7.52,15.96,11.04,
