@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-25T04:11:58+00:00",
+ "actualizado": "2026-11-25T05:17:40+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -14,30 +14,30 @@
     "tamano_max": "2 %",
     "informe": "investigacion/analisis/ORIC-2026-11-14.md"
    },
-   "fecha": "2026-11-23",
-   "cierre": 7.54,
-   "cambio_dia_pct": 2.4,
-   "ema9": 7.92,
-   "ma50": 10.98,
-   "ma200": 10.91,
-   "rsi": 33.8,
-   "volumen_rel": 1.05,
+   "fecha": "2026-11-24",
+   "cierre": 8.4,
+   "cambio_dia_pct": 11.4,
+   "ema9": 8.02,
+   "ma50": 10.9,
+   "ma200": 10.9,
+   "rsi": 43.1,
+   "volumen_rel": 1.4,
    "minimo_52s": 7.23,
    "maximo_52s": 14.68,
    "divergencia": false,
    "toca_soporte": true,
-   "vela_giro": false,
+   "vela_giro": true,
    "estado": "ATENTO",
    "senales": [],
    "avisos": [],
    "pistas": [
-    "sigue por debajo de la EMA 9 (la caída no ha frenado)",
+    "cierra por encima de la EMA 9 (primer síntoma de freno)",
     "está en la zona de soporte 7.2-7.5 $"
    ],
-   "distancia_entrada_pct": -11.3,
-   "distancia_stop_pct": 16.0,
-   "distancia_confirmacion_pct": -18.9,
-   "potencial_pct": 72.4,
+   "distancia_entrada_pct": -1.2,
+   "distancia_stop_pct": 29.2,
+   "distancia_confirmacion_pct": -9.7,
+   "potencial_pct": 54.8,
    "proximos_resultados": null,
    "historial": [
     {
@@ -87,11 +87,20 @@
     },
     {
      "fecha": "2026-11-23",
-     "cierre": 7.54,
-     "rsi": 33.8,
-     "ema9": 7.92,
-     "ma50": 10.98,
-     "volumen_rel": 1.05,
+     "cierre": "7.54",
+     "rsi": "33.8",
+     "ema9": "7.92",
+     "ma50": "10.98",
+     "volumen_rel": "1.05",
+     "estado": "ATENTO"
+    },
+    {
+     "fecha": "2026-11-24",
+     "cierre": 8.4,
+     "rsi": 43.1,
+     "ema9": 8.02,
+     "ma50": 10.9,
+     "volumen_rel": 1.4,
      "estado": "ATENTO"
     }
    ]
@@ -3415,13 +3424,13 @@
    "XAU": {
     "nombre": "Oro",
     "sector": "materia prima",
-    "fecha": "2026-11-24",
-    "fecha_anterior": "2026-11-23",
-    "cierre": 3545.9,
-    "cambio_pct": -2.89,
-    "cambio_5d_pct": -8.2,
-    "sigma_pct": 2.1,
-    "veces_normal": 1.4,
+    "fecha": "2026-11-25",
+    "fecha_anterior": "2026-11-24",
+    "cierre": 3543.8,
+    "cambio_pct": -0.51,
+    "cambio_5d_pct": -5.3,
+    "sigma_pct": 2.11,
+    "veces_normal": 0.2,
     "volumen_rel": 0.1,
     "grande": false,
     "porque": "Movimiento normal.",

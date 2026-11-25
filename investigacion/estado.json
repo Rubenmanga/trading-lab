@@ -1,121 +1,121 @@
 {
- "actualizado": "2026-11-24T07:05:49+00:00",
+ "actualizado": "2026-11-25T05:17:40+00:00",
  "alertas": [
   {
    "ticker": "AMSC",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "AMSC a 21.29 $ está en su zona de entrada (≤ 22.0), potencial 50% hasta objetivo",
-   "precio": 21.290000915527344
+   "mensaje": "AMSC a 20.14 $ está en su zona de entrada (≤ 22.0), potencial 59% hasta objetivo",
+   "precio": 20.139999389648438
   },
   {
    "ticker": "REPX",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "REPX a 39.70 $ está en su zona de entrada (≤ 46.0), potencial 46% hasta objetivo",
-   "precio": 39.70000076293945
+   "mensaje": "REPX a 39.54 $ está en su zona de entrada (≤ 46.0), potencial 47% hasta objetivo",
+   "precio": 39.540000915527344
   },
   {
    "ticker": "PGY",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "PGY a 14.61 $ está en su zona de entrada (≤ 17.5), potencial 71% hasta objetivo",
-   "precio": 14.609999656677246
+   "mensaje": "PGY a 14.03 $ está en su zona de entrada (≤ 17.5), potencial 78% hasta objetivo",
+   "precio": 14.029999732971191
   },
   {
    "ticker": "AMPX",
    "tipo": "TESIS EN PELIGRO",
-   "mensaje": "AMPX a 6.15 $ ha caído bajo el stop de tesis (6.8). Revisar.",
-   "precio": 6.150000095367432
+   "mensaje": "AMPX a 5.72 $ ha caído bajo el stop de tesis (6.8). Revisar.",
+   "precio": 5.71999979019165
   },
   {
    "ticker": "TE",
    "tipo": "TESIS EN PELIGRO",
-   "mensaje": "TE a 1.20 $ ha caído bajo el stop de tesis (1.35). Revisar.",
-   "precio": 1.2000000476837158
+   "mensaje": "TE a 1.09 $ ha caído bajo el stop de tesis (1.35). Revisar.",
+   "precio": 1.090000033378601
   }
  ],
  "precios": [
   {
    "ticker": "AMSC",
-   "precio": 21.290000915527344,
-   "distancia_zona_pct": -3.2,
-   "potencial_pct": 50.3,
-   "distancia_stop_pct": 25.2
+   "precio": 20.139999389648438,
+   "distancia_zona_pct": -8.5,
+   "potencial_pct": 58.9,
+   "distancia_stop_pct": 18.5
   },
   {
    "ticker": "AEHR",
-   "precio": 48.5099983215332,
-   "distancia_zona_pct": 3.2,
-   "potencial_pct": 34.0,
-   "distancia_stop_pct": 27.7
+   "precio": 41.88999938964844,
+   "distancia_zona_pct": -10.9,
+   "potencial_pct": 55.2,
+   "distancia_stop_pct": 10.2
   },
   {
    "ticker": "REPX",
-   "precio": 39.70000076293945,
-   "distancia_zona_pct": -13.7,
-   "potencial_pct": 46.1,
-   "distancia_stop_pct": 10.3
+   "precio": 39.540000915527344,
+   "distancia_zona_pct": -14.0,
+   "potencial_pct": 46.7,
+   "distancia_stop_pct": 9.8
   },
   {
    "ticker": "PGY",
-   "precio": 14.609999656677246,
-   "distancia_zona_pct": -16.5,
-   "potencial_pct": 71.1,
-   "distancia_stop_pct": 16.9
+   "precio": 14.029999732971191,
+   "distancia_zona_pct": -19.8,
+   "potencial_pct": 78.2,
+   "distancia_stop_pct": 12.2
   },
   {
    "ticker": "DCTH",
-   "precio": 19.68000030517578,
-   "distancia_zona_pct": 15.8,
-   "potencial_pct": 37.2,
-   "distancia_stop_pct": 51.4
+   "precio": 19.81999969482422,
+   "distancia_zona_pct": 16.6,
+   "potencial_pct": 36.2,
+   "distancia_stop_pct": 52.5
   },
   {
    "ticker": "FTH",
-   "precio": 8.210000038146973,
-   "distancia_zona_pct": -21.8,
-   "potencial_pct": 143.6,
-   "distancia_stop_pct": 26.3
+   "precio": 9.710000038146973,
+   "distancia_zona_pct": -7.5,
+   "potencial_pct": 106.0,
+   "distancia_stop_pct": 49.4
   },
   {
    "ticker": "ORIC",
-   "precio": 7.539999961853027,
-   "distancia_zona_pct": -11.3,
-   "potencial_pct": 72.4,
-   "distancia_stop_pct": 16.0
+   "precio": 8.399999618530273,
+   "distancia_zona_pct": -1.2,
+   "potencial_pct": 54.8,
+   "distancia_stop_pct": 29.2
   },
   {
    "ticker": "RCAT",
-   "precio": 1.8899999856948853,
+   "precio": 1.725000023841858,
    "distancia_zona_pct": null,
    "potencial_pct": null,
-   "distancia_stop_pct": -5.5
+   "distancia_stop_pct": -13.7
   },
   {
    "ticker": "AMPX",
-   "precio": 6.150000095367432,
-   "distancia_zona_pct": -35.3,
-   "potencial_pct": 87.0,
-   "distancia_stop_pct": -9.6
+   "precio": 5.71999979019165,
+   "distancia_zona_pct": -39.8,
+   "potencial_pct": 101.0,
+   "distancia_stop_pct": -15.9
   },
   {
    "ticker": "SSII",
-   "precio": 1.2400000095367432,
-   "distancia_zona_pct": -52.3,
-   "potencial_pct": 77.4,
-   "distancia_stop_pct": 3.3
+   "precio": 1.2300000190734863,
+   "distancia_zona_pct": -52.7,
+   "potencial_pct": 78.9,
+   "distancia_stop_pct": 2.5
   },
   {
    "ticker": "TE",
-   "precio": 1.2000000476837158,
-   "distancia_zona_pct": -42.9,
-   "potencial_pct": 100.0,
-   "distancia_stop_pct": -11.1
+   "precio": 1.090000033378601,
+   "distancia_zona_pct": -48.1,
+   "potencial_pct": 120.2,
+   "distancia_stop_pct": -19.3
   },
   {
    "ticker": "SVRA",
-   "precio": 4.239999771118164,
-   "distancia_zona_pct": -11.7,
-   "potencial_pct": 88.7,
-   "distancia_stop_pct": 3.4
+   "precio": 4.550000190734863,
+   "distancia_zona_pct": -5.2,
+   "potencial_pct": 75.8,
+   "distancia_stop_pct": 11.0
   }
  ]
 }

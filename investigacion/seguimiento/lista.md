@@ -195,8 +195,8 @@ Cierre 8.75 (2026-11-24) · 5 días +2.9 % · lo normal en un día: ±10.99 %.
 
 # Materias primas
 
-## XAU · Oro — ▼ -2.9 % · volumen 0.1x lo normal
-Cierre 3545.9 (2026-11-24) · 5 días -8.2 % · lo normal en un día: ±2.1 %.
+## XAU · Oro — ▼ -0.5 % · volumen 0.1x lo normal
+Cierre 3543.8 (2026-11-25) · 5 días -5.3 % · lo normal en un día: ±2.11 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
