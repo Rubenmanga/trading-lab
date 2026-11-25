@@ -1,11 +1,38 @@
 # ORIC · notas del repaso diario (agente B)
 
 ## Resumen (5 líneas)
-1. **Estado: ATENTO.** El lunes 23-nov rebotó a **7,54 $** (+2,4 %) desde la zona de soporte 7,2-7,5 $: el soporte aguanta por ahora.
-2. RSI 33,8 (cerca de «sobrevendida»: ha caído mucho y rápido). Sigue por debajo de la EMA 9 (7,92 $), así que la caída aún no ha frenado del todo. Volumen normal (1,05×).
-3. Analistas: todos siguen en «comprar» (HC Wainwright 20 $, Wells Fargo 23 $, Citi 17 $, BTIG 26 $). HC Wainwright espera algo más de pérdida en 2026 (normal en una biotecnológica que gasta en ensayos).
-4. Sin noticias de rinzimetostat, enozertinib, ampliaciones de capital ni del rival JNJ-6143 de J&J. Solo un aviso de conferencias para inversores. La tesis no cambia.
-5. Demo: no comprar aún. Primera mitad con un cierre > EMA 9 (≈ 7,9 $) y ≤ 8,5 $; si cierra < 7,2 $ → PELIGRO. Stop 6,5 $, objetivo 13 $.
+1. **Estado: SEÑAL DE ENTRADA (solo la primera mitad).** El martes 24-nov subió **+11,4 % hasta 8,40 $**, con más volumen que la media (1,4×).
+2. Cerró por encima de la EMA 9 (8,02 $): la caída ha frenado. El soporte 7,2-7,5 $ aguantó y el programa ve una «vela de giro» (vela que marca el cambio de dirección).
+3. Se cumple la condición de la primera mitad del plan: cierre > EMA 9 y precio ≤ 8,5 $. Pero está justo al límite: **no perseguir** si abre por encima de 8,5 $.
+4. Sin noticias de la empresa que expliquen la subida (ni fármacos, ni ampliación de capital, ni del rival JNJ-6143 de J&J). Analistas: todos en «comprar».
+5. Demo: primera mitad (≤ 1 % de la cartera) solo a ≤ 8,5 $. Segunda mitad con la señal B (dos cierres > 9,3 $). Stop 6,5 $, objetivo 13 $.
+
+## 25-nov-2026 · SEÑAL DE ENTRADA (primera mitad)
+
+**Qué ha pasado**
+- Martes 24-nov: sube **+11,4 % hasta 8,40 $** con volumen 1,4 veces su media (más compradores que los días anteriores).
+- Cierra por encima de la EMA 9 (8,02 $) por primera vez desde hace semanas. RSI 43 (sale de la zona de «muy vendida»).
+- Las webs dicen que subió «sin noticias de la empresa». Nada nuevo de rinzimetostat, enozertinib, ventas de acciones nuevas, cambios de analistas ni del rival JNJ-6143 de J&J en las últimas 48 h.
+
+**Qué significa**
+- El soporte 7,2-7,5 $ ha funcionado: rebote fuerte desde 7,36 $ con volumen. Es justo lo que el plan pedía para la **primera mitad** (cierre > EMA 9 y ≤ 8,5 $).
+- Ojo: una subida tan grande sin noticia a veces se devuelve en parte. Por eso solo media posición y sin pasar de 8,5 $.
+- La señal fuerte (B: dos cierres > 9,3 $) sigue a +10,7 %. La tesis (fase 3 de rinzimetostat, caja hasta 2028) no cambia.
+
+**Qué haría hoy en la demo**
+- **Primera mitad (≤ 1 % de la cartera) con orden limitada a 8,5 $ como máximo** (orden limitada = solo compra a ese precio o mejor). Si abre por encima, esperar a que vuelva o a la señal B; no perseguir.
+- Stop de tesis 6,5 $ (riesgo ≈ −23 % desde 8,4 $; por eso la posición es pequeña). Objetivo 13 $.
+- Si vuelve a cerrar por debajo de **7,2 $** → PELIGRO, salir.
+- **Niveles del plan: sin cambios.**
+
+**Fuentes**
+| dato | valor | fuente | fecha |
+|---|---|---|---|
+| Precio, RSI, EMA 9, volumen | 8,40 $ · 43,1 · 8,02 $ · 1,4× | investigacion/seguimiento/ORIC.md (Yahoo) | 24-nov-2026 |
+| Subida sin noticias de la empresa | +12,5 % en el día | titular en investigacion/seguimiento/ORIC.md (Finnhub, intermediaria) | 24-nov-2026 |
+| Fármacos / J&J / ampliación / analistas | sin novedades en 48 h | búsqueda web | 25-nov-2026 |
+
+---
 
 ## 24-nov-2026 · ATENTO
 
