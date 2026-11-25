@@ -1,6 +1,6 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
 2026-11-23,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1992243/000091228226001539/xslF345X06/form4.xml,2026-11-23,1.1,9.09,,
-2026-11-18,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026121846/ea0312516-8k_t1energy.htm,2026-11-18,1.33,4.51,,
+2026-11-18,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1992243/000121390026121846/ea0312516-8k_t1energy.htm,2026-11-18,1.33,4.51,-18.05,
 2026-11-16,movimiento,"Cae 20.9 % en un día (2.8 veces lo normal, volumen x1.3 su media)",https://finance.yahoo.com/quote/TE/history/,2026-11-16,1.91,-20.94,-42.41,
 2026-11-16,ampliacion,Colocación de acciones (424B5),https://www.sec.gov/Archives/edgar/data/1992243/000121390026120098/ea0311901-424b5_t1energy.htm,2026-11-16,1.91,-20.94,-42.41,
 2026-11-16,8k,"Aviso oficial de hecho relevante (8-K 8.01,9.01)",https://www.sec.gov/Archives/edgar/data/1992243/000121390026120101/ea0312116-8k_t1energy.htm,2026-11-16,1.91,-20.94,-42.41,
