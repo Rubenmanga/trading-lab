@@ -12,3 +12,4 @@ fecha_hora_ny,simbolo,accion,motivo,hueco,precio,importe_usd,stop,order_id,posit
 2026-11-19 09:35:02,SEAT,descartada,eToro no permite corto en esta acción,,,,,,,
 2026-11-24 09:34:09,LGHL,candidata,"hueco +56%, cierre ayer 0.65 $, se negocian 3,280,732 $/día",0.5639,,,,,,
 2026-11-24 09:35:01,LGHL,descartada,eToro no permite corto en esta acción,,,,,,,
+2026-11-25 09:34:10,,nada,ninguna acción abre con hueco ≥ 50% y liquidez suficiente,,,,,,,
