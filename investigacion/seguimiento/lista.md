@@ -147,13 +147,6 @@ Cierre 29.79 (2026-11-24) · 5 días +2.8 % · lo normal en un día: ±2.8 %.
 - Analistas que dicen comprar: 80 % de 10.
   - 2026-11-23 · [Raymond James Maintains Outperform on American Integrity, Raises Price Target to $32](https://finnhub.io/api/news?id=ea268253823acfe79bfc7fb08e9194f9ef8e66a2ef2308d592a927cac07b8970) [analistas]
 
-## ASC · Ardmore Shipping Corporation — = +0.0 % · volumen 0.9x lo normal
-Cierre 17.69 (2026-11-24) · 5 días -1.8 % · lo normal en un día: ±3.32 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 1 titular nuevo.
-- Analistas que dicen comprar: 86 % de 7.
-  - 2026-11-24 · [Why Cheaper Crude Won’t Mean Cheap Gas in 2027](https://finnhub.io/api/news?id=567ce27548c1f88f06b01385e4d23e3523cddb427364432ff69db1318f360bdd)
-
 ## LPG · Dorian LPG Ltd. — ▼ -0.2 % · volumen 0.6x lo normal
 Cierre 45.76 (2026-11-24) · 5 días +1.0 % · lo normal en un día: ±2.66 %.
 - **Por qué:** Movimiento normal para esta acción.
@@ -161,12 +154,12 @@ Cierre 45.76 (2026-11-24) · 5 días +1.0 % · lo normal en un día: ±2.66 %.
 - **Próximos catalizadores:** Resultados el 2027-02-03.
 - Analistas que dicen comprar: 73 % de 11.
 
-## JAKK · JAKKS Pacific, Inc. — ▲ +0.8 % · volumen 0.9x lo normal
-Cierre 34.72 (2026-11-24) · 5 días -1.9 % · lo normal en un día: ±2.78 %.
+## ASC · Ardmore Shipping Corporation — = +0.0 % · volumen 0.9x lo normal
+Cierre 17.69 (2026-11-24) · 5 días -1.8 % · lo normal en un día: ±3.32 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-17.
-- Analistas que dicen comprar: 88 % de 8.
+- **Qué cambió:** 1 titular nuevo.
+- Analistas que dicen comprar: 86 % de 7.
+  - 2026-11-24 · [Why Cheaper Crude Won’t Mean Cheap Gas in 2027](https://finnhub.io/api/news?id=567ce27548c1f88f06b01385e4d23e3523cddb427364432ff69db1318f360bdd)
 
 ## DFIN · Donnelley Financial Solutions,  — ▲ +1.0 % · volumen 0.5x lo normal
 Cierre 66.19 (2026-11-24) · 5 días -1.0 % · lo normal en un día: ±4.2 %.
@@ -175,6 +168,13 @@ Cierre 66.19 (2026-11-24) · 5 días -1.0 % · lo normal en un día: ±4.2 %.
 - **Próximos catalizadores:** Resultados el 2027-02-15 (antes de abrir).
 - Analistas que dicen comprar: 89 % de 9.
   - 2026-11-24 · [Are Computer and Technology Stocks Lagging  Allegro MicroSystems (ALGM) This Year?](https://finnhub.io/api/news?id=b495d71d5aeccecfba30096a87a02ef04af72b187d27486cf32594c87a19642f)
+
+## JAKK · JAKKS Pacific, Inc. — ▲ +0.8 % · volumen 0.9x lo normal
+Cierre 34.72 (2026-11-24) · 5 días -1.9 % · lo normal en un día: ±2.78 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** nada nuevo.
+- **Próximos catalizadores:** Resultados el 2027-02-17.
+- Analistas que dicen comprar: 88 % de 8.
 
 ## OPRT · Oportun Financial Corporation — ▲ +0.4 % · volumen 0.3x lo normal
 Cierre 10.87 (2026-11-24) · 5 días -5.2 % · lo normal en un día: ±7.39 %.
@@ -195,8 +195,8 @@ Cierre 8.75 (2026-11-24) · 5 días +2.9 % · lo normal en un día: ±10.99 %.
 
 # Materias primas
 
-## XAU · Oro — ▼ -0.5 % · volumen 0.1x lo normal
-Cierre 3543.8 (2026-11-25) · 5 días -5.3 % · lo normal en un día: ±2.11 %.
+## XAU · Oro — ▼ -0.8 % · volumen 0.1x lo normal
+Cierre 3535.1 (2026-11-25) · 5 días -5.5 % · lo normal en un día: ±2.11 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 

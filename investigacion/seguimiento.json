@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-25T05:17:40+00:00",
+ "actualizado": "2026-11-25T05:40:23+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -2900,6 +2900,73 @@
      "resultados_recientes": null
     }
    },
+   "LPG": {
+    "nombre": "Dorian LPG Ltd.",
+    "sector": "Energy",
+    "grupo": "ideas",
+    "fecha": "2026-11-24",
+    "fecha_anterior": "2026-11-23",
+    "cierre": 45.76,
+    "cambio_pct": -0.17,
+    "cambio_5d_pct": 1.0,
+    "sigma_pct": 2.66,
+    "veces_normal": 0.1,
+    "volumen_rel": 0.6,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
+    "catalizadores": [
+     "Resultados el 2027-02-03"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "Dorian LPG Ltd.",
+    "recs_pct_compra": 72.7,
+    "recs_n": 11,
+    "proximos_resultados": "2027-02-03",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLE",
+     "fecha": "2026-11-24",
+     "fecha_anterior": "2026-11-23",
+     "cierre": 60.45,
+     "cambio_pct": 0.97,
+     "cambio_5d_pct": -4.6,
+     "sigma_pct": 1.86,
+     "veces_normal": 0.5,
+     "volumen_rel": 0.8
+    },
+    "titulares": [
+     {
+      "fecha": "2026-11-21",
+      "titulo": "Dorian LPG Chairman John Hadjipateras Purchases Shares",
+      "fuente": "fiscal.ai",
+      "url": "https://www.moomoo.com/hans/news/post/1005318112/john-hadjipateras-buys-handful-of-shares-in-doriang",
+      "causas": [],
+      "nueva": false,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "10 energy stocks moving in tuesdays aftermarket session",
+     "dorian lpg chairman john hadjipateras purchases shares"
+    ],
+    "sec_vistos": [],
+    "anterior": {
+     "fecha": "2026-11-23",
+     "vistos": [
+      "10 energy stocks moving in tuesdays aftermarket session",
+      "dorian lpg chairman john hadjipateras purchases shares"
+     ],
+     "sec_vistos": [],
+     "recs_pct_compra": 72.7,
+     "proximos_resultados": "2027-02-03",
+     "resultados_recientes": null
+    }
+   },
    "ASC": {
     "nombre": "Ardmore Shipping Corporation",
     "sector": "Industrials",
@@ -3020,134 +3087,6 @@
      "resultados_recientes": null
     }
    },
-   "LPG": {
-    "nombre": "Dorian LPG Ltd.",
-    "sector": "Energy",
-    "grupo": "ideas",
-    "fecha": "2026-11-24",
-    "fecha_anterior": "2026-11-23",
-    "cierre": 45.76,
-    "cambio_pct": -0.17,
-    "cambio_5d_pct": 1.0,
-    "sigma_pct": 2.66,
-    "veces_normal": 0.1,
-    "volumen_rel": 0.6,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
-    "catalizadores": [
-     "Resultados el 2027-02-03"
-    ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "Dorian LPG Ltd.",
-    "recs_pct_compra": 72.7,
-    "recs_n": 11,
-    "proximos_resultados": "2027-02-03",
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "XLE",
-     "fecha": "2026-11-24",
-     "fecha_anterior": "2026-11-23",
-     "cierre": 60.45,
-     "cambio_pct": 0.97,
-     "cambio_5d_pct": -4.6,
-     "sigma_pct": 1.86,
-     "veces_normal": 0.5,
-     "volumen_rel": 0.8
-    },
-    "titulares": [
-     {
-      "fecha": "2026-11-21",
-      "titulo": "Dorian LPG Chairman John Hadjipateras Purchases Shares",
-      "fuente": "fiscal.ai",
-      "url": "https://www.moomoo.com/hans/news/post/1005318112/john-hadjipateras-buys-handful-of-shares-in-doriang",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "10 energy stocks moving in tuesdays aftermarket session",
-     "dorian lpg chairman john hadjipateras purchases shares"
-    ],
-    "sec_vistos": [],
-    "anterior": {
-     "fecha": "2026-11-23",
-     "vistos": [
-      "10 energy stocks moving in tuesdays aftermarket session",
-      "dorian lpg chairman john hadjipateras purchases shares"
-     ],
-     "sec_vistos": [],
-     "recs_pct_compra": 72.7,
-     "proximos_resultados": "2027-02-03",
-     "resultados_recientes": null
-    }
-   },
-   "JAKK": {
-    "nombre": "JAKKS Pacific, Inc.",
-    "sector": "Consumer Cyclical",
-    "grupo": "ideas",
-    "fecha": "2026-11-24",
-    "fecha_anterior": "2026-11-23",
-    "cierre": 34.72,
-    "cambio_pct": 0.81,
-    "cambio_5d_pct": -1.9,
-    "sigma_pct": 2.78,
-    "veces_normal": 0.3,
-    "volumen_rel": 0.9,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
-    "catalizadores": [
-     "Resultados el 2027-02-17"
-    ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "JAKKS Pacific Inc",
-    "recs_pct_compra": 87.5,
-    "recs_n": 8,
-    "proximos_resultados": "2027-02-17",
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "XLY",
-     "fecha": "2026-11-24",
-     "fecha_anterior": "2026-11-23",
-     "cierre": 117.72,
-     "cambio_pct": 0.68,
-     "cambio_5d_pct": 0.5,
-     "sigma_pct": 2.1,
-     "veces_normal": 0.3,
-     "volumen_rel": 0.7
-    },
-    "titulares": [],
-    "vistos": [
-     "skydance skyd just closed its 111 billion merger"
-    ],
-    "sec_vistos": [
-     "2026-07-14Fondo grande >5 % (13G)",
-     "2026-07-28Fondo grande >5 % (13G)"
-    ],
-    "anterior": {
-     "fecha": "2026-11-23",
-     "vistos": [
-      "skydance skyd just closed its 111 billion merger"
-     ],
-     "sec_vistos": [
-      "2026-07-14Fondo grande >5 % (13G)",
-      "2026-07-28Fondo grande >5 % (13G)"
-     ],
-     "recs_pct_compra": 87.5,
-     "proximos_resultados": "2027-02-17",
-     "resultados_recientes": null
-    }
-   },
    "DFIN": {
     "nombre": "Donnelley Financial Solutions, ",
     "sector": "Technology",
@@ -3240,6 +3179,67 @@
      ],
      "recs_pct_compra": 88.9,
      "proximos_resultados": "2027-02-15",
+     "resultados_recientes": null
+    }
+   },
+   "JAKK": {
+    "nombre": "JAKKS Pacific, Inc.",
+    "sector": "Consumer Cyclical",
+    "grupo": "ideas",
+    "fecha": "2026-11-24",
+    "fecha_anterior": "2026-11-23",
+    "cierre": 34.72,
+    "cambio_pct": 0.81,
+    "cambio_5d_pct": -1.9,
+    "sigma_pct": 2.78,
+    "veces_normal": 0.3,
+    "volumen_rel": 0.9,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
+    "catalizadores": [
+     "Resultados el 2027-02-17"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "JAKKS Pacific Inc",
+    "recs_pct_compra": 87.5,
+    "recs_n": 8,
+    "proximos_resultados": "2027-02-17",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLY",
+     "fecha": "2026-11-24",
+     "fecha_anterior": "2026-11-23",
+     "cierre": 117.72,
+     "cambio_pct": 0.68,
+     "cambio_5d_pct": 0.5,
+     "sigma_pct": 2.1,
+     "veces_normal": 0.3,
+     "volumen_rel": 0.7
+    },
+    "titulares": [],
+    "vistos": [
+     "skydance skyd just closed its 111 billion merger"
+    ],
+    "sec_vistos": [
+     "2026-07-14Fondo grande >5 % (13G)",
+     "2026-07-28Fondo grande >5 % (13G)"
+    ],
+    "anterior": {
+     "fecha": "2026-11-23",
+     "vistos": [
+      "skydance skyd just closed its 111 billion merger"
+     ],
+     "sec_vistos": [
+      "2026-07-14Fondo grande >5 % (13G)",
+      "2026-07-28Fondo grande >5 % (13G)"
+     ],
+     "recs_pct_compra": 87.5,
+     "proximos_resultados": "2027-02-17",
      "resultados_recientes": null
     }
    },
@@ -3426,11 +3426,11 @@
     "sector": "materia prima",
     "fecha": "2026-11-25",
     "fecha_anterior": "2026-11-24",
-    "cierre": 3543.8,
-    "cambio_pct": -0.51,
-    "cambio_5d_pct": -5.3,
+    "cierre": 3535.1,
+    "cambio_pct": -0.75,
+    "cambio_5d_pct": -5.5,
     "sigma_pct": 2.11,
-    "veces_normal": 0.2,
+    "veces_normal": 0.4,
     "volumen_rel": 0.1,
     "grande": false,
     "porque": "Movimiento normal.",
@@ -3448,10 +3448,10 @@
     "fecha": "2026-11-25",
     "fecha_anterior": "2026-11-24",
     "cierre": 1.09,
-    "cambio_pct": 0.38,
+    "cambio_pct": 0.37,
     "cambio_5d_pct": -0.4,
     "sigma_pct": 0.35,
-    "veces_normal": 1.1,
+    "veces_normal": 1.0,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",
