@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-26T04:35:13+00:00",
+ "actualizado": "2026-11-26T05:25:45+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -2561,88 +2561,6 @@
      "resultados_recientes": null
     }
    },
-   "AII": {
-    "nombre": "American Integrity Insurance Gr",
-    "sector": "Financial Services",
-    "grupo": "ideas",
-    "fecha": "2026-11-25",
-    "fecha_anterior": "2026-11-24",
-    "cierre": 28.98,
-    "cambio_pct": -2.72,
-    "cambio_5d_pct": -2.0,
-    "sigma_pct": 2.7,
-    "veces_normal": 1.0,
-    "volumen_rel": 0.7,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
-    "catalizadores": [],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "American Integrity Insurance Group Inc",
-    "recs_pct_compra": 80.0,
-    "recs_n": 10,
-    "proximos_resultados": null,
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "XLF",
-     "fecha": "2026-11-25",
-     "fecha_anterior": "2026-11-24",
-     "cierre": 56.51,
-     "cambio_pct": 0.71,
-     "cambio_5d_pct": 0.2,
-     "sigma_pct": 1.54,
-     "veces_normal": 0.5,
-     "volumen_rel": 0.9
-    },
-    "titulares": [
-     {
-      "fecha": "2026-11-24",
-      "titulo": "American Integrity Insurance Group Consensus Price Target Raised 11.50% to $32.13",
-      "fuente": "Fintel",
-      "url": "https://finnhub.io/api/news?id=05cdd397cae2ddaf7486e7c1f4950a046e8beeed0bf55a45b719c6a4c1face63",
-      "causas": [
-       "analistas"
-      ],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-23",
-      "titulo": "Raymond James Maintains Outperform on American Integrity, Raises Price Target to $32",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=ea268253823acfe79bfc7fb08e9194f9ef8e66a2ef2308d592a927cac07b8970",
-      "causas": [
-       "analistas"
-      ],
-      "nueva": false,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "american integrity insurance group consensus price target raised 1150",
-     "raymond james maintains outperform on american integrity raises price"
-    ],
-    "sec_vistos": [
-     "2026-10-02Registro para vender acciones (S-3)"
-    ],
-    "anterior": {
-     "fecha": "2026-11-24",
-     "vistos": [
-      "american integrity insurance group consensus price target raised 1150",
-      "raymond james maintains outperform on american integrity raises price"
-     ],
-     "sec_vistos": [
-      "2026-10-02Registro para vender acciones (S-3)"
-     ],
-     "recs_pct_compra": 80.0,
-     "proximos_resultados": null,
-     "resultados_recientes": null
-    }
-   },
    "ASC": {
     "nombre": "Ardmore Shipping Corporation",
     "sector": "Industrials",
@@ -2744,6 +2662,88 @@
      "resultados_recientes": null
     }
    },
+   "AII": {
+    "nombre": "American Integrity Insurance Gr",
+    "sector": "Financial Services",
+    "grupo": "ideas",
+    "fecha": "2026-11-25",
+    "fecha_anterior": "2026-11-24",
+    "cierre": 28.98,
+    "cambio_pct": -2.72,
+    "cambio_5d_pct": -2.0,
+    "sigma_pct": 2.7,
+    "veces_normal": 1.0,
+    "volumen_rel": 0.7,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
+    "catalizadores": [],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "American Integrity Insurance Group Inc",
+    "recs_pct_compra": 80.0,
+    "recs_n": 10,
+    "proximos_resultados": null,
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLF",
+     "fecha": "2026-11-25",
+     "fecha_anterior": "2026-11-24",
+     "cierre": 56.51,
+     "cambio_pct": 0.71,
+     "cambio_5d_pct": 0.2,
+     "sigma_pct": 1.54,
+     "veces_normal": 0.5,
+     "volumen_rel": 0.9
+    },
+    "titulares": [
+     {
+      "fecha": "2026-11-24",
+      "titulo": "American Integrity Insurance Group Consensus Price Target Raised 11.50% to $32.13",
+      "fuente": "Fintel",
+      "url": "https://finnhub.io/api/news?id=05cdd397cae2ddaf7486e7c1f4950a046e8beeed0bf55a45b719c6a4c1face63",
+      "causas": [
+       "analistas"
+      ],
+      "nueva": false,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-23",
+      "titulo": "Raymond James Maintains Outperform on American Integrity, Raises Price Target to $32",
+      "fuente": "Benzinga",
+      "url": "https://finnhub.io/api/news?id=ea268253823acfe79bfc7fb08e9194f9ef8e66a2ef2308d592a927cac07b8970",
+      "causas": [
+       "analistas"
+      ],
+      "nueva": false,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "american integrity insurance group consensus price target raised 1150",
+     "raymond james maintains outperform on american integrity raises price"
+    ],
+    "sec_vistos": [
+     "2026-10-02Registro para vender acciones (S-3)"
+    ],
+    "anterior": {
+     "fecha": "2026-11-24",
+     "vistos": [
+      "american integrity insurance group consensus price target raised 1150",
+      "raymond james maintains outperform on american integrity raises price"
+     ],
+     "sec_vistos": [
+      "2026-10-02Registro para vender acciones (S-3)"
+     ],
+     "recs_pct_compra": 80.0,
+     "proximos_resultados": null,
+     "resultados_recientes": null
+    }
+   },
    "LPG": {
     "nombre": "Dorian LPG Ltd.",
     "sector": "Energy",
@@ -2823,6 +2823,197 @@
      "resultados_recientes": null
     }
    },
+   "DFIN": {
+    "nombre": "Donnelley Financial Solutions, ",
+    "sector": "Technology",
+    "grupo": "ideas",
+    "fecha": "2026-11-25",
+    "fecha_anterior": "2026-11-24",
+    "cierre": 65.69,
+    "cambio_pct": -0.76,
+    "cambio_5d_pct": -1.4,
+    "sigma_pct": 4.17,
+    "veces_normal": 0.2,
+    "volumen_rel": 0.6,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "3 titulares nuevos"
+    ],
+    "catalizadores": [
+     "Resultados el 2027-02-15 (antes de abrir)"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "Donnelley Financial Solutions, Inc.",
+    "recs_pct_compra": 88.9,
+    "recs_n": 9,
+    "proximos_resultados": "2027-02-15",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "QQQ",
+     "fecha": "2026-11-25",
+     "fecha_anterior": "2026-11-24",
+     "cierre": 633.93,
+     "cambio_pct": -0.65,
+     "cambio_5d_pct": -3.9,
+     "sigma_pct": 2.94,
+     "veces_normal": 0.2,
+     "volumen_rel": 1.3
+    },
+    "titulares": [
+     {
+      "fecha": "2026-11-26",
+      "titulo": "Donnelley Financial Solutions, Inc. Announces Officer Status Changes for Craig Clay and Eric Johnson",
+      "fuente": "Fintel",
+      "url": "https://finnhub.io/api/news?id=b6bc66258c49c391c2df549e608c706f38c44d6d9ea385c11464d5a3f82a208a",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-25",
+      "titulo": "Buy Red Violet, Donnelley to Tap Software & Services Growth",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=82f87489feec4b54adbf652df6b2cf55b8f99746d7faff58efd3413be9164382",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-25",
+      "titulo": "Are Investors Undervaluing Donnelley Financial Solutions (DFIN) Right Now?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=44fac6f41704ba9957c03afec3cbc415bf6ce63891b4fe551f8ced79e9bbe6f2",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-24",
+      "titulo": "Are Computer and Technology Stocks Lagging  Allegro MicroSystems (ALGM) This Year?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=b495d71d5aeccecfba30096a87a02ef04af72b187d27486cf32594c87a19642f",
+      "causas": [],
+      "nueva": false,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-23",
+      "titulo": "DFIN or TYL: Which Is the Better Value Stock Right Now?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=975d0b8d02b3a3101bddbe101bbab53ae01ba19e40b10b8ae46a5c2404cb82b3",
+      "causas": [],
+      "nueva": false,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "3 stocks to watch as proxy voting demand puts broadridge stock in focu",
+     "are computer and technology stocks lagging  allegro microsystems algm",
+     "are investors undervaluing donnelley financial solutions dfin right no",
+     "buy red violet donnelley to tap software  services growth",
+     "dfin ceo files form 144 for proposed sale of common stock",
+     "dfin named 1 technology company on best practice institutes most loved",
+     "dfin or tyl which is the better value stock right now",
+     "donnelley financial ceo daniel leib sells 3m as stock cools near 52wee",
+     "donnelley financial nysedfin screens well on growth at a reasonable pr",
+     "donnelley financial solutions inc announces officer status changes for",
+     "donnelley financial solutions named 1 technology company on bpis most",
+     "donnelley financial solutions named to 2026 americas top 100 most love"
+    ],
+    "sec_vistos": [
+     "2026-10-30Fondo grande >5 % (13G)"
+    ],
+    "anterior": {
+     "fecha": "2026-11-24",
+     "vistos": [
+      "3 stocks to watch as proxy voting demand puts broadridge stock in focu",
+      "are computer and technology stocks lagging  allegro microsystems algm",
+      "dfin ceo files form 144 for proposed sale of common stock",
+      "dfin named 1 technology company on best practice institutes most loved",
+      "dfin or tyl which is the better value stock right now",
+      "donnelley financial ceo daniel leib sells 3m as stock cools near 52wee",
+      "donnelley financial nysedfin screens well on growth at a reasonable pr",
+      "donnelley financial solutions named 1 technology company on bpis most",
+      "donnelley financial solutions named to 2026 americas top 100 most love"
+     ],
+     "sec_vistos": [
+      "2026-10-30Fondo grande >5 % (13G)"
+     ],
+     "recs_pct_compra": 88.9,
+     "proximos_resultados": "2027-02-15",
+     "resultados_recientes": null
+    }
+   },
+   "IBEX": {
+    "nombre": "IBEX Limited",
+    "sector": "Technology",
+    "grupo": "ideas",
+    "fecha": "2026-11-25",
+    "fecha_anterior": "2026-11-24",
+    "cierre": 57.78,
+    "cambio_pct": 4.05,
+    "cambio_5d_pct": 3.6,
+    "sigma_pct": 4.1,
+    "veces_normal": 1.0,
+    "volumen_rel": 0.7,
+    "grande": false,
+    "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
+    "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
+    "cambios": [],
+    "catalizadores": [
+     "Resultados el 2027-02-03"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "Ibex Ltd",
+    "recs_pct_compra": 0.0,
+    "recs_n": 7,
+    "proximos_resultados": "2027-02-03",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "QQQ",
+     "fecha": "2026-11-25",
+     "fecha_anterior": "2026-11-24",
+     "cierre": 633.93,
+     "cambio_pct": -0.65,
+     "cambio_5d_pct": -3.9,
+     "sigma_pct": 2.94,
+     "veces_normal": 0.2,
+     "volumen_rel": 1.3
+    },
+    "titulares": [
+     {
+      "fecha": "2026-11-23",
+      "titulo": "IBEX (NASDAQ:IBEX): A Peter Lynch-Style GARP Opportunity",
+      "fuente": "ChartMill",
+      "url": "https://finnhub.io/api/news?id=0b397ecd4df4582f9da981990167b910de7e059376d26e88f505bc6361b781b3",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "ibex nasdaqibex a peter lynchstyle garp opportunity"
+    ],
+    "sec_vistos": [
+     "2026-11-16Fondo grande >5 % (13G)"
+    ],
+    "anterior": {
+     "fecha": null,
+     "vistos": null,
+     "sec_vistos": null,
+     "recs_pct_compra": null,
+     "proximos_resultados": null,
+     "resultados_recientes": null
+    }
+   },
    "JAKK": {
     "nombre": "JAKKS Pacific, Inc.",
     "sector": "Consumer Cyclical",
@@ -2897,149 +3088,31 @@
      "resultados_recientes": null
     }
    },
-   "DFIN": {
-    "nombre": "Donnelley Financial Solutions, ",
+   "CCSI": {
+    "nombre": "Consensus Cloud Solutions, Inc.",
     "sector": "Technology",
     "grupo": "ideas",
     "fecha": "2026-11-25",
     "fecha_anterior": "2026-11-24",
-    "cierre": 65.69,
-    "cambio_pct": -0.76,
-    "cambio_5d_pct": -1.4,
-    "sigma_pct": 4.17,
+    "cierre": 41.2,
+    "cambio_pct": 0.86,
+    "cambio_5d_pct": 0.7,
+    "sigma_pct": 4.78,
     "veces_normal": 0.2,
-    "volumen_rel": 0.6,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "2 titulares nuevos"
-    ],
-    "catalizadores": [
-     "Resultados el 2027-02-15 (antes de abrir)"
-    ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "Donnelley Financial Solutions, Inc.",
-    "recs_pct_compra": 88.9,
-    "recs_n": 9,
-    "proximos_resultados": "2027-02-15",
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "QQQ",
-     "fecha": "2026-11-25",
-     "fecha_anterior": "2026-11-24",
-     "cierre": 633.93,
-     "cambio_pct": -0.65,
-     "cambio_5d_pct": -3.9,
-     "sigma_pct": 2.94,
-     "veces_normal": 0.2,
-     "volumen_rel": 1.3
-    },
-    "titulares": [
-     {
-      "fecha": "2026-11-25",
-      "titulo": "Buy Red Violet, Donnelley to Tap Software & Services Growth",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=82f87489feec4b54adbf652df6b2cf55b8f99746d7faff58efd3413be9164382",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-25",
-      "titulo": "Are Investors Undervaluing Donnelley Financial Solutions (DFIN) Right Now?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=44fac6f41704ba9957c03afec3cbc415bf6ce63891b4fe551f8ced79e9bbe6f2",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-24",
-      "titulo": "Are Computer and Technology Stocks Lagging  Allegro MicroSystems (ALGM) This Year?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=b495d71d5aeccecfba30096a87a02ef04af72b187d27486cf32594c87a19642f",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-23",
-      "titulo": "DFIN or TYL: Which Is the Better Value Stock Right Now?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=975d0b8d02b3a3101bddbe101bbab53ae01ba19e40b10b8ae46a5c2404cb82b3",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "3 stocks to watch as proxy voting demand puts broadridge stock in focu",
-     "are computer and technology stocks lagging  allegro microsystems algm",
-     "are investors undervaluing donnelley financial solutions dfin right no",
-     "buy red violet donnelley to tap software  services growth",
-     "dfin ceo files form 144 for proposed sale of common stock",
-     "dfin named 1 technology company on best practice institutes most loved",
-     "dfin or tyl which is the better value stock right now",
-     "donnelley financial ceo daniel leib sells 3m as stock cools near 52wee",
-     "donnelley financial nysedfin screens well on growth at a reasonable pr",
-     "donnelley financial solutions named 1 technology company on bpis most",
-     "donnelley financial solutions named to 2026 americas top 100 most love"
-    ],
-    "sec_vistos": [
-     "2026-10-30Fondo grande >5 % (13G)"
-    ],
-    "anterior": {
-     "fecha": "2026-11-24",
-     "vistos": [
-      "3 stocks to watch as proxy voting demand puts broadridge stock in focu",
-      "are computer and technology stocks lagging  allegro microsystems algm",
-      "dfin ceo files form 144 for proposed sale of common stock",
-      "dfin named 1 technology company on best practice institutes most loved",
-      "dfin or tyl which is the better value stock right now",
-      "donnelley financial ceo daniel leib sells 3m as stock cools near 52wee",
-      "donnelley financial nysedfin screens well on growth at a reasonable pr",
-      "donnelley financial solutions named 1 technology company on bpis most",
-      "donnelley financial solutions named to 2026 americas top 100 most love"
-     ],
-     "sec_vistos": [
-      "2026-10-30Fondo grande >5 % (13G)"
-     ],
-     "recs_pct_compra": 88.9,
-     "proximos_resultados": "2027-02-15",
-     "resultados_recientes": null
-    }
-   },
-   "CRCT": {
-    "nombre": "Cricut, Inc.",
-    "sector": "Technology",
-    "grupo": "ideas",
-    "fecha": "2026-11-25",
-    "fecha_anterior": "2026-11-24",
-    "cierre": 8.8,
-    "cambio_pct": 0.57,
-    "cambio_5d_pct": 2.9,
-    "sigma_pct": 10.93,
-    "veces_normal": 0.1,
-    "volumen_rel": 0.5,
+    "volumen_rel": 0.9,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Sin cambios: movimiento normal y nada nuevo.",
     "cambios": [],
-    "catalizadores": [
-     "Resultados el 2027-03-01 (tras el cierre)"
-    ],
+    "catalizadores": [],
     "avisos": [],
     "avisos_nuevos": [],
     "avisados": [],
     "problemas": [],
-    "nombre_fuente": "Cricut, Inc.",
-    "recs_pct_compra": 0.0,
-    "recs_n": 8,
-    "proximos_resultados": "2027-03-01",
+    "nombre_fuente": "Consensus Cloud Solutions Inc",
+    "recs_pct_compra": 90.0,
+    "recs_n": 10,
+    "proximos_resultados": null,
     "resultados_recientes": null,
     "referencia": {
      "ticker": "QQQ",
@@ -3052,151 +3125,15 @@
      "veces_normal": 0.2,
      "volumen_rel": 1.3
     },
-    "titulares": [
-     {
-      "fecha": "2026-11-24",
-      "titulo": "Cricut, Inc. Files Form 144 for Insider Transaction",
-      "fuente": "fiscal.ai",
-      "url": "https://www.streetinsider.com/SEC+Filings?before_id=27388732",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-21",
-      "titulo": "Cricut CEO Ashish Arora Sells $1.76 Million in Shares",
-      "fuente": "fiscal.ai",
-      "url": "https://www.marketscreener.com/news/cricut-insider-sold-shares-worth-1-763-510-according-to-a-recent-sec-filing-ce785ed3dc8ef725",
-      "causas": [
-       "directivos"
-      ],
-      "nueva": false,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "crct stock rises 58 in 3 months heres what investors should know",
-     "cricut ceo ashish arora sells 176 million in shares",
-     "cricut inc files form 144 for insider transaction"
-    ],
-    "sec_vistos": [
-     "2026-09-21Fondo grande >5 % (13G)"
-    ],
-    "anterior": {
-     "fecha": "2026-11-24",
-     "vistos": [
-      "crct stock rises 58 in 3 months heres what investors should know",
-      "cricut ceo ashish arora sells 176 million in shares",
-      "cricut inc files form 144 for insider transaction"
-     ],
-     "sec_vistos": [
-      "2026-09-21Fondo grande >5 % (13G)"
-     ],
-     "recs_pct_compra": 0.0,
-     "proximos_resultados": "2027-03-01",
-     "resultados_recientes": null
-    }
-   },
-   "OPRT": {
-    "nombre": "Oportun Financial Corporation",
-    "sector": "Financial Services",
-    "grupo": "ideas",
-    "fecha": "2026-11-25",
-    "fecha_anterior": "2026-11-24",
-    "cierre": 10.73,
-    "cambio_pct": -1.29,
-    "cambio_5d_pct": -6.4,
-    "sigma_pct": 7.39,
-    "veces_normal": 0.2,
-    "volumen_rel": 0.8,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Movimiento normal para esta acción.",
-    "cambios": [
-     "1 titular nuevo"
-    ],
-    "catalizadores": [
-     "Resultados el 2027-02-24"
-    ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "Oportun Financial Corp",
-    "recs_pct_compra": 63.6,
-    "recs_n": 11,
-    "proximos_resultados": "2027-02-24",
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "XLF",
-     "fecha": "2026-11-25",
-     "fecha_anterior": "2026-11-24",
-     "cierre": 56.51,
-     "cambio_pct": 0.71,
-     "cambio_5d_pct": 0.2,
-     "sigma_pct": 1.54,
-     "veces_normal": 0.5,
-     "volumen_rel": 0.9
-    },
-    "titulares": [
-     {
-      "fecha": "2026-11-25",
-      "titulo": "Oportun Completes $372 Million Asset-Backed Notes Issuance",
-      "fuente": "fiscal.ai",
-      "url": "https://www.quantisnow.com/insight/oportun-financial-corporation-filed-sec-form-8-k-creation-of-a-6806192",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-24",
-      "titulo": "Oportun Appoints Laura Unger to Board of Directors",
-      "fuente": "fiscal.ai",
-      "url": "https://www.globenewswire.com/news-release/2026/11/24/3409878/0/en/oportun-appoints-laura-unger-to-its-board-of-directors.html",
-      "causas": [
-       "directivos"
-      ],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-24",
-      "titulo": "Oportun Appoints Laura Unger to its Board of Directors",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=66ac9294231b75039f8b8a7ef8b105f5198d9260d955f92636f6f5dd920811c6",
-      "causas": [
-       "directivos"
-      ],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-23",
-      "titulo": "Wall Street Analysts Predict a 31.07% Upside in Oportun Financial (OPRT): Here's  What You Should Know",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=25c90136077377606221fe593ea5b33794656c0fcc0966588e6ab0bbc0fbbb70",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "oportun appoints laura unger to board of directors",
-     "oportun appoints laura unger to its board of directors",
-     "oportun completes 372 million assetbacked notes issuance",
-     "wall street analysts predict a 3107 upside in oportun financial oprt h"
-    ],
+    "titulares": [],
+    "vistos": [],
     "sec_vistos": [],
     "anterior": {
-     "fecha": "2026-11-24",
-     "vistos": [
-      "oportun appoints laura unger to board of directors",
-      "oportun appoints laura unger to its board of directors",
-      "wall street analysts predict a 3107 upside in oportun financial oprt h"
-     ],
-     "sec_vistos": [],
-     "recs_pct_compra": 63.6,
-     "proximos_resultados": "2027-02-24",
+     "fecha": null,
+     "vistos": null,
+     "sec_vistos": null,
+     "recs_pct_compra": null,
+     "proximos_resultados": null,
      "resultados_recientes": null
     }
    }
@@ -3205,13 +3142,13 @@
    "XAU": {
     "nombre": "Oro",
     "sector": "materia prima",
-    "fecha": "2026-11-25",
-    "fecha_anterior": "2026-11-24",
-    "cierre": 3616.6,
-    "cambio_pct": 1.54,
-    "cambio_5d_pct": -3.3,
+    "fecha": "2026-11-26",
+    "fecha_anterior": "2026-11-25",
+    "cierre": 3619.9,
+    "cambio_pct": 2.38,
+    "cambio_5d_pct": -1.8,
     "sigma_pct": 2.11,
-    "veces_normal": 0.7,
+    "veces_normal": 1.1,
     "volumen_rel": 0.2,
     "grande": false,
     "porque": "Movimiento normal.",

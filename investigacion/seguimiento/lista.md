@@ -126,17 +126,17 @@ Cierre 4.59 (2026-11-25) · 5 días -2.8 % · lo normal en un día: ±6.19 %.
 
 # Mejores ideas del buscador
 
-## AII · American Integrity Insurance Gr — ▼ -2.7 % · volumen 0.7x lo normal
-Cierre 28.98 (2026-11-25) · 5 días -2.0 % · lo normal en un día: ±2.7 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- Analistas que dicen comprar: 80 % de 10.
-
 ## ASC · Ardmore Shipping Corporation — ▲ +1.9 % · volumen 0.8x lo normal
 Cierre 18.03 (2026-11-25) · 5 días +2.6 % · lo normal en un día: ±3.32 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
 - Analistas que dicen comprar: 86 % de 7.
+
+## AII · American Integrity Insurance Gr — ▼ -2.7 % · volumen 0.7x lo normal
+Cierre 28.98 (2026-11-25) · 5 días -2.0 % · lo normal en un día: ±2.7 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** nada nuevo.
+- Analistas que dicen comprar: 80 % de 10.
 
 ## LPG · Dorian LPG Ltd. — = +0.0 % · volumen 0.8x lo normal
 Cierre 45.76 (2026-11-25) · 5 días +1.5 % · lo normal en un día: ±2.66 %.
@@ -146,6 +146,24 @@ Cierre 45.76 (2026-11-25) · 5 días +1.5 % · lo normal en un día: ±2.66 %.
 - Analistas que dicen comprar: 73 % de 11.
   - 2026-11-25 · [Dorian LPG (NYSE:LPG) Looks Like a Decent Value Stock](https://finnhub.io/api/news?id=a41d2dbc1d9c372f337a0a21c141b348791dfcb1f888cb7432e4d15fa215dd2f)
 
+## DFIN · Donnelley Financial Solutions,  — ▼ -0.8 % · volumen 0.6x lo normal
+Cierre 65.69 (2026-11-25) · 5 días -1.4 % · lo normal en un día: ±4.17 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** 3 titulares nuevos.
+- **Próximos catalizadores:** Resultados el 2027-02-15 (antes de abrir).
+- Analistas que dicen comprar: 89 % de 9.
+  - 2026-11-26 · [Donnelley Financial Solutions, Inc. Announces Officer Status Changes for Craig Clay and Eric Johnson](https://finnhub.io/api/news?id=b6bc66258c49c391c2df549e608c706f38c44d6d9ea385c11464d5a3f82a208a)
+  - 2026-11-25 · [Buy Red Violet, Donnelley to Tap Software & Services Growth](https://finnhub.io/api/news?id=82f87489feec4b54adbf652df6b2cf55b8f99746d7faff58efd3413be9164382)
+  - 2026-11-25 · [Are Investors Undervaluing Donnelley Financial Solutions (DFIN) Right Now?](https://finnhub.io/api/news?id=44fac6f41704ba9957c03afec3cbc415bf6ce63891b4fe551f8ced79e9bbe6f2)
+
+## IBEX · IBEX Limited — ▲ +4.0 % · volumen 0.7x lo normal
+Cierre 57.78 (2026-11-25) · 5 días +3.6 % · lo normal en un día: ±4.1 %.
+- **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
+- **Qué cambió:** nada nuevo.
+- **Próximos catalizadores:** Resultados el 2027-02-03.
+- Analistas que dicen comprar: 0 % de 7.
+  - 2026-11-23 · [IBEX (NASDAQ:IBEX): A Peter Lynch-Style GARP Opportunity](https://finnhub.io/api/news?id=0b397ecd4df4582f9da981990167b910de7e059376d26e88f505bc6361b781b3)
+
 ## JAKK · JAKKS Pacific, Inc. — ▼ -5.8 % · volumen 0.9x lo normal
 Cierre 32.7 (2026-11-25) · 5 días -8.8 % · lo normal en un día: ±2.79 %.
 - **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
@@ -154,34 +172,16 @@ Cierre 32.7 (2026-11-25) · 5 días -8.8 % · lo normal en un día: ±2.79 %.
 - Analistas que dicen comprar: 88 % de 8.
   - 2026-11-25 · [Jakks Pacific (JAKK) Stock Is Down 5.6% Today Without Company News](https://finnhub.io/api/news?id=6a5a15035b60e289dc1d039e50c7a3104b0ee25e2f888801735c12a215850a9e)
 
-## DFIN · Donnelley Financial Solutions,  — ▼ -0.8 % · volumen 0.6x lo normal
-Cierre 65.69 (2026-11-25) · 5 días -1.4 % · lo normal en un día: ±4.17 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 2 titulares nuevos.
-- **Próximos catalizadores:** Resultados el 2027-02-15 (antes de abrir).
-- Analistas que dicen comprar: 89 % de 9.
-  - 2026-11-25 · [Buy Red Violet, Donnelley to Tap Software & Services Growth](https://finnhub.io/api/news?id=82f87489feec4b54adbf652df6b2cf55b8f99746d7faff58efd3413be9164382)
-  - 2026-11-25 · [Are Investors Undervaluing Donnelley Financial Solutions (DFIN) Right Now?](https://finnhub.io/api/news?id=44fac6f41704ba9957c03afec3cbc415bf6ce63891b4fe551f8ced79e9bbe6f2)
-
-## CRCT · Cricut, Inc. — ▲ +0.6 % · volumen 0.5x lo normal
-Cierre 8.8 (2026-11-25) · 5 días +2.9 % · lo normal en un día: ±10.93 %.
+## CCSI · Consensus Cloud Solutions, Inc. — ▲ +0.9 % · volumen 0.9x lo normal
+Cierre 41.2 (2026-11-25) · 5 días +0.7 % · lo normal en un día: ±4.78 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-03-01 (tras el cierre).
-- Analistas que dicen comprar: 0 % de 8.
-
-## OPRT · Oportun Financial Corporation — ▼ -1.3 % · volumen 0.8x lo normal
-Cierre 10.73 (2026-11-25) · 5 días -6.4 % · lo normal en un día: ±7.39 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 1 titular nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-24.
-- Analistas que dicen comprar: 64 % de 11.
-  - 2026-11-25 · [Oportun Completes $372 Million Asset-Backed Notes Issuance](https://www.quantisnow.com/insight/oportun-financial-corporation-filed-sec-form-8-k-creation-of-a-6806192)
+- Analistas que dicen comprar: 90 % de 10.
 
 # Materias primas
 
-## XAU · Oro — ▲ +1.5 % · volumen 0.2x lo normal
-Cierre 3616.6 (2026-11-25) · 5 días -3.3 % · lo normal en un día: ±2.11 %.
+## XAU · Oro — ▲ +2.4 % · volumen 0.2x lo normal
+Cierre 3619.9 (2026-11-26) · 5 días -1.8 % · lo normal en un día: ±2.11 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 

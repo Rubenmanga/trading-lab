@@ -213,11 +213,13 @@ fecha,ticker,cierre,cambio_pct,volumen_rel,grande,porque
 2026-11-25,AMPX,5.69,-0.52,1.1,0,Movimiento normal para esta acción.
 2026-11-25,AMSC,21.23,5.41,1.1,0,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
 2026-11-25,ASC,18.03,1.92,0.8,0,Movimiento normal para esta acción.
+2026-11-25,CCSI,41.2,0.86,0.9,0,Movimiento normal para esta acción.
 2026-11-25,CRCT,8.8,0.57,0.5,0,Movimiento normal para esta acción.
 2026-11-25,DCTH,19.2,-3.13,0.5,0,Movimiento normal para esta acción.
 2026-11-25,DFIN,65.69,-0.76,0.6,0,Movimiento normal para esta acción.
 2026-11-25,EURUSD,1.09,0.38,,0,Movimiento normal.
 2026-11-25,FTH,9.58,-1.34,0.7,0,Movimiento normal para esta acción.
+2026-11-25,IBEX,57.78,4.05,0.7,0,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
 2026-11-25,JAKK,32.7,-5.82,0.9,0,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
 2026-11-25,LPG,45.76,0.0,0.8,0,Movimiento normal para esta acción.
 2026-11-25,MSFT,489.93,-1.25,0.8,0,Movimiento normal para esta acción.
@@ -232,3 +234,4 @@ fecha,ticker,cierre,cambio_pct,volumen_rel,grande,porque
 2026-11-25,TE,1.1,0.92,1.0,0,Movimiento normal para esta acción.
 2026-11-25,XAU,3543.8,-0.51,0.1,0,Movimiento normal.
 2026-11-26,EURUSD,1.1,0.02,,0,Movimiento normal.
+2026-11-26,XAU,3619.9,2.38,0.2,0,Movimiento normal.
