@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-26T05:25:45+00:00",
+ "actualizado": "2026-11-26T23:26:00+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -144,7 +144,9 @@
     "grande": false,
     "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
     "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "cambios": [],
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-03-03 (tras el cierre)",
      "Ensayo F2 «RESTORE TRIAL: Study of the Efficacy and Safety of Pemvidutide in the Treatment »: resultado principal previsto 2027-09-30"
@@ -177,6 +179,15 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-26",
+      "titulo": "Altitude Group plc Announces Director Share Purchase",
+      "fuente": "fiscal.ai",
+      "url": "https://www.investegate.co.uk/announcement/rns/altitude-group--alt/director-pdmr-shareholding/9894494",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-24",
       "titulo": "Inventiva: Navigating Through A News Vacuum",
       "fuente": "SeekingAlpha",
@@ -199,6 +210,7 @@
      "altimmune reports third quarter 2026 financial results",
      "altimmune still too late and too capitalintensive",
      "altimmune to participate in the 9th annual evercore healthcare confere",
+     "altitude group plc announces director share purchase",
      "b riley adjusts altimmune price target to 11 from 13",
      "b riley securities reiterates buy on altimmune lowers price target to",
      "evercore isi group maintains outperform on altimmune lowers price targ",
@@ -544,14 +556,35 @@
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Movimiento normal para esta acción.",
     "cambios": [
-     "43 titulares nuevos"
+     "44 titulares nuevos"
     ],
     "catalizadores": [
      "Resultados el 2027-01-26"
     ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
+    "avisos": [
+     {
+      "tipo": "NOTICIA IMPORTANTE",
+      "texto": "compra o fusión: «What Does Pinterest (PINS) Pay Overhaul Mean For Its Takeover Talk And Ad Push?»"
+     },
+     {
+      "tipo": "NOTICIA IMPORTANTE",
+      "texto": "compra o fusión, contrato o pedido: «Pinterest Soars 11% in a Week as a Pay Change Sparks Takeover Talk. Is a Deal Really Coming?»"
+     }
+    ],
+    "avisos_nuevos": [
+     {
+      "tipo": "NOTICIA IMPORTANTE",
+      "texto": "compra o fusión: «What Does Pinterest (PINS) Pay Overhaul Mean For Its Takeover Talk And Ad Push?»"
+     },
+     {
+      "tipo": "NOTICIA IMPORTANTE",
+      "texto": "compra o fusión, contrato o pedido: «Pinterest Soars 11% in a Week as a Pay Change Sparks Takeover Talk. Is a Deal Really Coming?»"
+     }
+    ],
+    "avisados": [
+     "NOTICIA IMPORTANTE|compra o fusión, contrato o pedido: «Pinterest Soa",
+     "NOTICIA IMPORTANTE|compra o fusión: «What Does Pinterest (PINS) Pay O"
+    ],
     "problemas": [],
     "nombre_fuente": "Microsoft Corporation",
     "recs_pct_compra": 95.4,
@@ -572,6 +605,17 @@
     "titulares": [
      {
       "fecha": "2026-11-26",
+      "titulo": "Microsoft AI CEO Mustafa Suleyman Issues Warning on AI Safety Thresholds",
+      "fuente": "fiscal.ai",
+      "url": "https://af.net/fr/realtime/microsoft-ai-ceo-warns-labs-are-crossing-threshold-as-internal-models-break-containment/",
+      "causas": [
+       "directivos"
+      ],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-26",
       "titulo": "BNY and Microsoft Complete AI Agent Pilot for Treasury Trading",
       "fuente": "fiscal.ai",
       "url": "https://www.pymnts.com/news/artificial-intelligence/2026/bny-and-microsoft-let-ai-agents-haggle-over-treasurys/",
@@ -581,139 +625,131 @@
      },
      {
       "fecha": "2026-11-26",
-      "titulo": "Nvidia’s Market Cap Falls Below Microsoft’s: Analyst Flags Five Overhangs For NVDA Stock",
+      "titulo": "Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=93e694d0d5d96ee714e44261e18d84fe92e620d072c98af04c437fc031464488",
+      "url": "https://finnhub.io/api/news?id=b0ac8bb3dace73cd41b4bef182a77951706cdc8225f5b141c4ff618953132724",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
       "fecha": "2026-11-26",
-      "titulo": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
+      "titulo": "Microsoft Stocks Slip 1.25% While Nadella Backs Cheaper In-House AI Models",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=8b493a0aabf1e7a97892b2891e9cfeccb44d087bf39cb88af27632f46e461646",
+      "url": "https://finnhub.io/api/news?id=e6d3ea468072bf6cb0abed0b2a209365fc14e7487155446eaea0b7b925954986",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-25",
-      "titulo": "The AA Deploys Microsoft Dynamics 365 and Azure for Digital Workflow",
-      "fuente": "fiscal.ai",
-      "url": "https://aimagazine.com/news/why-the-aa-relies-on-microsoft-ai-for-vehicle-diagnostics",
+      "fecha": "2026-11-26",
+      "titulo": "Can NICE (TASE:NICE) Support A Reasonable Price On Earnings?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=bea93769344c86651ea888dcc7a46be0154a94234c2c999214bc65cf2c831dc4",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-25",
-      "titulo": "Maverick Medical AI Integrates CodeAgent with Microsoft Dragon Copilot",
-      "fuente": "fiscal.ai",
-      "url": "https://www.globenewswire.com/news-release/2026/11/24/3409926/0/en/maverick-medical-ai-surfaces-codeagent-within-microsoft-radiology-reporting-solutions-to-reduce-physician-rework.html",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-25",
-      "titulo": "Microsoft Declares 'Code Red' Following Historic Outage",
-      "fuente": "fiscal.ai",
-      "url": "https://www.pymnts.com/technology/2026/microsoft-sets-goal-of-one-hour-fixes-after-email-outage/",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-25",
-      "titulo": "Microsoft's Green Card Filings Reveal A Striking Pattern After Mass Layoffs. Trump's New Rule Could Freeze Sponsorships For Two Years.",
+      "fecha": "2026-11-26",
+      "titulo": "David Tepper, Cathie Wood and 4 Other Famous Investors Own Nvidia. Here’s Who Bought Recently",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=50a30bb11dcb9838d602bc541d5cb1ba3446c6f63216bea4dc6ea7009ee03417",
+      "url": "https://finnhub.io/api/news?id=132a2f3c7c34144031468fe47bb822d6b06f5aa111adf9bb86db6d7ba2ba6ac2",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-25",
-      "titulo": "Are You Overpaying For Palantir Stock Versus Its Rivals?",
+      "fecha": "2026-11-26",
+      "titulo": "Stanley Druckenmiller, Bill Ackman and 7 Other Famous Investors Own Amazon. Here’s Who Bought and Sold Recently",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=6550472f446ac189e5403c670aeaa84f965d5a38c9a302b7b5e000b83bac1cd1",
+      "url": "https://finnhub.io/api/news?id=4cd8554f5708fcd6cfae1095fee78b8b9880f5e8cff5534fd45fb1f5e84f8876",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-25",
-      "titulo": "Trump Has A Message for Big Tech Firms Like Amazon, Google and Microsoft Building Data Centers Abroad: ‘We’re Going to Put A Tremendous Tax On Them’",
+      "fecha": "2026-11-26",
+      "titulo": "What Does Pinterest (PINS) Pay Overhaul Mean For Its Takeover Talk And Ad Push?",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=195e3e45f2885f755c5d6f09edc3485c0c9e2872ce5260249ee876020113cfa8",
+      "url": "https://finnhub.io/api/news?id=771894a9f2bc67a39e90a99b925357a791596b3a5d874966ae0c5500a672b5c4",
+      "causas": [
+       "compra o fusión"
+      ],
+      "nueva": true,
+      "importante": true
+     },
+     {
+      "fecha": "2026-11-26",
+      "titulo": "Amazon Has 59 Buy Ratings and Not a Single Sell. Here’s Where its Headed",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=0a915e9b948b5d00b3225260447fa53343bd561cba2da9ae09e8d91c19487b73",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-25",
-      "titulo": "Salesforce Stock (CRM) Looks Mispriced After the AI Sell-Off",
+      "fecha": "2026-11-26",
+      "titulo": "Oracle Stock Dipped Under $100 as Banks Try to Unload Its Data-Center Loans",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=75fe9d32bd178063830591b411d8a506363927a1e9a9b604f594e6ec4efc16d7",
+      "url": "https://finnhub.io/api/news?id=b38f3680b51d6a13bde96978f63cd152239796efeef44f764ac4e5845c0a308c",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-25",
-      "titulo": "Bill Ackman, George Soros and 5 Other Famous Investors Own Microsoft. Here’s Who Bought and Sold Recently",
+      "fecha": "2026-11-26",
+      "titulo": "Cerebras Expands AI Inference Reach: Can It Challenge NVDA & AMD?",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=3841556a94f349b3a9090edb8a3ca3b40c7f633aa69b8176232bc8e39fb7605b",
+      "url": "https://finnhub.io/api/news?id=03f38cb1cb453ba672ce13a0e3df51366c1b059d752ca9fabb5702e4d1a10cb8",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-25",
-      "titulo": "Megadeals Defy Selloff, Head Toward Record",
+      "fecha": "2026-11-26",
+      "titulo": "Which Funds With Software Exposure Fit Rising US AI Spending?",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=da9a797fee7954547a521aa2ec2dbf3cabc3e245fb9896443c335eb902596f02",
+      "url": "https://finnhub.io/api/news?id=7b2711f4da58d13b22711f758a4d84ee552fe1d7c5718bf5e2cd96fbdc73a781",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-25",
-      "titulo": "What Did Holding Okta Stock Really Take?",
+      "fecha": "2026-11-26",
+      "titulo": "The Economy Grew Way Faster Than First Reported: Q3 GDP Revised Up to 4.3%",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=ee2db63b277e20b17677917c3080008257b444117459104378c8318273a30706",
+      "url": "https://finnhub.io/api/news?id=c4079b41499c39a3562eff34451594219699874c9557af1a537f97c58861c560",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-25",
-      "titulo": "IREN stock price is down 80% over six months. Here’s why",
+      "fecha": "2026-11-26",
+      "titulo": "Europe Cloud Computing Market Surges to $ 550.42 billion at a CAGR 11.0% by 2030 | Report by MarketsandMarkets™",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=82551928e8ac7e4b0e31de87acd94f4da1e7f9286753006b8bc18fc7caca4044",
+      "url": "https://finnhub.io/api/news?id=d5e07e11acfcdb2c27ac84447b91271f5009e66f8ce6d71de8e56b2a165b1b62",
       "causas": [],
       "nueva": true,
       "importante": false
      },
      {
-      "fecha": "2026-11-25",
-      "titulo": "Lee Ainslie’s Maverick Capital Held $844 Million in Nvidia, Its Largest Position at 6.8% of Its Stocks",
+      "fecha": "2026-11-26",
+      "titulo": "Data Engineering Workflow Orchestration Market Global Report 2026 | Capture $14.43B AI and Multi-Cloud Demand with Databricks, Microsoft, Snowflake and Astronomer",
       "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=c8fad0c6fd45a3053e576abc71cb4070dfd29cee2c914c1be46d2b73338cbc60",
+      "url": "https://finnhub.io/api/news?id=0e2b296df4476fe52a7974b0eb4a01264f508e10cc344e5d3e92676af55351aa",
       "causas": [],
       "nueva": true,
       "importante": false
      }
     ],
     "vistos": [
-     "dropbox dbx stock is up 58 today without company news",
-     "dupont nobleai and microsoft partner on aidriven rd platform",
      "elastic makes highaccuracy costefficient jina ai models available on m",
      "elizabeth warren takes aim at big tech billionaires over china ai acce",
+     "elon musk warns ais 2027 cash shortage will be nuts as industry could",
      "ema launches ai employees for hr it and finance on microsoft marketpla",
+     "europe cloud computing market surges to  55042 billion at a cagr 110 b",
      "even bad hackers have become ok pan ceo nikesh arora on ai tools",
-     "every dollar of your retirement income comes from one fund at 73 these",
      "faa chief warns system will continue to break att verizon and lumen co",
      "faa microsoft outages show the perils of system upgrades",
      "faa resumes flights after nationwide ground stop says no link to micro",
@@ -723,7 +759,6 @@
      "gbk collective expands strategic advisory bench with appointments of a",
      "global bias monitors for targeting market report 2026  capitalize on 2",
      "global data protection and replication solutions market report 2026  c",
-     "global risk analysis management market report 2026 size share trends a",
      "global throughchannel marketing software market 2026  capitalize on ai",
      "google can spend 48 billion more on ai from its own cash is that enoug",
      "gta vi broke every record in 24 hours so why did taketwo shareholders",
@@ -734,11 +769,12 @@
      "heres what drove microsoft corporations msft q3 outperformance",
      "how anthropic investments warp big tech bottom lines",
      "how high can ant stock go wall street debut sparks valuation debate  o",
-     "how jensen huang and sam altman unfired themselves",
+     "how investors may respond to arrow electronics arw ai sales portal lau",
      "how low can intuit stock go",
      "how microsofts msft valuation crashed from 75x to 10x  even as earning",
      "how nvda stock rises to 235",
      "how to make the most of microsofts triedandtrue workflows",
+     "how will oracles heavy ai spending shape the stocks cash flow trend",
      "ibm ibm stock may be 27 below fair value on quantum platform news",
      "ibm is down 21 this year what will it take to get ibm stock back to 25",
      "insight enterprises inc nsit q3 2026 earnings call highlights aidriven",
@@ -748,10 +784,11 @@
      "international business machines ibm opens lightwell access on microsof",
      "intuit 3 key takeaways for longterm investors",
      "intuit stock tumbles after earnings beat its selling mailchimp",
+     "invesco nasdaq 100 etf qqqm buys 737 million more apple on nov 24",
+     "invesco qqq trust qqq buys 1874 million more apple on tuesday",
      "investors might be making a big mistake by overlooking this growth sto",
      "investors might be underestimating seagates longterm ai growth opportu",
      "iren is down 63 in a year is it time to sell or load up",
-     "iren stock price is down 80 over six months heres why",
      "is ai to blame for basic it gaps in big tech airlines and more",
      "is amazons profit riskier than it looks",
      "is an equalweight sp 500 fund safer right now than the one you own",
@@ -761,10 +798,11 @@
      "is microsoft the best big tech stock to buy now",
      "is your ai stock healthy five questions that tell you",
      "is your voo fund secretly an ai bet",
+     "ishares msci acwi acwi adds apple and nvidia on tuesday",
      "it now costs more to insure chip debt than big techs bond markets say",
      "its not over for jensen huang",
-     "japans biggest banks pick solana as fidelity adds defi tokens",
      "jensen huang is back at nvidia but wall street is already getting nerv",
+     "jensen huangs return doesnt make nvidia stock nvda a buy",
      "jensen huangs return to nvidia long or short accountability",
      "jim cramer anthropics next 100 billion in revenue might be cybersecuri",
      "jpmorgan chase reveals data breach involving thirdparty vendors",
@@ -773,21 +811,21 @@
      "kno2 collaborates with microsoft to connect healthcare data to azure",
      "leading chros and business executives to convene at i4cps 2027 next pr",
      "learn why the bull case for ibm stock could change following quantum c",
-     "lee ainslies maverick capital held 844 million in nvidia its largest p",
      "market chatter nvidia amazon microsoft openai and anthropic to be name",
      "maverick medical ai integrates codeagent with microsoft dragon copilot",
      "maverick medical ai surfaces codeagent within microsoft radiology repo",
-     "megadeals defy selloff head toward record",
      "mercedes f1s drivers still get the final say even as it utilizes ai ag",
      "meta and microsoft arent cutting server cpu orders  why amd and intel",
      "meta stock down 21 too much ai spending",
      "meta trades at 21x pe yet shareholders face a massive new bill",
      "metas server chip shakeup could hand nvidia a win",
      "mets owner steve cohens fund dumped nearly all of its amd and bet 1 bi",
+     "michael burry makes surprising pivot on stock market",
      "michael burry warned ai chips would lose value fast new data suggests",
      "microsoft 365 experiences service outage",
      "microsoft 365 outage what it means for the stock and market positionin",
      "microsoft addresses recent 365 service disruption",
+     "microsoft ai ceo mustafa suleyman issues warning on ai safety threshol",
      "microsoft ai chief says compute isnt a bottleneck  for now",
      "microsoft aims to challenge openai anthropic with cheaper specialized",
      "microsoft and audi launch mobile work agent for invehicle productivity",
@@ -811,13 +849,14 @@
      "microsoft ignite starts nov 17 will microsoft update its paid copilot",
      "microsoft initiates code red after most disruptive outage in companys",
      "microsoft integrates idemia mobile drivers license verification into e",
+     "microsoft invite copilot to thanksgiving dinner",
      "microsoft is the only tech giant not highly reliant on advertising as",
      "microsoft just relived the crowdstrike nightmare but theres one crucia",
      "microsoft launches ai transparency initiative",
      "microsoft msft and its rivals are making a huge ai bet  heres what inv",
-     "microsoft msft deepens europe sovereign ai push with expanded public s",
      "microsoft msft is one of nvidias biggest customers and a growing rival",
      "microsoft msft is one of the safest ways to own ai",
+     "microsoft msft sees 917 million in net etf buying on nov 24",
      "microsoft msft strikes ai deal that broadens its chip supplier base",
      "microsoft outage hit more than outlook even its cybersecurity defenses",
      "microsoft outage triggers canadawide class action lawsuit",
@@ -833,19 +872,18 @@
      "microsoft stock msft forecast  mizuho stays bullish on strong revenue",
      "microsoft stocks fall 197 as anthropic debut spotlights 472 billion az",
      "microsoft stocks fall 227 on day ignite unveils maia 300 and copilot w",
-     "microsoft stocks fall 253 as hyperscalers join ai selloff",
      "microsoft stocks move lower as 1 billion anthropic bet precedes ignite",
      "microsoft stocks move lower before ignite as anthropic discloses 472 b",
      "microsoft stocks rise 316 as anthropic commits 472 billion minimum to",
      "microsoft stocks rise 39 with a perfect gf score as openai contingency",
+     "microsoft stocks slip 125 while nadella backs cheaper inhouse ai model",
+     "microsoft time to sell before depreciation eats profits rating downgra",
      "microsoft to retire microsoft to do app in 2027",
      "microsoft uae and space42 release report on geospatial agentic ai",
      "microsoft verifies intouch123 inc in partner center",
      "microsoft well positioned to weather ai slowdown says jefferies after",
-     "microsoftbacked openai faces another chatgpt setback",
      "microsofts ai pitch at ignite cheaper models as business token spend i",
      "microsofts copilot strategy offers path to enterprise ai growth says b",
-     "microsofts green card filings reveal a striking pattern after mass lay",
      "microsofts next ai revenue test goes beyond copilot",
      "microsofts next leg is charging 500 million office users more says rbc",
      "microsofts satya nadella praises jensen huang says return as ceo is up",
@@ -853,7 +891,6 @@
      "morgan stanley doubles down on microsoft stock with bold outlook",
      "morgan stanley midterms push 20 of the 2028 pipeline to 2029 microsoft",
      "morgan stanley says these 4 companies will spend 16 trillion on ai inf",
-     "nasdaq 100 on pace to enter bear market as ai trade melts down alphach",
      "national security outage is just one reason for todays software stock",
      "nebius drops 7 as michael burry takes a victory lap on neocloud rout i",
      "nebius i was wrong growth financing in danger rating downgrade",
@@ -861,6 +898,7 @@
      "nebius stock falls nearly 17 weak outlook nvidia turmoil and nscales w",
      "nebius stocks nbis q3 selloff looks like an opportunity",
      "nebius stocks sink 8 as nvidias financing retreat hits neocloud builde",
+     "netflix vs apple which streaming stock has an edge right now",
      "network infrastructure and software market report 2026 global size tre",
      "nikes sales are forecast to fall 8 will it cut ai spending in 2027",
      "niobiumx mining inc otcqb nioxf niobium is behind us missiles and next",
@@ -880,6 +918,7 @@
      "nvidia is now second to apple in the worlds most valued companies on j",
      "nvidia shatters microsofts historic stock market record",
      "nvidia the most important earnings chart this week",
+     "nvidia upgrade to hold too early to buy",
      "nvidia why jensen huangs departure can be good for ai",
      "nvidia with a positive q3 despite sec probing nvidia amid huang scanda",
      "nvidiabacked nscale reportedly eyes private route as ai market selloff",
@@ -887,7 +926,6 @@
      "nvidias allimportant q3 report china tech results anthropic ipo and mi",
      "nvidias competitors pounce and what gpu rental prices say about the ai",
      "nvidias forecast needs 14 trillion of ai spending in 2027 who pays",
-     "nvidias market cap falls below microsofts analyst flags five overhangs",
      "nvidias q3 earnings show its advantage as the bank of the ai boom",
      "nvidias shakeup clouds coppers ai boom",
      "okta vs sentinelone which technology stock is a better buy for 2027",
@@ -896,30 +934,29 @@
      "openai introduces chatgpt wallet built in partnership with american ex",
      "opvizor launches aipowered database monitoring and diagnostics to opti",
      "oracle is a higherleverage cashhungry twin to microsoft",
+     "oracle stock dipped under 100 as banks try to unload its datacenter lo",
      "oracles 40 6 month slide continues this analyst maintains his buy rati",
      "palantir rips 10 to lead software stocks cloudflare and servicenow als",
      "palo alto ceo says last weeks outages had an unlikely culprit",
      "palo alto soars 7 okta up 11 as dhs chief warns of a severe cyber thre",
      "pinterest announces partnership with microsoft ads",
      "pinterest soars 11 as executive pay overhaul sparks takeover speculati",
-     "prediction irens microsoft deal could be just the beginning of its nex",
-     "prediction meta could be one of the biggest ai winners over the next 5",
+     "pinterest soars 11 in a week as a pay change sparks takeover talk is a",
      "prediction spacex will be the largest company in the world by 2040",
      "prediction this ai hardware stock could surprise investors over the ne",
      "pretty bizarre microsoft is worth more than alphabet which makes no se",
      "prgs or msft which is the better value stock right now",
      "profound launches integrations for microsoft teams and microsoft 365",
+     "proshares ultra qqq qld sells apple and nvidia on tuesday",
      "qualcomm lays off 100s amid global restructuring raises 4 billion",
      "ray dalios bridgewater puts 1in3 odds on an ai cyberattack destabilizi",
      "retailers sanguine for black friday",
      "rigetti computing vs soundhound ai which technology stock is a better",
      "risks loom over nvidias fastgrowing data center segment",
      "roi training named to training industrys 2026 top it  technical traini",
-     "salesforce stock crm looks mispriced after the ai selloff",
      "salesforce vs servicenow which technology stock is a better buy for 20",
      "satya nadella once told bill gates founders also die says jensen huang",
      "satya nadella predicts ai agents will reshuffle the economics of the w",
-     "satya nadella says the floor of cyber attacks has fallen microsoft jus",
      "scd dividendgrowth stocks help this fund provide investors with real i",
      "sector update tech stocks fall late afternoon",
      "sector update tech stocks retreat late afternoon",
@@ -927,20 +964,21 @@
      "servicenow vs uipath which technology stock is a better buy for 2027",
      "should anthropic thank ilya sutskever",
      "should you buy coreweave stock now or wait",
+     "situational awareness lost 65 in q3 investor leopold aschenbrenner war",
      "software stocks retreat amid inflation worries new openai model",
-     "softwaredefined networking and network function virtualization market",
      "soross fund sold a quarter of its berkshire shares today berkshire rev",
      "spacex hollows out its ai video division elon musk now has different p",
      "spcx stock in focus spacex to reportedly launch 4b bond sale this week",
+     "spdr sp 500 etf spy sells 4001 million of apple on nov 24",
      "splashtop joins microsoft virus initiative",
      "spotify restores service after outage hits thousands",
      "stackgen launches shipyard on microsoft marketplace",
+     "stanley druckenmiller bill ackman and 7 other famous investors own ama",
+     "state street tech select spdr xlk adds apple and nvidia on nov 24",
      "steve eisman says stock picking is back now that ai is no longer one t",
-     "stirlingshire investments appoints daniel gicklhorn as chief technolog",
      "stocks opened up then fell 3 by the close what happened the last 45 ti",
      "strategically building a 75000 dividend portfolio with novembers top h",
      "taketwo smashes sales records with grand theft auto 6",
-     "tariffs are back as anthropic sinks further below its ipo price",
      "tech outages spur emergency buying costcoheavy etfs in focus",
      "tech sees huge selloff as anthropic ipo fails to lift the market",
      "tech takes a beating as ai trade comes unstuck despite anthropic surge",
@@ -948,7 +986,7 @@
      "the 10year topped 5 for the first time since 2007 what happened next",
      "the aa deploys microsoft dynamics 365 and azure for digital workflow",
      "the ai boom math in five lines",
-     "the cia fbi and us treasury were all hit by cyberattacks what to know",
+     "the economy grew way faster than first reported q3 gdp revised up to 4",
      "the fed just said ai may be a major threat to the us economy",
      "the gates foundation trust sold 22 million berkshire shares and opened",
      "the inflation math updated the fed is fighting oil",
@@ -963,7 +1001,6 @@
      "tracking al gores generation investment management portfolio  q3 2026",
      "trump administration to name nvidia among ai national champions  wsj e",
      "trump and xi to discuss trade at apec summit what isnt said may matter",
-     "trump has a message for big tech firms like amazon google and microsof",
      "trump to name nvidia amazon and microsoft ai national champions as bes",
      "trump vows tax on us firms building data centers abroad",
      "us plans to name nvidia among ai national champions wsj reports",
@@ -977,7 +1014,8 @@
      "we are not immune nebius is still up 38 in 2026 take profits or buy mo",
      "wedbush microsoft may give intel a crucial ai chip win",
      "what could stall microsoft stocks run",
-     "what did holding okta stock really take",
+     "what direxion daily sp 500 bull 3x etf spxl bought apple leads on tues",
+     "what does pinterest pins pay overhaul mean for its takeover talk and a",
      "what explains the fall in meta stock",
      "what is driving palantir stock",
      "what is the case for waiting on roblox stock",
@@ -987,7 +1025,7 @@
      "what will decide snowflake stock over the next six months",
      "what would a short seller say about ibm stock",
      "whats dragging down the sp 500 apple in focus",
-     "where ai money flows in 2027 after anthropics ipo",
+     "which funds with software exposure fit rising us ai spending",
      "who is holding jensen huang accountable it sure looks like nobody",
      "who really pays for nvidias 12 trillion",
      "why alphabets cheap pe may mislead investors",
@@ -1004,7 +1042,6 @@
      "why the microsoft outage came at the worst possible time for the stock",
      "will anthropic stay on top half of tech leaders didnt",
      "will apollos 40 billion for spacex to rent gpus pay off",
-     "will funding gap change iren stock narrative",
      "with nvidia floundering ai bulls need more than spending watch revenue",
      "zenity expands ai agent security coverage across the microsoft ecosyst"
     ],
@@ -1719,7 +1756,7 @@
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Movimiento normal para esta acción.",
     "cambios": [
-     "2 titulares nuevos"
+     "3 titulares nuevos"
     ],
     "catalizadores": [
      "Resultados el 2027-02-03 (tras el cierre)"
@@ -1745,6 +1782,15 @@
      "volumen_rel": 1.3
     },
     "titulares": [
+     {
+      "fecha": "2026-11-26",
+      "titulo": "Pagaya Technologies Announces Participation in Upcoming Investor Conferences",
+      "fuente": "fiscal.ai",
+      "url": "https://www.barchart.com/press-releases/9002826/pagaya-to-participate-in-upcoming-investor-conferences-and-events",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-25",
       "titulo": "Pagaya to Participate in Upcoming Investor Conferences",
@@ -1787,6 +1833,7 @@
      "banking on ai can upstarts new bank plan turn its stock around",
      "on june 30 clearone declared a onetime special stock dividend to provi",
      "pagaya pgy stock could be below fair value despite an 88 slump",
+     "pagaya technologies announces participation in upcoming investor confe",
      "pagaya technologies targets major auto and bank partners as new deals",
      "pagaya to participate in upcoming investor conferences",
      "pagaya to participate in upcoming investor conferences and events",
@@ -2330,8 +2377,10 @@
     "volumen_rel": 1.0,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [],
     "avisos": [],
     "avisos_nuevos": [],
@@ -2354,6 +2403,15 @@
      "volumen_rel": 0.7
     },
     "titulares": [
+     {
+      "fecha": "2026-11-26",
+      "titulo": "Technip Energies Joins MSGBC Oil, Gas & Power 2026 as Silver Sponsor",
+      "fuente": "fiscal.ai",
+      "url": "https://africa.com/apo/technip-energies-expands-role-in-west-africas-energy-push-at-msgbc-2026-as-silver-sponsor",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-23",
       "titulo": "The Other Elon Musk ETF Responds as Tesla Tops $100",
@@ -2393,6 +2451,7 @@
      "t1 energy te shares just dropped so what is driving attention now",
      "t1 energy te stock faces cash pressure after q3 earnings",
      "t1 energy te stock looks cheap after its 85 fall",
+     "technip energies joins msgbc oil gas  power 2026 as silver sponsor",
      "the other elon musk etf responds as tesla tops 100",
      "trading halt halt status updated at 85500 am et quotation resumption n",
      "what freyr battery frey said on its q3 earnings call"
@@ -2575,8 +2634,10 @@
     "volumen_rel": 0.8,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "2 titulares nuevos"
+    ],
     "catalizadores": [],
     "avisos": [],
     "avisos_nuevos": [],
@@ -2600,6 +2661,26 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-26",
+      "titulo": "Goldman Sachs Group Inc. Increases Holding in ASOS",
+      "fuente": "fiscal.ai",
+      "url": "https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9894201",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-26",
+      "titulo": "ASOS Appoints Nigel Pocklington as Independent Non-Executive Director",
+      "fuente": "fiscal.ai",
+      "url": "https://www.investegate.co.uk/announcement/rns/asos--asc/appoint-of-independent-non-executive-director-/9893756",
+      "causas": [
+       "directivos"
+      ],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-24",
       "titulo": "Why Cheaper Crude Won’t Mean Cheap Gas in 2027",
       "fuente": "Yahoo",
@@ -2616,24 +2697,17 @@
       "causas": [],
       "nueva": false,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-21",
-      "titulo": "Goldman Sachs Group Inc. Discloses Reduction in ASOS PLC Holding",
-      "fuente": "fiscal.ai",
-      "url": "https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9887228",
-      "causas": [],
-      "nueva": false,
-      "importante": false
      }
     ],
     "vistos": [
      "all options international bv decreases voting position in asos",
+     "asos appoints nigel pocklington as independent nonexecutive director",
      "asos publishes annual report and accounts 2026",
      "frasers group plc files notification of major holdings in asos plc",
      "frasers group reduces stake in asos plc",
      "frasers group reduces voting stake in asos plc",
      "goldman sachs group inc discloses reduction in asos plc holding",
+     "goldman sachs group inc increases holding in asos",
      "independent director kirsi kyllikki tikka divests shares in ardmore sh",
      "the goldman sachs group inc discloses major holding in asos plc",
      "why cheaper crude wont mean cheap gas in 2027"
@@ -2793,15 +2867,6 @@
       "url": "https://finnhub.io/api/news?id=a41d2dbc1d9c372f337a0a21c141b348791dfcb1f888cb7432e4d15fa215dd2f",
       "causas": [],
       "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-21",
-      "titulo": "Dorian LPG Chairman John Hadjipateras Purchases Shares",
-      "fuente": "fiscal.ai",
-      "url": "https://www.moomoo.com/hans/news/post/1005318112/john-hadjipateras-buys-handful-of-shares-in-doriang",
-      "causas": [],
-      "nueva": false,
       "importante": false
      }
     ],
@@ -3014,80 +3079,6 @@
      "resultados_recientes": null
     }
    },
-   "JAKK": {
-    "nombre": "JAKKS Pacific, Inc.",
-    "sector": "Consumer Cyclical",
-    "grupo": "ideas",
-    "fecha": "2026-11-25",
-    "fecha_anterior": "2026-11-24",
-    "cierre": 32.7,
-    "cambio_pct": -5.82,
-    "cambio_5d_pct": -8.8,
-    "sigma_pct": 2.79,
-    "veces_normal": 2.1,
-    "volumen_rel": 0.9,
-    "grande": false,
-    "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "cambios": [
-     "1 titular nuevo"
-    ],
-    "catalizadores": [
-     "Resultados el 2027-02-17"
-    ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "JAKKS Pacific Inc",
-    "recs_pct_compra": 87.5,
-    "recs_n": 8,
-    "proximos_resultados": "2027-02-17",
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "XLY",
-     "fecha": "2026-11-25",
-     "fecha_anterior": "2026-11-24",
-     "cierre": 117.49,
-     "cambio_pct": -0.2,
-     "cambio_5d_pct": -1.4,
-     "sigma_pct": 2.1,
-     "veces_normal": 0.1,
-     "volumen_rel": 0.9
-    },
-    "titulares": [
-     {
-      "fecha": "2026-11-25",
-      "titulo": "Jakks Pacific (JAKK) Stock Is Down 5.6% Today Without Company News",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=6a5a15035b60e289dc1d039e50c7a3104b0ee25e2f888801735c12a215850a9e",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     }
-    ],
-    "vistos": [
-     "jakks pacific jakk stock is down 56 today without company news",
-     "skydance skyd just closed its 111 billion merger"
-    ],
-    "sec_vistos": [
-     "2026-07-14Fondo grande >5 % (13G)",
-     "2026-07-28Fondo grande >5 % (13G)"
-    ],
-    "anterior": {
-     "fecha": "2026-11-24",
-     "vistos": [
-      "skydance skyd just closed its 111 billion merger"
-     ],
-     "sec_vistos": [
-      "2026-07-14Fondo grande >5 % (13G)",
-      "2026-07-28Fondo grande >5 % (13G)"
-     ],
-     "recs_pct_compra": 87.5,
-     "proximos_resultados": "2027-02-17",
-     "resultados_recientes": null
-    }
-   },
    "CCSI": {
     "nombre": "Consensus Cloud Solutions, Inc.",
     "sector": "Technology",
@@ -3136,6 +3127,57 @@
      "proximos_resultados": null,
      "resultados_recientes": null
     }
+   },
+   "CSTL": {
+    "nombre": "Castle Biosciences, Inc.",
+    "sector": "salud",
+    "grupo": "ideas",
+    "fecha": "2026-11-25",
+    "fecha_anterior": "2026-11-24",
+    "cierre": 32.53,
+    "cambio_pct": -6.12,
+    "cambio_5d_pct": -2.5,
+    "sigma_pct": 3.39,
+    "veces_normal": 1.8,
+    "volumen_rel": 0.7,
+    "grande": false,
+    "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
+    "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
+    "cambios": [],
+    "catalizadores": [
+     "Resultados el 2027-02-22 (tras el cierre)"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "Castle Biosciences, Inc.",
+    "recs_pct_compra": 93.8,
+    "recs_n": 16,
+    "proximos_resultados": "2027-02-22",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XBI",
+     "fecha": "2026-11-25",
+     "fecha_anterior": "2026-11-24",
+     "cierre": 156.6,
+     "cambio_pct": -0.14,
+     "cambio_5d_pct": 8.0,
+     "sigma_pct": 3.01,
+     "veces_normal": 0.0,
+     "volumen_rel": 1.3
+    },
+    "titulares": [],
+    "vistos": [],
+    "sec_vistos": [],
+    "anterior": {
+     "fecha": null,
+     "vistos": null,
+     "sec_vistos": null,
+     "recs_pct_compra": null,
+     "proximos_resultados": null,
+     "resultados_recientes": null
+    }
    }
   },
   "materias_primas": {
@@ -3144,12 +3186,12 @@
     "sector": "materia prima",
     "fecha": "2026-11-26",
     "fecha_anterior": "2026-11-25",
-    "cierre": 3619.9,
-    "cambio_pct": 2.38,
-    "cambio_5d_pct": -1.8,
+    "cierre": 3592.6,
+    "cambio_pct": 1.61,
+    "cambio_5d_pct": -2.5,
     "sigma_pct": 2.11,
-    "veces_normal": 1.1,
-    "volumen_rel": 0.2,
+    "veces_normal": 0.8,
+    "volumen_rel": 0.4,
     "grande": false,
     "porque": "Movimiento normal.",
     "resumen": "Movimiento normal.",
@@ -3166,10 +3208,10 @@
     "fecha": "2026-11-26",
     "fecha_anterior": "2026-11-25",
     "cierre": 1.1,
-    "cambio_pct": 0.01,
-    "cambio_5d_pct": -0.1,
+    "cambio_pct": 0.1,
+    "cambio_5d_pct": 0.0,
     "sigma_pct": 0.37,
-    "veces_normal": 0.0,
+    "veces_normal": 0.3,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",

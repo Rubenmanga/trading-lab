@@ -3,7 +3,7 @@
 ## Resumen (5 líneas)
 1. Mercado (S&P 500, SPY): -0.3 % hoy.
 2. Movimientos grandes: ninguno.
-3. Noticias importantes nuevas: ninguna.
+3. Noticias importantes nuevas: MSFT.
 4. Resultados en los próximos 14 días: ninguno.
 5. Datos: todas las empresas se leyeron bien.
 
@@ -14,9 +14,10 @@
 ## ALT · Altimmune — ▲ +5.1 % · volumen 1.4x lo normal
 Cierre 1.45 (2026-11-25) · 5 días +4.3 % · lo normal en un día: ±5.39 %.
 - **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-03 (tras el cierre); Ensayo F2 «RESTORE TRIAL: Study of the Efficacy and Safety of Pemvidutide in the Treatment »: resultado principal previsto 2027-09-30.
 - Analistas que dicen comprar: 87 % de 15.
+  - 2026-11-26 · [Altitude Group plc Announces Director Share Purchase](https://www.investegate.co.uk/announcement/rns/altitude-group--alt/director-pdmr-shareholding/9894494)
 
 ## RCAT · Red Cat Holdings — ▲ +2.0 % · volumen 0.9x lo normal
 Cierre 1.76 (2026-11-25) · 5 días -21.8 % · lo normal en un día: ±10.18 %.
@@ -25,16 +26,16 @@ Cierre 1.76 (2026-11-25) · 5 días -21.8 % · lo normal en un día: ±10.18 %.
 - **Próximos catalizadores:** Resultados el 2027-03-17.
 - Analistas que dicen comprar: 86 % de 14.
 
-## MSFT · Microsoft — ▼ -1.2 % · volumen 0.9x lo normal
+## MSFT · Microsoft — ▼ -1.2 % · volumen 0.9x lo normal ⚠️
 Cierre 489.93 (2026-11-25) · 5 días -3.6 % · lo normal en un día: ±2.38 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 43 titulares nuevos.
+- **Qué cambió:** 44 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
+  - 2026-11-26 · [Microsoft AI CEO Mustafa Suleyman Issues Warning on AI Safety Thresholds](https://af.net/fr/realtime/microsoft-ai-ceo-warns-labs-are-crossing-threshold-as-internal-models-break-containment/) [directivos]
   - 2026-11-26 · [BNY and Microsoft Complete AI Agent Pilot for Treasury Trading](https://www.pymnts.com/news/artificial-intelligence/2026/bny-and-microsoft-let-ai-agents-haggle-over-treasurys/)
-  - 2026-11-26 · [Nvidia’s Market Cap Falls Below Microsoft’s: Analyst Flags Five Overhangs For NVDA Stock](https://finnhub.io/api/news?id=93e694d0d5d96ee714e44261e18d84fe92e620d072c98af04c437fc031464488)
-  - 2026-11-26 · [Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?](https://finnhub.io/api/news?id=8b493a0aabf1e7a97892b2891e9cfeccb44d087bf39cb88af27632f46e461646)
-  - 2026-11-25 · [The AA Deploys Microsoft Dynamics 365 and Azure for Digital Workflow](https://aimagazine.com/news/why-the-aa-relies-on-microsoft-ai-for-vehicle-diagnostics)
+  - 2026-11-26 · [Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy](https://finnhub.io/api/news?id=b0ac8bb3dace73cd41b4bef182a77951706cdc8225f5b141c4ff618953132724)
+  - 2026-11-26 · [Microsoft Stocks Slip 1.25% While Nadella Backs Cheaper In-House AI Models](https://finnhub.io/api/news?id=e6d3ea468072bf6cb0abed0b2a209365fc14e7487155446eaea0b7b925954986)
 
 ## RAPP · Rapport Therapeutics — ▲ +0.1 % · volumen 0.4x lo normal
 Cierre 25.32 (2026-11-25) · 5 días +8.2 % · lo normal en un día: ±5.78 %.
@@ -70,9 +71,10 @@ Cierre 39.54 (2026-11-25) · 5 días -3.5 % · lo normal en un día: ±3.7 %.
 ## PGY · Pagaya Technologies — ▲ +2.0 % · volumen 0.9x lo normal
 Cierre 14.31 (2026-11-25) · 5 días -8.1 % · lo normal en un día: ±4.81 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 2 titulares nuevos.
+- **Qué cambió:** 3 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-02-03 (tras el cierre).
 - Analistas que dicen comprar: 94 % de 16.
+  - 2026-11-26 · [Pagaya Technologies Announces Participation in Upcoming Investor Conferences](https://www.barchart.com/press-releases/9002826/pagaya-to-participate-in-upcoming-investor-conferences-and-events)
   - 2026-11-25 · [Pagaya to Participate in Upcoming Investor Conferences](https://www.businesswire.com/newsroom)
   - 2026-11-25 · [Pagaya to Participate in Upcoming Investor Conferences and Events](https://finnhub.io/api/news?id=7b96ab0fb02ce0128be1625e870c63ff52c636d82afbf9ad3b0b3bab52a49d95)
 
@@ -114,8 +116,9 @@ Cierre 1.24 (2026-11-25) · 5 días -5.3 % · lo normal en un día: ±9.42 %.
 ## TE · T1 Energy — ▲ +0.9 % · volumen 1.0x lo normal
 Cierre 1.1 (2026-11-25) · 5 días -20.9 % · lo normal en un día: ±8.84 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 1 titular nuevo.
 - Analistas que dicen comprar: 76 % de 17.
+  - 2026-11-26 · [Technip Energies Joins MSGBC Oil, Gas & Power 2026 as Silver Sponsor](https://africa.com/apo/technip-energies-expands-role-in-west-africas-energy-push-at-msgbc-2026-as-silver-sponsor)
 
 ## SVRA · Savara — ▲ +0.9 % · volumen 1.0x lo normal
 Cierre 4.59 (2026-11-25) · 5 días -2.8 % · lo normal en un día: ±6.19 %.
@@ -129,8 +132,10 @@ Cierre 4.59 (2026-11-25) · 5 días -2.8 % · lo normal en un día: ±6.19 %.
 ## ASC · Ardmore Shipping Corporation — ▲ +1.9 % · volumen 0.8x lo normal
 Cierre 18.03 (2026-11-25) · 5 días +2.6 % · lo normal en un día: ±3.32 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 2 titulares nuevos.
 - Analistas que dicen comprar: 86 % de 7.
+  - 2026-11-26 · [Goldman Sachs Group Inc. Increases Holding in ASOS](https://www.investegate.co.uk/announcement/rns/asos--asc/holding-s-in-company/9894201)
+  - 2026-11-26 · [ASOS Appoints Nigel Pocklington as Independent Non-Executive Director](https://www.investegate.co.uk/announcement/rns/asos--asc/appoint-of-independent-non-executive-director-/9893756) [directivos]
 
 ## AII · American Integrity Insurance Gr — ▼ -2.7 % · volumen 0.7x lo normal
 Cierre 28.98 (2026-11-25) · 5 días -2.0 % · lo normal en un día: ±2.7 %.
@@ -164,29 +169,28 @@ Cierre 57.78 (2026-11-25) · 5 días +3.6 % · lo normal en un día: ±4.1 %.
 - Analistas que dicen comprar: 0 % de 7.
   - 2026-11-23 · [IBEX (NASDAQ:IBEX): A Peter Lynch-Style GARP Opportunity](https://finnhub.io/api/news?id=0b397ecd4df4582f9da981990167b910de7e059376d26e88f505bc6361b781b3)
 
-## JAKK · JAKKS Pacific, Inc. — ▼ -5.8 % · volumen 0.9x lo normal
-Cierre 32.7 (2026-11-25) · 5 días -8.8 % · lo normal en un día: ±2.79 %.
-- **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
-- **Qué cambió:** 1 titular nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-17.
-- Analistas que dicen comprar: 88 % de 8.
-  - 2026-11-25 · [Jakks Pacific (JAKK) Stock Is Down 5.6% Today Without Company News](https://finnhub.io/api/news?id=6a5a15035b60e289dc1d039e50c7a3104b0ee25e2f888801735c12a215850a9e)
-
 ## CCSI · Consensus Cloud Solutions, Inc. — ▲ +0.9 % · volumen 0.9x lo normal
 Cierre 41.2 (2026-11-25) · 5 días +0.7 % · lo normal en un día: ±4.78 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
 - Analistas que dicen comprar: 90 % de 10.
 
+## CSTL · Castle Biosciences, Inc. — ▼ -6.1 % · volumen 0.7x lo normal
+Cierre 32.53 (2026-11-25) · 5 días -2.5 % · lo normal en un día: ±3.39 %.
+- **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
+- **Qué cambió:** nada nuevo.
+- **Próximos catalizadores:** Resultados el 2027-02-22 (tras el cierre).
+- Analistas que dicen comprar: 94 % de 16.
+
 # Materias primas
 
-## XAU · Oro — ▲ +2.4 % · volumen 0.2x lo normal
-Cierre 3619.9 (2026-11-26) · 5 días -1.8 % · lo normal en un día: ±2.11 %.
+## XAU · Oro — ▲ +1.6 % · volumen 0.4x lo normal
+Cierre 3592.6 (2026-11-26) · 5 días -2.5 % · lo normal en un día: ±2.11 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
-## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▲ +0.0 %
-Cierre 1.1 (2026-11-26) · 5 días -0.1 % · lo normal en un día: ±0.37 %.
+## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▲ +0.1 %
+Cierre 1.1 (2026-11-26) · 5 días +0.0 % · lo normal en un día: ±0.37 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
