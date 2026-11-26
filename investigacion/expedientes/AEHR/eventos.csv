@@ -1,12 +1,12 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
-2026-11-19,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1040470/000104047026000327/xslF345X06/primary_01.xml,2026-11-19,49.48,-3.11,,
+2026-11-19,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1040470/000104047026000327/xslF345X06/primary_01.xml,2026-11-19,49.48,-3.11,-16.25,
 2026-11-10,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/1040470/000159588826000161/xslSCHEDULE_13G_X02/primary_doc.xml,2026-11-10,59.81,-0.4,-15.05,
 2026-11-06,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1040470/000165495426009601/aehr_10q.htm,2026-11-06,49.16,8.97,24.17,
 2026-11-03,movimiento,"Sube 26.5 % en un día (4.2 veces lo normal, volumen x3.2 su media)",https://finance.yahoo.com/quote/AEHR/history/,2026-11-03,51.47,26.5,16.2,
 2026-11-02,resultados,Resultados del trimestre (8-K 2.02),https://www.sec.gov/Archives/edgar/data/1040470/000165495426009385/aehr_8k.htm,2026-11-02,54.89,-6.23,-2.4,
 2026-11-02,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1040470/000104047026000325/xslF345X06/primary_01.xml,2026-11-02,54.89,-6.23,-2.4,
-2026-10-29,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1040470/000104047026000323/xslF345X06/primary_01.xml,2026-10-29,64.54,-5.16,-5.73,
-2026-10-29,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1040470/000165495426009242/aehr_8k.htm,2026-10-29,64.54,-5.16,-5.73,
+2026-10-29,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1040470/000104047026000323/xslF345X06/primary_01.xml,2026-10-29,64.54,-5.16,-5.73,-35.79
+2026-10-29,directivos,Cambio de directivos o consejeros (8-K 5.02),https://www.sec.gov/Archives/edgar/data/1040470/000165495426009242/aehr_8k.htm,2026-10-29,64.54,-5.16,-5.73,-35.79
 2026-10-27,directivos_form4,5 avisos de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1040470/000104047026000318/xslF345X06/primary_01.xml,2026-10-27,56.6,12.99,-9.06,-14.29
 2026-10-20,directivos_form4,1 aviso de compra/venta de directivos (Form 4),https://www.sec.gov/Archives/edgar/data/1040470/000104047026000309/xslF345X06/primary_01.xml,2026-10-20,63.33,-2.12,-10.63,-19.77
 2026-10-20,8k,Aviso oficial de hecho relevante (8-K 5.07),https://www.sec.gov/Archives/edgar/data/1040470/000165495426009056/aehr_8k.htm,2026-10-20,63.33,-2.12,-10.63,-19.77
