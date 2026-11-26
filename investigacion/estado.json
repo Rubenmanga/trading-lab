@@ -1,11 +1,11 @@
 {
- "actualizado": "2026-11-25T05:40:23+00:00",
+ "actualizado": "2026-11-26T04:35:13+00:00",
  "alertas": [
   {
    "ticker": "AMSC",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "AMSC a 20.14 $ está en su zona de entrada (≤ 22.0), potencial 59% hasta objetivo",
-   "precio": 20.139999389648438
+   "mensaje": "AMSC a 21.23 $ está en su zona de entrada (≤ 22.0), potencial 51% hasta objetivo",
+   "precio": 21.229999542236328
   },
   {
    "ticker": "REPX",
@@ -16,36 +16,36 @@
   {
    "ticker": "PGY",
    "tipo": "ZONA DE ENTRADA",
-   "mensaje": "PGY a 14.03 $ está en su zona de entrada (≤ 17.5), potencial 78% hasta objetivo",
-   "precio": 14.029999732971191
+   "mensaje": "PGY a 14.31 $ está en su zona de entrada (≤ 17.5), potencial 75% hasta objetivo",
+   "precio": 14.3100004196167
   },
   {
    "ticker": "AMPX",
    "tipo": "TESIS EN PELIGRO",
-   "mensaje": "AMPX a 5.72 $ ha caído bajo el stop de tesis (6.8). Revisar.",
-   "precio": 5.71999979019165
+   "mensaje": "AMPX a 5.69 $ ha caído bajo el stop de tesis (6.8). Revisar.",
+   "precio": 5.690000057220459
   },
   {
    "ticker": "TE",
    "tipo": "TESIS EN PELIGRO",
-   "mensaje": "TE a 1.09 $ ha caído bajo el stop de tesis (1.35). Revisar.",
-   "precio": 1.090000033378601
+   "mensaje": "TE a 1.10 $ ha caído bajo el stop de tesis (1.35). Revisar.",
+   "precio": 1.100000023841858
   }
  ],
  "precios": [
   {
    "ticker": "AMSC",
-   "precio": 20.139999389648438,
-   "distancia_zona_pct": -8.5,
-   "potencial_pct": 58.9,
-   "distancia_stop_pct": 18.5
+   "precio": 21.229999542236328,
+   "distancia_zona_pct": -3.5,
+   "potencial_pct": 50.7,
+   "distancia_stop_pct": 24.9
   },
   {
    "ticker": "AEHR",
-   "precio": 41.88999938964844,
-   "distancia_zona_pct": -10.9,
-   "potencial_pct": 55.2,
-   "distancia_stop_pct": 10.2
+   "precio": 41.439998626708984,
+   "distancia_zona_pct": -11.8,
+   "potencial_pct": 56.9,
+   "distancia_stop_pct": 9.1
   },
   {
    "ticker": "REPX",
@@ -56,66 +56,66 @@
   },
   {
    "ticker": "PGY",
-   "precio": 14.029999732971191,
-   "distancia_zona_pct": -19.8,
-   "potencial_pct": 78.2,
-   "distancia_stop_pct": 12.2
+   "precio": 14.3100004196167,
+   "distancia_zona_pct": -18.2,
+   "potencial_pct": 74.7,
+   "distancia_stop_pct": 14.5
   },
   {
    "ticker": "DCTH",
-   "precio": 19.81999969482422,
-   "distancia_zona_pct": 16.6,
-   "potencial_pct": 36.2,
-   "distancia_stop_pct": 52.5
+   "precio": 19.200000762939453,
+   "distancia_zona_pct": 12.9,
+   "potencial_pct": 40.6,
+   "distancia_stop_pct": 47.7
   },
   {
    "ticker": "FTH",
-   "precio": 9.710000038146973,
-   "distancia_zona_pct": -7.5,
-   "potencial_pct": 106.0,
-   "distancia_stop_pct": 49.4
+   "precio": 9.579999923706055,
+   "distancia_zona_pct": -8.8,
+   "potencial_pct": 108.8,
+   "distancia_stop_pct": 47.4
   },
   {
    "ticker": "ORIC",
-   "precio": 8.399999618530273,
-   "distancia_zona_pct": -1.2,
-   "potencial_pct": 54.8,
-   "distancia_stop_pct": 29.2
+   "precio": 8.25,
+   "distancia_zona_pct": -2.9,
+   "potencial_pct": 57.6,
+   "distancia_stop_pct": 26.9
   },
   {
    "ticker": "RCAT",
-   "precio": 1.725000023841858,
+   "precio": 1.7599999904632568,
    "distancia_zona_pct": null,
    "potencial_pct": null,
-   "distancia_stop_pct": -13.7
+   "distancia_stop_pct": -12.0
   },
   {
    "ticker": "AMPX",
-   "precio": 5.71999979019165,
-   "distancia_zona_pct": -39.8,
-   "potencial_pct": 101.0,
-   "distancia_stop_pct": -15.9
+   "precio": 5.690000057220459,
+   "distancia_zona_pct": -40.1,
+   "potencial_pct": 102.1,
+   "distancia_stop_pct": -16.3
   },
   {
    "ticker": "SSII",
-   "precio": 1.2300000190734863,
-   "distancia_zona_pct": -52.7,
-   "potencial_pct": 78.9,
-   "distancia_stop_pct": 2.5
+   "precio": 1.2400000095367432,
+   "distancia_zona_pct": -52.3,
+   "potencial_pct": 77.4,
+   "distancia_stop_pct": 3.3
   },
   {
    "ticker": "TE",
-   "precio": 1.090000033378601,
-   "distancia_zona_pct": -48.1,
-   "potencial_pct": 120.2,
-   "distancia_stop_pct": -19.3
+   "precio": 1.100000023841858,
+   "distancia_zona_pct": -47.6,
+   "potencial_pct": 118.2,
+   "distancia_stop_pct": -18.5
   },
   {
    "ticker": "SVRA",
-   "precio": 4.550000190734863,
-   "distancia_zona_pct": -5.2,
-   "potencial_pct": 75.8,
-   "distancia_stop_pct": 11.0
+   "precio": 4.590000152587891,
+   "distancia_zona_pct": -4.4,
+   "potencial_pct": 74.3,
+   "distancia_stop_pct": 12.0
   }
  ]
 }

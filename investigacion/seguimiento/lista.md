@@ -32,9 +32,9 @@ Cierre 489.93 (2026-11-25) · 5 días -3.6 % · lo normal en un día: ±2.38 %.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
   - 2026-11-26 · [BNY and Microsoft Complete AI Agent Pilot for Treasury Trading](https://www.pymnts.com/news/artificial-intelligence/2026/bny-and-microsoft-let-ai-agents-haggle-over-treasurys/)
+  - 2026-11-26 · [Nvidia’s Market Cap Falls Below Microsoft’s: Analyst Flags Five Overhangs For NVDA Stock](https://finnhub.io/api/news?id=93e694d0d5d96ee714e44261e18d84fe92e620d072c98af04c437fc031464488)
   - 2026-11-26 · [Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?](https://finnhub.io/api/news?id=8b493a0aabf1e7a97892b2891e9cfeccb44d087bf39cb88af27632f46e461646)
   - 2026-11-25 · [The AA Deploys Microsoft Dynamics 365 and Azure for Digital Workflow](https://aimagazine.com/news/why-the-aa-relies-on-microsoft-ai-for-vehicle-diagnostics)
-  - 2026-11-25 · [Microsoft's Green Card Filings Reveal A Striking Pattern After Mass Layoffs. Trump's New Rule Could Freeze Sponsorships For Two Years.](https://finnhub.io/api/news?id=50a30bb11dcb9838d602bc541d5cb1ba3446c6f63216bea4dc6ea7009ee03417)
 
 ## RAPP · Rapport Therapeutics — ▲ +0.1 % · volumen 0.4x lo normal
 Cierre 25.32 (2026-11-25) · 5 días +8.2 % · lo normal en un día: ±5.78 %.
@@ -180,8 +180,8 @@ Cierre 10.73 (2026-11-25) · 5 días -6.4 % · lo normal en un día: ±7.39 %.
 
 # Materias primas
 
-## XAU · Oro — ▲ +1.2 % · volumen 0.1x lo normal
-Cierre 3604.0 (2026-11-25) · 5 días -3.7 % · lo normal en un día: ±2.11 %.
+## XAU · Oro — ▲ +1.5 % · volumen 0.2x lo normal
+Cierre 3616.6 (2026-11-25) · 5 días -3.3 % · lo normal en un día: ±2.11 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 

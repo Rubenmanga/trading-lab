@@ -1,25 +1,25 @@
-# Seguimiento diario de ORIC · 2026-11-24
+# Seguimiento diario de ORIC · 2026-11-25
 
 ## Resumen (5 líneas)
 1. **Estado: ATENTO.** Se acerca el momento: está en soporte o empieza a frenar. Aún falta la señal; mirar cada día.
-2. Cierre 8.4 $ (+11.4 % en el día). RSI 43.1 · EMA 9 8.02 $ · media 50 10.9 $.
-3. Señales del plan: A = suelo en 7.2-7.5 $ con vela de giro y volumen · B = dos cierres por encima de 9.3 $ (ahora a -9.7 %).
+2. Cierre 8.25 $ (-1.8 % en el día). RSI 42.0 · EMA 9 8.06 $ · media 50 10.81 $.
+3. Señales del plan: A = suelo en 7.2-7.5 $ con vela de giro y volumen · B = dos cierres por encima de 9.3 $ (ahora a -11.3 %).
 4. Pistas de hoy: cierra por encima de la EMA 9 (primer síntoma de freno); está en la zona de soporte 7.2-7.5 $.
-5. Comprar como mucho hasta 8.5 $ · stop de tesis 6.5 $ (a 29.2 %) · objetivo 13 $ (potencial 54.8 %).
+5. Comprar como mucho hasta 8.5 $ · stop de tesis 6.5 $ (a 26.9 %) · objetivo 13 $ (potencial 57.6 %).
 
 ## Indicadores de hoy
 | Indicador | Valor |
 |---|---|
-| Cierre ($) | 8.4 |
-| EMA 9 | 8.02 |
-| Media 50 | 10.9 |
-| Media 200 | 10.9 |
-| RSI 14 | 43.1 |
-| Volumen frente a su media de 20 días | 1.4 |
+| Cierre ($) | 8.25 |
+| EMA 9 | 8.06 |
+| Media 50 | 10.81 |
+| Media 200 | 10.88 |
+| RSI 14 | 42.0 |
+| Volumen frente a su media de 20 días | 1.24 |
 | Mínimo 52 semanas | 7.23 |
 | Máximo 52 semanas | 14.68 |
 | ¿En zona de soporte? | sí |
-| ¿Vela de giro? | sí |
+| ¿Vela de giro? | no |
 | ¿Divergencia alcista del RSI? | no |
 
 ## Noticias y analistas (últimos días)
@@ -37,6 +37,7 @@
 ## Últimos días
 | Fecha | Cierre | RSI | EMA 9 | Vol. rel. | Estado |
 |---|---|---|---|---|---|
+| 2026-11-25 | 8.25 | 42.0 | 8.06 | 1.24 | ATENTO |
 | 2026-11-24 | 8.4 | 43.1 | 8.02 | 1.4 | ATENTO |
 | 2026-11-23 | 7.54 | 33.8 | 7.92 | 1.05 | ATENTO |
 | 2026-11-20 | 7.36 | 31.6 | 8.02 | 0.74 | ATENTO |
