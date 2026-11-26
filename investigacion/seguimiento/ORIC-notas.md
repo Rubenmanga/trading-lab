@@ -1,11 +1,38 @@
 # ORIC · notas del repaso diario (agente B)
 
 ## Resumen (5 líneas)
-1. **Estado: SEÑAL DE ENTRADA (solo la primera mitad).** El martes 24-nov subió **+11,4 % hasta 8,40 $**, con más volumen que la media (1,4×).
-2. Cerró por encima de la EMA 9 (8,02 $): la caída ha frenado. El soporte 7,2-7,5 $ aguantó y el programa ve una «vela de giro» (vela que marca el cambio de dirección).
-3. Se cumple la condición de la primera mitad del plan: cierre > EMA 9 y precio ≤ 8,5 $. Pero está justo al límite: **no perseguir** si abre por encima de 8,5 $.
-4. Sin noticias de la empresa que expliquen la subida (ni fármacos, ni ampliación de capital, ni del rival JNJ-6143 de J&J). Analistas: todos en «comprar».
-5. Demo: primera mitad (≤ 1 % de la cartera) solo a ≤ 8,5 $. Segunda mitad con la señal B (dos cierres > 9,3 $). Stop 6,5 $, objetivo 13 $.
+1. **Estado: ATENTO.** El miércoles 25-nov devolvió una parte de la subida: **−1,8 % hasta 8,25 $** (llegó a caer ~5,7 % durante el día).
+2. Sigue **por encima de la EMA 9 (8,06 $)** y dentro de la zona de soporte 7,2-7,5 $ a la vista: el freno de la caída se mantiene.
+3. Sin noticias de la empresa en 48 h (ni fármacos, ni ampliación de capital, ni analistas nuevos, ni del rival JNJ-6143 de J&J).
+4. Hoy jueves 26-nov la bolsa de EE. UU. está **cerrada** (Acción de Gracias); el viernes 27 cierra antes (19:00 España).
+5. Demo: la primera mitad sigue válida **solo con orden limitada ≤ 8,5 $**. Segunda mitad con señal B (dos cierres > 9,3 $). Stop 6,5 $, objetivo 13 $.
+
+## 26-nov-2026 · ATENTO
+
+**Qué ha pasado**
+- Miércoles 25-nov: cierra en **8,25 $ (−1,8 %)**, con volumen algo mayor que su media (1,24×). Durante la sesión llegó a caer cerca de un 5,7 %, pero recuperó. RSI 42 (zona neutra).
+- Sigue cerrando por encima de la EMA 9 (8,06 $; media rápida de 9 días). Normal tras una subida de +11 % sin noticia: parte se devuelve.
+- Noticias: nada nuevo de rinzimetostat, enozertinib, ventas de acciones nuevas o del rival de J&J. Lo último fue el aviso de conferencias con inversores (23-nov) y analistas que siguen en «comprar» aunque H.C. Wainwright bajó su objetivo a 20 $ (19-nov).
+
+**Qué significa**
+- El rebote no se ha roto: mientras cierre por encima de ~8 $ (EMA 9) el giro sigue vivo. Si vuelve a cerrar bajo 7,5 $, se pierde.
+- La tesis (fase 3 de rinzimetostat en próstata, caja hasta 2028) no cambia. La señal fuerte B queda a +12,7 % (9,3 $).
+
+**Qué haría hoy en la demo**
+- Hoy no se puede operar (bolsa cerrada). Para el viernes: mantener la **orden limitada de la primera mitad a 8,5 $ como máximo** (≤ 1 % de la cartera). No perseguir si sube.
+- Stop de tesis 6,5 $; si cierra por debajo de **7,2 $** → PELIGRO, salir.
+- **Niveles del plan: sin cambios.**
+
+**Fuentes**
+| dato | valor | fuente | fecha |
+|---|---|---|---|
+| Precio, RSI, EMA 9, volumen | 8,25 $ · 42,0 · 8,06 $ · 1,24× | investigacion/seguimiento/ORIC.md (Yahoo) | 25-nov-2026 |
+| Caída intradía ~5,7 % | titular | [dailypolitical.com](https://www.dailypolitical.com/2026/11/25/oric-pharmaceuticals-nasdaqoric-stock-falls-5-7-heres-what-happened.html) (intermediaria) | 25-nov-2026 |
+| Conferencias con inversores | nota de prensa | [stockhouse / GlobeNewswire](https://stockhouse.com/news/press-releases/2026/11/23/oric-xae-pharmaceuticals-to-participate-in-upcoming-investor-conferences) | 23-nov-2026 |
+| H.C. Wainwright baja objetivo a 20 $ | mantiene comprar | [defenseworld.net](https://www.defenseworld.net/2026/11/20/oric-pharmaceuticals-nasdaqoric-stock-price-target-lowered-at-hc-wainwright.html) (intermediaria) | 19/20-nov-2026 |
+| Fármacos / J&J / ampliación | sin novedades en 48 h | búsqueda web | 26-nov-2026 |
+
+---
 
 ## 25-nov-2026 · SEÑAL DE ENTRADA (primera mitad)
 
