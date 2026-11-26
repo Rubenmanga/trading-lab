@@ -18,23 +18,23 @@ Cierre 1.45 (2026-11-25) · 5 días +4.3 % · lo normal en un día: ±5.39 %.
 - **Próximos catalizadores:** Resultados el 2027-03-03 (tras el cierre); Ensayo F2 «RESTORE TRIAL: Study of the Efficacy and Safety of Pemvidutide in the Treatment »: resultado principal previsto 2027-09-30.
 - Analistas que dicen comprar: 87 % de 15.
 
-## RCAT · Red Cat Holdings — ▲ +2.0 % · volumen 0.8x lo normal
+## RCAT · Red Cat Holdings — ▲ +2.0 % · volumen 0.9x lo normal
 Cierre 1.76 (2026-11-25) · 5 días -21.8 % · lo normal en un día: ±10.18 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-17.
 - Analistas que dicen comprar: 86 % de 14.
 
-## MSFT · Microsoft — ▼ -1.2 % · volumen 0.8x lo normal
+## MSFT · Microsoft — ▼ -1.2 % · volumen 0.9x lo normal
 Cierre 489.93 (2026-11-25) · 5 días -3.6 % · lo normal en un día: ±2.38 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 42 titulares nuevos.
+- **Qué cambió:** 43 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
+  - 2026-11-26 · [BNY and Microsoft Complete AI Agent Pilot for Treasury Trading](https://www.pymnts.com/news/artificial-intelligence/2026/bny-and-microsoft-let-ai-agents-haggle-over-treasurys/)
+  - 2026-11-26 · [Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?](https://finnhub.io/api/news?id=8b493a0aabf1e7a97892b2891e9cfeccb44d087bf39cb88af27632f46e461646)
   - 2026-11-25 · [The AA Deploys Microsoft Dynamics 365 and Azure for Digital Workflow](https://aimagazine.com/news/why-the-aa-relies-on-microsoft-ai-for-vehicle-diagnostics)
-  - 2026-11-25 · [Salesforce Stock (CRM) Looks Mispriced After the AI Sell-Off](https://finnhub.io/api/news?id=75fe9d32bd178063830591b411d8a506363927a1e9a9b604f594e6ec4efc16d7)
-  - 2026-11-25 · [Bill Ackman, George Soros and 5 Other Famous Investors Own Microsoft. Here’s Who Bought and Sold Recently](https://finnhub.io/api/news?id=3841556a94f349b3a9090edb8a3ca3b40c7f633aa69b8176232bc8e39fb7605b)
-  - 2026-11-25 · [Megadeals Defy Selloff, Head Toward Record](https://finnhub.io/api/news?id=da9a797fee7954547a521aa2ec2dbf3cabc3e245fb9896443c335eb902596f02)
+  - 2026-11-25 · [Microsoft's Green Card Filings Reveal A Striking Pattern After Mass Layoffs. Trump's New Rule Could Freeze Sponsorships For Two Years.](https://finnhub.io/api/news?id=50a30bb11dcb9838d602bc541d5cb1ba3446c6f63216bea4dc6ea7009ee03417)
 
 ## RAPP · Rapport Therapeutics — ▲ +0.1 % · volumen 0.4x lo normal
 Cierre 25.32 (2026-11-25) · 5 días +8.2 % · lo normal en un día: ±5.78 %.
@@ -61,24 +61,28 @@ Cierre 41.44 (2026-11-25) · 5 días -16.2 % · lo normal en un día: ±11.7 %.
 ## REPX · Riley Exploration Permian — = +0.0 % · volumen 1.0x lo normal
 Cierre 39.54 (2026-11-25) · 5 días -3.5 % · lo normal en un día: ±3.7 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 2 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-03-02 (tras el cierre).
 - Analistas que dicen comprar: 91 % de 11.
+  - 2026-11-25 · [4 Stocks With Rising Cash Flows to Buy This Thanksgiving Week](https://finnhub.io/api/news?id=696e4cd85275f15ae70b2b6a753e06bec96fdad60f8fc1e8420dfde9f1c6511e)
+  - 2026-11-25 · [Should Value Investors Buy Ring Energy (REI) Stock?](https://finnhub.io/api/news?id=5fbf876c2d361f793974a3599622ada6dc173a5a038ab0c35258d3704449fe2e)
 
 ## PGY · Pagaya Technologies — ▲ +2.0 % · volumen 0.9x lo normal
 Cierre 14.31 (2026-11-25) · 5 días -8.1 % · lo normal en un día: ±4.81 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 1 titular nuevo.
+- **Qué cambió:** 2 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-02-03 (tras el cierre).
 - Analistas que dicen comprar: 94 % de 16.
   - 2026-11-25 · [Pagaya to Participate in Upcoming Investor Conferences](https://www.businesswire.com/newsroom)
+  - 2026-11-25 · [Pagaya to Participate in Upcoming Investor Conferences and Events](https://finnhub.io/api/news?id=7b96ab0fb02ce0128be1625e870c63ff52c636d82afbf9ad3b0b3bab52a49d95)
 
 ## DCTH · Delcath Systems — ▼ -3.1 % · volumen 0.5x lo normal
 Cierre 19.2 (2026-11-25) · 5 días -2.5 % · lo normal en un día: ±8.38 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-02-22 (tras el cierre); Ensayo F2 «Evaluation of the Safety and Efficacy of Treatment w/High Dose Melphalan Given D»: resultado principal previsto 2026-12.
 - Analistas que dicen comprar: 92 % de 12.
+  - 2026-11-25 · [Here's Why You Should Add Revvity Stock to Your Portfolio Now](https://finnhub.io/api/news?id=80eb24e219be35537d6ac42d1b0357aea697e539b804bfcf5c2100089fc13739)
 
 ## FTH · Faeth Therapeutics — ▼ -1.3 % · volumen 0.7x lo normal
 Cierre 9.58 (2026-11-25) · 5 días +9.9 % · lo normal en un día: ±11.82 %.
@@ -117,7 +121,7 @@ Cierre 1.1 (2026-11-25) · 5 días -20.9 % · lo normal en un día: ±8.84 %.
 Cierre 4.59 (2026-11-25) · 5 días -2.8 % · lo normal en un día: ±6.19 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-03-11 (tras el cierre); Ensayo F3 «Inhaled Molgramostim in Pediatric Participants With Autoimmune Pulmonary Alveola»: resultado principal previsto 2027-06; Fecha regulatoria citada en titular: «SVRA Stock Hits 52-Week Low After FDA Delays Decision On Lung Disease Drug Application».
+- **Próximos catalizadores:** Resultados el 2027-03-11 (tras el cierre); Ensayo F3 «Inhaled Molgramostim in Pediatric Participants With Autoimmune Pulmonary Alveola»: resultado principal previsto 2027-06.
 - Analistas que dicen comprar: 93 % de 15.
 
 # Mejores ideas del buscador
@@ -145,16 +149,19 @@ Cierre 45.76 (2026-11-25) · 5 días +1.5 % · lo normal en un día: ±2.66 %.
 ## JAKK · JAKKS Pacific, Inc. — ▼ -5.8 % · volumen 0.9x lo normal
 Cierre 32.7 (2026-11-25) · 5 días -8.8 % · lo normal en un día: ±2.79 %.
 - **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-02-17.
 - Analistas que dicen comprar: 88 % de 8.
+  - 2026-11-25 · [Jakks Pacific (JAKK) Stock Is Down 5.6% Today Without Company News](https://finnhub.io/api/news?id=6a5a15035b60e289dc1d039e50c7a3104b0ee25e2f888801735c12a215850a9e)
 
 ## DFIN · Donnelley Financial Solutions,  — ▼ -0.8 % · volumen 0.6x lo normal
 Cierre 65.69 (2026-11-25) · 5 días -1.4 % · lo normal en un día: ±4.17 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 2 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-02-15 (antes de abrir).
 - Analistas que dicen comprar: 89 % de 9.
+  - 2026-11-25 · [Buy Red Violet, Donnelley to Tap Software & Services Growth](https://finnhub.io/api/news?id=82f87489feec4b54adbf652df6b2cf55b8f99746d7faff58efd3413be9164382)
+  - 2026-11-25 · [Are Investors Undervaluing Donnelley Financial Solutions (DFIN) Right Now?](https://finnhub.io/api/news?id=44fac6f41704ba9957c03afec3cbc415bf6ce63891b4fe551f8ced79e9bbe6f2)
 
 ## CRCT · Cricut, Inc. — ▲ +0.6 % · volumen 0.5x lo normal
 Cierre 8.8 (2026-11-25) · 5 días +2.9 % · lo normal en un día: ±10.93 %.
@@ -173,13 +180,13 @@ Cierre 10.73 (2026-11-25) · 5 días -6.4 % · lo normal en un día: ±7.39 %.
 
 # Materias primas
 
-## XAU · Oro — ▲ +1.1 %
-Cierre 3600.6 (2026-11-25) · 5 días -3.8 % · lo normal en un día: ±2.11 %.
+## XAU · Oro — ▲ +1.2 % · volumen 0.1x lo normal
+Cierre 3604.0 (2026-11-25) · 5 días -3.7 % · lo normal en un día: ±2.11 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
-## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▲ +0.7 %
-Cierre 1.1 (2026-11-25) · 5 días -0.1 % · lo normal en un día: ±0.35 %.
+## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▲ +0.0 %
+Cierre 1.1 (2026-11-26) · 5 días -0.1 % · lo normal en un día: ±0.37 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 

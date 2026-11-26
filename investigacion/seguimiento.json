@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-25T23:26:17+00:00",
+ "actualizado": "2026-11-26T03:34:47+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -251,7 +251,7 @@
     "cambio_5d_pct": -21.8,
     "sigma_pct": 10.18,
     "veces_normal": 0.2,
-    "volumen_rel": 0.8,
+    "volumen_rel": 0.9,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Sin cambios: movimiento normal y nada nuevo.",
@@ -352,37 +352,6 @@
       "causas": [],
       "nueva": false,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Red Cat Holdings Q3 Earnings Call Withdraws Sales Target for 2026",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=c603b1ad11a78dfa3cf34b91c6121cf363525d7abad240b9e202b8e5769af653",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": false,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "DRNZ Vs. JEDI: The Pure Drone Play Is Still The Buy",
-      "fuente": "SeekingAlpha",
-      "url": "https://finnhub.io/api/news?id=5bf7418dead2384242bc853c10ce42c2b2861623d7ee5dea3a9bb5117f8f5c85",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Red Cat Holdings (RCAT) Q3 2026 Earnings Call Transcript",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=db92012002e77ce09157fd91f282a90e55cfcc8fc4f558d01ea6a2229daaad27",
-      "causas": [
-       "resultados"
-      ],
-      "nueva": false,
-      "importante": true
      }
     ],
     "vistos": [
@@ -561,12 +530,12 @@
     "cambio_5d_pct": -3.6,
     "sigma_pct": 2.38,
     "veces_normal": 0.5,
-    "volumen_rel": 0.8,
+    "volumen_rel": 0.9,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Movimiento normal para esta acción.",
     "cambios": [
-     "42 titulares nuevos"
+     "43 titulares nuevos"
     ],
     "catalizadores": [
      "Resultados el 2027-01-26"
@@ -593,6 +562,24 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-26",
+      "titulo": "BNY and Microsoft Complete AI Agent Pilot for Treasury Trading",
+      "fuente": "fiscal.ai",
+      "url": "https://www.pymnts.com/news/artificial-intelligence/2026/bny-and-microsoft-let-ai-agents-haggle-over-treasurys/",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-26",
+      "titulo": "Apple Stock Defies AI Selloff: Is It the Market's Safe Haven?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=8b493a0aabf1e7a97892b2891e9cfeccb44d087bf39cb88af27632f46e461646",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-25",
       "titulo": "The AA Deploys Microsoft Dynamics 365 and Azure for Digital Workflow",
       "fuente": "fiscal.ai",
@@ -617,6 +604,33 @@
       "url": "https://www.pymnts.com/technology/2026/microsoft-sets-goal-of-one-hour-fixes-after-email-outage/",
       "causas": [],
       "nueva": false,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-25",
+      "titulo": "Microsoft's Green Card Filings Reveal A Striking Pattern After Mass Layoffs. Trump's New Rule Could Freeze Sponsorships For Two Years.",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=50a30bb11dcb9838d602bc541d5cb1ba3446c6f63216bea4dc6ea7009ee03417",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-25",
+      "titulo": "Are You Overpaying For Palantir Stock Versus Its Rivals?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=6550472f446ac189e5403c670aeaa84f965d5a38c9a302b7b5e000b83bac1cd1",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-25",
+      "titulo": "Trump Has A Message for Big Tech Firms Like Amazon, Google and Microsoft Building Data Centers Abroad: ‘We’re Going to Put A Tremendous Tax On Them’",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=195e3e45f2885f755c5d6f09edc3485c0c9e2872ce5260249ee876020113cfa8",
+      "causas": [],
+      "nueva": true,
       "importante": false
      },
      {
@@ -681,54 +695,10 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-25",
-      "titulo": "Will Funding Gap Change IREN Stock Narrative",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=848cd44734b365bdf5a65d6ba70b0972e9810bad4577561e66a9d9c013b289b0",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-25",
-      "titulo": "Satya Nadella Says “the Floor of Cyber Attacks Has Fallen.” Microsoft Just Declared Code Red After a 24-Hour Outage",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=eb988cfef575f0e403fa91b362b06adb93fb7da74a2ff8b101c76ffbed901251",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-25",
-      "titulo": "Every Dollar of Your Retirement Income Comes From One Fund at 73. These 3 ETFs Spread the Load",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=9d55b0d6420b6fa13c1e1b2329a2aba5c1946218afb91a58b0bb7ab5385c0c5c",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-25",
-      "titulo": "DoubleLine’s Cohen turns bullish on hyperscaler bonds after selloff - Bloomberg",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=47ff575a0bf178bb39e169ae60d2dab29139f96e705074b238b2efcbb377d083",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-25",
-      "titulo": "Microsoft (MSFT) Deepens Europe Sovereign AI Push With Expanded Public Sector Cloud Pact",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=012eb766be848879257deaacef71f0adfb745ac8d6604a824b86177f4ea9271d",
-      "causas": [],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
+     "dropbox dbx stock is up 58 today without company news",
      "dupont nobleai and microsoft partner on aidriven rd platform",
      "elastic makes highaccuracy costefficient jina ai models available on m",
      "elizabeth warren takes aim at big tech billionaires over china ai acce",
@@ -779,7 +749,6 @@
      "is apple stock increasing your market risk",
      "is crwv worth buying as ai growth collides with heavy debt and losses",
      "is meta stock worth more than its tech rivals",
-     "is microsoft stock worth owning as ai capex weighs on free cash flow",
      "is microsoft the best big tech stock to buy now",
      "is your ai stock healthy five questions that tell you",
      "is your voo fund secretly an ai bet",
@@ -850,7 +819,6 @@
      "microsoft reveals hidden bug behind massive global outage",
      "microsoft says infrastructure stabilizes as queued messages drain and",
      "microsoft secures 51mw geothermal energy contract in new zealand",
-     "microsoft stock and 2 ai software leaders for productivity focused inv",
      "microsoft stock hits sevenweek low is a bigger drop coming",
      "microsoft stock in focus as massive 365 outage hits outlook teams and",
      "microsoft stock msft forecast  mizuho stays bullish on strong revenue",
@@ -868,6 +836,7 @@
      "microsoftbacked openai faces another chatgpt setback",
      "microsofts ai pitch at ignite cheaper models as business token spend i",
      "microsofts copilot strategy offers path to enterprise ai growth says b",
+     "microsofts green card filings reveal a striking pattern after mass lay",
      "microsofts next ai revenue test goes beyond copilot",
      "microsofts next leg is charging 500 million office users more says rbc",
      "microsofts satya nadella praises jensen huang says return as ceo is up",
@@ -967,7 +936,6 @@
      "tech takes a beating as ai trade comes unstuck despite anthropic surge",
      "temporal cloud enters public preview on microsoft azure",
      "the 10year topped 5 for the first time since 2007 what happened next",
-     "the 29t roller coaster nvidias moat anthropics balance sheet and more",
      "the aa deploys microsoft dynamics 365 and azure for digital workflow",
      "the ai boom math in five lines",
      "the bond market is flashing a warning on coreweave stock",
@@ -986,6 +954,7 @@
      "tracking al gores generation investment management portfolio  q3 2026",
      "trump administration to name nvidia among ai national champions  wsj e",
      "trump and xi to discuss trade at apec summit what isnt said may matter",
+     "trump has a message for big tech firms like amazon google and microsof",
      "trump to name nvidia amazon and microsoft ai national champions as bes",
      "trump vows tax on us firms building data centers abroad",
      "us plans to name nvidia among ai national champions wsj reports",
@@ -1411,15 +1380,6 @@
       ],
       "nueva": false,
       "importante": true
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Rapport Therapeutics (RAPP) Stock Looks Pricey Despite Its 20% Monthly Slide",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=280f759a4d50a6a2fa01f170c213ff909e3a58ec7d0596e6ce7c6d6e599aa51e",
-      "causas": [],
-      "nueva": false,
-      "importante": false
      }
     ],
     "vistos": [
@@ -1496,15 +1456,6 @@
       "titulo": "XCHG Limited Announces Its First European Assembly Plant In Spain To Diversify Its Global Supply Chain And Accelerate R&D In Grid-Independent Charging Technology",
       "fuente": "Benzinga",
       "url": "https://finnhub.io/api/news?id=228c7eb2035ad966d185308419dee982f384069dd89fb3c2ed1381a144db4b39",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Shares of solar, wind and clean energy stocks are trading lower following reports suggesting President Trump may cancel an additional $12 billion of funding for clean energy projects.",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=a08adb95b687167f02bdfead5fc5b8de442c42111643ca57c93c2a1d3d307ffc",
       "causas": [],
       "nueva": false,
       "importante": false
@@ -1608,15 +1559,6 @@
       "causas": [],
       "nueva": false,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Ross Stores, Intuit, Anthropic And Other Big Stocks Moving Lower In Friday’s Pre-Market Session",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=53495c45ed24cd3b0c4e75e22ab035a6e4843a10cb87bfcd036b3b42c24b30b0",
-      "causas": [],
-      "nueva": false,
-      "importante": false
      }
     ],
     "vistos": [
@@ -1672,8 +1614,10 @@
     "volumen_rel": 1.0,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "2 titulares nuevos"
+    ],
     "catalizadores": [
      "Resultados el 2027-03-02 (tras el cierre)"
     ],
@@ -1699,12 +1643,21 @@
     },
     "titulares": [
      {
-      "fecha": "2026-11-20",
-      "titulo": "Riley Exploration Permian: Delivers 20% Oil Production Growth In Q3 2026",
-      "fuente": "SeekingAlpha",
-      "url": "https://finnhub.io/api/news?id=fe68c0623f5ccd6f5330deee79fccc82860feabaadfab456d692f35dbe3c43b5",
+      "fecha": "2026-11-25",
+      "titulo": "4 Stocks With Rising Cash Flows to Buy This Thanksgiving Week",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=696e4cd85275f15ae70b2b6a753e06bec96fdad60f8fc1e8420dfde9f1c6511e",
       "causas": [],
-      "nueva": false,
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-25",
+      "titulo": "Should Value Investors Buy Ring Energy (REI) Stock?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=5fbf876c2d361f793974a3599622ada6dc173a5a038ab0c35258d3704449fe2e",
+      "causas": [],
+      "nueva": true,
       "importante": false
      }
     ],
@@ -1712,7 +1665,9 @@
      "3 reasons growth investors will love riley exploration permian repx",
      "3 stocks with rising cash flows to fortify your portfolio",
      "3 us energy stocks with pricing power as inflation keeps rates higher",
+     "4 stocks with rising cash flows to buy this thanksgiving week",
      "riley exploration permian delivers 20 oil production growth in q3 2026",
+     "should value investors buy ring energy rei stock",
      "truist securities lowers price target for riley exploration permian in",
      "zackscom featured highlights include jabil vista energy and riley expl"
     ],
@@ -1755,7 +1710,7 @@
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Movimiento normal para esta acción.",
     "cambios": [
-     "1 titular nuevo"
+     "2 titulares nuevos"
     ],
     "catalizadores": [
      "Resultados el 2027-02-03 (tras el cierre)"
@@ -1791,6 +1746,15 @@
       "importante": false
      },
      {
+      "fecha": "2026-11-25",
+      "titulo": "Pagaya to Participate in Upcoming Investor Conferences and Events",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=7b96ab0fb02ce0128be1625e870c63ff52c636d82afbf9ad3b0b3bab52a49d95",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-23",
       "titulo": "Trading Halt: Halt status updated at 12:10:00 PM ET: Quotation Resumption: News and Resumption Times",
       "fuente": "Benzinga",
@@ -1807,26 +1771,6 @@
       "causas": [],
       "nueva": false,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Pagaya’s (PGY) AI Underwriting Machine Is Quietly Powering the Next Wave of Consumer Lending – Here’s Why Wall Street Is Watching",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=172ee08f04999723f1d86cb7f75c0af21ab3698a84ade31699588a2811555be1",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "On June 30, ClearOne Declared A One-time Special Stock Dividend To Provide Its Legacy Stockholders With A 100% Stake In The Proceeds From An Eventual Sale, The Board Of Directors Fixed July 11, 2025 As The Record Date For The Special Stock Dividend, And Will Be Payable On July 18, 2025",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=60ace17f87a81cfaebed9f22dfdef47c76e3335e320f0f9f19e3983120d26a8f",
-      "causas": [
-       "directivos"
-      ],
-      "nueva": false,
-      "importante": false
      }
     ],
     "vistos": [
@@ -1836,6 +1780,7 @@
      "pagaya pgy stock could be below fair value despite an 88 slump",
      "pagaya technologies targets major auto and bank partners as new deals",
      "pagaya to participate in upcoming investor conferences",
+     "pagaya to participate in upcoming investor conferences and events",
      "pagayas pgy ai underwriting machine is quietly powering the next wave",
      "splash financial partners with pagaya to expand access to personal loa",
      "splash financial partners with pagaya to expand credit access",
@@ -1881,8 +1826,10 @@
     "volumen_rel": 0.5,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-02-22 (tras el cierre)",
      "Ensayo F2 «Evaluation of the Safety and Efficacy of Treatment w/High Dose Melphalan Given D»: resultado principal previsto 2026-12"
@@ -1909,19 +1856,19 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-25",
+      "titulo": "Here's Why You Should Add Revvity Stock to Your Portfolio Now",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=80eb24e219be35537d6ac42d1b0357aea697e539b804bfcf5c2100089fc13739",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-24",
       "titulo": "Here's Why You Should Add Glaukos Stock to Your Portfolio Now",
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=869df8461d1513723b6e247a1c5b8387226c72802b701a11570b343815bb306c",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Delcath Systems (DCTH) Stock Sees Fair Value Lift After Strong Quarter And Guidance",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=799f68cfd8858b766b067fca31129d623b0c9f69d23bcb0a265423e270d43cd6",
       "causas": [],
       "nueva": false,
       "importante": false
@@ -1939,6 +1886,7 @@
      "delcath systems to be featured on health uncensored with dr drew",
      "delcath systems to be featured on health uncensored with dr drew in se",
      "heres why you should add glaukos stock to your portfolio now",
+     "heres why you should add revvity stock to your portfolio now",
      "wall street analysts think delcath systems dcth could surge 277 read t"
     ],
     "sec_vistos": [
@@ -2220,15 +2168,6 @@
       "titulo": "XCHG Limited Announces Its First European Assembly Plant In Spain To Diversify Its Global Supply Chain And Accelerate R&D In Grid-Independent Charging Technology",
       "fuente": "Benzinga",
       "url": "https://finnhub.io/api/news?id=228c7eb2035ad966d185308419dee982f384069dd89fb3c2ed1381a144db4b39",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Shares of solar, wind and clean energy stocks are trading lower following reports suggesting President Trump may cancel an additional $12 billion of funding for clean energy projects.",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=a08adb95b687167f02bdfead5fc5b8de442c42111643ca57c93c2a1d3d307ffc",
       "causas": [],
       "nueva": false,
       "importante": false
@@ -2521,8 +2460,7 @@
     "cambios": [],
     "catalizadores": [
      "Resultados el 2027-03-11 (tras el cierre)",
-     "Ensayo F3 «Inhaled Molgramostim in Pediatric Participants With Autoimmune Pulmonary Alveola»: resultado principal previsto 2027-06",
-     "Fecha regulatoria citada en titular: «SVRA Stock Hits 52-Week Low After FDA Delays Decision On Lung Disease Drug Application»"
+     "Ensayo F3 «Inhaled Molgramostim in Pediatric Participants With Autoimmune Pulmonary Alveola»: resultado principal previsto 2027-06"
     ],
     "avisos": [],
     "avisos_nuevos": [],
@@ -2555,126 +2493,6 @@
       ],
       "nueva": false,
       "importante": true
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "SVRA Stock Hits 52-Week Low After FDA Delays Decision On Lung Disease Drug Application",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=219e191075b4070b6548303dae31dff261a57446da5a3886f437ec28def51fd2",
-      "causas": [
-       "FDA / regulador"
-      ],
-      "nueva": false,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Is It Too Early To Buy Insmed Stock?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=aaa57e7977904baaec429c92f85bd89a463b974fc4eaf052814c66027fa89a48",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Sector Update: Healthcare Stocks Mixed Pre-Bell Friday",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=9e4d57d78963a690b480d5405ced155d70bc26122aece6c6211294ce91f91ef2",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Savara shares fall 20% as FDA says it will miss Molgramostim review deadline",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=a0cff9ead6bfe6601cb04667d3b7951dcd4fb159b0e794735e7cd4e6626aedde",
-      "causas": [
-       "FDA / regulador"
-      ],
-      "nueva": false,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "HC Wainwright & Co. Maintains Buy on Savara, Lowers Price Target to $9",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=71ea65a34b55ff8bc436e1116ac2f80e150943201217a23e5e6c8023e6953918",
-      "causas": [
-       "analistas"
-      ],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Savara Informed That FDA Will Not Take Action on the Molgramostim BLA for Autoimmune Pulmonary Alveolar Proteinosis (Autoimmune PAP) by the PDUFA Date",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=b86fcefe21f44abf7c1e30068ba5e92aad19824287a66e16b6233ccc8816558e",
-      "causas": [
-       "FDA / regulador"
-      ],
-      "nueva": false,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Gold Falls Sharply; US Consumer Sentiment Rises In November",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=65cff58ba1a7fc7b1ecb384d1e6241dbfc902a7f42bed63198c90e4bfee1e970",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Savara Craters as FDA Delays Decision for Lung Disease",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=74db748dec23f44d3d79a66a903a0aea578aaacf668f6dde640148bc420f01dd",
-      "causas": [
-       "FDA / regulador"
-      ],
-      "nueva": false,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "What Is Behind The Move In Insmed Stock?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=7eb1605bbf9d6670b079aa0a773998588cb91a3cfeb6ba86b9ca3a5e29e1f27f",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Savara Says FDA Will Not Meet PDUFA Target Action Date Of November 22 For Molgramostim Inhalation Solution BLA For Treatment Of Autoimmune PAP; No Revised Action Date Communicated By The FDA",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=303bb114800e61dbc8e44572de56ae9759138e6d0e3fd7e96f3ddc13b52d3301",
-      "causas": [
-       "FDA / regulador"
-      ],
-      "nueva": false,
-      "importante": true
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Savara (SVRA) Stock Looks Stretched As Its 338% Five Year Run Continues",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=d55f3f8c37d07394e5f785948e0c04ffea672b02e0a2f224901ddb2f23e00ac6",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-20",
-      "titulo": "Savara Inc. (SVRA) Shares Are Taking Off. Here’s What’s Coming",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=fb65018a5cbe2d799c4616d982a169c4b8df9565cc549789726931c8710a573e",
-      "causas": [],
-      "nueva": false,
-      "importante": false
      }
     ],
     "vistos": [
@@ -3011,7 +2829,9 @@
     "grande": false,
     "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
     "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "cambios": [],
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-02-17"
     ],
@@ -3035,8 +2855,19 @@
      "veces_normal": 0.1,
      "volumen_rel": 0.9
     },
-    "titulares": [],
+    "titulares": [
+     {
+      "fecha": "2026-11-25",
+      "titulo": "Jakks Pacific (JAKK) Stock Is Down 5.6% Today Without Company News",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=6a5a15035b60e289dc1d039e50c7a3104b0ee25e2f888801735c12a215850a9e",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     }
+    ],
     "vistos": [
+     "jakks pacific jakk stock is down 56 today without company news",
      "skydance skyd just closed its 111 billion merger"
     ],
     "sec_vistos": [
@@ -3071,8 +2902,10 @@
     "volumen_rel": 0.6,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "2 titulares nuevos"
+    ],
     "catalizadores": [
      "Resultados el 2027-02-15 (antes de abrir)"
     ],
@@ -3098,6 +2931,24 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-25",
+      "titulo": "Buy Red Violet, Donnelley to Tap Software & Services Growth",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=82f87489feec4b54adbf652df6b2cf55b8f99746d7faff58efd3413be9164382",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-25",
+      "titulo": "Are Investors Undervaluing Donnelley Financial Solutions (DFIN) Right Now?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=44fac6f41704ba9957c03afec3cbc415bf6ce63891b4fe551f8ced79e9bbe6f2",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-24",
       "titulo": "Are Computer and Technology Stocks Lagging  Allegro MicroSystems (ALGM) This Year?",
       "fuente": "Yahoo",
@@ -3119,6 +2970,8 @@
     "vistos": [
      "3 stocks to watch as proxy voting demand puts broadridge stock in focu",
      "are computer and technology stocks lagging  allegro microsystems algm",
+     "are investors undervaluing donnelley financial solutions dfin right no",
+     "buy red violet donnelley to tap software  services growth",
      "dfin ceo files form 144 for proposed sale of common stock",
      "dfin named 1 technology company on best practice institutes most loved",
      "dfin or tyl which is the better value stock right now",
@@ -3345,12 +3198,12 @@
     "sector": "materia prima",
     "fecha": "2026-11-25",
     "fecha_anterior": "2026-11-24",
-    "cierre": 3600.6,
-    "cambio_pct": 1.09,
-    "cambio_5d_pct": -3.8,
+    "cierre": 3604.0,
+    "cambio_pct": 1.18,
+    "cambio_5d_pct": -3.7,
     "sigma_pct": 2.11,
-    "veces_normal": 0.5,
-    "volumen_rel": 0.0,
+    "veces_normal": 0.6,
+    "volumen_rel": 0.1,
     "grande": false,
     "porque": "Movimiento normal.",
     "resumen": "Movimiento normal.",
@@ -3364,13 +3217,13 @@
    "EURUSD": {
     "nombre": "Euro/dólar (para pasar tu oro de dólares a euros)",
     "sector": "materia prima",
-    "fecha": "2026-11-25",
-    "fecha_anterior": "2026-11-24",
+    "fecha": "2026-11-26",
+    "fecha_anterior": "2026-11-25",
     "cierre": 1.1,
-    "cambio_pct": 0.65,
+    "cambio_pct": 0.02,
     "cambio_5d_pct": -0.1,
-    "sigma_pct": 0.35,
-    "veces_normal": 1.8,
+    "sigma_pct": 0.37,
+    "veces_normal": 0.1,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",
