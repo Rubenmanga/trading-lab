@@ -32,11 +32,39 @@
    "precio": 1.100000023841858
   },
   {
-   "ticker": "XAU",
-   "tipo": "MOVIMIENTO GRANDE",
-   "precio": 3666.0,
+   "ticker": "MSFT",
+   "tipo": "NOTICIA IMPORTANTE",
+   "precio": 492.85,
    "seguimiento": true,
-   "mensaje": "XAU (2026-11-27): +3.7 % hoy Ver pestaña Seguimiento del panel."
+   "mensaje": "MSFT (2026-11-27): resultados: «Why Is Microsoft (MSFT) Down 7.6% Since Last Earnings Report?» Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "AMSC",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 22.98,
+   "seguimiento": true,
+   "mensaje": "AMSC (2026-11-27): +8.2 % hoy (1.5x lo normal), volumen 0.5x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "AMPX",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 6.16,
+   "seguimiento": true,
+   "mensaje": "AMPX (2026-11-27): +8.3 % hoy (1.2x lo normal), volumen 0.6x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "SSII",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 1.36,
+   "seguimiento": true,
+   "mensaje": "SSII (2026-11-27): +9.7 % hoy (1.0x lo normal), volumen 0.2x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa. Ver pestaña Seguimiento del panel."
+  },
+  {
+   "ticker": "TE",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 1.32,
+   "seguimiento": true,
+   "mensaje": "TE (2026-11-27): +20.0 % hoy (2.3x lo normal), volumen 0.4x. Causa probable: «T1 Energy: Strong Demand Meets Funding And Tax Credit Risks» (noticia, 2026-11-27). Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [

@@ -236,5 +236,28 @@ fecha,ticker,cierre,cambio_pct,volumen_rel,grande,porque
 2026-11-25,XAU,3543.8,-0.51,0.1,0,Movimiento normal.
 2026-11-26,EURUSD,1.1,0.02,,0,Movimiento normal.
 2026-11-26,XAU,3619.9,2.38,0.2,0,Movimiento normal.
+2026-11-27,AEHR,43.6,5.21,0.4,0,Se movió en línea con su sector (QQQ +2.7 %).
+2026-11-27,AII,29.04,0.21,0.4,0,Movimiento normal para esta acción.
+2026-11-27,ALT,1.54,6.21,0.8,0,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+2026-11-27,AMPX,6.16,8.26,0.6,1,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+2026-11-27,AMSC,22.98,8.24,0.5,1,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+2026-11-27,ASC,18.06,0.17,0.6,0,Movimiento normal para esta acción.
+2026-11-27,CCSI,41.66,1.12,0.4,0,Movimiento normal para esta acción.
+2026-11-27,CSTL,32.88,1.08,0.2,0,Movimiento normal para esta acción.
+2026-11-27,DCTH,19.46,1.35,0.3,0,Movimiento normal para esta acción.
+2026-11-27,DFIN,65.83,0.21,0.4,0,Movimiento normal para esta acción.
 2026-11-27,EURUSD,1.1,0.12,,0,Movimiento normal.
+2026-11-27,FTH,9.56,-0.21,0.2,0,Movimiento normal para esta acción.
+2026-11-27,IBEX,58.63,1.47,0.4,0,Movimiento normal para esta acción.
+2026-11-27,JAKK,33.14,1.35,0.5,0,Movimiento normal para esta acción.
+2026-11-27,LPG,45.83,0.15,0.3,0,Movimiento normal para esta acción.
+2026-11-27,MSFT,492.85,0.6,0.4,0,Movimiento normal para esta acción.
+2026-11-27,ORIC,8.34,1.09,0.6,0,Movimiento normal para esta acción.
+2026-11-27,PGY,14.93,4.33,0.3,0,Se movió en línea con su sector (QQQ +2.7 %).
+2026-11-27,RAPP,25.69,1.46,0.2,0,Movimiento normal para esta acción.
+2026-11-27,RCAT,1.88,6.82,0.6,0,"Causa probable: «Can Draganfly's AI Partnership Boost Its Unmanned Systems Business?» (contrato o pedido, 2026-11-26)."
+2026-11-27,REPX,40.26,1.82,0.4,0,Movimiento normal para esta acción.
+2026-11-27,SSII,1.36,9.68,0.2,1,"No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
+2026-11-27,SVRA,4.66,1.53,0.4,0,Movimiento normal para esta acción.
+2026-11-27,TE,1.32,20.0,0.4,1,"Causa probable: «T1 Energy: Strong Demand Meets Funding And Tax Credit Risks» (noticia, 2026-11-27)."
 2026-11-27,XAU,3666.0,3.68,0.6,1,"Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas."
