@@ -1,11 +1,35 @@
 # ORIC · notas del repaso diario (agente B)
 
 ## Resumen (5 líneas)
-1. **Estado: ATENTO.** El miércoles 25-nov devolvió una parte de la subida: **−1,8 % hasta 8,25 $** (llegó a caer ~5,7 % durante el día).
-2. Sigue **por encima de la EMA 9 (8,06 $)** y dentro de la zona de soporte 7,2-7,5 $ a la vista: el freno de la caída se mantiene.
+1. **Estado: ATENTO.** Último cierre: **8,25 $ (miércoles 25-nov)**. El jueves 26 la bolsa estuvo cerrada (Acción de Gracias), así que no hay precio nuevo.
+2. Sigue **por encima de la EMA 9 (8,06 $)** y cerca de la zona de soporte 7,2-7,5 $: el freno de la caída se mantiene.
 3. Sin noticias de la empresa en 48 h (ni fármacos, ni ampliación de capital, ni analistas nuevos, ni del rival JNJ-6143 de J&J).
-4. Hoy jueves 26-nov la bolsa de EE. UU. está **cerrada** (Acción de Gracias); el viernes 27 cierra antes (19:00 España).
+4. Hoy viernes 27-nov la bolsa cierra antes (**19:00 España**) y suele haber poco volumen: los movimientos de hoy cuentan poco.
 5. Demo: la primera mitad sigue válida **solo con orden limitada ≤ 8,5 $**. Segunda mitad con señal B (dos cierres > 9,3 $). Stop 6,5 $, objetivo 13 $.
+
+## 27-nov-2026 · ATENTO (sin cambios)
+
+**Qué ha pasado**
+- Nada nuevo: el jueves 26-nov no hubo bolsa y el informe nocturno sigue con el cierre del 25-nov (8,25 $, RSI 42, EMA 9 8,06 $).
+- Noticias: ninguna nueva en 48 h. Lo que sale en buscadores es antiguo (concesión de opciones a empleados nuevos del 6-nov, datos del rival de J&J del 25-oct).
+
+**Qué significa**
+- La tesis y el momento de entrada no cambian. Hoy es media sesión con poco volumen: no sacar conclusiones si se mueve mucho.
+
+**Qué haría hoy en la demo**
+- Mantener la **orden limitada de la primera mitad a 8,5 $ como máximo** (≤ 1 % de la cartera). No perseguir si sube.
+- Si cierra por debajo de **7,2 $** → PELIGRO, salir. Stop de tesis 6,5 $.
+- **Niveles del plan: sin cambios.**
+
+**Fuentes**
+| dato | valor | fuente | fecha |
+|---|---|---|---|
+| Precio, RSI, EMA 9 | 8,25 $ · 42,0 · 8,06 $ | investigacion/seguimiento/ORIC.md (Yahoo) | 25-nov-2026 |
+| Opciones a empleados nuevos (antigua) | 14.800 opciones + 2.400 acciones | [finviz / GlobeNewswire](https://finviz.com/news/418644/oric-pharmaceuticals-reports-inducement-grants-under-nasdaq-listing-rule-5635c4) (intermediaria) | 6-nov-2026 |
+| Rival JNJ-6143 (antigua) | 75 % de respuesta en fase 1 | [jnj.com](https://www.jnj.com/media-center/press-releases/johnson-johnson-reports-75-tumor-response-rate-in-advanced-prostate-cancer-with-jnj-6143-a-first-in-class-riptac-molecule) | 25-oct-2026 |
+| Fármacos / ampliación / analistas | sin novedades en 48 h | búsqueda web | 27-nov-2026 |
+
+---
 
 ## 26-nov-2026 · ATENTO
 
