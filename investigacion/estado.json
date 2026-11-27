@@ -32,18 +32,11 @@
    "precio": 1.100000023841858
   },
   {
-   "ticker": "MSFT",
-   "tipo": "NOTICIA IMPORTANTE",
-   "precio": 489.93,
+   "ticker": "XAU",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 3653.3,
    "seguimiento": true,
-   "mensaje": "MSFT (2026-11-25): compra o fusión: «What Does Pinterest (PINS) Pay Overhaul Mean For Its Takeover Talk And Ad Push?» Ver pestaña Seguimiento del panel."
-  },
-  {
-   "ticker": "MSFT",
-   "tipo": "NOTICIA IMPORTANTE",
-   "precio": 489.93,
-   "seguimiento": true,
-   "mensaje": "MSFT (2026-11-25): compra o fusión, contrato o pedido: «Pinterest Soars 11% in a Week as a Pay Change Sparks Takeover Talk. Is a Deal Really Coming?» Ver pestaña Seguimiento del panel."
+   "mensaje": "XAU (2026-11-26): +3.3 % hoy Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [

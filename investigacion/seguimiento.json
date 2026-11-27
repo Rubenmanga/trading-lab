@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-26T23:26:00+00:00",
+ "actualizado": "2026-11-27T03:40:16+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -275,8 +275,10 @@
     "volumen_rel": 0.9,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-03-17"
     ],
@@ -307,6 +309,17 @@
      "volumen_rel": 0.9
     },
     "titulares": [
+     {
+      "fecha": "2026-11-26",
+      "titulo": "Can Draganfly's AI Partnership Boost Its Unmanned Systems Business?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=7192f80d895bbbdff19529bce4fb66da7c83572193c64f9638b47777f94b0af6",
+      "causas": [
+       "contrato o pedido"
+      ],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-24",
       "titulo": "Unusual Machines Is Down 47% in a Month. Can UMAC Stock Hit Oppenheimer’s $30 Target by 2030?",
@@ -344,35 +357,6 @@
       "causas": [],
       "nueva": false,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-22",
-      "titulo": "Red Cat Holdings Receives Army Innovation Award",
-      "fuente": "fiscal.ai",
-      "url": "https://world.einnews.com/pr_news/958237127/testing-emerging-sustainment-systems-for-the-modern-battlefield-at-kinetic-reach",
-      "causas": [
-       "contrato o pedido"
-      ],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-21",
-      "titulo": "Red Cat Holdings: 3 Key Takeaways for Long-Term Investors",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=919b009816051a9948f4327ceff2dccc9e57b3ffb33836c4a4d988c613da62b4",
-      "causas": [],
-      "nueva": false,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-21",
-      "titulo": "Benzinga Bulls and Bears: Nvidia, Credo, Red Cat",
-      "fuente": "Benzinga",
-      "url": "https://finnhub.io/api/news?id=908e2dc7ba1e06f80e8c8a480429da8386d57d3638da4020aff4f3e3f74f5373",
-      "causas": [],
-      "nueva": false,
-      "importante": false
      }
     ],
     "vistos": [
@@ -383,6 +367,7 @@
      "aerovironment is near its 52week low will avav stock hit 50 or 150 fir",
      "afterhours market movers microcaps and small caps post sharp gains and",
      "benzinga bulls and bears nvidia credo red cat",
+     "can draganflys ai partnership boost its unmanned systems business",
      "can draganflys canadian defense selection drive its growth prospects",
      "ceo jeffrey m thompson sells 150000 shares of red cat holdings",
      "disney up on adjusted eps beat home depot down on guidance  stock move",
@@ -571,16 +556,7 @@
       "texto": "compra o fusión, contrato o pedido: «Pinterest Soars 11% in a Week as a Pay Change Sparks Takeover Talk. Is a Deal Really Coming?»"
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "NOTICIA IMPORTANTE",
-      "texto": "compra o fusión: «What Does Pinterest (PINS) Pay Overhaul Mean For Its Takeover Talk And Ad Push?»"
-     },
-     {
-      "tipo": "NOTICIA IMPORTANTE",
-      "texto": "compra o fusión, contrato o pedido: «Pinterest Soars 11% in a Week as a Pay Change Sparks Takeover Talk. Is a Deal Really Coming?»"
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "NOTICIA IMPORTANTE|compra o fusión, contrato o pedido: «Pinterest Soa",
      "NOTICIA IMPORTANTE|compra o fusión: «What Does Pinterest (PINS) Pay O"
@@ -619,6 +595,35 @@
       "titulo": "BNY and Microsoft Complete AI Agent Pilot for Treasury Trading",
       "fuente": "fiscal.ai",
       "url": "https://www.pymnts.com/news/artificial-intelligence/2026/bny-and-microsoft-let-ai-agents-haggle-over-treasurys/",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-26",
+      "titulo": "LUNR Aerospace Appoints Draganfly CEO Cameron Chell to Board of Directors",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=35c0295fe741e85871b77e56a7cfbc8c9096a37726916cad1492c547654b9550",
+      "causas": [
+       "directivos"
+      ],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-26",
+      "titulo": "Tech Stock Sell-Off: Down 13%, Is Microsoft a Buy Now?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=86259c42f8252a3a0a1f4af0d691afb249d60966cad3a5148ca584f626c715d7",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-26",
+      "titulo": "Steve Cohen’s 5 Biggest Stock Bets for 2027",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=c5a7bb43a4a99b8e534b9fc1007ed94a0aaead942e19b5e04ec9ae32f57e93ec",
       "causas": [],
       "nueva": true,
       "importante": false
@@ -714,37 +719,9 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-26",
-      "titulo": "The Economy Grew Way Faster Than First Reported: Q3 GDP Revised Up to 4.3%",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=c4079b41499c39a3562eff34451594219699874c9557af1a537f97c58861c560",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-26",
-      "titulo": "Europe Cloud Computing Market Surges to $ 550.42 billion at a CAGR 11.0% by 2030 | Report by MarketsandMarkets™",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=d5e07e11acfcdb2c27ac84447b91271f5009e66f8ce6d71de8e56b2a165b1b62",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-26",
-      "titulo": "Data Engineering Workflow Orchestration Market Global Report 2026 | Capture $14.43B AI and Multi-Cloud Demand with Databricks, Microsoft, Snowflake and Astronomer",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=0e2b296df4476fe52a7974b0eb4a01264f508e10cc344e5d3e92676af55351aa",
-      "causas": [],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
-     "elastic makes highaccuracy costefficient jina ai models available on m",
      "elizabeth warren takes aim at big tech billionaires over china ai acce",
      "elon musk warns ais 2027 cash shortage will be nuts as industry could",
      "ema launches ai employees for hr it and finance on microsoft marketpla",
@@ -811,6 +788,7 @@
      "kno2 collaborates with microsoft to connect healthcare data to azure",
      "leading chros and business executives to convene at i4cps 2027 next pr",
      "learn why the bull case for ibm stock could change following quantum c",
+     "lunr aerospace appoints draganfly ceo cameron chell to board of direct",
      "market chatter nvidia amazon microsoft openai and anthropic to be name",
      "maverick medical ai integrates codeagent with microsoft dragon copilot",
      "maverick medical ai surfaces codeagent within microsoft radiology repo",
@@ -877,7 +855,6 @@
      "microsoft stocks rise 316 as anthropic commits 472 billion minimum to",
      "microsoft stocks rise 39 with a perfect gf score as openai contingency",
      "microsoft stocks slip 125 while nadella backs cheaper inhouse ai model",
-     "microsoft time to sell before depreciation eats profits rating downgra",
      "microsoft to retire microsoft to do app in 2027",
      "microsoft uae and space42 release report on geospatial agentic ai",
      "microsoft verifies intouch123 inc in partner center",
@@ -918,7 +895,6 @@
      "nvidia is now second to apple in the worlds most valued companies on j",
      "nvidia shatters microsofts historic stock market record",
      "nvidia the most important earnings chart this week",
-     "nvidia upgrade to hold too early to buy",
      "nvidia why jensen huangs departure can be good for ai",
      "nvidia with a positive q3 despite sec probing nvidia amid huang scanda",
      "nvidiabacked nscale reportedly eyes private route as ai market selloff",
@@ -975,12 +951,14 @@
      "stackgen launches shipyard on microsoft marketplace",
      "stanley druckenmiller bill ackman and 7 other famous investors own ama",
      "state street tech select spdr xlk adds apple and nvidia on nov 24",
+     "steve cohens 5 biggest stock bets for 2027",
      "steve eisman says stock picking is back now that ai is no longer one t",
      "stocks opened up then fell 3 by the close what happened the last 45 ti",
      "strategically building a 75000 dividend portfolio with novembers top h",
      "taketwo smashes sales records with grand theft auto 6",
      "tech outages spur emergency buying costcoheavy etfs in focus",
      "tech sees huge selloff as anthropic ipo fails to lift the market",
+     "tech stock selloff down 13 is microsoft a buy now",
      "tech takes a beating as ai trade comes unstuck despite anthropic surge",
      "temporal cloud enters public preview on microsoft azure",
      "the 10year topped 5 for the first time since 2007 what happened next",
@@ -1544,8 +1522,10 @@
     "volumen_rel": 1.0,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-01-06"
     ],
@@ -1570,6 +1550,15 @@
      "volumen_rel": 1.3
     },
     "titulares": [
+     {
+      "fecha": "2026-11-26",
+      "titulo": "AI Chips Can’t Afford to Fail. Is Aehr (AEHR) the Fix?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=11adbe6e4a5d371f9144119e9b50fd07726281cb48d3184fb8a962744df1d0d9",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-24",
       "titulo": "3 US Semiconductor Stocks Worth Watching As Onshoring Spending Builds",
@@ -1614,6 +1603,7 @@
      "aehr test systems aehr stock could be overvalued after raised guidance",
      "aehr test systems notches another postearnings win as sales triple on",
      "aehr test systems pops 30 after earnings",
+     "ai chips cant afford to fail is aehr aehr the fix",
      "marketbeat week in review  119  1113",
      "ross stores intuit anthropic and other big stocks moving lower in frid",
      "the other elon musk etf responds as tesla tops 100"
@@ -1756,7 +1746,7 @@
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Movimiento normal para esta acción.",
     "cambios": [
-     "3 titulares nuevos"
+     "4 titulares nuevos"
     ],
     "catalizadores": [
      "Resultados el 2027-02-03 (tras el cierre)"
@@ -1787,6 +1777,15 @@
       "titulo": "Pagaya Technologies Announces Participation in Upcoming Investor Conferences",
       "fuente": "fiscal.ai",
       "url": "https://www.barchart.com/press-releases/9002826/pagaya-to-participate-in-upcoming-investor-conferences-and-events",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-26",
+      "titulo": "Wall Street Bulls Look Optimistic About Pagaya Technologies Ltd. (PGY): Should You Buy?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=9a77fbfd5d1297d80e179f8f999c165e8461d27b6e19695c62b6febbacfecade",
       "causas": [],
       "nueva": true,
       "importante": false
@@ -1841,6 +1840,7 @@
      "splash financial partners with pagaya to expand access to personal loa",
      "splash financial partners with pagaya to expand credit access",
      "trading halt halt status updated at 121000 pm et quotation resumption",
+     "wall street bulls look optimistic about pagaya technologies ltd pgy sh",
      "whats in the offing for cleanspark stock this earnings season"
     ],
     "sec_vistos": [
@@ -3186,30 +3186,40 @@
     "sector": "materia prima",
     "fecha": "2026-11-26",
     "fecha_anterior": "2026-11-25",
-    "cierre": 3592.6,
-    "cambio_pct": 1.61,
-    "cambio_5d_pct": -2.5,
+    "cierre": 3653.3,
+    "cambio_pct": 3.32,
+    "cambio_5d_pct": -0.9,
     "sigma_pct": 2.11,
-    "veces_normal": 0.8,
-    "volumen_rel": 0.4,
-    "grande": false,
-    "porque": "Movimiento normal.",
-    "resumen": "Movimiento normal.",
+    "veces_normal": 1.6,
+    "volumen_rel": 0.5,
+    "grande": true,
+    "porque": "Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.",
+    "resumen": "Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.",
     "cambios": [],
     "catalizadores": [],
     "titulares": [],
     "problemas": [],
-    "avisos": [],
-    "avisos_nuevos": []
+    "avisos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "+3.3 % hoy"
+     }
+    ],
+    "avisos_nuevos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "+3.3 % hoy"
+     }
+    ]
    },
    "EURUSD": {
     "nombre": "Euro/dólar (para pasar tu oro de dólares a euros)",
     "sector": "materia prima",
-    "fecha": "2026-11-26",
-    "fecha_anterior": "2026-11-25",
+    "fecha": "2026-11-27",
+    "fecha_anterior": "2026-11-26",
     "cierre": 1.1,
-    "cambio_pct": 0.1,
-    "cambio_5d_pct": 0.0,
+    "cambio_pct": 0.12,
+    "cambio_5d_pct": 0.1,
     "sigma_pct": 0.37,
     "veces_normal": 0.3,
     "volumen_rel": null,

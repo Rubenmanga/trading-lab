@@ -2,7 +2,7 @@
 
 ## Resumen (5 líneas)
 1. Mercado (S&P 500, SPY): -0.3 % hoy.
-2. Movimientos grandes: ninguno.
+2. Movimientos grandes: XAU +3.3 %.
 3. Noticias importantes nuevas: MSFT.
 4. Resultados en los próximos 14 días: ninguno.
 5. Datos: todas las empresas se leyeron bien.
@@ -22,9 +22,10 @@ Cierre 1.45 (2026-11-25) · 5 días +4.3 % · lo normal en un día: ±5.39 %.
 ## RCAT · Red Cat Holdings — ▲ +2.0 % · volumen 0.9x lo normal
 Cierre 1.76 (2026-11-25) · 5 días -21.8 % · lo normal en un día: ±10.18 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-03-17.
 - Analistas que dicen comprar: 86 % de 14.
+  - 2026-11-26 · [Can Draganfly's AI Partnership Boost Its Unmanned Systems Business?](https://finnhub.io/api/news?id=7192f80d895bbbdff19529bce4fb66da7c83572193c64f9638b47777f94b0af6) [contrato o pedido]
 
 ## MSFT · Microsoft — ▼ -1.2 % · volumen 0.9x lo normal ⚠️
 Cierre 489.93 (2026-11-25) · 5 días -3.6 % · lo normal en un día: ±2.38 %.
@@ -34,8 +35,8 @@ Cierre 489.93 (2026-11-25) · 5 días -3.6 % · lo normal en un día: ±2.38 %.
 - Analistas que dicen comprar: 95 % de 65.
   - 2026-11-26 · [Microsoft AI CEO Mustafa Suleyman Issues Warning on AI Safety Thresholds](https://af.net/fr/realtime/microsoft-ai-ceo-warns-labs-are-crossing-threshold-as-internal-models-break-containment/) [directivos]
   - 2026-11-26 · [BNY and Microsoft Complete AI Agent Pilot for Treasury Trading](https://www.pymnts.com/news/artificial-intelligence/2026/bny-and-microsoft-let-ai-agents-haggle-over-treasurys/)
-  - 2026-11-26 · [Jensen Huang’s Return Doesn’t Make Nvidia Stock (NVDA) a Buy](https://finnhub.io/api/news?id=b0ac8bb3dace73cd41b4bef182a77951706cdc8225f5b141c4ff618953132724)
-  - 2026-11-26 · [Microsoft Stocks Slip 1.25% While Nadella Backs Cheaper In-House AI Models](https://finnhub.io/api/news?id=e6d3ea468072bf6cb0abed0b2a209365fc14e7487155446eaea0b7b925954986)
+  - 2026-11-26 · [LUNR Aerospace Appoints Draganfly CEO Cameron Chell to Board of Directors](https://finnhub.io/api/news?id=35c0295fe741e85871b77e56a7cfbc8c9096a37726916cad1492c547654b9550) [directivos]
+  - 2026-11-26 · [Tech Stock Sell-Off: Down 13%, Is Microsoft a Buy Now?](https://finnhub.io/api/news?id=86259c42f8252a3a0a1f4af0d691afb249d60966cad3a5148ca584f626c715d7)
 
 ## RAPP · Rapport Therapeutics — ▲ +0.1 % · volumen 0.4x lo normal
 Cierre 25.32 (2026-11-25) · 5 días +8.2 % · lo normal en un día: ±5.78 %.
@@ -55,9 +56,10 @@ Cierre 21.23 (2026-11-25) · 5 días -5.9 % · lo normal en un día: ±5.26 %.
 ## AEHR · Aehr Test Systems — ▼ -1.1 % · volumen 1.0x lo normal
 Cierre 41.44 (2026-11-25) · 5 días -16.2 % · lo normal en un día: ±11.7 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
+- **Qué cambió:** 1 titular nuevo.
 - **Próximos catalizadores:** Resultados el 2027-01-06.
 - Analistas que dicen comprar: 92 % de 12.
+  - 2026-11-26 · [AI Chips Can’t Afford to Fail. Is Aehr (AEHR) the Fix?](https://finnhub.io/api/news?id=11adbe6e4a5d371f9144119e9b50fd07726281cb48d3184fb8a962744df1d0d9)
 
 ## REPX · Riley Exploration Permian — = +0.0 % · volumen 1.0x lo normal
 Cierre 39.54 (2026-11-25) · 5 días -3.5 % · lo normal en un día: ±3.7 %.
@@ -71,10 +73,11 @@ Cierre 39.54 (2026-11-25) · 5 días -3.5 % · lo normal en un día: ±3.7 %.
 ## PGY · Pagaya Technologies — ▲ +2.0 % · volumen 0.9x lo normal
 Cierre 14.31 (2026-11-25) · 5 días -8.1 % · lo normal en un día: ±4.81 %.
 - **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** 3 titulares nuevos.
+- **Qué cambió:** 4 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-02-03 (tras el cierre).
 - Analistas que dicen comprar: 94 % de 16.
   - 2026-11-26 · [Pagaya Technologies Announces Participation in Upcoming Investor Conferences](https://www.barchart.com/press-releases/9002826/pagaya-to-participate-in-upcoming-investor-conferences-and-events)
+  - 2026-11-26 · [Wall Street Bulls Look Optimistic About Pagaya Technologies Ltd. (PGY): Should You Buy?](https://finnhub.io/api/news?id=9a77fbfd5d1297d80e179f8f999c165e8461d27b6e19695c62b6febbacfecade)
   - 2026-11-25 · [Pagaya to Participate in Upcoming Investor Conferences](https://www.businesswire.com/newsroom)
   - 2026-11-25 · [Pagaya to Participate in Upcoming Investor Conferences and Events](https://finnhub.io/api/news?id=7b96ab0fb02ce0128be1625e870c63ff52c636d82afbf9ad3b0b3bab52a49d95)
 
@@ -184,13 +187,13 @@ Cierre 32.53 (2026-11-25) · 5 días -2.5 % · lo normal en un día: ±3.39 %.
 
 # Materias primas
 
-## XAU · Oro — ▲ +1.6 % · volumen 0.4x lo normal
-Cierre 3592.6 (2026-11-26) · 5 días -2.5 % · lo normal en un día: ±2.11 %.
-- **Por qué:** Movimiento normal.
+## XAU · Oro — ▲ +3.3 % · volumen 0.5x lo normal ⚠️
+Cierre 3653.3 (2026-11-26) · 5 días -0.9 % · lo normal en un día: ±2.11 %.
+- **Por qué:** Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.
 - **Qué cambió:** nada nuevo.
 
 ## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▲ +0.1 %
-Cierre 1.1 (2026-11-26) · 5 días +0.0 % · lo normal en un día: ±0.37 %.
+Cierre 1.1 (2026-11-27) · 5 días +0.1 % · lo normal en un día: ±0.37 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 
