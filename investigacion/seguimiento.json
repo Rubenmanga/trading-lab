@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-27T04:43:58+00:00",
+ "actualizado": "2026-11-27T05:20:22+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -3079,6 +3079,105 @@
      "resultados_recientes": null
     }
    },
+   "OPRT": {
+    "nombre": "Oportun Financial Corporation",
+    "sector": "Financial Services",
+    "grupo": "ideas",
+    "fecha": "2026-11-25",
+    "fecha_anterior": "2026-11-24",
+    "cierre": 10.73,
+    "cambio_pct": -1.29,
+    "cambio_5d_pct": -6.4,
+    "sigma_pct": 7.39,
+    "veces_normal": 0.2,
+    "volumen_rel": 0.8,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "3 titulares nuevos"
+    ],
+    "catalizadores": [
+     "Resultados el 2027-02-24"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "Oportun Financial Corp",
+    "recs_pct_compra": 63.6,
+    "recs_n": 11,
+    "proximos_resultados": "2027-02-24",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLF",
+     "fecha": "2026-11-25",
+     "fecha_anterior": "2026-11-24",
+     "cierre": 56.51,
+     "cambio_pct": 0.71,
+     "cambio_5d_pct": 0.2,
+     "sigma_pct": 1.54,
+     "veces_normal": 0.5,
+     "volumen_rel": 0.9
+    },
+    "titulares": [
+     {
+      "fecha": "2026-11-25",
+      "titulo": "Oportun Completes $372 Million Asset-Backed Notes Issuance",
+      "fuente": "fiscal.ai",
+      "url": "https://www.quantisnow.com/insight/oportun-financial-corporation-filed-sec-form-8-k-creation-of-a-6806192",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-24",
+      "titulo": "Oportun Appoints Laura Unger to Board of Directors",
+      "fuente": "fiscal.ai",
+      "url": "https://www.globenewswire.com/news-release/2026/11/24/3409878/0/en/oportun-appoints-laura-unger-to-its-board-of-directors.html",
+      "causas": [
+       "directivos"
+      ],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-24",
+      "titulo": "Oportun Appoints Laura Unger to its Board of Directors",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=66ac9294231b75039f8b8a7ef8b105f5198d9260d955f92636f6f5dd920811c6",
+      "causas": [
+       "directivos"
+      ],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-23",
+      "titulo": "Wall Street Analysts Predict a 31.07% Upside in Oportun Financial (OPRT): Here's  What You Should Know",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=25c90136077377606221fe593ea5b33794656c0fcc0966588e6ab0bbc0fbbb70",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "oportun appoints laura unger to board of directors",
+     "oportun appoints laura unger to its board of directors",
+     "oportun completes 372 million assetbacked notes issuance",
+     "wall street analysts predict a 3107 upside in oportun financial oprt h"
+    ],
+    "sec_vistos": [],
+    "anterior": {
+     "fecha": null,
+     "vistos": null,
+     "sec_vistos": null,
+     "recs_pct_compra": null,
+     "proximos_resultados": null,
+     "resultados_recientes": null
+    }
+   },
    "CCSI": {
     "nombre": "Consensus Cloud Solutions, Inc.",
     "sector": "Technology",
@@ -3128,48 +3227,65 @@
      "resultados_recientes": null
     }
    },
-   "CSTL": {
-    "nombre": "Castle Biosciences, Inc.",
-    "sector": "salud",
+   "JAKK": {
+    "nombre": "JAKKS Pacific, Inc.",
+    "sector": "Consumer Cyclical",
     "grupo": "ideas",
     "fecha": "2026-11-25",
     "fecha_anterior": "2026-11-24",
-    "cierre": 32.53,
-    "cambio_pct": -6.12,
-    "cambio_5d_pct": -2.5,
-    "sigma_pct": 3.39,
-    "veces_normal": 1.8,
-    "volumen_rel": 0.7,
+    "cierre": 32.7,
+    "cambio_pct": -5.82,
+    "cambio_5d_pct": -8.8,
+    "sigma_pct": 2.79,
+    "veces_normal": 2.1,
+    "volumen_rel": 0.9,
     "grande": false,
     "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
     "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "cambios": [],
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
-     "Resultados el 2027-02-22 (tras el cierre)"
+     "Resultados el 2027-02-17"
     ],
     "avisos": [],
     "avisos_nuevos": [],
     "avisados": [],
     "problemas": [],
-    "nombre_fuente": "Castle Biosciences, Inc.",
-    "recs_pct_compra": 93.8,
-    "recs_n": 16,
-    "proximos_resultados": "2027-02-22",
+    "nombre_fuente": "JAKKS Pacific Inc",
+    "recs_pct_compra": 87.5,
+    "recs_n": 8,
+    "proximos_resultados": "2027-02-17",
     "resultados_recientes": null,
     "referencia": {
-     "ticker": "XBI",
+     "ticker": "XLY",
      "fecha": "2026-11-25",
      "fecha_anterior": "2026-11-24",
-     "cierre": 156.6,
-     "cambio_pct": -0.14,
-     "cambio_5d_pct": 8.0,
-     "sigma_pct": 3.01,
-     "veces_normal": 0.0,
-     "volumen_rel": 1.3
+     "cierre": 117.49,
+     "cambio_pct": -0.2,
+     "cambio_5d_pct": -1.4,
+     "sigma_pct": 2.1,
+     "veces_normal": 0.1,
+     "volumen_rel": 0.9
     },
-    "titulares": [],
-    "vistos": [],
-    "sec_vistos": [],
+    "titulares": [
+     {
+      "fecha": "2026-11-25",
+      "titulo": "Jakks Pacific (JAKK) Stock Is Down 5.6% Today Without Company News",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=6a5a15035b60e289dc1d039e50c7a3104b0ee25e2f888801735c12a215850a9e",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "jakks pacific jakk stock is down 56 today without company news"
+    ],
+    "sec_vistos": [
+     "2026-07-14Fondo grande >5 % (13G)",
+     "2026-07-28Fondo grande >5 % (13G)"
+    ],
     "anterior": {
      "fecha": null,
      "vistos": null,
@@ -3184,14 +3300,14 @@
    "XAU": {
     "nombre": "Oro",
     "sector": "materia prima",
-    "fecha": "2026-11-26",
+    "fecha": "2026-11-27",
     "fecha_anterior": "2026-11-25",
-    "cierre": 3662.0,
-    "cambio_pct": 3.57,
-    "cambio_5d_pct": -0.6,
+    "cierre": 3666.0,
+    "cambio_pct": 3.68,
+    "cambio_5d_pct": -0.5,
     "sigma_pct": 2.11,
     "veces_normal": 1.7,
-    "volumen_rel": 0.5,
+    "volumen_rel": 0.6,
     "grande": true,
     "porque": "Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.",
     "resumen": "Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.",
@@ -3202,10 +3318,15 @@
     "avisos": [
      {
       "tipo": "MOVIMIENTO GRANDE",
-      "texto": "+3.6 % hoy"
+      "texto": "+3.7 % hoy"
      }
     ],
-    "avisos_nuevos": []
+    "avisos_nuevos": [
+     {
+      "tipo": "MOVIMIENTO GRANDE",
+      "texto": "+3.7 % hoy"
+     }
+    ]
    },
    "EURUSD": {
     "nombre": "Euro/dólar (para pasar tu oro de dólares a euros)",
@@ -3213,10 +3334,10 @@
     "fecha": "2026-11-27",
     "fecha_anterior": "2026-11-26",
     "cierre": 1.1,
-    "cambio_pct": 0.04,
-    "cambio_5d_pct": 0.0,
+    "cambio_pct": 0.08,
+    "cambio_5d_pct": 0.1,
     "sigma_pct": 0.37,
-    "veces_normal": 0.1,
+    "veces_normal": 0.2,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",

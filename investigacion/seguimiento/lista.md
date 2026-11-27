@@ -2,7 +2,7 @@
 
 ## Resumen (5 líneas)
 1. Mercado (S&P 500, SPY): -0.3 % hoy.
-2. Movimientos grandes: XAU +3.6 %.
+2. Movimientos grandes: XAU +3.7 %.
 3. Noticias importantes nuevas: MSFT.
 4. Resultados en los próximos 14 días: ninguno.
 5. Datos: todas las empresas se leyeron bien.
@@ -172,28 +172,40 @@ Cierre 57.78 (2026-11-25) · 5 días +3.6 % · lo normal en un día: ±4.1 %.
 - Analistas que dicen comprar: 0 % de 7.
   - 2026-11-23 · [IBEX (NASDAQ:IBEX): A Peter Lynch-Style GARP Opportunity](https://finnhub.io/api/news?id=0b397ecd4df4582f9da981990167b910de7e059376d26e88f505bc6361b781b3)
 
+## OPRT · Oportun Financial Corporation — ▼ -1.3 % · volumen 0.8x lo normal
+Cierre 10.73 (2026-11-25) · 5 días -6.4 % · lo normal en un día: ±7.39 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** 3 titulares nuevos.
+- **Próximos catalizadores:** Resultados el 2027-02-24.
+- Analistas que dicen comprar: 64 % de 11.
+  - 2026-11-25 · [Oportun Completes $372 Million Asset-Backed Notes Issuance](https://www.quantisnow.com/insight/oportun-financial-corporation-filed-sec-form-8-k-creation-of-a-6806192)
+  - 2026-11-24 · [Oportun Appoints Laura Unger to Board of Directors](https://www.globenewswire.com/news-release/2026/11/24/3409878/0/en/oportun-appoints-laura-unger-to-its-board-of-directors.html) [directivos]
+  - 2026-11-24 · [Oportun Appoints Laura Unger to its Board of Directors](https://finnhub.io/api/news?id=66ac9294231b75039f8b8a7ef8b105f5198d9260d955f92636f6f5dd920811c6) [directivos]
+  - 2026-11-23 · [Wall Street Analysts Predict a 31.07% Upside in Oportun Financial (OPRT): Here's  What You Should Know](https://finnhub.io/api/news?id=25c90136077377606221fe593ea5b33794656c0fcc0966588e6ab0bbc0fbbb70)
+
 ## CCSI · Consensus Cloud Solutions, Inc. — ▲ +0.9 % · volumen 0.9x lo normal
 Cierre 41.2 (2026-11-25) · 5 días +0.7 % · lo normal en un día: ±4.78 %.
 - **Por qué:** Movimiento normal para esta acción.
 - **Qué cambió:** nada nuevo.
 - Analistas que dicen comprar: 90 % de 10.
 
-## CSTL · Castle Biosciences, Inc. — ▼ -6.1 % · volumen 0.7x lo normal
-Cierre 32.53 (2026-11-25) · 5 días -2.5 % · lo normal en un día: ±3.39 %.
+## JAKK · JAKKS Pacific, Inc. — ▼ -5.8 % · volumen 0.9x lo normal
+Cierre 32.7 (2026-11-25) · 5 días -8.8 % · lo normal en un día: ±2.79 %.
 - **Por qué:** No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.
-- **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-22 (tras el cierre).
-- Analistas que dicen comprar: 94 % de 16.
+- **Qué cambió:** 1 titular nuevo.
+- **Próximos catalizadores:** Resultados el 2027-02-17.
+- Analistas que dicen comprar: 88 % de 8.
+  - 2026-11-25 · [Jakks Pacific (JAKK) Stock Is Down 5.6% Today Without Company News](https://finnhub.io/api/news?id=6a5a15035b60e289dc1d039e50c7a3104b0ee25e2f888801735c12a215850a9e)
 
 # Materias primas
 
-## XAU · Oro — ▲ +3.6 % · volumen 0.5x lo normal ⚠️
-Cierre 3662.0 (2026-11-26) · 5 días -0.6 % · lo normal en un día: ±2.11 %.
+## XAU · Oro — ▲ +3.7 % · volumen 0.6x lo normal ⚠️
+Cierre 3666.0 (2026-11-27) · 5 días -0.5 % · lo normal en un día: ±2.11 %.
 - **Por qué:** Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.
 - **Qué cambió:** nada nuevo.
 
-## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▲ +0.0 %
-Cierre 1.1 (2026-11-27) · 5 días +0.0 % · lo normal en un día: ±0.37 %.
+## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▲ +0.1 %
+Cierre 1.1 (2026-11-27) · 5 días +0.1 % · lo normal en un día: ±0.37 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 

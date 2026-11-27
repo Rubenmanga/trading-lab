@@ -1,6 +1,6 @@
 # Carpeta del día · 27/11/2026
 
-_Resumen automático, sin IA. Precios y avisos del 2026-11-27 04:43 UTC. Sigues 16 acciones._
+_Resumen automático, sin IA. Precios y avisos del 2026-11-27 05:20 UTC. Sigues 16 acciones._
 
 ## 🔔 Avisos de hoy
 - **ZONA DE ENTRADA** · AMSC a 21.23 $ está en su zona de entrada (≤ 22.0), potencial 51% hasta objetivo
@@ -8,6 +8,7 @@ _Resumen automático, sin IA. Precios y avisos del 2026-11-27 04:43 UTC. Sigues 
 - **ZONA DE ENTRADA** · PGY a 14.31 $ está en su zona de entrada (≤ 17.5), potencial 75% hasta objetivo
 - **TESIS EN PELIGRO** · AMPX a 5.69 $ ha caído bajo el stop de tesis (6.8). Revisar.
 - **TESIS EN PELIGRO** · TE a 1.10 $ ha caído bajo el stop de tesis (1.35). Revisar.
+- **MOVIMIENTO GRANDE** · XAU (2026-11-27): +3.7 % hoy Ver pestaña Seguimiento del panel.
 
 ## 📰 Hechos nuevos en tus expedientes (últimos 4 días)
 - 25/11 **ALT** · 1 aviso de compra/venta de directivos (Form 4) (1 día: 5.07 %)
@@ -27,7 +28,6 @@ _Resumen automático, sin IA. Precios y avisos del 2026-11-27 04:43 UTC. Sigues 
 - Nada.
 
 ## 🆕 Nuevas en el top 10 del ranking
-- #8 **OPRT** · nota 68.4 · GARP (crecimiento a buen precio)
-- #10 **JAKK** · nota 68.2 · GARP (crecimiento a buen precio)
+- #10 **JAKK** · nota 68.0 · GARP (crecimiento a buen precio)
 
 _Detector de inflexión x3-x4: llegará en el Paso 8._

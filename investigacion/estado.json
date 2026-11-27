@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-27T04:43:58+00:00",
+ "actualizado": "2026-11-27T05:20:21+00:00",
  "alertas": [
   {
    "ticker": "AMSC",
@@ -30,6 +30,13 @@
    "tipo": "TESIS EN PELIGRO",
    "mensaje": "TE a 1.10 $ ha caído bajo el stop de tesis (1.35). Revisar.",
    "precio": 1.100000023841858
+  },
+  {
+   "ticker": "XAU",
+   "tipo": "MOVIMIENTO GRANDE",
+   "precio": 3666.0,
+   "seguimiento": true,
+   "mensaje": "XAU (2026-11-27): +3.7 % hoy Ver pestaña Seguimiento del panel."
   }
  ],
  "precios": [
