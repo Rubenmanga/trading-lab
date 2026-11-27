@@ -2,7 +2,7 @@
 
 ## Resumen (5 líneas)
 1. Mercado (S&P 500, SPY): -0.3 % hoy.
-2. Movimientos grandes: XAU +3.3 %.
+2. Movimientos grandes: XAU +3.6 %.
 3. Noticias importantes nuevas: MSFT.
 4. Resultados en los próximos 14 días: ninguno.
 5. Datos: todas las empresas se leyeron bien.
@@ -33,10 +33,10 @@ Cierre 489.93 (2026-11-25) · 5 días -3.6 % · lo normal en un día: ±2.38 %.
 - **Qué cambió:** 44 titulares nuevos.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
+  - 2026-11-27 · [5 Best Quantum Computing Stocks To Buy for 2027](https://finnhub.io/api/news?id=d9534ececca76cdb1148abbb15913546d884a3e01af8c1f239d734097fafec22)
+  - 2026-11-27 · [5 Best Tech Stocks to Buy for 2027 According to Hedge Funds](https://finnhub.io/api/news?id=3975a9cc6405c57e5d53317dea9ca75aa3f3e962954b69fb2dc10c68945a4502)
   - 2026-11-26 · [Microsoft AI CEO Mustafa Suleyman Issues Warning on AI Safety Thresholds](https://af.net/fr/realtime/microsoft-ai-ceo-warns-labs-are-crossing-threshold-as-internal-models-break-containment/) [directivos]
   - 2026-11-26 · [BNY and Microsoft Complete AI Agent Pilot for Treasury Trading](https://www.pymnts.com/news/artificial-intelligence/2026/bny-and-microsoft-let-ai-agents-haggle-over-treasurys/)
-  - 2026-11-26 · [LUNR Aerospace Appoints Draganfly CEO Cameron Chell to Board of Directors](https://finnhub.io/api/news?id=35c0295fe741e85871b77e56a7cfbc8c9096a37726916cad1492c547654b9550) [directivos]
-  - 2026-11-26 · [Tech Stock Sell-Off: Down 13%, Is Microsoft a Buy Now?](https://finnhub.io/api/news?id=86259c42f8252a3a0a1f4af0d691afb249d60966cad3a5148ca584f626c715d7)
 
 ## RAPP · Rapport Therapeutics — ▲ +0.1 % · volumen 0.4x lo normal
 Cierre 25.32 (2026-11-25) · 5 días +8.2 % · lo normal en un día: ±5.78 %.
@@ -187,13 +187,13 @@ Cierre 32.53 (2026-11-25) · 5 días -2.5 % · lo normal en un día: ±3.39 %.
 
 # Materias primas
 
-## XAU · Oro — ▲ +3.3 % · volumen 0.5x lo normal ⚠️
-Cierre 3653.3 (2026-11-26) · 5 días -0.9 % · lo normal en un día: ±2.11 %.
+## XAU · Oro — ▲ +3.6 % · volumen 0.5x lo normal ⚠️
+Cierre 3662.0 (2026-11-26) · 5 días -0.6 % · lo normal en un día: ±2.11 %.
 - **Por qué:** Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.
 - **Qué cambió:** nada nuevo.
 
-## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▲ +0.1 %
-Cierre 1.1 (2026-11-27) · 5 días +0.1 % · lo normal en un día: ±0.37 %.
+## EURUSD · Euro/dólar (para pasar tu oro de dólares a euros) — ▲ +0.0 %
+Cierre 1.1 (2026-11-27) · 5 días +0.0 % · lo normal en un día: ±0.37 %.
 - **Por qué:** Movimiento normal.
 - **Qué cambió:** nada nuevo.
 

@@ -1,6 +1,6 @@
 # Alertas de medio plazo
 
-_Actualizado: 2026-11-26T05:25:45+00:00_
+_Actualizado: 2026-11-27T04:43:57+00:00_
 
 - **ZONA DE ENTRADA** · AMSC a 21.23 $ está en su zona de entrada (≤ 22.0), potencial 51% hasta objetivo
 - **ZONA DE ENTRADA** · REPX a 39.54 $ está en su zona de entrada (≤ 46.0), potencial 47% hasta objetivo

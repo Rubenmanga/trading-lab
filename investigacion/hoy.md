@@ -1,6 +1,6 @@
-# Carpeta del día · 26/11/2026
+# Carpeta del día · 27/11/2026
 
-_Resumen automático, sin IA. Precios y avisos del 2026-11-26 05:25 UTC. Sigues 16 acciones._
+_Resumen automático, sin IA. Precios y avisos del 2026-11-27 04:43 UTC. Sigues 16 acciones._
 
 ## 🔔 Avisos de hoy
 - **ZONA DE ENTRADA** · AMSC a 21.23 $ está en su zona de entrada (≤ 22.0), potencial 51% hasta objetivo
@@ -27,8 +27,7 @@ _Resumen automático, sin IA. Precios y avisos del 2026-11-26 05:25 UTC. Sigues 
 - Nada.
 
 ## 🆕 Nuevas en el top 10 del ranking
-- #7 **IBEX** · nota 69.0 · Líder en tendencia
-- #9 **CCSI** · nota 68.1 · Calidad barata
-- #10 **CSTL** · nota 68.1 · GARP (crecimiento a buen precio)
+- #8 **OPRT** · nota 68.4 · GARP (crecimiento a buen precio)
+- #10 **JAKK** · nota 68.2 · GARP (crecimiento a buen precio)
 
 _Detector de inflexión x3-x4: llegará en el Paso 8._

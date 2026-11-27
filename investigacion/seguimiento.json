@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-27T03:40:16+00:00",
+ "actualizado": "2026-11-27T04:43:58+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -580,6 +580,24 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-27",
+      "titulo": "5 Best Quantum Computing Stocks To Buy for 2027",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=d9534ececca76cdb1148abbb15913546d884a3e01af8c1f239d734097fafec22",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-27",
+      "titulo": "5 Best Tech Stocks to Buy for 2027 According to Hedge Funds",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=3975a9cc6405c57e5d53317dea9ca75aa3f3e962954b69fb2dc10c68945a4502",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-26",
       "titulo": "Microsoft AI CEO Mustafa Suleyman Issues Warning on AI Safety Thresholds",
       "fuente": "fiscal.ai",
@@ -701,27 +719,10 @@
       "causas": [],
       "nueva": true,
       "importante": false
-     },
-     {
-      "fecha": "2026-11-26",
-      "titulo": "Cerebras Expands AI Inference Reach: Can It Challenge NVDA & AMD?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=03f38cb1cb453ba672ce13a0e3df51366c1b059d752ca9fabb5702e4d1a10cb8",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-26",
-      "titulo": "Which Funds With Software Exposure Fit Rising US AI Spending?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=7b2711f4da58d13b22711f758a4d84ee552fe1d7c5718bf5e2cd96fbdc73a781",
-      "causas": [],
-      "nueva": true,
-      "importante": false
      }
     ],
     "vistos": [
+     "elastic makes highaccuracy costefficient jina ai models available on m",
      "elizabeth warren takes aim at big tech billionaires over china ai acce",
      "elon musk warns ais 2027 cash shortage will be nuts as industry could",
      "ema launches ai employees for hr it and finance on microsoft marketpla",
@@ -827,7 +828,6 @@
      "microsoft ignite starts nov 17 will microsoft update its paid copilot",
      "microsoft initiates code red after most disruptive outage in companys",
      "microsoft integrates idemia mobile drivers license verification into e",
-     "microsoft invite copilot to thanksgiving dinner",
      "microsoft is the only tech giant not highly reliant on advertising as",
      "microsoft just relived the crowdstrike nightmare but theres one crucia",
      "microsoft launches ai transparency initiative",
@@ -3186,11 +3186,11 @@
     "sector": "materia prima",
     "fecha": "2026-11-26",
     "fecha_anterior": "2026-11-25",
-    "cierre": 3653.3,
-    "cambio_pct": 3.32,
-    "cambio_5d_pct": -0.9,
+    "cierre": 3662.0,
+    "cambio_pct": 3.57,
+    "cambio_5d_pct": -0.6,
     "sigma_pct": 2.11,
-    "veces_normal": 1.6,
+    "veces_normal": 1.7,
     "volumen_rel": 0.5,
     "grande": true,
     "porque": "Movimiento grande para el oro: suele reaccionar a tipos de interés, dólar y tensiones geopolíticas.",
@@ -3202,15 +3202,10 @@
     "avisos": [
      {
       "tipo": "MOVIMIENTO GRANDE",
-      "texto": "+3.3 % hoy"
+      "texto": "+3.6 % hoy"
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "MOVIMIENTO GRANDE",
-      "texto": "+3.3 % hoy"
-     }
-    ]
+    "avisos_nuevos": []
    },
    "EURUSD": {
     "nombre": "Euro/dólar (para pasar tu oro de dólares a euros)",
@@ -3218,10 +3213,10 @@
     "fecha": "2026-11-27",
     "fecha_anterior": "2026-11-26",
     "cierre": 1.1,
-    "cambio_pct": 0.12,
-    "cambio_5d_pct": 0.1,
+    "cambio_pct": 0.04,
+    "cambio_5d_pct": 0.0,
     "sigma_pct": 0.37,
-    "veces_normal": 0.3,
+    "veces_normal": 0.1,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",
