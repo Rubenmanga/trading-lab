@@ -1,4 +1,4 @@
-# Autopsias de resultados · 2026-11-26
+# Autopsias de resultados · 2026-11-27
 
 1. **2 autopsias** (2 con reacción medida). Con tan pocas, los patrones son pistas, no reglas.
 2. Previsión recortada, retirada o retrasada: reacción media **-20,4 %** (2 casos); mantenida o subida: **—** (0).

@@ -1,7 +1,7 @@
-# Expedientes por acción (2026-11-26)
+# Expedientes por acción (2026-11-27)
 
 1. 15 empresas seguidas, 813 hechos guardados en total.
-2. Hoy se han añadido 1 hechos nuevos.
+2. Hoy se han añadido 0 hechos nuevos.
 3. Cada hecho trae su fuente (SEC o Yahoo), su fecha y cómo reaccionó el precio a 1, 5 y 20 sesiones.
 4. Sin datos hoy: ninguna.
 5. Los expedientes solo crecen: nada se borra. Es información, no una recomendación.
