@@ -1,11 +1,35 @@
 # ORIC · notas del repaso diario (agente B)
 
 ## Resumen (5 líneas)
-1. **Estado: ATENTO.** Último cierre: **8,25 $ (miércoles 25-nov)**. El jueves 26 la bolsa estuvo cerrada (Acción de Gracias), así que no hay precio nuevo.
-2. Sigue **por encima de la EMA 9 (8,06 $)** y cerca de la zona de soporte 7,2-7,5 $: el freno de la caída se mantiene.
+1. **Estado: ATENTO.** Último cierre: **8,34 $ (viernes 27-nov, +1,1 %)**, en media sesión y con poco volumen (0,64× su media).
+2. Sigue **por encima de la EMA 9 (8,12 $)** y cerca de la zona de soporte 7,2-7,5 $: el freno de la caída aguanta una semana ya.
 3. Sin noticias de la empresa en 48 h (ni fármacos, ni ampliación de capital, ni analistas nuevos, ni del rival JNJ-6143 de J&J).
-4. Hoy viernes 27-nov la bolsa cierra antes (**19:00 España**) y suele haber poco volumen: los movimientos de hoy cuentan poco.
+4. Hoy sábado 28-nov no hay bolsa. El lunes 30-nov es la primera sesión «normal» tras Acción de Gracias: esa sí cuenta.
 5. Demo: la primera mitad sigue válida **solo con orden limitada ≤ 8,5 $**. Segunda mitad con señal B (dos cierres > 9,3 $). Stop 6,5 $, objetivo 13 $.
+
+## 28-nov-2026 · ATENTO (sin cambios)
+
+**Qué ha pasado**
+- Viernes 27-nov (media sesión): cierra en **8,34 $ (+1,1 %)**, RSI 43 (zona neutra), volumen bajo (0,64×). Sigue sobre la EMA 9 (8,12 $; media rápida de 9 días).
+- Le falta un +11,5 % para la señal B (9,3 $). No hay vela de giro ni divergencia del RSI.
+- Noticias: ninguna nueva en 48 h. Lo que sale en buscadores es antiguo (resultados del 3.er trimestre del 17-nov, conferencias con inversores del 23-nov, opciones a empleados del 6-nov).
+
+**Qué significa**
+- La tesis y el momento de entrada no cambian. Una subida pequeña con poco volumen en un día de fiesta no confirma nada.
+
+**Qué haría hoy en la demo**
+- Nada nuevo (no hay bolsa). Mantener la **orden limitada de la primera mitad a 8,5 $ como máximo** (≤ 1 % de la cartera). No perseguir si sube.
+- Si cierra por debajo de **7,2 $** → PELIGRO, salir. Stop de tesis 6,5 $.
+- **Niveles del plan: sin cambios.**
+
+**Fuentes**
+| dato | valor | fuente | fecha |
+|---|---|---|---|
+| Precio, RSI, EMA 9, volumen | 8,34 $ · 43,0 · 8,12 $ · 0,64× | investigacion/seguimiento/ORIC.md (Yahoo) | 27-nov-2026 |
+| Conferencias con inversores (antigua) | aviso de participación | [GlobeNewswire vía finviz](https://finviz.com/news/414643/oric-pharmaceuticals-to-participate-in-upcoming-investor-conferences) (intermediaria) | 23-nov-2026 |
+| Fármacos / ampliación / analistas / J&J | sin novedades en 48 h | búsqueda web | 28-nov-2026 |
+
+---
 
 ## 27-nov-2026 · ATENTO (sin cambios)
 
