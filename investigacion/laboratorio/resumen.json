@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-27",
+ "actualizado": "2026-11-28",
  "listones": {
   "ops_minimas": 100,
   "ops_fiables": 200,
@@ -1921,29 +1921,29 @@
     "vs_azar": 0.222
    },
    "sombra": {
-    "n": 13,
-    "R_medio": -0.008,
+    "n": 17,
+    "R_medio": 0.074,
     "ic95": [
-     -0.535,
-     0.518
+     -0.381,
+     0.529
     ],
-    "R_alt_medio": -0.008,
-    "aciertos_pct": 46.2,
-    "pf": 0.98,
-    "R_total": -0.1,
+    "R_alt_medio": 0.074,
+    "aciertos_pct": 52.9,
+    "pf": 1.2,
+    "R_total": 1.3,
     "peor_caida_R": -2.0,
     "peor_racha": 4,
     "largos": 0,
-    "cortos": 13,
-    "dias": 6,
-    "ops_dia": 2.17,
+    "cortos": 17,
+    "dias": 7,
+    "ops_dia": 2.43,
     "por_anio": {
      "2026": {
-      "n": 13,
-      "R": -0.008
+      "n": 17,
+      "R": 0.074
      }
     },
-    "anios_positivos": 0,
+    "anios_positivos": 1,
     "anios": 1,
     "semaforo": "amarillo"
    },
@@ -2497,29 +2497,33 @@
     {
      "f": "2026-11-24",
      "R": -0.11
+    },
+    {
+     "f": "2026-11-27",
+     "R": 1.26
     }
    ],
    "sombra_filtrada": {
-    "n": 2,
-    "R_medio": 0.726,
+    "n": 3,
+    "R_medio": 0.145,
     "ic95": [
-     0.689,
-     0.763
+     -0.994,
+     1.284
     ],
-    "R_alt_medio": 0.726,
-    "aciertos_pct": 100.0,
-    "pf": null,
-    "R_total": 1.5,
-    "peor_caida_R": 0.0,
-    "peor_racha": 0,
+    "R_alt_medio": 0.145,
+    "aciertos_pct": 66.7,
+    "pf": 1.43,
+    "R_total": 0.4,
+    "peor_caida_R": -1.0,
+    "peor_racha": 1,
     "largos": 0,
-    "cortos": 2,
-    "dias": 2,
+    "cortos": 3,
+    "dias": 3,
     "ops_dia": 1.0,
     "por_anio": {
      "2026": {
-      "n": 2,
-      "R": 0.726
+      "n": 3,
+      "R": 0.145
      }
     },
     "anios_positivos": 1,
@@ -3819,7 +3823,7 @@
   "2016-01-19",
   "2026-11-13"
  ],
- "dias_sombra": 6,
+ "dias_sombra": 7,
  "ultimas_sombra": [
   {
    "fecha": "2026-11-16",
@@ -4002,6 +4006,62 @@
    "R": -1.032,
    "ret_pct": -15.475,
    "hueco": 0.3
+  },
+  {
+   "fecha": "2026-11-27",
+   "estrategia": "corto_hueco",
+   "simbolo": "NCPL",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 2.4488,
+   "salida": 2.001,
+   "motivo": "cierre forzado",
+   "hora_salida": "15:46:00",
+   "R": 1.199,
+   "ret_pct": 17.991,
+   "hueco": 0.262
+  },
+  {
+   "fecha": "2026-11-27",
+   "estrategia": "corto_hueco",
+   "simbolo": "POM",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 3.4183,
+   "salida": 2.9014,
+   "motivo": "cierre forzado",
+   "hora_salida": "15:45:00",
+   "R": 0.994,
+   "ret_pct": 14.908,
+   "hueco": 0.8137
+  },
+  {
+   "fecha": "2026-11-27",
+   "estrategia": "corto_hueco",
+   "simbolo": "RETO",
+   "lado": "venta",
+   "hora_entrada": "09:35",
+   "entrada": 4.9475,
+   "salida": 5.6953,
+   "motivo": "stop",
+   "hora_salida": "11:20:00",
+   "R": -1.017,
+   "ret_pct": -15.249,
+   "hueco": 0.3272
+  },
+  {
+   "fecha": "2026-11-27",
+   "estrategia": "corto_hueco",
+   "simbolo": "BRZL",
+   "lado": "venta",
+   "hora_entrada": "09:38",
+   "entrada": 15.3623,
+   "salida": 14.9175,
+   "motivo": "fin del día",
+   "hora_salida": "13:00:00",
+   "R": 0.19,
+   "ret_pct": 2.849,
+   "hueco": 0.3655
   }
  ]
 }
