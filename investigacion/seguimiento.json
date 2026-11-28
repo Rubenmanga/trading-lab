@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-27T23:04:22+00:00",
+ "actualizado": "2026-11-28T03:19:32+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -275,7 +275,9 @@
     "grande": false,
     "porque": "Causa probable: «Can Draganfly's AI Partnership Boost Its Unmanned Systems Business?» (contrato o pedido, 2026-11-26).",
     "resumen": "Causa probable: «Can Draganfly's AI Partnership Boost Its Unmanned Systems Business?» (contrato o pedido, 2026-11-26).",
-    "cambios": [],
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-03-17"
     ],
@@ -306,6 +308,15 @@
      "volumen_rel": 0.2
     },
     "titulares": [
+     {
+      "fecha": "2026-11-27",
+      "titulo": "Ondas Rises 4% as It Tries to Snap a Three-Week Losing Streak; Unusual Machines Gains 2%, Red Cat Ticks Up",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=3c0bfa26c16564669080ff2f268f0656c88123c7d7bc20d4677af0bb09aa6366",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-26",
       "titulo": "Can Draganfly's AI Partnership Boost Its Unmanned Systems Business?",
@@ -382,6 +393,7 @@
      "ondas falls 8 despite 11 billion 2027 revenue target as drone stocks e",
      "ondas precision strike mix hurts q3 margins is relief ahead",
      "ondas retreats 5 despite record revenue and raised outlook red cat dro",
+     "ondas rises 4 as it tries to snap a threeweek losing streak unusual ma",
      "onds drops 223 in the past month as execution risks cloud growth",
      "onds raises 2026 outlook as backlog and defense demand accelerate",
      "piper sandler maintains neutral on red cat holdings lowers price targe",
@@ -539,7 +551,7 @@
     "porque": "Movimiento normal para esta acción.",
     "resumen": "Movimiento normal para esta acción.",
     "cambios": [
-     "42 titulares nuevos"
+     "43 titulares nuevos"
     ],
     "catalizadores": [
      "Resultados el 2027-01-26"
@@ -550,12 +562,7 @@
       "texto": "resultados: «Why Is Microsoft (MSFT) Down 7.6% Since Last Earnings Report?»"
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "NOTICIA IMPORTANTE",
-      "texto": "resultados: «Why Is Microsoft (MSFT) Down 7.6% Since Last Earnings Report?»"
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "NOTICIA IMPORTANTE|resultados: «Why Is Microsoft (MSFT) Down 7.6% Sin"
     ],
@@ -578,6 +585,24 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-28",
+      "titulo": "Anthropic's Expansion in Enterprise AI Challenges Microsoft's Market Position",
+      "fuente": "fiscal.ai",
+      "url": "https://www.varindia.com/news/microsoft-copilot-holds-ground-against-claude",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-28",
+      "titulo": "Vanguard's Growth ETF Has 3 Stocks Making Up More Than a Third of It. Only 1 Has Held Up in the Tech Sell-Off.",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=8a9bc66e9716dd14bf14d42e26a153ca10dfa86e3292230084d6f99d149b9846",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-27",
       "titulo": "Billionaire Chase Coleman’s Tiger Global Raised Its Cerebras Stake 48% to $790 Million",
       "fuente": "Yahoo",
@@ -591,6 +616,15 @@
       "titulo": "Should You Pick Palantir Over Its Big Tech Rivals?",
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=4a7f034c51c2d80d968bb3d780789e526e2b17a6b2394b32564dc556666c53c0",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-27",
+      "titulo": "Big Tech Turns Down The Volume On 'AI'",
+      "fuente": "SeekingAlpha",
+      "url": "https://finnhub.io/api/news?id=aef6883f0edd44bd985466f1f77642e50d0ce6c3d071f418318dc35e4767467f",
       "causas": [],
       "nueva": true,
       "importante": false
@@ -683,33 +717,6 @@
       "titulo": "Meta, Anthropic in Talks to Build AI Data Centers in Japan",
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=70739c7fb3a3a00b96a3f72bc76d09bdd583d1666368b27fd95fe90cd0add5ab",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-27",
-      "titulo": "C3.ai vs. UiPath: Which Technology Stock Is a Better Buy for 2027?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=b96558ea2b68dc1b14073dfa72428e5d96dbfb406307757b61dcbcba49e44ba7",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-27",
-      "titulo": "PLTR vs. ARM: Which AI-Tech Stock is Better Positioned Now?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=9f462ce194c77a6fb712ba32b926b3f7937a573a58d9220621cc0829f742d8e1",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-27",
-      "titulo": "ServiceNow vs. Synopsys: Which Technology Stock Is a Better Buy for 2027?",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=3b5f446f24edfe7a341bd51a770d8c91add43177a9c60183839713a2fa129a99",
       "causas": [],
       "nueva": true,
       "importante": false
@@ -973,6 +980,7 @@
      "trump vows tax on us firms building data centers abroad",
      "us plans to name nvidia among ai national champions wsj reports",
      "v2x expands collaboration with microsoft to advance aipowered mission",
+     "vanguards growth etf has 3 stocks making up more than a third of it on",
      "virtualization software  global strategic business report capitalize o",
      "wall street analyst picks a winner between coreweave and nebius after",
      "wall street and main street agree its time to tame the ai trade",
@@ -1006,7 +1014,6 @@
      "why did palo alto networks stock fall",
      "why dividend growth etfs deserve a place in techheavy portfolios",
      "why do nvidias customers owe it 81 billion",
-     "why is intel stock rallying today",
      "why is microsoft msft down 76 since last earnings report",
      "why is oracle spending 161 for every cash dollar",
      "why is snowflake stock going up",
@@ -1342,8 +1349,10 @@
     "volumen_rel": 0.2,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-03-08"
     ],
@@ -1368,6 +1377,15 @@
      "volumen_rel": 0.5
     },
     "titulares": [
+     {
+      "fecha": "2026-11-27",
+      "titulo": "Rapport Therapeutics (RAPP) Could Be 61% Undervalued After New RAP 219 Data Preview",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=ad4927b9a642260cbee5eb9b319cf0b925b28e2da48f0f0d2cad7fbd3fb6c1a2",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-24",
       "titulo": "Rapport Therapeutics to Present New Clinical Data at 2026 AES Annual Meeting",
@@ -1402,6 +1420,7 @@
     ],
     "vistos": [
      "jonestrading maintains buy rating and 82 price target for rapport ther",
+     "rapport therapeutics rapp could be 61 undervalued after new rap 219 da",
      "rapport therapeutics rapp stock looks pricey despite its 20 monthly sl",
      "rapport therapeutics to present new clinical data at 2026 aes annual m",
      "rapport therapeutics to present new data from longterm openlabel safet",
@@ -1446,7 +1465,9 @@
     "grande": true,
     "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
     "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "cambios": [],
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [],
     "avisos": [
      {
@@ -1454,12 +1475,7 @@
       "texto": "+8.2 % hoy (1.5x lo normal), volumen 0.5x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "MOVIMIENTO GRANDE",
-      "texto": "+8.2 % hoy (1.5x lo normal), volumen 0.5x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "MOVIMIENTO GRANDE|+8.2 % hoy (1.5x lo normal), volumen 0.5x. No hay "
     ],
@@ -1482,6 +1498,15 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-27",
+      "titulo": "American Superconductor (AMSC) Stock Could Be 46% Below Fair Value On Espionage Risk Focus",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=febb3b8c6b30201ac920aabca9021db50ffce756243b7f213c262b099cd03dee",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-23",
       "titulo": "XCHG Limited Announces Its First European Assembly Plant In Spain To Diversify Its Global Supply Chain And Accelerate R&D In Grid-Independent Charging Technology",
       "fuente": "Benzinga",
@@ -1494,6 +1519,7 @@
     "vistos": [
      "5 best renewable  clean energy stocks to buy according to analysts",
      "american superconductor amsc stock could be 35 undervalued after grid",
+     "american superconductor amsc stock could be 46 below fair value on esp",
      "corteva posts downbeat q3 results joins nvidia alvotech and other big",
      "shares of solar wind and clean energy stocks are trading lower followi",
      "xchg limited announces its first european assembly plant in spain to d"
@@ -1655,8 +1681,10 @@
     "volumen_rel": 0.4,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-03-02 (tras el cierre)"
     ],
@@ -1681,6 +1709,15 @@
      "volumen_rel": 0.6
     },
     "titulares": [
+     {
+      "fecha": "2026-11-27",
+      "titulo": "Zacks.com featured highlights include Vista Energy, Remitly Global, Riley Exploration Permian and Forum Energy Technologies",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=3a115884642f907094103969f8378a511877e98caba46ed0b25a91f471b97959",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-25",
       "titulo": "4 Stocks With Rising Cash Flows to Buy This Thanksgiving Week",
@@ -1708,7 +1745,8 @@
      "riley exploration permian delivers 20 oil production growth in q3 2026",
      "should value investors buy ring energy rei stock",
      "truist securities lowers price target for riley exploration permian in",
-     "zackscom featured highlights include jabil vista energy and riley expl"
+     "zackscom featured highlights include jabil vista energy and riley expl",
+     "zackscom featured highlights include vista energy remitly global riley"
     ],
     "sec_vistos": [
      "2026-07-29Fondo grande >5 % (13G)",
@@ -1889,8 +1927,10 @@
     "volumen_rel": 0.3,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-02-22 (tras el cierre)",
      "Ensayo F2 «Evaluation of the Safety and Efficacy of Treatment w/High Dose Melphalan Given D»: resultado principal previsto 2026-12"
@@ -1916,6 +1956,15 @@
      "volumen_rel": 0.5
     },
     "titulares": [
+     {
+      "fecha": "2026-11-27",
+      "titulo": "Here's Why You Should Retain WAT Stock in Your Portfolio for Now",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=71776d54761d1cee317d3dfb3eef281ff3ba6af7c139c048ac43b8c3b77f5ca6",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-25",
       "titulo": "Here's Why You Should Add Revvity Stock to Your Portfolio Now",
@@ -1948,6 +1997,7 @@
      "delcath systems to be featured on health uncensored with dr drew in se",
      "heres why you should add glaukos stock to your portfolio now",
      "heres why you should add revvity stock to your portfolio now",
+     "heres why you should retain wat stock in your portfolio for now",
      "wall street analysts think delcath systems dcth could surge 277 read t"
     ],
     "sec_vistos": [
@@ -2200,7 +2250,9 @@
     "grande": true,
     "porque": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
     "resumen": "No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa.",
-    "cambios": [],
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-03-02 (tras el cierre)"
     ],
@@ -2210,12 +2262,7 @@
       "texto": "+8.3 % hoy (1.2x lo normal), volumen 0.6x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "MOVIMIENTO GRANDE",
-      "texto": "+8.3 % hoy (1.2x lo normal), volumen 0.6x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "MOVIMIENTO GRANDE|+8.3 % hoy (1.2x lo normal), volumen 0.6x. No hay "
     ],
@@ -2238,6 +2285,15 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-27",
+      "titulo": "Amprius Technologies Fell While Sales Rose",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=fb6e6d21635e85479495b5732ea1ccaa7ef4cb4263c5593ac0ec949110b73049",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-23",
       "titulo": "XCHG Limited Announces Its First European Assembly Plant In Spain To Diversify Its Global Supply Chain And Accelerate R&D In Grid-Independent Charging Technology",
       "fuente": "Benzinga",
@@ -2251,6 +2307,7 @@
      "ameriprise financial cfo outlines adviser growth strategy as talent co",
      "amprius q3 earnings call highlights margin push and us expansion",
      "amprius technologies ampx lifted its 2026 outlook is it a bargain",
+     "amprius technologies fell while sales rose",
      "are business services stocks lagging  amprius technologies inc ampx th",
      "b riley adjusts price target on amprius technologies",
      "b riley securities maintains buy on amprius technologies lowers price",
@@ -2315,12 +2372,7 @@
       "texto": "+9.7 % hoy (1.0x lo normal), volumen 0.2x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "MOVIMIENTO GRANDE",
-      "texto": "+9.7 % hoy (1.0x lo normal), volumen 0.2x. No hay ninguna noticia que lo explique en las fuentes gratuitas (puede ser flujo de compras/ventas, sector o algo que aún no ha salido). No se inventa una causa."
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "MOVIMIENTO GRANDE|+9.7 % hoy (1.0x lo normal), volumen 0.2x. No hay "
     ],
@@ -2409,7 +2461,7 @@
     "porque": "Causa probable: «T1 Energy: Strong Demand Meets Funding And Tax Credit Risks» (noticia, 2026-11-27).",
     "resumen": "Causa probable: «T1 Energy: Strong Demand Meets Funding And Tax Credit Risks» (noticia, 2026-11-27).",
     "cambios": [
-     "1 titular nuevo"
+     "2 titulares nuevos"
     ],
     "catalizadores": [],
     "avisos": [
@@ -2418,12 +2470,7 @@
       "texto": "+20.0 % hoy (2.3x lo normal), volumen 0.4x. Causa probable: «T1 Energy: Strong Demand Meets Funding And Tax Credit Risks» (noticia, 2026-11-27)."
      }
     ],
-    "avisos_nuevos": [
-     {
-      "tipo": "MOVIMIENTO GRANDE",
-      "texto": "+20.0 % hoy (2.3x lo normal), volumen 0.4x. Causa probable: «T1 Energy: Strong Demand Meets Funding And Tax Credit Risks» (noticia, 2026-11-27)."
-     }
-    ],
+    "avisos_nuevos": [],
     "avisados": [
      "MOVIMIENTO GRANDE|+20.0 % hoy (2.3x lo normal), volumen 0.4x. Causa "
     ],
@@ -2445,6 +2492,15 @@
      "volumen_rel": 0.6
     },
     "titulares": [
+     {
+      "fecha": "2026-11-27",
+      "titulo": "T1 Energy (TE) Stock Is Up 21.4% Today Without Company News",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=f4152912f2de7eb37d7dbc5772f35f6d6d474518de1d1bb6d9284e23703efeac",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-27",
       "titulo": "T1 Energy: Strong Demand Meets Funding And Tax Credit Risks",
@@ -2502,6 +2558,7 @@
      "t1 energy te q3 2026 earnings call transcript",
      "t1 energy te shares just dropped so what is driving attention now",
      "t1 energy te stock faces cash pressure after q3 earnings",
+     "t1 energy te stock is up 214 today without company news",
      "t1 energy te stock looks cheap after its 85 fall",
      "technip energies joins msgbc oil gas  power 2026 as silver sponsor",
      "the other elon musk etf responds as tesla tops 100",
@@ -2954,8 +3011,10 @@
     "volumen_rel": 0.4,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-02-15 (antes de abrir)"
     ],
@@ -2980,6 +3039,15 @@
      "volumen_rel": 0.6
     },
     "titulares": [
+     {
+      "fecha": "2026-11-27",
+      "titulo": "Zacks Industry Outlook Highlights Red Violet and Donnelley Financial",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=f1a75eb36c072750c218e0615bc66472ab4a5545e3dce8dc38bc05e14fd656cd",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
      {
       "fecha": "2026-11-26",
       "titulo": "Donnelley Financial Solutions, Inc. Announces Officer Status Changes for Craig Clay and Eric Johnson",
@@ -3038,7 +3106,8 @@
      "donnelley financial nysedfin screens well on growth at a reasonable pr",
      "donnelley financial solutions inc announces officer status changes for",
      "donnelley financial solutions named 1 technology company on bpis most",
-     "donnelley financial solutions named to 2026 americas top 100 most love"
+     "donnelley financial solutions named to 2026 americas top 100 most love",
+     "zacks industry outlook highlights red violet and donnelley financial"
     ],
     "sec_vistos": [
      "2026-10-30Fondo grande >5 % (13G)"
@@ -3250,8 +3319,10 @@
     "volumen_rel": 0.5,
     "grande": false,
     "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "1 titular nuevo"
+    ],
     "catalizadores": [
      "Resultados el 2027-02-17"
     ],
@@ -3277,6 +3348,15 @@
     },
     "titulares": [
      {
+      "fecha": "2026-11-27",
+      "titulo": "Should Value Investors Buy JAKKS Pacific (JAKK) Stock?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=7ccedae966edbb097dc2c0336f4816bda9689babd600370408498d2925bd41c4",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
       "fecha": "2026-11-25",
       "titulo": "Jakks Pacific (JAKK) Stock Is Down 5.6% Today Without Company News",
       "fuente": "Yahoo",
@@ -3287,7 +3367,8 @@
      }
     ],
     "vistos": [
-     "jakks pacific jakk stock is down 56 today without company news"
+     "jakks pacific jakk stock is down 56 today without company news",
+     "should value investors buy jakks pacific jakk stock"
     ],
     "sec_vistos": [
      "2026-07-14Fondo grande >5 % (13G)",
@@ -3340,11 +3421,11 @@
     "sector": "materia prima",
     "fecha": "2026-11-27",
     "fecha_anterior": "2026-11-26",
-    "cierre": 1.09,
-    "cambio_pct": -0.29,
-    "cambio_5d_pct": -0.3,
+    "cierre": 1.1,
+    "cambio_pct": 0.02,
+    "cambio_5d_pct": 0.0,
     "sigma_pct": 0.37,
-    "veces_normal": 0.8,
+    "veces_normal": 0.1,
     "volumen_rel": null,
     "grande": false,
     "porque": "Movimiento normal.",
