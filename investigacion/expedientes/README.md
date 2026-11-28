@@ -1,4 +1,4 @@
-# Expedientes por acción (2026-11-27)
+# Expedientes por acción (2026-11-28)
 
 1. 15 empresas seguidas, 813 hechos guardados en total.
 2. Hoy se han añadido 0 hechos nuevos.

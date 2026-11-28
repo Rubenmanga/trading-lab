@@ -1,5 +1,5 @@
 fecha,tipo,resumen,fuente_url,fecha_fuente,precio_antes,reaccion_1d,reaccion_5d,reaccion_20d
-2026-11-20,movimiento,"Cae 18.2 % en un día (3.6 veces lo normal, volumen x4.7 su media)",https://finance.yahoo.com/quote/SVRA/history/,2026-11-20,5.21,-18.23,,
+2026-11-20,movimiento,"Cae 18.2 % en un día (3.6 veces lo normal, volumen x4.7 su media)",https://finance.yahoo.com/quote/SVRA/history/,2026-11-20,5.21,-18.23,-10.56,
 2026-11-16,grandes_inversores,Fondo grande pasa del 5 % (13G),https://www.sec.gov/Archives/edgar/data/1160308/000117266126005105/xslSCHEDULE_13G_X02/primary_doc.xml,2026-11-16,4.64,-3.99,-8.19,
 2026-11-09,cuentas,Cuentas del trimestre (10-Q),https://www.sec.gov/Archives/edgar/data/1160308/000119312526453535/svra-20260930.htm,2026-11-09,4.83,4.55,-3.93,
 2026-11-06,movimiento,"Sube 10.3 % en un día (2.7 veces lo normal, volumen x0.9 su media)",https://finance.yahoo.com/quote/SVRA/history/,2026-11-06,4.38,10.27,7.76,
