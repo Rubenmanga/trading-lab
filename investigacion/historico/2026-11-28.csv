@@ -1,0 +1,921 @@
+puesto,ticker,nota,precio,carril
+1,REPX,74.6,40.26,GARP (crecimiento a buen precio)
+2,DCTH,71.3,19.46,Crecimiento fuerte
+3,ASC,70.7,18.06,Calidad barata
+4,AII,69.9,29.04,Calidad barata
+5,LPG,69.5,45.83,Mixta
+6,OPRT,69.1,11.11,GARP (crecimiento a buen precio)
+7,DFIN,68.9,65.83,Líder en tendencia
+8,IBEX,68.7,58.63,Líder en tendencia
+9,JAKK,68.6,33.14,GARP (crecimiento a buen precio)
+10,CCSI,68.2,41.66,Calidad barata
+11,KINS,68.1,21.13,Calidad barata
+12,CSTL,68.0,32.88,GARP (crecimiento a buen precio)
+13,PGY,67.7,14.93,Calidad barata
+14,HRTG,67.6,31.36,Calidad barata
+15,CRCT,67.4,8.98,Líder en tendencia
+16,HIPO,67.3,36.44,Crecimiento fuerte
+17,HCSG,67.1,25.47,Calidad barata
+18,TASK,65.3,9.44,Calidad barata
+19,MTW,65.1,23.73,Líder en tendencia
+20,ACEL,64.9,13.89,Mixta
+21,AMN,64.6,35.47,Calidad barata
+22,EVTC,64.5,32.54,Calidad barata
+23,CRON,64.4,3.25,GARP (crecimiento a buen precio)
+24,PAYS,64.4,11.15,Líder en tendencia
+25,GDYN,64.2,14.42,Líder en tendencia
+26,DCOM,64.1,40.47,GARP (crecimiento a buen precio)
+27,ANIP,64.0,70.47,GARP (crecimiento a buen precio)
+28,IRWD,63.9,5.31,Calidad barata
+29,FCBM,63.8,13.16,GARP (crecimiento a buen precio)
+30,HSTM,63.8,26.9,Mixta
+31,GSL,63.3,40.17,Calidad barata
+32,PANL,63.2,8.49,Mixta
+33,SCSC,63.0,45.37,Mixta
+34,GCMG,63.0,13.32,Mixta
+35,JMSB,62.8,22.48,Mixta
+36,TCMD,62.8,28.14,Mixta
+37,PRG,62.6,43.09,GARP (crecimiento a buen precio)
+38,IA,62.5,19.38,Mixta
+39,SB,62.3,7.9,Líder en tendencia
+40,OSPN,62.3,24.17,Líder en tendencia
+41,PBAM,62.3,80.0,Mixta
+42,KFRC,62.1,56.01,Líder en tendencia
+43,NRDS,61.9,8.21,GARP (crecimiento a buen precio)
+44,APOG,61.7,48.26,Calidad barata
+45,EVER,61.6,27.69,Mixta
+46,LCLN,61.6,28.38,Mixta
+47,NEXA,61.2,10.96,GARP (crecimiento a buen precio)
+48,PFBC,61.0,100.02,Mixta
+49,GIC,60.9,44.64,Líder en tendencia
+50,DDI,60.8,15.54,Calidad barata
+51,SBSI,60.6,33.08,Mixta
+52,SXC,60.6,10.29,Líder en tendencia
+53,HAFC,60.5,31.33,Mixta
+54,JCAP,60.5,21.42,Calidad barata
+55,HTB,60.5,45.82,Mixta
+56,DAKT,60.4,18.71,Mixta
+57,CNMD,60.2,48.97,Calidad barata
+58,CEPU,60.2,10.95,Calidad barata
+59,CLMB,60.2,44.0,Líder en tendencia
+60,MQ,60.1,17.08,Mixta
+61,BY,60.0,38.05,Líder en tendencia
+62,PDS,60.0,93.98,Mixta
+63,ITRN,59.7,45.89,Mixta
+64,AMAL,59.6,48.52,Líder en tendencia
+65,CASH,59.6,72.1,Mixta
+66,NEXN,59.5,8.46,Mixta
+67,INSP,59.4,55.05,Mixta
+68,PAHC,59.4,34.22,Calidad barata
+69,BOW,59.3,34.05,Mixta
+70,ICFI,59.3,82.9,Calidad barata
+71,AUPH,59.2,14.75,Calidad barata
+72,FLOC,59.0,21.79,GARP (crecimiento a buen precio)
+73,CPF,59.0,37.69,Mixta
+74,PEBO,59.0,37.6,Mixta
+75,AMPH,58.9,30.2,Calidad barata
+76,NAT,58.9,6.5,Líder en tendencia
+77,CNOB,58.9,31.39,Mixta
+78,CTS,58.8,58.59,Mixta
+79,MOV,58.8,28.3,Mixta
+80,LXU,58.6,9.39,Giro: previsiones mejorando tras caída
+81,FRBA,58.6,19.37,Líder en tendencia
+82,IOSP,58.4,79.61,Mixta
+83,PLAB,58.4,26.75,Calidad barata
+84,IBTA,58.4,54.62,Líder en tendencia
+85,NVGS,58.2,19.83,Mixta
+86,AVBC,58.2,21.15,Mixta
+87,GRC,58.1,69.33,Mixta
+88,AGL,58.0,85.75,Mixta
+89,ALNT,58.0,76.59,Mixta
+90,LMB,58.0,55.33,GARP (crecimiento a buen precio)
+91,CLDT,57.9,15.81,Líder en tendencia
+93,PRLB,57.8,61.17,Mixta
+94,EGBN,57.8,33.43,Líder en tendencia
+95,PSIX,57.7,33.76,Calidad barata
+96,CTKB,57.6,6.41,Líder en tendencia
+97,IRMD,57.5,85.52,Mixta
+98,SD,57.5,12.08,Calidad barata
+99,EFOR,57.5,34.29,Mixta
+100,MTLS,57.5,6.27,Mixta
+101,CLOV,57.4,3.73,Mixta
+102,ATLC,57.4,79.94,GARP (crecimiento a buen precio)
+103,MITK,57.4,18.17,Mixta
+104,ALRS,57.3,33.08,Líder en tendencia
+105,EQBK,57.3,47.45,Mixta
+106,FIVN,57.2,23.58,Calidad barata
+107,STBA,57.1,49.89,Mixta
+108,EZPW,57.1,24.85,Mixta
+109,FISI,56.9,39.3,Mixta
+111,ALMR,56.8,28.47,Mixta
+112,ECVT,56.8,10.06,Mixta
+113,LUXE,56.8,11.17,Líder en tendencia
+114,AIN,56.8,66.51,Mixta
+115,INMD,56.7,12.9,Calidad barata
+116,NWPX,56.7,88.18,Mixta
+117,LKFN,56.6,61.38,Mixta
+118,AGM,56.5,173.4,Mixta
+119,MYN,56.5,9.01,Mixta
+120,BCAL,56.3,21.23,Mixta
+121,CRSR,56.2,12.275,Mixta
+122,LSPD,56.1,10.13,Mixta
+123,SHIP,56.0,15.02,Calidad barata
+124,TEN,55.9,46.34,Líder en tendencia
+125,IBCP,55.9,35.45,Mixta
+126,CBNK,55.8,41.27,Mixta
+127,MSBI,55.8,29.54,Mixta
+128,PGC,55.8,44.14,Mixta
+129,HBNC,55.7,20.38,Mixta
+130,FLGT,55.6,23.48,Mixta
+131,BWB,55.6,20.6,Mixta
+132,MOMO,55.5,4.32,Calidad barata
+133,OMCL,55.5,35.57,Calidad barata
+134,PWP,55.5,12.07,Mixta
+135,APEI,55.4,42.89,Mixta
+136,SMWB,55.4,8.09,Líder en tendencia
+137,PRDO,55.3,28.17,Calidad barata
+138,CRAI,55.3,229.68,Mixta
+139,MBWM,55.1,59.49,Mixta
+140,AFYA,55.1,11.88,Calidad barata
+141,PLOW,55.1,37.99,Mixta
+142,PRGS,55.0,43.44,Líder en tendencia
+143,PD,54.9,15.22,Líder en tendencia
+144,HVT,54.8,24.59,Mixta
+145,INN,54.8,7.24,Líder en tendencia
+146,BLBD,54.7,56.98,Mixta
+147,IDT,54.6,72.66,Líder en tendencia
+148,FCF,54.6,20.34,Mixta
+149,GABC,54.5,48.36,Mixta
+150,OMDA,54.5,12.25,Mixta
+151,DLX,54.4,26.86,Calidad barata
+152,DRD,54.4,21.91,GARP (crecimiento a buen precio)
+153,KBDC,54.4,12.2,Mixta
+154,ARCO,54.3,7.1,Mixta
+155,CCNE,54.3,33.92,Mixta
+156,ARHS,54.2,13.235,Líder en tendencia
+157,BMRC,54.2,26.94,Mixta
+158,III,54.1,6.42,Mixta
+159,NCDL,54.1,11.72,Mixta
+160,MCRI,54.1,107.45,Mixta
+161,RMNI,54.0,5.07,GARP (crecimiento a buen precio)
+162,NX,54.0,19.81,Mixta
+163,INVX,53.9,24.32,GARP (crecimiento a buen precio)
+164,SGHT,53.9,11.37,Líder en tendencia
+165,HCKT,53.7,13.55,Mixta
+166,AMTB,53.7,28.25,Líder en tendencia
+167,GLRE,53.6,16.63,Mixta
+168,CMP,53.6,23.17,Mixta
+169,EE,53.5,36.24,Mixta
+170,CMRE,53.5,12.62,Calidad barata
+171,EBF,53.5,20.26,Calidad barata
+172,TDOC,53.4,8.0,Calidad barata
+173,CDRE,53.4,31.71,Mixta
+174,CBLL,53.3,30.0,Mixta
+175,BBDC,53.2,8.59,Mixta
+176,NGVT,53.1,58.54,Mixta
+177,EMBC,53.1,8.145,Calidad barata
+178,MPB,53.1,34.16,Mixta
+179,HLF,53.0,17.77,Calidad barata
+180,OPRA,53.0,14.01,Mixta
+181,FCBC,52.9,44.32,Mixta
+182,PICS,52.8,5.54,GARP (crecimiento a buen precio)
+183,ARLO,52.8,12.89,Mixta
+184,PDLB,52.8,21.51,Líder en tendencia
+185,CHCO,52.7,139.98,Mixta
+186,CPRI,52.7,18.4,Mixta
+187,NRIM,52.7,23.35,Mixta
+188,ETON,52.6,66.88,Crecimiento fuerte
+189,MSDL,52.5,13.41,Mixta
+190,HBT,52.4,35.9,Líder en tendencia
+191,MQY,52.4,10.37,Mixta
+192,NEO,52.4,14.89,Mixta
+193,OABI,52.3,5.21,Crecimiento fuerte
+194,PRSU,52.2,51.44,Mixta
+195,CGBD,52.1,10.9,Mixta
+196,INNV,52.1,9.42,Mixta
+197,KRT,51.8,32.95,Mixta
+198,KALU,51.8,97.78,Calidad barata
+199,MYE,51.8,27.9,Mixta
+200,KRP,51.7,14.08,Mixta
+201,FMBH,51.7,49.04,Mixta
+202,LMRI,51.6,14.82,Mixta
+203,INOD,51.6,32.64,Mixta
+204,DGICA,51.6,18.92,Mixta
+205,GMRS,51.6,11.23,Calidad barata
+206,KRO,51.5,7.74,Mixta
+207,NBN,51.5,128.28,Mixta
+208,NUV,51.4,8.29,Mixta
+209,MUC,51.4,9.78,Mixta
+210,LMAT,51.3,75.64,Mixta
+211,PNTG,51.3,35.16,GARP (crecimiento a buen precio)
+212,MCB,51.2,93.94,Mixta
+213,CRTO,51.1,19.57,Mixta
+214,OSBC,51.1,24.87,Mixta
+215,CTBI,51.0,68.42,Mixta
+216,SMBK,51.0,46.39,Mixta
+217,LQDT,51.0,35.24,Mixta
+218,ACIC,51.0,10.39,Mixta
+219,FSBC,50.9,42.31,Mixta
+220,OOMA,50.8,17.79,Mixta
+221,BJRI,50.8,63.25,Líder en tendencia
+222,LYNX,50.8,12.78,Crecimiento fuerte
+224,ASUR,50.6,11.11,Mixta
+225,MG,50.6,20.24,Mixta
+226,IPI,50.6,31.74,Mixta
+227,CARS,50.5,12.92,Calidad barata
+228,NXP,50.5,13.19,Mixta
+229,NSSC,50.5,30.84,Mixta
+230,OCSL,50.5,12.33,Mixta
+231,NUTX,50.5,169.65,Calidad barata
+232,FEIM,50.4,58.53,Crecimiento fuerte
+233,MHD,50.3,10.58,Mixta
+234,CIVB,50.3,27.77,Mixta
+235,MUA,50.3,9.63,Mixta
+236,HOPE,50.2,12.4,Mixta
+237,PML,50.2,6.78,Mixta
+238,CERT,50.2,10.96,Mixta
+239,FSSL,50.1,12.03,Mixta
+240,MFIC,50.1,10.17,Mixta
+241,CFFN,50.1,8.11,Mixta
+242,BRBR,50.1,16.08,Mixta
+243,KRNT,49.8,15.18,Mixta
+244,MYI,49.8,10.05,Mixta
+246,BVS,49.7,10.78,Calidad barata
+247,EVH,49.7,3.96,GARP (crecimiento a buen precio)
+248,MRVI,49.6,6.93,Líder en tendencia
+249,GOOS,49.6,8.04,Calidad barata
+250,CGNT,49.5,8.19,Mixta
+251,PCQ,49.5,8.04,Mixta
+252,BWAY,49.5,9.64,Mixta
+253,FRST,49.4,14.06,Mixta
+254,KELYA,49.4,13.22,Mixta
+255,BFST,49.4,31.39,Mixta
+256,NSP,49.4,49.68,Mixta
+257,BKT,49.3,9.86,Mixta
+258,LZB,49.2,30.32,Mixta
+259,LADR,49.1,8.79,Mixta
+260,NPKI,49.0,8.55,Mixta
+261,FET,49.0,77.03,Líder en tendencia
+262,GIII,49.0,31.67,Mixta
+263,MAKO,48.9,7.08,GARP (crecimiento a buen precio)
+264,MLAB,48.9,136.91,Líder en tendencia
+265,PRCT,48.9,25.36,Mixta
+266,NRIX,48.8,14.72,Calidad barata
+267,GHM,48.8,76.48,Mixta
+268,MTX,48.8,60.69,Mixta
+269,OIS,48.6,7.93,Mixta
+270,COLL,48.5,24.64,Calidad barata
+271,STNE,48.4,8.1,Calidad barata
+272,BBNX,48.4,16.56,Mixta
+273,CARE,48.4,28.88,Mixta
+274,HLIO,48.4,45.01,Mixta
+275,AMR,48.3,146.79,Mixta
+276,ADNT,48.3,15.31,Mixta
+277,PKE,48.3,23.93,Mixta
+278,BBSI,48.2,30.92,Mixta
+279,NBBK,48.2,21.55,Mixta
+280,JJSF,48.1,95.62,Mixta
+281,RPD,48.1,17.07,Líder en tendencia
+282,NVCR,48.1,11.32,GARP (crecimiento a buen precio)
+283,DBD,48.0,55.08,Mixta
+286,CMCL,47.9,17.92,Calidad barata
+287,MCS,47.9,26.37,Mixta
+288,NAC,47.9,9.81,Mixta
+289,NGVC,47.9,27.43,Mixta
+290,NMFC,47.8,6.9,Mixta
+291,NOAH,47.8,5.34,Mixta
+292,CBAN,47.8,19.63,Mixta
+293,CXM,47.8,6.94,Mixta
+294,ATEX,47.6,83.67,Líder en tendencia
+295,SENEA,47.4,35.45,Mixta
+296,DEA,47.3,21.97,Mixta
+297,MLKN,47.3,20.72,Mixta
+298,CCAP,47.2,10.12,Mixta
+299,HOS,47.2,5.53,GARP (crecimiento a buen precio)
+300,LOB,47.1,32.91,GARP (crecimiento a buen precio)
+301,PHR,47.1,12.63,Calidad barata
+302,KRNY,47.0,8.88,Mixta
+303,GSBD,47.0,7.84,Mixta
+304,ADEA,46.9,14.99,Mixta
+305,AOD,46.8,9.76,Mixta
+306,NRK,46.8,9.32,Mixta
+308,BL,46.7,28.87,Mixta
+309,AGIO,46.6,32.09,Mixta
+310,NTGR,46.6,19.04,Mixta
+311,DOLE,46.6,13.05,Mixta
+312,LNN,46.5,100.85,Mixta
+313,MTUS,46.5,16.63,Mixta
+314,BBAR,46.4,9.24,Mixta
+315,BLMN,46.4,10.86,Líder en tendencia
+316,INVA,46.4,18.84,Calidad barata
+317,ALG,46.3,145.46,Mixta
+318,SAFT,46.2,104.55,Mixta
+319,KE,46.2,18.99,Mixta
+320,BMBL,46.1,5.99,Calidad barata
+321,DSGR,46.1,35.08,Líder en tendencia
+322,ACCO,46.1,5.58,Calidad barata
+323,EOS,46.0,19.3,Mixta
+324,NOMD,46.0,12.0,Mixta
+325,PBYI,45.9,7.97,Calidad barata
+326,AMCX,45.9,9.23,Mixta
+327,LOMA,45.8,8.77,Calidad barata
+328,PDFS,45.8,34.68,Mixta
+329,DMC,45.7,25.04,Mixta
+330,SLRC,45.7,11.22,Mixta
+331,ASST,45.7,15.59,Giro: previsiones mejorando tras caída
+332,CBL,45.6,50.83,Calidad barata
+333,SRTA,45.5,4.8,Mixta
+334,NABL,45.3,5.38,Mixta
+335,HYT,45.3,7.68,Mixta
+336,JANX,45.3,11.21,Mixta
+337,ENR,45.1,28.91,Mixta
+338,PRTH,45.1,7.94,Calidad barata
+339,CAL,45.0,12.14,Mixta
+340,FSUN,44.9,37.07,Mixta
+341,MMU,44.9,9.24,Mixta
+342,COHU,44.8,39.17,Crecimiento fuerte
+343,ODC,44.7,67.45,Mixta
+344,MYGN,44.7,5.55,Mixta
+345,AOSL,44.6,24.96,Mixta
+346,PERI,44.6,11.3,Mixta
+347,GRNT,44.5,5.77,Líder en tendencia
+348,TDAY,44.5,6.37,Mixta
+349,FOR,44.5,23.46,Mixta
+350,EOLS,44.4,7.17,Mixta
+352,BFS,44.3,28.67,Mixta
+353,HLMN,44.3,8.23,Mixta
+354,RHLD,44.3,148.52,Mixta
+355,GAB,44.3,5.31,Mixta
+356,LAW,44.2,6.17,Mixta
+357,HPK,44.2,7.36,Mixta
+358,BNED,44.1,12.47,Mixta
+359,ANGX,44.1,4.32,Crecimiento fuerte
+361,MUJ,44.1,11.15,Mixta
+362,HFWA,44.0,27.28,Mixta
+363,ABX,43.9,6.95,GARP (crecimiento a buen precio)
+364,PFN,43.9,6.11,Mixta
+366,GCO,43.8,30.7,Mixta
+367,IRS,43.8,11.43,GARP (crecimiento a buen precio)
+368,AGMB,43.7,7.01,Mixta
+369,KOP,43.7,31.84,Mixta
+370,IMKTA,43.7,73.69,Mixta
+371,LTGO,43.7,13.59,Mixta
+372,PDT,43.7,11.96,Mixta
+373,CODI,43.7,13.87,Líder en tendencia
+374,MNTN,43.6,4.99,Calidad barata
+375,TCBX,43.6,37.86,Mixta
+376,ICHR,43.6,26.11,Crecimiento fuerte
+377,ESQ,43.5,134.52,Líder en tendencia
+378,MASS,43.5,9.61,Mixta
+379,STRA,43.4,54.12,Mixta
+380,CION,43.4,6.15,Mixta
+381,GGN,43.4,4.79,Mixta
+382,BCSF,43.3,10.72,Mixta
+383,MMI,43.3,23.92,Mixta
+384,BHK,43.2,8.45,Mixta
+385,BBCP,43.2,9.5,Mixta
+386,HLIT,43.2,10.13,Mixta
+387,NAN,43.2,9.78,Mixta
+388,NGL,43.1,14.25,Mixta
+389,QUAD,43.1,7.53,Mixta
+390,PAX,43.0,9.93,Mixta
+391,IMCR,43.0,29.31,Mixta
+392,KIDS,42.9,33.69,Mixta
+393,FTRE,42.7,20.66,Líder en tendencia
+394,SMPL,42.7,12.58,Mixta
+395,NBR,42.7,77.0,Mixta
+396,IQI,42.6,8.81,Mixta
+397,ANGO,42.6,11.09,Mixta
+399,LOCO,42.5,15.39,Mixta
+400,FMNB,42.4,14.92,Mixta
+401,MEGI,42.4,14.01,Mixta
+402,THQ,42.4,18.32,Mixta
+403,AWF,42.4,9.54,Mixta
+404,CLYM,42.4,10.07,Mixta
+405,BCRX,42.3,7.58,Calidad barata
+406,PDX,42.1,20.35,Mixta
+407,ASGI,42.0,19.99,Mixta
+409,ENOV,41.9,29.39,Calidad barata
+410,NBXG,41.9,13.84,Mixta
+411,CSR,41.8,56.78,Mixta
+412,FFC,41.8,14.71,Mixta
+413,GPRE,41.8,10.85,Giro: previsiones mejorando tras caída
+414,NMCO,41.8,8.74,Mixta
+415,IIM,41.7,10.88,Mixta
+416,STC,41.7,48.29,Mixta
+417,PDM,41.7,9.91,Mixta
+418,HELE,41.7,37.71,Líder en tendencia
+419,BBN,41.5,14.69,Mixta
+420,BTT,41.5,22.18,Mixta
+421,CCB,41.5,39.49,Mixta
+422,BH,41.5,366.77,Mixta
+423,EIG,41.5,46.56,Mixta
+424,IIIN,41.5,26.25,Mixta
+425,ABUS,41.4,4.25,Calidad barata
+426,APMD,41.4,15.31,Mixta
+428,ETJ,41.4,7.66,Mixta
+429,GHRS,41.3,20.49,Giro: previsiones mejorando tras caída
+430,NRC,41.3,25.66,Líder en tendencia
+431,CHY,41.3,10.43,Mixta
+432,KIO,41.3,9.83,Mixta
+433,MDXG,41.3,3.16,Mixta
+434,CYRX,41.2,19.02,Líder en tendencia
+435,CVEO,41.1,32.97,Mixta
+436,EVN,41.1,9.52,Mixta
+437,GTE,41.1,9.12,Mixta
+439,BIT,41.0,10.97,Mixta
+440,CCU,41.0,9.88,Mixta
+441,HY,41.0,17.93,Mixta
+442,PRTA,41.0,8.71,Mixta
+443,MAX,41.0,13.03,Mixta
+444,FNKO,40.8,5.96,Mixta
+445,GTN,40.8,6.25,Líder en tendencia
+446,MSIF,40.8,12.22,Mixta
+447,PBT,40.8,27.93,Mixta
+448,SPH,40.8,16.76,Calidad barata
+449,CWBC,40.8,24.41,Mixta
+450,GUT,40.8,5.16,Mixta
+451,KMPR,40.8,32.94,Mixta
+452,IIPR,40.7,47.73,Calidad barata
+453,ANL,40.7,9.31,Mixta
+454,DSU,40.7,8.62,Mixta
+455,ODD,40.7,13.48,Giro: previsiones mejorando tras caída
+456,BSTZ,40.6,23.79,Mixta
+457,CRI,40.6,36.91,Mixta
+458,LZ,40.5,4.8,Calidad barata
+459,GUG,40.5,14.04,Mixta
+460,NDMO,40.5,8.97,Mixta
+461,BCX,40.4,10.92,Mixta
+462,PSQL,40.4,3.81,Mixta
+463,ASPN,40.4,4.79,Giro: previsiones mejorando tras caída
+464,AMSF,40.3,18.23,Mixta
+465,CWCO,40.3,25.01,Mixta
+466,MEI,40.3,11.15,Mixta
+467,GSHD,40.2,46.85,Mixta
+468,HZO,40.2,52.96,Mixta
+469,BBW,40.1,28.44,Calidad barata
+470,FTHY,40.1,13.0,Mixta
+471,RQI,40.1,11.64,Mixta
+472,ECAT,40.1,12.5,Mixta
+473,BGS,40.0,3.84,Mixta
+474,EAD,40.0,5.97,Mixta
+475,NKX,40.0,11.16,Mixta
+476,LINC,40.0,22.0,Mixta
+477,OCFC,40.0,17.82,Mixta
+478,HIX,39.9,3.36,Mixta
+479,IIIV,39.9,20.11,Mixta
+480,GTM,39.9,3.06,Calidad barata
+481,HAWK,39.9,18.21,Mixta
+482,HNST,39.9,4.71,Líder en tendencia
+483,BLSM,39.8,15.72,Mixta
+484,MAMA,39.8,11.13,Mixta
+485,HAPN,39.8,15.26,Mixta
+486,FSCO,39.8,5.18,Mixta
+487,ISD,39.8,11.45,Mixta
+488,CRNC,39.7,6.64,Calidad barata
+489,IGD,39.6,6.34,Mixta
+490,FRNM,39.5,9.71,Mixta
+491,ASTE,39.5,38.79,Mixta
+492,BGB,39.5,10.99,Mixta
+493,GNK,39.4,23.13,Mixta
+494,ETOR,39.4,19.97,Calidad barata
+495,LIME,39.4,19.14,Mixta
+496,MTA,39.4,6.85,Mixta
+497,ELMT,39.3,19.07,Mixta
+498,NVEC,39.3,77.7,Mixta
+499,NMRK,39.3,10.85,Calidad barata
+500,BCAT,39.2,12.3,Mixta
+501,BTZ,39.2,9.6,Mixta
+502,BMEZ,39.1,16.86,Mixta
+503,FENC,39.1,13.625,Crecimiento fuerte
+504,BFLY,39.0,5.79,Mixta
+505,FLNG,39.0,23.59,Mixta
+506,KMT,39.0,22.98,Mixta
+507,IART,39.0,14.22,Calidad barata
+508,CTRN,38.8,44.55,Mixta
+509,MAGN,38.8,13.74,Mixta
+511,SBGI,38.6,15.76,Mixta
+512,BPRE,38.6,11.77,Mixta
+513,ADAM,38.5,5.29,Mixta
+514,EVC,38.5,9.16,Mixta
+515,BLW,38.5,11.41,Mixta
+516,ETW,38.5,9.06,Mixta
+517,GPRK,38.5,8.84,Mixta
+518,CRESY,38.4,8.6,Mixta
+519,BUR,38.3,3.78,Mixta
+520,MESO,38.3,11.84,Mixta
+521,LEO,38.3,5.97,Mixta
+522,CHW,38.2,7.29,Mixta
+523,FPF,38.1,15.79,Mixta
+524,PFLT,38.0,6.58,Mixta
+525,BRVE,38.0,23.84,Mixta
+526,FRBT,38.0,18.0,Mixta
+528,NML,38.0,9.61,Mixta
+529,OPY,38.0,87.5,Mixta
+530,MFA,37.9,6.31,Mixta
+531,ALLT,37.8,8.18,Mixta
+532,EPC,37.8,28.67,Mixta
+533,GOF,37.6,8.66,Mixta
+534,PTA,37.6,17.04,Mixta
+535,CHI,37.6,10.02,Mixta
+536,ALKT,37.6,13.92,Mixta
+537,EMD,37.5,9.02,Mixta
+538,CLFD,37.5,28.19,Mixta
+539,EFR,37.5,10.26,Mixta
+540,BXMT,37.5,10.76,Mixta
+541,EYE,37.5,17.22,Mixta
+542,ASM,37.4,4.11,Mixta
+543,NPCE,37.4,8.99,Mixta
+544,OPFI,37.2,6.06,Calidad barata
+545,NBTX,37.2,30.02,Mixta
+546,ARVN,37.2,7.38,Mixta
+547,BST,37.1,42.98,Mixta
+548,GHY,37.1,10.59,Mixta
+549,ANDE,37.0,43.37,Mixta
+550,ETV,37.0,13.65,Mixta
+551,ORIC,37.0,8.34,Mixta
+552,BXC,36.9,62.14,Mixta
+554,BOC,36.8,14.18,Mixta
+555,NWAX,36.8,10.12,Mixta
+556,DBI,36.7,6.2,Mixta
+557,FDUS,36.7,19.19,Mixta
+558,NEWP,36.7,4.72,Mixta
+559,FTK,36.6,25.21,Mixta
+560,MBUU,36.5,19.8,Mixta
+561,HUBG,36.5,22.93,Mixta
+562,PFL,36.4,6.78,Mixta
+563,JBI,36.4,3.92,Calidad barata
+564,KODK,36.3,8.24,Mixta
+565,EVLV,36.3,4.45,Mixta
+566,JRI,36.3,11.08,Mixta
+567,GDOT,36.3,11.06,Mixta
+568,CNNE,36.2,17.39,Mixta
+569,NFJ,36.2,13.74,Mixta
+570,MATV,36.2,11.85,Mixta
+571,CHCT,36.1,14.72,Mixta
+572,ONT,36.1,22.48,Mixta
+573,AEHR,36.1,43.6,Crecimiento fuerte
+574,ERII,36.0,6.95,Mixta
+575,NMAI,36.0,12.56,Mixta
+576,KLRA,35.9,12.84,Mixta
+577,OXLC,35.9,5.02,Calidad barata
+579,ETG,35.9,22.31,Mixta
+580,ADTN,35.9,4.56,Mixta
+581,CEVA,35.8,23.49,Mixta
+582,CARL,35.8,19.87,Mixta
+583,FRA,35.7,10.21,Mixta
+584,PSTL,35.7,23.56,Mixta
+585,BDJ,35.7,9.63,Mixta
+586,MNPR,35.6,83.77,Mixta
+587,RPAY,35.5,4.0,Mixta
+588,LYTS,35.4,15.04,GARP (crecimiento a buen precio)
+589,BOE,35.4,10.88,Mixta
+590,NPB,35.3,14.89,Mixta
+591,SMC,35.3,31.98,Mixta
+592,ACP,35.3,4.19,Mixta
+593,AVLN,35.2,31.08,Mixta
+594,DSL,35.2,9.6,Mixta
+595,HPI,35.2,12.67,Mixta
+596,NPK,35.1,165.8,Mixta
+597,CBRL,35.0,76.59,Líder en tendencia
+598,DQ,35.0,10.27,Mixta
+599,CGEM,35.0,10.24,Mixta
+600,REF,34.9,20.98,Mixta
+601,DEC,34.8,13.07,GARP (crecimiento a buen precio)
+602,DLY,34.8,12.99,Mixta
+603,BXDC,34.6,15.33,Giro: previsiones mejorando tras caída
+604,DIN,34.6,36.64,Mixta
+605,PDO,34.6,11.44,Mixta
+606,PTLO,34.6,6.3,Mixta
+607,BRBS,34.5,3.89,Mixta
+608,REAL,34.5,11.61,Mixta
+609,ETD,34.4,14.99,Mixta
+610,HQH,34.4,20.84,Mixta
+611,MRTN,34.4,11.77,Mixta
+612,GENI,34.2,5.84,Mixta
+613,EVV,34.1,8.4,Mixta
+614,PAR,34.1,24.31,Mixta
+615,ALHC,34.1,6.63,GARP (crecimiento a buen precio)
+616,ELE,34.1,13.06,Mixta
+617,PAXS,34.1,12.81,Mixta
+618,AMBQ,34.0,39.86,Crecimiento fuerte
+619,AVIR,34.0,3.89,Mixta
+620,AHCO,33.9,7.64,Mixta
+621,FOXF,33.7,17.63,Mixta
+622,ELA,33.7,12.53,Mixta
+623,MNR,33.7,7.85,Mixta
+624,DHC,33.6,7.38,Mixta
+625,CVLG,33.6,31.12,Mixta
+626,OBE,33.6,8.7,Mixta
+627,AWP,33.5,10.52,Mixta
+628,JBSS,33.5,61.18,Mixta
+629,BRSP,33.5,3.33,Mixta
+630,CRMD,33.4,5.72,Calidad barata
+631,APPS,33.3,6.64,GARP (crecimiento a buen precio)
+632,EFC,33.2,11.55,Mixta
+633,HSHP,33.2,15.72,Mixta
+634,HIMX,33.2,7.98,Mixta
+635,AMSC,32.9,22.98,Mixta
+636,AKTS,32.8,16.94,Mixta
+637,NUVB,32.8,4.32,Mixta
+638,TBI,32.7,11.62,Líder en tendencia
+639,LU,32.5,6.87,Mixta
+640,INR,32.5,11.61,GARP (crecimiento a buen precio)
+641,DC,32.4,4.02,Mixta
+642,CSV,32.4,31.69,Mixta
+643,CLM,32.4,5.62,Mixta
+644,IPX,32.4,12.29,Mixta
+645,HOV,32.3,96.29,Mixta
+646,ASTH,32.3,30.07,Calidad barata
+647,FBRT,32.1,6.21,Mixta
+648,NMZ,31.9,8.66,Mixta
+649,CRF,31.8,5.42,Mixta
+650,HPS,31.8,11.5,Mixta
+651,SGMT,31.8,10.33,Líder en tendencia
+652,ESRT,31.8,5.37,Mixta
+653,PONY,31.5,3.46,Mixta
+654,BTX,31.5,7.08,Mixta
+655,ANRO,31.3,31.07,Líder en tendencia
+656,IGR,31.3,10.92,Mixta
+657,OPTX,31.2,7.5,Mixta
+658,CASK,31.2,16.91,Mixta
+659,BHRB,31.1,69.2,Mixta
+660,DXYZ,31.0,24.24,Mixta
+661,AAT,30.9,21.38,Mixta
+662,DMRA,30.9,26.07,Mixta
+663,ANAB,30.8,51.2,Mixta
+664,AGBK,30.7,5.88,Mixta
+665,PUMP,30.6,6.56,Mixta
+666,GORO,30.6,3.04,Mixta
+667,IMTX,30.6,6.81,Mixta
+668,ARR,30.6,11.87,Mixta
+669,STRZ,30.5,24.06,Mixta
+670,FAX,30.5,12.52,Mixta
+671,AIP,30.4,17.93,Mixta
+672,APC,30.4,14.5,Mixta
+673,OBX,30.3,14.68,Mixta
+674,BLZE,30.3,6.88,Mixta
+675,GEL,30.2,12.6,Mixta
+676,NAVI,30.2,6.755,Mixta
+677,EIM,30.1,9.04,Mixta
+678,NGS,30.1,28.76,Mixta
+679,IFN,29.9,11.36,Mixta
+680,FVR,29.9,18.23,Mixta
+681,ATTO,29.7,16.61,Mixta
+682,IVR,29.5,5.5,Mixta
+683,AVO,29.4,10.95,Mixta
+684,MCFT,29.4,22.09,Mixta
+685,PINE,29.3,16.9,Mixta
+686,NBHC,29.1,36.7,Mixta
+687,MGTX,29.0,8.97,Calidad barata
+688,AGLT,28.7,6.65,Mixta
+689,QUIT,28.5,6.1,Mixta
+690,IVA,28.4,3.62,Giro: previsiones mejorando tras caída
+691,OMER,28.3,14.7,Mixta
+692,CEPF,28.3,10.34,Mixta
+693,CLB,28.3,8.43,Mixta
+694,KURA,28.3,8.41,Mixta
+695,FPH,28.2,4.66,Mixta
+696,NMAX,28.2,7.13,Giro: previsiones mejorando tras caída
+697,PRKS,28.1,39.53,Mixta
+698,DCH,28.1,4.31,Mixta
+699,ATS,28.1,17.95,Mixta
+700,AVEX,28.0,14.0,Mixta
+701,GBAB,27.9,12.88,Mixta
+702,ASIX,27.9,13.66,Mixta
+703,SIND,27.8,10.08,Mixta
+705,COUR,27.6,3.8,Mixta
+707,JBIO,27.5,17.8,Mixta
+708,GO,27.4,11.77,Mixta
+709,PCN,27.4,10.41,Mixta
+710,NNE,27.3,9.54,Mixta
+711,JKS,27.2,7.84,Mixta
+712,AORT,27.2,19.6,Mixta
+713,LILAK,27.1,9.74,Mixta
+714,GTY,27.1,29.16,Mixta
+715,KREF,27.1,5.39,Mixta
+716,CMPR,26.9,57.28,Calidad barata
+717,SNDX,26.9,10.03,Mixta
+718,ATEC,26.7,7.27,Mixta
+719,LAR,26.6,3.48,Mixta
+720,PHK,26.6,4.01,Mixta
+721,FWRD,26.4,19.5,Mixta
+722,LEU,26.2,85.43,Mixta
+723,GOOD,26.2,9.42,Mixta
+724,AHRT,26.2,6.39,Mixta
+725,EPRX,26.1,6.34,Mixta
+726,ADIG,26.0,10.52,Mixta
+727,PRAA,25.9,10.95,Mixta
+728,MOBI,25.8,14.4,Mixta
+729,EGG,25.5,10.84,Mixta
+730,CHRN,25.3,9.97,Crecimiento fuerte
+731,CMCO,25.2,20.18,Mixta
+732,EGY,25.2,4.74,Mixta
+733,AVBP,25.1,12.68,Mixta
+734,NXRT,25.1,15.6,Mixta
+735,ANDG,25.0,57.73,Líder en tendencia
+736,CTO,25.0,20.15,Mixta
+737,DSGN,25.0,10.21,Mixta
+738,BOT,25.0,18.22,Mixta
+739,JBGS,24.7,12.56,Mixta
+740,SAH,24.6,59.97,Mixta
+741,AMBA,24.6,35.24,Mixta
+742,MSEX,24.6,58.32,Mixta
+743,AADX,24.5,7.48,Mixta
+744,ARDX,24.4,3.09,Mixta
+745,HUN,24.2,9.48,Mixta
+746,HTLD,24.2,10.13,Mixta
+747,DNUT,24.0,3.15,Mixta
+748,EROK,24.0,21.97,Mixta
+749,OLN,23.9,17.24,Mixta
+750,HPP,23.7,8.74,Mixta
+751,OBIO,23.4,6.68,Líder en tendencia
+752,NVAX,23.4,7.93,Mixta
+753,CC,23.3,11.81,Mixta
+754,GNL,23.3,6.53,Mixta
+755,OFRM,23.2,12.66,Mixta
+756,HQ,22.9,9.3,Mixta
+757,RMIX,22.8,6.5,Mixta
+758,GLIBK,22.8,27.69,Mixta
+759,MNKD,22.8,4.04,Mixta
+761,ILPT,22.6,5.8,Mixta
+762,SHOE,22.4,11.34,Mixta
+763,OCS,22.4,8.18,Mixta
+764,PRLD,22.2,4.51,Mixta
+765,AMRC,22.1,21.31,Mixta
+766,AURA,22.1,7.86,Mixta
+767,DRVN,21.9,11.155,Mixta
+768,SNDA,21.9,35.56,Mixta
+769,ORC,21.9,4.91,Mixta
+770,IE,21.8,5.92,Mixta
+771,IMMX,21.7,7.85,Mixta
+772,HE,21.6,8.05,Mixta
+773,LILA,21.6,9.76,Mixta
+774,SLN,21.6,20.02,Mixta
+775,BAND,21.4,38.32,Mixta
+776,BUUU,21.4,3.39,Mixta
+777,CTEV,21.1,23.14,GARP (crecimiento a buen precio)
+778,SSP,21.0,3.39,Mixta
+779,FDMT,20.8,11.49,Mixta
+780,GILT,20.6,5.0,Mixta
+781,PHAT,20.6,5.585,GARP (crecimiento a buen precio)
+782,DMAC,20.5,9.4,Líder en tendencia
+783,QVCG,19.9,8.69,Mixta
+784,KMTS,19.6,27.22,Mixta
+785,JMIA,19.5,3.16,Mixta
+786,POET,19.5,3.88,Mixta
+787,CSWC,19.4,23.67,Mixta
+788,ARRY,19.3,4.44,Mixta
+789,CD,19.2,6.14,Mixta
+790,HROW,19.2,32.55,Mixta
+792,OCUL,19.0,5.87,Mixta
+793,OXM,19.0,26.74,Mixta
+794,LGIH,18.7,44.02,Mixta
+795,SGP,18.5,33.59,Mixta
+796,EVMN,18.3,8.32,Mixta
+797,AEBI,18.0,9.84,Mixta
+798,FOSL,17.7,8.61,Mixta
+799,TH,17.5,12.33,Crecimiento fuerte
+800,AGRO,17.5,8.2,Mixta
+801,BGY,17.5,5.3,Mixta
+802,SSMR,17.3,12.24,Mixta
+803,MLCO,17.3,4.47,Mixta
+804,BKSY,16.6,17.4,Crecimiento fuerte
+805,CRVS,16.6,11.52,Mixta
+806,KPLT,16.4,8.84,GARP (crecimiento a buen precio)
+807,CTNM,16.4,9.94,Mixta
+808,FMC,16.4,4.25,Mixta
+809,BRSL,16.2,9.28,Mixta
+810,ODTX,16.2,19.35,Mixta
+811,QURE,16.2,22.26,Mixta
+812,BNTC,16.0,9.04,Mixta
+813,STUB,15.9,4.71,Mixta
+814,NANO,15.7,3.9,Mixta
+815,APXT,15.6,10.23,Mixta
+816,BTGO,15.6,4.21,Mixta
+817,OI,15.6,4.97,Mixta
+818,FPI,15.5,9.86,Mixta
+819,LPTH,15.2,6.17,Mixta
+820,GRPN,15.1,10.88,Mixta
+821,NVTS,15.1,7.26,Mixta
+822,DMII,14.9,10.26,Mixta
+823,GBX,14.9,38.09,Mixta
+824,DEI,14.7,9.82,Mixta
+825,GLUE,14.7,8.98,Mixta
+826,AZUL,14.4,4.12,Mixta
+827,FRPH,14.3,18.57,Mixta
+828,CSHR,14.3,4.1,Mixta
+829,ALVO,14.1,3.69,Mixta
+830,SEDG,14.0,21.0,Mixta
+831,KRSA,14.0,40.37,Mixta
+832,GT,13.8,3.47,Mixta
+833,GOLD,13.6,40.2,Mixta
+834,CCCC,13.6,3.54,Mixta
+835,NGNE,13.4,24.91,Mixta
+836,NRGV,13.4,3.18,Mixta
+837,BCSS,13.3,10.25,Mixta
+838,AI,13.3,10.22,Mixta
+839,HQL,13.2,17.05,Mixta
+840,CPS,13.1,19.15,Mixta
+841,INDP,12.8,3.05,Mixta
+842,GPCR,12.8,18.19,Mixta
+843,MPLT,12.5,7.595,Mixta
+844,DRTS,12.4,12.06,Mixta
+845,OTLY,12.4,13.89,Mixta
+846,BKV,12.3,17.54,Mixta
+847,BORR,12.2,4.17,Mixta
+848,ASTL,12.2,5.23,Mixta
+849,LBRX,12.2,41.6,Mixta
+850,DTIL,12.1,8.56,Mixta
+852,PGEN,11.8,4.79,Crecimiento fuerte
+853,DNA,11.8,7.46,Mixta
+854,GLAD,11.6,18.27,Mixta
+855,REAX,11.3,9.55,Mixta
+856,ARKO,11.1,3.41,Mixta
+857,QDEL,11.0,8.31,Mixta
+858,MBC,10.8,7.09,Mixta
+859,BGIN,10.6,5.63,Mixta
+860,NHP,10.6,15.68,Mixta
+861,MLYS,10.6,15.31,Mixta
+862,NKTR,10.5,32.62,Mixta
+863,OLMA,10.0,8.47,Mixta
+864,NEWT,10.0,10.59,Mixta
+865,BRUN,9.9,3.6,Mixta
+866,CIM,9.9,7.05,Mixta
+867,FAC,9.9,3.8,Mixta
+868,ACRS,9.8,3.86,Mixta
+869,PZZA,9.6,20.89,Mixta
+870,NVCT,9.5,21.79,Mixta
+871,INFQ,9.4,7.05,Mixta
+872,ABSI,8.8,9.565,Mixta
+873,ENTX,8.8,3.13,Mixta
+874,NN,8.8,9.47,Mixta
+875,LXEO,8.7,4.01,Mixta
+876,SLDB,8.7,7.28,Mixta
+877,NVRI,8.6,24.08,Mixta
+878,HELP,8.5,9.13,Mixta
+879,AQST,8.1,3.88,Mixta
+880,AVR,8.1,6.18,Mixta
+881,ACDC,8.0,3.23,Mixta
+882,FLO,7.8,5.27,Mixta
+883,LUNR,7.8,10.0,Mixta
+884,NWCL,7.7,3.04,Mixta
+885,RGNX,7.6,7.99,Mixta
+886,KARD,7.5,13.73,Mixta
+887,MATW,7.4,20.37,Mixta
+888,INBX,7.1,80.08,Mixta
+889,BV,7.1,8.99,Mixta
+890,CV,6.8,5.92,Mixta
+891,FLNC,6.5,5.19,Mixta
+892,ASMB,6.5,24.99,Mixta
+893,GENB,6.4,11.53,Mixta
+894,AVTX,6.2,8.31,Mixta
+895,ANNX,6.1,3.64,Mixta
+896,BTDR,6.0,3.1,Mixta
+897,LZM,5.9,3.61,Mixta
+898,CWH,5.6,4.61,Mixta
+899,FUN,5.3,11.28,Mixta
+900,METC,5.1,6.3,Mixta
+901,BCAX,4.9,9.98,Mixta
+902,FWRG,4.8,12.7,Mixta
+903,HSLV,4.7,3.51,Mixta
+904,CCS,4.6,53.63,Mixta
+905,GFR,4.5,7.73,Mixta
+906,PACH,3.9,10.43,Mixta
+907,PEPG,3.8,4.24,Mixta
+908,CBIO,3.3,13.06,Mixta
+909,AEVA,3.1,8.98,Mixta
+910,AEXA,2.6,10.64,Mixta
+911,SPIR,2.4,7.8,Mixta
+912,CMPS,2.4,9.57,Mixta
+913,DJT,2.3,3.96,Mixta
+914,KYTX,2.1,4.75,Mixta
+915,LRMR,1.9,3.26,Giro: previsiones mejorando tras caída
+916,NEXT,1.5,6.34,Mixta
+917,PRME,1.3,4.13,Mixta
+918,CNL,0.9,10.38,Mixta
+919,AMPX,0.6,6.16,Mixta
+920,MLTX,0.4,13.52,Mixta
+921,AESI,0.0,4.89,Mixta
+922,CLSK,0.0,5.15,Mixta
+923,CSIQ,0.0,5.5,Mixta
+924,CTGO,0.0,10.48,Mixta
+925,FIP,0.0,3.92,Mixta
+926,RUM,0.0,3.76,Mixta
+927,CDZI,0.0,3.68,Mixta
+928,HNRG,0.0,9.63,Mixta
+929,JBLU,0.0,3.82,Mixta
+930,KRUS,0.0,25.83,Mixta
+931,LYEL,0.0,15.41,Mixta
+932,NUAI,0.0,4.92,Mixta
+933,NTLA,0.0,10.32,Mixta
+934,ALMS,0.0,4.52,Mixta
+935,CADL,0.0,6.0,Mixta
+936,IRD,0.0,4.36,Mixta
+937,MUX,0.0,9.93,Mixta
+938,BW,0.0,4.05,Mixta
+939,DBVT,0.0,10.42,Mixta
+940,DFH,0.0,11.76,Mixta
+941,FCEL,0.0,8.0,Mixta
+942,HYMC,0.0,15.77,Mixta
+943,MEC,0.0,12.55,Mixta

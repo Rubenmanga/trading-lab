@@ -33,9 +33,9 @@ Cierre 492.85 (2026-11-27) · 5 días -1.1 % · lo normal en un día: ±2.39 %.
 - **Próximos catalizadores:** Resultados el 2027-01-26.
 - Analistas que dicen comprar: 95 % de 65.
   - 2026-11-28 · [Anthropic's Expansion in Enterprise AI Challenges Microsoft's Market Position](https://www.varindia.com/news/microsoft-copilot-holds-ground-against-claude)
+  - 2026-11-28 · [Are recent outages bad for software?](https://finnhub.io/api/news?id=bfbf14687675e84b21fcb9c7e5a1ae2c61adaa3a1bcdc2c669bc42acdb209c23)
   - 2026-11-28 · [Vanguard's Growth ETF Has 3 Stocks Making Up More Than a Third of It. Only 1 Has Held Up in the Tech Sell-Off.](https://finnhub.io/api/news?id=8a9bc66e9716dd14bf14d42e26a153ca10dfa86e3292230084d6f99d149b9846)
   - 2026-11-27 · [Billionaire Chase Coleman’s Tiger Global Raised Its Cerebras Stake 48% to $790 Million](https://finnhub.io/api/news?id=157bab7006e16a9eaba041f568718eced7841420efee12833f6fe2254f526c93)
-  - 2026-11-27 · [Should You Pick Palantir Over Its Big Tech Rivals?](https://finnhub.io/api/news?id=4a7f034c51c2d80d968bb3d780789e526e2b17a6b2394b32564dc556666c53c0)
 
 ## RAPP · Rapport Therapeutics — ▲ +1.5 % · volumen 0.2x lo normal
 Cierre 25.69 (2026-11-27) · 5 días +8.9 % · lo normal en un día: ±4.03 %.

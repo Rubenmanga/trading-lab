@@ -1,21 +1,21 @@
-# Seguimiento diario de ORIC · 2026-11-25
+# Seguimiento diario de ORIC · 2026-11-27
 
 ## Resumen (5 líneas)
 1. **Estado: ATENTO.** Se acerca el momento: está en soporte o empieza a frenar. Aún falta la señal; mirar cada día.
-2. Cierre 8.25 $ (-1.8 % en el día). RSI 42.0 · EMA 9 8.06 $ · media 50 10.81 $.
-3. Señales del plan: A = suelo en 7.2-7.5 $ con vela de giro y volumen · B = dos cierres por encima de 9.3 $ (ahora a -11.3 %).
+2. Cierre 8.34 $ (+1.1 % en el día). RSI 43.0 · EMA 9 8.12 $ · media 50 10.72 $.
+3. Señales del plan: A = suelo en 7.2-7.5 $ con vela de giro y volumen · B = dos cierres por encima de 9.3 $ (ahora a -10.3 %).
 4. Pistas de hoy: cierra por encima de la EMA 9 (primer síntoma de freno); está en la zona de soporte 7.2-7.5 $.
-5. Comprar como mucho hasta 8.5 $ · stop de tesis 6.5 $ (a 26.9 %) · objetivo 13 $ (potencial 57.6 %).
+5. Comprar como mucho hasta 8.5 $ · stop de tesis 6.5 $ (a 28.3 %) · objetivo 13 $ (potencial 55.9 %).
 
 ## Indicadores de hoy
 | Indicador | Valor |
 |---|---|
-| Cierre ($) | 8.25 |
-| EMA 9 | 8.06 |
-| Media 50 | 10.81 |
-| Media 200 | 10.88 |
-| RSI 14 | 42.0 |
-| Volumen frente a su media de 20 días | 1.24 |
+| Cierre ($) | 8.34 |
+| EMA 9 | 8.12 |
+| Media 50 | 10.72 |
+| Media 200 | 10.87 |
+| RSI 14 | 43.0 |
+| Volumen frente a su media de 20 días | 0.64 |
 | Mínimo 52 semanas | 7.23 |
 | Máximo 52 semanas | 14.68 |
 | ¿En zona de soporte? | sí |
@@ -28,7 +28,6 @@
 - 2026-11-24 · [ORIC Pharmaceuticals (ORIC) Stock Is Up 12.5% Today Without Company News](https://finnhub.io/api/news?id=e836d621efbd4c21934571b435be1ccde994ee17ac71f5e11366b59633339340)
 - 2026-11-23 · [ORIC Pharmaceuticals to Participate in Upcoming Investor Conferences](https://www.morningstar.com/news/globe-newswire/9883631/oric-pharmaceuticals-to-participate-in-upcoming-investor-conferences)
 - 2026-11-23 · [ORIC® Pharmaceuticals to Participate in Upcoming Investor Conferences](https://finnhub.io/api/news?id=e9147010e0dedfaf1fb8bd2cb4c2667df657a28735865fb2ead35ac69519889f)
-- 2026-11-20 · [H.C. Wainwright Maintains Buy Rating on ORIC Pharmaceuticals](https://www.moomoo.com/hans/news/post/1005183134/hc-wainwright-maintains-oric-pharmaceuticals-oricus-with-buy-rating-cuts)
 - 2026-11-19 · [HC Wainwright & Co. Maintains Buy on ORIC Pharmaceuticals, Lowers Price Target to $20](https://finnhub.io/api/news?id=f4760bbbbdb8e6da05da1f113b12bc6852d611b17ae849ace4be7d312e4b35eb)
 - 2026-11-18 · [Wells Fargo Maintains Overweight on ORIC Pharmaceuticals, Lowers Price Target to $23](https://finnhub.io/api/news?id=53c6b1dde765dfa5453cb483297ac324f13bd50f1d7e7197663987dc317b1a65)
 - 2026-11-17 · [Citigroup Maintains Buy on ORIC Pharmaceuticals, Raises Price Target to $17](https://finnhub.io/api/news?id=e707314674b101918764c001ab1eae6ddf7020c053246972b85ec187c66dd252)
@@ -37,6 +36,7 @@
 ## Últimos días
 | Fecha | Cierre | RSI | EMA 9 | Vol. rel. | Estado |
 |---|---|---|---|---|---|
+| 2026-11-27 | 8.34 | 43.0 | 8.12 | 0.64 | ATENTO |
 | 2026-11-25 | 8.25 | 42.0 | 8.06 | 1.24 | ATENTO |
 | 2026-11-24 | 8.4 | 43.1 | 8.02 | 1.4 | ATENTO |
 | 2026-11-23 | 7.54 | 33.8 | 7.92 | 1.05 | ATENTO |

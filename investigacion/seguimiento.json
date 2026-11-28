@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-28T03:19:32+00:00",
+ "actualizado": "2026-11-28T04:23:51+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -14,14 +14,14 @@
     "tamano_max": "2 %",
     "informe": "investigacion/analisis/ORIC-2026-11-14.md"
    },
-   "fecha": "2026-11-25",
-   "cierre": 8.25,
-   "cambio_dia_pct": -1.8,
-   "ema9": 8.06,
-   "ma50": 10.81,
-   "ma200": 10.88,
-   "rsi": 42.0,
-   "volumen_rel": 1.24,
+   "fecha": "2026-11-27",
+   "cierre": 8.34,
+   "cambio_dia_pct": 1.1,
+   "ema9": 8.12,
+   "ma50": 10.72,
+   "ma200": 10.87,
+   "rsi": 43.0,
+   "volumen_rel": 0.64,
    "minimo_52s": 7.23,
    "maximo_52s": 14.68,
    "divergencia": false,
@@ -34,10 +34,10 @@
     "cierra por encima de la EMA 9 (primer síntoma de freno)",
     "está en la zona de soporte 7.2-7.5 $"
    ],
-   "distancia_entrada_pct": -2.9,
-   "distancia_stop_pct": 26.9,
-   "distancia_confirmacion_pct": -11.3,
-   "potencial_pct": 57.6,
+   "distancia_entrada_pct": -1.9,
+   "distancia_stop_pct": 28.3,
+   "distancia_confirmacion_pct": -10.3,
+   "potencial_pct": 55.9,
    "proximos_resultados": null,
    "historial": [
     {
@@ -105,11 +105,20 @@
     },
     {
      "fecha": "2026-11-25",
-     "cierre": 8.25,
-     "rsi": 42.0,
-     "ema9": 8.06,
-     "ma50": 10.81,
-     "volumen_rel": 1.24,
+     "cierre": "8.25",
+     "rsi": "42.0",
+     "ema9": "8.06",
+     "ma50": "10.81",
+     "volumen_rel": "1.24",
+     "estado": "ATENTO"
+    },
+    {
+     "fecha": "2026-11-27",
+     "cierre": 8.34,
+     "rsi": 43.0,
+     "ema9": 8.12,
+     "ma50": 10.72,
+     "volumen_rel": 0.64,
      "estado": "ATENTO"
     }
    ]
@@ -595,6 +604,15 @@
      },
      {
       "fecha": "2026-11-28",
+      "titulo": "Are recent outages bad for software?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=bfbf14687675e84b21fcb9c7e5a1ae2c61adaa3a1bcdc2c669bc42acdb209c23",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-28",
       "titulo": "Vanguard's Growth ETF Has 3 Stocks Making Up More Than a Third of It. Only 1 Has Held Up in the Tech Sell-Off.",
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=8a9bc66e9716dd14bf14d42e26a153ca10dfa86e3292230084d6f99d149b9846",
@@ -708,15 +726,6 @@
       "titulo": "Did Billionaire Bill Ackman Lose Confidence in Microsoft? The Answer Might Surprise You",
       "fuente": "Yahoo",
       "url": "https://finnhub.io/api/news?id=fefd8703a835750e1ae202000348b3d630500860da28d5fe5011b3cbce6e6a59",
-      "causas": [],
-      "nueva": true,
-      "importante": false
-     },
-     {
-      "fecha": "2026-11-27",
-      "titulo": "Meta, Anthropic in Talks to Build AI Data Centers in Japan",
-      "fuente": "Yahoo",
-      "url": "https://finnhub.io/api/news?id=70739c7fb3a3a00b96a3f72bc76d09bdd583d1666368b27fd95fe90cd0add5ab",
       "causas": [],
       "nueva": true,
       "importante": false
