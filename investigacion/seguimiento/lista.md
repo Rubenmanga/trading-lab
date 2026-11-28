@@ -148,6 +148,17 @@ Cierre 45.83 (2026-11-27) · 5 días +1.9 % · lo normal en un día: ±2.67 %.
 - **Próximos catalizadores:** Resultados el 2027-02-03.
 - Analistas que dicen comprar: 73 % de 11.
 
+## OPRT · Oportun Financial Corporation — ▲ +3.5 % · volumen 0.2x lo normal
+Cierre 11.11 (2026-11-27) · 5 días +1.6 % · lo normal en un día: ±7.4 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** 2 titulares nuevos.
+- **Próximos catalizadores:** Resultados el 2027-02-24.
+- Analistas que dicen comprar: 64 % de 11.
+  - 2026-11-27 · [Are Investors Undervaluing Oportun Financial (OPRT) Right Now?](https://finnhub.io/api/news?id=65c390f2b2e8d9b3436f0d31e556a749b4170ceb085d6457264383a70f9e78d4)
+  - 2026-11-25 · [Oportun Completes $372 Million Asset-Backed Notes Issuance](https://www.quantisnow.com/insight/oportun-financial-corporation-filed-sec-form-8-k-creation-of-a-6806192)
+  - 2026-11-24 · [Oportun Appoints Laura Unger to Board of Directors](https://www.globenewswire.com/news-release/2026/11/24/3409878/0/en/oportun-appoints-laura-unger-to-its-board-of-directors.html) [directivos]
+  - 2026-11-24 · [Oportun Appoints Laura Unger to its Board of Directors](https://finnhub.io/api/news?id=66ac9294231b75039f8b8a7ef8b105f5198d9260d955f92636f6f5dd920811c6) [directivos]
+
 ## DFIN · Donnelley Financial Solutions,  — ▲ +0.2 % · volumen 0.4x lo normal
 Cierre 65.83 (2026-11-27) · 5 días +0.6 % · lo normal en un día: ±4.17 %.
 - **Por qué:** Movimiento normal para esta acción.
@@ -163,19 +174,6 @@ Cierre 58.63 (2026-11-27) · 5 días +8.6 % · lo normal en un día: ±4.14 %.
 - **Próximos catalizadores:** Resultados el 2027-02-03.
 - Analistas que dicen comprar: 0 % de 7.
 
-## CCSI · Consensus Cloud Solutions, Inc. — ▲ +1.1 % · volumen 0.4x lo normal
-Cierre 41.66 (2026-11-27) · 5 días +7.0 % · lo normal en un día: ±4.79 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- Analistas que dicen comprar: 90 % de 10.
-
-## CSTL · Castle Biosciences, Inc. — ▲ +1.1 % · volumen 0.2x lo normal
-Cierre 32.88 (2026-11-27) · 5 días -1.6 % · lo normal en un día: ±3.33 %.
-- **Por qué:** Movimiento normal para esta acción.
-- **Qué cambió:** nada nuevo.
-- **Próximos catalizadores:** Resultados el 2027-02-22 (tras el cierre).
-- Analistas que dicen comprar: 94 % de 16.
-
 ## JAKK · JAKKS Pacific, Inc. — ▲ +1.4 % · volumen 0.5x lo normal
 Cierre 33.14 (2026-11-27) · 5 días -5.1 % · lo normal en un día: ±3.09 %.
 - **Por qué:** Movimiento normal para esta acción.
@@ -183,6 +181,12 @@ Cierre 33.14 (2026-11-27) · 5 días -5.1 % · lo normal en un día: ±3.09 %.
 - **Próximos catalizadores:** Resultados el 2027-02-17.
 - Analistas que dicen comprar: 88 % de 8.
   - 2026-11-27 · [Should Value Investors Buy JAKKS Pacific (JAKK) Stock?](https://finnhub.io/api/news?id=7ccedae966edbb097dc2c0336f4816bda9689babd600370408498d2925bd41c4)
+
+## CCSI · Consensus Cloud Solutions, Inc. — ▲ +1.1 % · volumen 0.4x lo normal
+Cierre 41.66 (2026-11-27) · 5 días +7.0 % · lo normal en un día: ±4.79 %.
+- **Por qué:** Movimiento normal para esta acción.
+- **Qué cambió:** nada nuevo.
+- Analistas que dicen comprar: 90 % de 10.
 
 # Materias primas
 

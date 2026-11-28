@@ -1,6 +1,6 @@
 # Carpeta del día · 28/11/2026
 
-_Resumen automático, sin IA. Precios y avisos del 2026-11-28 04:23 UTC. Sigues 16 acciones._
+_Resumen automático, sin IA. Precios y avisos del 2026-11-28 04:57 UTC. Sigues 16 acciones._
 
 ## 🔔 Avisos de hoy
 - **ZONA DE ENTRADA** · REPX a 40.26 $ está en su zona de entrada (≤ 46.0), potencial 44% hasta objetivo
@@ -24,6 +24,6 @@ _Resumen automático, sin IA. Precios y avisos del 2026-11-28 04:23 UTC. Sigues 
 - Nada.
 
 ## 🆕 Nuevas en el top 10 del ranking
-- #6 **OPRT** · nota 69.1 · GARP (crecimiento a buen precio)
+- #7 **OPRT** · nota 68.8 · GARP (crecimiento a buen precio)
 
 _Detector de inflexión x3-x4: llegará en el Paso 8._

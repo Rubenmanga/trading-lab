@@ -1,5 +1,5 @@
 {
- "actualizado": "2026-11-28T04:23:51+00:00",
+ "actualizado": "2026-11-28T04:57:30+00:00",
  "empresas": {
   "ORIC": {
    "niveles": {
@@ -3006,6 +3006,115 @@
      "resultados_recientes": null
     }
    },
+   "OPRT": {
+    "nombre": "Oportun Financial Corporation",
+    "sector": "Financial Services",
+    "grupo": "ideas",
+    "fecha": "2026-11-27",
+    "fecha_anterior": "2026-11-25",
+    "cierre": 11.11,
+    "cambio_pct": 3.54,
+    "cambio_5d_pct": 1.6,
+    "sigma_pct": 7.4,
+    "veces_normal": 0.5,
+    "volumen_rel": 0.2,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Movimiento normal para esta acción.",
+    "cambios": [
+     "2 titulares nuevos"
+    ],
+    "catalizadores": [
+     "Resultados el 2027-02-24"
+    ],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "Oportun Financial Corp",
+    "recs_pct_compra": 63.6,
+    "recs_n": 11,
+    "proximos_resultados": "2027-02-24",
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "XLF",
+     "fecha": "2026-11-27",
+     "fecha_anterior": "2026-11-25",
+     "cierre": 57.16,
+     "cambio_pct": 1.15,
+     "cambio_5d_pct": 2.8,
+     "sigma_pct": 1.54,
+     "veces_normal": 0.7,
+     "volumen_rel": 0.5
+    },
+    "titulares": [
+     {
+      "fecha": "2026-11-27",
+      "titulo": "Are Investors Undervaluing Oportun Financial (OPRT) Right Now?",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=65c390f2b2e8d9b3436f0d31e556a749b4170ceb085d6457264383a70f9e78d4",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-25",
+      "titulo": "Oportun Completes $372 Million Asset-Backed Notes Issuance",
+      "fuente": "fiscal.ai",
+      "url": "https://www.quantisnow.com/insight/oportun-financial-corporation-filed-sec-form-8-k-creation-of-a-6806192",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-24",
+      "titulo": "Oportun Appoints Laura Unger to Board of Directors",
+      "fuente": "fiscal.ai",
+      "url": "https://www.globenewswire.com/news-release/2026/11/24/3409878/0/en/oportun-appoints-laura-unger-to-its-board-of-directors.html",
+      "causas": [
+       "directivos"
+      ],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-24",
+      "titulo": "Oportun Appoints Laura Unger to its Board of Directors",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=66ac9294231b75039f8b8a7ef8b105f5198d9260d955f92636f6f5dd920811c6",
+      "causas": [
+       "directivos"
+      ],
+      "nueva": true,
+      "importante": false
+     },
+     {
+      "fecha": "2026-11-23",
+      "titulo": "Wall Street Analysts Predict a 31.07% Upside in Oportun Financial (OPRT): Here's  What You Should Know",
+      "fuente": "Yahoo",
+      "url": "https://finnhub.io/api/news?id=25c90136077377606221fe593ea5b33794656c0fcc0966588e6ab0bbc0fbbb70",
+      "causas": [],
+      "nueva": true,
+      "importante": false
+     }
+    ],
+    "vistos": [
+     "are investors undervaluing oportun financial oprt right now",
+     "oportun appoints laura unger to board of directors",
+     "oportun appoints laura unger to its board of directors",
+     "oportun completes 372 million assetbacked notes issuance",
+     "wall street analysts predict a 3107 upside in oportun financial oprt h"
+    ],
+    "sec_vistos": [],
+    "anterior": {
+     "fecha": null,
+     "vistos": null,
+     "sec_vistos": null,
+     "recs_pct_compra": null,
+     "proximos_resultados": null,
+     "resultados_recientes": null
+    }
+   },
    "DFIN": {
     "nombre": "Donnelley Financial Solutions, ",
     "sector": "Technology",
@@ -3214,106 +3323,6 @@
      "resultados_recientes": null
     }
    },
-   "CCSI": {
-    "nombre": "Consensus Cloud Solutions, Inc.",
-    "sector": "Technology",
-    "grupo": "ideas",
-    "fecha": "2026-11-27",
-    "fecha_anterior": "2026-11-25",
-    "cierre": 41.66,
-    "cambio_pct": 1.12,
-    "cambio_5d_pct": 7.0,
-    "sigma_pct": 4.79,
-    "veces_normal": 0.2,
-    "volumen_rel": 0.4,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
-    "catalizadores": [],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "Consensus Cloud Solutions Inc",
-    "recs_pct_compra": 90.0,
-    "recs_n": 10,
-    "proximos_resultados": null,
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "QQQ",
-     "fecha": "2026-11-27",
-     "fecha_anterior": "2026-11-25",
-     "cierre": 650.99,
-     "cambio_pct": 2.69,
-     "cambio_5d_pct": 0.9,
-     "sigma_pct": 2.93,
-     "veces_normal": 0.9,
-     "volumen_rel": 0.6
-    },
-    "titulares": [],
-    "vistos": [],
-    "sec_vistos": [],
-    "anterior": {
-     "fecha": "2026-11-25",
-     "vistos": [],
-     "sec_vistos": [],
-     "recs_pct_compra": 90.0,
-     "proximos_resultados": null,
-     "resultados_recientes": null
-    }
-   },
-   "CSTL": {
-    "nombre": "Castle Biosciences, Inc.",
-    "sector": "salud",
-    "grupo": "ideas",
-    "fecha": "2026-11-27",
-    "fecha_anterior": "2026-11-25",
-    "cierre": 32.88,
-    "cambio_pct": 1.08,
-    "cambio_5d_pct": -1.6,
-    "sigma_pct": 3.33,
-    "veces_normal": 0.3,
-    "volumen_rel": 0.2,
-    "grande": false,
-    "porque": "Movimiento normal para esta acción.",
-    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
-    "cambios": [],
-    "catalizadores": [
-     "Resultados el 2027-02-22 (tras el cierre)"
-    ],
-    "avisos": [],
-    "avisos_nuevos": [],
-    "avisados": [],
-    "problemas": [],
-    "nombre_fuente": "Castle Biosciences, Inc.",
-    "recs_pct_compra": 93.8,
-    "recs_n": 16,
-    "proximos_resultados": "2027-02-22",
-    "resultados_recientes": null,
-    "referencia": {
-     "ticker": "XBI",
-     "fecha": "2026-11-27",
-     "fecha_anterior": "2026-11-25",
-     "cierre": 158.5,
-     "cambio_pct": 1.21,
-     "cambio_5d_pct": 10.0,
-     "sigma_pct": 2.99,
-     "veces_normal": 0.4,
-     "volumen_rel": 0.5
-    },
-    "titulares": [],
-    "vistos": [],
-    "sec_vistos": [],
-    "anterior": {
-     "fecha": null,
-     "vistos": null,
-     "sec_vistos": null,
-     "recs_pct_compra": null,
-     "proximos_resultados": null,
-     "resultados_recientes": null
-    }
-   },
    "JAKK": {
     "nombre": "JAKKS Pacific, Inc.",
     "sector": "Consumer Cyclical",
@@ -3394,6 +3403,55 @@
      ],
      "recs_pct_compra": 87.5,
      "proximos_resultados": "2027-02-17",
+     "resultados_recientes": null
+    }
+   },
+   "CCSI": {
+    "nombre": "Consensus Cloud Solutions, Inc.",
+    "sector": "Technology",
+    "grupo": "ideas",
+    "fecha": "2026-11-27",
+    "fecha_anterior": "2026-11-25",
+    "cierre": 41.66,
+    "cambio_pct": 1.12,
+    "cambio_5d_pct": 7.0,
+    "sigma_pct": 4.79,
+    "veces_normal": 0.2,
+    "volumen_rel": 0.4,
+    "grande": false,
+    "porque": "Movimiento normal para esta acción.",
+    "resumen": "Sin cambios: movimiento normal y nada nuevo.",
+    "cambios": [],
+    "catalizadores": [],
+    "avisos": [],
+    "avisos_nuevos": [],
+    "avisados": [],
+    "problemas": [],
+    "nombre_fuente": "Consensus Cloud Solutions Inc",
+    "recs_pct_compra": 90.0,
+    "recs_n": 10,
+    "proximos_resultados": null,
+    "resultados_recientes": null,
+    "referencia": {
+     "ticker": "QQQ",
+     "fecha": "2026-11-27",
+     "fecha_anterior": "2026-11-25",
+     "cierre": 650.99,
+     "cambio_pct": 2.69,
+     "cambio_5d_pct": 0.9,
+     "sigma_pct": 2.93,
+     "veces_normal": 0.9,
+     "volumen_rel": 0.6
+    },
+    "titulares": [],
+    "vistos": [],
+    "sec_vistos": [],
+    "anterior": {
+     "fecha": "2026-11-25",
+     "vistos": [],
+     "sec_vistos": [],
+     "recs_pct_compra": 90.0,
+     "proximos_resultados": null,
      "resultados_recientes": null
     }
    }
